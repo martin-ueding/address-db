@@ -1,9 +1,10 @@
 <?PHP
 session_start();
 
-//include('../inc/varclean.inc.php');
 include('../inc/login.inc.php');
 include('../inc/abfragen.inc.php');
+
+$p_id = (int)($_GET['id']);
 
 $anrede_r = $_POST['anrede_r'];
 $prafix_r = $_POST['prafix_r'];
