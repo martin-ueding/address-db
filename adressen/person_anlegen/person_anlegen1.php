@@ -38,34 +38,34 @@ function _switch(object)
 <tr><th colspan="2">Name:</th></tr>
 <tr>
 <td>Anrede:</td>
-<td><?PHP show_select_anrede('anrede_r', $_SESSION['anrede_r']); show_select_prafix('prafix_r', $_SESSION['prafix_r']); ?></td>
+<td><?PHP show_select_anrede('anrede_r', ""); show_select_prafix('prafix_r', ""); ?></td>
 </tr>
 <tr>
 <td>Vorname:</td>
-<td><?PHP echo '<input type="text" name="vorname" value="'.$_SESSION['vorname'].'" size="30" maxlength="100" />'; ?></td>
+<td><?PHP echo '<input type="text" name="vorname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
 <td>2. Vorname:</td>
-<td><?PHP echo '<input type="text" name="mittelname" value="'.$_SESSION['mittelname'].'" size="30" maxlength="100" />'; ?></td>
+<td><?PHP echo '<input type="text" name="mittelname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
 <td>Nachname:</td>
-<td><?PHP echo '<input type="text" name="nachname" value="'.$_SESSION['nachname'].'" size="30" maxlength="100" />'; ?></td>
+<td><?PHP echo '<input type="text" name="nachname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
 <td>Suffix:</td>
-<td><?PHP show_select_suffix('suffix_r', $_SESSION['suffix_r']); ?></td>
+<td><?PHP show_select_suffix('suffix_r', ""); ?></td>
 </tr>
 <tr>
 <td>Geburtsname:</td>
-<td><?PHP echo '<input type="text" name="geburtsname" value="'.$_SESSION['geburtsname'].'" size="30" maxlength="100" />'; ?></td>
+<td><?PHP echo '<input type="text" name="geburtsname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
 <td>Geburtsdatum:</td>
 <td><?PHP
-show_select_zahlen('geb_t', $_SESSION['geb_t'], 1, 31, true);
-show_select_zahlen('geb_m', $_SESSION['geb_m'], 1, 12, true);
-show_select_zahlen('geb_j', $_SESSION['geb_j'], date("Y")-100, date("Y"), false);
+show_select_zahlen('geb_t', 0, 1, 31, true);
+show_select_zahlen('geb_m', 0, 1, 12, true);
+show_select_zahlen('geb_j', 0, date("Y")-100, date("Y"), false);
 ?></td>
 </tr>
 </table>
@@ -80,11 +80,8 @@ echo '<div class="box_596">';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
-		echo '<input type="checkbox" name="fmgs[]" value="'.$l['fmg_id'].'"';
-		if (!empty($_SESSION['fmgs']) && in_array($l['fmg_id'], $_SESSION['fmgs']))
-			echo ' checked';
-		 echo ' /> '.$l['fmg']."\n";
-		 echo '</div>';
+		echo '<input type="checkbox" name="fmgs[]" value="'.$l['fmg_id'].'" /> '.$l['fmg']."\n";
+		echo '</div>';
 		}
 echo '</div>';
 echo '<div class="box_596">';
@@ -95,11 +92,8 @@ echo '<div class="box_596">';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
-		echo '<input type="checkbox" name="gruppen[]" value="'.$l['g_id'].'"';
-		if (!empty($_SESSION['gruppen']) && in_array($l['g_id'], $_SESSION['gruppen']))
-			echo ' checked';
-		 echo ' /> '.$l['gruppe']."\n";
-		 echo '</div>';
+		echo '<input type="checkbox" name="gruppen[]" value="'.$l['g_id'].'" /> '.$l['gruppe']."\n";
+		echo '</div>';
 		}
 echo '</div>';
 	echo '&nbsp;<br style="clear: left;" /><br /><input class="rand" type="text" name="neue_gruppe" size="30" maxlength="100" /> Neue Gruppe anlegen';
@@ -115,41 +109,34 @@ echo '</div>';
 	$erg = mysql_query($sql);
 
 	while ($l = mysql_fetch_assoc($erg)) {
-		echo '<option value="'.$l['ad_id'].'"';
-		if (($_SESSION['adresse_r'] == $l['ad_id']) || (empty($_SESSION['adresse_r']) && $l['ad_id'] == 1))
-			echo ' selected';
-
-		echo '>'.$l['plz'].' '.$l['ortsname'].' - '.$l['strasse'].'</option>';
+		echo '<option value="'.$l['ad_id'].'">'.$l['plz'].' '.$l['ortsname'].' - '.$l['strasse'].'</option>';
 	} 
 	echo '</select>';
 	
 echo '<br /><br />';
 
 	echo '<br /><input type="checkbox" id="adresswahl" name="adresswahl" value="manuell"';
-	if ($_SESSION['adresswahl'] == 'manuell')
-		echo ' checked';
-
 	echo ' onClick = "_switch(\'manuelle_eingabe\'); return true;"> Oder neue Adresse anlegen:';
 
 	?>
 
-	<div id="manuelle_eingabe" style="width: 600px; padding: 1px; border: 1px dotted gray; display: <?PHP if($_SESSION['adresswahl'] == 'manuell'){echo 'block';} else {echo 'none';}?>;">
+	<div id="manuelle_eingabe" style="width: 600px; padding: 1px; border: 1px dotted gray; display: none">
 
 	<table>
 		
 	<tr>
 		<td>Strasse:</td>
-		<td><?PHP echo '<input type="text" name="strasse" value="'.$_SESSION['strasse'].'" size="30" maxlength="100" />'; ?></td>
+		<td><?PHP echo '<input type="text" name="strasse" size="30" maxlength="100" />'; ?></td>
 	</tr>
 	
 	<tr>
 		<td>PLZ, Ort, Land:</td>
-		<td><?PHP show_select_plz('plz_r', $_SESSION['plz_r']); show_select_ort('ort_r', $_SESSION['ort_r']); show_select_land('land_r', $_SESSION['land_r']); ?></td>
+		<td><?PHP show_select_plz('plz_r', 0); show_select_ort('ort_r', 0); show_select_land('land_r', 0); ?></td>
 	</tr>
 	
 	<tr>
 		<td></td>
-		<td><?PHP echo '<input type="text" name="plz" value="'.$_SESSION['plz'].'" size="5" maxlength="5" />';  echo '<input type="text" name="ort" value="'.$_SESSION['ort'].'" size="25" maxlength="100" />'; echo '<input type="text" name="land" value="'.$_SESSION['land'].'" size="30" maxlength="100" />'; ?></td>
+		<td><?PHP echo '<input type="text" name="plz" size="5" maxlength="5" />';  echo '<input type="text" name="ort" size="25" maxlength="100" />'; echo '<input type="text" name="land" size="30" maxlength="100" />'; ?></td>
 	</tr>
 				
 	</table>
@@ -189,23 +176,23 @@ echo '<br /><br />';
 	<table>
 		<tr>
 			<td>Email privat:</td>
-			<td><?PHP echo '<input type="text" name="email_privat" value="'.$_SESSION['email_privat'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="email_privat" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Email Arbeit:</td>
-			<td><?PHP echo '<input type="text" name="email_arbeit" value="'.$_SESSION['email_arbeit'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="email_arbeit" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Email Sonstiges:</td>
-			<td><?PHP echo '<input type="text" name="email_aux" value="'.$_SESSION['email_aux'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="email_aux" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Homepage 1:</td>
-			<td>http://<?PHP echo '<input type="text" name="hp1" value="'.$_SESSION['hp1'].'" size="30" maxlength="100" />'; ?></td>
+			<td>http://<?PHP echo '<input type="text" name="hp1" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Homepage 2:</td>
-			<td>http://<?PHP echo '<input type="text" name="hp2" value="'.$_SESSION['hp2'].'" size="30" maxlength="100" />'; ?></td>
+			<td>http://<?PHP echo '<input type="text" name="hp2" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
@@ -232,32 +219,32 @@ echo '<br /><br />';
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td>Chat AIM:</td>
-			<td><?PHP echo '<input type="text" name="chat_aim" value="'.$_SESSION['chat_aim'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="chat_aim" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Chat MSN:</td>
-			<td><?PHP echo '<input type="text" name="chat_msn" value="'.$_SESSION['chat_msn'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="chat_msn" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Chat ICQ:</td>
-			<td><?PHP echo '#<input type="text" name="chat_icq" value="'.$_SESSION['chat_icq'].'" size="9" maxlength="9" />'; ?></td>
+			<td><?PHP echo '#<input type="text" name="chat_icq" size="9" maxlength="9" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Chat Yahoo:</td>
-			<td><?PHP echo '<input type="text" name="chat_yim" value="'.$_SESSION['chat_yim'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="chat_yim" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Chat Skype:</td>
-			<td><?PHP echo '<input type="text" name="chat_skype" value="'.$_SESSION['chat_skype'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="chat_skype" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
 			<td>Chat Sonstiges:</td>
-			<td><?PHP echo '<input type="text" name="chat_aux" value="'.$_SESSION['chat_aux'].'" size="30" maxlength="100" />'; ?></td>
+			<td><?PHP echo '<input type="text" name="chat_aux" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr><td colspan="2">&nbsp; </td></tr>
 		<tr>
 			<td>Notizen:</td>
-			<td><?PHP echo '<textarea name="pnotizen" rows="4" cols="30">'.$_SESSION['pnotizen'].'</textarea>'; ?></td>
+			<td><?PHP echo '<textarea name="pnotizen" rows="4" cols="30"></textarea>'; ?></td>
 		</tr>
 	</table>
 

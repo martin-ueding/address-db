@@ -13,7 +13,7 @@ session_start();
 <div id="buttons">
 <a href="index.php" target="_top" title="Zurück zur Startseite"><img src="eicons/home.png" width="32" height="32" alt="Zurück zur Startseite" border="0" /></a>
  &nbsp;&nbsp;&nbsp; 
-<a href="person_anlegen/person_anlegen_start.php" title="Neue Person anlegen" target="main"><img src="eicons/add_user.png" width="32" height="32" alt="Neue Person anlegen" border="0" /></a>
+<a href="person_anlegen/person_anlegen1.php" title="Neue Person anlegen" target="main"><img src="eicons/add_user.png" width="32" height="32" alt="Neue Person anlegen" border="0" /></a>
 </div>
 
 
