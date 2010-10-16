@@ -4,8 +4,7 @@ session_start();
 include('../inc/login.inc.php');
 include('../inc/abfragen.inc.php');
 
-$p_id = (int)($_GET['id']);
-
+$p_id = (int)($_POST['p_id']);
 $anrede_r = $_POST['anrede_r'];
 $prafix_r = $_POST['prafix_r'];
 $vorname = $_POST['vorname'];
@@ -22,6 +21,7 @@ $fmgs = $_POST['fmgs'];
 $gruppen = $_POST['gruppen'];
 
 $adresse_r = $_POST['adresse_r'];
+$haushalt = $_POST['haushalt'];
 $adresswahl = $_POST['adresswahl'];
 $werziehtum = $_POST['werziehtum'];
 if (empty($werziehtum))
@@ -359,13 +359,14 @@ else if ($werziehtum == 'alle') {
 	}
 	
 	/* Wenn eine Adresse aus dem Select ausgesucht wordern ist */
-	else {
+	else if (adresse_mehrfach_benutzt($adresse_r)) {
 		$sql_ad = 'UPDATE ad_per SET adresse_r='.$adresse_r.' WHERE adresse_r='.$haushalt.';';
 		mysql_query($sql_ad);
 		if (mysql_error() != "") {
-			echo $sql;
+			echo $sql_ad;
 			echo '<br />';
 			echo mysql_error();
+		}
 	}
 }
 

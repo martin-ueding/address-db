@@ -55,7 +55,7 @@ function _switch(object)
 <h2>Teil 1/3 &ndash; Name und Bez&uuml;ge</h2>
 
 <form action="person_bearbeiten5.php" method="post">
-
+<input type="hidden" name="p_id" value="<?PHP echo $p_id; ?>" />
 <table>
 <tr><th colspan="2">Name:</th></tr>
 <tr>
@@ -147,6 +147,8 @@ echo '</div>';
 				echo ' checked';
 			echo ' /> Alle, die hier wohnen';
 		}
+
+		echo '<input type="hidden" name="haushalt" value="'.$haushalt.'" />';
 	
 		
 		echo '<br /><br />';
