@@ -21,7 +21,7 @@ $geb_j = $_POST['geb_j'];
 
 $fmgs = $_POST['fmgs'];
 $gruppen = $_POST['gruppen'];
-
+$haushalt = 1;
 
 
 
@@ -200,7 +200,7 @@ if ($adresswahl == 'manuell') {
 	$sql .= ', adresse_r='.mysql_insert_id();
 	
 }
-else {
+else if ($adresse_r != 0) {
 	$sql .= ', adresse_r='.$adresse_r;
 }
 
@@ -238,7 +238,7 @@ $sql .= ';';
 mysql_query($sql);
 if (mysql_error() != '') {
 	echo 'MySQL-Error: '.mysql_error();
-	echo '<br /><br />SQL-Befehl:'.$sql;
+	echo '<br /><br />SQL-Befehl: '.$sql;
 }
 
 $p_id = mysql_insert_id();

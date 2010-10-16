@@ -24,6 +24,7 @@ if (mysql_num_rows($erg) != 1)
 $person_loop = mysql_fetch_assoc($erg);
 
 $werziehtum = 'alle';
+$haushalt = $person_loop['adresse_r'];
 
 include('../inc/varclean.inc.php');
 include('../inc/select.inc.php');

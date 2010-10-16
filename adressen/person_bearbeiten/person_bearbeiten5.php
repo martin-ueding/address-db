@@ -199,7 +199,7 @@ if ($werziehtum == 'einer') {
 	}
 	
 	/* Wenn eine Adresse aus dem Select ausgesucht wordern ist */
-	else {
+	else if ($adresse_r != 0){
 		$sql .= ', adresse_r='.$adresse_r;
 	}
 }
@@ -359,13 +359,15 @@ else if ($werziehtum == 'alle') {
 	}
 	
 	/* Wenn eine Adresse aus dem Select ausgesucht wordern ist */
-	else if (adresse_mehrfach_benutzt($adresse_r)) {
-		$sql_ad = 'UPDATE ad_per SET adresse_r='.$adresse_r.' WHERE adresse_r='.$haushalt.';';
-		mysql_query($sql_ad);
-		if (mysql_error() != "") {
-			echo $sql_ad;
-			echo '<br />';
-			echo mysql_error();
+	else if ($adresse_r > 0) {
+		if (adresse_mehrfach_benutzt($adresse_r)) {
+			$sql_ad = 'UPDATE ad_per SET adresse_r='.$adresse_r.' WHERE adresse_r='.$haushalt.';';
+			mysql_query($sql_ad);
+			if (mysql_error() != "") {
+				echo $sql_ad;
+				echo '<br />';
+				echo mysql_error();
+			}
 		}
 	}
 }
