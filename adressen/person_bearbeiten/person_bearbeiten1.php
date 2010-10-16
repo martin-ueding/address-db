@@ -131,7 +131,7 @@ echo '</div>';
 	<h2>Teil 2/3 &ndash; Adresse</h2>
 	
 	<?PHP
-	if (adresse_mehrfach_benutzt($l['adresse_r'])) {
+	if (adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
 		echo '&nbsp;<br /><b>Adress-Änderungen gelten für:</b> <br /><br />';
 		echo '<input type="radio" name="werziehtum" value="einer"';
 		if ($werziehtum == 'einer' || $haushalt == 1)
