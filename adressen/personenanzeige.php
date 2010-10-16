@@ -8,6 +8,7 @@
 </head>
 	<body class="linksluft">
 
+
 	<?PHP
 	$id = $_GET["id"];
 	include('inc/includes.inc.php');
