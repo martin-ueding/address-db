@@ -362,7 +362,10 @@ else if ($werziehtum == 'alle') {
 	else {
 		$sql_ad = 'UPDATE ad_per SET adresse_r='.$adresse_r.' WHERE adresse_r='.$haushalt.';';
 		mysql_query($sql_ad);
-		echo mysql_error();
+		if (mysql_error() != "") {
+			echo $sql;
+			echo '<br />';
+			echo mysql_error();
 	}
 }
 
@@ -427,8 +430,6 @@ if (!empty($gruppen)) {
 		mysql_query($sql);
 	}
 }
-
-session_destroy();
 
 header('location:../personenanzeige.php?id='.$p_id);
 
