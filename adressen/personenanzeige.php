@@ -46,7 +46,7 @@
 	if ($l['suffix'] != "-")
 		echo ' ('.$l['suffix'].')';
 	if (!empty($l['geburtsname'])) 
-		{echo ', geborene(r) '.$l['geburtsname'];}
+		{echo ', geborene'.(empty($l['anrede']) ? '(r)' : ($l['anrede'] == "Herr" ? 'r' : '')).' '.$l['geburtsname'];}
 	echo '</td>';
 	echo '</tr>';
 	if (!empty($l['geb_t'])) {	

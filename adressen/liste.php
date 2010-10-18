@@ -42,30 +42,7 @@
 
 			echo '<tr><td><a href="personenanzeige.php?id='.$l['p_id'].'">&raquo;</a></td><td><a href="personenanzeige.php?id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="personenanzeige.php?id='.$l['p_id'].'">'.$l['nachname'].'</a></td>';
 
-			$check = $l['last_check'];
-
-			$anzahl_level = 3;
-			$veraltet_nach = 365;
-			
-			$letzter_check_vor = round((time()-$check)/3600/24);
-			
-			$aktuell_level = round($anzahl_level*($veraltet_nach-$letzter_check_vor)/$veraltet_nach);
-			echo '<td>';	
-			echo '<div style="padding-left: 10px;">';
-			
-			if ($check == 0)
-				$aktuell_level = 0;
-			else {
-				$aktuell_level = round($anzahl_level*($veraltet_nach-$letzter_check_vor)/$veraltet_nach);
-			}
-			
-			for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
-				echo '<img height="10" src="eicons/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt am '.date("d.m.y", $check).' (vor '.$letzter_check_vor.' Tagen) &uuml;berp&uuml;rft." />';
-			}
-				
-			echo '<div>';
-
-			echo '</td></tr>';
+			echo '</tr>';
 			$emailadressen[] = $l['email_privat'];
 		}
 
@@ -112,18 +89,12 @@
 		
 	}
 	
-	if (!empty($emailadressen)) {
-		echo '<br /><br />Emailadressen aller Personen:<br /><textarea rows="5" cols="30">';
-		foreach ($emailadressen as $ad) {
-			if (!empty($ad))
-				echo $ad."\n";
-		}
-		echo '</textarea>';
+	if (!empty($emailadressen)) { 
+		echo '<br /><br />';
+		echo '<a href="mailto:'.implode(',', $emailadressen).'">Email an alle</a>';
 	}
 
 	?>
-	
-<!--	<img id="portrait_ho" />	-->
 
 	</body>
 </html>
