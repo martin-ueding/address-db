@@ -91,14 +91,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 }
 echo '</table>'."\n";
 
-echo '<div style="overflow: auto; height: 150px; width: 200px; border: 1px solid #444; padding: 5px;"><b>Zuletzt aktualisiert:</b><br />';
-$sql = 'SELECT * FROM ad_per ORDER BY last_check DESC LIMIT 15;';
-$erg = mysql_query($sql);
-while ($l = mysql_fetch_assoc($erg)) {
-	echo '<a href="personenanzeige.php?id='.$l['p_id'].'" target="main">'.$l['vorname'].' '.$l['nachname'].'</a><br />';
-}
-echo '</div>';
-
 ?>
 	
 	</body>
