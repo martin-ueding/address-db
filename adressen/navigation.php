@@ -27,16 +27,12 @@ include("inc/includes.inc.php");
 <ul id="mitglieder">
 <?PHP
 if ($_SESSION['f'] != 0)
-	echo '<li><a href="index.php?f=0" target="_parent">:: Alle</a></li>';
-
-if (($_SESSION['f'] != 0 && $_SESSION['f'] == 1) || $_SESSION['f'] == 0)
-	echo '<li><a class="herby" href="index.php?f=1&main=liste" target="_parent">Herbert</a></li>';
-if (($_SESSION['f'] != 0 && $_SESSION['f'] == 2) || $_SESSION['f'] == 0)
-	echo '<li><a class="bettina" href="index.php?f=2&main=liste" target="_parent">Bettina</a></li>';
-if (($_SESSION['f'] != 0 && $_SESSION['f'] == 3) || $_SESSION['f'] == 0)
-	echo '<li><a class="martin" href="index.php?f=3&main=liste" target="_parent">Martin</a></li>';
-if (($_SESSION['f'] != 0 && $_SESSION['f'] == 4) || $_SESSION['f'] == 0)
-	echo '<li><a class="lennart" href="index.php?f=4&main=liste" target="_parent">Lennart</a></li>';
+	echo '<li><a href="index.php?f=0">:: Alle</a></li>';
+$sql = 'SELECT * FROM ad_fmg';
+$erg = mysql_query($sql);
+while ($l = mysql_fetch_assoc($erg)) {
+	echo '<li><a class="fmg_key" href="index.php?f='.$l['fmg_id'].'">'.$l['fmg'].'</a></li>';
+}
 ?>
 </ul>
 

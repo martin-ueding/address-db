@@ -103,22 +103,6 @@ CREATE TABLE IF NOT EXISTS `ad_gruppen` (
 -- --------------------------------------------------------
 
 -- 
--- Tabellenstruktur für Tabelle `ad_hu`
--- 
-
-DROP TABLE IF EXISTS `ad_hu`;
-CREATE TABLE IF NOT EXISTS `ad_hu` (
-  `hu_id` int(5) unsigned NOT NULL auto_increment,
-  `hu_kennzeichen` varchar(15) collate latin1_german1_ci NOT NULL default 'BN-XX XXXX',
-  `hu_name` varchar(100) collate latin1_german1_ci NOT NULL,
-  `hu_monat` int(2) unsigned NOT NULL default '1',
-  `hu_jahr` int(4) unsigned NOT NULL default '2000',
-  PRIMARY KEY  (`hu_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci AUTO_INCREMENT=6 ;
-
--- --------------------------------------------------------
-
--- 
 -- Tabellenstruktur für Tabelle `ad_laender`
 -- 
 
