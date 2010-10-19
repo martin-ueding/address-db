@@ -11,3 +11,6 @@ In order to protect the database you will need to enter some user names in the a
 
 4. set up family members
 For everybody in your family, there needs to be an entry in the fmg table so that people can be tagged within the family.
+
+5. delete the install directory
+There is no reason the install directory should remain on your server. So please remove it.
