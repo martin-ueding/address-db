@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName Adressen
-AuthUserFile .htpasswd
+AuthUserFile /Users/mu/Sites/Anwendungen/AdressDB-redesign/adressen/.htpasswd
 Require valid-user

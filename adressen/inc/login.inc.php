@@ -1,9 +1,9 @@
 <?PHP
 // Insert MySQL Data here
-$server = '';
-$user = '';
-$passwd = '';
-$db = '';
+$server = 'localhost:8889';
+$user = 'addressdb';
+$passwd = '4tSMp7EVVDqLgbu';
+$db = 'adressdb-redesign';
 
 // URL to Server with tailing slash
 $url_to_server = 'http://www.example.com/';

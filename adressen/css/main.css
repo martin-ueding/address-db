@@ -64,6 +64,10 @@ body.maske TABLE TR TD INPUT {height: 20px; border: 1px solid #999; /* TEST */}
 body.maske TABLE TR TD TEXTAREA {border: 1px solid #999; /* TEST */}
 body.maske .rand {border: 1px solid #999; /* TEST */}
 
+div.clearheinz {
+clear: both;
+}
+
 H1 {font-size: 19px; margin-bottom: 10px;}
 H1 EM {font-size: 19px; color: rgb(209,31,57); font-style: normal;}
 H2 {font-size: 17px; margin-bottom: 5px;}
@@ -183,13 +187,22 @@ A:HOVER {color: rgb(209,31,57);}
 	border-bottom: 1px solid #000; /* TEST */
 }
 
-.nav_kopf {
-	width: 190px;
-	margin: 0 0 0 7px;
-	background-color: rgb(102,102,102);
-	color: rgb(255,255,255);
-	font-weight: bold;
-	border: 1px solid #CCC; /* TEST */
+.nav_item {
+float: left;
+width: 150px;
+height: 40px;
+position: relative;
+top: 0px;
+left: 0px;
+	  text-align: center;
+}
+
+#mitglieder, #gruppen, #spezial {
+display: none;
+position: relative;
+top: 0px;
+left: 0px;
+
 }
 
 #mitglieder {
