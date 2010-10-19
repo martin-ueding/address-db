@@ -12,15 +12,11 @@ if (isset($_GET['f'])) {
 		<link rel="STYLESHEET" type="text/css" href="css/main.css">
 		<title>PHP Family Address Database</title>
 
-		<script type="text/javascript">
-		function flipMenu(what, how) {
-		   document.getElementById(what).style.display = how;
-		}	   
-		</script>
+		
 	</head>
 
 
-	<body>
+	<body class="linksluft">
 	<?PHP
 	include('inc/login.inc.php');
 	include('inc/abfragen.inc.php');

@@ -8,42 +8,21 @@
 	line-height: 1.5;
 }
 
-body.suchseite {
-	background-image: url(../eicons/lupe512.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
+body.linksluft {
 	padding-left: 20px;
 }
-body.karteikasten {
-	background-image: url(../eicons/kartei.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-	padding-left: 20px;
-}
-body.person {
-	background-image: url(../eicons/person256.png);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-	padding-left: 20px;
-}
-body.geburtstag {
-	background-image: url(../eicons/6.jpg);
-	background-position: right bottom;
-	background-repeat: no-repeat;
-	padding-left: 20px;
-}
-body.linksluft {padding-left: 20px;}
 
 body.maske {
 	padding-left: 20px;
 	background-color: #FFC;
 }
 
-body.maske H2 {margin: 15px 0;}
+body.maske H2 {
+	margin: 15px 0;
+}
 
 body.maske TABLE {
 	width: 596px;
-	/*.background-color: rgb(255,219,93);.*/
 }
 
 body.maske TABLE TR {}
@@ -60,33 +39,88 @@ body.maske TABLE TR TD {
 	background-color: rgb(255,219,93);
 }
 
-body.maske TABLE TR TD INPUT {height: 20px; border: 1px solid #999; /* TEST */}
-body.maske TABLE TR TD TEXTAREA {border: 1px solid #999; /* TEST */}
-body.maske .rand {border: 1px solid #999; /* TEST */}
-
-div.clearheinz {
-clear: both;
+body.maske TABLE TR TD INPUT {
+	height: 20px;
+	border: 1px solid #999; /* TEST */
 }
 
-H1 {font-size: 19px; margin-bottom: 10px;}
-H1 EM {font-size: 19px; color: rgb(209,31,57); font-style: normal;}
-H2 {font-size: 17px; margin-bottom: 5px;}
-H2 EM {font-size: 17px; color: rgb(209,31,57); font-style: normal;}
-H3 {font-size: 15px; margin-bottom: 5px;}
-H3 EM {font-size: 15px; color: rgb(209,31,57); font-style: normal;}
+body.maske TABLE TR TD TEXTAREA {
+	border: 1px solid #999; /* TEST */
+}
 
-B {font-weight: bold;}
+body.maske .rand {
+	border: 1px solid #999;	
+}
+
+div.clearheinz {
+	clear: both;
+	margin-bottom: 20px;
+}
+
+H1 {
+	font-size: 19px; margin-bottom: 10px;
+}
+
+H1 EM {
+	font-size: 19px;
+	color: rgb(209,31,57);
+	font-style: normal;
+}
+
+H2 {
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+
+H2 EM {
+	font-size: 17px;
+	color: rgb(209,31,57);
+	font-style: normal;
+}
+
+H3 {
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+H3 EM {
+	font-size: 15px;
+	color: rgb(209,31,57);
+	font-style: normal;
+}
+
+
+B {
+	font-weight: bold;
+}
+
 I {
 	font-style: italic;
 	color: rgb(102,102,102);
 }
-EM {
-	font-style: normal;	font-weight: bold; color: rgb(209,31,57); }
 
-A {text-decoration: none;}
-A:VISITED, A:LINK {color: #A70000;}
-A:ACTIVE {color: rgb(94,94,94);}
-A:HOVER {color: rgb(209,31,57);}
+EM {
+	font-style: normal;
+	font-weight: bold;
+	color: rgb(209,31,57);
+}
+
+A {
+	text-decoration: none;
+}
+
+A:VISITED, A:LINK {
+	color: #A70000;
+}
+
+A:ACTIVE {
+	color: rgb(94,94,94);
+}
+
+A:HOVER {
+	color: rgb(209,31,57);
+}
+
 
 #portrait_ho {
 	width: 300px;
@@ -98,7 +132,10 @@ A:HOVER {color: rgb(209,31,57);}
 /*.KOPF.*/
 /*.Karteireiter-Darstellung oben.*/
 
-#kartei {margin: 15px 10px 0 5px;}
+#kartei {
+	margin: 0px;
+	display: none;
+}
 
 #kartei A, #kartei SPAN {
 	float: left;
@@ -107,7 +144,7 @@ A:HOVER {color: rgb(209,31,57);}
 	text-decoration: none;
 	text-align: center;
 	line-height: 23px;
-	margin: 0 2px;
+	margin: 2 4px;
 	background-color: rgb(240,240,240);
 	border-top: 1px solid #CCC; /* TEST */
 	border-left: 1px solid #CCC; /* TEST */
@@ -138,9 +175,7 @@ A:HOVER {color: rgb(209,31,57);}
 	font-weight: bold;
 }
 
-/*..*/
 
-#suchfeld {float: right;}
 
 #suche {
 	width: 150px;
@@ -172,48 +207,50 @@ A:HOVER {color: rgb(209,31,57);}
 	border-right: 1px solid #000; /* TEST */
 	border-bottom: 1px solid #000; /* TEST */
 }
-#buttons A {padding: 2px;}
-#buttons A:HOVER {background-color: rgb(255,204,0);}
 
-#kalender {
-	margin: 0 0 20px 7px;
-	width: 190px;
-	color: rgb(0,0,0);
-	text-align: center;
-	background-color: rgb(240,240,240);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
+#buttons A {
+	padding: 2px;
+}
+
+#buttons A:HOVER {
+	background-color: rgb(255,204,0);
 }
 
 .nav_item {
-float: left;
-width: 150px;
-height: 40px;
-position: relative;
-top: 0px;
-left: 0px;
-	  text-align: center;
+	float: left;
+	width: 150px;
+	height: 20px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	border-bottom: 1px solid #AAA;
+	border-left: 1px solid #CCC;
+	margin-right: 5px;
 }
 
-#mitglieder, #gruppen, #spezial {
-display: none;
-position: relative;
-top: 0px;
-left: 0px;
+#mitglieder, #gruppen, #spezial, #suchbox {
+	display: none;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 192px;
+	list-style: none;
+	margin: 0 0 0 0px;
+	background-color: #E6E6E6;
+	padding: 0px 0 0 0;
+	border: 1px solid #aaa;
+}
 
+#suchbox {
 }
 
 #mitglieder {
-	width: 192px;
-	list-style: none;
-	margin: 0 0 20px 7px;
-	background-color: rgb(230,230,230);
-	padding: 10px 0 0 0;
 }
 
-#mitglieder LI {margin: 4px 0 0 0;}
+#mitglieder LI {
+	margin: 4px 0 0 0;
+}
 
 #mitglieder LI A {
 	display: block;
@@ -227,31 +264,32 @@ left: 0px;
 	border-bottom: 1px solid #000; /* TEST */
 }
 
-#mitglieder LI A.herby {background-color: rgb(255,255,230);}
-#mitglieder LI A.bettina {background-color: rgb(255,230,230);}
-#mitglieder LI A.martin {background-color: rgb(230,255,230);}
-#mitglieder LI A.lennart {background-color: rgb(230,230,255);}
 
-#mitglieder LI A:LINK {color: rgb(0,0,0);}
-#mitglieder LI A:VISITED {color: rgb(0,0,0);}
-#mitglieder LI A:ACTIVE {color: rgb(0,0,0);}
+#mitglieder LI A:LINK {
+	color: rgb(0,0,0);
+}
+
+#mitglieder LI A:VISITED {
+	color: rgb(0,0,0);
+}
+
+#mitglieder LI A:ACTIVE {
+	color: rgb(0,0,0);
+}
+
 #mitglieder LI A:HOVER {
 	background-color: rgb(204,0,0);
 	color: rgb(255,255,255);
 	font-weight: bold;
 }
 
-
-
 #gruppen {
-	width: 192px;
-	list-style: none;
-	margin: 0 0 20px 7px;
-	background-color: rgb(230,230,230);
-	padding: 10px 0 0 0;
 }
 
-#gruppen LI {margin: 4px 0 0 0;}
+#gruppen LI {
+	margin: 4px 0 0 0;
+}
+
 
 #gruppen LI A {
 	display: block;
@@ -265,9 +303,18 @@ left: 0px;
 	border-bottom: 1px solid #000; /* TEST */
 }
 
-#gruppen LI A:LINK {color: rgb(0,0,0);}
-#gruppen LI A:VISITED {color: rgb(0,0,0);}
-#gruppen LI A:ACTIVE {color: rgb(0,0,0);}
+#gruppen LI A:LINK {
+	color: rgb(0,0,0);
+}
+
+#gruppen LI A:VISITED {
+	color: rgb(0,0,0);
+}
+
+#gruppen LI A:ACTIVE {
+	color: rgb(0,0,0);
+}
+
 #gruppen LI A:HOVER {
 	background-color: rgb(204,0,0);
 	color: rgb(255,255,255);
@@ -275,11 +322,6 @@ left: 0px;
 }
 
 #spezial {
-	width: 192px;
-	list-style: none;
-	margin: 0 0 20px 7px;
-	background-color: rgb(230,230,230);
-	padding: 10px 0 0 0;
 }
 
 #spezial LI {margin: 4px 0 0 0;}
@@ -296,9 +338,18 @@ left: 0px;
 	border-bottom: 1px solid #000; /* TEST */
 }
 
-#spezial LI A:LINK {color: rgb(0,0,0);}
-#spezial LI A:VISITED {color: rgb(0,0,0);}
-#spezial LI A:ACTIVE {color: rgb(0,0,0);}
+#spezial LI A:LINK {
+	color: rgb(0,0,0);
+}
+
+#spezial LI A:VISITED {
+	color: rgb(0,0,0);
+}
+
+#spezial LI A:ACTIVE {
+	color: rgb(0,0,0);
+}
+
 #spezial LI A:HOVER {
 	background-color: rgb(204,0,0);
 	color: rgb(255,255,255);
@@ -321,8 +372,15 @@ left: 0px;
 	border-bottom: 1px solid #000; /* TEST */
 	float: left;
 }
-#geburtstag tr.zeihell {background-color: rgb(250,250,250);}
-#geburtstag tr.zeidunkel {background-color: rgb(240,240,240);}
+
+#geburtstag tr.zeihell {
+	background-color: rgb(250,250,250);
+}
+
+#geburtstag tr.zeidunkel {
+	background-color: rgb(240,240,240);
+}
+
 
 
 /* TUEV Tabelle */
@@ -345,7 +403,11 @@ TR {
 	vertical-align: top;
 	background-color: rgb(230,230,230);
 }
-TD {padding: 0 3px;}
+
+TD {
+	padding: 0 3px;
+}
+
 
 #pers_bild {
 	float: right;
@@ -519,3 +581,4 @@ TABLE#liste TD {
 	background-color: #FFF;
 	border-bottom: 1px solid #EEE;
 }
+
