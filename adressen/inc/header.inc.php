@@ -66,7 +66,7 @@ echo '</div>';
 echo '<div class="nav_item" onmouseover="flipMenu(\'suchbox\', \'block\');" onmouseout="flipMenu(\'suchbox\', \'none\');">Suche<br />';
 echo '<div id="suchbox">';
 ?>
-<form action="suche.php" method="post" target="main">
+<form action="suche.php" method="post">
 <div id="suchfeld"><input type="search" id="suche" name="suche" maxlength="100" />
 
 <input type="image" id="sub_mit" src="eicons/lupe.png" align="middle" title="Suche starten" /></div>
