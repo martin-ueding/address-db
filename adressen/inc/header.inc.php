@@ -34,12 +34,14 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 <div class="nav_item" onmouseover="flipMenu('spezial', 'block');" onmouseout="flipMenu('spezial', 'none');">Spezial<br />
 <ul id="spezial">
+<li><a href="person_anlegen1.php">Neue Person anlegen</a></li>
+<li><a href="index.php">Startseite</a></li>
 <li><a href="alle_geburtstage.php">Geburtstagsliste</a></li>
 <li><a href="ohne_anrede.php">Ohne Anrede</a></li>
 </ul>
 </div>
 
-<div class="nav_item" onmouseover="flipMenu('kartei', 'block');" onmouseout="flipMenu('kartei', 'none');">A-Z<br />
+<div class="nav_item" onmouseover="flipMenu('kartei', 'block');" onmouseout="flipMenu('kartei', 'none');">Auswahl: A-Z<br />
 <?PHP
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';

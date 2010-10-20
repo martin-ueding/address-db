@@ -19,7 +19,7 @@ while ($l = mysql_fetch_assoc($erg))
 	{
 	if($i % 2){ echo '<tr class="zeihell">';}
 	else { echo '<tr class="zeidunkel">'; }
-	echo '<td><a href="personenanzeige.php?id='.$l['p_id'].'" target="main">';
+	echo '<td><a href="personenanzeige.php?id='.$l['p_id'].'">';
 	if ($l['geb_t'] == date("j"))
 		echo '<em>'.$l['vorname'].' '.$l['nachname'].'</em>';
 	else if ($l['geb_t'] < date("j"))
@@ -57,7 +57,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else {
 		echo '<tr class="zeidunkel">';
 	}
-	echo '<td><a href="personenanzeige.php?id='.$l['p_id'].'" target="main">'.$l['vorname'].' '.$l['nachname'].'</a> </td>'."\n";
+	echo '<td><a href="personenanzeige.php?id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a> </td>'."\n";
 	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>'."\n";
 	
 	echo '<td>';

@@ -30,7 +30,7 @@ if (isset($_GET['f'])) {
 		$sql = 'SELECT * FROM ad_per WHERE anrede_r=1';
 	$erg = mysql_query($sql);
 	while ($l = mysql_fetch_assoc($erg)) {
-		$daten[] = '<tr onmouseover="show('.$l['p_id'].');"><td><a href="../personenanzeige.php?id='.$l['p_id'].'">&raquo;</a></td><td><a href="../personenanzeige.php?id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="../personenanzeige.php?id='.$l['p_id'].'">'.$l['nachname'].'</a></td></tr>';
+		$daten[] = '<tr><td><a href="personenanzeige.php?id='.$l['p_id'].'">&raquo;</a></td><td><a href="personenanzeige.php?id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="personenanzeige.php?id='.$l['p_id'].'">'.$l['nachname'].'</a></td></tr>';
 	}
 
 	/* Daten anzeigen */

@@ -339,7 +339,7 @@ if (isset($_GET['f'])) {
 				
 	echo '</table>';
 	
-	echo '<a href="person_bearbeiten/person_bearbeiten1.php?id='.$_GET['id'].'" title="Diese Person bearbeiten"><img src="eicons/person_bearbeiten.png" width="64" height="64" alt="Diese Person bearbeiten" border="0" /></a>';
+	echo '<a href="person_bearbeiten1.php?id='.$_GET['id'].'" title="Diese Person bearbeiten"><img src="eicons/person_bearbeiten.png" width="64" height="64" alt="Diese Person bearbeiten" border="0" /></a>';
 	echo '<a href="person_loeschen.php?id='.$_GET['id'].'" title="Diese Person l&ouml;schen"><img src="eicons/person_loeschen.png" width="64" height="64" alt="Diese Person l&ouml;schen" border="0" /></a>';
 	echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 	echo '<a href="bild_hochladen.php?id='.$_GET['id'].'" title="Bild hochladen"><img src="eicons/foto_upload.png" width="64" height="64" alt="Bild hochladen" border="0" /></a>';

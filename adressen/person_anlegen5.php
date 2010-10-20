@@ -1,9 +1,7 @@
 <?PHP
-session_start();
-
-//include('../inc/varclean.inc.php');
-include('../inc/login.inc.php');
-include('../inc/abfragen.inc.php');
+	include('inc/login.inc.php');
+	include('inc/abfragen.inc.php');
+	include('inc/anzeigen.inc.php');
 
 
 // Speichern Gruppe 1
@@ -269,5 +267,5 @@ if (!empty($gruppen)) {
 	}
 }
 
-header('location:../personenanzeige.php?id='.$p_id);
+header('location:personenanzeige.php?id='.$p_id);
 ?>

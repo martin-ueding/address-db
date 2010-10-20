@@ -81,7 +81,7 @@ if (isset($_GET['f'])) {
 	echo '<div id="luecken" style="display: none;">';
 
 	while ($l = mysql_fetch_assoc($erg)) {
-			echo '<a href="../personenanzeige.php?id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a><br />';
+			echo '<a href="personenanzeige.php?id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a><br />';
 	}
 	echo '</div>';
 	echo '</div>';

@@ -1,12 +1,16 @@
 <?PHP
 session_start();
 
+	include('inc/login.inc.php');
+	include('inc/abfragen.inc.php');
+	
+	include('inc/anzeigen.inc.php');
+include('inc/select.inc.php');
+
 
 $p_id = (int)($_GET['id']);
 
 
-include('../inc/login.inc.php');
-include('../inc/abfragen.inc.php');
 
 $erg = select_fmg_zu_person ($p_id);
 while ($l = mysql_fetch_assoc($erg))
@@ -26,8 +30,6 @@ $person_loop = mysql_fetch_assoc($erg);
 $werziehtum = 'alle';
 $haushalt = $person_loop['adresse_r'];
 
-include('../inc/varclean.inc.php');
-include('../inc/select.inc.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -36,7 +38,7 @@ include('../inc/select.inc.php');
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 <title>Person bearbeiten</title>
-<link rel="STYLESHEET" type="text/css" href="../css/main.css">
+<link rel="STYLESHEET" type="text/css" href="css/main.css">
 <script type="text/javascript">
 function _switch(object) 
 	{
@@ -52,6 +54,7 @@ function _switch(object)
 </script>
 </head>
 <body class="maske">
+<?PHP include('inc/header.inc.php'); ?>
 
 <h2>Teil 1/3 &ndash; Name und Bez&uuml;ge</h2>
 
