@@ -1,13 +1,4 @@
 <?PHP
-session_start();
-
-	include('inc/login.inc.php');
-	include('inc/abfragen.inc.php');
-	
-	include('inc/anzeigen.inc.php');
-include('inc/select.inc.php');
-
-
 $p_id = (int)($_GET['id']);
 
 
@@ -32,68 +23,45 @@ $haushalt = $person_loop['adresse_r'];
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-<title>Person bearbeiten</title>
-<link rel="STYLESHEET" type="text/css" href="css/main.css">
-<script type="text/javascript">
-function _switch(object) 
-	{
-	if(document.getElementById(object).style.display == "none")
-		{
-		document.getElementById(object).style.display = "block";
-		}
-	else
-		{
-		document.getElementById(object).style.display = "none";
-		}
-	}
-</script>
-</head>
-<body class="maske">
-<?PHP include('inc/header.inc.php'); ?>
 
 <h2>Teil 1/3 &ndash; Name und Bez&uuml;ge</h2>
 
-<form action="person_bearbeiten5.php" method="post">
+<form action="person_edit2.php" method="post">
 <input type="hidden" name="p_id" value="<?PHP echo $p_id; ?>" />
 <table>
-<tr><th colspan="2">Name:</th></tr>
-<tr>
-<td>Anrede:</td>
-<td><?PHP show_select_anrede('anrede_r', $person_loop['anrede_r']); show_select_prafix('prafix_r', $person_loop['prafix_r']); ?></td>
-</tr>
-<tr>
-<td>Vorname:</td>
-<td><?PHP echo '<input type="text" name="vorname" value="'.$person_loop['vorname'].'" size="30" maxlength="100" />'; ?></td>
-</tr>
-<tr>
-<td>2. Vorname:</td>
-<td><?PHP echo '<input type="text" name="mittelname" value="'.$person_loop['mittelname'].'" size="30" maxlength="100" />'; ?></td>
-</tr>
-<tr>
-<td>Nachname:</td>
-<td><?PHP echo '<input type="text" name="nachname" value="'.$person_loop['nachname'].'" size="30" maxlength="100" />'; ?></td>
-</tr>
-<tr>
-<td>Suffix:</td>
-<td><?PHP show_select_suffix('suffix_r', $person_loop['suffix_r']); ?></td>
-</tr>
-<tr>
-<td>Geburtsname:</td>
-<td><?PHP echo '<input type="text" name="geburtsname" value="'.$person_loop['geburtsname'].'" size="30" maxlength="100" />'; ?></td>
-</tr>
-<tr>
-<td>Geburtsdatum:</td>
-<td><?PHP
-show_select_zahlen('geb_t', $person_loop['geb_t'], 1, 31, true);
-show_select_zahlen('geb_m', $person_loop['geb_m'], 1, 12, true);
-show_select_zahlen('geb_j', $person_loop['geb_j'], date("Y")-100, date("Y"), false);
-?></td>
-</tr>
+	<tr><th colspan="2">Name:</th></tr>
+	<tr>
+		<td>Anrede:</td>
+		<td><?PHP show_select_anrede('anrede_r', $person_loop['anrede_r']); show_select_prafix('prafix_r', $person_loop['prafix_r']); ?></td>
+	</tr>
+	<tr>
+		<td>Vorname:</td>
+		<td><?PHP echo '<input type="text" name="vorname" value="'.$person_loop['vorname'].'" size="30" maxlength="100" />'; ?></td>
+	</tr>
+	<tr>
+		<td>2. Vorname:</td>
+		<td><?PHP echo '<input type="text" name="mittelname" value="'.$person_loop['mittelname'].'" size="30" maxlength="100" />'; ?></td>
+	</tr>
+	<tr>
+		<td>Nachname:</td>
+		<td><?PHP echo '<input type="text" name="nachname" value="'.$person_loop['nachname'].'" size="30" maxlength="100" />'; ?></td>
+	</tr>
+	<tr>
+		<td>Suffix:</td>
+		<td><?PHP show_select_suffix('suffix_r', $person_loop['suffix_r']); ?></td>
+	</tr>
+	<tr>
+		<td>Geburtsname:</td>
+		<td><?PHP echo '<input type="text" name="geburtsname" value="'.$person_loop['geburtsname'].'" size="30" maxlength="100" />'; ?></td>
+	</tr>
+	<tr>
+		<td>Geburtsdatum:</td>
+		<td><?PHP
+		show_select_zahlen('geb_t', $person_loop['geb_t'], 1, 31, true);
+		show_select_zahlen('geb_m', $person_loop['geb_m'], 1, 12, true);
+		show_select_zahlen('geb_j', $person_loop['geb_j'], date("Y")-100, date("Y"), false);
+		?></td>
+	</tr>
 </table>
 <br><br>
 <h3>Bez&uuml;ge:</h3>
@@ -136,7 +104,7 @@ echo '</div>';
 	
 	<?PHP
 	if (adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
-		echo '&nbsp;<br /><b>Adress-Änderungen gelten für:</b> <br /><br />';
+		echo '&nbsp;<br /><b>Adress-Æ’nderungen gelten fÂ¸r:</b> <br /><br />';
 		echo '<input type="radio" name="werziehtum" value="einer"';
 		if ($werziehtum == 'einer' || $haushalt == 1)
 			echo ' checked';
@@ -323,7 +291,3 @@ echo '<br /><br />';
 	
 <input class="rand" type="submit" name="knopf" value="Speichern" />
 </form>
-
-
-</body>
-</html>

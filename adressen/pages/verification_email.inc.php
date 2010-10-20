@@ -1,6 +1,5 @@
 <?PHP
 $id = $_GET["id"];
-include('inc/includes.inc.php');
 $erg = select_person_alles($id);
 $l = mysql_fetch_assoc($erg);
 

@@ -35,22 +35,11 @@ if ($_GET['fertig'] == 'ja') {
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-		<link rel="stylesheet" href="stil.css" type="text/css" />
-		<title>Bild hochladen</title>
-
-	</head>
-	<body>
-
 	<h1>Dateiupload</h1>
 
 	Nur .JPG!
 
-	<form enctype="multipart/form-data" action="bild_hochladen.php?fertig=ja" method="post"> 
+	<form enctype="multipart/form-data" action=?mode=pic_upload1&fertig=ja" method="post"> 
 	<input type="file" name="file">
 	<input type="submit" value="Hochladen">
 	<?PHP
@@ -58,9 +47,3 @@ if ($_GET['fertig'] == 'ja') {
 	?>
 	</form>
 
-	
-	
-
-
-	</body>
-</html>

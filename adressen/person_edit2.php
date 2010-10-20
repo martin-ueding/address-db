@@ -1,9 +1,14 @@
 <?PHP
-	include('inc/login.inc.php');
-	include('inc/abfragen.inc.php');
-	include('inc/anzeigen.inc.php');
+include('inc/login.inc.php');
+include('inc/abfragen.inc.php');
+include('inc/anzeigen.inc.php');
 
 $p_id = (int)($_POST['p_id']);
+
+if ($p_id == 0) {
+	die("Keine Person ID angegeben!");
+}
+
 $anrede_r = $_POST['anrede_r'];
 $prafix_r = $_POST['prafix_r'];
 $vorname = $_POST['vorname'];
@@ -433,7 +438,7 @@ if (!empty($gruppen)) {
 	}
 }
 
-header('location:personenanzeige.php?id='.$p_id);
+header('location:?mode=person_display&id='.$p_id);
 
 
 ?>

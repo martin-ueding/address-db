@@ -1,7 +1,5 @@
 <?PHP
 
-// ?bild=bilder/temp2.jpg&x1=108&y1=144&x2=400&y2=338
-
 include('inc/varclean.inc.php');
 
 $x1 = $_GET['x1'];

@@ -1,45 +1,6 @@
-<?PHP
-session_start();
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-		<link rel="STYLESHEET" type="text/css" href="css/main.css">
-		<title>PHP Family Address Database</title>
-
-		
-<script type="text/javascript">
-function _switch(object) 
-	{
-	if(document.getElementById(object).style.display == "none")
-		{
-		document.getElementById(object).style.display = "block";
-		}
-	else
-		{
-		document.getElementById(object).style.display = "none";
-		}
-	}
-</script>
-</head>
-
-
-
-
-<body class="maske">
-	<?PHP
-	include('inc/login.inc.php');
-	include('inc/abfragen.inc.php');
-	include('inc/header.inc.php');
-	include('inc/anzeigen.inc.php');
-include('inc/select.inc.php');
-?>
 <h2>Teil 1/3 &ndash; Name und Bez&uuml;ge</h2>
 
-<form action="person_anlegen5.php" method="post">
+<form action="person_create2.php" method="post">
 
 <table>
 <tr><th colspan="2">Name:</th></tr>
@@ -80,8 +41,8 @@ show_select_zahlen('geb_j', 0, date("Y")-100, date("Y"), false);
 <h3>Bez&uuml;ge:</h3>
 
 <?PHP
-	/* Beziehungen zu den Familienmitgliedern */
-	$erg = select_alle_fmg();
+/* Beziehungen zu den Familienmitgliedern */
+$erg = select_alle_fmg();
 echo '<div class="box_596">';
 	echo 'Wer kennt diese Person?<br /><br />';
 	while ($l = mysql_fetch_assoc($erg))
@@ -259,7 +220,3 @@ echo '<br /><br />';
 	
 <input class="rand" type="submit" name="knopf" value="Speichern" /><br>&nbsp;
 </form>
-
-
-</body>
-</html>

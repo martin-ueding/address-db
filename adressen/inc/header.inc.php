@@ -1,18 +1,25 @@
-<script type="text/javascript">
-function flipMenu(what, how) {
-   document.getElementById(what).style.display = how;
-}	   
-</script>
-
-<div class="nav_item" onmouseover="flipMenu('mitglieder', 'block');" onmouseout="flipMenu('mitglieder', 'none');">Persönlicher Modus<br />
-<ul id="mitglieder">
 <?PHP
-if ($_SESSION['f'] != 0)
-	echo '<li><a href="index.php?f=0">:: Alle</a></li>';
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
-	echo '<li><a class="fmg_key" href="index.php?f='.$l['fmg_id'].'">'.$l['fmg'].'</a></li>';
+	if ($l['fmg_id'] == $_SESSION['f'])
+		$aktuell_name = $l['fmg'];
+}
+if ($aktuell_name == "")
+	$aktuell_name = 'Alle';
+?>
+
+<div class="nav_item" onmouseover="flipMenu('mitglieder', 'block');" onmouseout="flipMenu('mitglieder', 'none');">Modus: <?PHP echo $aktuell_name; ?><br />
+<ul id="mitglieder">
+<?PHP
+if ($_SESSION['f'] != 0)
+	echo '<li><a href="?mode=list&f=0">:: Alle</a></li>';
+$sql = 'SELECT * FROM ad_fmg';
+$erg = mysql_query($sql);
+while ($l = mysql_fetch_assoc($erg)) {
+	echo '<li><a class="fmg_key" href="?mode=list&f='.$l['fmg_id'].'">'.$l['fmg'].'</a></li>';
+	if ($l['fmg_id'] == $_SESSION['f'])
+		$aktuell_name = $l['fmg'];
 }
 ?>
 </ul>
@@ -24,7 +31,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 $erg = select_alle_gruppen();
 while ($l = mysql_fetch_assoc($erg)) {
 	if (gruppe_ist_nicht_leer($l['g_id'])) {
-		echo '<li><a href="liste.php?g='.$l['g_id'].'&titel='.$l['gruppe'].'">'.$l['gruppe'].'</a></li>';
+		echo '<li><a href="?mode=list&g='.$l['g_id'].'&titel='.$l['gruppe'].'">'.$l['gruppe'].'</a></li>';
 	}
 }
 ?>
@@ -34,10 +41,10 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 <div class="nav_item" onmouseover="flipMenu('spezial', 'block');" onmouseout="flipMenu('spezial', 'none');">Spezial<br />
 <ul id="spezial">
-<li><a href="person_anlegen1.php">Neue Person anlegen</a></li>
-<li><a href="index.php">Startseite</a></li>
-<li><a href="alle_geburtstage.php">Geburtstagsliste</a></li>
-<li><a href="ohne_anrede.php">Ohne Anrede</a></li>
+<li><a href="?mode=person_create1">Neue Person anlegen</a></li>
+<li><a href="?mode=main">Startseite</a></li>
+<li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
+<li><a href="?mode=no_title">Ohne Anrede</a></li>
 </ul>
 </div>
 
@@ -54,7 +61,7 @@ foreach ($buchstaben as $b)
 	$erg = mysql_query($sql);
 	if (mysql_num_rows($erg) > 0)
 		{
-		echo '<a href="liste.php?b='.$b.'">';
+		echo '<a href="?mode=list&b='.$b.'">';
 		echo $b;
 		echo '</a>';
 		}
@@ -68,7 +75,7 @@ echo '</div>';
 echo '<div class="nav_item" onmouseover="flipMenu(\'suchbox\', \'block\');" onmouseout="flipMenu(\'suchbox\', \'none\');">Suche<br />';
 echo '<div id="suchbox">';
 ?>
-<form action="suche.php" method="post">
+<form action="?mode=search" method="post">
 <div id="suchfeld"><input type="search" id="suche" name="suche" maxlength="100" />
 
 <input type="image" id="sub_mit" src="eicons/lupe.png" align="middle" title="Suche starten" /></div>
