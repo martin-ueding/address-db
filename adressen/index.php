@@ -17,6 +17,15 @@ else if (empty($mode)) {
 	$mode = 'main';
 }
 
+// setting up gettext
+setlocale(LC_MESSAGES, 'de_DE');
+ 
+bindtextdomain("de", "locale");
+bind_textdomain_codeset("de", "iso-8859-1");
+ 
+textdomain("de");
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -26,7 +35,7 @@ else if (empty($mode)) {
 		<link rel="STYLESHEET" type="text/css" href="css/main.css">
 		<script type="text/javascript" src="js/addressdb_collection.js"></script>
 		
-		<title>PHP Family Address Database</title>
+		<title><?PHP gettext('PHP Family Address Database'); ?></title>
 	</head>
 
 
