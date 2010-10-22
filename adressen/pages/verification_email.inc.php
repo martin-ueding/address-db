@@ -4,9 +4,9 @@ $erg = select_person_alles($id);
 $l = mysql_fetch_assoc($erg);
 
 if ($_GET['sicher'] != 'ja') {
-	echo '<a href="ueberpruefungsmail.php?id='.$id.'&sicher=ja">Sicher</a>';
+	echo '<a href="index.php?mode=verification_email&id='.$id.'&sicher=ja">Sicher</a>';
 	echo '<br /><br />';
-	echo '<a href="personenanzeige.php?id='.$id.'">NICHT SENDEN!</a>';
+	echo '<a href="index.php?mode=person_display&id='.$id.'">NICHT SENDEN!</a>';
 	die();
 }
 
@@ -254,7 +254,7 @@ $titel = 'Bitte überprüfen Sie Ihre Daten';
 $header = "From:$admin_email\n";
 $header .= "Reply-To:$admin_email\n";
 $header .= "return-path:$admin_email\n";
-$header .= "Content-type: text/html; charset=UTF-8\n";
+$header .= "Content-type: text/html; charset=iso-8859-1\n";
 
 // eMail senden
 mail ($email_an, $titel, $mailtext, $header);
