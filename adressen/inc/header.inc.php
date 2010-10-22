@@ -1,3 +1,11 @@
+<div class="nav_item" onmouseover="flipMenu('spezial', 'block');" onmouseout="flipMenu('spezial', 'none');">Men&uuml;<br />
+<ul id="spezial">
+<li><a href="?mode=main">Startseite</a></li>
+<li><a href="?mode=person_create1">Neue Person anlegen</a></li>
+<li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
+<li><a href="?mode=no_title">Ohne Anrede</a></li>
+</ul>
+</div>
 <?PHP
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
@@ -39,14 +47,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 </div>
 
 
-<div class="nav_item" onmouseover="flipMenu('spezial', 'block');" onmouseout="flipMenu('spezial', 'none');">Spezial<br />
-<ul id="spezial">
-<li><a href="?mode=person_create1">Neue Person anlegen</a></li>
-<li><a href="?mode=main">Startseite</a></li>
-<li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
-<li><a href="?mode=no_title">Ohne Anrede</a></li>
-</ul>
-</div>
 
 <div class="nav_item" onmouseover="flipMenu('kartei', 'block');" onmouseout="flipMenu('kartei', 'none');">Auswahl: A-Z<br />
 <?PHP

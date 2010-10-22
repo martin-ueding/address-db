@@ -9,17 +9,19 @@ if (!empty($_GET['b'])) {
 		$sql = 'SELECT * FROM ad_per WHERE nachname like "'.$_GET['b'].'%" ORDER BY nachname, vorname;';
 }
 /* Suche nach Gruppe */
-if (!empty($_GET['g'])) {
+else if (!empty($_GET['g'])) {
 	if ($_SESSION['f'] != 0)
 		$sql = 'SELECT * FROM ad_per, ad_glinks, ad_flinks WHERE ad_glinks.person_lr=p_id && gruppe_lr='.$_GET['g'].' && ad_flinks.person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
 	else
 		$sql = 'SELECT * FROM ad_per, ad_glinks WHERE person_lr=p_id && gruppe_lr='.$_GET['g'].' ORDER BY nachname, vorname;';
 }
 /* Suche nach Bezug */
-if (!empty($_GET['f'])) {
+else if (!empty($_GET['f'])) {
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
 }
-
+else {
+	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id ORDER BY nachname, vorname;';
+}
 /* Daten anzeigen */
 if (!empty($sql)) {
 	echo '<table id="liste">';
