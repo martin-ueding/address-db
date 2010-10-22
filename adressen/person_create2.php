@@ -265,5 +265,5 @@ if (!empty($gruppen)) {
 	}
 }
 
-header('location:?mode=person_display&id='.$p_id);
+header('location:index.php?mode=person_display&id='.$p_id);
 ?>

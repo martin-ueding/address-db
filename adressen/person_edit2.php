@@ -1,7 +1,6 @@
 <?PHP
 include('inc/login.inc.php');
 include('inc/abfragen.inc.php');
-include('inc/anzeigen.inc.php');
 
 $p_id = (int)($_POST['p_id']);
 
@@ -438,7 +437,6 @@ if (!empty($gruppen)) {
 	}
 }
 
-header('location:?mode=person_display&id='.$p_id);
-
+header('location:index.php?mode=person_display&id='.$p_id);
 
 ?>

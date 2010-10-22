@@ -206,8 +206,6 @@ echo '<br /><br />';
 	<br /><br />
 		<h2>Teil 3/3 &ndash; Pers&ouml;nliche Kontaktdaten</h2>
 
-	<form action="person_bearbeiten_speichern3.php" method="post">
-
 	<table>
 		<tr>
 			<td>Email privat:</td>
