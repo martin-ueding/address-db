@@ -104,7 +104,7 @@ echo '</div>';
 	
 	<?PHP
 	if (adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
-		echo '&nbsp;<br /><b>Adress-ƒnderungen gelten f¸r:</b> <br /><br />';
+		echo '&nbsp;<br /><b>Adress-&Auml;nderungen gelten f&uuml;r:</b> <br /><br />';
 		echo '<input type="radio" name="werziehtum" value="einer"';
 		if ($werziehtum == 'einer' || $haushalt == 1)
 			echo ' checked';

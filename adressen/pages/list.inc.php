@@ -52,11 +52,17 @@ if (!empty($sql)) {
 	}
 
 	if (!empty($_GET['f'])) {
+		// get name for person
+		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
+		$name_erg = mysql_query($name_sql);
+		if ($name = mysql_fetch_assoc($name_erg)) {
+			$f_name = $name['fmg'];
+		}
 		if(mysql_num_rows($erg) == 1) {
-			echo 'F&uuml;r <em>'.$titel.'</em> ist '.mysql_num_rows($erg).' Person gespeichert:<br /><br />';
+			echo 'F&uuml;r <em>'.$f_name.'</em> ist '.mysql_num_rows($erg).' Person gespeichert:<br /><br />';
 		}
 		else {
-			echo 'F&uuml;r <em>'.$titel.'</em> sind '.mysql_num_rows($erg).' Personen gespeichert:<br /><br />';
+			echo 'F&uuml;r <em>'.$f_name.'</em> sind '.mysql_num_rows($erg).' Personen gespeichert:<br /><br />';
 		}
 	}
 
