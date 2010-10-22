@@ -18,10 +18,11 @@ $mailtext .= '<style type="text/css">';
 $mailtext .= '</style>';
 
 
-$mailtext .= 'Guten Tag '.$l['vorname'].' '.$l['nachname'].',<br /><br />bitte nehmen Sie sich einen Augenblick und überprüfen Sie die Daten, die im Adressbuch für Sie gespeichert sind. Sind alle Daten korrekt, klicken Sie bitte auf den Link unten in der Email.<br /><br />Wenn Sie etwas korrigieren möchten, antworten Sie bitte einfach auf diese Email und schildern Sie Ihre Änderungen. Ergänzungen (Emailadresse, Geburtsdatum, weitere Telefonnummern oder Chat-Pseudonyme) sind ebenfalls willkommen.<br /><br />Vielen Dank!<br /><br />';
+$mailtext .= 'Guten Tag '.$l['vorname'].' '.$l['nachname'].',<br /><br />bitte nehmen Sie sich einen Augenblick und &uuml;berpr&uuml;fen Sie die Daten, die im Adressbuch f&uuml;r Sie gespeichert sind. Sind alle Daten korrekt, klicken Sie bitte auf den Link unten in der Email.<br /><br />Wenn Sie etwas korrigieren m&ouml;chten, antworten Sie bitte einfach auf diese Email und schildern Sie Ihre &Auml;nderungen. Erg&auml;nzungen (Emailadresse, Geburtsdatum, weitere Telefonnummern oder Chat-Pseudonyme) sind ebenfalls willkommen.<br /><br />Vielen Dank!<br /><br />';
 
 
 
+$mailtext .= "\n";
 $mailtext .= '<div class="pers_titel">';
 $mailtext .= '&nbsp;&nbsp;Name:';
 $mailtext .= '</div>';
@@ -61,6 +62,7 @@ if (!empty($l['geb_t'])) {
 	}
 $mailtext .= '</table>';
 
+$mailtext .= "\n";
 $mailtext .= '<div class="pers_titel">';
 $mailtext .= '&nbsp;&nbsp;Adresse:';
 $mailtext .= '</div>';
@@ -77,6 +79,7 @@ if ($l['adresse_r'] != 1) {
 	$mailtext .= '</td>';
 	$mailtext .= '</tr>';
 }
+$mailtext .= "\n";
 if (!empty($l['ftel_privat'])) {		
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Telefon Privat:</td>';
@@ -84,6 +87,7 @@ if (!empty($l['ftel_privat'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['ftel_arbeit'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Telefon Arbeit:</td>';
@@ -91,6 +95,7 @@ if (!empty($l['ftel_arbeit'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['ftel_mobil'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Handy: <i>'.handybetreiber(select_vw_id($l['vw_mobil_r'])).'</i></td>';
@@ -98,6 +103,7 @@ if (!empty($l['ftel_mobil'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['ftel_fax'])) {		
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Fax:</td>';
@@ -105,6 +111,7 @@ if (!empty($l['ftel_fax'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['ftel_aux'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Telefon Sonstiges:</td>';
@@ -114,11 +121,13 @@ if (!empty($l['ftel_aux'])) {
 
 $mailtext .= '</table>';
 
+$mailtext .= "\n";
 $mailtext .= '<div class="pers_titel">';
 $mailtext .= '&nbsp;&nbsp;Telefon:';
 $mailtext .= '</div>';
 $mailtext .= '<table id="telefon">';
 
+$mailtext .= "\n";
 if (!empty($l['tel_privat'])) {		
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Privat:</td>';
@@ -126,6 +135,7 @@ if (!empty($l['tel_privat'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['tel_arbeit'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Arbeit:</td>';
@@ -133,6 +143,7 @@ if (!empty($l['tel_arbeit'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['tel_mobil'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Handy: <i>'.handybetreiber(select_vw_id($l['vw_mobil_r'])).'</i></td>';
@@ -140,6 +151,7 @@ if (!empty($l['tel_mobil'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['tel_fax'])) {		
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Fax:</td>';
@@ -147,6 +159,7 @@ if (!empty($l['tel_fax'])) {
 	$mailtext .= '</tr>';
 }
 
+$mailtext .= "\n";
 if (!empty($l['tel_aux'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Sonstiges:</td>';
@@ -154,7 +167,8 @@ if (!empty($l['tel_aux'])) {
 	$mailtext .= '</tr>';
 }
 $mailtext .= '</table>';
-		
+
+$mailtext .= "\n";		
 
 $mailtext .= '<div class="pers_titel">';
 $mailtext .= '&nbsp;&nbsp;Internet:';
@@ -166,24 +180,28 @@ if (!empty($l['email_privat'])) {
 	$mailtext .= '<td class="rechts"><a href="mailto:'.$l['email_privat'].'">'.$l['email_privat'].'</a></td>';
 	$mailtext .= '</tr>';
 }
+$mailtext .= "\n";
 if (!empty($l['email_arbeit'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Email Arbeit:</td>';
 	$mailtext .= '<td><a href="mailto:'.$l['email_arbeit'].'">'.$l['email_arbeit'].'</a></td>';
 	$mailtext .= '</tr>';
 }
+$mailtext .= "\n";
 if (!empty($l['email_aux'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Email Sonstiges:</td>';
 	$mailtext .= '<td><a href="mailto:'.$l['email_aux'].'">'.$l['email_aux'].'</a></td>';
 	$mailtext .= '</tr>';
 }
+$mailtext .= "\n";
 if (!empty($l['hp1'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Homepage 1:</td>';
 	$mailtext .= '<td><a href="http://'.$l['hp1'].'" target="_blank">'.$l['hp1'].'</a></td>';
 	$mailtext .= '</tr>';
 }
+$mailtext .= "\n";
 if (!empty($l['hp2'])) {	
 	$mailtext .= '<tr>';
 	$mailtext .= '<td class="links">Homepage 2:</td>';
@@ -232,6 +250,7 @@ if (!empty($l['chat_aux'])) {
 		
 $mailtext .= '</table>';
 
+$mailtext .= "\n";
 
 $mailtext .= 'Bitte klicken Sie hier, wenn die Daten aktuell sind:<br /><br />'."\n".'<a href="'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($l['last_check']).'">'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($l['last_check']).'</a>';
 
@@ -247,7 +266,7 @@ else
 
 
 // eMaildaten angeben
-$titel = 'Bitte überprüfen Sie Ihre Daten';
+$titel = 'Bitte �berpr�fen Sie Ihre Daten';
 
 
 // Header erzeugen
