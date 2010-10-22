@@ -20,7 +20,7 @@ else if (!empty($_GET['f'])) {
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
 }
 else {
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id ORDER BY nachname, vorname;';
+	$sql = 'SELECT * FROM ad_per ORDER BY nachname, vorname;';
 }
 /* Daten anzeigen */
 if (!empty($sql)) {

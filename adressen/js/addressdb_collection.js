@@ -9,4 +9,8 @@ function _switch(object) {
 
 function flipMenu(what, how) {
    document.getElementById(what).style.display = how;
+
+   if (what != "suchbox") {
+	   document.getElementById("suchbox").style.display = "none";
+   }
 }	   

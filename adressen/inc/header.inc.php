@@ -72,7 +72,8 @@ foreach ($buchstaben as $b)
 echo '</div>';
 echo '</div>';
 
-echo '<div class="nav_item" onmouseover="flipMenu(\'suchbox\', \'block\');" onmouseout="flipMenu(\'suchbox\', \'none\');">Suche<br />';
+# onmouseout="flipMenu(\'suchbox\', \'none\');"
+echo '<div class="nav_item" onmouseover="flipMenu(\'suchbox\', \'block\');">Suche<br />';
 echo '<div id="suchbox">';
 ?>
 <form action="?mode=search" method="post">
