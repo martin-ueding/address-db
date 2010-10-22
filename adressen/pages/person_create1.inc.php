@@ -139,8 +139,6 @@ echo '<br /><br />';
 	</div>
 	<h2>Teil 3/3 &ndash; Pers&ouml;nliche Kontaktdaten</h2>
 
-	<form action="person_anlegen_speichern3.php" method="post">
-
 	<table>
 		<tr>
 			<td>Email privat:</td>

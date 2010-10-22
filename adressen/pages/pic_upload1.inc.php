@@ -39,7 +39,7 @@ if ($_GET['fertig'] == 'ja') {
 
 	Nur .JPG!
 
-	<form enctype="multipart/form-data" action=?mode=pic_upload1&fertig=ja" method="post"> 
+	<form enctype="multipart/form-data" action="index.php?mode=pic_upload1&fertig=ja" method="post"> 
 	<input type="file" name="file">
 	<input type="submit" value="Hochladen">
 	<?PHP
