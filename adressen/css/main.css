@@ -224,9 +224,12 @@ A:HOVER {
 	top: 0px;
 	left: 0px;
 	text-align: center;
-	border-bottom: 1px solid #AAA;
-	border-left: 1px solid #CCC;
-	margin-right: 5px;
+	border-top: 1px solid #CCC; /* TEST */
+	border-left: 1px solid #CCC; /* TEST */
+	border-right: 1px solid #000; /* TEST */
+	border-bottom: 1px solid #000; /* TEST */
+	margin: 5px 5px 0 0;
+	background-color: rgb(255, 230, 153);
 }
 
 #mitglieder, #gruppen, #spezial, #suchbox {
@@ -569,16 +572,22 @@ DIV.geb_monat_kasten {
 	background-color: rgb(230,230,230);
 }
 
-TABLE#liste {
+#liste {
 	margin: 0px;
 	padding: 0px;
-	background-color: #FFF;
 }
 
-TABLE#liste TD {
+#liste TD {
 	margin: 0px;
-	padding-right: 5px;
-	background-color: #FFF;
-	border-bottom: 1px solid #EEE;
+	padding: 2px 5px;
+//	border-bottom: 1px solid #EEE;
+}
+
+#liste TR.hell {
+	background-color: rgb(255, 255, 255);
+}
+
+#liste TR.dunkel {
+	background-color: rgb(240, 240, 240);
 }
 
