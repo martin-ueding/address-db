@@ -1,4 +1,4 @@
-<div class="nav_item" onmouseover="flipMenu('spezial', 'block');" onmouseout="flipMenu('spezial', 'none');">Men&uuml;<br />
+<div class="nav_item" onclick="_switch('spezial');">Men&uuml;<br />
 <ul id="spezial">
 <li><a href="?mode=main">Startseite</a></li>
 <li><a href="?mode=person_create1">Neue Person anlegen</a></li>
@@ -17,7 +17,7 @@ if ($aktuell_name == "")
 	$aktuell_name = 'Alle';
 ?>
 
-<div class="nav_item" onmouseover="flipMenu('mitglieder', 'block');" onmouseout="flipMenu('mitglieder', 'none');">Modus: <?PHP echo $aktuell_name; ?><br />
+<div class="nav_item" onclick="_switch('mitglieder');">Modus: <?PHP echo $aktuell_name; ?><br />
 <ul id="mitglieder">
 <?PHP
 if ($_SESSION['f'] != 0)
@@ -33,7 +33,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 </ul>
 </div>
 
-<div class="nav_item" onmouseover="flipMenu('gruppen', 'block');" onmouseout="flipMenu('gruppen', 'none');">Gruppen<br />
+<div class="nav_item" onclick="_switch('gruppen');">Gruppen<br />
 <ul id="gruppen">
 <?PHP
 $erg = select_alle_gruppen();
@@ -48,7 +48,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 
 
-<div class="nav_item" onmouseover="flipMenu('kartei', 'block');" onmouseout="flipMenu('kartei', 'none');">Auswahl: A-Z<br />
+<div class="nav_item" onclick="_switch('kartei');">Auswahl: A-Z<br />
 <?PHP
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';
@@ -72,8 +72,7 @@ foreach ($buchstaben as $b)
 echo '</div>';
 echo '</div>';
 
-# onmouseout="flipMenu(\'suchbox\', \'none\');"
-echo '<div class="nav_item" onmouseover="flipMenu(\'suchbox\', \'block\');">Suche<br />';
+echo '<div class="nav_item" onclick="_switch(\'suchbox\');">Suche<br />';
 echo '<div id="suchbox">';
 ?>
 <form action="?mode=search" method="post">
