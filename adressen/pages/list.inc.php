@@ -85,7 +85,7 @@ if (!empty($_GET['f'])) {
 
 if (!empty($emailadressen)) { 
 	echo '<br /><br />';
-	echo '<a href="mailto:'.implode(',', $emailadressen).'">Email an alle</a>';
+	echo '<a href="mailto:?bcc='.implode(',', $emailadressen).'">Email an alle</a>';
 }
 
 ?>
