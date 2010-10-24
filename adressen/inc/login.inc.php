@@ -6,7 +6,7 @@ $passwd = '4tSMp7EVVDqLgbu';
 $db = 'adressdb-redesign';
 
 // URL to Server with tailing slash
-$url_to_server = 'http://www.example.com/';
+$url_to_server = 'http://localhost:8888/Anwendungen/AdressDB-redesign/';
 
 $admin_email = 'example@example.com';
 

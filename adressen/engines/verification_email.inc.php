@@ -278,5 +278,6 @@ $header .= "Content-type: text/html; charset=iso-8859-1\n";
 // eMail senden
 mail ($email_an, $titel, $mailtext, $header);
 
-header('location:personenanzeige.php?id='.$id);
+// get back to person_display
+$mode = 'person_display';
 ?>

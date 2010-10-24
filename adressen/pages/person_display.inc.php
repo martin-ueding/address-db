@@ -1,11 +1,13 @@
 <?PHP
-
-$id = $_GET["id"];
+if (empty($id)) {
+	$id = $_GET["id"];
+}
 $erg = select_person_alles($id);
 $l = mysql_fetch_assoc($erg);
-if (file_exists('bilder/per'.$id.'.jpg')) {
-	$bilddaten = getimagesize('bilder/per'.$id.'.jpg');
-	echo '<img id="pers_bild" src="bilder/per'.$id.'.jpg" '.$bilddaten[3].' />';
+$mugshot_path = '_mugshots/per'.$id.'.jpg';
+if (file_exists($mugshot_path)) {
+	$bilddaten = getimagesize('_mugshots/per'.$id.'.jpg');
+	echo '<img id="pers_bild" src="_mugshots/per'.$id.'.jpg" '.$bilddaten[3].' />';
 }
 
 $emailadresse_vorhanden = false;
@@ -317,14 +319,14 @@ echo '</tr>';
 			
 echo '</table>';
 
-echo '<a href="?mode=person_edit1&id='.$_GET['id'].'" title="Diese Person bearbeiten"><img src="eicons/person_bearbeiten.png" width="64" height="64" alt="Diese Person bearbeiten" border="0" /></a>';
-echo '<a href="?mode=person_delete&id='.$_GET['id'].'" title="Diese Person l&ouml;schen"><img src="eicons/person_loeschen.png" width="64" height="64" alt="Diese Person l&ouml;schen" border="0" /></a>';
+echo '<a href="?mode=person_edit1&id='.$id.'" title="Diese Person bearbeiten"><img src="eicons/person_bearbeiten.png" width="64" height="64" alt="Diese Person bearbeiten" border="0" /></a>';
+echo '<a href="?mode=person_delete&id='.$id.'" title="Diese Person l&ouml;schen"><img src="eicons/person_loeschen.png" width="64" height="64" alt="Diese Person l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-echo '<a href="?mode=pic_upload1&id='.$_GET['id'].'" title="Bild hochladen"><img src="eicons/foto_upload.png" width="64" height="64" alt="Bild hochladen" border="0" /></a>';
-if (file_exists('bilder/per'.$_GET['id'].'.jpg'))
-	echo '<a href="?mode=pic_remove&id='.$_GET['id'].'" title="Bild l&ouml;schen"><img src="eicons/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
+echo '<a href="?mode=pic_upload1&id='.$id.'" title="Bild hochladen"><img src="eicons/foto_upload.png" width="64" height="64" alt="Bild hochladen" border="0" /></a>';
+if (file_exists('bilder/per'.$id.'.jpg'))
+	echo '<a href="?mode=pic_remove&id='.$id.'" title="Bild l&ouml;schen"><img src="eicons/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 
-echo '<a href="vcard.php?id='.$_GET['id'].'" title="VCard"><img src="eicons/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';
+echo '<a href="vcard.php?id='.$id.'" title="VCard"><img src="eicons/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';
 	
 ?>

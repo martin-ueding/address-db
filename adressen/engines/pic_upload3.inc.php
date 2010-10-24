@@ -1,14 +1,13 @@
 <?PHP
-
-include('inc/varclean.inc.php');
-
-$x1 = $_GET['x1'];
-$x2 = $_GET['x2'];
-$y1 = $_GET['y1'];
-$y2 = $_GET['y2'];
+$x1 = (int)$_GET['x1'];
+$x2 = (int)$_GET['x2'];
+$y1 = (int)$_GET['y1'];
+$y2 = (int)$_GET['y2'];
 
 $bildpfad = $_GET['bild'];
-$nummer = substr($_GET['bild'], 11, strlen($_GET['bild'])-15);
+$nummer = substr($_GET['bild'], 14, strlen($_GET['bild'])-18);
+# _mugshots/temp1.jpg
+$id = $nummer;
 
 $bildalt = imagecreatefromjpeg($bildpfad);
 $bildneu = imagecreatetruecolor(300, 450);
@@ -16,6 +15,7 @@ $bildneu = imagecreatetruecolor(300, 450);
 $auswahl_breite = $x2-$x1;
 $auswahl_hoehe = $y2-$y1;
 
+// calculate the height and width for the picture so that it does not exceed 300 px in width
 if ($auswahl_breite > 300) {
 	$tar_breite = 300;
 	$tar_hoehe = round(300.0/$auswahl_breite * $auswahl_hoehe);
@@ -28,16 +28,15 @@ else {
 
 $bildneu = imagecreatetruecolor($tar_breite, $tar_hoehe);
 
+// crop and resize the uploaded image the way the Java applet told
 imagecopyresampled($bildneu, $bildalt, 0, 0, $x1, $y1, $tar_breite, $tar_hoehe, $auswahl_breite, $auswahl_hoehe);	
 
+
+// save the new, cropped picture and delete the old one
 imagedestroy($bildalt);
-
-header("Content-Type: image/jpeg");
-imagejpeg($bildneu, 'bilder/per'.$nummer.'.jpg', 75);
-
+imagejpeg($bildneu, '_mugshots/per'.$nummer.'.jpg', 75);
 imagedestroy($bildneu);
-
 unlink($bildpfad);
 
-header('location:personenanzeige.php?time='.time().'&id='.$nummer);
+$mode = 'person_display';
 ?>

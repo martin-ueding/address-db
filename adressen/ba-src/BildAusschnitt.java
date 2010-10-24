@@ -91,7 +91,7 @@ public class BildAusschnitt extends Applet {
 	
 	void geheWeiter() {
 		try {
-			getAppletContext().showDocument(new URL(getParameter("zieladresse") + "?bild="+getParameter("bildurl")+"&x1="+(int)bPanel.links+"&y1="+(int)bPanel.oben+"&x2="+(int)bPanel.rechts+"&y2="+(int)bPanel.unten));
+			getAppletContext().showDocument(new URL(getParameter("zieladresse") + "&bild="+getParameter("bildurl")+"&x1="+(int)bPanel.links+"&y1="+(int)bPanel.oben+"&x2="+(int)bPanel.rechts+"&y2="+(int)bPanel.unten));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
