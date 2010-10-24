@@ -313,7 +313,7 @@ echo '<div>';
 echo '<br />Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
 
 if ($letzter_check_vor > 7 && $emailadresse_vorhanden)
-	echo '<br /><a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail direkt senden</a>';
+	echo '<br /><a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
 echo '</td>';
 echo '</tr>';
 			
