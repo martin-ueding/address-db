@@ -25,7 +25,7 @@ else if (empty($mode)) {
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<link rel="STYLESHEET" type="text/css" href="css/main.css">
 		<script type="text/javascript" src="js/addressdb_collection.js"></script>
-		
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />	
 		<title>PHP Family Address Database</title>
 	</head>
 
