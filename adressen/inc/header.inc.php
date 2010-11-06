@@ -72,16 +72,10 @@ foreach ($buchstaben as $b)
 echo '</div>';
 echo '</div>';
 
-echo '<div class="nav_item" onclick="_switch(\'suchbox\');">Suche<br />';
-echo '<div id="suchbox">';
+echo '<div class="nav_item">';
 ?>
-<form action="?mode=search" method="post">
-<div id="suchfeld"><input type="search" id="suche" name="suche" maxlength="100" />
-
-<input type="image" id="sub_mit" src="eicons/lupe.png" align="middle" title="Suche starten" /></div>
-</form>
+<form action="index.php?mode=search" method="post"><input type="search" id="suche" name="suche" maxlength="100" /><input type="image" value="suchen" id="suche_button" src="eicons/lupe.png" /></form>
 <?PHP
-echo '</div>';
 echo '</div>';
 ?>
 
