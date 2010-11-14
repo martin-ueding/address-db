@@ -188,6 +188,12 @@ A:HOVER {
 	padding: 0 2px 0 2px;
 }
 
+#messages {
+padding: 10px;
+background-color: #B3E6FF;
+margin: 10px 20px 10px 0px;
+border: 1px solid #66CCFF;
+}
 
 /*.NAVIGATION.*/
 

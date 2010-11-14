@@ -6,7 +6,7 @@ $person_loop = $l;
 
 if ($_GET['sicher'] == 'ja') {
 	if ($l['last_send'] > time()-24*3600) {
-		echo 'Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.';
+		$msgs[] = 'Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.';
 	}
 	else {
 		$mailtext .= '<style type="text/css">';
@@ -278,8 +278,10 @@ if ($_GET['sicher'] == 'ja') {
 
 
 		// enter the sending of the mail into the database
-		$sql = 'UPDATE ad_per SET last_send='.time().' WHERE per_id='.$id.';';
+		$sql = 'UPDATE ad_per SET last_send='.time().' WHERE p_id='.$id.';';
 		mysql_query($sql);
+
+		$msgs[] = 'Die Überprüfungsmail wurde verschickt.';
 	}
 	// get back to person_display
 	$mode = 'person_display';

@@ -57,6 +57,15 @@ if ($mode == 'pic_upload3') {
 	// display header
 	include('inc/header.inc.php');
 
+	if (count($msgs) > 0) {
+		echo '<div id="messages">';
+		foreach ($msgs as $msg) {
+			echo $msg;
+			echo '<br />';
+		}
+		echo '</div>';
+	}	
+
 	include('pages/'.$mode.'.inc.php');
 	?>
 

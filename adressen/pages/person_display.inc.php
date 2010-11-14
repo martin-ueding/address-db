@@ -312,14 +312,14 @@ echo '<div>';
 
 echo '<br />Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
 
-if ($emailadresse_vorhanden) {
+if ($emailadresse_vorhanden && $last_send < time()-24*3600) {
 	echo '<br /><a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
 	if ($last_send != 0) {
 		echo ' (letzte vom '.date($date_format, $last_send).')';
 	}
-	if ($check < $last_send) {
-		echo '<br />Mail gesendet, Überprüfung ausstehend';
-	}
+}
+if ($check < $last_send) {
+	echo '<br />Mail gesendet, Überprüfung ausstehend';
 }
 echo '</td>';
 echo '</tr>';
