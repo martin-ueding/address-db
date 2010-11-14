@@ -253,7 +253,7 @@ if (!empty($l['pnotizen'])) {
 }
 
 $check = $l['last_check'];
-		
+$last_send = $l['last_send'];
 
 //		Gruppen
 echo '<div class="pers_titel">';
@@ -304,7 +304,7 @@ else {
 }
 
 for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
-	echo '<img src="eicons/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt am '.date("d.m.y", $check).' (vor '.$letzter_check_vor.' Tagen) überprüft." />';
+	echo '<img src="eicons/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt am '.date($date_format, $check).' (vor '.$letzter_check_vor.' Tagen) überprüft." />';
 }
 	
 echo '<div>';
@@ -312,8 +312,15 @@ echo '<div>';
 
 echo '<br />Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
 
-if ($letzter_check_vor > 7 && $emailadresse_vorhanden)
+if ($emailadresse_vorhanden) {
 	echo '<br /><a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
+	if ($last_send != 0) {
+		echo ' (letzte vom '.date($date_format, $last_send).')';
+	}
+	if ($check < $last_send) {
+		echo '<br />Mail gesendet, Überprüfung ausstehend';
+	}
+}
 echo '</td>';
 echo '</tr>';
 			

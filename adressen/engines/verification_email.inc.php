@@ -274,5 +274,9 @@ if ($_GET['sicher'] == 'ja') {
 
 	// get back to person_display
 	$mode = 'person_display';
+
+	// enter the sending of the mail into the database
+	$sql = 'UPDATE ad_per SET last_send='.time().' WHERE per_id='.$id.';';
+	mysql_query($sql);
 }
 ?>
