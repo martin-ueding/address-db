@@ -24,17 +24,7 @@ else {
 }
 /* Daten anzeigen */
 if (!empty($sql)) {
-	echo '<table id="liste" cellpadding="0" cellspacing="0">';
 	
-	$erg = mysql_query($sql);
-	$i = 0;
-	while ($l = mysql_fetch_assoc($erg)) {
-		echo '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'">';
-		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['nachname'].'</a></td>';
-
-		echo '</tr>';
-		$emailadressen[] = $l['email_privat'];
-	}
 
 	if (!empty($_GET['b'])) {
 		if(mysql_num_rows($erg) == 1) {
@@ -69,6 +59,16 @@ if (!empty($sql)) {
 		}
 	}
 
+	echo '<table id="liste" cellpadding="0" cellspacing="0">';
+	$erg = mysql_query($sql);
+	$i = 0;
+	while ($l = mysql_fetch_assoc($erg)) {
+		echo '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'">';
+		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['nachname'].'</a></td>';
+
+		echo '</tr>';
+		$emailadressen[] = $l['email_privat'];
+	}
 	echo '</table>';
 }
 
