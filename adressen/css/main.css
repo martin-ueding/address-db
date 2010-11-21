@@ -25,7 +25,8 @@ body.maske TABLE {
 	width: 596px;
 }
 
-body.maske TABLE TR {}
+body.maske TABLE TR {
+}
 
 body.maske TABLE TH {
 	padding: 3px 3px 3px 10px;
@@ -121,14 +122,15 @@ A:HOVER {
 	color: rgb(209,31,57);
 }
 
-
-
 /*.KOPF.*/
 /*.Karteireiter-Darstellung oben.*/
 
 #kartei {
 	margin: 0px;
-	display: none;
+	position: absolute;
+top: 0px;
+right: 6px;
+width:25px;
 }
 
 #kartei A, #kartei SPAN {
@@ -168,7 +170,6 @@ A:HOVER {
 	background-color: rgb(204,0,0);
 	font-weight: bold;
 }
-
 
 
 #suche {
@@ -286,13 +287,9 @@ border: 1px solid #66CCFF;
 	font-weight: bold;
 }
 
-#gruppen {
-}
-
 #gruppen LI {
 	margin: 4px 0 0 0;
 }
-
 
 #gruppen LI A {
 	display: block;
@@ -327,7 +324,9 @@ border: 1px solid #66CCFF;
 #spezial {
 }
 
-#spezial LI {margin: 4px 0 0 0;}
+#spezial LI {
+	margin: 4px 0 0 0;
+}
 
 #spezial LI A {
 	display: block;
@@ -359,9 +358,6 @@ border: 1px solid #66CCFF;
 	font-weight: bold;
 }
 
-
-
-/* .MAIN.PHP = EINSTIEGSSEITE. */
 /*.GEBURTSTAGE.*/
 
 #geburtstag {
@@ -385,23 +381,8 @@ border: 1px solid #66CCFF;
 }
 
 
-
-/* TUEV Tabelle */
-
-#hu_tabelle {
-	margin: 20px;
-	border-collapse: collapse;
-}
-
-#hu_tabelle TD {
-	padding: 5px 2px;
-	border-bottom: 1px solid #808080;
-}
-
-
 /* .Deklarationen fuer die Personendarstellung. */
 
-/*.TABLE {border-collapse: collapse;}.*/
 TR {
 	vertical-align: top;
 	background-color: rgb(230,230,230);
@@ -442,7 +423,8 @@ TD {
 #name TD.links {
 	width: 150px;
 }
-#name TD.rechts {}
+#name TD.rechts {
+}
 
 #adresse {
 	margin: 0 0 20px 0;
@@ -456,7 +438,8 @@ TD {
 #adresse TD.links {
 	width: 150px;
 }
-#adresse TD.rechts {}
+#adresse TD.rechts {
+}
 
 #telefon {
 	margin: 0 0 20px 0;
@@ -470,7 +453,8 @@ TD {
 #telefon TD.links {
 	width: 150px;
 }
-#telefon TD.rechts {}
+#telefon TD.rechts {
+}
 
 #online {
 	margin: 0 0 20px 0;
@@ -484,7 +468,8 @@ TD {
 #online TD.links {
 	width: 150px;
 }
-#online TD.rechts {}
+#online TD.rechts {
+}
 
 TD.icon {
 	width: 12px;
@@ -502,7 +487,8 @@ TD.icon {
 #notizen TD.links {
 	width: 150px;
 }
-#notizen TD.rechts {}
+#notizen TD.rechts {
+}
 
 #gruppen2 {
 	margin: 0 0 20px 0;
@@ -516,7 +502,8 @@ TD.icon {
 #gruppen2 TD.links {
 	width: 150px;
 }
-#gruppen2 TD.rechts {}
+#gruppen2 TD.rechts {
+}
 
 
 /* .. */

@@ -48,7 +48,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 
 
-<div class="nav_item" onclick="_switch('kartei');">Auswahl: A-Z<br />
 <?PHP
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';
@@ -69,7 +68,6 @@ foreach ($buchstaben as $b)
 		{echo '<span>'.$b.'</span>';}
 	echo ' ';
 	}
-echo '</div>';
 echo '</div>';
 
 echo '<div class="nav_item">';
