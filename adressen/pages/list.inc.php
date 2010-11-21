@@ -67,7 +67,17 @@ if (!empty($sql)) {
 		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['nachname'].'</a></td>';
 
 		echo '</tr>';
-		$emailadressen[] = $l['email_privat'];
+
+		// collect email address from everybody to send off a mass email
+		if ($l['email_privat'] != "") {
+			$emailadressen[] = $l['email_privat'];
+		}
+		else if ($l['email_arbeit'] != "") {
+			$emailadressen[] = $l['email_arbeit'];
+		}
+		else if ($l['email_aux'] != "") {
+			$emailadressen[] = $l['email_aux'];
+		}
 	}
 	echo '</table>';
 }
