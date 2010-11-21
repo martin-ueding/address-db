@@ -4,6 +4,10 @@ if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
 
+if (isset($_GET['id'])) {
+	$id = (int)$_GET['id'];
+}
+
 // include libs
 include('inc/login.inc.php');
 include('inc/abfragen.inc.php');
