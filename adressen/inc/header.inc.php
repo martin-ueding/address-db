@@ -51,23 +51,21 @@ while ($l = mysql_fetch_assoc($erg)) {
 <?PHP
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';
-foreach ($buchstaben as $b)
-	{
+foreach ($buchstaben as $b) {
 	if ($_SESSION['f'] != 0)
 		$sql = 'SELECT p_id FROM ad_per, ad_flinks WHERE nachname like "'.$b.'%" && person_lr=p_id && fmg_lr='.$_SESSION['f'].';';
 	else
 		$sql = 'SELECT p_id FROM ad_per WHERE nachname like "'.$b.'%";';
 	$erg = mysql_query($sql);
-	if (mysql_num_rows($erg) > 0)
-		{
+	if (mysql_num_rows($erg) > 0) {
 		echo '<a href="?mode=list&b='.$b.'">';
 		echo $b;
 		echo '</a>';
-		}
-	else
-		{echo '<span>'.$b.'</span>';}
-	echo ' ';
 	}
+	else {
+		echo '<span>'.$b.'</span>';
+	}
+}
 echo '</div>';
 
 echo '<div class="nav_item">';
