@@ -306,29 +306,33 @@ else {
 }
 
 for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
-	echo '<img src="eicons/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt am '.date($date_format, $check).' (vor '.$letzter_check_vor.' Tagen) überprüft." />';
+	echo '<img src="eicons/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt '.intelligent_date($check).' (vor '.$letzter_check_vor.' Tagen) überprüft." />';
 }
 	
 echo '<div>';
 	
-
 echo 'Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
+echo '</td>';
+echo '</tr>';
+
+echo '<tr>';
+echo '<td class="links">&Uuml;berpr&uuml;fungsmail:</td>';
+echo '<td>';
 
 if ($emailadresse_vorhanden && $last_send < time()-24*3600) {
-	echo '<br /><a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
+	echo '<a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
 	if ($last_send != 0) {
 		echo ' (letzte vom '.date($date_format, $last_send).')';
 	}
 }
 if ($check < $last_send) {
-	echo '<br />Mail gesendet, Überprüfung ausstehend';
+	echo '<br />Mail '.intelligent_date($last_send),' gesendet, Überprüfung ausstehend';
 }
 echo '</td>';
 echo '</tr>';
 echo '<tr>';
-echo '<td>Zuletzt editiert:</td>';
-// TODO add intelligent date like "five minutes ago"
-echo '<td>'.date($time_format, $last_edit).'</td>';
+echo '<td class="links">Zuletzt editiert:</td>';
+echo '<td>'.intelligent_date($last_edit).'</td>';
 echo '</td>';
 			
 echo '</table>';
