@@ -52,7 +52,6 @@ echo 'Suche nach  dem Begriff <em>[ '.$suche.' ]</em> brachte '.mysql_num_rows($
 }
 /* .. */
 while ($l = mysql_fetch_assoc($erg)) {
-	// TODO display with table like in list.inc.php
 	echo '<a href="?mode=person_display&id='.$l['p_id'].'">&raquo; '.$l['vorname'].' '.$l['nachname'].'</a><br />';
 }
 
