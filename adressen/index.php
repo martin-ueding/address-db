@@ -55,7 +55,7 @@ if ($mode == 'pic_upload3') {
 		<script type="text/javascript">
 			$(document).ready(function(){
 				// fade out the messages box
-				$("#messages").fadeOut(0).fadeIn(500).delay(5000).hide(1000);
+				$("#messages").fadeOut(0).fadeIn(500).delay(5000).slideUp(1000);
 			});
 		</script>
 		
