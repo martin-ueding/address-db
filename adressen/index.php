@@ -50,7 +50,16 @@ if ($mode == 'pic_upload3') {
 		<meta charset="ISO-8859-1"  />
 		<link rel="STYLESHEET" type="text/css" href="css/main.css">
 		<script type="text/javascript" src="js/addressdb_collection.js"></script>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />	
+
+		<script src="http://jquery.com/src/jquery-latest.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// fade out the messages box
+				$("#messages").fadeOut(0).fadeIn(500).delay(5000).hide(1000);
+			});
+		</script>
+		
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		<title>PHP Family Address Database</title>
 	</head>
 
