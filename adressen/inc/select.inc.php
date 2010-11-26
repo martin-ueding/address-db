@@ -169,15 +169,15 @@ function show_select_zahlen ($name, $aktiv, $start, $ende, $normal) {
 }
 
 
-function show_telefon_eingabe ($typ, $familie) {
+function show_telefon_eingabe ($typ, $familie, $loop) {
 	if ($familie)
 		$p = 'f';
 	else
 		$p = '';
 	
-	echo '<input type="text" name="'.$p.'vw_'.$typ.'_eingabe" value="'.$_SESSION[$p.'vw_'.$typ.'_eingabe'].'" size="5" maxlength="20" />'; 
-	show_select_vorwahlen($p.'vw_'.$typ.'_id', $_SESSION[$p.'vw_'.$typ.'_id']);
-	echo '<input type="text" name="'.$p.'tel_'.$typ.'" value="'.$_SESSION[$p.'tel_'.$typ].'" size="30" maxlength="100" />';
+	echo '<input type="text" name="'.$p.'vw_'.$typ.'_eingabe" value="'.$loop[$p.'vw_'.$typ.'_eingabe'].'" size="5" maxlength="20" />'; 
+	show_select_vorwahlen($p.'vw_'.$typ.'_id', $loop[$p.'vw_'.$typ.'_r']);
+	echo '<input type="text" name="'.$p.'tel_'.$typ.'" value="'.$loop[$p.'tel_'.$typ].'" size="30" maxlength="100" />';
 
 }
 ?>

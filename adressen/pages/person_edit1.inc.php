@@ -179,23 +179,23 @@ echo '<br /><br />';
 	<table>
 		<tr>
 			<td>Privat:</td>
-			<td><?PHP show_telefon_eingabe('privat', true) ?></td>
+			<td><?PHP show_telefon_eingabe('privat', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Arbeit:</td>
-			<td><?PHP show_telefon_eingabe('arbeit', true) ?></td>
+			<td><?PHP show_telefon_eingabe('arbeit', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Mobil:</td>
-			<td><?PHP show_telefon_eingabe('mobil', true) ?></td>
+			<td><?PHP show_telefon_eingabe('mobil', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Fax:</td>
-			<td><?PHP show_telefon_eingabe('fax', true) ?></td>
+			<td><?PHP show_telefon_eingabe('fax', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Aux:</td>
-			<td><?PHP show_telefon_eingabe('aux', true) ?></td>
+			<td><?PHP show_telefon_eingabe('aux', true, $person_loop) ?></td>
 		</tr>
 	</table>
 		
@@ -230,23 +230,23 @@ echo '<br /><br />';
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td>Privat:</td>
-			<td><?PHP show_telefon_eingabe('privat', false) ?></td>
+			<td><?PHP show_telefon_eingabe('privat', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Arbeit:</td>
-			<td><?PHP show_telefon_eingabe('arbeit', false) ?></td>
+			<td><?PHP show_telefon_eingabe('arbeit', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Mobil:</td>
-			<td><?PHP show_telefon_eingabe('mobil', false) ?></td>
+			<td><?PHP show_telefon_eingabe('mobil', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Fax:</td>
-			<td><?PHP show_telefon_eingabe('fax', false) ?></td>
+			<td><?PHP show_telefon_eingabe('fax', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td>Aux:</td>
-			<td><?PHP show_telefon_eingabe('aux', false) ?></td>
+			<td><?PHP show_telefon_eingabe('aux', false, $person_loop) ?></td>
 		</tr>
 		
 		<tr><td colspan="2">&nbsp;</td></tr>
