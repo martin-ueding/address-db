@@ -1,5 +1,5 @@
 <?PHP
-include('inc/login.inc.php');
+include('_config.inc.php');
 include('inc/abfragen.inc.php');
 
 // Speichern Gruppe 1
