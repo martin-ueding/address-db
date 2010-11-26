@@ -11,6 +11,7 @@ $url_to_server = 'http://localhost:8888/Anwendungen/AdressDB-redesign/';
 $admin_email = 'example@example.com';
 
 $date_format = 'd.m.Y';
+$time_format = 'd.m.Y H:i:s';
 
 // ---
 

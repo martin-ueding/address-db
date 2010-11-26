@@ -229,6 +229,8 @@ if (!empty($chat_skype)) $sql .= ', chat_skype="'.$chat_skype.'"';
 if (!empty($chat_aux)) $sql .= ', chat_aux="'.$chat_aux.'"';
 if (!empty($pnotizen)) $sql .= ', pnotizen="'.$pnotizen.'"';
 
+$sql .= ', last_edit='.time();
+
 $sql .= ';';
 
 mysql_query($sql);

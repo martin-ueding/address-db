@@ -404,6 +404,8 @@ $sql .= ', chat_skype="'.$chat_skype.'"';
 $sql .= ', chat_aux="'.$chat_aux.'"';
 $sql .= ', pnotizen="'.$pnotizen.'"';
 
+$sql .= ', last_edit='.time();
+
 $sql .= ' WHERE p_id='.$p_id.';';
 
 mysql_query($sql);

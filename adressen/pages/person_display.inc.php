@@ -252,8 +252,10 @@ if (!empty($l['pnotizen'])) {
 	echo '</table>';
 }
 
+// TODO clean this up by using $person_loop as variable name
 $check = $l['last_check'];
 $last_send = $l['last_send'];
+$last_edit = $l['last_edit'];
 
 //		Gruppen
 echo '<div class="pers_titel">';
@@ -310,7 +312,7 @@ for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
 echo '<div>';
 	
 
-echo '<br />Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
+echo 'Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
 
 if ($emailadresse_vorhanden && $last_send < time()-24*3600) {
 	echo '<br /><a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
@@ -323,6 +325,11 @@ if ($check < $last_send) {
 }
 echo '</td>';
 echo '</tr>';
+echo '<tr>';
+echo '<td>Zuletzt editiert:</td>';
+// TODO add intelligent date like "five minutes ago"
+echo '<td>'.date($time_format, $last_edit).'</td>';
+echo '</td>';
 			
 echo '</table>';
 
