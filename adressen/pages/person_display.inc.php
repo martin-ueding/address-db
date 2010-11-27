@@ -259,7 +259,7 @@ $last_edit = $l['last_edit'];
 
 //		Gruppen
 echo '<div class="pers_titel">';
-echo '&nbsp;&nbsp;Meta:';
+echo '&nbsp;&nbsp;Bez&uuml;ge:';
 echo '</div>';
 echo '<table id="gruppen2">';
 $erg = select_gruppen_zu_person($id);
@@ -285,6 +285,14 @@ if (mysql_num_rows($erg) > 0) {
 	echo '</td>';
 	echo '</tr>';
 }
+
+echo '</table>';
+
+echo '<div class="pers_titel">';
+echo '&nbsp;&nbsp;Aktualit&auml;t:';
+echo '</div>';
+echo '<table id="gruppen2">';
+
 
 echo '<tr>';
 echo '<td class="links">Aktualität:</td>';
