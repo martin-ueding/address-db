@@ -26,13 +26,8 @@ else if (!empty($_GET['f'])) {
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
 	$from_with_get .= '&f='.$_GET['f'];
 }
-else if (!empty($_POST['suche']) || !empty($_GET['suche'])) {
-	if (!empty($_POST['suche'])) {
-		$suche = $_POST['suche'];
-	}
-	else {
-		$suche = $_GET['suche'];
-	}
+else if (!empty($_GET['suche'])) {
+	$suche = $_GET['suche'];
 
 	$sql = 'SELECT * FROM ad_per WHERE nachname like "%'.$suche.'%" '
 		.'OR vorname like "%'.$suche.'%" '
@@ -62,7 +57,7 @@ else if (!empty($_POST['suche']) || !empty($_GET['suche'])) {
 		
 		.'OR pnotizen like "%'.$suche.'%" '
 		.'ORDER BY nachname, vorname;';
-	$from_with_get .= '&suche='.$_POST['suche'];
+	$from_with_get .= '&suche='.$suche;
 }
 else {
 	$sql = 'SELECT * FROM ad_per ORDER BY nachname, vorname;';
@@ -105,7 +100,7 @@ if (!empty($sql)) {
 		}
 	}
 
-	else if (!empty($_POST['suche'])) {
+	else if (!empty($_GET['suche'])) {
 		if(mysql_num_rows($erg) == 1) {
 			echo 'Die Suche nach dem Begriff <em>[ '.$suche.' ]</em> brachte '.mysql_num_rows($erg).' Ergebnis:<br /><br />';
 		}

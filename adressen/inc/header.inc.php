@@ -1,6 +1,7 @@
 <div class="nav_item" onclick="_switch('spezial');">Men&uuml;<br />
 <ul id="spezial">
 <li><a href="?mode=main">Startseite</a></li>
+<li><a href="?mode=list">Zeige meine Personen</a></li>
 <li><a href="?mode=person_create1">Neue Person anlegen</a></li>
 <li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
 <li><a href="?mode=no_title">Ohne Anrede</a></li>
@@ -21,12 +22,19 @@ if ($aktuell_name == "")
 <div class="nav_item" onclick="_switch('mitglieder');">Modus: <?PHP echo $aktuell_name; ?><br />
 <ul id="mitglieder">
 <?PHP
+// find all get parameters which are not the mode or the fmg and put them into a string
+$get_for_fmg_change = '';
+foreach ($_GET as $key => $wert) {
+	if ($key != 'mode' && $key != 'f') {
+		$get_for_fmg_change .= '&'.$key.'='.$wert;
+	}
+}
 if ($_SESSION['f'] != 0)
-	echo '<li><a href="?mode=list&f=0">:: Alle</a></li>';
+	echo '<li><a href="?mode=list&f=0'.$get_for_fmg_change.'">:: Alle</a></li>';
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
-	echo '<li><a class="fmg_key" href="?mode=list&f='.$l['fmg_id'].'">'.$l['fmg'].'</a></li>';
+	echo '<li><a class="fmg_key" href="?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
 	if ($l['fmg_id'] == $_SESSION['f'])
 		$aktuell_name = $l['fmg'];
 }
@@ -71,7 +79,7 @@ echo '</div>';
 
 echo '<div class="nav_item">';
 ?>
-<form action="index.php?mode=list" method="post"><input type="search" id="suche" name="suche" maxlength="100" /><input type="image" value="suchen" id="suche_button" src="gfx/lupe.png" /></form>
+<form action="index.php" method="get"><input type="search" id="suche" name="suche" maxlength="100" /><input type="image" value="suchen" id="suche_button" src="gfx/lupe.png" /><input type="hidden" name="mode" value="list" /></form>
 <?PHP
 echo '</div>';
 ?>

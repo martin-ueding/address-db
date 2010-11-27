@@ -79,8 +79,8 @@ switch ($mode) {
 			}
 			$page_title = 'AdressDB: Personen f&uuml;r '.$f_name.'';
 		}
-		else if (!empty($_POST['suche'])) {
-			$page_title = 'AdressDB: Suche nach &bdquo;'.$suche.'&ldquo;';
+		else if (!empty($_GET['suche'])) {
+			$page_title = 'AdressDB: Suche nach &bdquo;'.$_GET['suche'].'&ldquo;';
 		}
 		else {
 			$page_title = 'AdressDB: Liste';
