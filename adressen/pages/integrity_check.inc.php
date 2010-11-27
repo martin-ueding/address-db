@@ -3,6 +3,7 @@
 <?PHP
 $remove_unneeded = $_GET['remove_unneeded'] == 'true';
 $deleted_items = 0;
+$unneeded_items = 0;
 
 // check mugshots
 $dir = dir('_mugshots');
@@ -25,6 +26,7 @@ if (count($mugshot_ids) > 0) {
 	$diff = array_diff($mugshot_ids, $p_ids);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>Bilder ohne Bezug</h2>';
 
 		foreach ($diff as $bild_id) {
@@ -60,6 +62,7 @@ if (count($stored_addresses) > 0) {
 	$diff = array_diff($stored_addresses, $used_addresses);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>unbenutzte Adressen</h2>';
 
 		$first = true;
@@ -99,6 +102,7 @@ if (count($stored_plz) > 0) {
 	$diff = array_diff($stored_plz, $used_plz);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>unbenutzte Postleitzahlen</h2>';
 
 		$first = true;
@@ -137,6 +141,7 @@ if (count($stored_cities) > 0) {
 	$diff = array_diff($stored_cities, $used_cities);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>unbenutzte Orte</h2>';
 
 		$first = true;
@@ -175,6 +180,7 @@ if (count($stored_countries) > 0) {
 	$diff = array_diff($stored_countries, $used_countries);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>unbenutzte L&auml;nder</h2>';
 
 		$first = true;
@@ -222,6 +228,7 @@ if (count($stored_acodes) > 0) {
 	$diff = array_diff($stored_acodes, $used_acodes);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>unbenutzte Vorwahlen</h2>';
 
 		$first = true;
@@ -262,6 +269,7 @@ if (count($stored_grouplinks) > 0) {
 	$diff = array_unique($diff);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>ung&uuml;ltige Gruppenzuordnungen (glinks)</h2>';
 
 		$first = true;
@@ -300,6 +308,7 @@ if (count($stored_groups) > 0) {
 	$diff = array_diff($stored_groups, $used_groups);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>leere Gruppen</h2>';
 
 		$first = true;
@@ -340,6 +349,7 @@ if (count($stored_flinks) > 0) {
 	$diff = array_unique($diff);
 
 	if (count($diff) > 0) {
+		$unneeded_items += count($diff);
 		echo '<h2>ung&uuml;ltige Familienmitgliedzuordnungen (flinks)</h2>';
 
 		$first = true;
@@ -365,6 +375,11 @@ if ($remove_unneeded) {
 	echo '<br /><br />Es wurden '.$deleted_items.' Eintr&auml;ge gel&ouml;scht.';
 }
 
-echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">unben&ouml;tigte Eintr&auml;ge l&ouml;schen</a>';
+if ($unneeded_items > 0) {
+	echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">'.$unneeded_items.'unben&ouml;tigte Eintr&auml;ge l&ouml;schen</a>';
+}
+else {
+	echo 'Es gibt keine unben&ouml;tigten oder ung&uuml;ltigen Eintr&auml;ge.';
+}
 
 ?>
