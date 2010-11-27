@@ -1,4 +1,5 @@
 <?PHP	
+$from_with_get = 'mode=all_birthdays';
 $monate = array('Januar', 'Februar', 'M&auml;rz', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember');
 	
 if ($_SESSION['f'] != 0)
@@ -21,7 +22,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo '<b>'.$monate[$aktuell-1].'</b><br /><br />';
 	}
 	$tag = $l['geb_t'] < 10 ? '0'.$l['geb_t'] : $l['geb_t'];
-	echo '<a href="?mode=person_display&id='.$l['p_id'].'">'.$tag.'. ';
+	echo '<a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$tag.'. ';
 	if ($l['geb_t'] == date("j") && $aktuell == date("n"))
 		echo '<em>'.$l['vorname'].' '.$l['nachname'].'</em>';
 	else

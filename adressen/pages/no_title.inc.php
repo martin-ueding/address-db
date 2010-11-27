@@ -1,4 +1,5 @@
 <?PHP
+$from_with_get = 'mode=no_title';
 echo 'Personen ohne Anrede:<br /><br />';
 
 $titel = $_GET["titel"];
@@ -10,7 +11,7 @@ else
 $erg = mysql_query($sql);
 $i = 0;
 while ($l = mysql_fetch_assoc($erg)) {
-	$daten[] = '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'"><td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['nachname'].'</a></td></tr>';
+	$daten[] = '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'"><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">&raquo;</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td></tr>';
 }
 
 /* Daten anzeigen */

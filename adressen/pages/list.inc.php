@@ -122,7 +122,7 @@ if (!empty($sql)) {
 	$i = 0;
 	while ($l = mysql_fetch_assoc($erg)) {
 		echo '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'">';
-		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td>';
+		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td>';
 
 		echo '</tr>';
 
