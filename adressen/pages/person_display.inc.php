@@ -1,9 +1,4 @@
 <?PHP
-if (empty($id)) {
-	$id = $_GET["id"];
-}
-$erg = select_person_alles($id);
-$person_loop = mysql_fetch_assoc($erg);
 $mugshot_path = '_mugshots/per'.$id.'.jpg';
 if (file_exists($mugshot_path)) {
 	$bilddaten = getimagesize('_mugshots/per'.$id.'.jpg');

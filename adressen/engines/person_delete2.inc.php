@@ -1,10 +1,8 @@
 <?PHP
 if (!empty($id)) {
-	$erg = select_person_alles($id);
-	$l = mysql_fetch_assoc($erg);
 	delete_person_id($id);
 
-	$msgs[] = 'Die Person <em>'.$l['vorname'].' '.$l['nachname'].'</em> wurde gel&ouml;scht.';
+	$msgs[] = 'Die Person <em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em> wurde gel&ouml;scht.';
 
 	$_GET['mode'] = 'main';
 	$back = $_GET['back'];

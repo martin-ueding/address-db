@@ -4,9 +4,6 @@ if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
 
-if (isset($_GET['id'])) {
-	$id = (int)$_GET['id'];
-}
 
 // include libs
 include('_config.inc.php');
@@ -14,11 +11,18 @@ include('inc/abfragen.inc.php');
 include('inc/anzeigen.inc.php');
 include('inc/select.inc.php');
 
+// import id and get everything there is to know about that person
+if (isset($_GET['id'])) {
+	$id = (int)$_GET['id'];
+	$erg = select_person_alles($id);
+	$person_loop = mysql_fetch_assoc($erg);
+}
+
 // get current mode
 $mode = $_GET['mode'];
 	
 
-$allowed_modes = array('', 'all_birthdays', 'car_inspection', 'list', 'main', 'no_title', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'search', 'verification_email', 'verification_email', 'integrity_check');
+$allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_title', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check');
 
 if (!in_array($mode, $allowed_modes)) {
 	die('Entschuldigung, es gibt keine entsprechende Seite');
@@ -46,6 +50,73 @@ if ($mode == 'person_delete2') {
 	include('engines/person_delete2.inc.php');
 }
 
+// generate page title
+switch ($mode) {
+	case 'all_birthdays':
+		$page_title = 'AdressDB: Alle Geburtstage';
+		break;
+	case 'list':
+		if (!empty($_GET['b'])) {
+			$page_title = 'AdressDB: Buchstabe &bdquo;'.$_GET['b'].'&ldquo;';
+		}
+		else if (!empty($_GET['titel'])) {
+			$page_title = 'AdressDB: Gruppe &bdquo;'.$_GET['titel'].'&ldquo;';
+		}
+		else if (!empty($_GET['f'])) {
+			// get name for person
+			$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
+			$name_erg = mysql_query($name_sql);
+			if ($name = mysql_fetch_assoc($name_erg)) {
+				$f_name = $name['fmg'];
+			}
+			$page_title = 'AdressDB: Personen f&uuml;r '.$f_name.'';
+		}
+		else if (!empty($_POST['suche'])) {
+			$page_title = 'AdressDB: Suche nach &bdquo;'.$suche.'&ldquo;';
+		}
+		else {
+			$page_title = 'AdressDB: Liste';
+		}
+		break;
+	case 'main':
+		$page_title = 'AdressDB: aktuelle Geburtstage';
+		break;
+	case 'no_title':
+		$page_title = 'AdressDB: keine Anrede';
+		break;
+	case 'person_create1':
+	case 'person_create2':
+		$page_title = 'AdressDB: Person erstellen';
+		break;
+	case 'person_delete':
+	case 'person_delete2':
+		$page_title = 'AdressDB: '.$person_loop['vorname'].' '.$person_loop['nachname'].' l&ouml;schen?';
+		break;
+	case 'person_display':
+		$page_title = 'AdressDB: '.$person_loop['vorname'].' '.$person_loop['nachname'];
+		break;
+	case 'person_edit1':
+	case 'person_edit2':
+		$page_title = 'AdressDB: '.$person_loop['vorname'].' '.$person_loop['nachname'].' bearbeiten';
+		break;
+	case 'pic_remove':
+		$page_title = 'AdressDB: Bild f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'].' l&ouml;schen';
+		break;
+	case 'pic_upload1':
+	case 'pic_upload2':
+	case 'pic_upload3':
+		$page_title = 'AdressDB: Bild f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'].' hochladen';
+		break;
+	case 'verification_email':
+		$page_title = 'AdressDB: &Uuml;berpr&uuml;fungsmail f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'];
+		break;
+	case 'integrity_check':
+		$page_title = 'AdressDB: Daten&uuml;berpr&uuml;fung';
+		break;
+	default:
+		$page_title = 'PHP Familien Adressdatenbank';
+		break;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,7 +135,7 @@ if ($mode == 'person_delete2') {
 		</script>
 		
 		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
-		<title>PHP Family Address Database</title>
+		<title><?PHP echo $page_title; ?></title>
 	</head>
 
 
