@@ -1,7 +1,7 @@
 <div class="nav_item" onclick="_switch('spezial');">Men&uuml;<br />
 <ul id="spezial">
 <li><a href="?mode=main">Startseite</a></li>
-<li><a href="?mode=list">Zeige meine Personen</a></li>
+<li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>">Zeige meine Personen</a></li>
 <li><a href="?mode=person_create1">Neue Person anlegen</a></li>
 <li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
 <li><a href="?mode=no_title">Ohne Anrede</a></li>
