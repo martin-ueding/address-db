@@ -309,7 +309,7 @@ for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
 	
 echo '<div>';
 	
-echo 'Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?id='.$id.'">Ja!</a>';
+echo 'Wurden die Daten überprüft und sind aktuell? <a href="index.php?mode=person_checked&id='.$id.'">Ja!</a>';
 echo '</td>';
 echo '</tr>';
 
