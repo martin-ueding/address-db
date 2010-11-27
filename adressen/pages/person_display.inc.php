@@ -315,16 +315,14 @@ echo 'Wurden die Daten überprüft und sind aktuell? <a href="person_checked.php?i
 echo '</td>';
 echo '</tr>';
 
-if ($emailadresse_vorhanden && $last_send < time()-24*3600 || $check < $last_send) {
+if ($emailadresse_vorhanden) {
 	echo '<tr>';
 	echo '<td class="links">&Uuml;berpr&uuml;fungsmail:</td>';
 	echo '<td>';
 
-	if ($emailadresse_vorhanden && $last_send < time()-24*3600) {
-		echo '<a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
-		if ($last_send != 0) {
-			echo ' (letzte vom '.date($date_format, $last_send).')';
-		}
+	echo '<a href="index.php?mode=verification_email&id='.$id.'">&raquo; Überprüfungsemail senden</a>';
+	if ($last_send != 0) {
+		echo ' (letzte vom '.date($date_format, $last_send).')';
 	}
 	if ($check < $last_send) {
 		echo '<br />Mail '.intelligent_date($last_send),' gesendet, Überprüfung ausstehend';
