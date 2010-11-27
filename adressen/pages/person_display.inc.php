@@ -343,6 +343,6 @@ if (file_exists('bilder/per'.$id.'.jpg'))
 	echo '<a href="?mode=pic_remove&id='.$id.'" title="Bild l&ouml;schen"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 
-echo '<a href="vcard.php?id='.$id.'" title="VCard"><img src="gfx/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';
+echo '<a href="export/vcard.php?id='.$id.'" title="VCard"><img src="gfx/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';
 	
 ?>

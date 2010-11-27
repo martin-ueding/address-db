@@ -147,9 +147,9 @@ if (!empty($sql)) {
 
 if (!empty($_GET['f'])) {
 	echo '<br /><br />';
-	echo '<a href="vcard_fmg.php?f='.$_SESSION['f'].'">Diese Liste als VCard exportieren</a>';
+	echo '<a href="export/vcard_fmg.php?f='.$_SESSION['f'].'">Diese Liste als VCard exportieren</a>';
 	echo '<br />';
-	echo '<a href="export812_fmg.php?f='.$_SESSION['f'].'">Diese Liste als TeX f&uuml;r Kalenderbl&auml;tter exportieren</a>';
+	echo '<a href="export/export812_fmg.php?f='.$_SESSION['f'].'">Diese Liste als TeX f&uuml;r Kalenderbl&auml;tter exportieren</a>';
 	
 }
 
