@@ -18,7 +18,7 @@ include('inc/select.inc.php');
 $mode = $_GET['mode'];
 	
 
-$allowed_modes = array('', 'all_birthdays', 'car_inspection', 'list', 'main', 'no_title', 'person_create1', 'person_create2', 'person_delete', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'search', 'verification_email', 'verification_email', 'integrity_check');
+$allowed_modes = array('', 'all_birthdays', 'car_inspection', 'list', 'main', 'no_title', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'search', 'verification_email', 'verification_email', 'integrity_check');
 
 if (!in_array($mode, $allowed_modes)) {
 	die('Entschuldigung, es gibt keine entsprechende Seite');
@@ -40,6 +40,10 @@ if ($mode == 'pic_upload1') {
 // If this page is opened by the Java applet, handle the image stuff
 if ($mode == 'pic_upload3') {
 	include('engines/pic_upload3.inc.php');
+}
+
+if ($mode == 'person_delete2') {
+	include('engines/person_delete2.inc.php');
 }
 
 ?>

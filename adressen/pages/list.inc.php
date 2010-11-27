@@ -1,5 +1,9 @@
 <?PHP
 $titel = $_GET["titel"];
+$from_with_get = 'mode=list';
+if (!empty($titel)) {
+	$from_with_get .= '&titel='.urlencode($titel);
+}
 /* Daten sammeln */
 /* Suche nach Buchstabe */
 if (!empty($_GET['b'])) {
@@ -7,6 +11,7 @@ if (!empty($_GET['b'])) {
 		$sql = 'SELECT * FROM ad_per, ad_flinks WHERE nachname like "'.$_GET['b'].'%" && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
 	else
 		$sql = 'SELECT * FROM ad_per WHERE nachname like "'.$_GET['b'].'%" ORDER BY nachname, vorname;';
+	$from_with_get .= '&b='.$_GET['b'];
 }
 /* Suche nach Gruppe */
 else if (!empty($_GET['g'])) {
@@ -14,13 +19,20 @@ else if (!empty($_GET['g'])) {
 		$sql = 'SELECT * FROM ad_per, ad_glinks, ad_flinks WHERE ad_glinks.person_lr=p_id && gruppe_lr='.$_GET['g'].' && ad_flinks.person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
 	else
 		$sql = 'SELECT * FROM ad_per, ad_glinks WHERE person_lr=p_id && gruppe_lr='.$_GET['g'].' ORDER BY nachname, vorname;';
+	$from_with_get .= '&g='.$_GET['g'];
 }
 /* Suche nach Bezug */
 else if (!empty($_GET['f'])) {
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
+	$from_with_get .= '&f='.$_GET['f'];
 }
-else if (!empty($_POST['suche'])) {
-	$suche = $_POST['suche'];
+else if (!empty($_POST['suche']) || !empty($_GET['suche'])) {
+	if (!empty($_POST['suche'])) {
+		$suche = $_POST['suche'];
+	}
+	else {
+		$suche = $_GET['suche'];
+	}
 
 	$sql = 'SELECT * FROM ad_per WHERE nachname like "%'.$suche.'%" '
 		.'OR vorname like "%'.$suche.'%" '
@@ -50,6 +62,7 @@ else if (!empty($_POST['suche'])) {
 		
 		.'OR pnotizen like "%'.$suche.'%" '
 		.'ORDER BY nachname, vorname;';
+	$from_with_get .= '&suche='.$_POST['suche'];
 }
 else {
 	$sql = 'SELECT * FROM ad_per ORDER BY nachname, vorname;';
@@ -114,7 +127,7 @@ if (!empty($sql)) {
 	$i = 0;
 	while ($l = mysql_fetch_assoc($erg)) {
 		echo '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'">';
-		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['nachname'].'</a></td>';
+		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td>';
 
 		echo '</tr>';
 

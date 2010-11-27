@@ -40,7 +40,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 $erg = select_alle_gruppen();
 while ($l = mysql_fetch_assoc($erg)) {
 	if (gruppe_ist_nicht_leer($l['g_id'])) {
-		echo '<li><a href="?mode=list&g='.$l['g_id'].'&titel='.$l['gruppe'].'">'.$l['gruppe'].'</a></li>';
+		echo '<li><a href="?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'">'.$l['gruppe'].'</a></li>';
 	}
 }
 ?>
