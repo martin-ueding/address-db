@@ -22,9 +22,9 @@ else if (!empty($_GET['g'])) {
 	$from_with_get .= '&g='.$_GET['g'];
 }
 /* Suche nach Bezug */
-else if (!empty($_GET['f'])) {
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
-	$from_with_get .= '&f='.$_GET['f'];
+else if (!empty($_SESSION['f'])) {
+	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
+	$from_with_get .= '&f='.$_SESSION['f'];
 }
 else if (!empty($_GET['suche'])) {
 	$suche = $_GET['suche'];
@@ -85,9 +85,9 @@ if (!empty($sql)) {
 		}
 	}
 
-	else if (!empty($_GET['f'])) {
+	else if (!empty($_SESSION['f'])) {
 		// get name for person
-		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
+		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.!empty($_SESSION['f']).';';
 		$name_erg = mysql_query($name_sql);
 		if ($name = mysql_fetch_assoc($name_erg)) {
 			$f_name = $name['fmg'];
