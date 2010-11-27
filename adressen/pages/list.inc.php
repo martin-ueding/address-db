@@ -1,5 +1,5 @@
 <?PHP
-$titel = $_GET["titel"];
+$titel = urldecode($_GET["titel"]);
 $from_with_get = 'mode=list';
 if (!empty($titel)) {
 	$from_with_get .= '&titel='.urlencode($titel);
