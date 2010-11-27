@@ -48,7 +48,7 @@ if ($mode == 'pic_upload3') {
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<meta charset="ISO-8859-1"  />
-		<link rel="STYLESHEET" type="text/css" href="css/main.css">
+		<link rel="STYLESHEET" type="text/css" href="gfx/main.css">
 		<script type="text/javascript" src="js/addressdb_collection.js"></script>
 
 		<script src="http://jquery.com/src/jquery-latest.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ if ($mode == 'pic_upload3') {
 			});
 		</script>
 		
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
 		<title>PHP Family Address Database</title>
 	</head>
 

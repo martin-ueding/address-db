@@ -158,7 +158,7 @@ echo '<table id="online">';
 if (!empty($l['email_privat'])) {	
 	echo '<tr>';
 	echo '<td class="links">Email Privat:</td>';
-	echo '<td class="icon"><img src="eicons/10/email10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
 	echo '<td class="rechts"><a href="mailto:'.$l['email_privat'].'">'.$l['email_privat'].'</a></td>';
 	echo '</tr>';
 	$emailadresse_vorhanden = true;
@@ -166,7 +166,7 @@ if (!empty($l['email_privat'])) {
 if (!empty($l['email_arbeit'])) {	
 	echo '<tr>';
 	echo '<td class="links">Email Arbeit:</td>';
-	echo '<td class="icon"><img src="eicons/10/email10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
 	echo '<td><a href="mailto:'.$l['email_arbeit'].'">'.$l['email_arbeit'].'</a></td>';
 	echo '</tr>';
 	$emailadresse_vorhanden = true;
@@ -174,7 +174,7 @@ if (!empty($l['email_arbeit'])) {
 if (!empty($l['email_aux'])) {	
 	echo '<tr>';
 	echo '<td class="links">Email Sonstiges:</td>';
-	echo '<td class="icon"><img src="eicons/10/email10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
 	echo '<td><a href="mailto:'.$l['email_aux'].'">'.$l['email_aux'].'</a></td>';
 	echo '</tr>';
 	$emailadresse_vorhanden = true;
@@ -182,14 +182,14 @@ if (!empty($l['email_aux'])) {
 if (!empty($l['hp1'])) {	
 	echo '<tr>';
 	echo '<td class="links">Homepage 1:</td>';
-	echo '<td class="icon"><img src="eicons/10/www10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/www10.png" width="10" height="10" /></td>';
 	echo '<td><a href="http://'.$l['hp1'].'" target="_blank">'.$l['hp1'].'</a></td>';
 	echo '</tr>';
 }
 if (!empty($l['hp2'])) {	
 	echo '<tr>';
 	echo '<td class="links">Homepage 2:</td>';
-	echo '<td class="icon"><img src="eicons/10/www10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/www10.png" width="10" height="10" /></td>';
 	echo '<td><a href="http://'.$l['hp2'].'" target="_blank">'.$l['hp2'].'</a></td>';
 	echo '</tr>';
 }
@@ -198,35 +198,35 @@ if (!empty($l['hp2'])) {
 if (!empty($l['chat_aim'])) {	
 	echo '<tr>';
 	echo '<td class="links">Chat AIM:</td>';
-	echo '<td class="icon"><img src="eicons/10/aim10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/aim10.png" width="10" height="10" /></td>';
 	echo '<td><a href="AIM://'.$l['chat_aim'].'">'.$l['chat_aim'].'</a></td>';
 	echo '</tr>';
 }
 if (!empty($l['chat_msn'])) {	
 	echo '<tr>';
 	echo '<td class="links">Chat MSN:</td>';
-	echo '<td class="icon"><img src="eicons/10/msn10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/msn10.png" width="10" height="10" /></td>';
 	echo '<td><a href="MSN://'.$l['chat_msn'].'">'.$l['chat_msn'].'</a></td>';
 	echo '</tr>';
 }
 if (!empty($l['chat_icq'])) {	
 	echo '<tr>';
 	echo '<td class="links">Chat ICQ:</td>';
-	echo '<td class="icon"><img src="eicons/10/icq10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/icq10.png" width="10" height="10" /></td>';
 	echo '<td><a href="ICQ://'.$l['chat_icq'].'">#'.$l['chat_icq'].'</a> &nbsp; <a href="http://people.icq.com/'.$l['chat_icq'].'" target="_blank">&raquo; Profil</a></td>';
 	echo '</tr>';
 }
 if (!empty($l['chat_yim'])) {	
 	echo '<tr>';
 	echo '<td class="links">Chat Yahoo:</td>';
-	echo '<td class="icon"><img src="eicons/10/yim10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/yim10.png" width="10" height="10" /></td>';
 	echo '<td><a href="Yahoo://'.$l['chat_yim'].'">'.$l['chat_yim'].'</a></td>';
 	echo '</tr>';
 }
 if (!empty($l['chat_skype'])) {	
 	echo '<tr>';
 	echo '<td class="links">Chat Skype:</td>';
-	echo '<td class="icon"><img src="eicons/10/skype10.png" width="10" height="10" /></td>';
+	echo '<td class="icon"><img src="gfx/10/skype10.png" width="10" height="10" /></td>';
 	echo '<td><a href="Callto://'.$l['chat_skype'].'">'.$l['chat_skype'].'</a></td>';
 	echo '</tr>';
 }
@@ -314,7 +314,7 @@ else {
 }
 
 for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
-	echo '<img src="eicons/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt '.intelligent_date($check).' (vor '.$letzter_check_vor.' Tagen) überprüft." />';
+	echo '<img src="gfx/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="Zuletzt '.intelligent_date($check).' (vor '.$letzter_check_vor.' Tagen) überprüft." />';
 }
 	
 echo '<div>';
@@ -345,14 +345,14 @@ echo '</td>';
 			
 echo '</table>';
 
-echo '<a href="?mode=person_edit1&id='.$id.'" title="Diese Person bearbeiten"><img src="eicons/person_bearbeiten.png" width="64" height="64" alt="Diese Person bearbeiten" border="0" /></a>';
-echo '<a href="?mode=person_delete&id='.$id.'" title="Diese Person l&ouml;schen"><img src="eicons/person_loeschen.png" width="64" height="64" alt="Diese Person l&ouml;schen" border="0" /></a>';
+echo '<a href="?mode=person_edit1&id='.$id.'" title="Diese Person bearbeiten"><img src="gfx/person_bearbeiten.png" width="64" height="64" alt="Diese Person bearbeiten" border="0" /></a>';
+echo '<a href="?mode=person_delete&id='.$id.'" title="Diese Person l&ouml;schen"><img src="gfx/person_loeschen.png" width="64" height="64" alt="Diese Person l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-echo '<a href="?mode=pic_upload1&id='.$id.'" title="Bild hochladen"><img src="eicons/foto_upload.png" width="64" height="64" alt="Bild hochladen" border="0" /></a>';
+echo '<a href="?mode=pic_upload1&id='.$id.'" title="Bild hochladen"><img src="gfx/foto_upload.png" width="64" height="64" alt="Bild hochladen" border="0" /></a>';
 if (file_exists('bilder/per'.$id.'.jpg'))
-	echo '<a href="?mode=pic_remove&id='.$id.'" title="Bild l&ouml;schen"><img src="eicons/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
+	echo '<a href="?mode=pic_remove&id='.$id.'" title="Bild l&ouml;schen"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 
-echo '<a href="vcard.php?id='.$id.'" title="VCard"><img src="eicons/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';
+echo '<a href="vcard.php?id='.$id.'" title="VCard"><img src="gfx/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';
 	
 ?>
