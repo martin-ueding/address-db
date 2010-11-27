@@ -11,13 +11,6 @@ $erg = select_gruppen_zu_person ($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$gruppen[] = $l['g_id'];
 
-$erg = select_person_alles($p_id);
-
-if (mysql_num_rows($erg) != 1)
-	header('location:../index.php');
-
-$person_loop = mysql_fetch_assoc($erg);
-
 $werziehtum = 'alle';
 $haushalt = $person_loop['adresse_r'];
 

@@ -1,9 +1,4 @@
 <?PHP
-$id = $_GET["id"];
-$erg = select_person_alles($id);
-$l = mysql_fetch_assoc($erg);
-$person_loop = $l;
-
 if ($_GET['sicher'] == 'ja') {
 	if ($l['last_send'] > time()-24*3600) {
 		$msgs[] = 'Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.';
