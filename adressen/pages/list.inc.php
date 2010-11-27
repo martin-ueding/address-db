@@ -87,7 +87,7 @@ if (!empty($sql)) {
 
 	else if (!empty($_SESSION['f'])) {
 		// get name for person
-		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.!empty($_SESSION['f']).';';
+		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_SESSION['f'].';';
 		$name_erg = mysql_query($name_sql);
 		if ($name = mysql_fetch_assoc($name_erg)) {
 			$f_name = $name['fmg'];
