@@ -1,6 +1,9 @@
 <h1>Daten&uuml;berpr&uuml;fung</h1>
 
 <?PHP
+$remove_unneeded = true;
+$deleted_items = 0;
+
 // check mugshots
 $dir = dir('_mugshots');
 $pattern = 'per([0-9]+).jpg'; 
@@ -26,7 +29,17 @@ if (count($mugshot_ids) > 0) {
 
 		foreach ($diff as $bild_id) {
 			echo '<img src="_mugshots/per'.$bild_id.'.jpg" height="180" /> ';
+
+			if ($remove_unneeded) {
+				if (@unlink('_mugshots/per'.$bild_id.'.jpg')) {
+					$deleted_items++;
+				}
+				else {
+					echo '<br />Fehler beim L&ouml;schen!';
+				}
+			}
 		}
+
 	}
 }
 
@@ -59,6 +72,12 @@ if (count($stored_addresses) > 0) {
 			}
 
 			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_adressen WHERE ad_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
 		}
 	}
 }
@@ -91,6 +110,12 @@ if (count($stored_plz) > 0) {
 				echo ', ';
 			}
 			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_plz WHERE plz_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
 		}
 	}
 }
@@ -123,6 +148,12 @@ if (count($stored_cities) > 0) {
 				echo ', ';
 			}
 			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_orte WHERE o_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
 		}
 	}
 }
@@ -155,6 +186,12 @@ if (count($stored_countries) > 0) {
 				echo ', ';
 			}
 			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_laender WHERE l_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
 		}
 	}
 }
@@ -196,38 +233,12 @@ if (count($stored_acodes) > 0) {
 				echo ', ';
 			}
 			echo $item;
-		}
-	}
-}
 
-// check groups
-$sql = 'SELECT g_id FROM ad_gruppen';
-$erg = mysql_query($sql);
-while ($l = mysql_fetch_assoc($erg)) {
-	$stored_groups[] = $l['g_id'];
-}
-
-if (count($stored_groups) > 0) {
-	$sql = 'SELECT gruppe_lr FROM ad_glinks';
-	$erg = mysql_query($sql);
-	while ($l = mysql_fetch_assoc($erg)) {
-		$used_groups[] = $l['gruppe_lr'];
-	}
-
-	$diff = array_diff($stored_groups, $used_groups);
-
-	if (count($diff) > 0) {
-		echo '<h2>leere Gruppen</h2>';
-
-		$first = true;
-		foreach ($diff as $item) {
-			if ($first) {
-				$first = false;
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_vorwahlen WHERE v_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
 			}
-			else {
-				echo ', ';
-			}
-			echo $item;
 		}
 	}
 }
@@ -260,6 +271,50 @@ if (count($stored_grouplinks) > 0) {
 				echo ', ';
 			}
 			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_glinks WHERE gl_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
+		}
+	}
+}
+
+// check groups
+$sql = 'SELECT g_id FROM ad_gruppen';
+$erg = mysql_query($sql);
+while ($l = mysql_fetch_assoc($erg)) {
+	$stored_groups[] = $l['g_id'];
+}
+
+if (count($stored_groups) > 0) {
+	$sql = 'SELECT gruppe_lr FROM ad_glinks';
+	$erg = mysql_query($sql);
+	while ($l = mysql_fetch_assoc($erg)) {
+		$used_groups[] = $l['gruppe_lr'];
+	}
+
+	$diff = array_diff($stored_groups, $used_groups);
+
+	if (count($diff) > 0) {
+		echo '<h2>leere Gruppen</h2>';
+
+		$first = true;
+		foreach ($diff as $item) {
+			if ($first) {
+				$first = false;
+			}
+			else {
+				echo ', ';
+			}
+			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_gruppen WHERE g_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
 		}
 	}
 }
@@ -292,9 +347,18 @@ if (count($stored_frouplinks) > 0) {
 				echo ', ';
 			}
 			echo $item;
+
+			if ($remove_unneeded) {
+				$remove_sql = 'DELETE FROM ad_flinks WHERE fl_id='.$item.';';
+				mysql_query($remove_sql);
+				$deleted_items++;
+			}
 		}
 	}
 }
 
+if ($deleted_items > 0) {
+	'<br /><br />Es wurden '.$deleted_items.' gel&ouml;scht.';
+}
 
 ?>
