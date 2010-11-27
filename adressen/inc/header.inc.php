@@ -70,7 +70,7 @@ echo '</div>';
 
 echo '<div class="nav_item">';
 ?>
-<form action="index.php?mode=search" method="post"><input type="search" id="suche" name="suche" maxlength="100" /><input type="image" value="suchen" id="suche_button" src="eicons/lupe.png" /></form>
+<form action="index.php?mode=list" method="post"><input type="search" id="suche" name="suche" maxlength="100" /><input type="image" value="suchen" id="suche_button" src="eicons/lupe.png" /></form>
 <?PHP
 echo '</div>';
 ?>

@@ -19,9 +19,42 @@ else if (!empty($_GET['g'])) {
 else if (!empty($_GET['f'])) {
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
 }
+else if (!empty($_POST['suche'])) {
+	$suche = $_POST['suche'];
+
+	$sql = 'SELECT * FROM ad_per WHERE nachname like "%'.$suche.'%" '
+		.'OR vorname like "%'.$suche.'%" '
+		.'OR mittelname like "%'.$suche.'%" '
+		.'OR geburtsname like "%'.$suche.'%" '
+		
+		.'OR tel_privat like "%'.$suche.'%" '
+		.'OR tel_arbeit like "%'.$suche.'%" '
+		.'OR tel_mobil like "%'.$suche.'%" '
+		.'OR tel_fax like "%'.$suche.'%" '
+		.'OR tel_aux like "%'.$suche.'%" '
+		
+		.'OR email_privat like "%'.$suche.'%" '
+		.'OR email_arbeit like "%'.$suche.'%" '
+		.'OR email_aux like "%'.$suche.'%" '
+		
+		.'OR hp1 like "%'.$suche.'%" '
+		.'OR hp2 like "%'.$suche.'%" '
+
+		
+		.'OR chat_aim like "%'.$suche.'%" '
+		.'OR chat_msn like "%'.$suche.'%" '
+		.'OR chat_icq like "%'.$suche.'%" '
+		.'OR chat_yim like "%'.$suche.'%" '
+		.'OR chat_skype like "%'.$suche.'%" '
+		.'OR chat_aux like "%'.$suche.'%" '
+		
+		.'OR pnotizen like "%'.$suche.'%" '
+		.'ORDER BY nachname, vorname;';
+}
 else {
 	$sql = 'SELECT * FROM ad_per ORDER BY nachname, vorname;';
 }
+
 /* Daten anzeigen */
 if (!empty($sql)) {
 	$erg = mysql_query($sql);
@@ -44,7 +77,7 @@ if (!empty($sql)) {
 		}
 	}
 
-	if (!empty($_GET['f'])) {
+	else if (!empty($_GET['f'])) {
 		// get name for person
 		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
 		$name_erg = mysql_query($name_sql);
@@ -56,6 +89,15 @@ if (!empty($sql)) {
 		}
 		else {
 			echo 'F&uuml;r <em>'.$f_name.'</em> sind '.mysql_num_rows($erg).' Personen gespeichert:<br /><br />';
+		}
+	}
+
+	else if (!empty($_POST['suche'])) {
+		if(mysql_num_rows($erg) == 1) {
+			echo 'Die Suche nach dem Begriff <em>[ '.$suche.' ]</em> brachte '.mysql_num_rows($erg).' Ergebnis:<br /><br />';
+		}
+		else {
+			echo 'Suche nach  dem Begriff <em>[ '.$suche.' ]</em> brachte '.mysql_num_rows($erg).' Ergebnisse:<br /><br />';
 		}
 	}
 
@@ -80,9 +122,6 @@ if (!empty($sql)) {
 	}
 	echo '</table>';
 }
-
-
-
 
 if (!empty($_GET['f'])) {
 	echo '<br /><br />';
