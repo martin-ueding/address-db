@@ -1,7 +1,7 @@
 <h1>Daten&uuml;berpr&uuml;fung</h1>
 
 <?PHP
-$remove_unneeded = true;
+$remove_unneeded = $_GET['remove_unneeded'] == 'true';
 $deleted_items = 0;
 
 // check mugshots
@@ -244,10 +244,10 @@ if (count($stored_acodes) > 0) {
 }
 
 // check group links
-$sql = 'SELECT gl_id FROM ad_glinks';
+$sql = 'SELECT person_lr FROM ad_glinks';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
-	$stored_grouplinks[] = $l['gl_id'];
+	$stored_grouplinks[] = $l['person_lr'];
 }
 
 if (count($stored_grouplinks) > 0) {
@@ -258,6 +258,8 @@ if (count($stored_grouplinks) > 0) {
 	}
 
 	$diff = array_diff($stored_grouplinks, $used_grouplinks);
+	sort($diff);
+	$diff = array_unique($diff);
 
 	if (count($diff) > 0) {
 		echo '<h2>ung&uuml;ltige Gruppenzuordnungen (glinks)</h2>';
@@ -273,7 +275,7 @@ if (count($stored_grouplinks) > 0) {
 			echo $item;
 
 			if ($remove_unneeded) {
-				$remove_sql = 'DELETE FROM ad_glinks WHERE gl_id='.$item.';';
+				$remove_sql = 'DELETE FROM ad_glinks WHERE person_lr='.$item.';';
 				mysql_query($remove_sql);
 				$deleted_items++;
 			}
@@ -320,20 +322,22 @@ if (count($stored_groups) > 0) {
 }
 
 // check family links
-$sql = 'SELECT fl_id FROM ad_flinks';
+$sql = 'SELECT person_lr FROM ad_flinks';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
-	$stored_frouplinks[] = $l['fl_id'];
+	$stored_flinks[] = $l['person_lr'];
 }
 
-if (count($stored_frouplinks) > 0) {
+if (count($stored_flinks) > 0) {
 	$sql = 'SELECT p_id FROM ad_per';
 	$erg = mysql_query($sql);
 	while ($l = mysql_fetch_assoc($erg)) {
-		$used_frouplinks[] = $l['p_id'];
+		$used_flinks[] = $l['p_id'];
 	}
 
-	$diff = array_diff($stored_frouplinks, $used_frouplinks);
+	$diff = array_diff($stored_flinks, $used_flinks);
+	sort($diff);
+	$diff = array_unique($diff);
 
 	if (count($diff) > 0) {
 		echo '<h2>ung&uuml;ltige Familienmitgliedzuordnungen (flinks)</h2>';
@@ -349,7 +353,7 @@ if (count($stored_frouplinks) > 0) {
 			echo $item;
 
 			if ($remove_unneeded) {
-				$remove_sql = 'DELETE FROM ad_flinks WHERE fl_id='.$item.';';
+				$remove_sql = 'DELETE FROM ad_flinks WHERE person_lr='.$item.';';
 				mysql_query($remove_sql);
 				$deleted_items++;
 			}
@@ -357,8 +361,10 @@ if (count($stored_frouplinks) > 0) {
 	}
 }
 
-if ($deleted_items > 0) {
-	'<br /><br />Es wurden '.$deleted_items.' gel&ouml;scht.';
+if ($remove_unneeded) {
+	echo '<br /><br />Es wurden '.$deleted_items.' Eintr&auml;ge gel&ouml;scht.';
 }
+
+echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">unben&ouml;tigte Eintr&auml;ge l&ouml;schen</a>';
 
 ?>
