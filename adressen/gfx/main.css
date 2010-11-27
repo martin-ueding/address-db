@@ -18,8 +18,8 @@ body.maske {
 	background-color: #FFC;
 }
 
-body.maske H2 {
-	margin: 15px 0;
+H2 {
+	margin: 20px 0 15px 0;
 }
 
 body.maske TABLE {

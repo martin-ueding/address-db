@@ -4,6 +4,7 @@
 <li><a href="?mode=person_create1">Neue Person anlegen</a></li>
 <li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
 <li><a href="?mode=no_title">Ohne Anrede</a></li>
+<li><a href="index.php?mode=integrity_check">Daten&uuml;berpr&uuml;fung</a></li>
 </ul>
 </div>
 <?PHP
