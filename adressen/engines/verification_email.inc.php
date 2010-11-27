@@ -276,9 +276,13 @@ if ($_GET['sicher'] == 'ja') {
 		$sql = 'UPDATE ad_per SET last_send='.time().' WHERE p_id='.$id.';';
 		mysql_query($sql);
 
+		// since the data was edited, it has to be reloaded
+		$erg = select_person_alles($id);
+		$person_loop = mysql_fetch_assoc($erg);
+
 		$msgs[] = 'Die Überprüfungsmail wurde verschickt.';
 	}
+	// get back to person_display
+	$mode = 'person_display';
 }
-// get back to person_display
-$mode = 'person_display';
 ?>
