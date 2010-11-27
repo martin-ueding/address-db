@@ -55,7 +55,7 @@ if ($mode == 'pic_upload3') {
 		<script type="text/javascript">
 			$(document).ready(function(){
 				// fade out the messages box
-				$("#messages").fadeOut(0).fadeIn(500).delay(5000).slideUp(1000);
+				$("#messages").fadeOut(0).fadeIn(500).delay(<?PHP echo 5000*count($msgs); ?>).slideUp(1000);
 			});
 		</script>
 		
@@ -72,10 +72,11 @@ if ($mode == 'pic_upload3') {
 
 	if (count($msgs) > 0) {
 		echo '<div id="messages">';
+		echo '<ul>';
 		foreach ($msgs as $msg) {
-			echo $msg;
-			echo '<br />';
+			echo '<li>'.$msg.'</li>';
 		}
+		echo '</ul>';
 		echo '</div>';
 	}	
 

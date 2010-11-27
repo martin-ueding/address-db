@@ -122,6 +122,10 @@ A:HOVER {
 	color: rgb(209,31,57);
 }
 
+UL {
+	margin-left: 10px;
+}
+
 #kartei {
 	margin: 0px;
 	position: absolute;
