@@ -376,7 +376,9 @@ if ($remove_unneeded) {
 }
 
 if ($unneeded_items > 0) {
-	echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">'.$unneeded_items.' unben&ouml;tigte Eintr&auml;ge l&ouml;schen</a>';
+	if ($unneeded_items > $deleted_items) {
+		echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">'.$unneeded_items.' unben&ouml;tigte Eintr&auml;ge l&ouml;schen</a>';
+	}
 }
 else {
 	echo 'Es gibt keine unben&ouml;tigten oder ung&uuml;ltigen Eintr&auml;ge.';
