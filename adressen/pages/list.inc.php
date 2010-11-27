@@ -101,6 +101,15 @@ if (!empty($sql)) {
 		}
 	}
 
+	else {
+		if(mysql_num_rows($erg) == 1) {
+			echo 'Es gibt '.mysql_num_rows($erg).' Eintrag:<br /><br />';
+		}
+		else {
+			echo 'Es gibt '.mysql_num_rows($erg).' Eintr&auml;ge:<br /><br />';
+		}
+	}
+
 	echo '<table id="liste" cellpadding="0" cellspacing="0">';
 	$i = 0;
 	while ($l = mysql_fetch_assoc($erg)) {
