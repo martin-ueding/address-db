@@ -339,8 +339,8 @@ echo '<a href="?mode=person_edit1&id='.$id.'" title="Diese Person bearbeiten"><i
 echo '<a href="?mode=person_delete&id='.$id.'&back='.urlencode($_GET['back']).'" title="Diese Person l&ouml;schen"><img src="gfx/person_loeschen.png" width="64" height="64" alt="Diese Person l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 echo '<a href="?mode=pic_upload1&id='.$id.'" title="Bild hochladen"><img src="gfx/foto_upload.png" width="64" height="64" alt="Bild hochladen" border="0" /></a>';
-if (file_exists('bilder/per'.$id.'.jpg'))
-	echo '<a href="?mode=pic_remove&id='.$id.'" title="Bild l&ouml;schen"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
+if (file_exists($mugshot_path))
+	echo '<a href="index.php?mode=pic_remove&id='.$id.'" title="Bild l&ouml;schen"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="Bild l&ouml;schen" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 
 echo '<a href="export/vcard.php?id='.$id.'" title="VCard"><img src="gfx/vcard.png" width="64" height="64" alt="VCard" border="0" /></a>';

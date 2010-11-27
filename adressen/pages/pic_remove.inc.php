@@ -1,19 +1,12 @@
 <?PHP
-if (!empty($_GET['id'])) {
-	if ($_GET['okay'] == 'ja') {
-		unlink('bilder/per'.$_GET['id'].'.jpg');
-
-		echo 'Das Bild wurde gel&ouml;scht. <a href="personenanzeige.php?id='.$_GET['id'].'">Zur&uuml;ck</a>';
-	}
-
-	else {
-		echo '<form action="bild_loeschen.php" method="get">';
-		echo '<input type="hidden" name="id" value="'.$_GET['id'].'" />';
-		echo '<input type="checkbox" name="okay" value="ja" />';
-		echo '<input type="submit" value="L&Ouml;SCHEN" />';
-		echo '</form>';
-		echo '<a href="personenanzeige.php?id='.$_GET['id'].'">Abbrechen</a>';
-	}
+if (!empty($id)) {
+	echo 'M&ouml;chten Sie wirklich das Bild f&uuml;r <em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em> l&ouml;schen?';
+	echo '<br />';
+	echo '<br />';
+	echo '<a href="index.php?mode=pic_remove2&id='.$id.'">Ja, Bild l&ouml;schen!</a>';
+	echo '<br />';
+	echo '<br />';
+	echo '<a href="index.php?mode=person_display&id='.$_GET['id'].'">Abbrechen</a>';
 }
 
 ?>
