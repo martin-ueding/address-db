@@ -16,7 +16,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 		$aktuell_name = $l['fmg'];
 }
 if ($aktuell_name == "")
-	$aktuell_name = 'Alle';
+	$aktuell_name = _('Alle');
 ?>
 
 <div class="nav_item" onclick="_switch('mitglieder');">Modus: <?PHP echo $aktuell_name; ?><br />

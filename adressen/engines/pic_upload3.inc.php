@@ -43,10 +43,10 @@ if (file_exists($bildpfad)) {
 	imagedestroy($bildneu);
 	unlink($bildpfad);
 
-	$msgs[] = 'Das Bild wurde hinzugefügt.';
+	$msgs[] = _('Das Bild wurde hinzugef&uuml;gt.');
 }
 else {
-	$msgs[] = 'Das tempor&auml;re Bild ist nicht vorhanden. Wenn Sie neu geladen haben, ist das normal.';
+	$msgs[] = _('Das tempor&auml;re Bild ist nicht vorhanden. Wenn Sie neu geladen haben, ist das normal.');
 }
 $mode = 'person_display';
 ?>
