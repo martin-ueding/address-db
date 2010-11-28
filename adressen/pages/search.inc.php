@@ -24,7 +24,7 @@ function display_name_list ($sql, $title) {
 			echo '</tr>';
 		}
 		echo '</table>';
-		echo '</div><br /><br />';
+		echo '</div><br />';
 	}
 }
 
