@@ -4,5 +4,5 @@ $f = (int)$_GET['f'];
 if ($f == 0)
 	header('location:adressen/index.php');
 else
-	header('location:adressen/index.php=f='.$f);
+	header('location:adressen/index.php?f='.$f);
 ?>
