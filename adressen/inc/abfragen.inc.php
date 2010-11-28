@@ -10,13 +10,13 @@ if (empty($dbh)) {
 
 function handybetreiber ($vw) {
 	switch ($vw) {
-		case "0160": case "0170": case "0171": case "0175": case "0151":
+		case "+49-160": case "+49-170": case "+49-171": case "+49-175": case "+49-151":
 			return "(T-Mobile)";
-		case "0162": case "0172": case "0173": case "0174": case "0152":
+		case "+49-162": case "+49-172": case "+49-173": case "+49-174": case "+49-152":
 			return "(Vodafone)";
-		case "0163": case "0177": case "0178": case "0155": case "0157":
+		case "+49-163": case "+49-177": case "+49-178": case "+49-155": case "+49-157":
 			return "(E-Plus)";
-		case "0176": case "0179": case "0159":
+		case "+49-176": case "+49-179": case "+49-159":
 			return "(O2)";
 	}
 }
@@ -382,6 +382,10 @@ function delete_familie_id ($id) {
 function delete_person_id ($id) {
 	$sql = 'DELETE FROM ad_per WHERE p_id='.$id.';';
 	mysql_query($sql);
+	$mugshot_path = '_mugshots/per'.$id.'.jpg';
+	if (file_exists($mugshot_path)) {
+		unlink($mugshot_path);
+	}
 }
 
 

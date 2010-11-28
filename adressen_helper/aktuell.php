@@ -12,7 +12,7 @@
 	$id = $_GET['id'];
 	$code = $_GET['code'];
 	include('../adressen/inc/varclean.inc.php');
-	include('../adressen/inc/login.inc.php');
+	include('../adressen/_config.inc.php');
 	include('../adressen/inc/abfragen.inc.php');
 	
 	$erg = select_person_alles($id);

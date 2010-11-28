@@ -223,3 +223,6 @@ CREATE TABLE IF NOT EXISTS `ad_vorwahlen` (
   `vorwahl` varchar(20) collate latin1_german1_ci NOT NULL,
   PRIMARY KEY  (`v_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=latin1 COLLATE=latin1_german1_ci AUTO_INCREMENT=90 ;
+
+ALTER TABLE `ad_per` ADD `last_send` INT( 16 ) DEFAULT '0' NOT NULL ;
+ALTER TABLE `ad_per` ADD `last_edit` INT( 16 ) NOT NULL 
