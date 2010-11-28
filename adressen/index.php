@@ -4,6 +4,12 @@ if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
 
+putenv('LC_MESSAGES=de_DE');
+setlocale(LC_MESSAGES, 'de_DE');
+bindtextdomain("main", "../locale/");
+bind_textdomain_codeset("main", "iso-8859-1");
+textdomain("main");
+
 
 // include libs
 include('_config.inc.php');
@@ -25,7 +31,7 @@ $mode = $_GET['mode'];
 $allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
 
 if (!in_array($mode, $allowed_modes)) {
-	die('Entschuldigung, es gibt keine entsprechende Seite');
+	die(_('Entschuldigung, es gibt keine entsprechende Seite'));
 }
 else if (empty($mode)) {
 	$mode = 'main';
@@ -61,7 +67,7 @@ if ($mode == 'pic_remove2') {
 // generate page title
 switch ($mode) {
 	case 'all_birthdays':
-		$page_title = 'AdressDB: Alle Geburtstage';
+		$page_title = _('AdressDB: Alle Geburtstage');
 		break;
 	case 'list':
 		if (!empty($_GET['b'])) {
@@ -77,21 +83,21 @@ switch ($mode) {
 			if ($name = mysql_fetch_assoc($name_erg)) {
 				$f_name = $name['fmg'];
 			}
-			$page_title = 'AdressDB: Personen f&uuml;r '.$f_name.'';
+			$page_title = _('AdressDB: Personen f&uuml;r').' '.$f_name.'';
 		}
 		else {
-			$page_title = 'AdressDB: Liste';
+			$page_title = _('AdressDB: Liste');
 		}
 		break;
 	case 'main':
-		$page_title = 'AdressDB: aktuelle Geburtstage';
+		$page_title = _('AdressDB: aktuelle Geburtstage');
 		break;
 	case 'no_title':
-		$page_title = 'AdressDB: keine Anrede';
+		$page_title = _('AdressDB: keine Anrede');
 		break;
 	case 'person_create1':
 	case 'person_create2':
-		$page_title = 'AdressDB: Person erstellen';
+		$page_title = _('AdressDB: Person erstellen');
 		break;
 	case 'person_delete':
 	case 'person_delete2':
@@ -119,10 +125,10 @@ switch ($mode) {
 		$page_title = 'AdressDB: &Uuml;berpr&uuml;fungsmail f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'];
 		break;
 	case 'integrity_check':
-		$page_title = 'AdressDB: Daten&uuml;berpr&uuml;fung';
+		$page_title = _('AdressDB: Daten&uuml;berpr&uuml;fung');
 		break;
 	default:
-		$page_title = 'PHP Familien Adressdatenbank';
+		$page_title = _('PHP Familien Adressdatenbank');
 		break;
 }
 ?>

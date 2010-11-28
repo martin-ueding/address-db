@@ -1,7 +1,7 @@
 <?PHP
 if ($_GET['sicher'] == 'ja') {
 	if ($person_loop['last_send'] > time()-24*3600) {
-		$msgs[] = 'Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.';
+		$msgs[] = _('Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.');
 	}
 	else {
 		
@@ -267,14 +267,14 @@ if ($_GET['sicher'] == 'ja') {
 		$mail->WordWrap = 70;
 		$mail->IsHTML(true);
 		
-		$mail->Subject = 'Bitte überprüfen Sie Ihre Daten';
+		$mail->Subject = _('Bitte überprüfen Sie Ihre Daten');
 		$mail->Body    = $mailtext;
 		
 		if($mail->Send()) {
-			$msgs[] = 'Die Überprüfungsmail wurde verschickt.';
+			$msgs[] = _('Die Überprüfungsmail wurde verschickt.');
 		}
 		else {
-			$msgs[] = 'Es gab einen Fehler beim Senden der Überprüfungsmail:<br/>'.$mail->ErrorInfo;
+			$msgs[] = _('Es gab einen Fehler beim Senden der Überprüfungsmail:').'<br/>'.$mail->ErrorInfo;
 		}
 
 

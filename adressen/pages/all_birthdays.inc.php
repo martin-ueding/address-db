@@ -1,6 +1,6 @@
 <?PHP	
 $from_with_get = 'mode=all_birthdays';
-$monate = array('Januar', 'Februar', 'M&auml;rz', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember');
+$monate = array(_('Januar'), _('Februar'), _('M&auml;rz'), _('April'), _('Mai'), _('Juni'), _('Juli'), _('August'), _('September'), _('Oktober'), _('November'), _('Dezember'));
 	
 if ($_SESSION['f'] != 0)
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_t!=0 && geb_m!=0 && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_m, geb_t, nachname;';
