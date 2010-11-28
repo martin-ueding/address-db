@@ -3,7 +3,12 @@
 $MAX_PRO_SEITE = 3;
 $SCHRIFTGROESSE = 7;
 
-include('inc/includes.inc.php');
+include('../_config.inc.php');
+include('../inc/abfragen.inc.php');
+include("../inc/anzeigen.inc.php");
+include("../inc/select.inc.php");
+include("../inc/varclean.inc.php");
+
 
 
 header("Content-Type: text/plain; charset=iso-8859-1");

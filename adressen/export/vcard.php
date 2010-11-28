@@ -1,5 +1,9 @@
 <?PHP
-include('inc/includes.inc.php');
+include('../_config.inc.php');
+include('../inc/abfragen.inc.php');
+include("../inc/anzeigen.inc.php");
+include("../inc/select.inc.php");
+include("../inc/varclean.inc.php");
 
 $id = $_GET['id'];
 
