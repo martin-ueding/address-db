@@ -79,9 +79,6 @@ switch ($mode) {
 			}
 			$page_title = 'AdressDB: Personen f&uuml;r '.$f_name.'';
 		}
-		else if (!empty($_GET['suche'])) {
-			$page_title = 'AdressDB: Suche nach &bdquo;'.$_GET['suche'].'&ldquo;';
-		}
 		else {
 			$page_title = 'AdressDB: Liste';
 		}
@@ -114,6 +111,9 @@ switch ($mode) {
 	case 'pic_upload2':
 	case 'pic_upload3':
 		$page_title = 'AdressDB: Bild f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'].' hochladen';
+		break;
+	case 'search':
+		$page_title = 'AdressDB: Suche nach &bdquo;'.$_GET['suche'].'&ldquo;';
 		break;
 	case 'verification_email':
 		$page_title = 'AdressDB: &Uuml;berpr&uuml;fungsmail f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'];
