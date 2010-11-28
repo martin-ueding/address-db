@@ -141,7 +141,7 @@ switch ($mode) {
 				$("#messages").fadeOut(0).fadeIn(500).delay(<?PHP echo 5000*count($msgs); ?>).slideUp(1000);
 
 				// open up all the slidedown boxes
-				$("DIV.slidedown").fadeOut(0).delay(300).slideDown(800);
+				$(".slidedown").fadeOut(0).delay(300).slideDown(800);
 			});
 		</script>
 		
