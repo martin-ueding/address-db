@@ -2,7 +2,9 @@
 if (!empty($id)) {
 	delete_person_id($id);
 
-	$msgs[] = 'Die Person <em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em> wurde gel&ouml;scht.';
+	if (!empty($person_loop['vorname']) || !empty($person_loop['nachname'])) {
+		$msgs[] = 'Die Person <em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em> wurde gel&ouml;scht.';
+	}
 
 	$_GET['mode'] = 'main';
 	$back = $_GET['back'];
@@ -20,7 +22,7 @@ if (!empty($id)) {
 	unset($items);
 }
 else {
-	$msgs[] = 'Keine Person mit der ID '.$id.' vorhanden.';
+	$msgs[] = 'Keine ID vorhanden.';
 }
 
 ?>
