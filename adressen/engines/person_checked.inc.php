@@ -4,7 +4,7 @@ mysql_query($sql);
 $msgs[] = 'Person wurde aktualisiert.';
 
 // update the data for the person
-$person_loop['last_edit'] = time();
+$person_loop['last_check'] = time();
 
 $mode= 'person_display';
 ?>
