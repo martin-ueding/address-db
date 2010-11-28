@@ -4,6 +4,8 @@ if ($_GET['sicher'] == 'ja') {
 		$msgs[] = 'Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.';
 	}
 	else {
+		
+
 		$mailtext .= '<style type="text/css">';
 		$file = file('gfx/main.css');
 		foreach ($file as $zeile) 
@@ -247,8 +249,6 @@ if ($_GET['sicher'] == 'ja') {
 
 		$mailtext .= 'Bitte klicken Sie hier, wenn die Daten aktuell sind:<br /><br />'."\n".'<a href="'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'">'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'</a>';
 
-				
-						
 		if (!empty($person_loop['email_privat']))
 			$email_an = $person_loop['email_privat'];
 		else if (!empty($person_loop['email_arbeit']))
@@ -256,20 +256,27 @@ if ($_GET['sicher'] == 'ja') {
 		else
 			die();
 
+		require($path_to_phpmailer);
 
+		$mail = new PHPMailer();
+		
+		$mail->From = $admin_email;
+		$mail->FromName = $admin_name;
+		$mail->AddAddress($email_an, $person_loop['vorname'].' '.$person_loop['nachname']);
+		
+		$mail->WordWrap = 70;
+		$mail->IsHTML(true);
+		
+		$mail->Subject = 'Bitte überprüfen Sie Ihre Daten';
+		$mail->Body    = $mailtext;
+		
+		if($mail->Send()) {
+			$msgs[] = 'Die Überprüfungsmail wurde verschickt.';
+		}
+		else {
+			$msgs[] = 'Es gab einen Fehler beim Senden der Überprüfungsmail:<br/>'.$mail->ErrorInfo;
+		}
 
-		// eMaildaten angeben
-		$titel = 'Bitte überprüfen Sie Ihre Daten';
-
-
-		// Header erzeugen
-		$header = "From:$admin_email\n";
-		$header .= "Reply-To:$admin_email\n";
-		$header .= "return-path:$admin_email\n";
-		$header .= "Content-type: text/html; charset=iso-8859-1\n";
-
-		// eMail senden
-		mail ($email_an, $titel, $mailtext, $header);
 
 
 		// enter the sending of the mail into the database
@@ -277,10 +284,7 @@ if ($_GET['sicher'] == 'ja') {
 		mysql_query($sql);
 
 		// since the data was edited, it has to be reloaded
-		$erg = select_person_alles($id);
-		$person_loop = mysql_fetch_assoc($erg);
-
-		$msgs[] = 'Die Überprüfungsmail wurde verschickt.';
+		$person_loop['last_send'] = time();
 	}
 	// get back to person_display
 	$mode = 'person_display';
