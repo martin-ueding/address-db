@@ -88,7 +88,7 @@ else {
 	display_name_list($sql, '&hellip; als Teil einer Notiz:');
 
 	if (!$treffer) {
-		echo 'Keine Treffer';
+		echo 'Keine Treffer<br /><br />';
 	}
 
 	if (ereg('0([1-9]+)-([0-9]+)', $suche, $matches)) {
