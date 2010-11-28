@@ -121,10 +121,6 @@ A:VISITED, A:LINK {
 	color: #A70000;
 }
 
-A:ACTIVE {
-	color: rgb(94,94,94);
-}
-
 A:HOVER {
 	color: rgb(209,31,57);
 }
@@ -164,17 +160,12 @@ UL {
 	background-color: #FFE699;
 }
 
-#kartei A:ACTIVE {
-	color: rgb(255,255,255);
-	background-color: rgb(0,0,0);
-}
-
 #kartei A:HOVER {
+	width: 31px;
 	color: rgb(255,255,255);
 	background-color: rgb(204,0,0);
 	font-weight: bold;
 }
-
 
 #suche {
 	width: 120px;
@@ -282,10 +273,6 @@ UL {
 	color: rgb(0,0,0);
 }
 
-#mitglieder LI A:ACTIVE {
-	color: rgb(0,0,0);
-}
-
 #mitglieder LI A:HOVER {
 	background-color: rgb(204,0,0);
 	color: rgb(255,255,255);
@@ -313,10 +300,6 @@ UL {
 }
 
 #gruppen LI A:VISITED {
-	color: rgb(0,0,0);
-}
-
-#gruppen LI A:ACTIVE {
 	color: rgb(0,0,0);
 }
 
@@ -350,10 +333,6 @@ UL {
 }
 
 #spezial LI A:VISITED {
-	color: rgb(0,0,0);
-}
-
-#spezial LI A:ACTIVE {
 	color: rgb(0,0,0);
 }
 
@@ -509,9 +488,6 @@ TD.icon {
 }
 #gruppen2 TD.rechts {
 }
-
-
-/* .. */
 
 /*.Eingabemasken.*/
 
