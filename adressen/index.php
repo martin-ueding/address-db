@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
 $mode = $_GET['mode'];
 	
 
-$allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check');
+$allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
 
 if (!in_array($mode, $allowed_modes)) {
 	die('Entschuldigung, es gibt keine entsprechende Seite');
@@ -139,6 +139,9 @@ switch ($mode) {
 			$(document).ready(function(){
 				// fade out the messages box
 				$("#messages").fadeOut(0).fadeIn(500).delay(<?PHP echo 5000*count($msgs); ?>).slideUp(1000);
+
+				// open up all the slidedown boxes
+				$("DIV.slidedown").fadeOut(0).delay(300).slideDown(800);
 			});
 		</script>
 		

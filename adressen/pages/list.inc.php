@@ -26,39 +26,6 @@ else if (!empty($_GET['f'])) {
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
 	$from_with_get .= '&f='.$_GET['f'];
 }
-else if (!empty($_GET['suche'])) {
-	$suche = $_GET['suche'];
-
-	$sql = 'SELECT * FROM ad_per WHERE nachname like "%'.$suche.'%" '
-		.'OR vorname like "%'.$suche.'%" '
-		.'OR mittelname like "%'.$suche.'%" '
-		.'OR geburtsname like "%'.$suche.'%" '
-		
-		.'OR tel_privat like "%'.$suche.'%" '
-		.'OR tel_arbeit like "%'.$suche.'%" '
-		.'OR tel_mobil like "%'.$suche.'%" '
-		.'OR tel_fax like "%'.$suche.'%" '
-		.'OR tel_aux like "%'.$suche.'%" '
-		
-		.'OR email_privat like "%'.$suche.'%" '
-		.'OR email_arbeit like "%'.$suche.'%" '
-		.'OR email_aux like "%'.$suche.'%" '
-		
-		.'OR hp1 like "%'.$suche.'%" '
-		.'OR hp2 like "%'.$suche.'%" '
-
-		
-		.'OR chat_aim like "%'.$suche.'%" '
-		.'OR chat_msn like "%'.$suche.'%" '
-		.'OR chat_icq like "%'.$suche.'%" '
-		.'OR chat_yim like "%'.$suche.'%" '
-		.'OR chat_skype like "%'.$suche.'%" '
-		.'OR chat_aux like "%'.$suche.'%" '
-		
-		.'OR pnotizen like "%'.$suche.'%" '
-		.'ORDER BY nachname, vorname;';
-	$from_with_get .= '&suche='.$suche;
-}
 else {
 	$sql = 'SELECT * FROM ad_per ORDER BY nachname, vorname;';
 }
@@ -100,14 +67,6 @@ if (!empty($sql)) {
 		}
 	}
 
-	else if (!empty($_GET['suche'])) {
-		if(mysql_num_rows($erg) == 1) {
-			echo 'Die Suche nach dem Begriff <em>[ '.$suche.' ]</em> brachte '.mysql_num_rows($erg).' Ergebnis:<br /><br />';
-		}
-		else {
-			echo 'Suche nach  dem Begriff <em>[ '.$suche.' ]</em> brachte '.mysql_num_rows($erg).' Ergebnisse:<br /><br />';
-		}
-	}
 
 	else {
 		if(mysql_num_rows($erg) == 1) {
