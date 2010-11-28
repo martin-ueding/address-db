@@ -11,7 +11,7 @@ if ($_GET['sicher'] == 'ja') {
 		$mailtext .= '</style>';
 
 
-		$mailtext .= 'Guten Tag '.$person_loop['vorname'].' '.$person_loopl['nachname'].',<br /><br />bitte nehmen Sie sich einen Augenblick und &uuml;berpr&uuml;fen Sie die Daten, die im Adressbuch f&uuml;r Sie gespeichert sind. Sind alle Daten korrekt, klicken Sie bitte auf den Link unten in der Email.<br /><br />Wenn Sie etwas korrigieren m&ouml;chten, antworten Sie bitte einfach auf diese Email und schildern Sie Ihre &Auml;nderungen. Erg&auml;nzungen (Emailadresse, Geburtsdatum, weitere Telefonnummern oder Chat-Pseudonyme) sind ebenfalls willkommen.<br /><br />Vielen Dank!<br /><br />';
+		$mailtext .= 'Guten Tag '.$person_loop['vorname'].' '.$person_loop['nachname'].',<br /><br />bitte nehmen Sie sich einen Augenblick und &uuml;berpr&uuml;fen Sie die Daten, die im Adressbuch f&uuml;r Sie gespeichert sind. Sind alle Daten korrekt, klicken Sie bitte auf den Link unten in der Email.<br /><br />Wenn Sie etwas korrigieren m&ouml;chten, antworten Sie bitte einfach auf diese Email und schildern Sie Ihre &Auml;nderungen. Erg&auml;nzungen (Emailadresse, Geburtsdatum, weitere Telefonnummern oder Chat-Pseudonyme) sind ebenfalls willkommen.<br /><br />Vielen Dank!<br /><br />';
 
 
 
