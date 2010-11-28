@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName Adressen
+AuthUserFile /AddressDB/adressen/.htpasswd
+Require valid-user

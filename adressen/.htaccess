@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName Adressen
-AuthUserFile /Users/mu/Sites/Anwendungen/AdressDB/adressen/.htpasswd
-Require valid-user

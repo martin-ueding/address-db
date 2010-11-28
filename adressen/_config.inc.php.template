@@ -1,19 +1,19 @@
 <?PHP
 // Insert MySQL Data here
-$server = 'localhost:8889';
-$user = 'addressdb';
-$passwd = '4tSMp7EVVDqLgbu';
-$db = 'adressdb-redesign';
+$server = 'localhost';
+$user = 'root';
+$passwd = '';
+$db = 'addressdb';
 
 // URL to Server with tailing slash
-$url_to_server = 'http://localhost:8888/Anwendungen/AdressDB/';
+$url_to_server = 'http://example.com/addressdb/';
 
 $admin_email = 'example@example.com';
 
 $date_format = 'd.m.Y';
 $time_format = 'd.m.Y H:i:s';
 
-// ---
+// Do not change anything below this line please ---
 
 $dbh = mysql_connect($server, $user, $passwd);
 
