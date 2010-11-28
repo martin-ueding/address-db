@@ -4,6 +4,11 @@ if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
 
+setlocale(LC_MESSAGES, 'de_DE');
+bindtextdomain("main", "locale");
+bind_textdomain_codeset("main", "iso-8859-1");
+textdomain("main");
+
 
 // include libs
 include('_config.inc.php');
@@ -77,14 +82,14 @@ switch ($mode) {
 			if ($name = mysql_fetch_assoc($name_erg)) {
 				$f_name = $name['fmg'];
 			}
-			$page_title = 'AdressDB: Personen f&uuml;r '.$f_name.'';
+			$page_title = _('AdressDB: Personen f&uuml;r').' '.$f_name.'';
 		}
 		else {
-			$page_title = 'AdressDB: Liste';
+			$page_title = _('AdressDB: Liste');
 		}
 		break;
 	case 'main':
-		$page_title = 'AdressDB: aktuelle Geburtstage';
+		$page_title = _('AdressDB: aktuelle Geburtstage');
 		break;
 	case 'no_title':
 		$page_title = 'AdressDB: keine Anrede';
