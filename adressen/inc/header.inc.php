@@ -30,7 +30,7 @@ foreach ($_GET as $key => $wert) {
 	}
 }
 if ($_SESSION['f'] != 0)
-	echo '<li><a href="?mode=list&f=0'.$get_for_fmg_change.'">:: Alle</a></li>';
+	echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: Alle</a></li>';
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
