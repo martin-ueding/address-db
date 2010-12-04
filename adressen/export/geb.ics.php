@@ -36,7 +36,15 @@ while ($l = mysql_fetch_assoc($erg)) {
 	echo $l['geb_t']."\n";
 	
 
-	echo 'SUMMARY:'.$l['vorname'].' '.$l['nachname'].'s Geburtstag'."\n";
+	echo 'SUMMARY:';
+	$name = trim($l['vorname'].' '.$l['nachname']);
+	if ($name[strlen($name)-1] == 'x' || $name[strlen($name)-1] == 's') {
+		$name .= '\'';
+	}
+	else {
+		$name .= 's';
+	}
+	echo $name.' Geburtstag'."\n";
 	echo 'UID:'.$l['p_id']."\n";
 	echo 'RRULE:FREQ=YEARLY'."\n";
 	echo 'DURATION:P1D'."\n";
