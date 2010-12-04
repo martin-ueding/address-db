@@ -77,9 +77,9 @@ foreach ($buchstaben as $b) {
 }
 echo '</div>';
 
-echo '<div class="nav_item">';
+echo '<div>';
 ?>
-<form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="image" value="suchen" id="suche_button" src="gfx/lupe.png" /><input type="hidden" name="mode" value="search" /></form>
+<form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
 <?PHP
 echo '</div>';
 ?>

@@ -168,14 +168,17 @@ UL {
 }
 
 #suche {
-	width: 120px;
+	width: 150px;
 	font-size: 11px;
 	height: 20px;
-	margin: 0px 0 0 0px;
 	padding: 0px;
+	margin: 5px 5px 0 0;
 	background-color: rgb(255, 250, 173);
-	position: relative;
-	top: -6px;
+	border-top: 1px solid #CCC; /* TEST */
+	border-left: 1px solid #CCC; /* TEST */
+	border-right: 1px solid #000; /* TEST */
+	border-bottom: 1px solid #000; /* TEST */
+
 }
 
 #suche_button {
