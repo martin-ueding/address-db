@@ -28,7 +28,7 @@ if (isset($_GET['id'])) {
 $mode = $_GET['mode'];
 	
 
-$allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
+$allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_email', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
 
 if (!in_array($mode, $allowed_modes)) {
 	die(_('Entschuldigung, es gibt keine entsprechende Seite'));
