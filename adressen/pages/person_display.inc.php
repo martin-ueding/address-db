@@ -154,7 +154,7 @@ if (!empty($person_loop['email_privat'])) {
 	echo '<tr>';
 	echo '<td class="links">Email Privat:</td>';
 	echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
-	echo '<td class="rechts"><a href="mailto:'.$person_loop['email_privat'].'">'.$person_loop['email_privat'].'</a></td>';
+	echo '<td class="rechts"><a href="mailto:'.$person_loop['vorname'].' '.$person_loop['nachname'].' <'.$person_loop['email_privat'].'>">'.$person_loop['email_privat'].'</a></td>';
 	echo '</tr>';
 	$emailadresse_vorhanden = true;
 }
@@ -162,7 +162,7 @@ if (!empty($person_loop['email_arbeit'])) {
 	echo '<tr>';
 	echo '<td class="links">Email Arbeit:</td>';
 	echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
-	echo '<td><a href="mailto:'.$person_loop['email_arbeit'].'">'.$person_loop['email_arbeit'].'</a></td>';
+	echo '<td class="rechts"><a href="mailto:'.$person_loop['vorname'].' '.$person_loop['nachname'].' <'.$person_loop['email_arbeit'].'>">'.$person_loop['email_arbeit'].'</a></td>';
 	echo '</tr>';
 	$emailadresse_vorhanden = true;
 }
@@ -170,7 +170,7 @@ if (!empty($person_loop['email_aux'])) {
 	echo '<tr>';
 	echo '<td class="links">Email Sonstiges:</td>';
 	echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
-	echo '<td><a href="mailto:'.$person_loop['email_aux'].'">'.$person_loop['email_aux'].'</a></td>';
+	echo '<td class="rechts"><a href="mailto:'.$person_loop['vorname'].' '.$person_loop['nachname'].' <'.$person_loop['email_aux'].'>">'.$person_loop['email_aux'].'</a></td>';
 	echo '</tr>';
 	$emailadresse_vorhanden = true;
 }
