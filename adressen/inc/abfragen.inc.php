@@ -58,7 +58,7 @@ function sternzeichen ($tag, $monat) {
 		return "Sch&uuml;tze";
 		
 	if (date("z", mktime(0, 0, 0, 12, 22, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 12, 31, 2001)))
-		return "Steinboch";
+		return "Steinbock";
 }
 
 
