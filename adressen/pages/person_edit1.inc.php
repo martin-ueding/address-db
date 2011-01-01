@@ -67,10 +67,10 @@ echo '<div class="box_596">';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
-		echo '<input type="checkbox" name="fmgs[]" value="'.$l['fmg_id'].'"';
+		echo '<input type="checkbox" name="fmgs[]" value="'.$l['fmg_id'].'" id="fmg'.$l['fmg_id'].'"';
 		if (!empty($fmgs) && in_array($l['fmg_id'], $fmgs))
 			echo ' checked';
-		 echo ' /> '.$l['fmg']."\n";
+		 echo ' /> <label for="fmg'.$l['fmg_id'].'">'.$l['fmg']."</label>\n";
 		 echo '</div>';
 		}
 echo '</div>';
@@ -82,10 +82,10 @@ echo '<div class="box_596">';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
-		echo '<input type="checkbox" name="gruppen[]" value="'.$l['g_id'].'"';
+		echo '<input type="checkbox" name="gruppen[]" value="'.$l['g_id'].'" id="g'.$l['g_id'].'"';
 		if (!empty($gruppen) && in_array($l['g_id'], $gruppen))
 			echo ' checked';
-		 echo ' /> '.$l['gruppe']."\n";
+		 echo ' /> <label for="g'.$l['g_id'].'">'.$l['gruppe']."</label>\n";
 		 echo '</div>';
 		}
 echo '</div>';
