@@ -2,7 +2,7 @@
 if (!empty($_GET['id'])) {
 		unlink('_mugshots/per'.$_GET['id'].'.jpg');
 
-		$msgs[] = _('Das Bild wurde gel&ouml;scht.');
+		$msgs[] = _('The picture was removed.');
 		$mode = 'person_display';
 }
 ?>

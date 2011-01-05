@@ -1,7 +1,7 @@
 <?PHP
 if ($_GET['sicher'] == 'ja') {
 	if ($person_loop['last_send'] > time()-24*3600) {
-		$msgs[] = _('Die letzte Email wurde innerhalb der letzten 24 Stunden versendet, dies ist sicher ein Irrtum. Es wurde keine Email versandt.');
+		$msgs[] = _('The last email was sent within the last 24 hours. No email was sent now because this looks like an error.');
 	}
 	else {
 		
@@ -13,7 +13,7 @@ if ($_GET['sicher'] == 'ja') {
 		$mailtext .= '</style>';
 
 
-		$mailtext .= 'Guten Tag '.$person_loop['vorname'].' '.$person_loop['nachname'].',<br /><br />bitte nehmen Sie sich einen Augenblick und &uuml;berpr&uuml;fen Sie die Daten, die im Adressbuch f&uuml;r Sie gespeichert sind. Sind alle Daten korrekt, klicken Sie bitte auf den Link unten in der Email.<br /><br />Wenn Sie etwas korrigieren m&ouml;chten, antworten Sie bitte einfach auf diese Email und schildern Sie Ihre &Auml;nderungen. Erg&auml;nzungen (Emailadresse, Geburtsdatum, weitere Telefonnummern oder Chat-Pseudonyme) sind ebenfalls willkommen.<br /><br />Vielen Dank!<br /><br />';
+		$mailtext .= _('Dear').' '.$person_loop['vorname'].' '.$person_loop['nachname'].',<br /><br />'._('please take a minute and control your data that we have saved in our address book. If everything is correct, please click on the link at the bottom of this email.').'<br /><br />'._('If you want to correct something, please feel free to reply to this mail and tell us the changes. Amendments are welcomed as well.').'<br /><br />'._('Thank you!').'<br /><br />';
 
 
 
@@ -267,14 +267,14 @@ if ($_GET['sicher'] == 'ja') {
 		$mail->WordWrap = 70;
 		$mail->IsHTML(true);
 		
-		$mail->Subject = _('Bitte überprüfen Sie Ihre Daten');
+		$mail->Subject = _('Please check your data');
 		$mail->Body    = $mailtext;
 		
 		if($mail->Send()) {
-			$msgs[] = _('Die Überprüfungsmail wurde verschickt.');
+			$msgs[] = _('The verification email was sent.');
 		}
 		else {
-			$msgs[] = _('Es gab einen Fehler beim Senden der Überprüfungsmail:').'<br/>'.$mail->ErrorInfo;
+			$msgs[] = _('There was an error while sending the verification email').'<br/>'.$mail->ErrorInfo;
 		}
 
 

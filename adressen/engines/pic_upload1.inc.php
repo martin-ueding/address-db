@@ -10,7 +10,7 @@ if ($_GET['fertig'] == 'ja') {
 
 
 	if($size > "2000000") { 
-		$err[] = _('Die Datei, die du hochladen willst, ist zu gro&szlig;!<br>Maximale Dateigrosse betr&auml;gt 2 MB!');
+		$err[] = _('The file that you want to upload is too big!').'<br>'._('Maximum file size is 2 MB!');
 	} 
 
 	if(empty($err)) { 

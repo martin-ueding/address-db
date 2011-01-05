@@ -36,10 +36,11 @@ if (!empty($sql)) {
 
 	if (!empty($_GET['b'])) {
 		if(mysql_num_rows($erg) == 1) {
-			echo 'Die Suche nach Nachnamen mit <em>'.$_GET['b'].'</em> brachte '.mysql_num_rows($erg).' Ergebnis:<br /><br />';
+			printf(_('The search for last names with the letter <em>%s</em> yielded 1 result:'), $_GET['b']).'<br /><br />';
 		}
 		else {
-			echo 'Die Suche nach Nachnamen mit <em>'.$_GET['b'].'</em> brachte '.mysql_num_rows($erg).' Ergebnisse:<br /><br />';
+			printf(_('The search for last names with the letter <em>%s</em> yielded %d results:'), $_GET['b'], mysql_num_rows($erg));
+			echo '<br /><br />';
 		}
 	}
 

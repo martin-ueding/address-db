@@ -1,12 +1,12 @@
-<div class="nav_item" onclick="_switch('spezial');">Men&uuml;<br />
+<div class="nav_item" onclick="_switch('spezial');"><?PHP echo _('menu'); ?><br />
 <ul id="spezial">
-<li><a href="?mode=main">Startseite</a></li>
-<li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>">Zeige meine Personen</a></li>
-<li><a href="?mode=person_create1">Neue Person anlegen</a></li>
-<li><a href="?mode=all_birthdays">Geburtstagsliste</a></li>
-<li><a href="?mode=no_title">Ohne Anrede</a></li>
-<li><a href="?mode=no_email">Ohne Emailadresse</a></li>
-<li><a href="index.php?mode=integrity_check">Daten&uuml;berpr&uuml;fung</a></li>
+<li><a href="?mode=main"><?PHP echo _('Start'); ?></a></li>
+<li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
+<li><a href="?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
+<li><a href="?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
+<li><a href="?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
+<li><a href="?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
+<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
 </ul>
 </div>
 <?PHP
@@ -17,10 +17,10 @@ while ($l = mysql_fetch_assoc($erg)) {
 		$aktuell_name = $l['fmg'];
 }
 if ($aktuell_name == "")
-	$aktuell_name = _('Alle');
+	$aktuell_name = _('all');
 ?>
 
-<div class="nav_item" onclick="_switch('mitglieder');">Modus: <?PHP echo $aktuell_name; ?><br />
+<div class="nav_item" onclick="_switch('mitglieder');"><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><br />
 <ul id="mitglieder">
 <?PHP
 // find all get parameters which are not the mode or the fmg and put them into a string
@@ -31,7 +31,7 @@ foreach ($_GET as $key => $wert) {
 	}
 }
 if ($_SESSION['f'] != 0)
-	echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: Alle</a></li>';
+	echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: '._('all').'</a></li>';
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
@@ -43,7 +43,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 </ul>
 </div>
 
-<div class="nav_item" onclick="_switch('gruppen');">Gruppen<br />
+<div class="nav_item" onclick="_switch('gruppen');"><?PHP echo _('groups'); ?><br />
 <ul id="gruppen">
 <?PHP
 $erg = select_alle_gruppen();

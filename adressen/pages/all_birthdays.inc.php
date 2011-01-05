@@ -1,6 +1,6 @@
 <?PHP	
 $from_with_get = 'mode=all_birthdays';
-$monate = array(_('Januar'), _('Februar'), _('M&auml;rz'), _('April'), _('Mai'), _('Juni'), _('Juli'), _('August'), _('September'), _('Oktober'), _('November'), _('Dezember'));
+$monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('Oktober'), _('November'), _('December'));
 	
 if ($_SESSION['f'] != 0)
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_t!=0 && geb_m!=0 && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_m, geb_t, nachname;';
@@ -12,7 +12,7 @@ $erg = mysql_query($sql);
 $aktuell = 1;
 
 echo '<div class="geb_monat_kasten">';
-echo '<b>Januar</b><br /><br />';
+echo '<b>'_('January').'</b><br /><br />';
 
 while ($l = mysql_fetch_assoc($erg)) {
 	if ($l['geb_m'] != $aktuell) {
@@ -39,9 +39,9 @@ $erg = mysql_query($sql);
 	
 	
 echo '<br clear="all" /><br /><br />';
-echo '<h3>Ohne Geburtstag ('.mysql_num_rows($erg).'):</h3>';
+echo '<h3>'._('without a birthday').' ('.mysql_num_rows($erg).'):</h3>';
 
-echo 'Liste anzeigen? <input type="checkbox" id="adresswahl" name="adresswahl" value="manuell" onClick = "_switch(\'luecken\'); return true;">';
+echo _('show list?').' <input type="checkbox" id="adresswahl" name="adresswahl" value="manuell" onClick = "_switch(\'luecken\'); return true;">';
 	
 echo '<div id="luecken" style="display: none;">';
 

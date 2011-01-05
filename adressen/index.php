@@ -31,7 +31,7 @@ $mode = $_GET['mode'];
 $allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_email', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
 
 if (!in_array($mode, $allowed_modes)) {
-	die(_('Entschuldigung, es gibt keine entsprechende Seite'));
+	die(_('Sorry, I could not find a site like that.'));
 }
 else if (empty($mode)) {
 	$mode = 'main';
@@ -67,14 +67,14 @@ if ($mode == 'pic_remove2') {
 // generate page title
 switch ($mode) {
 	case 'all_birthdays':
-		$page_title = _('AdressDB: Alle Geburtstage');
+		$page_title = _('Address DB').': '._('all birthdays');
 		break;
 	case 'list':
 		if (!empty($_GET['b'])) {
-			$page_title = 'AdressDB: Buchstabe &bdquo;'.$_GET['b'].'&ldquo;';
+			$page_title = 'Address DB').': '._('letter &bdquo;'.$_GET['b'].'&ldquo;');
 		}
 		else if (!empty($_GET['titel'])) {
-			$page_title = 'AdressDB: Gruppe &bdquo;'.$_GET['titel'].'&ldquo;';
+			$page_title = 'Address DB').': '._('group &bdquo;'.$_GET['titel'].'&ldquo;');
 		}
 		else if (!empty($_GET['f'])) {
 			// get name for person
@@ -83,52 +83,52 @@ switch ($mode) {
 			if ($name = mysql_fetch_assoc($name_erg)) {
 				$f_name = $name['fmg'];
 			}
-			$page_title = _('AdressDB: Personen f&uuml;r').' '.$f_name.'';
+			$page_title = _('Address DB').': '.printf(_('entries for %s'), $f_name);
 		}
 		else {
-			$page_title = _('AdressDB: Liste');
+			$page_title = _('Address DB').': '._('list');
 		}
 		break;
 	case 'main':
-		$page_title = _('AdressDB: aktuelle Geburtstage');
+		$page_title = _('Address DB').': '._('current birthdays');
 		break;
 	case 'no_title':
-		$page_title = _('AdressDB: keine Anrede');
+		$page_title = _('Address DB').': '._('no form of address');
 		break;
 	case 'person_create1':
 	case 'person_create2':
-		$page_title = _('AdressDB: Person erstellen');
+		$page_title = _('Address DB').': '._('create entry');
 		break;
 	case 'person_delete':
 	case 'person_delete2':
-		$page_title = 'AdressDB: '.$person_loop['vorname'].' '.$person_loop['nachname'].' l&ouml;schen?';
+		$page_title = _('Address DB').': '.printf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'person_display':
-		$page_title = 'AdressDB: '.$person_loop['vorname'].' '.$person_loop['nachname'];
+		$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
 		break;
 	case 'person_edit1':
 	case 'person_edit2':
-		$page_title = 'AdressDB: '.$person_loop['vorname'].' '.$person_loop['nachname'].' bearbeiten';
+		$page_title = _('Address DB').': '.printf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'pic_remove':
-		$page_title = 'AdressDB: Bild f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'].' l&ouml;schen';
+		$page_title = _('Address DB').': '.printf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'pic_upload1':
 	case 'pic_upload2':
 	case 'pic_upload3':
-		$page_title = 'AdressDB: Bild f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'].' hochladen';
+		$page_title = _('Address DB').': '.printf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'search':
-		$page_title = 'AdressDB: Suche nach &bdquo;'.$_GET['suche'].'&ldquo;';
+		$page_title = _('Address DB').': '.printf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
 		break;
 	case 'verification_email':
-		$page_title = 'AdressDB: &Uuml;berpr&uuml;fungsmail f&uuml;r '.$person_loop['vorname'].' '.$person_loop['nachname'];
+		$page_title = _('Address DB').': '.printf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'integrity_check':
-		$page_title = _('AdressDB: Daten&uuml;berpr&uuml;fung');
+		$page_title = _('Address DB').': '._('database check');
 		break;
 	default:
-		$page_title = _('PHP Familien Adressdatenbank');
+		$page_title = _('PHP Family Address DB');
 		break;
 }
 ?>

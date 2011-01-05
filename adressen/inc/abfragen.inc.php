@@ -5,7 +5,7 @@
 $debug = true;
 
 if (empty($dbh)) {
-	echo '<br /><b>Warnung:</b> abfragen.inc.php braucht die Datenbank.';
+	echo '<br /><b>'._('Warning').':</b> '.printf(_('%s needs the database.'), 'abfragen.inc.php');
 }
 
 function handybetreiber ($vw) {

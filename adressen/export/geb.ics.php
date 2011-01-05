@@ -14,8 +14,8 @@ $f = (int)$_GET['f'];
 
 echo 'BEGIN:VCALENDAR'."\n";
 echo 'VERSION:2.0'."\n";
-echo 'X-WR-CALNAME:Geburtstage'."\n";
-echo 'PRODID:Adress Datebank'."\n";
+echo 'X-WR-CALNAME:'._('Birthdays')."\n";
+echo 'PRODID:')._('Address Database')."\n";
 echo 'X-WR-TIMEZONE:Europe/Berlin'."\n";
 echo 'CALSCALE:GREGORIAN'."\n";
 echo 'METHOD:PUBLISH'."\n"."\n";
@@ -44,7 +44,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else {
 		$name .= 's';
 	}
-	echo $name.' Geburtstag'."\n";
+	echo $name.' '._('Birthday')."\n";
 	echo 'UID:'.$l['p_id']."\n";
 	echo 'RRULE:FREQ=YEARLY'."\n";
 	echo 'DURATION:P1D'."\n";

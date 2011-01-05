@@ -2,7 +2,7 @@
 function show_select_vorwahlen ($name, $aktiv) {
 
 	if (!function_exists('select_alle_vorwahlen')) {
-		echo '<br /><b>Fehler:</b> show_select_anrede braucht die abfragen.inc.php';
+		echo '<br /><b>'._('Error').':</b> '.printf(_('%s needs the %s'), 'show_select_vorwahlen()', 'abfragen.inc.php');
 		return;
 	}
 
@@ -24,7 +24,7 @@ function show_select_vorwahlen ($name, $aktiv) {
 function show_select_anrede ($name, $aktiv) {
 
 	if (!function_exists('select_alle_anreden')) {
-		echo '<br /><b>Fehler:</b> show_select_anrede braucht die abfragen.inc.php';
+		echo '<br /><b>'._('Error').':</b> '.printf(_('%s needs the %s'), 'show_select_anrede()', 'abfragen.inc.php');
 		return;
 	}
 
@@ -46,7 +46,7 @@ function show_select_anrede ($name, $aktiv) {
 function show_select_prafix ($name, $aktiv) {
 
 	if (!function_exists('select_alle_prafixe')) {
-		echo '<br /><b>Fehler:</b> show_select_prafix braucht die abfragen.inc.php';
+		echo '<br /><b>'._('Error').':</b> '.printf(_('%s needs the %s'), 'show_select_prafix()', 'abfragen.inc.php');
 		return;
 	}
 
@@ -68,7 +68,7 @@ function show_select_prafix ($name, $aktiv) {
 function show_select_suffix ($name, $aktiv) {
 
 	if (!function_exists('select_alle_suffixe')) {
-		echo '<br /><b>Fehler:</b> show_select_suffix braucht die abfragen.inc.php';
+		echo '<br /><b>'._('Error').':</b> '.printf(_('%s needs the %s'), 'show_select_suffix()', 'abfragen.inc.php');
 		return;
 	}
 

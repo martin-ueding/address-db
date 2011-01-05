@@ -20,20 +20,20 @@ function intelligent_date ($stamp) {
 	// if the date is in the past ...
 	if ($diff >= 0) {
 		if ($diff < 15)
-			return 'soeben';
+			return _('just now');
 		else if ($diff < 60)
-			return 'in der letzten Minute';
+			return _('within in the last minute');
 		else if ($diff < 7200)
-			return 'vor '.round($diff/60).' Minuten';
+			return printf(_('%d minutes ago'), round($diff/60));
 		else if ($diff < 86400)
-			return 'vor '.round($diff/3600).' Stunden';
+			return printf(_('%d hours ago'), round($diff/3600));
 		else if ($stamp == 0)
-			return 'nie';
+			return _('never');
 		else
-			return 'am '.date($date_format, $stamp);
+			return _('on the').' '.date($date_format, $stamp);
 	}
 	else {
-		return 'in der Zukunft ...';
+		return _('in the future ...');
 	}
 }
 ?>

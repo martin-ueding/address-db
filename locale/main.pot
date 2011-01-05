@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-05 19:33+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: adressen/index.php:34
+msgid "Sorry, I could not find a site like that."
+msgstr ""
+
+#: adressen/index.php:70 adressen/index.php:86 adressen/index.php:89
+#: adressen/index.php:93 adressen/index.php:96 adressen/index.php:100
+#: adressen/index.php:104 adressen/index.php:107 adressen/index.php:111
+#: adressen/index.php:114 adressen/index.php:119 adressen/index.php:122
+#: adressen/index.php:125 adressen/index.php:128
+msgid "Address DB"
+msgstr ""
+
+#: adressen/index.php:70
+msgid "all birthdays"
+msgstr ""
+
+#: adressen/index.php:74
+msgid "letter &bdquo;"
+msgstr ""
+
+#: adressen/index.php:77
+msgid "group &bdquo;"
+msgstr ""
+
+#: adressen/index.php:86
+#, php-format
+msgid "entries for %s"
+msgstr ""
+
+#: adressen/index.php:89
+msgid "list"
+msgstr ""
+
+#: adressen/index.php:93
+msgid "current birthdays"
+msgstr ""
+
+#: adressen/index.php:96 adressen/inc/header.inc.php:7
+msgid "no form of address"
+msgstr ""
+
+#: adressen/index.php:100
+msgid "create entry"
+msgstr ""
+
+#: adressen/index.php:104
+#, php-format
+msgid "delete %s"
+msgstr ""
+
+#: adressen/index.php:111
+#, php-format
+msgid "edit %s"
+msgstr ""
+
+#: adressen/index.php:114
+#, php-format
+msgid "delete %s's picture"
+msgstr ""
+
+#: adressen/index.php:119
+#, php-format
+msgid "upload %s's picture"
+msgstr ""
+
+#: adressen/index.php:122
+#, php-format
+msgid "search for &bdquo;%s&ldquo;"
+msgstr ""
+
+#: adressen/index.php:125
+#, php-format
+msgid "verification mail for %s"
+msgstr ""
+
+#: adressen/index.php:128 adressen/inc/header.inc.php:9
+msgid "database check"
+msgstr ""
+
+#: adressen/index.php:131
+msgid "PHP Family Address DB"
+msgstr ""
+
+#: adressen/engines/person_checked.inc.php:4
+msgid "The person was updated."
+msgstr ""
+
+#: adressen/engines/person_delete2.inc.php:6
+msgid "The person"
+msgstr ""
+
+#: adressen/engines/person_delete2.inc.php:6
+msgid "was deleted."
+msgstr ""
+
+#: adressen/engines/person_delete2.inc.php:25
+msgid "Missing an ID."
+msgstr ""
+
+#: adressen/engines/pic_remove2.inc.php:5
+msgid "The picture was removed."
+msgstr ""
+
+#: adressen/engines/pic_upload1.inc.php:13
+msgid "The file that you want to upload is too big!"
+msgstr ""
+
+#: adressen/engines/pic_upload1.inc.php:13
+msgid "Maximum file size is 2 MB!"
+msgstr ""
+
+#: adressen/engines/pic_upload3.inc.php:46
+msgid "The picture was added."
+msgstr ""
+
+#: adressen/engines/pic_upload3.inc.php:49
+msgid ""
+"The temporary file could not be found. If you just have reloaded this page, "
+"this is normal."
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:4
+msgid ""
+"The last email was sent within the last 24 hours. No email was sent now "
+"because this looks like an error."
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:16
+msgid "Dear"
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:16
+msgid ""
+"please take a minute and control your data that we have saved in our address "
+"book. If everything is correct, please click on the link at the bottom of "
+"this email."
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:16
+msgid ""
+"If you want to correct something, please feel free to reply to this mail and "
+"tell us the changes. Amendments are welcomed as well."
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:16
+msgid "Thank you!"
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:270
+msgid "Please check your data"
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:274
+msgid "The verification email was sent."
+msgstr ""
+
+#: adressen/engines/verification_email.inc.php:277
+msgid "There was an error while sending the verification email"
+msgstr ""
+
+#: adressen/export/geb.ics.php:17
+msgid "Birthdays"
+msgstr ""
+
+#: adressen/export/geb.ics.php:18
+msgid "Address Database"
+msgstr ""
+
+#: adressen/export/geb.ics.php:47
+msgid "Birthday"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:8
+msgid "Warning"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:8
+#, php-format
+msgid "%s needs the database."
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:23
+msgid "just now"
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:25
+msgid "within in the last minute"
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:27
+#, php-format
+msgid "%d minutes ago"
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:29
+#, php-format
+msgid "%d hours ago"
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:31
+msgid "never"
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:33
+msgid "on the"
+msgstr ""
+
+#: adressen/inc/anzeigen.inc.php:36
+msgid "in the future ..."
+msgstr ""
+
+#: adressen/inc/header.inc.php:1
+msgid "menu"
+msgstr ""
+
+#: adressen/inc/header.inc.php:3
+msgid "Start"
+msgstr ""
+
+#: adressen/inc/header.inc.php:4
+msgid "show my entries"
+msgstr ""
+
+#: adressen/inc/header.inc.php:5
+msgid "create new entry"
+msgstr ""
+
+#: adressen/inc/header.inc.php:6
+msgid "birthday list"
+msgstr ""
+
+#: adressen/inc/header.inc.php:8
+msgid "no email address"
+msgstr ""
+
+#: adressen/inc/header.inc.php:20 adressen/inc/header.inc.php:34
+msgid "all"
+msgstr ""
+
+#: adressen/inc/header.inc.php:23
+msgid "mode"
+msgstr ""
+
+#: adressen/inc/header.inc.php:46
+msgid "groups"
+msgstr ""
+
+#: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
+#: adressen/inc/select.inc.php:49 adressen/inc/select.inc.php:71
+msgid "Error"
+msgstr ""
+
+#: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
+#: adressen/inc/select.inc.php:49 adressen/inc/select.inc.php:71
+#, php-format
+msgid "%s needs the %s"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+#: adressen/pages/all_birthdays.inc.php:15
+msgid "January"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "February"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "March"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "April"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "May"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "June"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "July"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "August"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "September"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "Oktober"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "November"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:3
+msgid "December"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:42
+msgid "without a birthday"
+msgstr ""
+
+#: adressen/pages/all_birthdays.inc.php:44
+msgid "show list?"
+msgstr ""
+
+#: adressen/pages/list.inc.php:39
+#, php-format
+msgid "The search for last names with the letter <em>%s</em> yielded 1 result:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:42
+#, php-format
+msgid ""
+"The search for last names with the letter <em>%s</em> yielded %d results:"
+msgstr ""
