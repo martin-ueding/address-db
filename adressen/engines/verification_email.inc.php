@@ -274,7 +274,7 @@ if ($_GET['sicher'] == 'ja') {
 			$msgs[] = _('The verification email was sent.');
 		}
 		else {
-			$msgs[] = _('There was an error while sending the verification email').'<br/>'.$mail->ErrorInfo;
+			$msgs[] = _('There was an error while sending the verification email:').'<br/>'.$mail->ErrorInfo;
 		}
 
 

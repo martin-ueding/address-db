@@ -2,10 +2,10 @@
 // Geburtstagstabelle
 echo '<table id="geburtstag">'."\n";
 echo '<tr>'."\n";
-echo '<td colspan="4"><b>Geburtstage</b></td>'."\n";
+echo '<td colspan="4"><b>'._('birthdays').'</b></td>'."\n";
 echo '</tr>'."\n";
 echo '<tr>'."\n";
-echo '<td colspan="3">&nbsp;<br />Dieser Monat:</td>'."\n";
+echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>'."\n";
 echo '</tr>'."\n";
 // Daten laufender Monat holen und Anzeigearray erstellen
 if ($_SESSION['f'] != 0)
@@ -38,7 +38,7 @@ while ($l = mysql_fetch_assoc($erg))
 	}
 /* .Ende Geburtstage laufender Monat. */
 echo '<tr>'."\n";
-echo '<td colspan="3">&nbsp;<br />Nächster Monat:</td>'."\n";
+echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>'."\n";
 echo '</tr>'."\n";
 /* .. */
 /* .Daten kommender Monat holen und Anzeigearray erstellen. */

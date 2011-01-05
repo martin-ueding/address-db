@@ -1,35 +1,35 @@
-<h2>Teil 1/3 &ndash; Name und Bez&uuml;ge</h2>
+<h2><?PHP echo _('part 1 of 3 &ndash; names and relations'); ?></h2>
 
 <form action="person_create2.php" method="post">
 
 <table>
-<tr><th colspan="2">Name:</th></tr>
+<tr><th colspan="2"><?PHP echo _('name'); ?>:</th></tr>
 <tr>
 <td>Anrede:</td>
 <td><?PHP show_select_anrede('anrede_r', ""); show_select_prafix('prafix_r', ""); ?></td>
 </tr>
 <tr>
-<td>Vorname:</td>
+<td><?PHP echo _('first name'); ?>:</td>
 <td><?PHP echo '<input type="text" name="vorname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
-<td>2. Vorname:</td>
+<td><?PHP echo _('middle name'); ?>:</td>
 <td><?PHP echo '<input type="text" name="mittelname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
-<td>Nachname:</td>
+<td><?PHP echo _('last name'); ?>:</td>
 <td><?PHP echo '<input type="text" name="nachname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
-<td>Suffix:</td>
+<td><?PHP echo _('suffix'); ?>:</td>
 <td><?PHP show_select_suffix('suffix_r', ""); ?></td>
 </tr>
 <tr>
-<td>Geburtsname:</td>
+<td><?PHP echo _('maiden name'); ?>:</td>
 <td><?PHP echo '<input type="text" name="geburtsname" size="30" maxlength="100" />'; ?></td>
 </tr>
 <tr>
-<td>Geburtsdatum:</td>
+<td><?PHP echo _('birth date'); ?>:</td>
 <td><?PHP
 show_select_zahlen('geb_t', 0, 1, 31, true);
 show_select_zahlen('geb_m', 0, 1, 12, true);
@@ -38,13 +38,13 @@ show_select_zahlen('geb_j', 0, date("Y")-100, date("Y"), false);
 </tr>
 </table>
 <br><br>
-<h3>Bez&uuml;ge:</h3>
+<h3><?PHP echo _('relations'); ?>:</h3>
 
 <?PHP
 /* Beziehungen zu den Familienmitgliedern */
 $erg = select_alle_fmg();
 echo '<div class="box_596">';
-	echo 'Wer kennt diese Person?<br /><br />';
+	echo  _('Who knows this person?').'<br /><br />';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
@@ -56,7 +56,7 @@ echo '<div class="box_596">';
 	echo '<br /><br />';
 	/* Gruppen */
 	$erg = select_alle_gruppen();
-	echo 'In welchen Gruppen ist die Person?<br><br />';
+	echo _('In which groups is this person?').'<br><br />';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
@@ -64,11 +64,11 @@ echo '<div class="box_596">';
 		echo '</div>';
 		}
 echo '</div>';
-	echo '&nbsp;<br style="clear: left;" /><br /><input class="rand" type="text" name="neue_gruppe" size="30" maxlength="100" /> Neue Gruppe anlegen';
+	echo '&nbsp;<br style="clear: left;" /><br /><input class="rand" type="text" name="neue_gruppe" size="30" maxlength="100" /> '._('create new group');
 	?>
 <br /><br />
 
-<h2>Teil 2/3 &ndash; Adresse</h2>
+<h2><?PHP echo _('part 2 of 3 &ndash; address'); ?></h2>
 
 <?PHP
 
@@ -81,10 +81,10 @@ echo '</div>';
 	} 
 	echo '</select>';
 	
-echo '<br /><br />';
+	echo '<br /><br />';
 
 	echo '<br /><input type="checkbox" id="adresswahl" name="adresswahl" value="manuell"';
-	echo ' onClick = "_switch(\'manuelle_eingabe\'); return true;"> Oder neue Adresse anlegen:';
+	echo ' onClick = "_switch(\'manuelle_eingabe\'); return true;"> '._('or enter a new address').':';
 
 	?>
 
@@ -93,12 +93,12 @@ echo '<br /><br />';
 	<table>
 		
 	<tr>
-		<td>Strasse:</td>
+		<td><?PHP echo _('street'); ?>:</td>
 		<td><?PHP echo '<input type="text" name="strasse" size="30" maxlength="100" />'; ?></td>
 	</tr>
 	
 	<tr>
-		<td>PLZ, Ort, Land:</td>
+		<td><?PHP echo _('postral code, city and country'); ?>:</td>
 		<td><?PHP show_select_plz('plz_r', 0); show_select_ort('ort_r', 0); show_select_land('land_r', 0); ?></td>
 	</tr>
 	
@@ -111,110 +111,110 @@ echo '<br /><br />';
 
 	<br /><br />
 
-	Allgemeine Telefone:
+	<?PHP echo _('general telephones'); ?>:
 
 	<table>
 		<tr>
-			<td>Privat:</td>
+			<td><?PHP echo _('private'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('privat', true) ?></td>
 		</tr>
 		<tr>
-			<td>Arbeit:</td>
+			<td><?PHP echo _('work'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('arbeit', true) ?></td>
 		</tr>
 		<tr>
-			<td>Mobil:</td>
+			<td><?PHP echo _('work'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('mobil', true) ?></td>
 		</tr>
 		<tr>
-			<td>Fax:</td>
+			<td><?PHP echo _('fax'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('fax', true) ?></td>
 		</tr>
 		<tr>
-			<td>Aux:</td>
+			<td><?PHP echo _('aux'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('aux', true) ?></td>
 		</tr>
 	</table>
 		
 	</div>
-	<h2>Teil 3/3 &ndash; Pers&ouml;nliche Kontaktdaten</h2>
+	<h2><?PHP echo _('part 3 of 3 &ndash; personal contact information'); ?></h2>
 
 	<table>
 		<tr>
-			<td>Email privat:</td>
+			<td><?PHP echo _('email private'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="email_privat" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Email Arbeit:</td>
+			<td><?PHP echo _('email work'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="email_arbeit" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Email Sonstiges:</td>
+			<td><?PHP echo _('email other'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="email_aux" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Homepage 1:</td>
+			<td><?PHP echo _('homepage 1'); ?>:</td>
 			<td>http://<?PHP echo '<input type="text" name="hp1" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Homepage 2:</td>
+			<td><?PHP echo _('homepage 2'); ?>:</td>
 			<td>http://<?PHP echo '<input type="text" name="hp2" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
-			<td>Privat:</td>
+			<td><?PHP echo _('private'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('privat', false) ?></td>
 		</tr>
 		<tr>
-			<td>Arbeit:</td>
+			<td><?PHP echo _('work'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('arbeit', false) ?></td>
 		</tr>
 		<tr>
-			<td>Mobil:</td>
+			<td><?PHP echo _('mobile'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('mobil', false) ?></td>
 		</tr>
 		<tr>
-			<td>Fax:</td>
+			<td><?PHP echo _('fax'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('fax', false) ?></td>
 		</tr>
 		<tr>
-			<td>Aux:</td>
+			<td><?PHP echo _('aux'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('aux', false) ?></td>
 		</tr>
 		
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
-			<td>Chat AIM:</td>
+			<td><?PHP echo _('Chat AIM'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_aim" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Chat MSN:</td>
+			<td><?PHP echo _('Chat MSN'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_msn" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Chat ICQ:</td>
+			<td><?PHP echo _('Chat ICQ'); ?>:</td>
 			<td><?PHP echo '#<input type="text" name="chat_icq" size="9" maxlength="9" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Chat Yahoo:</td>
+			<td><?PHP echo _('Chat Yahoo!'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_yim" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Chat Skype:</td>
+			<td><?PHP echo _('Chat Skype'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_skype" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td>Chat Sonstiges:</td>
+			<td><?PHP echo _('Chat Jabber/XMPP'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_aux" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr><td colspan="2">&nbsp; </td></tr>
 		<tr>
-			<td>Notizen:</td>
+			<td><?PHP echo _('notes'); ?>:</td>
 			<td><?PHP echo '<textarea name="pnotizen" rows="4" cols="30"></textarea>'; ?></td>
 		</tr>
 	</table>
 
 <br /><br />
 	
-<input class="rand" type="submit" name="knopf" value="Speichern" /><br>&nbsp;
+<input class="rand" type="submit" name="knopf" value="<?PHP echo _('save'); ?>" /><br />&nbsp;
 </form>

@@ -1,6 +1,6 @@
 <?PHP
 $from_with_get = 'mode=no_email';
-echo 'Personen ohne Email:<br /><br />';
+echo _('entries without an email address').':<br /><br />';
 
 $titel = $_GET["titel"];
 
@@ -26,6 +26,6 @@ if (count($daten) > 0) {
 }
 
 else
-	echo 'Nichts gefunden';
+	echo _('nothing found');
 
 ?>
