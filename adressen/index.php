@@ -71,10 +71,10 @@ switch ($mode) {
 		break;
 	case 'list':
 		if (!empty($_GET['b'])) {
-			$page_title = _('Address DB').': '._('letter &bdquo;'.$_GET['b'].'&ldquo;');
+			$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
 		}
 		else if (!empty($_GET['titel'])) {
-			$page_title = _('Address DB').': '._('group &bdquo;'.$_GET['titel'].'&ldquo;');
+			$page_title = _('Address DB').': '.sprintf(_('group &bdquo;%s&ldquo;'), $_GET['titel']);
 		}
 		else if (!empty($_GET['f'])) {
 			// get name for person
