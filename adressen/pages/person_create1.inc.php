@@ -1,4 +1,4 @@
-<h2><?PHP echo _('part 1 of 3 &ndash; names and relations'); ?></h2>
+<h2><?PHP echo sprintf(_('part %d of %d'), 1, 3).' &ndash; '._('names and relations'); ?></h2>
 
 <form action="person_create2.php" method="post">
 
@@ -68,7 +68,7 @@ echo '</div>';
 	?>
 <br /><br />
 
-<h2><?PHP echo _('part 2 of 3 &ndash; address'); ?></h2>
+<h2><?PHP echo sprintf(_('part %d of %d'), 2, 3).' &ndash; '._('address'); ?></h2>
 
 <?PHP
 
@@ -137,7 +137,7 @@ echo '</div>';
 	</table>
 		
 	</div>
-	<h2><?PHP echo _('part 3 of 3 &ndash; personal contact information'); ?></h2>
+	<h2><?PHP echo sprintf(_('part %d of %d'), 3, 3).' &ndash; '._('personal contact information'); ?></h2>
 
 	<table>
 		<tr>

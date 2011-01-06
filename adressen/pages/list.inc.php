@@ -36,20 +36,20 @@ if (!empty($sql)) {
 
 	if (!empty($_GET['b'])) {
 		if(mysql_num_rows($erg) == 1) {
-			printf(_('The search for last names with the letter <em>%s</em> yielded 1 result:'), $_GET['b']).'<br /><br />';
+			printf(_('The search for last names with the letter %s yielded 1 result:'), '<em>'.$_GET['b'].'</em>').'<br /><br />';
 		}
 		else {
-			printf(_('The search for last names with the letter <em>%s</em> yielded %d results:'), $_GET['b'], mysql_num_rows($erg));
+			printf(_('The search for last names with the letter %s yielded %d results:'), '<em>'.$_GET['b'].'</em>', mysql_num_rows($erg));
 			echo '<br /><br />';
 		}
 	}
 
 	else if (!empty($titel)) {
 		if(mysql_num_rows($erg) == 1) {
-			echo 'Die Gruppe <em>'.$titel.'</em> enth&auml;lt '.mysql_num_rows($erg).' Person:<br /><br />';
+			printf(_('The group %s contains 1 entry:'), '<em>'.$titel.'</em>').'<br /><br />';
 		}
 		else {
-			echo 'Die Gruppe <em>'.$titel.'</em> enth&auml;lt '.mysql_num_rows($erg).' Personen:<br /><br />';
+			printf(_('The group %s contains %d entries:'), '<em>'.$titel.'</em>', mysql_num_rows($erg));
 		}
 	}
 
@@ -61,20 +61,20 @@ if (!empty($sql)) {
 			$f_name = $name['fmg'];
 		}
 		if(mysql_num_rows($erg) == 1) {
-			echo 'F&uuml;r <em>'.$f_name.'</em> ist '.mysql_num_rows($erg).' Person gespeichert:<br /><br />';
+			printf(_('For %s, there is %d entry:'), '<em>'.$f_name.'</em>', mysql_num_rows($erg));
 		}
 		else {
-			echo 'F&uuml;r <em>'.$f_name.'</em> sind '.mysql_num_rows($erg).' Personen gespeichert:<br /><br />';
+			printf(_('For %s, there are %d entries:'), '<em>'.$f_name.'</em>', mysql_num_rows($erg));
 		}
 	}
 
 
 	else {
 		if(mysql_num_rows($erg) == 1) {
-			echo 'Es gibt '.mysql_num_rows($erg).' Eintrag:<br /><br />';
+			echo _('There is 1 entry:');
 		}
 		else {
-			echo 'Es gibt '.mysql_num_rows($erg).' Eintr&auml;ge:<br /><br />';
+			printf(_('There are %d entries:'), mysql_num_rows($erg));
 		}
 	}
 
@@ -102,15 +102,15 @@ if (!empty($sql)) {
 
 if (!empty($_GET['f'])) {
 	echo '<br /><br />';
-	echo '<a href="export/vcard_fmg.php?f='.$_SESSION['f'].'">Diese Liste als VCard exportieren</a>';
+	echo '<a href="export/vcard_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a VCard').'</a>';
 	echo '<br />';
-	echo '<a href="export/export812_fmg.php?f='.$_SESSION['f'].'">Diese Liste als TeX f&uuml;r Kalenderbl&auml;tter exportieren</a>';
+	echo '<a href="export/export812_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a LaTeX for day planner sheets').'</a>';
 	
 }
 
 if (!empty($emailadressen)) { 
 	echo '<br /><br />';
-	echo '<a href="mailto:?bcc='.implode(',', $emailadressen).'">Email an alle</a>';
+	echo '<a href="mailto:?bcc='.implode(',', $emailadressen).'">'._('send an email to everybody in this list').'</a>';
 }
 
 ?>

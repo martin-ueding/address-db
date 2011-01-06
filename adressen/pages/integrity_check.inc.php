@@ -1,6 +1,6 @@
-<h1>Daten&uuml;berpr&uuml;fung</h1>
-
 <?PHP
+echo '<h1>'._('integrity check').'</h1>';
+
 $remove_unneeded = $_GET['remove_unneeded'] == 'true';
 $deleted_items = 0;
 $unneeded_items = 0;
@@ -27,7 +27,7 @@ if (count($mugshot_ids) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>Bilder ohne Bezug</h2>';
+		echo '<h2>'._('pictures with no associated entry').'</h2>';
 
 		foreach ($diff as $bild_id) {
 			echo '<img src="_mugshots/per'.$bild_id.'.jpg" height="180" /> ';
@@ -37,7 +37,7 @@ if (count($mugshot_ids) > 0) {
 					$deleted_items++;
 				}
 				else {
-					echo '<br />Fehler beim L&ouml;schen!';
+					echo '<br />'.sprintf(_('Error during deletion of image %s!'), 'per'.$bild_id.'.jpg');
 				}
 			}
 		}
@@ -63,7 +63,7 @@ if (count($stored_addresses) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>unbenutzte Adressen</h2>';
+		echo '<h2>'._('unused addresses').'</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -103,7 +103,7 @@ if (count($stored_plz) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>unbenutzte Postleitzahlen</h2>';
+		echo '<h2>'._('unused postral codes').'</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -142,7 +142,7 @@ if (count($stored_cities) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>unbenutzte Orte</h2>';
+		echo '<h2>'._('unused cities').'</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -181,7 +181,7 @@ if (count($stored_countries) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>unbenutzte L&auml;nder</h2>';
+		echo '<h2>'._('unused countries').'</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -229,7 +229,7 @@ if (count($stored_acodes) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>unbenutzte Vorwahlen</h2>';
+		echo '<h2>'._('unused area codes').'</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -270,7 +270,7 @@ if (count($stored_grouplinks) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>ung&uuml;ltige Gruppenzuordnungen (glinks)</h2>';
+		echo '<h2>'._('invalid group links').' (glinks)</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -309,7 +309,7 @@ if (count($stored_groups) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>leere Gruppen</h2>';
+		echo '<h2>'._('empty groups').'</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -350,7 +350,7 @@ if (count($stored_flinks) > 0) {
 
 	if (count($diff) > 0) {
 		$unneeded_items += count($diff);
-		echo '<h2>ung&uuml;ltige Familienmitgliedzuordnungen (flinks)</h2>';
+		echo '<h2>'._('invalid family member links').' (flinks)</h2>';
 
 		$first = true;
 		foreach ($diff as $item) {
@@ -372,16 +372,16 @@ if (count($stored_flinks) > 0) {
 }
 
 if ($remove_unneeded) {
-	echo '<br /><br />Es wurden '.$deleted_items.' Eintr&auml;ge gel&ouml;scht.';
-}
-
-if ($unneeded_items > 0) {
-	if ($unneeded_items > $deleted_items) {
-		echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">'.$unneeded_items.' unben&ouml;tigte Eintr&auml;ge l&ouml;schen</a>';
-	}
+	echo '<br /><br />'.sprintf(_('%d entries were deleted.'), $deleted_items);
 }
 else {
-	echo 'Es gibt keine unben&ouml;tigten oder ung&uuml;ltigen Eintr&auml;ge.';
+	if ($unneeded_items > 0) {
+		if ($unneeded_items > $deleted_items) {
+			echo '<br /><br /><a href="index.php?mode=integrity_check&remove_unneeded=true">'.sprintf(_('delete %d unneeded entries'), $unneeded_items).'</a>';
+		}
+	}
+	else {
+		echo _('There are no invalid or unneeded entries.');
+	}
 }
-
 ?>

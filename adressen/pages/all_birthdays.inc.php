@@ -12,7 +12,7 @@ $erg = mysql_query($sql);
 $aktuell = 1;
 
 echo '<div class="geb_monat_kasten">';
-echo '<b>'_('January').'</b><br /><br />';
+echo '<b>'._('January').'</b><br /><br />';
 
 while ($l = mysql_fetch_assoc($erg)) {
 	if ($l['geb_m'] != $aktuell) {

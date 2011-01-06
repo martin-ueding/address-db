@@ -71,10 +71,10 @@ switch ($mode) {
 		break;
 	case 'list':
 		if (!empty($_GET['b'])) {
-			$page_title = 'Address DB').': '._('letter &bdquo;'.$_GET['b'].'&ldquo;');
+			$page_title = _('Address DB').': '._('letter &bdquo;'.$_GET['b'].'&ldquo;');
 		}
 		else if (!empty($_GET['titel'])) {
-			$page_title = 'Address DB').': '._('group &bdquo;'.$_GET['titel'].'&ldquo;');
+			$page_title = _('Address DB').': '._('group &bdquo;'.$_GET['titel'].'&ldquo;');
 		}
 		else if (!empty($_GET['f'])) {
 			// get name for person
@@ -83,7 +83,7 @@ switch ($mode) {
 			if ($name = mysql_fetch_assoc($name_erg)) {
 				$f_name = $name['fmg'];
 			}
-			$page_title = _('Address DB').': '.printf(_('entries for %s'), $f_name);
+			$page_title = _('Address DB').': '.sprintf(_('entries for %s'), $f_name);
 		}
 		else {
 			$page_title = _('Address DB').': '._('list');
@@ -101,28 +101,28 @@ switch ($mode) {
 		break;
 	case 'person_delete':
 	case 'person_delete2':
-		$page_title = _('Address DB').': '.printf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		$page_title = _('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'person_display':
 		$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
 		break;
 	case 'person_edit1':
 	case 'person_edit2':
-		$page_title = _('Address DB').': '.printf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		$page_title = _('Address DB').': '.sprintf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'pic_remove':
-		$page_title = _('Address DB').': '.printf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		$page_title = _('Address DB').': '.sprintf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'pic_upload1':
 	case 'pic_upload2':
 	case 'pic_upload3':
-		$page_title = _('Address DB').': '.printf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'search':
-		$page_title = _('Address DB').': '.printf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
+		$page_title = _('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
 		break;
 	case 'verification_email':
-		$page_title = _('Address DB').': '.printf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		$page_title = _('Address DB').': '.sprintf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'integrity_check':
 		$page_title = _('Address DB').': '._('database check');
