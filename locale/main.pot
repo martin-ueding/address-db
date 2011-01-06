@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-06 20:20+0100\n"
+"POT-Creation-Date: 2011-01-06 21:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,12 @@ msgstr ""
 msgid "Sorry, I could not find a site like that."
 msgstr ""
 
-#: adressen/index.php:70 adressen/index.php:86 adressen/index.php:89
-#: adressen/index.php:93 adressen/index.php:96 adressen/index.php:100
-#: adressen/index.php:104 adressen/index.php:107 adressen/index.php:111
-#: adressen/index.php:114 adressen/index.php:119 adressen/index.php:122
-#: adressen/index.php:125 adressen/index.php:128
+#: adressen/index.php:70 adressen/index.php:74 adressen/index.php:77
+#: adressen/index.php:86 adressen/index.php:89 adressen/index.php:93
+#: adressen/index.php:96 adressen/index.php:100 adressen/index.php:104
+#: adressen/index.php:107 adressen/index.php:111 adressen/index.php:114
+#: adressen/index.php:119 adressen/index.php:122 adressen/index.php:125
+#: adressen/index.php:128
 msgid "Address DB"
 msgstr ""
 
@@ -305,7 +306,7 @@ msgstr ""
 msgid "mode"
 msgstr ""
 
-#: adressen/inc/header.inc.php:46
+#: adressen/inc/header.inc.php:46 adressen/pages/person_display.inc.php:270
 msgid "groups"
 msgstr ""
 
@@ -377,15 +378,114 @@ msgstr ""
 msgid "show list?"
 msgstr ""
 
+#: adressen/pages/integrity_check.inc.php:2
+msgid "integrity check"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:30
+msgid "pictures with no associated entry"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:40
+#, php-format
+msgid "Error during deletion of image %s!"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:66
+msgid "unused addresses"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:106
+msgid "unused postral codes"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:145
+msgid "unused cities"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:184
+msgid "unused countries"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:232
+msgid "unused area codes"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:273
+msgid "invalid group links"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:312
+msgid "empty groups"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:353
+msgid "invalid family member links"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:375
+#, php-format
+msgid "%d entries were deleted."
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:380
+#, php-format
+msgid "delete %d unneeded entries"
+msgstr ""
+
+#: adressen/pages/integrity_check.inc.php:384
+msgid "There are no invalid or unneeded entries."
+msgstr ""
+
 #: adressen/pages/list.inc.php:39
 #, php-format
-msgid "The search for last names with the letter <em>%s</em> yielded 1 result:"
+msgid "The search for last names with the letter %s yielded 1 result:"
 msgstr ""
 
 #: adressen/pages/list.inc.php:42
 #, php-format
-msgid ""
-"The search for last names with the letter <em>%s</em> yielded %d results:"
+msgid "The search for last names with the letter %s yielded %d results:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:49
+#, php-format
+msgid "The group %s contains 1 entry:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:52
+#, php-format
+msgid "The group %s contains %d entries:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:64
+#, php-format
+msgid "For %s, there is %d entry:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:67
+#, php-format
+msgid "For %s, there are %d entries:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:74
+msgid "There is 1 entry:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:77
+#, php-format
+msgid "There are %d entries:"
+msgstr ""
+
+#: adressen/pages/list.inc.php:105
+msgid "export this list as a VCard"
+msgstr ""
+
+#: adressen/pages/list.inc.php:107
+msgid "export this list as a LaTeX for day planner sheets"
+msgstr ""
+
+#: adressen/pages/list.inc.php:113
+msgid "send an email to everybody in this list"
 msgstr ""
 
 #: adressen/pages/main.inc.php:5
@@ -413,11 +513,27 @@ msgid "entries without a form of address"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:1
-msgid "part 1 of 3 &ndash; names and relations"
+#: adressen/pages/person_create1.inc.php:71
+#: adressen/pages/person_create1.inc.php:140
+#, php-format
+msgid "part %d of %d"
+msgstr ""
+
+#: adressen/pages/person_create1.inc.php:1
+msgid "names and relations"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:6
+#: adressen/pages/person_display.inc.php:11
+#: adressen/pages/person_display.inc.php:26
 msgid "name"
+msgstr ""
+
+#: adressen/pages/person_create1.inc.php:8
+#: adressen/pages/person_create1.inc.php:71
+#: adressen/pages/person_display.inc.php:63
+#: adressen/pages/person_display.inc.php:68
+msgid "address"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:12
@@ -445,6 +561,7 @@ msgid "birth date"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:41
+#: adressen/pages/person_display.inc.php:264
 msgid "relations"
 msgstr ""
 
@@ -458,10 +575,6 @@ msgstr ""
 
 #: adressen/pages/person_create1.inc.php:67
 msgid "create new group"
-msgstr ""
-
-#: adressen/pages/person_create1.inc.php:71
-msgid "part 2 of 3 &ndash; address"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:87
@@ -482,17 +595,21 @@ msgstr ""
 
 #: adressen/pages/person_create1.inc.php:118
 #: adressen/pages/person_create1.inc.php:165
+#: adressen/pages/person_display.inc.php:126
 msgid "private"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:122
 #: adressen/pages/person_create1.inc.php:126
 #: adressen/pages/person_create1.inc.php:169
+#: adressen/pages/person_display.inc.php:133
 msgid "work"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:130
 #: adressen/pages/person_create1.inc.php:177
+#: adressen/pages/person_display.inc.php:107
+#: adressen/pages/person_display.inc.php:147
 msgid "fax"
 msgstr ""
 
@@ -502,58 +619,70 @@ msgid "aux"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:140
-msgid "part 3 of 3 &ndash; personal contact information"
+msgid "personal contact information"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:144
+#: adressen/pages/person_display.inc.php:167
 msgid "email private"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:148
+#: adressen/pages/person_display.inc.php:175
 msgid "email work"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:152
+#: adressen/pages/person_display.inc.php:183
 msgid "email other"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:156
+#: adressen/pages/person_display.inc.php:191
 msgid "homepage 1"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:160
+#: adressen/pages/person_display.inc.php:198
 msgid "homepage 2"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:173
+#: adressen/pages/person_display.inc.php:140
 msgid "mobile"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:187
-msgid "Chat AIM"
+#: adressen/pages/person_display.inc.php:207
+msgid "chat AIM"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:191
-msgid "Chat MSN"
+#: adressen/pages/person_display.inc.php:214
+msgid "chat MSN"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:195
-msgid "Chat ICQ"
+#: adressen/pages/person_display.inc.php:221
+msgid "chat ICQ"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:199
-msgid "Chat Yahoo!"
+msgid "chat Yahoo!"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:203
-msgid "Chat Skype"
+#: adressen/pages/person_display.inc.php:235
+msgid "chat Skype"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:207
-msgid "Chat Jabber/XMPP"
+#: adressen/pages/person_display.inc.php:242
+msgid "chat Jabber/XMPP"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:212
+#: adressen/pages/person_display.inc.php:253
 msgid "notes"
 msgstr ""
 
@@ -561,9 +690,146 @@ msgstr ""
 msgid "save"
 msgstr ""
 
+#: adressen/pages/person_delete.inc.php:3
+#, php-format
+msgid "Do you really want to delete the entry %s?"
+msgstr ""
+
+#: adressen/pages/person_delete.inc.php:6
+msgid "Sure, delete that!"
+msgstr ""
+
+#: adressen/pages/person_delete.inc.php:9
+msgid "No, cancel!"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:16
+msgid "form of address"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:37
+msgid "born<!-- both gender form-->"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:39
+msgid "Mr."
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:40
+msgid "born<!-- male form -->"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:42
+msgid "born<!-- female form -->"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:50
+msgid "birthday"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:54
+#, php-format
+msgid "today %d years old)"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:75
+msgid "show map"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:86
+msgid "telephone private"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:93
+msgid "telephone work"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:100
+msgid "telephone mobile"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:114
+msgid "telephone other"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:121
+msgid "telephone"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:154
+msgid "other"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:162
+msgid "internet"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:228
+msgid "chat Yahoo"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:282
+msgid "associated with"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:294
+#: adressen/pages/person_display.inc.php:300
+msgid "up-to-dateness"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:320
+#, php-format
+msgid "last check %s (%d days ago)"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:326
+msgid "Was the data checked and is it up-to-date?"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:326
+msgid "yes"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:332
+msgid "verification email"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:335
+msgid "send verification email"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:341
+#, php-format
+msgid "verification mail %s sent, confirmation pending"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:347
+msgid "last edited"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:353
+msgid "edit this entry"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:354
+msgid "delete this entry"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:356
+msgid "upload picture"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:358
+msgid "delete picture"
+msgstr ""
+
+#: adressen/pages/person_display.inc.php:360
+msgid "download VCard"
+msgstr ""
+
 #: adressen/pages/pic_remove.inc.php:3
 #, php-format
-msgid "Do you really want to remove the picture for <em>%s</em>?"
+msgid "Do you really want to remove the picture for %s?"
 msgstr ""
 
 #: adressen/pages/pic_remove.inc.php:6
@@ -571,7 +837,7 @@ msgid "Yes, delete picture!"
 msgstr ""
 
 #: adressen/pages/pic_remove.inc.php:9
-msgid "Cancel"
+msgid "cancel"
 msgstr ""
 
 #: adressen/pages/pic_upload1.inc.php:1
@@ -580,6 +846,10 @@ msgstr ""
 
 #: adressen/pages/pic_upload1.inc.php:3
 msgid "only JPEG"
+msgstr ""
+
+#: adressen/pages/pic_upload1.inc.php:7
+msgid "upload"
 msgstr ""
 
 #: adressen/pages/pic_upload2.inc.php:25
@@ -667,4 +937,17 @@ msgstr ""
 #: adressen/pages/search.inc.php:97
 #, php-format
 msgid "Did you mean %s instead of %s?"
+msgstr ""
+
+#: adressen/pages/verification_email.inc.php:3
+#, php-format
+msgid "Do you really want to send a verification mail to %s?"
+msgstr ""
+
+#: adressen/pages/verification_email.inc.php:4
+msgid "sure"
+msgstr ""
+
+#: adressen/pages/verification_email.inc.php:6
+msgid "Do not send!"
 msgstr ""
