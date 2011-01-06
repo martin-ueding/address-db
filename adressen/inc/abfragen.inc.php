@@ -10,55 +10,58 @@ if (empty($dbh)) {
 
 function handybetreiber ($vw) {
 	switch ($vw) {
-		case "+49-160": case "+49-170": case "+49-171": case "+49-175": case "+49-151":
-			return "(T-Mobile)";
-		case "+49-162": case "+49-172": case "+49-173": case "+49-174": case "+49-152":
-			return "(Vodafone)";
-		case "+49-163": case "+49-177": case "+49-178": case "+49-155": case "+49-157":
-			return "(E-Plus)";
-		case "+49-176": case "+49-179": case "+49-159":
-			return "(O2)";
+		case '+49-160': case '+49-170': case '+49-171': case '+49-175': case '+49-151':
+			return '(T-Mobile)';
+		case '+49-162': case '+49-172': case '+49-173': case '+49-174': case '+49-152':
+			return '(Vodafone)';
+		case '+49-163': case '+49-177': case '+49-178': case '+49-155': case '+49-157':
+			return '(E-Plus)';
+		case '+49-176': case '+49-179': case '+49-159':
+			return '(O2)';
 	}
 }
 
 function sternzeichen ($tag, $monat) {
-	$tagimmonat = date("z", mktime(0, 0, 0, $monat, $tag, 2001));
+	$tagimmonat = date('z', mktime(0, 0, 0, $monat, $tag, 2001));
 	
-	if (0 <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 1, 21, 2001)))
-		return "Steinbock";
+	if (0 <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 1, 21, 2001)))
+		return _('Capricorn');
 	
-	if (date("z", mktime(0, 0, 0, 1, 21, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 2, 20, 2001)))
-		return "Wassermann";
+	if (date('z', mktime(0, 0, 0, 1, 21, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 2, 20, 2001)))
+		return _('Aquarius');
 	
-	if (date("z", mktime(0, 0, 0, 2, 20, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 3, 21, 2001)))
-		return "Fische";
+	if (date('z', mktime(0, 0, 0, 2, 20, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 3, 20, 2001)))
+		return _('Pisces');
 	
-	if (date("z", mktime(0, 0, 0, 4, 21, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 5, 21, 2001)))
-		return "Stier";
+	if (date('z', mktime(0, 0, 0, 3, 20, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 4, 21, 2001)))
+		return _('Aries');
 	
-	if (date("z", mktime(0, 0, 0, 5, 21, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 6, 22, 2001)))
-		return "Zwillinge";
+	if (date('z', mktime(0, 0, 0, 4, 21, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 5, 21, 2001)))
+		return _('Taurus');
 	
-	if (date("z", mktime(0, 0, 0, 6, 22, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 7, 23, 2001)))
-		return "Krebs";
+	if (date('z', mktime(0, 0, 0, 5, 21, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 6, 22, 2001)))
+		return _('Gemini');
 	
-	if (date("z", mktime(0, 0, 0, 7, 23, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 8, 24, 2001)))
-		return "L&ouml;";
+	if (date('z', mktime(0, 0, 0, 6, 22, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 7, 23, 2001)))
+		return _('Cancer');
 	
-	if (date("z", mktime(0, 0, 0, 8, 24, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 9, 24, 2001)))
-		return "Jungfrau";
+	if (date('z', mktime(0, 0, 0, 7, 23, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 8, 24, 2001)))
+		return _('Leo');
 	
-	if (date("z", mktime(0, 0, 0, 9, 24, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 10, 24, 2001)))
-		return "Waage";
+	if (date('z', mktime(0, 0, 0, 8, 24, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 9, 24, 2001)))
+		return _('Virgo');
 	
-	if (date("z", mktime(0, 0, 0, 10, 24, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 11, 23, 2001)))
-		return "Skorpion";
+	if (date('z', mktime(0, 0, 0, 9, 24, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 10, 24, 2001)))
+		return _('Libra');
 	
-	if (date("z", mktime(0, 0, 0, 11, 23, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 12, 22, 2001)))
-		return "Sch&uuml;tze";
+	if (date('z', mktime(0, 0, 0, 10, 24, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 11, 23, 2001)))
+		return _('Scorpio');
+	
+	if (date('z', mktime(0, 0, 0, 11, 23, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 12, 22, 2001)))
+		return _('Sagittarius');
 		
-	if (date("z", mktime(0, 0, 0, 12, 22, 2001)) <= $tagimmonat && $tagimmonat < date("z", mktime(0, 0, 0, 12, 31, 2001)))
-		return "Steinbock";
+	if (date('z', mktime(0, 0, 0, 12, 22, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 12, 31, 2001)))
+		return _('Capricorn');
 }
 
 

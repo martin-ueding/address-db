@@ -16,6 +16,7 @@ if ($_GET['sicher'] == 'ja') {
 		$mailtext .= _('Dear').' '.$person_loop['vorname'].' '.$person_loop['nachname'].',<br /><br />'._('please take a minute and control your data that we have saved in our address book. If everything is correct, please click on the link at the bottom of this email.').'<br /><br />'._('If you want to correct something, please feel free to reply to this mail and tell us the changes. Amendments are welcomed as well.').'<br /><br />'._('Thank you!').'<br /><br />';
 
 
+		// TODO i18n
 
 		$mailtext .= "\n";
 		$mailtext .= '<div class="pers_titel">';

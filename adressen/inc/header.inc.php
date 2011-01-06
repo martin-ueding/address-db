@@ -1,6 +1,6 @@
 <div class="nav_item" onclick="_switch('spezial');"><?PHP echo _('menu'); ?><br />
 <ul id="spezial">
-<li><a href="?mode=main"><?PHP echo _('Start'); ?></a></li>
+<li><a href="?mode=main"><?PHP echo _('start'); ?></a></li>
 <li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
 <li><a href="?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
 <li><a href="?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>

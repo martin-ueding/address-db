@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-05 20:12+0100\n"
+"POT-Creation-Date: 2011-01-06 20:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,15 +101,12 @@ msgid "PHP Family Address DB"
 msgstr ""
 
 #: adressen/engines/person_checked.inc.php:4
-msgid "The person was updated."
+msgid "The entry was updated."
 msgstr ""
 
 #: adressen/engines/person_delete2.inc.php:6
-msgid "The person"
-msgstr ""
-
-#: adressen/engines/person_delete2.inc.php:6
-msgid "was deleted."
+#, php-format
+msgid "The entry %s was deleted."
 msgstr ""
 
 #: adressen/engines/person_delete2.inc.php:25
@@ -165,15 +162,15 @@ msgstr ""
 msgid "Thank you!"
 msgstr ""
 
-#: adressen/engines/verification_email.inc.php:270
+#: adressen/engines/verification_email.inc.php:271
 msgid "Please check your data"
 msgstr ""
 
-#: adressen/engines/verification_email.inc.php:274
+#: adressen/engines/verification_email.inc.php:275
 msgid "The verification email was sent."
 msgstr ""
 
-#: adressen/engines/verification_email.inc.php:277
+#: adressen/engines/verification_email.inc.php:278
 msgid "There was an error while sending the verification email:"
 msgstr ""
 
@@ -196,6 +193,54 @@ msgstr ""
 #: adressen/inc/abfragen.inc.php:8
 #, php-format
 msgid "%s needs the database."
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:28 adressen/inc/abfragen.inc.php:64
+msgid "Capricorn"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:31
+msgid "Aquarius"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:34
+msgid "Pisces"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:37
+msgid "Aries"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:40
+msgid "Taurus"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:43
+msgid "Gemini"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:46
+msgid "Cancer"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:49
+msgid "Leo"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:52
+msgid "Virgo"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:55
+msgid "Libra"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:58
+msgid "Scorpio"
+msgstr ""
+
+#: adressen/inc/abfragen.inc.php:61
+msgid "Sagittarius"
 msgstr ""
 
 #: adressen/inc/anzeigen.inc.php:23
@@ -233,7 +278,7 @@ msgid "menu"
 msgstr ""
 
 #: adressen/inc/header.inc.php:3
-msgid "Start"
+msgid "start"
 msgstr ""
 
 #: adressen/inc/header.inc.php:4
@@ -513,5 +558,113 @@ msgid "notes"
 msgstr ""
 
 #: adressen/pages/person_create1.inc.php:219
-msgid "speichern"
+msgid "save"
+msgstr ""
+
+#: adressen/pages/pic_remove.inc.php:3
+#, php-format
+msgid "Do you really want to remove the picture for <em>%s</em>?"
+msgstr ""
+
+#: adressen/pages/pic_remove.inc.php:6
+msgid "Yes, delete picture!"
+msgstr ""
+
+#: adressen/pages/pic_remove.inc.php:9
+msgid "Cancel"
+msgstr ""
+
+#: adressen/pages/pic_upload1.inc.php:1
+msgid "picture upload"
+msgstr ""
+
+#: adressen/pages/pic_upload1.inc.php:3
+msgid "only JPEG"
+msgstr ""
+
+#: adressen/pages/pic_upload2.inc.php:25
+#, php-format
+msgid "There is no file %s."
+msgstr ""
+
+#: adressen/pages/search.inc.php:32
+msgid "No search query was entered"
+msgstr ""
+
+#: adressen/pages/search.inc.php:35
+#, php-format
+msgid "Searching for the term <em>[ %s ]</em>"
+msgstr ""
+
+#: adressen/pages/search.inc.php:39
+msgid "as part of a name"
+msgstr ""
+
+#: adressen/pages/search.inc.php:42
+msgid "as part of an address"
+msgstr ""
+
+#: adressen/pages/search.inc.php:47
+msgid "as part of a house phone number (private)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:50
+msgid "as part of a house phone number (work)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:53
+msgid "as part of a house phone number (mobile)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:56
+msgid "as part of a house fax number"
+msgstr ""
+
+#: adressen/pages/search.inc.php:59
+msgid "as part of a house phone number (aux)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:64
+msgid "as part of a personal phone number (private)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:67
+msgid "as part of a personal phone number (work)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:70
+msgid "as part of a personal phone number (mobile)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:73
+msgid "as part of a personal fax number"
+msgstr ""
+
+#: adressen/pages/search.inc.php:76
+msgid "as part of a personal phone number (aux)"
+msgstr ""
+
+#: adressen/pages/search.inc.php:80
+msgid "as part of an email address"
+msgstr ""
+
+#: adressen/pages/search.inc.php:83
+msgid "as part of a URL"
+msgstr ""
+
+#: adressen/pages/search.inc.php:86
+msgid "as part of a chat nickname"
+msgstr ""
+
+#: adressen/pages/search.inc.php:89
+msgid "as part of a note"
+msgstr ""
+
+#: adressen/pages/search.inc.php:92
+msgid "no results"
+msgstr ""
+
+#: adressen/pages/search.inc.php:97
+#, php-format
+msgid "Did you mean %s instead of %s?"
 msgstr ""

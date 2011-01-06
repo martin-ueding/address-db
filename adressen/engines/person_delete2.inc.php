@@ -3,7 +3,7 @@ if (!empty($id)) {
 	delete_person_id($id);
 
 	if (!empty($person_loop['vorname']) || !empty($person_loop['nachname'])) {
-		$msgs[] = _('The person').' <em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em> '._('was deleted.');
+		$msgs[] = sprintf(_('The entry %s was deleted.'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');
 	}
 
 	$_GET['mode'] = 'main';
