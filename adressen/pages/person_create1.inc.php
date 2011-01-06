@@ -5,7 +5,7 @@
 <table>
 <tr><th colspan="2"><?PHP echo _('name'); ?>:</th></tr>
 <tr>
-<td>Anrede:</td>
+<td><?PHP echo _('address'); ?>:</td>
 <td><?PHP show_select_anrede('anrede_r', ""); show_select_prafix('prafix_r', ""); ?></td>
 </tr>
 <tr>
@@ -184,27 +184,27 @@ echo '</div>';
 		
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
-			<td><?PHP echo _('Chat AIM'); ?>:</td>
+			<td><?PHP echo _('chat AIM'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_aim" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('Chat MSN'); ?>:</td>
+			<td><?PHP echo _('chat MSN'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_msn" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('Chat ICQ'); ?>:</td>
+			<td><?PHP echo _('chat ICQ'); ?>:</td>
 			<td><?PHP echo '#<input type="text" name="chat_icq" size="9" maxlength="9" />'; ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('Chat Yahoo!'); ?>:</td>
+			<td><?PHP echo _('chat Yahoo!'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_yim" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('Chat Skype'); ?>:</td>
+			<td><?PHP echo _('chat Skype'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_skype" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('Chat Jabber/XMPP'); ?>:</td>
+			<td><?PHP echo _('chat Jabber/XMPP'); ?>:</td>
 			<td><?PHP echo '<input type="text" name="chat_aux" size="30" maxlength="100" />'; ?></td>
 		</tr>
 		<tr><td colspan="2">&nbsp; </td></tr>
