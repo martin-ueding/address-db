@@ -1,12 +1,12 @@
 <?PHP
 if (!empty($id)) {
-	echo 'M&ouml;chten Sie wirklich das Bild f&uuml;r <em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em> l&ouml;schen?';
+	printf(_('Do you really want to remove the picture for <em>%s</em>?'), $person_loop['vorname'].' '.$person_loop['nachname']);
 	echo '<br />';
 	echo '<br />';
-	echo '<a href="index.php?mode=pic_remove2&id='.$id.'">Ja, Bild l&ouml;schen!</a>';
+	echo '<a href="index.php?mode=pic_remove2&id='.$id.'">'._('Yes, delete picture!').'</a>';
 	echo '<br />';
 	echo '<br />';
-	echo '<a href="index.php?mode=person_display&id='.$_GET['id'].'">Abbrechen</a>';
+	echo '<a href="index.php?mode=person_display&id='.$_GET['id'].'">'._('Cancel').'</a>';
 }
 
 ?>

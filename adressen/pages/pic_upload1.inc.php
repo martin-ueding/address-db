@@ -1,6 +1,6 @@
-<h1>Dateiupload</h1>
+<h1><?PHP echo _('picture upload'); ?></h1>
 
-Nur .JPG!
+<?PHP echo _('only JPEG'); ?>
 
 <form enctype="multipart/form-data" action="index.php?mode=pic_upload1&fertig=ja" method="post"> 
 <input type="file" name="file">

@@ -22,7 +22,7 @@ if (file_exists($dateiname)) {
 
 }
 else {
-	echo 'Es existiert keine Datei "'.$dateiname.'".';
+	printf(_('There is no file %s.');, $dateiname);
 }
 
 ?>
