@@ -66,7 +66,7 @@ if ($_GET['sicher'] == 'ja') {
 			echo '<td>'.$person_loop['geb_t'].'.'.$person_loop['geb_m'].'.';
 			if ($person_loop['geb_j'] > 1500) {
 				echo $person_loop['geb_j'].' &nbsp;&nbsp; ';
-				printf(_('today %d years old)'),alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
+				printf(_('(today %d years old)'),alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
 				echo ' &nbsp;&nbsp; ('.sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
 			}
 			echo '</td>';
