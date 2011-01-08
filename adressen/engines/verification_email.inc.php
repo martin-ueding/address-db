@@ -16,239 +16,244 @@ if ($_GET['sicher'] == 'ja') {
 		$mailtext .= _('Dear').' '.$person_loop['vorname'].' '.$person_loop['nachname'].',<br /><br />'._('please take a minute and control your data that we have saved in our address book. If everything is correct, please click on the link at the bottom of this email.').'<br /><br />'._('If you want to correct something, please feel free to reply to this mail and tell us the changes. Amendments are welcomed as well.').'<br /><br />'._('Thank you!').'<br /><br />';
 
 
-		// TODO i18n
+
+		// start to buffer everything, so you can reuse person_display's stuff with echo ;-)
+		ob_start();
+
 
 		$mailtext .= "\n";
-		$mailtext .= '<div class="pers_titel">';
-		$mailtext .= '&nbsp;&nbsp;Name:';
-		$mailtext .= '</div>';
+		echo '<div class="pers_titel">';
+		echo '&nbsp;&nbsp;'._('name').':';
+		echo '</div>';
 
-		$mailtext .= '<table id="name">';
-		$mailtext .= '<tr>';
-		$mailtext .= '<td class="links">Anrede:</td>';
-		$mailtext .= '<td class="rechts">';
+		echo '<table id="name">';
+		echo '<tr>';
+		echo '<td class="links">'._('form of address').':</td>';
+		echo '<td class="rechts">';
 		if ($person_loop['anrede'] != "-")
-			$mailtext .= ' '.$person_loop['anrede'];
+			echo ' '.$person_loop['anrede'];
 		if ($person_loop['prafix'] != "-")
-			$mailtext .= ' '.$person_loop['prafix'];
-		$mailtext .= '</td>';
-		$mailtext .= '</tr>';
+			echo ' '.$person_loop['prafix'];
+		echo '</td>';
+		echo '</tr>';
 
-		$mailtext .= '<tr>';
-		$mailtext .= '<td class="links">Name:</td>';
-		$mailtext .= '<td>';
-		$mailtext .= '<b>'.$person_loop['vorname'].'</b>';
+		echo '<tr>';
+		echo '<td class="links">'._('name').':</td>';
+		echo '<td>';
+		echo '<b>'.$person_loop['vorname'].'</b>';
 		if (!empty($person_loop['mittelname']))
-			$mailtext .= ' '.$person_loop['mittelname'];
-		$mailtext .= ' <b>'.$person_loop['nachname'].'</b>';
+			echo ' '.$person_loop['mittelname'];
+		echo ' <b>'.$person_loop['nachname'].'</b>';
 		if ($person_loop['suffix'] != "-")
-			$mailtext .= ' ('.$person_loop['suffix'].')';
-		if (!empty($person_loop['geburtsname'])) 
-			$mailtext .= ', geborene(r) '.$person_loop['geburtsname'];
-		$mailtext .= '</td>';
-		$mailtext .= '</tr>';
-		if (!empty($person_loop['geb_t'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Geburtstag:</td>';
-			$mailtext .= '<td>'.$person_loop['geb_t'].'.'.$person_loop['geb_m'].'.';
-			if ($person_loop['geb_j'] > 1500) 
-				$mailtext .= $person_loop['geb_j'].' &nbsp;&nbsp; (heute '.alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']).' Jahre alt)';
-			$mailtext .= '</td>';
-			$mailtext .= '</tr>';
+			echo ' ('.$person_loop['suffix'].')';
+		if (!empty($person_loop['geburtsname'])) {
+			echo ', ';
+			if (empty($person_loop['anrede']))
+				echo _('born<!-- both gender form-->');
+			else {
+				if ($person_loop['anrede'] == _('Mr.'))
+					echo _('born<!-- male form -->');
+				else
+					echo _('born<!-- female form -->');
 			}
-		$mailtext .= '</table>';
+			echo ' '.$person_loop['geburtsname'];
+		}
+		echo '</td>';
+		echo '</tr>';
+		if (!empty($person_loop['geb_t'])) {	
+			echo '<tr>';
+			echo '<td class="links">'._('birthday').':</td>';
+			echo '<td>'.$person_loop['geb_t'].'.'.$person_loop['geb_m'].'.';
+			if ($person_loop['geb_j'] > 1500) {
+				echo $person_loop['geb_j'].' &nbsp;&nbsp; ';
+				printf(_('today %d years old)'),alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
+				echo ' &nbsp;&nbsp; ('.sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
+			}
+			echo '</td>';
+			echo '</tr>';
+			}
+		echo '</table>';
 
-		$mailtext .= "\n";
-		$mailtext .= '<div class="pers_titel">';
-		$mailtext .= '&nbsp;&nbsp;Adresse:';
-		$mailtext .= '</div>';
-		$mailtext .= '<table id="adresse">';
-
+		echo '<div class="pers_titel">';
+		echo '&nbsp;&nbsp;'._('address').':';
+		echo '</div>';
+		echo '<table id="adresse">';
 		if ($person_loop['adresse_r'] != 1) {
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Adresse:</td>';
-			$mailtext .= '<td class="rechts">';
-			$mailtext .= $person_loop['strasse'];
-			$mailtext .= ', ';
-			$mailtext .= $person_loop['plz'].' '.$person_loop['ortsname'];
-			$mailtext .= ' ('.$person_loop['land'].')';
-			$mailtext .= '</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('address').':</td>';
+			echo '<td class="rechts">';
+			echo $person_loop['strasse'];
+			echo ', ';
+			echo $person_loop['plz'].' '.$person_loop['ortsname'];
+			echo ' ('.$person_loop['land'].')';
+			echo '</td>';
+			echo '</tr>';
 		}
-		$mailtext .= "\n";
 		if (!empty($person_loop['ftel_privat'])) {		
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Telefon Privat:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['fvw_privat_r']).'-'.$person_loop['ftel_privat'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('telephone private').':</td>';
+			echo '<td>'.select_vw_id($person_loop['fvw_privat_r']).'-'.$person_loop['ftel_privat'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['ftel_arbeit'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Telefon Arbeit:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['fvw_arbeit_r']).'-'.$person_loop['ftel_arbeit'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('telephone work').':</td>';
+			echo '<td>'.select_vw_id($person_loop['fvw_arbeit_r']).'-'.$person_loop['ftel_arbeit'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['ftel_mobil'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Handy: <i>'.handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('telephone mobile').': <i>'.handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+			echo '<td>'.select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['ftel_fax'])) {		
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Fax:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['fvw_fax_r']).'-'.$person_loop['ftel_fax'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('fax').':</td>';
+			echo '<td>'.select_vw_id($person_loop['fvw_fax_r']).'-'.$person_loop['ftel_fax'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['ftel_aux'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Telefon Sonstiges:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['fvw_aux_r']).'-'.$person_loop['ftel_aux'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('telephone other').':</td>';
+			echo '<td>'.select_vw_id($person_loop['fvw_aux_r']).'-'.$person_loop['ftel_aux'].'</td>';
+			echo '</tr>';
 		}
+		echo '</table>';
 
-		$mailtext .= '</table>';
-
-		$mailtext .= "\n";
-		$mailtext .= '<div class="pers_titel">';
-		$mailtext .= '&nbsp;&nbsp;Telefon:';
-		$mailtext .= '</div>';
-		$mailtext .= '<table id="telefon">';
-
-		$mailtext .= "\n";
+		echo '<div class="pers_titel">';
+		echo '&nbsp;&nbsp;'._('telephone').':';
+		echo '</div>';
+		echo '<table id="telefon">';
 		if (!empty($person_loop['tel_privat'])) {		
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Privat:</td>';
-			$mailtext .= '<td class="rechts">'.select_vw_id($person_loop['vw_privat_r']).'-'.$person_loop['tel_privat'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('private').':</td>';
+			echo '<td class="rechts">'.select_vw_id($person_loop['vw_privat_r']).'-'.$person_loop['tel_privat'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['tel_arbeit'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Arbeit:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['vw_arbeit_r']).'-'.$person_loop['tel_arbeit'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('work').':</td>';
+			echo '<td>'.select_vw_id($person_loop['vw_arbeit_r']).'-'.$person_loop['tel_arbeit'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['tel_mobil'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Handy: <i>'.handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['vw_mobil_r']).'-'.$person_loop['tel_mobil'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('mobile').': <i>'.handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+			echo '<td>'.select_vw_id($person_loop['vw_mobil_r']).'-'.$person_loop['tel_mobil'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['tel_fax'])) {		
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Fax:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['vw_fax_r']).'-'.$person_loop['tel_fax'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('fax').':</td>';
+			echo '<td>'.select_vw_id($person_loop['vw_fax_r']).'-'.$person_loop['tel_fax'].'</td>';
+			echo '</tr>';
 		}
-
-		$mailtext .= "\n";
 		if (!empty($person_loop['tel_aux'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Sonstiges:</td>';
-			$mailtext .= '<td>'.select_vw_id($person_loop['vw_aux_r']).'-'.$person_loop['tel_aux'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('other').':</td>';
+			echo '<td>'.select_vw_id($person_loop['vw_aux_r']).'-'.$person_loop['tel_aux'].'</td>';
+			echo '</tr>';
 		}
-		$mailtext .= '</table>';
+		echo '</table>';
+				
 
-		$mailtext .= "\n";		
-
-		$mailtext .= '<div class="pers_titel">';
-		$mailtext .= '&nbsp;&nbsp;Internet:';
-		$mailtext .= '</div>';
-		$mailtext .= '<table id="online">';
+		echo '<div class="pers_titel">';
+		echo '&nbsp;&nbsp;'._('internet').':';
+		echo '</div>';
+		echo '<table id="online">';
 		if (!empty($person_loop['email_privat'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Email Privat:</td>';
-			$mailtext .= '<td class="rechts"><a href="mailto:'.$person_loop['email_privat'].'">'.$person_loop['email_privat'].'</a></td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('email private').':</td>';
+			echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
+			echo '<td class="rechts"><a href="mailto:'.$person_loop['vorname'].' '.$person_loop['nachname'].' <'.$person_loop['email_privat'].'>">'.$person_loop['email_privat'].'</a></td>';
+			echo '</tr>';
+			$emailadresse_vorhanden = true;
 		}
-		$mailtext .= "\n";
 		if (!empty($person_loop['email_arbeit'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Email Arbeit:</td>';
-			$mailtext .= '<td><a href="mailto:'.$person_loop['email_arbeit'].'">'.$person_loop['email_arbeit'].'</a></td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('email work').':</td>';
+			echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
+			echo '<td class="rechts"><a href="mailto:'.$person_loop['vorname'].' '.$person_loop['nachname'].' <'.$person_loop['email_arbeit'].'>">'.$person_loop['email_arbeit'].'</a></td>';
+			echo '</tr>';
+			$emailadresse_vorhanden = true;
 		}
-		$mailtext .= "\n";
 		if (!empty($person_loop['email_aux'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Email Sonstiges:</td>';
-			$mailtext .= '<td><a href="mailto:'.$person_loop['email_aux'].'">'.$person_loop['email_aux'].'</a></td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('email other').':</td>';
+			echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
+			echo '<td class="rechts"><a href="mailto:'.$person_loop['vorname'].' '.$person_loop['nachname'].' <'.$person_loop['email_aux'].'>">'.$person_loop['email_aux'].'</a></td>';
+			echo '</tr>';
+			$emailadresse_vorhanden = true;
 		}
-		$mailtext .= "\n";
 		if (!empty($person_loop['hp1'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Homepage 1:</td>';
-			$mailtext .= '<td><a href="http://'.$person_loop['hp1'].'" target="_blank">'.$person_loop['hp1'].'</a></td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('homepage 1').':</td>';
+			echo '<td class="icon"><img src="gfx/10/www10.png" width="10" height="10" /></td>';
+			echo '<td><a href="http://'.$person_loop['hp1'].'" target="_blank">'.$person_loop['hp1'].'</a></td>';
+			echo '</tr>';
 		}
-		$mailtext .= "\n";
 		if (!empty($person_loop['hp2'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Homepage 2:</td>';
-			$mailtext .= '<td><a href="http://'.$person_loop['hp2'].'" target="_blank">'.$person_loop['hp2'].'</a></td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('homepage 2').':</td>';
+			echo '<td class="icon"><img src="gfx/10/www10.png" width="10" height="10" /></td>';
+			echo '<td><a href="http://'.$person_loop['hp2'].'" target="_blank">'.$person_loop['hp2'].'</a></td>';
+			echo '</tr>';
 		}
-
+				
 
 		if (!empty($person_loop['chat_aim'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Chat AIM:</td>';
-			$mailtext .= '<td>'.$person_loop['chat_aim'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('chat AIM').':</td>';
+			echo '<td class="icon"><img src="gfx/10/aim10.png" width="10" height="10" /></td>';
+			echo '<td><a href="AIM://'.$person_loop['chat_aim'].'">'.$person_loop['chat_aim'].'</a></td>';
+			echo '</tr>';
 		}
 		if (!empty($person_loop['chat_msn'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Chat MSN:</td>';
-			$mailtext .= '<td>'.$person_loop['chat_msn'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('chat MSN').':</td>';
+			echo '<td class="icon"><img src="gfx/10/msn10.png" width="10" height="10" /></td>';
+			echo '<td><a href="MSN://'.$person_loop['chat_msn'].'">'.$person_loop['chat_msn'].'</a></td>';
+			echo '</tr>';
 		}
 		if (!empty($person_loop['chat_icq'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Chat ICQ:</td>';
-			$mailtext .= '<td>#'.$person_loop['chat_icq'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('chat ICQ').':</td>';
+			echo '<td class="icon"><img src="gfx/10/icq10.png" width="10" height="10" /></td>';
+			echo '<td><a href="ICQ://'.$person_loop['chat_icq'].'">#'.$person_loop['chat_icq'].'</a> &nbsp; <a href="http://people.icq.com/'.$person_loop['chat_icq'].'" target="_blank">&raquo; '._('profile page').'</a></td>';
+			echo '</tr>';
 		}
 		if (!empty($person_loop['chat_yim'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Chat Yahoo:</td>';
-			$mailtext .= '<td>'.$person_loop['chat_yim'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('chat Yahoo').':</td>';
+			echo '<td class="icon"><img src="gfx/10/yim10.png" width="10" height="10" /></td>';
+			echo '<td><a href="Yahoo://'.$person_loop['chat_yim'].'">'.$person_loop['chat_yim'].'</a></td>';
+			echo '</tr>';
 		}
 		if (!empty($person_loop['chat_skype'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Chat Skype:</td>';
-			$mailtext .= '<td>'.$person_loop['chat_skype'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('chat Skype').':</td>';
+			echo '<td class="icon"><img src="gfx/10/skype10.png" width="10" height="10" /></td>';
+			echo '<td><a href="Callto://'.$person_loop['chat_skype'].'">'.$person_loop['chat_skype'].'</a></td>';
+			echo '</tr>';
 		}
 		if (!empty($person_loop['chat_aux'])) {	
-			$mailtext .= '<tr>';
-			$mailtext .= '<td class="links">Chat Aux:</td>';
-			$mailtext .= '<td>'.$person_loop['chat_aux'].'</td>';
-			$mailtext .= '</tr>';
+			echo '<tr>';
+			echo '<td class="links">'._('chat Jabber/XMPP').':</td>';
+			echo '<td class="icon">&nbsp;</td>';
+			echo '<td>'.$person_loop['chat_aux'].'</td>';
+			echo '</tr>';
 		}
-
 				
-		$mailtext .= '</table>';
+				
+		echo '</table>';
+		
+		$mailtext .= ob_get_contents();
+		ob_end_clean();
 
 		$mailtext .= "\n";
 
-		$mailtext .= 'Bitte klicken Sie hier, wenn die Daten aktuell sind:<br /><br />'."\n".'<a href="'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'">'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'</a>';
+		$mailtext .= _('Please click here, if all your data is up-to-date:').'<br /><br />'."\n".'<a href="'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'">'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'</a>';
 
 		if (!empty($person_loop['email_privat']))
 			$email_an = $person_loop['email_privat'];

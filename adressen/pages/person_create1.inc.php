@@ -5,7 +5,7 @@
 <table>
 <tr><th colspan="2"><?PHP echo _('name'); ?>:</th></tr>
 <tr>
-<td><?PHP echo _('address'); ?>:</td>
+<td><?PHP echo _('form of address'); ?>:</td>
 <td><?PHP show_select_anrede('anrede_r', ""); show_select_prafix('prafix_r', ""); ?></td>
 </tr>
 <tr>
@@ -123,7 +123,7 @@ echo '</div>';
 			<td><?PHP show_telefon_eingabe('arbeit', true) ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('work'); ?>:</td>
+			<td><?PHP echo _('mobile'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('mobil', true) ?></td>
 		</tr>
 		<tr>
@@ -131,7 +131,7 @@ echo '</div>';
 			<td><?PHP show_telefon_eingabe('fax', true) ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('aux'); ?>:</td>
+			<td><?PHP echo _('other'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('aux', true) ?></td>
 		</tr>
 	</table>

@@ -220,7 +220,7 @@ if (!empty($person_loop['chat_icq'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('chat ICQ').':</td>';
 	echo '<td class="icon"><img src="gfx/10/icq10.png" width="10" height="10" /></td>';
-	echo '<td><a href="ICQ://'.$person_loop['chat_icq'].'">#'.$person_loop['chat_icq'].'</a> &nbsp; <a href="http://people.icq.com/'.$person_loop['chat_icq'].'" target="_blank">&raquo; Profil</a></td>';
+	echo '<td><a href="ICQ://'.$person_loop['chat_icq'].'">#'.$person_loop['chat_icq'].'</a> &nbsp; <a href="http://people.icq.com/'.$person_loop['chat_icq'].'" target="_blank">&raquo; '._('profile page').'</a></td>';
 	echo '</tr>';
 }
 if (!empty($person_loop['chat_yim'])) {	
