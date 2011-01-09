@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-09 17:36+0100\n"
+"POT-Creation-Date: 2011-01-09 18:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -984,75 +984,75 @@ msgstr ""
 msgid "Searching for the term %s"
 msgstr ""
 
-#: adressen/pages/search.inc.php:39
+#: adressen/pages/search.inc.php:42
 msgid "as part of a name"
 msgstr ""
 
-#: adressen/pages/search.inc.php:42
+#: adressen/pages/search.inc.php:48
 msgid "as part of an address"
 msgstr ""
 
-#: adressen/pages/search.inc.php:47
+#: adressen/pages/search.inc.php:56
 msgid "as part of a house phone number (private)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:50
+#: adressen/pages/search.inc.php:62
 msgid "as part of a house phone number (work)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:53
+#: adressen/pages/search.inc.php:68
 msgid "as part of a house phone number (mobile)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:56
+#: adressen/pages/search.inc.php:74
 msgid "as part of a house fax number"
 msgstr ""
 
-#: adressen/pages/search.inc.php:59
+#: adressen/pages/search.inc.php:80
 msgid "as part of a house phone number (aux)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:64
+#: adressen/pages/search.inc.php:88
 msgid "as part of a personal phone number (private)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:67
+#: adressen/pages/search.inc.php:94
 msgid "as part of a personal phone number (work)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:70
+#: adressen/pages/search.inc.php:100
 msgid "as part of a personal phone number (mobile)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:73
+#: adressen/pages/search.inc.php:106
 msgid "as part of a personal fax number"
 msgstr ""
 
-#: adressen/pages/search.inc.php:76
+#: adressen/pages/search.inc.php:112
 msgid "as part of a personal phone number (aux)"
 msgstr ""
 
-#: adressen/pages/search.inc.php:80
+#: adressen/pages/search.inc.php:119
 msgid "as part of an email address"
 msgstr ""
 
-#: adressen/pages/search.inc.php:83
+#: adressen/pages/search.inc.php:125
 msgid "as part of a URL"
 msgstr ""
 
-#: adressen/pages/search.inc.php:86
+#: adressen/pages/search.inc.php:131
 msgid "as part of a chat nickname"
 msgstr ""
 
-#: adressen/pages/search.inc.php:89
+#: adressen/pages/search.inc.php:136
 msgid "as part of a note"
 msgstr ""
 
-#: adressen/pages/search.inc.php:92
+#: adressen/pages/search.inc.php:139
 msgid "no results"
 msgstr ""
 
-#: adressen/pages/search.inc.php:97
+#: adressen/pages/search.inc.php:143
 #, php-format
 msgid "Did you mean %s instead of %s?"
 msgstr ""
