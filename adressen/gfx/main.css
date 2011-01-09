@@ -197,6 +197,7 @@ UL {
 
 /*.NAVIGATION.*/
 
+// TODO where is this class used?
 #buttons {
 	margin: 0 0 20px 7px;
 	padding: 4px 0 2px 0;
@@ -234,7 +235,37 @@ UL {
 	background-color: rgb(255, 230, 153);
 }
 
-#mitglieder, #gruppen, #spezial {
+.nav_item LI {
+	margin: 4px 0 0 0;
+}
+
+.nav_item LI A {
+	display: block;
+	width: 190px;
+	line-height: 19px;
+	text-align: center;
+	background-color: rgb(240,240,240);
+	border-top: 1px solid #CCC; /* TEST */
+	border-left: 1px solid #CCC; /* TEST */
+	border-right: 1px solid #000; /* TEST */
+	border-bottom: 1px solid #000; /* TEST */
+}
+
+.nav_item LI A:LINK {
+	color: rgb(0,0,0);
+}
+
+.nav_item LI A:VISITED {
+	color: rgb(0,0,0);
+}
+
+.nav_item LI A:HOVER {
+	background-color: rgb(204,0,0);
+	color: rgb(255,255,255);
+	font-weight: bold;
+}
+
+UL.unfolding_list {
 	display: none;
 	position: relative;
 	top: 0px;
@@ -245,104 +276,6 @@ UL {
 	background-color: #E6E6E6;
 	padding: 0px 0 0 0;
 	border: 1px solid #aaa;
-}
-
-
-#mitglieder {
-}
-
-#mitglieder LI {
-	margin: 4px 0 0 0;
-}
-
-#mitglieder LI A {
-	display: block;
-	width: 190px;
-	line-height: 25px;
-	text-align: center;
-	background-color: rgb(230,230,230);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-
-
-#mitglieder LI A:LINK {
-	color: rgb(0,0,0);
-}
-
-#mitglieder LI A:VISITED {
-	color: rgb(0,0,0);
-}
-
-#mitglieder LI A:HOVER {
-	background-color: rgb(204,0,0);
-	color: rgb(255,255,255);
-	font-weight: bold;
-}
-
-#gruppen LI {
-	margin: 4px 0 0 0;
-}
-
-#gruppen LI A {
-	display: block;
-	width: 190px;
-	line-height: 19px;
-	text-align: center;
-	background-color: rgb(240,240,240);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-
-#gruppen LI A:LINK {
-	color: rgb(0,0,0);
-}
-
-#gruppen LI A:VISITED {
-	color: rgb(0,0,0);
-}
-
-#gruppen LI A:HOVER {
-	background-color: rgb(204,0,0);
-	color: rgb(255,255,255);
-	font-weight: bold;
-}
-
-#spezial {
-}
-
-#spezial LI {
-	margin: 4px 0 0 0;
-}
-
-#spezial LI A {
-	display: block;
-	width: 190px;
-	line-height: 19px;
-	text-align: center;
-	background-color: rgb(240,240,240);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-
-#spezial LI A:LINK {
-	color: rgb(0,0,0);
-}
-
-#spezial LI A:VISITED {
-	color: rgb(0,0,0);
-}
-
-#spezial LI A:HOVER {
-	background-color: rgb(204,0,0);
-	color: rgb(255,255,255);
-	font-weight: bold;
 }
 
 /*.GEBURTSTAGE.*/
