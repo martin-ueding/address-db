@@ -7,7 +7,7 @@
 <li><a href="?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
 <li><a href="?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
 <li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
-<li><a href="https://bugs.launchpad.net/personalphpbookmark/+filebug" target="_blank"><?PHP echo _('report a bug'); ?></a></li>
+<li><a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank"><?PHP echo _('report a bug'); ?></a></li>
 </ul>
 </div>
 <?PHP
