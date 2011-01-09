@@ -88,10 +88,6 @@ foreach ($_GET as $key => $wert) {
 		$get_for_lang_change .= '&'.$key.'='.$wert;
 	}
 }
-$available_languages = array(
-		array('de_DE', _('German')),
-		array('en', _('English'))
-	);
 foreach ($available_languages as $a_lang) {
 	echo '<li><a class="fmg_key" href="?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
 }
