@@ -203,6 +203,11 @@ switch ($mode) {
 	}	
 
 	include('pages/'.$mode.'.inc.php');
+
+	$version_array = file('../version.txt');
+	$version_string = $version_array[0];
+
+	echo '<div id="version">'._('version').' '.$version_string.'</div>';
 	?>
 
 	</body>

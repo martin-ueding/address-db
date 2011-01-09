@@ -418,4 +418,10 @@ DIV.geb_monat_kasten {
 #liste TR.dunkel {
 	background-color: rgb(240, 240, 240);
 }
-
+#version {
+position: fixed;
+right: 0px;
+bottom: 0px;
+		background-color: #CCF;
+padding: 2px 5px;
+}
