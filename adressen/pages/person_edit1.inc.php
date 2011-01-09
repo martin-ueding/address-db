@@ -238,7 +238,7 @@ echo '<br /><br />';
 			<td><?PHP show_telefon_eingabe('fax', false, $person_loop) ?></td>
 		</tr>
 		<tr>
-			<td><?PHP echo _('aux'); ?>:</td>
+			<td><?PHP echo _('other'); ?>:</td>
 			<td><?PHP show_telefon_eingabe('aux', false, $person_loop) ?></td>
 		</tr>
 		

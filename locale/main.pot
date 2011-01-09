@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-09 14:07+0100\n"
+"POT-Creation-Date: 2011-01-09 14:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -287,8 +287,10 @@ msgstr ""
 
 #: adressen/engines/verification_email.inc.php:154
 #: adressen/pages/person_create1.inc.php:134
+#: adressen/pages/person_create1.inc.php:181
 #: adressen/pages/person_display.inc.php:154
 #: adressen/pages/person_edit1.inc.php:190
+#: adressen/pages/person_edit1.inc.php:241
 msgid "other"
 msgstr ""
 
@@ -534,14 +536,6 @@ msgstr ""
 
 #: adressen/inc/header.inc.php:82
 msgid "languages"
-msgstr ""
-
-#: adressen/inc/header.inc.php:92
-msgid "German"
-msgstr ""
-
-#: adressen/inc/header.inc.php:93
-msgid "English"
 msgstr ""
 
 #: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
@@ -837,11 +831,6 @@ msgstr ""
 msgid "personal contact information"
 msgstr ""
 
-#: adressen/pages/person_create1.inc.php:181
-#: adressen/pages/person_edit1.inc.php:241
-msgid "aux"
-msgstr ""
-
 #: adressen/pages/person_create1.inc.php:199
 #: adressen/pages/person_edit1.inc.php:259
 msgid "chat Yahoo!"
@@ -982,7 +971,7 @@ msgstr ""
 
 #: adressen/pages/search.inc.php:35
 #, php-format
-msgid "Searching for the term <em>[ %s ]</em>"
+msgid "Searching for the term %s"
 msgstr ""
 
 #: adressen/pages/search.inc.php:39
@@ -1088,4 +1077,12 @@ msgstr ""
 msgid ""
 "Sorry, but that code seems to be wrong. Have you clicked on that link before "
 "maybe?"
+msgstr ""
+
+#: inc/setup_gettext.inc.php:15
+msgid "German"
+msgstr ""
+
+#: inc/setup_gettext.inc.php:16
+msgid "English"
 msgstr ""

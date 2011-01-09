@@ -32,7 +32,7 @@ if (empty($suche)) {
 	echo _('No search query was entered');
 }
 else {
-	printf(_('Searching for the term <em>[ %s ]</em>').' &hellip;', $suche);
+	printf(_('Searching for the term %s').' &hellip;', '<em>[ '.$suche.' ]</em>');
 	echo '<br /><br />';
 
 	$sql = 'SELECT * FROM ad_per WHERE CONCAT_WS(" ", vorname, nachname) like "%'.$suche.'%" || CONCAT_WS(" ", vorname, mittelname, nachname) like "%'.$suche.'%" ORDER BY nachname, vorname;';
