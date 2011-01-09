@@ -169,6 +169,16 @@ switch ($mode) {
 				$("#gruppen").parent().mouseenter(function() { menuItemMouseEnterHandler("#gruppen") });
 				$("#languages").parent().mouseenter(function() { menuItemMouseEnterHandler("#languages") });
 			});
+
+			function _switch(object) {
+				if (document.getElementById(object).style.display != "block") {
+					document.getElementById(object).style.display = "block";
+				}
+				else {
+					document.getElementById(object).style.display = "none";
+				}
+			}
+
 		</script>
 		
 		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
