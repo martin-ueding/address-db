@@ -144,16 +144,40 @@ switch ($mode) {
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<meta charset="ISO-8859-1"  />
 		<link rel="STYLESHEET" type="text/css" href="gfx/main.css">
-		<script type="text/javascript" src="js/addressdb_collection.js"></script>
 
 		<script src="http://jquery.com/src/jquery-latest.js" type="text/javascript"></script>
 		<script type="text/javascript">
+			var menuActive = false;
+			var slidingTime = 100;
+			function menuItemClickHandler (item) {
+					$(".nav_item").children(":visible").slideUp(slidingTime);
+					$(item+":hidden").slideToggle(slidingTime);
+					menuActive = !menuActive;
+			}
+			function menuItemMouseEnterHandler (item) {
+				if (menuActive) {
+					$(".nav_item").children(":visible").not(item).slideUp(slidingTime);
+					$(item).slideDown(slidingTime);
+				}
+			}
+
 			$(document).ready(function(){
 				// fade out the messages box
 				$("#messages").fadeOut(0).fadeIn(500).delay(<?PHP echo 5000*count($msgs); ?>).slideUp(1000);
 
 				// open up all the slidedown boxes
 				$(".slidedown").fadeOut(0).delay(300).slideDown(800);
+
+				// add action to the menu items
+				$("#spezial").parent().click(function() { menuItemClickHandler("#spezial") });
+				$("#mitglieder").parent().click(function() { menuItemClickHandler("#mitglieder") });
+				$("#gruppen").parent().click(function() { menuItemClickHandler("#gruppen") });
+				$("#languages").parent().click(function() { menuItemClickHandler("#languages") });
+
+				$("#spezial").parent().mouseenter(function() { menuItemMouseEnterHandler("#spezial") });
+				$("#mitglieder").parent().mouseenter(function() { menuItemMouseEnterHandler("#mitglieder") });
+				$("#gruppen").parent().mouseenter(function() { menuItemMouseEnterHandler("#gruppen") });
+				$("#languages").parent().mouseenter(function() { menuItemMouseEnterHandler("#languages") });
 			});
 		</script>
 		

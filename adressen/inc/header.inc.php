@@ -1,4 +1,4 @@
-<div class="nav_item" onclick="_switch('spezial');"><?PHP echo _('menu'); ?><br />
+<div class="nav_item"><?PHP echo _('menu'); ?><br />
 <ul id="spezial" class="unfolding_list">
 <li><a href="?mode=main"><?PHP echo _('start'); ?></a></li>
 <li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
@@ -21,7 +21,7 @@ if ($aktuell_name == "")
 	$aktuell_name = _('all');
 ?>
 
-<div class="nav_item" onclick="_switch('mitglieder');"><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><br />
+<div class="nav_item"><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><br />
 <ul id="mitglieder" class="unfolding_list">
 <?PHP
 // find all get parameters which are not the mode or the fmg and put them into a string
@@ -44,7 +44,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 </ul>
 </div>
 
-<div class="nav_item" onclick="_switch('gruppen');"><?PHP echo _('groups'); ?><br />
+<div class="nav_item"><?PHP echo _('groups'); ?><br />
 <ul id="gruppen" class="unfolding_list">
 <?PHP
 $erg = select_alle_gruppen();
@@ -79,7 +79,7 @@ foreach ($buchstaben as $b) {
 }
 echo '</div>';
 ?>
-<div class="nav_item" onclick="_switch('languages');"><?PHP echo _('languages'); ?><br />
+<div class="nav_item"><?PHP echo _('languages'); ?><br />
 <ul id="languages" class="unfolding_list">
 <?PHP
 $get_for_lang_change = '';
