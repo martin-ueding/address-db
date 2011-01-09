@@ -1,11 +1,11 @@
 <div class="nav_item"><?PHP echo _('menu'); ?><br />
 <ul id="spezial" class="unfolding_list">
-<li><a href="?mode=main"><?PHP echo _('start'); ?></a></li>
-<li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
-<li><a href="?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
-<li><a href="?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
-<li><a href="?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
-<li><a href="?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
+<li><a href="index.php?mode=main"><?PHP echo _('start'); ?></a></li>
+<li><a href="index.php?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
+<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
+<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
+<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
+<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
 <li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
 <li><a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank"><?PHP echo _('report a bug'); ?></a></li>
 </ul>
@@ -36,7 +36,7 @@ if ($_SESSION['f'] != 0)
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
-	echo '<li><a class="fmg_key" href="?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
+	echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
 	if ($l['fmg_id'] == $_SESSION['f'])
 		$aktuell_name = $l['fmg'];
 }
@@ -50,7 +50,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 $erg = select_alle_gruppen();
 while ($l = mysql_fetch_assoc($erg)) {
 	if (gruppe_ist_nicht_leer($l['g_id'])) {
-		echo '<li><a href="?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'">'.$l['gruppe'].'</a></li>';
+		echo '<li><a href="index.php?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'">'.$l['gruppe'].'</a></li>';
 	}
 }
 ?>
@@ -69,7 +69,7 @@ foreach ($buchstaben as $b) {
 		$sql = 'SELECT p_id FROM ad_per WHERE nachname like "'.$b.'%";';
 	$erg = mysql_query($sql);
 	if (mysql_num_rows($erg) > 0) {
-		echo '<a href="?mode=list&b='.$b.'">';
+		echo '<a href="index.php?mode=list&b='.$b.'">';
 		echo $b;
 		echo '</a>';
 	}
@@ -89,7 +89,7 @@ foreach ($_GET as $key => $wert) {
 	}
 }
 foreach ($available_languages as $a_lang) {
-	echo '<li><a class="fmg_key" href="?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
+	echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
 }
 ?>
 </ul>
