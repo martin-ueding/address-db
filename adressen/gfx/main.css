@@ -419,12 +419,14 @@ DIV.geb_monat_kasten {
 	background-color: rgb(240, 240, 240);
 }
 #version {
-position: fixed;
-right: 0px;
-bottom: 0px;
-		background-color: #CCF;
-padding: 2px 5px;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	background-color: #CCF;
+	padding: 2px 5px 2px 9px;
+    -moz-border-radius-topleft: 8px;
+    -webkit-border-top-left-radius: 8px;
 }
 SPAN.graytext {
-color: #555;
+	color: #555;
 }
