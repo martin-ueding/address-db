@@ -35,7 +35,7 @@ if ($_GET['sicher'] == 'ja') {
 		echo '<td class="links">'._('form of address').':</td>';
 		echo '<td class="rechts">';
 		if ($person_loop['anrede'] != "-")
-			echo ' '.$person_loop['anrede'];
+			echo ' '._($person_loop['anrede']);
 		if ($person_loop['prafix'] != "-")
 			echo ' '.$person_loop['prafix'];
 		echo '</td>';

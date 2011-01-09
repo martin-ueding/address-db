@@ -37,7 +37,7 @@ function show_select_anrede ($name, $aktiv) {
 		else
 			echo '<option value="'.$l['a_id'].'">';
 
-		echo $l['anrede'].'</option>';
+		echo _($l['anrede']).'</option>';
 	}
 
 	echo '</select>';

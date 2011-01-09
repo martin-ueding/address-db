@@ -207,7 +207,7 @@ switch ($mode) {
 	$version_array = file('../version.txt');
 	$version_string = $version_array[0];
 
-	echo '<div id="version">'._('version').' '.$version_string.'</div>';
+	echo '<div id="version"><span class="graytext">'._('version').'</span> '.$version_string.'</div>';
 	?>
 
 	</body>
