@@ -4,6 +4,10 @@ if ($_GET['sicher'] == 'ja') {
 		$msgs[] = _('The last email was sent within the last 24 hours. No email was sent now because this looks like an error.');
 	}
 	else {
+		// set the language to the target language
+		putenv('LC_MESSAGES='.$_GET['send_lang']);
+		setlocale(LC_MESSAGES, $_GET['send_lang']);
+
 		
 
 		$mailtext .= '<style type="text/css">';
@@ -253,14 +257,22 @@ if ($_GET['sicher'] == 'ja') {
 
 		$mailtext .= "\n";
 
-		$mailtext .= _('Please click here, if all your data is up-to-date:').'<br /><br />'."\n".'<a href="'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'">'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'</a>';
+		$mailtext .= _('Please click here, if all your data is up-to-date:').'<br /><br />'."\n".'<a href="'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'&lang='.$_GET['send_lang'].'">'.$url_to_server.'adressen_helper/aktuell.php?id='.$id.'&code='.md5($person_loop['last_check']).'</a>';
+
+		putenv('LC_MESSAGES='.$_SESSION['lang']);
+		setlocale(LC_MESSAGES, $_SESSION['lang']);
+
 
 		if (!empty($person_loop['email_privat']))
 			$email_an = $person_loop['email_privat'];
 		else if (!empty($person_loop['email_arbeit']))
 			$email_an = $person_loop['email_arbeit'];
+		else if (!empty($person_loop['email_aux']))
+			$email_an = $person_loop['email_aux'];
 		else
-			die();
+			die(_('This entry does not have an email address. This should be an impossible error since you should not even be able to get here then.'));
+
+
 
 		require($path_to_phpmailer);
 
