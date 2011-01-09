@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-09 00:54+0100\n"
+"POT-Creation-Date: 2011-01-09 12:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -515,15 +515,19 @@ msgstr ""
 msgid "no email address"
 msgstr ""
 
-#: adressen/inc/header.inc.php:20 adressen/inc/header.inc.php:34
+#: adressen/inc/header.inc.php:10
+msgid "report a bug"
+msgstr ""
+
+#: adressen/inc/header.inc.php:21 adressen/inc/header.inc.php:35
 msgid "all"
 msgstr ""
 
-#: adressen/inc/header.inc.php:23
+#: adressen/inc/header.inc.php:24
 msgid "mode"
 msgstr ""
 
-#: adressen/inc/header.inc.php:46 adressen/pages/person_display.inc.php:270
+#: adressen/inc/header.inc.php:47 adressen/pages/person_display.inc.php:270
 msgid "groups"
 msgstr ""
 
