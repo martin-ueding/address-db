@@ -73,7 +73,9 @@ if ($person_loop['adresse_r'] != 1) {
 	echo ' ('.$person_loop['land'].')';
 	echo '<br />';
 	echo _('show map').': ';
-	echo '<a href="http://maps.google.de/maps?f=q&hl=de&q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank">&raquo;GoogleMaps</a>';
+	echo '<a href="http://maps.google.de/maps?f=q&hl=de&q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank">&raquo;Google</a>';
+	echo ' &nbsp; ';
+	echo '<a href="http://www.bing.com/maps/?q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank">&raquo;Bing</a>';
 	if ($person_loop['land'] == 'Deutschland') {
 		echo ' &nbsp; ';
 		echo '<a href="http://www.mapquest.com/maps/map.adp?country=de&address='.str_replace(' ', '+', $person_loop['strasse']).'&city='.str_replace(' ', '+', $person_loop['ortsname']).'&zip='.$person_loop['plz'].'" target="_blank">&raquo;MapQuest</a>';
