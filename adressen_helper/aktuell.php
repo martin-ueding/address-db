@@ -1,9 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-	"http://www.w3.org/TR/html4/loose.dtd">
-<html lang="de">
+<?PHP
+include('../inc/setup_gettext.inc.php');
+?><!DOCTYPE HTML>
+<html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<title>Daten sind aktuell</title>
+		<title><?PHP echo _('data is up to date'); ?></title>
 	</head>
 	<body>
 	
@@ -22,14 +23,14 @@
 	if ($code == md5($l['last_check'])) {
 	
 	
-		echo '<h3>Danke!</h3>Guten Tag '.$l['vorname'].' '.$l['nachname'].',<br /><br />Vielen Dank, dass Sie sich die Zeit genommen haben, Ihre Daten zu überprüfen und zu bestätigen.';
+		echo '<h3>'._('Thank you!').'</h3>'.sprintf(_('Hello %s'), $l['vorname'].' '.$l['nachname']).',<br /><br />'._('Thank you for taking the time to review and confirm your data.');
 		
 		$sql = 'UPDATE ad_per SET last_check='.time().' WHERE p_id='.$id.';';
 		mysql_query($sql);
 	
 	}
 	else
-		echo 'Entschuldigung, aber der Code stimmt nicht. Haben Sie vielleicht schon einmal auf den Link geklickt?';
+		echo _('Sorry, but that code seems to be wrong. Have you clicked on that link before maybe?');
 	
 	?>
 

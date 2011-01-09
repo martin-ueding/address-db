@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-09 12:58+0100\n"
+"POT-Creation-Date: 2011-01-09 14:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,89 +17,89 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: adressen/index.php:40
+#: adressen/index.php:30
 msgid "Sorry, I could not find a site like that."
 msgstr ""
 
-#: adressen/index.php:76 adressen/index.php:80 adressen/index.php:83
-#: adressen/index.php:92 adressen/index.php:95 adressen/index.php:99
-#: adressen/index.php:102 adressen/index.php:106 adressen/index.php:110
-#: adressen/index.php:113 adressen/index.php:117 adressen/index.php:120
-#: adressen/index.php:125 adressen/index.php:128 adressen/index.php:131
-#: adressen/index.php:134
+#: adressen/index.php:66 adressen/index.php:70 adressen/index.php:73
+#: adressen/index.php:82 adressen/index.php:85 adressen/index.php:89
+#: adressen/index.php:92 adressen/index.php:96 adressen/index.php:100
+#: adressen/index.php:103 adressen/index.php:107 adressen/index.php:110
+#: adressen/index.php:115 adressen/index.php:118 adressen/index.php:121
+#: adressen/index.php:124
 msgid "Address DB"
 msgstr ""
 
-#: adressen/index.php:76
+#: adressen/index.php:66
 msgid "all birthdays"
 msgstr ""
 
-#: adressen/index.php:80
+#: adressen/index.php:70
 #, php-format
 msgid "letter &bdquo;%s&ldquo;"
 msgstr ""
 
-#: adressen/index.php:83
+#: adressen/index.php:73
 #, php-format
 msgid "group &bdquo;%s&ldquo;"
 msgstr ""
 
-#: adressen/index.php:92
+#: adressen/index.php:82
 #, php-format
 msgid "entries for %s"
 msgstr ""
 
-#: adressen/index.php:95
+#: adressen/index.php:85
 msgid "list"
 msgstr ""
 
-#: adressen/index.php:99
+#: adressen/index.php:89
 msgid "current birthdays"
 msgstr ""
 
-#: adressen/index.php:102 adressen/inc/header.inc.php:7
+#: adressen/index.php:92 adressen/inc/header.inc.php:7
 msgid "no form of address"
 msgstr ""
 
-#: adressen/index.php:106
+#: adressen/index.php:96
 msgid "create entry"
 msgstr ""
 
-#: adressen/index.php:110
+#: adressen/index.php:100
 #, php-format
 msgid "delete %s"
 msgstr ""
 
-#: adressen/index.php:117
+#: adressen/index.php:107
 #, php-format
 msgid "edit %s"
 msgstr ""
 
-#: adressen/index.php:120
+#: adressen/index.php:110
 #, php-format
 msgid "delete %s's picture"
 msgstr ""
 
-#: adressen/index.php:125
+#: adressen/index.php:115
 #, php-format
 msgid "upload %s's picture"
 msgstr ""
 
-#: adressen/index.php:128
+#: adressen/index.php:118
 #, php-format
 msgid "search for &bdquo;%s&ldquo;"
 msgstr ""
 
-#: adressen/index.php:131
+#: adressen/index.php:121
 #, php-format
 msgid "verification mail for %s"
 msgstr ""
 
-#: adressen/index.php:134 adressen/inc/header.inc.php:9
+#: adressen/index.php:124 adressen/inc/header.inc.php:9
 msgid "database check"
 msgstr ""
 
-#: adressen/index.php:137
+#: adressen/index.php:127
 msgid "PHP Family Address DB"
 msgstr ""
 
@@ -162,6 +162,7 @@ msgid ""
 msgstr ""
 
 #: adressen/engines/verification_email.inc.php:16
+#: adressen_helper/aktuell.php:26
 msgid "Thank you!"
 msgstr ""
 
@@ -1068,4 +1069,23 @@ msgstr ""
 
 #: adressen/pages/verification_email.inc.php:7
 msgid "Do not send!"
+msgstr ""
+
+#: adressen_helper/aktuell.php:7
+msgid "data is up to date"
+msgstr ""
+
+#: adressen_helper/aktuell.php:26
+#, php-format
+msgid "Hello %s"
+msgstr ""
+
+#: adressen_helper/aktuell.php:26
+msgid "Thank you for taking the time to review and confirm your data."
+msgstr ""
+
+#: adressen_helper/aktuell.php:33
+msgid ""
+"Sorry, but that code seems to be wrong. Have you clicked on that link before "
+"maybe?"
 msgstr ""
