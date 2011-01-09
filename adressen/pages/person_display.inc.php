@@ -11,7 +11,7 @@ echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('name').':';
 echo '</div>';
 
-echo '<table id="name">';
+echo '<table class="display_person">';
 echo '<tr>';
 echo '<td class="links">'._('form of address').':</td>';
 echo '<td class="rechts">';
@@ -62,7 +62,7 @@ echo '</table>';
 echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('address').':';
 echo '</div>';
-echo '<table id="adresse">';
+echo '<table class="display_person">';
 if ($person_loop['adresse_r'] != 1) {
 	echo '<tr>';
 	echo '<td class="links">'._('address').':</td>';
@@ -120,7 +120,7 @@ echo '</table>';
 echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('telephone').':';
 echo '</div>';
-echo '<table id="telefon">';
+echo '<table class="display_person">';
 if (!empty($person_loop['tel_privat'])) {		
 	echo '<tr>';
 	echo '<td class="links">'._('private').':</td>';
@@ -161,7 +161,7 @@ echo '</table>';
 echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('internet').':';
 echo '</div>';
-echo '<table id="online">';
+echo '<table class="display_person">';
 if (!empty($person_loop['email_privat'])) {	
 	echo '<tr>';
 	echo '<td class="links">'._('email private').':</td>';
@@ -252,7 +252,7 @@ if (!empty($person_loop['pnotizen'])) {
 	echo '<div class="pers_titel">';
 	echo '&nbsp;&nbsp;'._('notes').':';
 	echo '</div>';
-	echo '<table id="notizen">';
+	echo '<table class="display_person">';
 	echo '<tr>';
 	echo '<td>'.nl2br($person_loop['pnotizen']).'</td>';
 	echo '</tr>';
@@ -263,7 +263,7 @@ if (!empty($person_loop['pnotizen'])) {
 echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('relations').':';
 echo '</div>';
-echo '<table id="gruppen2">';
+echo '<table class="display_person">';
 $erg = select_gruppen_zu_person($id);
 if (mysql_num_rows($erg) > 0) {
 	echo '<tr>';
@@ -293,7 +293,7 @@ echo '</table>';
 echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('up-to-dateness').':';
 echo '</div>';
-echo '<table id="gruppen2">';
+echo '<table class="display_person">';
 
 
 echo '<tr>';

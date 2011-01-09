@@ -26,7 +26,7 @@ if ($_GET['sicher'] == 'ja') {
 		echo '&nbsp;&nbsp;'._('name').':';
 		echo '</div>';
 
-		echo '<table id="name">';
+		echo '<table class="display_person">';
 		echo '<tr>';
 		echo '<td class="links">'._('form of address').':</td>';
 		echo '<td class="rechts">';
@@ -77,7 +77,7 @@ if ($_GET['sicher'] == 'ja') {
 		echo '<div class="pers_titel">';
 		echo '&nbsp;&nbsp;'._('address').':';
 		echo '</div>';
-		echo '<table id="adresse">';
+		echo '<table class="display_person">';
 		if ($person_loop['adresse_r'] != 1) {
 			echo '<tr>';
 			echo '<td class="links">'._('address').':</td>';
@@ -124,7 +124,7 @@ if ($_GET['sicher'] == 'ja') {
 		echo '<div class="pers_titel">';
 		echo '&nbsp;&nbsp;'._('telephone').':';
 		echo '</div>';
-		echo '<table id="telefon">';
+		echo '<table class="display_person">';
 		if (!empty($person_loop['tel_privat'])) {		
 			echo '<tr>';
 			echo '<td class="links">'._('private').':</td>';
@@ -161,7 +161,7 @@ if ($_GET['sicher'] == 'ja') {
 		echo '<div class="pers_titel">';
 		echo '&nbsp;&nbsp;'._('internet').':';
 		echo '</div>';
-		echo '<table id="online">';
+		echo '<table class="display_person">';
 		if (!empty($person_loop['email_privat'])) {	
 			echo '<tr>';
 			echo '<td class="links">'._('email private').':</td>';

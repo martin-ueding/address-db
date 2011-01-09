@@ -312,7 +312,6 @@ TD {
 	padding: 0 3px;
 }
 
-
 #pers_bild {
 	float: right;
 	margin: 0 50px 0 0;
@@ -331,7 +330,7 @@ TD {
 	background-color: rgb(102,102,102);
 }
 
-#name {
+TABLE.display_person {
 	margin: 0 0 20px 0;
 	width: 550px;
 	color: rgb(0,0,0);
@@ -340,90 +339,16 @@ TD {
 	border-right: 1px solid #000; /* TEST */
 	border-bottom: 1px solid #000; /* TEST */
 }
-#name TD.links {
+TABLE.display_person TD.links {
 	width: 150px;
 }
-#name TD.rechts {
-}
-
-#adresse {
-	margin: 0 0 20px 0;
-	width: 550px;
-	color: rgb(0,0,0);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-#adresse TD.links {
-	width: 150px;
-}
-#adresse TD.rechts {
-}
-
-#telefon {
-	margin: 0 0 20px 0;
-	width: 550px;
-	color: rgb(0,0,0);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-#telefon TD.links {
-	width: 150px;
-}
-#telefon TD.rechts {
-}
-
-#online {
-	margin: 0 0 20px 0;
-	width: 550px;
-	color: rgb(0,0,0);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-#online TD.links {
-	width: 150px;
-}
-#online TD.rechts {
+TABLE.display_person TD.rechts {
 }
 
 TD.icon {
 	width: 12px;
 }
 
-#notizen {
-	margin: 0 0 20px 0;
-	width: 550px;
-	color: rgb(0,0,0);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-#notizen TD.links {
-	width: 150px;
-}
-#notizen TD.rechts {
-}
-
-#gruppen2 {
-	margin: 0 0 20px 0;
-	width: 550px;
-	color: rgb(0,0,0);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-#gruppen2 TD.links {
-	width: 150px;
-}
-#gruppen2 TD.rechts {
-}
 
 /*.Eingabemasken.*/
 
