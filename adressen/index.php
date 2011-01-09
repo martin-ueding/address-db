@@ -8,7 +8,12 @@ if (isset($_GET['f'])) {
 include('../inc/setup_gettext.inc.php');
 
 // include libs
-include('_config.inc.php');
+if (file_exists('_config.inc.php')) {
+	include('_config.inc.php');
+}
+else {
+	header('location:../install/install.php');
+}
 include('inc/abfragen.inc.php');
 include('inc/anzeigen.inc.php');
 include('inc/select.inc.php');
