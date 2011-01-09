@@ -1,5 +1,5 @@
 <div class="nav_item" onclick="_switch('spezial');"><?PHP echo _('menu'); ?><br />
-<ul id="spezial">
+<ul id="spezial" class="unfolding_list">
 <li><a href="?mode=main"><?PHP echo _('start'); ?></a></li>
 <li><a href="?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
 <li><a href="?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
@@ -22,7 +22,7 @@ if ($aktuell_name == "")
 ?>
 
 <div class="nav_item" onclick="_switch('mitglieder');"><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><br />
-<ul id="mitglieder">
+<ul id="mitglieder" class="unfolding_list">
 <?PHP
 // find all get parameters which are not the mode or the fmg and put them into a string
 $get_for_fmg_change = '';
@@ -45,7 +45,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 </div>
 
 <div class="nav_item" onclick="_switch('gruppen');"><?PHP echo _('groups'); ?><br />
-<ul id="gruppen">
+<ul id="gruppen" class="unfolding_list">
 <?PHP
 $erg = select_alle_gruppen();
 while ($l = mysql_fetch_assoc($erg)) {
@@ -78,12 +78,29 @@ foreach ($buchstaben as $b) {
 	}
 }
 echo '</div>';
-
-echo '<div>';
 ?>
-<form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
+<div class="nav_item" onclick="_switch('languages');"><?PHP echo _('languages'); ?><br />
+<ul id="languages" class="unfolding_list">
 <?PHP
-echo '</div>';
+$get_for_lang_change = '';
+foreach ($_GET as $key => $wert) {
+	if ($key != 'mode' && $key != 'lang') {
+		$get_for_lang_change .= '&'.$key.'='.$wert;
+	}
+}
+$available_languages = array(
+		array('de_DE', _('German')),
+		array('en', _('English'))
+	);
+foreach ($available_languages as $a_lang) {
+	echo '<li><a class="fmg_key" href="?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
+}
 ?>
+</ul>
+</div>
+
+<div>
+<form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
+</div>
 
 <div class="clearheinz"></div>
