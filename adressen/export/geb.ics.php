@@ -15,7 +15,7 @@ $f = (int)$_GET['f'];
 echo 'BEGIN:VCALENDAR'."\n";
 echo 'VERSION:2.0'."\n";
 echo 'X-WR-CALNAME:'._('Birthdays')."\n";
-echo 'PRODID:')._('Address Database')."\n";
+echo 'PRODID:'._('Address Database')."\n";
 echo 'X-WR-TIMEZONE:Europe/Berlin'."\n";
 echo 'CALSCALE:GREGORIAN'."\n";
 echo 'METHOD:PUBLISH'."\n"."\n";
