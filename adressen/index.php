@@ -139,6 +139,7 @@ switch ($mode) {
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<meta charset="ISO-8859-1"  />
 		<link rel="STYLESHEET" type="text/css" href="gfx/main.css">
+		<link rel="STYLESHEET" type="text/css" href="gfx/cssmenu.css">
 
 		<script src="http://jquery.com/src/jquery-latest.js" type="text/javascript"></script>
 		<script type="text/javascript">
