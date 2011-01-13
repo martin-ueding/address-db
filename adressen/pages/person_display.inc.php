@@ -1,4 +1,5 @@
 <?PHP
+echo '<h1>'._('display entry').'</h1>';
 $mugshot_path = '_mugshots/per'.$id.'.jpg';
 if (file_exists($mugshot_path)) {
 	$bilddaten = getimagesize('_mugshots/per'.$id.'.jpg');

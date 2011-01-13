@@ -1,6 +1,6 @@
 <?PHP
+echo '<h1>'._('entries without an email address').'</h1>';
 $from_with_get = 'mode=no_email';
-echo _('entries without an email address').':<br /><br />';
 
 $titel = $_GET["titel"];
 

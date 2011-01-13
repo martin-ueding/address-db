@@ -1,3 +1,4 @@
+<?PHP echo '<h1>'._('create a new entry').'</h1>'; ?>
 <h2><?PHP echo sprintf(_('part %d of %d'), 1, 3).' &ndash; '._('names and relations'); ?></h2>
 
 <form action="person_create2.php" method="post">

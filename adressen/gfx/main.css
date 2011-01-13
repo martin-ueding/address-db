@@ -24,10 +24,6 @@ body.maske {
 	background-color: #FFC;
 }
 
-H2 {
-	margin: 20px 0 15px 0;
-}
-
 body.maske TABLE {
 	width: 596px;
 }
@@ -66,7 +62,8 @@ div.clearheinz {
 }
 
 H1 {
-	font-size: 19px; margin-bottom: 10px;
+	font-size: 19px;
+	margin: 0 0 15px 0;
 }
 
 H1 EM {

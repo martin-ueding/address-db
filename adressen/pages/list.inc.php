@@ -1,4 +1,5 @@
 <?PHP
+echo '<h1>'._('list').'</h1>';
 $titel = urldecode($_GET["titel"]);
 $from_with_get = 'mode=list';
 if (!empty($titel)) {

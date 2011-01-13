@@ -1,4 +1,5 @@
 <?PHP
+echo '<h1>'._('delete an entry').'</h1>';
 if (!empty($id)) {
 	printf(_('Do you really want to delete the entry %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');
 	echo '<br />';
@@ -8,5 +9,6 @@ if (!empty($id)) {
 	echo '<br />';
 	echo '<a href="index.php?mode=person_display&id='.$id.'">'._('No, cancel!').'</a>';
 }
+echo _('There is no ID specified.');
 
 ?>
