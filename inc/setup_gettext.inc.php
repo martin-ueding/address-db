@@ -13,7 +13,8 @@ textdomain("main");
 
 $available_languages = array(
 	array('de_DE', _('German')),
-	array('en', _('English'))
+	array('en', _('English')),
+	array('nl', _('Dutch'))
 );
 
 ?>
