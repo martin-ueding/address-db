@@ -57,7 +57,7 @@ float:left;
 * html .menu ul ul {top:20px;t\op:21px;}
 
 /* position the third level flyout menu */
-.menu ul ul ul{left:149px; top:-1px; width:149px;}
+.menu ul ul ul{left:152px; top:-1px; width:149px;}
 
 /* position the third level flyout menu for a left flyout */
 .menu ul ul ul.left {left:-149px;}
