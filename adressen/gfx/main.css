@@ -358,6 +358,7 @@ DIV.geb_monat_kasten {
 }
 
 #liste {
+	border-collapse: collapse;
 	margin: 0px;
 	padding: 0px;
 }
