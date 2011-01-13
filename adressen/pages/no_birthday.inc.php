@@ -5,13 +5,25 @@ $sql = 'SELECT * FROM ad_per WHERE (geb_t=0 or geb_m=0) && anrede_r!=4 ORDER BY 
 	
 $erg = mysql_query($sql);
 	
-echo '<div id="luecken">';
-
+$i = 0;
 while ($l = mysql_fetch_assoc($erg)) {
-	echo '<a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a><br />';
+	$daten[] = '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'"><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">&raquo;</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td></tr>';
 }
-echo '</div>';
-echo '</div>';
+
+/* Daten anzeigen */
+
+if (count($daten) > 0) {	
+	echo '<table id="liste">';
+
+	foreach($daten as $zeile)
+		echo $zeile;	
+	
+	echo '</table>';
+}
+
+else
+	echo _('nothing found');
+
 
 
 ?>

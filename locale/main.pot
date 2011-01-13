@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-13 18:44+0100\n"
+"POT-Creation-Date: 2011-01-13 19:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,7 +95,7 @@ msgstr ""
 msgid "verification mail for %s"
 msgstr ""
 
-#: adressen/index.php:129 adressen/inc/header.inc.php:17
+#: adressen/index.php:129 adressen/inc/header.inc.php:18
 msgid "database check"
 msgstr ""
 
@@ -532,24 +532,28 @@ msgstr ""
 msgid "no email address"
 msgstr ""
 
-#: adressen/inc/header.inc.php:22
+#: adressen/inc/header.inc.php:17
+msgid "no birthday"
+msgstr ""
+
+#: adressen/inc/header.inc.php:23
 #, php-format
 msgid "menu by %s"
 msgstr ""
 
-#: adressen/inc/header.inc.php:35 adressen/inc/header.inc.php:49
+#: adressen/inc/header.inc.php:36 adressen/inc/header.inc.php:50
 msgid "all"
 msgstr ""
 
-#: adressen/inc/header.inc.php:37
+#: adressen/inc/header.inc.php:38
 msgid "mode"
 msgstr ""
 
-#: adressen/inc/header.inc.php:65 adressen/pages/person_display.inc.php:275
+#: adressen/inc/header.inc.php:66 adressen/pages/person_display.inc.php:275
 msgid "groups"
 msgstr ""
 
-#: adressen/inc/header.inc.php:81
+#: adressen/inc/header.inc.php:82
 msgid "languages"
 msgstr ""
 
@@ -611,14 +615,6 @@ msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:4
 msgid "December"
-msgstr ""
-
-#: adressen/pages/all_birthdays.inc.php:43
-msgid "without a birthday"
-msgstr ""
-
-#: adressen/pages/all_birthdays.inc.php:45
-msgid "show list?"
 msgstr ""
 
 #: adressen/pages/integrity_check.inc.php:2
@@ -741,6 +737,10 @@ msgstr ""
 
 #: adressen/pages/main.inc.php:41
 msgid "next month"
+msgstr ""
+
+#: adressen/pages/no_birthday.inc.php:2
+msgid "without a birthday"
 msgstr ""
 
 #: adressen/pages/no_email.inc.php:2
