@@ -1,7 +1,10 @@
 <?PHP	
 echo '<h1>'._('without a birthday').'</h1>';
 	
-$sql = 'SELECT * FROM ad_per WHERE (geb_t=0 or geb_m=0) && anrede_r!=4 ORDER BY nachname, vorname;';
+if ($_SESSION['f'] != 0)
+	$sql = 'SELECT * FROM ad_per LEFT JOIN ad_flinks ON person_lr=p_id WHERE (geb_t=0 or geb_m=0) && anrede_r!=4 && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
+else
+	$sql = 'SELECT * FROM ad_per WHERE (geb_t=0 or geb_m=0) && anrede_r!=4 ORDER BY nachname, vorname;';
 	
 $erg = mysql_query($sql);
 	
