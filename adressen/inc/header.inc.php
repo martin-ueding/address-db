@@ -19,6 +19,7 @@
 
 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
+	<li><a href="http://cssplay.co.uk/" target="_blank"><?PHP echo sprintf(_('menu by %s'), 'CSSplay'); ?></a></li>
 	</ul>
 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
 </li>
