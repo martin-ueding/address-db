@@ -219,51 +219,6 @@ UL {
 	background-color: rgb(255,204,0);
 }
 
-.nav_item {
-	float: left;
-	width: 150px;
-	height: 20px;
-	position: relative;
-	top: 0px;
-	left: 0px;
-	text-align: center;
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-	margin: 5px 5px 0 0;
-	background-color: rgb(255, 230, 153);
-}
-
-.nav_item LI {
-	margin: 4px 0 0 0;
-}
-
-.nav_item LI A {
-	display: block;
-	width: 190px;
-	line-height: 19px;
-	text-align: center;
-	background-color: rgb(240,240,240);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
-}
-
-.nav_item LI A:LINK {
-	color: rgb(0,0,0);
-}
-
-.nav_item LI A:VISITED {
-	color: rgb(0,0,0);
-}
-
-.nav_item LI A:HOVER {
-	background-color: rgb(204,0,0);
-	color: rgb(255,255,255);
-	font-weight: bold;
-}
 
 UL.unfolding_list {
 	display: none;

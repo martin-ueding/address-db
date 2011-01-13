@@ -1,15 +1,29 @@
-<div class="nav_item"><?PHP echo _('menu'); ?><br />
-<ul id="spezial" class="unfolding_list">
-<li><a href="index.php?mode=main"><?PHP echo _('start'); ?></a></li>
-<li><a href="index.php?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
-<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
-<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
-<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
-<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
-<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
-<li><a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank"><?PHP echo _('report a bug'); ?></a></li>
-</ul>
-</div>
+<div class="menu">
+
+<ul>
+<li><a href="index.php?mode=main"><?PHP echo _('menu'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+	<li><a href="index.php?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
+	<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
+	<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
+	<li><a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank"><?PHP echo _('report a bug'); ?></a></li>
+
+	<li><a class="drop" href=""><?PHP echo _('maintenance'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<ul>
+			<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
+			<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
+			<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
+		</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+	</li>
+	<li><a href="http://cssplay.co.uk/" target="_blank"><?PHP echo sprintf(_('menu by %s'), 'CSSplay'); ?></a></li>
+	</ul>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
 <?PHP
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
@@ -20,41 +34,69 @@ while ($l = mysql_fetch_assoc($erg)) {
 if ($aktuell_name == "")
 	$aktuell_name = _('all');
 ?>
+<li><a href=""><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<?PHP
+		// find all get parameters which are not the mode or the fmg and put them into a string
+		$get_for_fmg_change = '';
+		foreach ($_GET as $key => $wert) {
+			if ($key != 'mode' && $key != 'f') {
+				$get_for_fmg_change .= '&'.$key.'='.$wert;
+			}
+		}
+		if ($_SESSION['f'] != 0)
+			echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: '._('all').'</a></li>';
+		$sql = 'SELECT * FROM ad_fmg';
+		$erg = mysql_query($sql);
+		while ($l = mysql_fetch_assoc($erg)) {
+			echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
+			if ($l['fmg_id'] == $_SESSION['f'])
+				$aktuell_name = $l['fmg'];
+		}
+		?>
 
-<div class="nav_item"><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><br />
-<ul id="mitglieder" class="unfolding_list">
-<?PHP
-// find all get parameters which are not the mode or the fmg and put them into a string
-$get_for_fmg_change = '';
-foreach ($_GET as $key => $wert) {
-	if ($key != 'mode' && $key != 'f') {
-		$get_for_fmg_change .= '&'.$key.'='.$wert;
-	}
-}
-if ($_SESSION['f'] != 0)
-	echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: '._('all').'</a></li>';
-$sql = 'SELECT * FROM ad_fmg';
-$erg = mysql_query($sql);
-while ($l = mysql_fetch_assoc($erg)) {
-	echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
-	if ($l['fmg_id'] == $_SESSION['f'])
-		$aktuell_name = $l['fmg'];
-}
-?>
-</ul>
-</div>
+	</ul>
 
-<div class="nav_item"><?PHP echo _('groups'); ?><br />
-<ul id="gruppen" class="unfolding_list">
-<?PHP
-$erg = select_alle_gruppen();
-while ($l = mysql_fetch_assoc($erg)) {
-	if (gruppe_ist_nicht_leer($l['g_id'])) {
-		echo '<li><a href="index.php?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'">'.$l['gruppe'].'</a></li>';
-	}
-}
-?>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+
+
+<li><a href=""><?PHP echo _('groups'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<?PHP
+		$erg = select_alle_gruppen();
+		while ($l = mysql_fetch_assoc($erg)) {
+			if (gruppe_ist_nicht_leer($l['g_id'])) {
+				echo '<li><a href="index.php?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'">'.$l['gruppe'].'</a></li>';
+			}
+		}
+		?>
+
+	</ul>
+
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li><a href=""><?PHP echo _('languages'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul>
+		<?PHP
+		$get_for_lang_change = '';
+		foreach ($_GET as $key => $wert) {
+			if ($key != 'mode' && $key != 'lang') {
+				$get_for_lang_change .= '&'.$key.'='.$wert;
+			}
+		}
+		foreach ($available_languages as $a_lang) {
+			echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
+		}
+		?>
+	</ul>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
 </ul>
+
 </div>
 
 
@@ -79,21 +121,6 @@ foreach ($buchstaben as $b) {
 }
 echo '</div>';
 ?>
-<div class="nav_item"><?PHP echo _('languages'); ?><br />
-<ul id="languages" class="unfolding_list">
-<?PHP
-$get_for_lang_change = '';
-foreach ($_GET as $key => $wert) {
-	if ($key != 'mode' && $key != 'lang') {
-		$get_for_lang_change .= '&'.$key.'='.$wert;
-	}
-}
-foreach ($available_languages as $a_lang) {
-	echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
-}
-?>
-</ul>
-</div>
 
 <div>
 <form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
