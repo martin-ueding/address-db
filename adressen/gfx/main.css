@@ -1,4 +1,4 @@
-* {
+BODY, A {
 	font-family: verdana, geneva, sans-serif;
 	margin: 0px;
 	padding: 0px;
@@ -54,6 +54,10 @@ body.maske TABLE TR TD TEXTAREA {
 
 body.maske .rand {
 	border: 1px solid #999;	
+}
+
+select {
+	margin-right: 7px;
 }
 
 div.clearheinz {
