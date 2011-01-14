@@ -151,6 +151,9 @@ switch ($mode) {
 				// open up all the slidedown boxes
 				$(".slidedown").fadeOut(0).delay(300).slideDown(800);
 
+				// open the project menu
+				$("#version").click(function () {$(".project_menu").toggle(600);});
+
 			});
 
 			function _switch(object) {
@@ -190,7 +193,16 @@ switch ($mode) {
 	$version_array = file('../version.txt');
 	$version_string = $version_array[0];
 
-	echo '<div id="version"><span class="graytext">'._('version').'</span> '.$version_string.'</div>';
+	echo '<div id="version"><nobr>';
+	echo '<span class="graytext">'._('version').'</span> '.$version_string;
+	echo '<span class="project_menu">';
+	echo ' &bull; ';
+	
+	echo '<a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank">'._('report a bug').'</a>';
+	echo ' &bull; ';
+	echo '<a href="http://cssplay.co.uk/" target="_blank">'.sprintf(_('menu by %s'), 'CSSplay').'</a>';
+	echo '</span>';
+	echo '</nobr></div>';
 	?>
 
 	</body>

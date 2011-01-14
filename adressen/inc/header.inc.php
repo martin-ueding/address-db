@@ -7,7 +7,6 @@
 	<li><a href="index.php?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
 	<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
 	<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
-	<li><a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank"><?PHP echo _('report a bug'); ?></a></li>
 
 	<li><a class="drop" href=""><?PHP echo _('maintenance'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
 <!--[if lte IE 6]><table><tr><td><![endif]-->
@@ -19,7 +18,6 @@
 
 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
 	</li>
-	<li><a href="http://cssplay.co.uk/" target="_blank"><?PHP echo sprintf(_('menu by %s'), 'CSSplay'); ?></a></li>
 	</ul>
 <!--[if lte IE 6]></td></tr></table></a><![endif]-->
 </li>

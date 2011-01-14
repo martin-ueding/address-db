@@ -385,3 +385,6 @@ DIV.geb_monat_kasten {
 SPAN.graytext {
 	color: #555;
 }
+SPAN.project_menu {
+	display: none;
+}
