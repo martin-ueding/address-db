@@ -130,7 +130,8 @@ UL {
 }
 
 #kartei {
-	margin: 0px;
+	margin: 0;
+	padding-bottom: 30px;
 	position: absolute;
 	top: 0px;
 	right: 6px;
