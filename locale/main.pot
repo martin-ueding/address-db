@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-13 18:26+0100\n"
+"POT-Creation-Date: 2011-01-14 10:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "current birthdays"
 msgstr ""
 
-#: adressen/index.php:97 adressen/inc/header.inc.php:7
+#: adressen/index.php:97 adressen/inc/header.inc.php:15
 msgid "no form of address"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "verification mail for %s"
 msgstr ""
 
-#: adressen/index.php:129 adressen/inc/header.inc.php:9
+#: adressen/index.php:129 adressen/inc/header.inc.php:17
 msgid "database check"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "PHP Family Address DB"
 msgstr ""
 
-#: adressen/index.php:215
+#: adressen/index.php:193
 msgid "version"
 msgstr ""
 
@@ -504,47 +504,52 @@ msgstr ""
 msgid "in the future ..."
 msgstr ""
 
-#: adressen/inc/header.inc.php:1
+#: adressen/inc/header.inc.php:4
 msgid "menu"
 msgstr ""
 
-#: adressen/inc/header.inc.php:3
-msgid "start"
-msgstr ""
-
-#: adressen/inc/header.inc.php:4
+#: adressen/inc/header.inc.php:7
 msgid "show my entries"
 msgstr ""
 
-#: adressen/inc/header.inc.php:5
+#: adressen/inc/header.inc.php:8
 msgid "create new entry"
 msgstr ""
 
-#: adressen/inc/header.inc.php:6
+#: adressen/inc/header.inc.php:9
 msgid "birthday list"
-msgstr ""
-
-#: adressen/inc/header.inc.php:8
-msgid "no email address"
 msgstr ""
 
 #: adressen/inc/header.inc.php:10
 msgid "report a bug"
 msgstr ""
 
-#: adressen/inc/header.inc.php:21 adressen/inc/header.inc.php:35
+#: adressen/inc/header.inc.php:12
+msgid "maintenance"
+msgstr ""
+
+#: adressen/inc/header.inc.php:16
+msgid "no email address"
+msgstr ""
+
+#: adressen/inc/header.inc.php:22
+#, php-format
+msgid "menu by %s"
+msgstr ""
+
+#: adressen/inc/header.inc.php:35 adressen/inc/header.inc.php:49
 msgid "all"
 msgstr ""
 
-#: adressen/inc/header.inc.php:24
+#: adressen/inc/header.inc.php:37
 msgid "mode"
 msgstr ""
 
-#: adressen/inc/header.inc.php:47 adressen/pages/person_display.inc.php:274
+#: adressen/inc/header.inc.php:65 adressen/pages/person_display.inc.php:274
 msgid "groups"
 msgstr ""
 
-#: adressen/inc/header.inc.php:82
+#: adressen/inc/header.inc.php:81
 msgid "languages"
 msgstr ""
 
@@ -1099,6 +1104,10 @@ msgstr ""
 
 #: inc/setup_gettext.inc.php:16
 msgid "English"
+msgstr ""
+
+#: inc/setup_gettext.inc.php:17
+msgid "Dutch"
 msgstr ""
 
 #: locale/strings_dummy.php:3
