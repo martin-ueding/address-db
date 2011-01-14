@@ -7,105 +7,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-09 18:05+0100\n"
-"PO-Revision-Date: 2011-01-09 14:30+0000\n"
+"POT-Creation-Date: 2011-01-13 18:26+0100\n"
+"PO-Revision-Date: 2011-01-13 18:45+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-10 06:12+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-01-14 06:48+0000\n"
+"X-Generator: Launchpad (build 12177)\n"
 
-#: adressen/index.php:30
+#: adressen/index.php:35
 msgid "Sorry, I could not find a site like that."
 msgstr "Sorry, ik konde geen site vinden."
 
-#: adressen/index.php:66 adressen/index.php:70 adressen/index.php:73
-#: adressen/index.php:82 adressen/index.php:85 adressen/index.php:89
-#: adressen/index.php:92 adressen/index.php:96 adressen/index.php:100
-#: adressen/index.php:103 adressen/index.php:107 adressen/index.php:110
-#: adressen/index.php:115 adressen/index.php:118 adressen/index.php:121
-#: adressen/index.php:124
+#: adressen/index.php:71 adressen/index.php:75 adressen/index.php:78
+#: adressen/index.php:87 adressen/index.php:90 adressen/index.php:94
+#: adressen/index.php:97 adressen/index.php:101 adressen/index.php:105
+#: adressen/index.php:108 adressen/index.php:112 adressen/index.php:115
+#: adressen/index.php:120 adressen/index.php:123 adressen/index.php:126
+#: adressen/index.php:129
 msgid "Address DB"
 msgstr "adres informatiebank"
 
-#: adressen/index.php:66
+#: adressen/index.php:71
 msgid "all birthdays"
 msgstr "alle verjaardagen"
 
-#: adressen/index.php:70
+#: adressen/index.php:75
 #, php-format
 msgid "letter &bdquo;%s&ldquo;"
 msgstr "letter &bdquo;%s&ldquo;"
 
-#: adressen/index.php:73
+#: adressen/index.php:78
 #, php-format
 msgid "group &bdquo;%s&ldquo;"
 msgstr "groep &bdquo;%s&ldquo;"
 
-#: adressen/index.php:82
+#: adressen/index.php:87
 #, php-format
 msgid "entries for %s"
 msgstr "records voor %s"
 
-#: adressen/index.php:85
+#: adressen/index.php:90
 msgid "list"
-msgstr "Lijst"
+msgstr "lijst"
 
-#: adressen/index.php:89
+#: adressen/index.php:94
 msgid "current birthdays"
 msgstr "aktuele verjaardagen"
 
-#: adressen/index.php:92 adressen/inc/header.inc.php:7
+#: adressen/index.php:97 adressen/inc/header.inc.php:7
 msgid "no form of address"
 msgstr "geen aanspreekvorm"
 
-#: adressen/index.php:96
+#: adressen/index.php:101
 msgid "create entry"
 msgstr ""
 
-#: adressen/index.php:100
+#: adressen/index.php:105
 #, php-format
 msgid "delete %s"
 msgstr "%s deleten"
 
-#: adressen/index.php:107
+#: adressen/index.php:112
 #, php-format
 msgid "edit %s"
 msgstr "%s behandelen"
 
-#: adressen/index.php:110
+#: adressen/index.php:115
 #, php-format
 msgid "delete %s's picture"
 msgstr ""
 
-#: adressen/index.php:115
+#: adressen/index.php:120
 #, php-format
 msgid "upload %s's picture"
 msgstr ""
 
-#: adressen/index.php:118
+#: adressen/index.php:123
 #, php-format
 msgid "search for &bdquo;%s&ldquo;"
 msgstr ""
 
-#: adressen/index.php:121
+#: adressen/index.php:126
 #, php-format
 msgid "verification mail for %s"
 msgstr ""
 
-#: adressen/index.php:124 adressen/inc/header.inc.php:9
+#: adressen/index.php:129 adressen/inc/header.inc.php:9
 msgid "database check"
 msgstr ""
 
-#: adressen/index.php:127
+#: adressen/index.php:132
 msgid "PHP Family Address DB"
 msgstr "PHP familie adres informatiebank"
 
-#: adressen/index.php:210
+#: adressen/index.php:215
 msgid "version"
-msgstr ""
+msgstr "versie"
 
 #: adressen/engines/person_checked.inc.php:4
 msgid "The entry was updated."
@@ -415,11 +415,11 @@ msgstr ""
 
 #: adressen/export/geb.ics.php:47
 msgid "Birthday"
-msgstr ""
+msgstr "Verjaardag"
 
 #: adressen/inc/abfragen.inc.php:8
 msgid "Warning"
-msgstr ""
+msgstr "Waarschuwing"
 
 #: adressen/inc/abfragen.inc.php:8
 #, php-format
@@ -452,7 +452,7 @@ msgstr "Tweelingen"
 
 #: adressen/inc/abfragen.inc.php:46
 msgid "Cancer"
-msgstr ""
+msgstr "Kreeft"
 
 #: adressen/inc/abfragen.inc.php:49
 msgid "Leo"
@@ -472,7 +472,7 @@ msgstr "Schorpioen"
 
 #: adressen/inc/abfragen.inc.php:61
 msgid "Sagittarius"
-msgstr ""
+msgstr "Boogschutter"
 
 #: adressen/inc/anzeigen.inc.php:23
 msgid "just now"
@@ -494,7 +494,7 @@ msgstr "%d uren geleden"
 
 #: adressen/inc/anzeigen.inc.php:31
 msgid "never"
-msgstr ""
+msgstr "nooit"
 
 #: adressen/inc/anzeigen.inc.php:33
 msgid "on the"
@@ -506,7 +506,7 @@ msgstr ""
 
 #: adressen/inc/header.inc.php:1
 msgid "menu"
-msgstr ""
+msgstr "menu"
 
 #: adressen/inc/header.inc.php:3
 msgid "start"
@@ -534,11 +534,11 @@ msgstr ""
 
 #: adressen/inc/header.inc.php:21 adressen/inc/header.inc.php:35
 msgid "all"
-msgstr ""
+msgstr "alles"
 
 #: adressen/inc/header.inc.php:24
 msgid "mode"
-msgstr ""
+msgstr "modus"
 
 #: adressen/inc/header.inc.php:47 adressen/pages/person_display.inc.php:274
 msgid "groups"
@@ -551,13 +551,13 @@ msgstr "talen"
 #: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
 #: adressen/inc/select.inc.php:49 adressen/inc/select.inc.php:71
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
 #: adressen/inc/select.inc.php:49 adressen/inc/select.inc.php:71
 #, php-format
 msgid "%s needs the %s"
-msgstr ""
+msgstr "%s hebt %s nodig"
 
 #: adressen/pages/all_birthdays.inc.php:3
 #: adressen/pages/all_birthdays.inc.php:15
@@ -586,7 +586,7 @@ msgstr "Juni"
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "August"
@@ -598,7 +598,7 @@ msgstr "September"
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "November"
@@ -639,7 +639,7 @@ msgstr ""
 
 #: adressen/pages/integrity_check.inc.php:145
 msgid "unused cities"
-msgstr ""
+msgstr "niet gebruikte steden"
 
 #: adressen/pages/integrity_check.inc.php:184
 msgid "unused countries"
