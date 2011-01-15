@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-01-13 18:26+0100\n"
+"POT-Creation-Date: 2011-01-14 10:09+0100\n"
 "PO-Revision-Date: 2011-01-13 18:35+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-01-14 06:48+0000\n"
+"X-Launchpad-Export-Date: 2011-01-15 07:09+0000\n"
 "X-Generator: Launchpad (build 12177)\n"
 
 #: adressen/index.php:35
@@ -57,7 +57,7 @@ msgstr "Liste"
 msgid "current birthdays"
 msgstr "aktuelle Geburtstage"
 
-#: adressen/index.php:97 adressen/inc/header.inc.php:7
+#: adressen/index.php:97 adressen/inc/header.inc.php:15
 msgid "no form of address"
 msgstr "keine Anrede"
 
@@ -95,7 +95,7 @@ msgstr "Suche nach &bdquo;%s&ldquo;"
 msgid "verification mail for %s"
 msgstr "Überprüfungsmail für %s"
 
-#: adressen/index.php:129 adressen/inc/header.inc.php:9
+#: adressen/index.php:129 adressen/inc/header.inc.php:17
 msgid "database check"
 msgstr "Datenbankkontrolle"
 
@@ -103,7 +103,7 @@ msgstr "Datenbankkontrolle"
 msgid "PHP Family Address DB"
 msgstr "PHP Familien Adressdatenbank"
 
-#: adressen/index.php:215
+#: adressen/index.php:193
 msgid "version"
 msgstr "Version"
 
@@ -517,47 +517,52 @@ msgstr "am"
 msgid "in the future ..."
 msgstr "in der Zukunft ..."
 
-#: adressen/inc/header.inc.php:1
+#: adressen/inc/header.inc.php:4
 msgid "menu"
 msgstr "Menü"
 
-#: adressen/inc/header.inc.php:3
-msgid "start"
-msgstr "Start"
-
-#: adressen/inc/header.inc.php:4
+#: adressen/inc/header.inc.php:7
 msgid "show my entries"
 msgstr "zeige meine Einträge"
 
-#: adressen/inc/header.inc.php:5
+#: adressen/inc/header.inc.php:8
 msgid "create new entry"
 msgstr "neuen Eintrag erstellen"
 
-#: adressen/inc/header.inc.php:6
+#: adressen/inc/header.inc.php:9
 msgid "birthday list"
 msgstr "Geburtstagsliste"
-
-#: adressen/inc/header.inc.php:8
-msgid "no email address"
-msgstr "keine Emailadresse"
 
 #: adressen/inc/header.inc.php:10
 msgid "report a bug"
 msgstr "einen Fehler melden"
 
-#: adressen/inc/header.inc.php:21 adressen/inc/header.inc.php:35
+#: adressen/inc/header.inc.php:12
+msgid "maintenance"
+msgstr ""
+
+#: adressen/inc/header.inc.php:16
+msgid "no email address"
+msgstr "keine Emailadresse"
+
+#: adressen/inc/header.inc.php:22
+#, php-format
+msgid "menu by %s"
+msgstr ""
+
+#: adressen/inc/header.inc.php:35 adressen/inc/header.inc.php:49
 msgid "all"
 msgstr "alle"
 
-#: adressen/inc/header.inc.php:24
+#: adressen/inc/header.inc.php:37
 msgid "mode"
 msgstr "Modus"
 
-#: adressen/inc/header.inc.php:47 adressen/pages/person_display.inc.php:274
+#: adressen/inc/header.inc.php:65 adressen/pages/person_display.inc.php:274
 msgid "groups"
 msgstr "Gruppen"
 
-#: adressen/inc/header.inc.php:82
+#: adressen/inc/header.inc.php:81
 msgid "languages"
 msgstr "Sprachen"
 
@@ -1121,6 +1126,10 @@ msgstr "Deutsch"
 msgid "English"
 msgstr "Englisch"
 
+#: inc/setup_gettext.inc.php:17
+msgid "Dutch"
+msgstr ""
+
 #: locale/strings_dummy.php:3
 msgid "Ms."
 msgstr "Frau"
@@ -1128,3 +1137,12 @@ msgstr "Frau"
 #: locale/strings_dummy.php:4
 msgid "Company"
 msgstr "Firma"
+
+#~ msgid "The person was updated."
+#~ msgstr "Die Person wurde aktualisiert."
+
+#~ msgid "start"
+#~ msgstr "Start"
+
+#~ msgid "sure"
+#~ msgstr "sicher"

@@ -1,4 +1,4 @@
-# Dutch translation for phpfamilyaddressdb
+# Turkish translation for phpfamilyaddressdb
 # Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the phpfamilyaddressdb package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2011-01-14 10:09+0100\n"
-"PO-Revision-Date: 2011-01-13 18:45+0000\n"
-"Last-Translator: Martin Ueding <Unknown>\n"
-"Language-Team: Dutch <nl@li.org>\n"
+"PO-Revision-Date: 2011-01-14 23:58+0000\n"
+"Last-Translator: zeugma <Unknown>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: adressen/index.php:35
 msgid "Sorry, I could not find a site like that."
-msgstr "Sorry, ik konde geen site vinden."
+msgstr ""
 
 #: adressen/index.php:71 adressen/index.php:75 adressen/index.php:78
 #: adressen/index.php:87 adressen/index.php:90 adressen/index.php:94
@@ -28,38 +28,38 @@ msgstr "Sorry, ik konde geen site vinden."
 #: adressen/index.php:120 adressen/index.php:123 adressen/index.php:126
 #: adressen/index.php:129
 msgid "Address DB"
-msgstr "adres informatiebank"
+msgstr ""
 
 #: adressen/index.php:71
 msgid "all birthdays"
-msgstr "alle verjaardagen"
+msgstr ""
 
 #: adressen/index.php:75
 #, php-format
 msgid "letter &bdquo;%s&ldquo;"
-msgstr "letter &bdquo;%s&ldquo;"
+msgstr ""
 
 #: adressen/index.php:78
 #, php-format
 msgid "group &bdquo;%s&ldquo;"
-msgstr "groep &bdquo;%s&ldquo;"
+msgstr ""
 
 #: adressen/index.php:87
 #, php-format
 msgid "entries for %s"
-msgstr "records voor %s"
+msgstr ""
 
 #: adressen/index.php:90
 msgid "list"
-msgstr "Lijst"
+msgstr "liste"
 
 #: adressen/index.php:94
 msgid "current birthdays"
-msgstr "aktuele verjaardagen"
+msgstr ""
 
 #: adressen/index.php:97 adressen/inc/header.inc.php:15
 msgid "no form of address"
-msgstr "geen aanspreekvorm"
+msgstr ""
 
 #: adressen/index.php:101
 msgid "create entry"
@@ -68,12 +68,12 @@ msgstr ""
 #: adressen/index.php:105
 #, php-format
 msgid "delete %s"
-msgstr "%s deleten"
+msgstr "%s sil"
 
 #: adressen/index.php:112
 #, php-format
 msgid "edit %s"
-msgstr "%s behandelen"
+msgstr ""
 
 #: adressen/index.php:115
 #, php-format
@@ -101,11 +101,11 @@ msgstr ""
 
 #: adressen/index.php:132
 msgid "PHP Family Address DB"
-msgstr "PHP familie adres informatiebank"
+msgstr ""
 
 #: adressen/index.php:193
 msgid "version"
-msgstr "versie"
+msgstr "sürüm"
 
 #: adressen/engines/person_checked.inc.php:4
 msgid "The entry was updated."
@@ -150,7 +150,7 @@ msgstr ""
 
 #: adressen/engines/verification_email.inc.php:20
 msgid "Dear"
-msgstr "Geachte"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:20
 msgid ""
@@ -168,7 +168,7 @@ msgstr ""
 #: adressen/engines/verification_email.inc.php:20
 #: adressen_helper/aktuell.php:26
 msgid "Thank you!"
-msgstr "Dank u!"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:30
 #: adressen/engines/verification_email.inc.php:45
@@ -177,14 +177,14 @@ msgstr "Dank u!"
 #: adressen/pages/person_display.inc.php:26
 #: adressen/pages/person_edit1.inc.php:25
 msgid "name"
-msgstr "naam"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:35
 #: adressen/pages/person_create1.inc.php:8
 #: adressen/pages/person_display.inc.php:16
 #: adressen/pages/person_edit1.inc.php:27
 msgid "form of address"
-msgstr "aanspreekvorm"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:56
 #: adressen/pages/person_display.inc.php:37
@@ -194,7 +194,7 @@ msgstr ""
 #: adressen/engines/verification_email.inc.php:58
 #: adressen/pages/person_display.inc.php:39 locale/strings_dummy.php:2
 msgid "Mr."
-msgstr "Men."
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:59
 #: adressen/pages/person_display.inc.php:40
@@ -209,13 +209,13 @@ msgstr ""
 #: adressen/engines/verification_email.inc.php:69
 #: adressen/pages/person_display.inc.php:50
 msgid "birthday"
-msgstr "geboortedag"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:73
 #: adressen/pages/person_display.inc.php:54
 #, php-format
 msgid "(today %d years old)"
-msgstr "(%d jaar oud vandaag)"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:82
 #: adressen/engines/verification_email.inc.php:87
@@ -224,7 +224,7 @@ msgstr "(%d jaar oud vandaag)"
 #: adressen/pages/person_display.inc.php:68
 #: adressen/pages/person_edit1.inc.php:96
 msgid "address"
-msgstr "adres"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:98
 #: adressen/pages/person_display.inc.php:90
@@ -250,7 +250,7 @@ msgstr ""
 #: adressen/pages/person_edit1.inc.php:186
 #: adressen/pages/person_edit1.inc.php:237
 msgid "fax"
-msgstr "fax"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:122
 #: adressen/pages/person_display.inc.php:118
@@ -278,7 +278,7 @@ msgstr ""
 #: adressen/pages/person_edit1.inc.php:178
 #: adressen/pages/person_edit1.inc.php:229
 msgid "work"
-msgstr "werk"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:146
 #: adressen/pages/person_create1.inc.php:126
@@ -287,7 +287,7 @@ msgstr "werk"
 #: adressen/pages/person_edit1.inc.php:182
 #: adressen/pages/person_edit1.inc.php:233
 msgid "mobile"
-msgstr "mobiel"
+msgstr ""
 
 #: adressen/engines/verification_email.inc.php:158
 #: adressen/pages/person_create1.inc.php:134
@@ -415,11 +415,11 @@ msgstr ""
 
 #: adressen/export/geb.ics.php:47
 msgid "Birthday"
-msgstr "Verjaardag"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:8
 msgid "Warning"
-msgstr "Waarschuwing"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:8
 #, php-format
@@ -428,19 +428,19 @@ msgstr ""
 
 #: adressen/inc/abfragen.inc.php:28 adressen/inc/abfragen.inc.php:64
 msgid "Capricorn"
-msgstr "Steenbok"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:31
 msgid "Aquarius"
-msgstr "Waterman"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:34
 msgid "Pisces"
-msgstr "Vissen"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:37
 msgid "Aries"
-msgstr "Ram"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:40
 msgid "Taurus"
@@ -448,15 +448,15 @@ msgstr ""
 
 #: adressen/inc/abfragen.inc.php:43
 msgid "Gemini"
-msgstr "Tweelingen"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:46
 msgid "Cancer"
-msgstr "Kreeft"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:49
 msgid "Leo"
-msgstr "Leeuw"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:52
 msgid "Virgo"
@@ -464,15 +464,15 @@ msgstr ""
 
 #: adressen/inc/abfragen.inc.php:55
 msgid "Libra"
-msgstr "Weegschaal"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:58
 msgid "Scorpio"
-msgstr "Schorpioen"
+msgstr ""
 
 #: adressen/inc/abfragen.inc.php:61
 msgid "Sagittarius"
-msgstr "Boogschutter"
+msgstr ""
 
 #: adressen/inc/anzeigen.inc.php:23
 msgid "just now"
@@ -485,20 +485,20 @@ msgstr ""
 #: adressen/inc/anzeigen.inc.php:27
 #, php-format
 msgid "%d minutes ago"
-msgstr "%d minuten geleden"
+msgstr ""
 
 #: adressen/inc/anzeigen.inc.php:29
 #, php-format
 msgid "%d hours ago"
-msgstr "%d uren geleden"
+msgstr ""
 
 #: adressen/inc/anzeigen.inc.php:31
 msgid "never"
-msgstr "nooit"
+msgstr ""
 
 #: adressen/inc/anzeigen.inc.php:33
 msgid "on the"
-msgstr "op de"
+msgstr ""
 
 #: adressen/inc/anzeigen.inc.php:36
 msgid "in the future ..."
@@ -506,7 +506,7 @@ msgstr ""
 
 #: adressen/inc/header.inc.php:4
 msgid "menu"
-msgstr "menu"
+msgstr ""
 
 #: adressen/inc/header.inc.php:7
 msgid "show my entries"
@@ -539,79 +539,79 @@ msgstr ""
 
 #: adressen/inc/header.inc.php:35 adressen/inc/header.inc.php:49
 msgid "all"
-msgstr "alles"
+msgstr ""
 
 #: adressen/inc/header.inc.php:37
 msgid "mode"
-msgstr "modus"
+msgstr ""
 
 #: adressen/inc/header.inc.php:65 adressen/pages/person_display.inc.php:274
 msgid "groups"
-msgstr "groepen"
+msgstr ""
 
 #: adressen/inc/header.inc.php:81
 msgid "languages"
-msgstr "talen"
+msgstr ""
 
 #: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
 #: adressen/inc/select.inc.php:49 adressen/inc/select.inc.php:71
 msgid "Error"
-msgstr "Fout"
+msgstr ""
 
 #: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
 #: adressen/inc/select.inc.php:49 adressen/inc/select.inc.php:71
 #, php-format
 msgid "%s needs the %s"
-msgstr "%s hebt %s nodig"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 #: adressen/pages/all_birthdays.inc.php:15
 msgid "January"
-msgstr "Januari"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "February"
-msgstr "Februari"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "March"
-msgstr "Maart"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "April"
-msgstr "April"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "May"
-msgstr "Mei"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "June"
-msgstr "Juni"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "July"
-msgstr "Juli"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "August"
-msgstr "Augustus"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "September"
-msgstr "September"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "October"
-msgstr "Oktober"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "November"
-msgstr "November"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:3
 msgid "December"
-msgstr "December"
+msgstr ""
 
 #: adressen/pages/all_birthdays.inc.php:42
 msgid "without a birthday"
@@ -644,7 +644,7 @@ msgstr ""
 
 #: adressen/pages/integrity_check.inc.php:145
 msgid "unused cities"
-msgstr "niet gebruikte steden"
+msgstr ""
 
 #: adressen/pages/integrity_check.inc.php:184
 msgid "unused countries"
