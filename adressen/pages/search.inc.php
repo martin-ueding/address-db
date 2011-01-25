@@ -132,6 +132,7 @@ else {
 
 	if ($_SESSION['f'] == 0)
 		$sql = 'SELECT * FROM ad_per WHERE pnotizen like "%'.$suche.'%" ORDER BY nachname, vorname;';
+	else
 		$sql = 'SELECT * FROM ad_per LEFT JOIN ad_flinks ON p_id=person_lr WHERE fmg_lr='.$_SESSION['f'].' && pnotizen like "%'.$suche.'%" ORDER BY nachname, vorname;';
 	display_name_list($sql, '&hellip; '._('as part of a note').':');
 
