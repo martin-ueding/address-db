@@ -1,5 +1,5 @@
 <?PHP
-session_start();
+//session_start();
 if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
