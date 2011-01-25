@@ -4,7 +4,7 @@
 <li><a href="index.php?mode=main"><?PHP echo _('menu'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
 <!--[if lte IE 6]><table><tr><td><![endif]-->
 	<ul>
-	<li><a href="index.php?mode=list&f=<?PHP echo $_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
+	<li><a href="index.php?mode=list<?PHP if (isset($_SESSION['f'])) echo '&f='.$_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
 	<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
 	<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
 
@@ -29,7 +29,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if ($l['fmg_id'] == $_SESSION['f'])
 		$aktuell_name = $l['fmg'];
 }
-if ($aktuell_name == "")
+if (!isset($aktuell_name))
 	$aktuell_name = _('all');
 ?>
 <li><a href=""><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
@@ -43,7 +43,7 @@ if ($aktuell_name == "")
 				$get_for_fmg_change .= '&'.$key.'='.$wert;
 			}
 		}
-		if ($_SESSION['f'] != 0)
+		if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 			echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: '._('all').'</a></li>';
 		$sql = 'SELECT * FROM ad_fmg';
 		$erg = mysql_query($sql);
@@ -103,7 +103,7 @@ if ($aktuell_name == "")
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';
 foreach ($buchstaben as $b) {
-	if ($_SESSION['f'] != 0)
+	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 		$sql = 'SELECT p_id FROM ad_per, ad_flinks WHERE nachname like "'.$b.'%" && person_lr=p_id && fmg_lr='.$_SESSION['f'].';';
 	else
 		$sql = 'SELECT p_id FROM ad_per WHERE nachname like "'.$b.'%";';

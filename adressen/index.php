@@ -26,8 +26,7 @@ if (isset($_GET['id'])) {
 }
 
 // get current mode
-$mode = $_GET['mode'];
-	
+$mode = isset($_GET['mode']) ? $_GET['mode'] : '';
 
 $allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_email', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
 
@@ -145,8 +144,12 @@ switch ($mode) {
 		<script type="text/javascript">
 			
 			$(document).ready(function(){
-				// fade out the messages box
-				$("#messages").fadeOut(0).fadeIn(500).delay(<?PHP echo 5000*count($msgs); ?>).slideUp(1000);
+				<?PHP
+				if (isset($msgs)) {
+					// fade out the messages box
+					echo '$("#messages").fadeOut(0).fadeIn(500).delay('.(5000*count($msgs)).'.slideUp(1000);';
+				}
+				?>
 
 				// open up all the slidedown boxes
 				$(".slidedown").fadeOut(0).delay(300).slideDown(800);
@@ -178,7 +181,7 @@ switch ($mode) {
 	// display header
 	include('inc/header.inc.php');
 
-	if (count($msgs) > 0) {
+	if (isset($msgs) && count($msgs) > 0) {
 		echo '<div id="messages">';
 		echo '<ul>';
 		foreach ($msgs as $msg) {

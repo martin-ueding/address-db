@@ -75,112 +75,84 @@ function sternzeichen ($tag, $monat) {
 function finde_personen_zu_familie ($id) {
 	$sql = 'SELECT * FROM ad_per WHERE familie_r='.$id.' ORDER BY geb_j, geb_m;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_person_id ($id) {
 	$sql = 'SELECT * FROM ad_per WHERE p_id='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_person_alles ($id) {
 	$sql = 'SELECT * FROM ad_per, ad_adressen, ad_orte, ad_plz, ad_laender, ad_anreden, ad_prafixe, ad_suffixe WHERE p_id='.$id.' && adresse_r=ad_id && ort_r=o_id && plz_r=plz_id && land_r=l_id && anrede_r=a_id && prafix_r=prafix_id && suffix_r=s_id;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_plzid_plz ($plz) {
 	$sql = 'SELECT plz_id FROM ad_plz WHERE plz='. $plz.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_ortid_ort ($ort) {
 	$sql = 'SELECT o_id FROM ad_orte WHERE ortsname="'.$ort.'";';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_landid_land ($land) {
 	$sql = 'SELECT l_id FROM ad_laender WHERE land="'.$land.'";';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_anreden () {
 	$sql = 'SELECT * FROM ad_anreden ORDER BY anrede;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_prafixe () {
 	$sql = 'SELECT * FROM ad_prafixe ORDER BY prafix;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_suffixe () {
 	$sql = 'SELECT * FROM ad_suffixe ORDER BY suffix;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_plz () {
 	$sql = 'SELECT * FROM ad_plz ORDER BY plz;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_orte () {
 	$sql = 'SELECT * FROM ad_orte ORDER BY ortsname;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_laender () {
 	$sql = 'SELECT * FROM ad_laender ORDER BY land;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_vorwahlen () {
 	$sql = 'SELECT * FROM ad_vorwahlen ORDER BY vorwahl;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_string_anrede ($id) {
 	$sql = 'SELECT anrede FROM ad_anreden WHERE a_id='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 
 	if (mysql_num_rows($erg) == 1) {
 		$l = mysql_fetch_assoc($erg);
@@ -194,8 +166,6 @@ function select_string_anrede ($id) {
 function select_string_prafix ($id) {
 	$sql = 'SELECT prafix FROM ad_prafixe WHERE prafix_id='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 
 	if (mysql_num_rows($erg) == 1) {
 		$l = mysql_fetch_assoc($erg);
@@ -209,8 +179,6 @@ function select_string_prafix ($id) {
 function select_string_suffix ($id) {
 	$sql = 'SELECT suffix FROM ad_suffixe WHERE s_id='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 
 	if (mysql_num_rows($erg) == 1) {
 		$l = mysql_fetch_assoc($erg);
@@ -225,8 +193,6 @@ function select_string_suffix ($id) {
 function finde_familien_id_zu_person ($id) {
 	$sql = 'SELECT familie_r FROM ad_per WHERE p_id='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 
 	$l = mysql_fetch_assoc($erg);
 	return $l['familie_r'];
@@ -235,8 +201,6 @@ function finde_familien_id_zu_person ($id) {
 function select_vw_id ($id) {
 	$sql = 'SELECT vorwahl FROM ad_vorwahlen WHERE v_id='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 
 	$l = mysql_fetch_assoc($erg);
 	return $l['vorwahl'];
@@ -245,40 +209,30 @@ function select_vw_id ($id) {
 function select_vw_vw ($vw) {
 	$sql = 'SELECT v_id FROM ad_vorwahlen WHERE vorwahl="'.$vw.'";';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_gruppen_zu_person ($id) {
 	$sql = 'SELECT * FROM ad_gruppen, ad_glinks WHERE g_id=gruppe_lr && person_lr='.$id.'  ORDER BY gruppe;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_fmg_zu_person ($id) {
 	$sql = 'SELECT * FROM ad_fmg, ad_flinks WHERE fmg_id=fmg_lr && person_lr='.$id.'  ORDER BY fmg;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_gruppen () {
 	$sql = 'SELECT * FROM ad_gruppen ORDER BY gruppe;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
 function select_alle_fmg () {
 	$sql = 'SELECT * FROM ad_fmg ORDER BY fmg;';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return $erg;
 }
 
@@ -306,32 +260,24 @@ function get_vwid ($text, $id) {
 function insert_vw ($vw) {
 	$sql = 'INSERT INTO ad_vorwahlen SET vorwahl="'.$vw.'";';
 	mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return mysql_insert_id();
 }
 
 function insert_plz ($plz) {
 	$sql = 'INSERT INTO ad_plz SET plz='.$plz.';';
 	mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return mysql_insert_id();
 }
 
 function insert_ort ($ort) {
 	$sql = 'INSERT INTO ad_orte SET ortsname="'.$ort.'";';
 	mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return mysql_insert_id();
 }
 
 function insert_land ($land) {
 	$sql = 'INSERT INTO ad_laender SET land="'.$land.'";';
 	mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return mysql_insert_id();
 }
 
@@ -367,8 +313,6 @@ function gruppe_ist_nicht_leer ($id) {
 function adresse_mehrfach_benutzt ($id) {
 	$sql = 'SELECT * FROM ad_per WHERE adresse_r='.$id.';';
 	$erg = mysql_query($sql);
-	if ($debug)
-		echo mysql_error();
 	return mysql_num_rows($erg) > 1;
 }
 

@@ -1,7 +1,9 @@
 <?PHP
-$titel = urldecode($_GET["titel"]);
+if (isset($_GET['titel'])) {
+	$titel = urldecode($_GET['titel']);
+}
 $from_with_get = 'mode=list';
-if (!empty($titel)) {
+if (isset($titel)) {
 	$from_with_get .= '&titel='.urlencode($titel);
 }
 /* Daten sammeln */

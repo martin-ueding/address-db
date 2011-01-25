@@ -5,6 +5,7 @@ if (!empty($_GET['lang'])) {
 }
 else if (empty($_SESSION['lang_session'])) {
    $_SESSION['lang_session'] = 'de_DE';
+   $lang = 'de_DE';
 }
 else {
 	$lang = $_SESSION['lang_session'];

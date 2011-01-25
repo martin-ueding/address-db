@@ -8,7 +8,7 @@ echo '<tr>'."\n";
 echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>'."\n";
 echo '</tr>'."\n";
 // Daten laufender Monat holen und Anzeigearray erstellen
-if ($_SESSION['f'] != 0)
+if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_m='.date("n").' && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_t';
 else
 	$sql = 'SELECT * FROM ad_per WHERE geb_m='.date("n").' ORDER BY geb_t';
@@ -42,7 +42,7 @@ echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>'."\n";
 echo '</tr>'."\n";
 /* .. */
 /* .Daten kommender Monat holen und Anzeigearray erstellen. */
-if ($_SESSION['f'] != 0)
+if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_m='.((date("n")%12)+1).' && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_t';
 else
 	$sql = 'SELECT * FROM ad_per WHERE geb_m='.((date("n")%12)+1).' ORDER BY geb_t';
