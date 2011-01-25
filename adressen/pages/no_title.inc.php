@@ -1,6 +1,6 @@
 <?PHP
+echo '<h1>'._('entries without a form of address').'</h1>';
 $from_with_get = 'mode=no_title';
-echo _('entries without a form of address').':<br /><br />';
 
 $titel = $_GET["titel"];
 

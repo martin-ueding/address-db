@@ -1,4 +1,5 @@
 <?PHP	
+echo '<h1>'._('all birthdays').'</h1>';
 $from_with_get = 'mode=all_birthdays';
 $monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December'));
 	
@@ -32,24 +33,4 @@ while ($l = mysql_fetch_assoc($erg)) {
 }
 	
 echo '</div>';
-	
-$sql = 'SELECT * FROM ad_per WHERE (geb_t=0 or geb_m=0) && anrede_r!=4 ORDER BY nachname, vorname;';
-	
-$erg = mysql_query($sql);
-	
-	
-echo '<br clear="all" /><br /><br />';
-echo '<h3>'._('without a birthday').' ('.mysql_num_rows($erg).'):</h3>';
-
-echo _('show list?').' <input type="checkbox" id="adresswahl" name="adresswahl" value="manuell" onClick = "_switch(\'luecken\'); return true;">';
-	
-echo '<div id="luecken" style="display: none;">';
-
-while ($l = mysql_fetch_assoc($erg)) {
-	echo '<a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a><br />';
-}
-echo '</div>';
-echo '</div>';
-
-
 ?>

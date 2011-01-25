@@ -1,4 +1,4 @@
-* {
+BODY, A {
 	font-family: verdana, geneva, sans-serif;
 	margin: 0px;
 	padding: 0px;
@@ -22,10 +22,6 @@ body.linksluft {
 body.maske {
 	padding-left: 20px;
 	background-color: #FFC;
-}
-
-H2 {
-	margin: 20px 0 15px 0;
 }
 
 body.maske TABLE {
@@ -60,13 +56,18 @@ body.maske .rand {
 	border: 1px solid #999;	
 }
 
+select {
+	margin-right: 7px;
+}
+
 div.clearheinz {
 	clear: both;
 	margin-bottom: 20px;
 }
 
 H1 {
-	font-size: 19px; margin-bottom: 10px;
+	font-size: 19px;
+	margin: 0 0 15px 0;
 }
 
 H1 EM {
@@ -358,6 +359,7 @@ DIV.geb_monat_kasten {
 }
 
 #liste {
+	border-collapse: collapse;
 	margin: 0px;
 	padding: 0px;
 }

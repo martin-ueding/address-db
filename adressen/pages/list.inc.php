@@ -2,6 +2,7 @@
 if (isset($_GET['titel'])) {
 	$titel = urldecode($_GET['titel']);
 }
+echo '<h1>'._('list').'</h1>';
 $from_with_get = 'mode=list';
 if (isset($titel)) {
 	$from_with_get .= '&titel='.urlencode($titel);

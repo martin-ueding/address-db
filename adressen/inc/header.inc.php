@@ -13,6 +13,7 @@
 		<ul>
 			<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
 			<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
+			<li><a href="index.php?mode=no_birthday"><?PHP echo _('no birthday'); ?></a></li>
 			<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
 		</ul>
 
