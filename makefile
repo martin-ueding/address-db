@@ -18,7 +18,7 @@ locale/nl/LC_MESSAGES/main.mo: locale/nl.po
 locale/tr/LC_MESSAGES/main.mo: locale/tr.po
 	msgfmt -o locale/de_DE/LC_MESSAGES/main.mo locale/tr.po
 
-tarball: personalphpbookmark-$(version).tar.gz
+tarball: $(pname).tar.gz
 
 $(pname).tar.gz: $(phpFiles) $(moFiles)
 	mkdir $(pname)
