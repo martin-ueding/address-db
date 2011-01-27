@@ -391,3 +391,16 @@ SPAN.graytext {
 SPAN.project_menu {
 	display: none;
 }
+DIV#searchhints {
+	position: absolute;
+	top: 50px;
+	left: 650px;
+	z-index: 10;
+	background-color: #EEE;
+	border: 1px solid #777;
+	width: 100px;
+}
+DIV#searchhints UL, DIV#searchhints UL LI {
+	margin: 0px;
+	padding 0px;
+}

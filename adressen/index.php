@@ -141,6 +141,7 @@ switch ($mode) {
 		<link rel="STYLESHEET" type="text/css" href="gfx/cssmenu.css">
 
 		<script src="http://jquery.com/src/jquery-latest.js" type="text/javascript"></script>
+		<script src="js/search.js"></script>
 		<script type="text/javascript">
 			
 			$(document).ready(function(){
