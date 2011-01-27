@@ -140,7 +140,7 @@ else {
 		echo _('no results').'<br /><br />';
 	}
 
-	if (ereg('0([1-9]+)-([0-9]+)', $suche, $matches)) {
+	if (preg_match('/0([1-9]+)-([0-9]+)/', $suche, $matches)) {
 		printf(_('Did you mean %s instead of %s?'), '<a href="index.php?mode=search&suche='.urlencode('+49-'.$matches[1].'-'.$matches[2]).'">+49-'.$matches[1].'-'.$matches[2].'</a>', $matches[0]);
 	}
 }
