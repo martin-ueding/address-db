@@ -396,11 +396,19 @@ DIV#searchhints {
 	top: 50px;
 	left: 650px;
 	z-index: 10;
-	background-color: #EEE;
-	border: 1px solid #777;
-	width: 100px;
-}
-DIV#searchhints UL, DIV#searchhints UL LI {
+	padding: 0px;
 	margin: 0px;
-	padding 0px;
+}
+DIV#searchhints UL {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+DIV#searchhints UL LI {
+	margin: 0px;
+	padding: 3px 5px;
+	background-color: #EEE;
+}
+DIV#searchhints UL LI:hover {
+	background-color: #ddd;
 }

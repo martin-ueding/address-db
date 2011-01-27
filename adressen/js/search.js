@@ -1,22 +1,27 @@
 $(document).ready(function() {
 	$("#suche").keyup(handleSearchKeyUp);
 });
-
 function handleSearchKeyUp() {
 	if (this.value != '') {
 		// add some division after the search box to display the results
 		// but only add, if not already there
-		if ($('#searchhints').size() == 0)
-			$('#suche').parent().after('<div id="searchhints">Trying to load hints</div>').hide().slideDown(200);
+		if ($('#searchhints').size() == 0) {
+			$('#suche').parent().after('<div id="searchhints"><img src="gfx/spinner.gif" /></div>');
+			var offset = $('#suche').offset();
+			offset.top += $('#suche').outerHeight(true);
+			$('#searchhints').offset(offset);
+			$('#searchhints').hide().slideDown(300);
+		}
 		term = this.value;
 		$.post('js/searchhints.php', {query: term}, insertHints);
 	}
 	else {
-		$('#searchhints').slideUp(300);
-		setTimeout(function() {$('#searchhints').remove();}, 300);
+		$('#searchhints').slideUp(300, function() {$('#searchhints').remove();});
 	}
 }
-
 function insertHints(data) {
-	$('#searchhints').contents().replaceWith(data);
+	$('#searchhints').slideUp(200, function() {
+		$('#searchhints').contents().replaceWith(data);
+		$('#searchhints').slideDown(200);
+	});
 }
