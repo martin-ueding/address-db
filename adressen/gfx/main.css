@@ -7,6 +7,9 @@ BODY, A {
 	font-size: 13px;
 	line-height: 1.5;
 }
+A IMG {
+	border: 0px;
+}
 
 @media print {
 	#kartei, #suche, .nav_item {
