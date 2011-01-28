@@ -76,7 +76,7 @@ if ($person_loop['adresse_r'] != 1) {
 	echo _('show map').': ';
 	echo '<a href="http://nominatim.openstreetmap.org/search?q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank" title="Open Street Map">&raquo;OSM</a>';
 	echo ' &nbsp; ';
-	echo '<a href="http://maps.google.de/maps?f=q&hl=de&q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank">&raquo;Google</a>';
+	echo '<a href="http://maps.google.com/maps?f=q&hl=de&q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank">&raquo;Google</a>';
 	echo ' &nbsp; ';
 	echo '<a href="http://www.bing.com/maps/?q='.urlencode($person_loop['strasse'].', '.$person_loop['ortsname'].', '.$person_loop['plz'].', '.$person_loop['land']).'" target="_blank">&raquo;Bing</a>';
 	if ($person_loop['land'] == 'Deutschland') {
