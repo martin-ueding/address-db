@@ -103,7 +103,7 @@ if (!empty($sql)) {
 	echo '</table>';
 }
 
-if (!empty($_GET['f'])) {
+if (empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f'])) {
 	echo '<br /><br />';
 	echo '<a href="export/vcard_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a VCard').'</a>';
 	echo '<br />';
