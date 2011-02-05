@@ -2,7 +2,7 @@ version = 2.3.1
 projectName = phpfamilyaddressdb-$(version)
 
 phpFiles = $(shell find . | egrep "\.php$$")
-moFiles = $(shell find . | egrep "LC_MESSAGES/main.mo$$")
+moFiles = locale/de_DE/LC_MESSAGES/main.mo locale/nl/LC_MESSAGES/main.mo locale/tr/LC_MESSAGES/main.mo
 
 jQueryFilename = jquery-1.5.min.js
 jQueryPath = js/$(jQueryFilename)
