@@ -16,10 +16,10 @@ locale/de_DE/LC_MESSAGES/main.mo: locale/de.po
 	msgfmt -o locale/de_DE/LC_MESSAGES/main.mo locale/de.po
 
 locale/nl/LC_MESSAGES/main.mo: locale/nl.po
-	msgfmt -o locale/de_DE/LC_MESSAGES/main.mo locale/nl.po
+	msgfmt -o locale/nl/LC_MESSAGES/main.mo locale/nl.po
 
 locale/tr/LC_MESSAGES/main.mo: locale/tr.po
-	msgfmt -o locale/de_DE/LC_MESSAGES/main.mo locale/tr.po
+	msgfmt -o locale/tr/LC_MESSAGES/main.mo locale/tr.po
 
 $(jQueryPath):
 	wget --output-document=$(jQueryPath) http://code.jquery.com/$(jQueryFilename)
