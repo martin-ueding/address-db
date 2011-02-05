@@ -31,6 +31,9 @@ $(projectName).tar.gz: $(phpFiles) $(moFiles) $(jQueryPath)
 	mkdir $(projectName)
 	bzr export $(projectName)
 	cp $(jQueryPath) $(projectName)/$(jQueryPath)
-	rm $(projectName)/makefile $(projectName)/locale/*.po*
+	rm $(projectName)/makefile
+	rm $(projectName)/locale/*.po*
+	rm $(projectName)/locale/strings_dummy.php
+	rm -rf $(projectName)/ba-src
 	tar -czf $(projectName).tar.gz $(projectName)
 	rm -rf $(projectName)
