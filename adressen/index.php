@@ -140,7 +140,22 @@ switch ($mode) {
 		<link rel="STYLESHEET" type="text/css" href="gfx/main.css">
 		<link rel="STYLESHEET" type="text/css" href="gfx/cssmenu.css">
 
-		<script src="http://jquery.com/src/jquery-latest.js" type="text/javascript"></script>
+		<?PHP
+		// find the installed version of jQuery
+		$dir = dir('../js');
+		$jQueryFile = null;
+		while ($file = $dir -> read()) {
+			if (preg_match('/jquery-[\\.0-9]*\\.min\\.js/', $file)) {
+				$jQueryFile = $file;
+			}
+		}
+		if ($jQueryFile == null) {
+			die(sprintf(_('%s is not installed'), 'jQuery'));
+		}
+		else {
+			echo '<script type="text/javascript" src="../js/'.$jQueryFile.'"></script>';
+		}
+		?>
 		<script src="js/search.js"></script>
 		<script type="text/javascript">
 			

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-05 19:01+0100\n"
+"POT-Creation-Date: 2011-02-05 19:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,11 @@ msgstr ""
 #: adressen/inc/anzeigen.inc.php:27
 #, php-format
 msgid "%d minutes ago"
+msgstr ""
+
+#: adressen/index.php:153
+#, php-format
+msgid "%s is not installed"
 msgstr ""
 
 #: adressen/inc/select.inc.php:5 adressen/inc/select.inc.php:27
@@ -844,7 +849,7 @@ msgstr ""
 msgid "menu"
 msgstr ""
 
-#: adressen/index.php:207
+#: adressen/index.php:222
 #, php-format
 msgid "menu by %s"
 msgstr ""
@@ -1001,7 +1006,7 @@ msgstr ""
 msgid "relations"
 msgstr ""
 
-#: adressen/index.php:205
+#: adressen/index.php:220
 msgid "report a bug"
 msgstr ""
 
@@ -1126,7 +1131,7 @@ msgstr ""
 msgid "verification mail for %s"
 msgstr ""
 
-#: adressen/index.php:201
+#: adressen/index.php:216
 msgid "version"
 msgstr ""
 
