@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-05 20:54+0100\n"
+"POT-Creation-Date: 2011-02-06 00:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -448,7 +448,7 @@ msgstr ""
 msgid "address change affects"
 msgstr ""
 
-#: adressen/inc/header.inc.php:34 adressen/inc/header.inc.php:48
+#: adressen/inc/header.inc.php:35 adressen/inc/header.inc.php:49
 msgid "all"
 msgstr ""
 
@@ -631,7 +631,7 @@ msgstr ""
 msgid "data is up to date"
 msgstr ""
 
-#: adressen/inc/header.inc.php:17 adressen/index.php:128
+#: adressen/inc/header.inc.php:18 adressen/index.php:128
 msgid "database check"
 msgstr ""
 
@@ -725,6 +725,10 @@ msgstr ""
 msgid "everybody that lives here"
 msgstr ""
 
+#: adressen/inc/header.inc.php:10
+msgid "export LaTeX sheets"
+msgstr ""
+
 #: adressen/pages/list.inc.php:110
 msgid "export this list as a LaTeX for day planner sheets"
 msgstr ""
@@ -766,7 +770,7 @@ msgstr ""
 msgid "group &bdquo;%s&ldquo;"
 msgstr ""
 
-#: adressen/inc/header.inc.php:64 adressen/pages/person_display.inc.php:275
+#: adressen/inc/header.inc.php:65 adressen/pages/person_display.inc.php:275
 msgid "groups"
 msgstr ""
 
@@ -809,7 +813,7 @@ msgstr ""
 msgid "just now"
 msgstr ""
 
-#: adressen/inc/header.inc.php:80
+#: adressen/inc/header.inc.php:81
 msgid "languages"
 msgstr ""
 
@@ -841,7 +845,7 @@ msgstr ""
 msgid "maiden name"
 msgstr ""
 
-#: adressen/inc/header.inc.php:11
+#: adressen/inc/header.inc.php:12
 msgid "maintenance"
 msgstr ""
 
@@ -868,7 +872,7 @@ msgstr ""
 msgid "mobile"
 msgstr ""
 
-#: adressen/inc/header.inc.php:36
+#: adressen/inc/header.inc.php:37
 msgid "mode"
 msgstr ""
 
@@ -894,15 +898,15 @@ msgstr ""
 msgid "next month"
 msgstr ""
 
-#: adressen/inc/header.inc.php:16
+#: adressen/inc/header.inc.php:17
 msgid "no birthday"
 msgstr ""
 
-#: adressen/inc/header.inc.php:15
+#: adressen/inc/header.inc.php:16
 msgid "no email address"
 msgstr ""
 
-#: adressen/inc/header.inc.php:14 adressen/index.php:96
+#: adressen/inc/header.inc.php:15 adressen/index.php:96
 msgid "no form of address"
 msgstr ""
 
