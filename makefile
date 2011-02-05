@@ -7,7 +7,7 @@ moFiles = $(shell find . | egrep "LC_MESSAGES/main.mo$$")
 all: locale/main.pot $(moFiles)
 
 locale/main.pot: $(phpFiles)
-	xgettext --language=PHP --from-code=UTF-8 -keywword=_ -o locale/main.pot $(phpFiles)
+	xgettext --sort-output --language=PHP --from-code=UTF-8 -keywword=_ -o locale/main.pot $(phpFiles)
 
 locale/de_DE/LC_MESSAGES/main.mo: locale/de.po
 	msgfmt -o locale/de_DE/LC_MESSAGES/main.mo locale/de.po
