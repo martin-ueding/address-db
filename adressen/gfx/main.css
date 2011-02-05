@@ -394,3 +394,24 @@ SPAN.graytext {
 SPAN.project_menu {
 	display: none;
 }
+DIV#searchhints {
+	position: absolute;
+	top: 50px;
+	left: 650px;
+	z-index: 10;
+	padding: 0px;
+	margin: 0px;
+}
+DIV#searchhints UL {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+DIV#searchhints UL LI {
+	margin: 0px;
+	padding: 3px 5px;
+	background-color: #EEE;
+}
+DIV#searchhints UL LI:hover {
+	background-color: #ddd;
+}
