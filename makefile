@@ -7,7 +7,7 @@ moFiles = locale/de_DE/LC_MESSAGES/main.mo locale/nl/LC_MESSAGES/main.mo locale/
 jQueryFilename = jquery-1.5.min.js
 jQueryPath = js/$(jQueryFilename)
 
-all: locale/main.pot $(moFiles) $(jQueryPath)
+all: locale/main.pot $(moFiles) $(jQueryPath) adressen/ba.jar
 
 locale/main.pot: $(phpFiles)
 	xgettext --sort-output --language=PHP --from-code=UTF-8 -keywword=_ -o locale/main.pot $(phpFiles)
@@ -37,3 +37,6 @@ $(projectName).tar.gz: $(phpFiles) $(moFiles) $(jQueryPath)
 	rm -rf $(projectName)/ba-src
 	tar -czf $(projectName).tar.gz $(projectName)
 	rm -rf $(projectName)
+
+adressen/ba.jar: $(shell find ba-src | egrep "\.java$$")
+	make -C ba-src
