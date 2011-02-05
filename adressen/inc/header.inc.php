@@ -7,6 +7,7 @@
 	<li><a href="index.php?mode=list<?PHP if (isset($_SESSION['f'])) echo '&f='.$_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
 	<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
 	<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
+	<li><a href="export/kitchen.php"><?PHP echo _('export LaTeX sheets'); ?></a></li>
 
 	<li><a class="drop" href=""><?PHP echo _('maintenance'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
 <!--[if lte IE 6]><table><tr><td><![endif]-->
@@ -27,7 +28,7 @@
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
-	if ($l['fmg_id'] == $_SESSION['f'])
+	if (isset($_SESSION['f']) && $l['fmg_id'] == $_SESSION['f'])
 		$aktuell_name = $l['fmg'];
 }
 if (!isset($aktuell_name))
