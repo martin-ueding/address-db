@@ -40,11 +40,11 @@ float:left;
 * html .menu a, * html .menu a:visited {width:149px; w\idth:150px;}
 
 /* style the second level background */
-.menu ul ul a.drop, .menu ul ul a.drop:visited {background:rgb(240, 215, 138) url(http://www.cssplay.co.uk/menus/breadcrumbs/grey-arrow.gif) no-repeat 130px center;
+.menu ul ul a.drop, .menu ul ul a.drop:visited {background:rgb(240, 215, 138) url(grey-arrow.gif) no-repeat 130px center;
 }
 /* style the second level hover */
-.menu ul ul a.drop:hover{background:#c9ba65 url(http://www.cssplay.co.uk/menus/breadcrumbs/blue-arrow.gif) no-repeat 130px center;}
-.menu ul ul :hover > a.drop {background:#c9ba65 url(http://www.cssplay.co.uk/menus/breadcrumbs/blue-arrow.gif) no-repeat 130px center;}
+.menu ul ul a.drop:hover{background:#c9ba65 url(blue-arrow.gif) no-repeat 130px center;}
+.menu ul ul :hover > a.drop {background:#c9ba65 url(blue-arrow.gif) no-repeat 130px center;}
 /* style the third level background */
 .menu ul ul ul a, .menu ul ul ul a:visited {background:#e2dfa8;}
 /* style the third level hover */
