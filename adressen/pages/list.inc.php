@@ -10,7 +10,7 @@ if (isset($titel)) {
 /* Daten sammeln */
 /* Suche nach Buchstabe */
 if (!empty($_GET['b'])) {
-	if ($_SESSION['f'] != 0)
+	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 		$sql = 'SELECT * FROM ad_per, ad_flinks WHERE nachname like "'.$_GET['b'].'%" && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
 	else
 		$sql = 'SELECT * FROM ad_per WHERE nachname like "'.$_GET['b'].'%" ORDER BY nachname, vorname;';
@@ -18,7 +18,7 @@ if (!empty($_GET['b'])) {
 }
 /* Suche nach Gruppe */
 else if (!empty($_GET['g'])) {
-	if ($_SESSION['f'] != 0)
+	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 		$sql = 'SELECT * FROM ad_per, ad_glinks, ad_flinks WHERE ad_glinks.person_lr=p_id && gruppe_lr='.$_GET['g'].' && ad_flinks.person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
 	else
 		$sql = 'SELECT * FROM ad_per, ad_glinks WHERE person_lr=p_id && gruppe_lr='.$_GET['g'].' ORDER BY nachname, vorname;';
@@ -38,22 +38,23 @@ if (!empty($sql)) {
 	$erg = mysql_query($sql);
 
 	if (!empty($_GET['b'])) {
-		if(mysql_num_rows($erg) == 1) {
-			printf(_('The search for last names with the letter %s yielded 1 result:'), '<em>'.$_GET['b'].'</em>').'<br /><br />';
+		if (!isset($_SESSION['f']) || $_SESSION['f'] == 0) {
+			printf(ngettext('The search for entries with last names starting with the letter %s yielded %d result:', 'The search for entries with last names starting with the letter %s yielded %d results:', mysql_num_rows($erg)), '<em>'.$_GET['b'].'</em>', mysql_num_rows($erg));
 		}
 		else {
-			printf(_('The search for last names with the letter %s yielded %d results:'), '<em>'.$_GET['b'].'</em>', mysql_num_rows($erg));
-			echo '<br /><br />';
+			printf(ngettext('The search for entries that %s knows with last names starting with the letter %s yielded %d result:', 'The search for entries that %s knows with last names starting with the letter %s yielded %d results:', mysql_num_rows($erg)), '<em>'.$aktuell_name.'</em>', '<em>'.$_GET['b'].'</em>', mysql_num_rows($erg));
 		}
+		echo '<br /><br />';
 	}
 
 	else if (!empty($titel)) {
-		if(mysql_num_rows($erg) == 1) {
-			printf(_('The group %s contains 1 entry:'), '<em>'.$titel.'</em>').'<br /><br />';
+		if (!isset($_SESSION['f']) || $_SESSION['f'] == 0) {
+			printf(ngettext('The group %s contains %d entry:', 'The group %s contains %d entries:', mysql_num_rows($erg)), '<em>'.$titel.'</em>', mysql_num_rows($erg));
 		}
 		else {
-			printf(_('The group %s contains %d entries:'), '<em>'.$titel.'</em>', mysql_num_rows($erg));
+			printf(ngettext('The group %s contains %d entry that %s knows:', 'The group %s contains %d entries that %s knows:', mysql_num_rows($erg)), '<em>'.$titel.'</em>', mysql_num_rows($erg), '<em>'.$aktuell_name.'</em>');
 		}
+		echo '<br /><br />';
 	}
 
 	else if (!empty($_GET['f'])) {
@@ -63,22 +64,12 @@ if (!empty($sql)) {
 		if ($name = mysql_fetch_assoc($name_erg)) {
 			$f_name = $name['fmg'];
 		}
-		if(mysql_num_rows($erg) == 1) {
-			printf(_('For %s, there is %d entry:'), '<em>'.$f_name.'</em>', mysql_num_rows($erg));
-		}
-		else {
-			printf(_('For %s, there are %d entries:'), '<em>'.$f_name.'</em>', mysql_num_rows($erg));
-		}
+		printf(ngettext('For %s, there is %d entry:', 'For %s, there are %d entries:', mysql_num_rows($erg)), '<em>'.$f_name.'</em>', mysql_num_rows($erg));
 	}
 
 
 	else {
-		if(mysql_num_rows($erg) == 1) {
-			echo _('There is 1 entry:');
-		}
-		else {
-			printf(_('There are %d entries:'), mysql_num_rows($erg));
-		}
+		printf(ngettext('There is %d entry:', 'There are %d entries:', mysql_num_rows($erg)), mysql_num_rows($erg));
 	}
 
 	echo '<table id="liste" cellpadding="0" cellspacing="0">';

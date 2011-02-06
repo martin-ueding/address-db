@@ -51,7 +51,7 @@ if (!isset($aktuell_name))
 		$erg = mysql_query($sql);
 		while ($l = mysql_fetch_assoc($erg)) {
 			echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
-			if ($l['fmg_id'] == $_SESSION['f'])
+			if (isset($_SESSION['f']) && $l['fmg_id'] == $_SESSION['f'])
 				$aktuell_name = $l['fmg'];
 		}
 		?>

@@ -296,7 +296,7 @@ function verbindung_besteht_fmg ($person, $fmg) {
 }
 
 function gruppe_ist_nicht_leer ($id) {
-	if ($_SESSION['f'] != 0)
+	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 		$sql = 'SELECT * FROM ad_flinks LEFT JOIN ad_per ON p_id=ad_flinks.person_lr LEFT JOIN ad_glinks ON ad_glinks.person_lr=p_id LEFT JOIN ad_gruppen ON g_id=gruppe_lr WHERE fmg_lr='.$_SESSION['f'].' && g_id='.$id.';';
 	else
 		$sql = 'SELECT * FROM ad_glinks WHERE gruppe_lr='.$id.';';

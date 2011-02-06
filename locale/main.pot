@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-06 00:58+0100\n"
+"POT-Creation-Date: 2011-02-06 15:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: adressen/pages/integrity_check.inc.php:375
 #, php-format
@@ -157,15 +158,12 @@ msgstr ""
 msgid "February"
 msgstr ""
 
-#: adressen/pages/list.inc.php:70
-#, php-format
-msgid "For %s, there are %d entries:"
-msgstr ""
-
 #: adressen/pages/list.inc.php:67
 #, php-format
 msgid "For %s, there is %d entry:"
-msgstr ""
+msgid_plural "For %s, there are %d entries:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: adressen/inc/abfragen.inc.php:43
 msgid "Gemini"
@@ -332,13 +330,17 @@ msgstr ""
 
 #: adressen/pages/list.inc.php:55
 #, php-format
-msgid "The group %s contains %d entries:"
-msgstr ""
+msgid "The group %s contains %d entry that %s knows:"
+msgid_plural "The group %s contains %d entries that %s knows:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: adressen/pages/list.inc.php:52
 #, php-format
-msgid "The group %s contains 1 entry:"
-msgstr ""
+msgid "The group %s contains %d entry:"
+msgid_plural "The group %s contains %d entries:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: adressen/engines/verification_email.inc.php:4
 msgid ""
@@ -356,13 +358,25 @@ msgstr ""
 
 #: adressen/pages/list.inc.php:45
 #, php-format
-msgid "The search for last names with the letter %s yielded %d results:"
-msgstr ""
+msgid ""
+"The search for entries that %s knows with last names starting with the "
+"letter %s yielded %d result:"
+msgid_plural ""
+"The search for entries that %s knows with last names starting with the "
+"letter %s yielded %d results:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: adressen/pages/list.inc.php:42
 #, php-format
-msgid "The search for last names with the letter %s yielded 1 result:"
-msgstr ""
+msgid ""
+"The search for entries with last names starting with the letter %s yielded "
+"%d result:"
+msgid_plural ""
+"The search for entries with last names starting with the letter %s yielded "
+"%d results:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: adressen/engines/pic_upload3.inc.php:49
 msgid ""
@@ -374,18 +388,16 @@ msgstr ""
 msgid "The verification email was sent."
 msgstr ""
 
-#: adressen/pages/list.inc.php:80
-#, php-format
-msgid "There are %d entries:"
-msgstr ""
-
 #: adressen/pages/integrity_check.inc.php:384
 msgid "There are no invalid or unneeded entries."
 msgstr ""
 
-#: adressen/pages/list.inc.php:77
-msgid "There is 1 entry:"
-msgstr ""
+#: adressen/pages/list.inc.php:72
+#, php-format
+msgid "There is %d entry:"
+msgid_plural "There are %d entries:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: adressen/pages/person_delete.inc.php:12
 msgid "There is no ID specified."
@@ -729,11 +741,11 @@ msgstr ""
 msgid "export LaTeX sheets"
 msgstr ""
 
-#: adressen/pages/list.inc.php:110
+#: adressen/pages/list.inc.php:101
 msgid "export this list as a LaTeX for day planner sheets"
 msgstr ""
 
-#: adressen/pages/list.inc.php:108
+#: adressen/pages/list.inc.php:99
 msgid "export this list as a VCard"
 msgstr ""
 
@@ -1028,7 +1040,7 @@ msgstr ""
 msgid "send"
 msgstr ""
 
-#: adressen/pages/list.inc.php:116
+#: adressen/pages/list.inc.php:107
 msgid "send an email to everybody in this list"
 msgstr ""
 
