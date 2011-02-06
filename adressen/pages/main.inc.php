@@ -23,7 +23,7 @@ while ($l = mysql_fetch_assoc($erg))
 	if ($l['geb_t'] == date("j"))
 		echo '<em>'.$l['vorname'].' '.$l['nachname'].'</em>';
 	else if ($l['geb_t'] < date("j"))
-		echo '<span class="grau">'.$l['vorname'].' '.$l['nachname'].'</span>';
+		echo '<span class="graytext">'.$l['vorname'].' '.$l['nachname'].'</span>';
 	else
 		echo $l['vorname'].' '.$l['nachname'];
 	
