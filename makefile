@@ -30,6 +30,8 @@ $(projectName).tar.gz: $(phpFiles) $(moFiles) $(jQueryPath)
 	rm -rf $(projectName)
 	mkdir $(projectName)
 	bzr export $(projectName)
+	rm -rf $(projectName)/locale/
+	cp -R locale $(projectName)/locale
 	cp $(jQueryPath) $(projectName)/$(jQueryPath)
 	rm $(projectName)/makefile
 	rm $(projectName)/locale/*.po*
