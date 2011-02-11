@@ -17,18 +17,18 @@ function convertToLaTeX ($s) {
 	return $s;
 }
 
-$sql = 'SELECT * FROM ad_per, ad_adressen, ad_orte, ad_plz, ad_laender, ad_anreden, ad_prafixe, ad_suffixe WHERE adresse_r=ad_id && ort_r=o_id && plz_r=plz_id && land_r=l_id && anrede_r=a_id && prafix_r=prafix_id && suffix_r=s_id ORDER BY nachname, vorname;';
+$sql = 'SELECT * FROM ad_per, ad_adressen, ad_orte, ad_plz, ad_laender, ad_anreden, ad_prafixe, ad_suffixe WHERE adresse_r=ad_id && ort_r=o_id && plz_r=plz_id && land_r=l_id && anrede_r=a_id && prafix_r=prafix_id && suffix_r=s_id ORDER BY nachname, adresse_r, vorname;';
 
-echo '\documentclass[10pt]{article}'."\n";
-echo '\usepackage[left=7mm, right=7mm, top=7mm, bottom=7mm, scale=1, landscape]{geometry}'."\n";
-echo '\geometry{a4paper}'."\n";
-//echo '\usepackage[iso-8859-1]{inputenc}'.bruch();
-echo '\setlength{\parindent}{0cm}'."\n";
-echo '\usepackage[latin1]{inputenc}'."\n";
-echo '\usepackage{multicol}'."\n";
+echo '\documentclass[10pt]{article}
+\usepackage[left=7mm, right=7mm, top=7mm, bottom=7mm, scale=1, landscape]{geometry}
+\geometry{a4paper}
+\setlength{\parindent}{0cm}
+\usepackage[latin1]{inputenc}
+\usepackage{multicol}
+';
 
 
-echo '\begin{document}'."\n";
+echo '\begin{document} \sffamily'."\n";
 
 //echo '\fontsize{'.$SCHRIFTGROESSE.'}{'.round($SCHRIFTGROESSE*1.4).'}'."\n";
 //echo '\selectfont'."\n";
@@ -52,8 +52,10 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 	$content = '';
 
-	if ($l['adresse_r'] != 1) {
-		$content .= $l['strasse'].bruch().$l['ortsname'].' '.$l['plz'].bruch();
+	if ($last['adresse_r'] != $l['adresse_r']) {
+		if ($l['adresse_r'] != 1) {
+			$content .= $l['strasse'].bruch().$l['ortsname'].' '.$l['plz'].bruch();
+		}
 	}
 	
 	// TODO i18n
@@ -72,20 +74,22 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if (!empty($l['tel_aux']))
 		$content .= 'Tel: '.select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].bruch();
 	
-	if (!empty($l['ftel_privat']))
-		$content .= 'Tel Privat: '.select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].bruch();
-	
-	if (!empty($l['ftel_arbeit']))
-		$content .= 'Tel Arbeit: '.select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].bruch();
-	
-	if (!empty($l['ftel_mobil']))
-		$content .= 'Handy: '.select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].bruch();
-	
-	if (!empty($l['ftel_fax']))
-		$content .= 'Fax: '.select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].bruch();
-	
-	if (!empty($l['ftel_aux']))
-		$content .= 'Tel: '.select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].bruch();
+	if ($last['adresse_r'] != $l['adresse_r']) {
+		if (!empty($l['ftel_privat']))
+			$content .= 'Tel Privat: '.select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].bruch();
+		
+		if (!empty($l['ftel_arbeit']))
+			$content .= 'Tel Arbeit: '.select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].bruch();
+		
+		if (!empty($l['ftel_mobil']))
+			$content .= 'Handy: '.select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].bruch();
+		
+		if (!empty($l['ftel_fax']))
+			$content .= 'Fax: '.select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].bruch();
+		
+		if (!empty($l['ftel_aux']))
+			$content .= 'Tel: '.select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].bruch();
+	}
 	
 	
 	if (strlen($content) > 0) {
@@ -97,6 +101,8 @@ while ($l = mysql_fetch_assoc($erg)) {
 		}
 
 	}
+
+	$last = $l;
 }
 
 echo '\end{multicols}';
