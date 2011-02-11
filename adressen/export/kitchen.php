@@ -25,10 +25,12 @@ echo '\documentclass[10pt]{article}
 \setlength{\parindent}{0cm}
 \usepackage[latin1]{inputenc}
 \usepackage{multicol}
+\renewcommand\sfdefault{phv}
+\renewcommand\familydefault{\sfdefault}
 ';
 
 
-echo '\begin{document} \sffamily'."\n";
+echo '\begin{document}'."\n";
 
 //echo '\fontsize{'.$SCHRIFTGROESSE.'}{'.round($SCHRIFTGROESSE*1.4).'}'."\n";
 //echo '\selectfont'."\n";
