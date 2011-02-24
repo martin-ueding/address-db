@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 if (!empty($_GET['lang'])) {
 	$_SESSION['lang_session'] = $_GET['lang'];
 	$lang = $_GET['lang'];

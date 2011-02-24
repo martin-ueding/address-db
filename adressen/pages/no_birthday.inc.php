@@ -1,4 +1,6 @@
 <?PHP	
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 echo '<h1>'._('without a birthday').'</h1>';
 	
 if ($_SESSION['f'] != 0)

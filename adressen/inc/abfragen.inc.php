@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 
 /* Das hier ist die Funktionsdatei mit allen Abfragen, die es in der Adressverwaltung gibt. */
 

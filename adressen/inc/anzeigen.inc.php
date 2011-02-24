@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 function alter($tag, $monat, $jahr) { // j, n
 	$alter = date("Y") - $jahr;
 	if ($monat > date("n") || ($monat == date("n") && $tag > date("j")))

@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 $suche = mysql_real_escape_string($_GET['suche']);
 $from_with_get = 'mode=search&suche='.$suche;
 

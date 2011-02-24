@@ -1,3 +1,5 @@
+# Copyright (c) 2010 Martin Ueding <dev@martin-ueding.de>
+
 version = 2.3.1
 projectName = phpfamilyaddressdb-$(version)
 

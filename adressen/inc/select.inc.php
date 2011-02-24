@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 function show_select_vorwahlen ($name, $aktiv) {
 
 	if (!function_exists('select_alle_vorwahlen')) {

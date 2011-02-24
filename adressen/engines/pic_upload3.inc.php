@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 $x1 = (int)$_GET['x1'];
 $x2 = (int)$_GET['x2'];
 $y1 = (int)$_GET['y1'];

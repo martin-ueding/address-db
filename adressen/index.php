@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 session_start();
 if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];

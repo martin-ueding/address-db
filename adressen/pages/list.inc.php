@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 if (isset($_GET['titel'])) {
 	$titel = urldecode($_GET['titel']);
 }

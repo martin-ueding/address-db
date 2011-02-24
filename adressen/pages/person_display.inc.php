@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 echo '<h1>'._('display entry').'</h1>';
 $mugshot_path = '_mugshots/per'.$id.'.jpg';
 if (file_exists($mugshot_path)) {

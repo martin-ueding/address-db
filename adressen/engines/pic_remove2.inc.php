@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 if (!empty($_GET['id'])) {
 	unlink('_mugshots/per'.$_GET['id'].'.jpg');
 

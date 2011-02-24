@@ -1,4 +1,6 @@
 <?PHP	
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 echo '<h1>'._('all birthdays').'</h1>';
 $from_with_get = 'mode=all_birthdays';
 $monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December'));

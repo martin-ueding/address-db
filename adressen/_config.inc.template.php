@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 // Insert MySQL Data here
 $server = 'localhost';
 $user = 'root';

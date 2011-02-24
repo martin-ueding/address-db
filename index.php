@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 $f = (int)$_GET['f'];
 // since this is not the main directory for displaying, one is forwareded.
 

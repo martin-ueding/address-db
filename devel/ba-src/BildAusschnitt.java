@@ -1,3 +1,5 @@
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Button;

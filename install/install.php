@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 $path_config = 'adressen/_config.inc.php';
 
 if (!file_exists($path_config)) {

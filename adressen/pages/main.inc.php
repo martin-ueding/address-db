@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 // Geburtstagstabelle
 echo '<table id="geburtstag">'."\n";
 echo '<tr>'."\n";

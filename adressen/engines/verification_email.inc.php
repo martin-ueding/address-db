@@ -1,4 +1,6 @@
 <?PHP
+// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+
 if ($_GET['sicher'] == 'ja') {
 	if ($person_loop['last_send'] > time()-24*3600) {
 		$msgs[] = _('The last email was sent within the last 24 hours. No email was sent now because this looks like an error.');
