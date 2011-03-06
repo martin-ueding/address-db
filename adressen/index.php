@@ -165,7 +165,7 @@ switch ($mode) {
 				<?PHP
 				if (isset($msgs)) {
 					// fade out the messages box
-					echo '$("#messages").fadeOut(0).fadeIn(500).delay('.(5000*count($msgs)).'.slideUp(1000);';
+					echo '$("#messages").fadeOut(0).fadeIn(500).delay('.(5000*count($msgs)).').slideUp(1000);';
 				}
 				?>
 
