@@ -11,6 +11,8 @@ if (!empty($id)) {
 	echo '<br />';
 	echo '<a href="index.php?mode=person_display&id='.$id.'">'._('No, cancel!').'</a>';
 }
-echo _('There is no ID specified.');
+else {
+	echo _('There is no ID specified.');
+}
 
 ?>
