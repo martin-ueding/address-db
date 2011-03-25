@@ -16,6 +16,8 @@ while ($l = mysql_fetch_assoc($erg))
 $werziehtum = 'alle';
 $haushalt = $person_loop['adresse_r'];
 
+$adresswahl = 'manuell';
+
 echo '<h1>'._('edit entry').'</h1>';
 ?>
 
@@ -175,7 +177,7 @@ echo '<br /><br />';
 	<table>
 		<tr>
 			<td><?PHP echo _('private'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('privat', true, $person_loop) ?></td>
+			<td class="switchInput"><?PHP show_telefon_eingabe('privat', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('work'); ?>:</td>
