@@ -358,7 +358,7 @@ echo '</td>';
 echo '</table>';
 
 echo '<a href="?mode=person_edit1&id='.$id.'" title="'._('edit this entry').'"><img src="gfx/person_bearbeiten.png" width="64" height="64" alt="'._('edit this entry').'" border="0" /></a>';
-echo '<a href="?mode=person_delete&id='.$id.'&back='.urlencode($_GET['back']).'" title="'._('delete this entry').'"><img src="gfx/person_loeschen.png" width="64" height="64" alt="'._('delete this entry').'" border="0" /></a>';
+echo '<a href="?mode=person_delete&id='.$id.(isset($_GET['back']) ? '&back='.urlencode($_GET['back']): '').'" title="'._('delete this entry').'"><img src="gfx/person_loeschen.png" width="64" height="64" alt="'._('delete this entry').'" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 echo '<a href="?mode=pic_upload1&id='.$id.'" title="'._('upload picture').'"><img src="gfx/foto_upload.png" width="64" height="64" alt="'._('upload picture').'" border="0" /></a>';
 if (file_exists($mugshot_path))
