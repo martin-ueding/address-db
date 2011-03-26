@@ -145,6 +145,7 @@ echo '<br /><br />';
 	if ($adresswahl == 'manuell')
 		echo ' checked';
 
+	// TODO use jQuery to do this
 	echo ' onClick = "_switch(\'manuelle_eingabe\'); return true;"> '._('or enter a new address').':';
 
 	?>
