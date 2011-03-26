@@ -16,6 +16,8 @@ while ($l = mysql_fetch_assoc($erg))
 $werziehtum = 'alle';
 $haushalt = $person_loop['adresse_r'];
 
+$adresswahl = 'manuell';
+
 echo '<h1>'._('edit entry').'</h1>';
 ?>
 
@@ -143,6 +145,7 @@ echo '<br /><br />';
 	if ($adresswahl == 'manuell')
 		echo ' checked';
 
+	// TODO use jQuery to do this
 	echo ' onClick = "_switch(\'manuelle_eingabe\'); return true;"> '._('or enter a new address').':';
 
 	?>
@@ -158,14 +161,22 @@ echo '<br /><br />';
 	
 	<tr>
 		<td><?PHP echo _('postral code, city and country'); ?>:</td>
-		<td><?PHP show_select_plz('plz_r', $person_loop['plz_r']); show_select_ort('ort_r', $person_loop['ort_r']); show_select_land('land_r', $person_loop['land_r']); ?></td>
+		<td><?PHP
+		echo '<div>';
+		echo '<input type="text" name="plz" value="" size="5" maxlength="5" class="manual_area_code" />';
+		show_select_plz('plz_r', $person_loop['plz_r']);
+		echo '</div>';
+		echo '<div>';
+		echo '<input type="text" name="ort" value="" size="25" maxlength="100" class="manual_area_code" />';
+		show_select_ort('ort_r', $person_loop['ort_r']);
+		echo '</div>';
+		echo '<div>';
+		echo '<input type="text" name="land" value="" size="30" maxlength="100" class="manual_area_code" />';
+		show_select_land('land_r', $person_loop['land_r']);
+		echo '</div>';
+		?></td>
 	</tr>
 	
-	<tr>
-		<td></td>
-		<td><?PHP echo '<input type="text" name="plz" value="'.$person_loop['plz'].'" size="5" maxlength="5" />';  echo '<input type="text" name="ort" value="'.$person_loop['ort'].'" size="25" maxlength="100" />'; echo '<input type="text" name="land" value="'.$person_loop['land'].'" size="30" maxlength="100" />'; ?></td>
-	</tr>
-				
 	</table>
 
 	<br /><br />
@@ -175,7 +186,7 @@ echo '<br /><br />';
 	<table>
 		<tr>
 			<td><?PHP echo _('private'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('privat', true, $person_loop) ?></td>
+			<td class="switchInput"><?PHP show_telefon_eingabe('privat', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('work'); ?>:</td>

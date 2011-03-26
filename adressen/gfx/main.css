@@ -417,3 +417,6 @@ DIV#searchhints UL LI {
 DIV#searchhints UL LI:hover {
 	background-color: #ddd;
 }
+IMG.switch_fields {
+	margin-right: 4px;
+}
