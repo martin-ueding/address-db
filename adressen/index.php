@@ -159,7 +159,7 @@ switch ($mode) {
 		}
 		?>
 		<script src="js/search.js"></script>
-		<script src="js/selectSwitch.js"></script>
+		<script src="js/selectSwitch.js.php"></script>
 		<script type="text/javascript">
 			
 			$(document).ready(function(){
