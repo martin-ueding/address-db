@@ -14,7 +14,7 @@ function initSwitchFields() {
 			
 		}
 		else {
-			$(this).parent().children("select").hide(100, function () {$(this).parent().children("input.manual_area_code").show(100);});
+			$(this).parent().children("select").hide(100, function () {$(this).parent().children("input.manual_area_code").show(100);}).val("1");
 			
 		}
 		});

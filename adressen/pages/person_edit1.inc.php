@@ -160,14 +160,22 @@ echo '<br /><br />';
 	
 	<tr>
 		<td><?PHP echo _('postral code, city and country'); ?>:</td>
-		<td><?PHP show_select_plz('plz_r', $person_loop['plz_r']); show_select_ort('ort_r', $person_loop['ort_r']); show_select_land('land_r', $person_loop['land_r']); ?></td>
+		<td><?PHP
+		echo '<div>';
+		echo '<input type="text" name="plz" value="'.$person_loop['plz'].'" size="5" maxlength="5" class="manual_area_code" />';
+		show_select_plz('plz_r', $person_loop['plz_r']);
+		echo '</div>';
+		echo '<div>';
+		echo '<input type="text" name="ort" value="'.$person_loop['ortsname'].'" size="25" maxlength="100" class="manual_area_code" />';
+		show_select_ort('ort_r', $person_loop['ort_r']);
+		echo '</div>';
+		echo '<div>';
+		echo '<input type="text" name="land" value="'.$person_loop['land'].'" size="30" maxlength="100" class="manual_area_code" />';
+		show_select_land('land_r', $person_loop['land_r']);
+		echo '</div>';
+		?></td>
 	</tr>
 	
-	<tr>
-		<td></td>
-		<td><?PHP echo '<input type="text" name="plz" value="'.$person_loop['plz'].'" size="5" maxlength="5" />';  echo '<input type="text" name="ort" value="'.$person_loop['ort'].'" size="25" maxlength="100" />'; echo '<input type="text" name="land" value="'.$person_loop['land'].'" size="30" maxlength="100" />'; ?></td>
-	</tr>
-				
 	</table>
 
 	<br /><br />
