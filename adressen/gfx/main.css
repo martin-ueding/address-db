@@ -1,13 +1,16 @@
 /* Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de> */
 
-BODY, A {
+BODY, TEXTAREA {
 	font-family: verdana, geneva, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+BODY, A {
 	margin: 0px;
 	padding: 0px;
 	border: none;
 	color: rgb(0,0,0);
-	font-size: 13px;
-	line-height: 1.5;
 }
 A IMG {
 	border: 0px;
@@ -416,4 +419,7 @@ DIV#searchhints UL LI {
 }
 DIV#searchhints UL LI:hover {
 	background-color: #ddd;
+}
+IMG.switch_fields {
+	margin-right: 4px;
 }
