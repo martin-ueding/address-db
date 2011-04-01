@@ -3,6 +3,8 @@
 
 // adds a switch button to all input fields that consist of a regular input field and a select field
 
+include('../../../inc/setup_gettext.inc.php');
+
 echo '$(initSwitchFields);';
 
 echo 'function initSwitchFields() {';
