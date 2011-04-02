@@ -51,7 +51,8 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else
 		$prafix = '';
 		
-	$name = '\section*{'.trim($prafix.' '.$l['vorname'].' '.$l['nachname']).'}'."\n";
+	$display_name = trim($prafix.' '.$l['nachname'].', '.$l['vorname'], ' ,');
+	$name = '\section*{'.$display_name.'}'."\n";
 
 	$content = '';
 
