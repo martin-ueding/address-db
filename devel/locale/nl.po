@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-03-26 17:38+0100\n"
+"POT-Creation-Date: 2011-04-02 09:38+0200\n"
 "PO-Revision-Date: 2011-01-13 18:45+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-04-01 06:01+0000\n"
+"X-Launchpad-Export-Date: 2011-04-03 06:01+0000\n"
 "X-Generator: Launchpad (build 12559)\n"
 
 #: ../adressen/pages/integrity_check.inc.php:377
@@ -401,7 +401,7 @@ msgid_plural "There are %d entries:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../adressen/pages/person_delete.inc.php:14
+#: ../adressen/pages/person_delete.inc.php:15
 msgid "There is no ID specified."
 msgstr ""
 
@@ -578,35 +578,35 @@ msgstr ""
 #: ../adressen/engines/verification_email.inc.php:213
 #: ../adressen/pages/person_create1.inc.php:192
 #: ../adressen/pages/person_display.inc.php:214
-#: ../adressen/pages/person_edit1.inc.php:260
+#: ../adressen/pages/person_edit1.inc.php:261
 msgid "chat AIM"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:227
 #: ../adressen/pages/person_create1.inc.php:200
 #: ../adressen/pages/person_display.inc.php:228
-#: ../adressen/pages/person_edit1.inc.php:268
+#: ../adressen/pages/person_edit1.inc.php:269
 msgid "chat ICQ"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:248
 #: ../adressen/pages/person_create1.inc.php:212
 #: ../adressen/pages/person_display.inc.php:249
-#: ../adressen/pages/person_edit1.inc.php:280
+#: ../adressen/pages/person_edit1.inc.php:281
 msgid "chat Jabber/XMPP"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:220
 #: ../adressen/pages/person_create1.inc.php:196
 #: ../adressen/pages/person_display.inc.php:221
-#: ../adressen/pages/person_edit1.inc.php:264
+#: ../adressen/pages/person_edit1.inc.php:265
 msgid "chat MSN"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:241
 #: ../adressen/pages/person_create1.inc.php:208
 #: ../adressen/pages/person_display.inc.php:242
-#: ../adressen/pages/person_edit1.inc.php:276
+#: ../adressen/pages/person_edit1.inc.php:277
 msgid "chat Skype"
 msgstr ""
 
@@ -616,7 +616,7 @@ msgid "chat Yahoo"
 msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:204
-#: ../adressen/pages/person_edit1.inc.php:272
+#: ../adressen/pages/person_edit1.inc.php:273
 msgid "chat Yahoo!"
 msgstr ""
 
@@ -700,21 +700,21 @@ msgstr ""
 #: ../adressen/engines/verification_email.inc.php:189
 #: ../adressen/pages/person_create1.inc.php:157
 #: ../adressen/pages/person_display.inc.php:190
-#: ../adressen/pages/person_edit1.inc.php:225
+#: ../adressen/pages/person_edit1.inc.php:226
 msgid "email other"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:173
 #: ../adressen/pages/person_create1.inc.php:149
 #: ../adressen/pages/person_display.inc.php:174
-#: ../adressen/pages/person_edit1.inc.php:217
+#: ../adressen/pages/person_edit1.inc.php:218
 msgid "email private"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:181
 #: ../adressen/pages/person_create1.inc.php:153
 #: ../adressen/pages/person_display.inc.php:182
-#: ../adressen/pages/person_edit1.inc.php:221
+#: ../adressen/pages/person_edit1.inc.php:222
 msgid "email work"
 msgstr ""
 
@@ -757,8 +757,8 @@ msgstr ""
 #: ../adressen/pages/person_create1.inc.php:182
 #: ../adressen/pages/person_display.inc.php:114
 #: ../adressen/pages/person_display.inc.php:154
-#: ../adressen/pages/person_edit1.inc.php:199
-#: ../adressen/pages/person_edit1.inc.php:250
+#: ../adressen/pages/person_edit1.inc.php:200
+#: ../adressen/pages/person_edit1.inc.php:251
 msgid "fax"
 msgstr "fax"
 
@@ -775,7 +775,7 @@ msgid "form of address"
 msgstr "aanspreekvorm"
 
 #: ../adressen/pages/person_create1.inc.php:119
-#: ../adressen/pages/person_edit1.inc.php:183
+#: ../adressen/pages/person_edit1.inc.php:184
 msgid "general telephones"
 msgstr ""
 
@@ -792,14 +792,14 @@ msgstr "groepen"
 #: ../adressen/engines/verification_email.inc.php:197
 #: ../adressen/pages/person_create1.inc.php:161
 #: ../adressen/pages/person_display.inc.php:198
-#: ../adressen/pages/person_edit1.inc.php:229
+#: ../adressen/pages/person_edit1.inc.php:230
 msgid "homepage 1"
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:204
 #: ../adressen/pages/person_create1.inc.php:165
 #: ../adressen/pages/person_display.inc.php:205
-#: ../adressen/pages/person_edit1.inc.php:233
+#: ../adressen/pages/person_edit1.inc.php:234
 msgid "homepage 2"
 msgstr ""
 
@@ -882,8 +882,8 @@ msgstr ""
 #: ../adressen/pages/person_create1.inc.php:131
 #: ../adressen/pages/person_create1.inc.php:178
 #: ../adressen/pages/person_display.inc.php:147
-#: ../adressen/pages/person_edit1.inc.php:195
-#: ../adressen/pages/person_edit1.inc.php:246
+#: ../adressen/pages/person_edit1.inc.php:196
+#: ../adressen/pages/person_edit1.inc.php:247
 msgid "mobile"
 msgstr "mobiel"
 
@@ -935,7 +935,7 @@ msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:217
 #: ../adressen/pages/person_display.inc.php:260
-#: ../adressen/pages/person_edit1.inc.php:285
+#: ../adressen/pages/person_edit1.inc.php:286
 msgid "notes"
 msgstr ""
 
@@ -957,7 +957,7 @@ msgid "only this person"
 msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:92
-#: ../adressen/pages/person_edit1.inc.php:148
+#: ../adressen/pages/person_edit1.inc.php:149
 msgid "or enter a new address"
 msgstr ""
 
@@ -965,8 +965,8 @@ msgstr ""
 #: ../adressen/pages/person_create1.inc.php:139
 #: ../adressen/pages/person_create1.inc.php:186
 #: ../adressen/pages/person_display.inc.php:161
-#: ../adressen/pages/person_edit1.inc.php:203
-#: ../adressen/pages/person_edit1.inc.php:254
+#: ../adressen/pages/person_edit1.inc.php:204
+#: ../adressen/pages/person_edit1.inc.php:255
 msgid "other"
 msgstr ""
 
@@ -975,13 +975,13 @@ msgstr ""
 #: ../adressen/pages/person_create1.inc.php:145
 #: ../adressen/pages/person_edit1.inc.php:25
 #: ../adressen/pages/person_edit1.inc.php:101
-#: ../adressen/pages/person_edit1.inc.php:213
+#: ../adressen/pages/person_edit1.inc.php:214
 #, php-format
 msgid "part %d of %d"
 msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:145
-#: ../adressen/pages/person_edit1.inc.php:213
+#: ../adressen/pages/person_edit1.inc.php:214
 msgid "personal contact information"
 msgstr ""
 
@@ -1001,7 +1001,7 @@ msgid ""
 msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:106
-#: ../adressen/pages/person_edit1.inc.php:162
+#: ../adressen/pages/person_edit1.inc.php:163
 msgid "postral code, city and country"
 msgstr ""
 
@@ -1009,8 +1009,8 @@ msgstr ""
 #: ../adressen/pages/person_create1.inc.php:123
 #: ../adressen/pages/person_create1.inc.php:170
 #: ../adressen/pages/person_display.inc.php:133
-#: ../adressen/pages/person_edit1.inc.php:187
-#: ../adressen/pages/person_edit1.inc.php:238
+#: ../adressen/pages/person_edit1.inc.php:188
+#: ../adressen/pages/person_edit1.inc.php:239
 msgid "private"
 msgstr ""
 
@@ -1030,7 +1030,7 @@ msgid "report a bug"
 msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:224
-#: ../adressen/pages/person_edit1.inc.php:296
+#: ../adressen/pages/person_edit1.inc.php:297
 msgid "save"
 msgstr ""
 
@@ -1060,7 +1060,7 @@ msgid "show my entries"
 msgstr ""
 
 #: ../adressen/pages/person_create1.inc.php:101
-#: ../adressen/pages/person_edit1.inc.php:157
+#: ../adressen/pages/person_edit1.inc.php:158
 msgid "street"
 msgstr ""
 
@@ -1069,7 +1069,7 @@ msgstr ""
 msgid "suffix"
 msgstr ""
 
-#: ../adressen/js/selectSwitch.js.php:9
+#: ../adressen/js/selectSwitch.js.php:11
 msgid "switch between a select and a manual input"
 msgstr ""
 
@@ -1170,8 +1170,8 @@ msgstr ""
 #: ../adressen/pages/person_create1.inc.php:127
 #: ../adressen/pages/person_create1.inc.php:174
 #: ../adressen/pages/person_display.inc.php:140
-#: ../adressen/pages/person_edit1.inc.php:191
-#: ../adressen/pages/person_edit1.inc.php:242
+#: ../adressen/pages/person_edit1.inc.php:192
+#: ../adressen/pages/person_edit1.inc.php:243
 msgid "work"
 msgstr "werk"
 
