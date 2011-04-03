@@ -16,7 +16,7 @@ while ($l = mysql_fetch_assoc($erg))
 $werziehtum = 'alle';
 $haushalt = $person_loop['adresse_r'];
 
-$adresswahl = 'manuell';
+$adresswahl = '';
 
 echo '<h1>'._('edit entry').'</h1>';
 ?>
