@@ -15,14 +15,12 @@ else if (empty($_SESSION['lang_session'])) {
 else {
 	$lang = $_SESSION['lang_session'];
 }
-//echo 'session: '.$_SESSION['lang_session'];
-//echo 'lang: '.$lang;
 if (function_exists('bindtextdomain')) {
 	putenv('LC_MESSAGES='.$lang);
 	setlocale(LC_MESSAGES, $lang);
-	bindtextdomain("main", "../locale/");
-	bind_textdomain_codeset("main", "iso-8859-1");
-	textdomain("main");
+	bindtextdomain("phpfamilyaddressdb", "../locale/");
+	bind_textdomain_codeset("phpfamilyaddressdb", "iso-8859-1");
+	textdomain("phpfamilyaddressdb");
 
 	$available_languages = array(
 		array('de_DE', _('German')),
