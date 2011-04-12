@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-04-02 09:38+0200\n"
+"POT-Creation-Date: 2011-04-11 13:21+0200\n"
 "PO-Revision-Date: 2011-04-08 21:36+0000\n"
 "Last-Translator: Christopher <cstandaert@srs.be>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-04-09 06:14+0000\n"
+"X-Launchpad-Export-Date: 2011-04-12 06:04+0000\n"
 "X-Generator: Launchpad (build 12735)\n"
 
 #: ../adressen/pages/integrity_check.inc.php:377
@@ -137,11 +137,11 @@ msgstr ""
 msgid "Do you really want to send a verification mail to %s?"
 msgstr ""
 
-#: ../inc/setup_gettext.inc.php:30
+#: ../inc/setup_gettext.inc.php:28
 msgid "Dutch"
 msgstr ""
 
-#: ../inc/setup_gettext.inc.php:29
+#: ../inc/setup_gettext.inc.php:27
 msgid "English"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr[1] ""
 msgid "Gemini"
 msgstr "Tweelingen"
 
-#: ../inc/setup_gettext.inc.php:28
+#: ../inc/setup_gettext.inc.php:26
 msgid "German"
 msgstr ""
 
@@ -245,7 +245,7 @@ msgstr ""
 msgid "No search query was entered"
 msgstr ""
 
-#: ../adressen/pages/person_delete.inc.php:12
+#: ../adressen/pages/person_delete.inc.php:31
 msgid "No, cancel!"
 msgstr ""
 
@@ -300,7 +300,7 @@ msgid ""
 "maybe?"
 msgstr ""
 
-#: ../adressen/pages/person_delete.inc.php:9
+#: ../adressen/pages/person_delete.inc.php:28
 msgid "Sure, delete that!"
 msgstr ""
 
@@ -401,7 +401,7 @@ msgid_plural "There are %d entries:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../adressen/pages/person_delete.inc.php:15
+#: ../adressen/pages/person_delete.inc.php:34
 msgid "There is no ID specified."
 msgstr ""
 
@@ -420,7 +420,20 @@ msgid ""
 "error since you should not even be able to get here then."
 msgstr ""
 
-#: ../inc/setup_gettext.inc.php:31
+#: ../adressen/pages/person_delete.inc.php:23
+#, php-format
+msgid ""
+"This entry is connected to %s. Are you sure that you can delete this entry?"
+msgstr ""
+
+#: ../adressen/pages/person_delete.inc.php:18
+#, php-format
+msgid ""
+"This entry is connected to %s. Consider just removing your association with "
+"it."
+msgstr ""
+
+#: ../inc/setup_gettext.inc.php:29
 msgid "Turkish"
 msgstr ""
 
@@ -431,6 +444,11 @@ msgstr ""
 #: ../adressen/inc/abfragen.inc.php:10
 msgid "Warning"
 msgstr "Waarschuwing"
+
+#: ../adressen/pages/person_delete.inc.php:18
+#: ../adressen/pages/person_delete.inc.php:23
+msgid "Warning:"
+msgstr ""
 
 #: ../adressen/pages/person_display.inc.php:333
 msgid "Was the data checked and is it up-to-date?"

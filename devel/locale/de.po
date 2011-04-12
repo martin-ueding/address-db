@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2011-04-02 09:38+0200\n"
+"POT-Creation-Date: 2011-04-11 13:21+0200\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-04-03 06:01+0000\n"
-"X-Generator: Launchpad (build 12559)\n"
+"X-Launchpad-Export-Date: 2011-04-12 06:04+0000\n"
+"X-Generator: Launchpad (build 12735)\n"
 
 #: ../adressen/pages/integrity_check.inc.php:377
 #, php-format
@@ -137,11 +137,11 @@ msgstr "Wollen Sie wirklich das Bild für %s löschen?"
 msgid "Do you really want to send a verification mail to %s?"
 msgstr "Möchten Sie wirklich eine Überprüfungsemail an %s senden?"
 
-#: ../inc/setup_gettext.inc.php:30
+#: ../inc/setup_gettext.inc.php:28
 msgid "Dutch"
 msgstr "Niederländisch"
 
-#: ../inc/setup_gettext.inc.php:29
+#: ../inc/setup_gettext.inc.php:27
 msgid "English"
 msgstr "Englisch"
 
@@ -170,7 +170,7 @@ msgstr[1] "Für %s gibt es %d Einträge:"
 msgid "Gemini"
 msgstr "Zwillinge"
 
-#: ../inc/setup_gettext.inc.php:28
+#: ../inc/setup_gettext.inc.php:26
 msgid "German"
 msgstr "Deutsch"
 
@@ -249,7 +249,7 @@ msgstr "Frau"
 msgid "No search query was entered"
 msgstr "Es wurde kein Suchbegriff eingegeben"
 
-#: ../adressen/pages/person_delete.inc.php:12
+#: ../adressen/pages/person_delete.inc.php:31
 msgid "No, cancel!"
 msgstr "Nein, abbrechen!"
 
@@ -306,7 +306,7 @@ msgstr ""
 "Entschuldigung, allerdings scheint dieser Code falsch zu sein. Haben Sie den "
 "Link eventuell schon angeklickt?"
 
-#: ../adressen/pages/person_delete.inc.php:9
+#: ../adressen/pages/person_delete.inc.php:28
 msgid "Sure, delete that!"
 msgstr "Sicher, löschen!"
 
@@ -419,7 +419,7 @@ msgid_plural "There are %d entries:"
 msgstr[0] "Es gibt %d Eintrag:"
 msgstr[1] "Es gibt %d Einträge:"
 
-#: ../adressen/pages/person_delete.inc.php:15
+#: ../adressen/pages/person_delete.inc.php:34
 msgid "There is no ID specified."
 msgstr "Es wurde keine ID angegeben."
 
@@ -440,7 +440,20 @@ msgstr ""
 "Dieser Eintrag hat keine Emailadresse. Es sollte unmöglich sein, diesen "
 "Fehler zu bekommen."
 
-#: ../inc/setup_gettext.inc.php:31
+#: ../adressen/pages/person_delete.inc.php:23
+#, php-format
+msgid ""
+"This entry is connected to %s. Are you sure that you can delete this entry?"
+msgstr ""
+
+#: ../adressen/pages/person_delete.inc.php:18
+#, php-format
+msgid ""
+"This entry is connected to %s. Consider just removing your association with "
+"it."
+msgstr ""
+
+#: ../inc/setup_gettext.inc.php:29
 msgid "Turkish"
 msgstr "Türkisch"
 
@@ -451,6 +464,11 @@ msgstr "Jungfrau"
 #: ../adressen/inc/abfragen.inc.php:10
 msgid "Warning"
 msgstr "Warnung"
+
+#: ../adressen/pages/person_delete.inc.php:18
+#: ../adressen/pages/person_delete.inc.php:23
+msgid "Warning:"
+msgstr ""
 
 #: ../adressen/pages/person_display.inc.php:333
 msgid "Was the data checked and is it up-to-date?"
