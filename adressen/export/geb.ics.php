@@ -21,7 +21,8 @@ echo 'X-WR-TIMEZONE:Europe/Berlin'."\n";
 echo 'CALSCALE:GREGORIAN'."\n";
 echo 'METHOD:PUBLISH'."\n"."\n";
 
-$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_t != 0 && geb_m != 0 && person_lr=p_id && fmg_lr='.$f.';';
+$sql = 'SELECT * FROM ad_per, ad_flinks '.
+	'WHERE geb_t != 0 && geb_m != 0 && person_lr=p_id && fmg_lr='.$f.';';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
 	if ($l['geb_j'] == 0)

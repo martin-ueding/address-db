@@ -32,7 +32,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	echo 'BEGIN:VCARD'."\n";
 	echo 'VERSION:3.0'."\n";
 	echo 'N;CHARSET=iso-8859-1:'.$l['nachname'].';'.$l['vorname'].';'.$l['mittelname'].';'.$prafix.';'."\n";
-	echo 'FN;CHARSET=iso-8859-1:'.$prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname']."\n";
+	echo 'FN;CHARSET=iso-8859-1:'.trim($prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname'])."\n";
 	
 	if (!empty($l['geburtsname']))
 		echo 'X-MAIDENNAME;CHARSET=iso-8859-1:'.$l['geburtsname']."\n";

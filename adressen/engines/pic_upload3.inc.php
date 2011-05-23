@@ -22,7 +22,8 @@ if (file_exists($bildpfad)) {
 	$auswahl_breite = $x2-$x1;
 	$auswahl_hoehe = $y2-$y1;
 
-	// calculate the height and width for the picture so that it does not exceed 300 px in width
+	// calculate the height and width for the picture so that it does not
+	// exceed 300 px in width
 	if ($auswahl_breite > 300) {
 		$tar_breite = 300;
 		$tar_hoehe = round(300.0/$auswahl_breite * $auswahl_hoehe);
@@ -36,7 +37,8 @@ if (file_exists($bildpfad)) {
 	$bildneu = imagecreatetruecolor($tar_breite, $tar_hoehe);
 
 	// crop and resize the uploaded image the way the Java applet told
-	imagecopyresampled($bildneu, $bildalt, 0, 0, $x1, $y1, $tar_breite, $tar_hoehe, $auswahl_breite, $auswahl_hoehe);	
+	imagecopyresampled($bildneu, $bildalt, 0, 0, $x1, $y1, $tar_breite,
+			$tar_hoehe, $auswahl_breite, $auswahl_hoehe);	
 
 
 	// save the new, cropped picture and delete the old one
