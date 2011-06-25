@@ -5,11 +5,11 @@ $p_id = (int)($_GET['id']);
 
 
 
-$erg = select_fmg_zu_person ($p_id);
+$erg = Abfragen::select_fmg_zu_person ($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$fmgs[] = $l['fmg_id'];
 
-$erg = select_gruppen_zu_person ($p_id);
+$erg = Abfragen::select_gruppen_zu_person ($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$gruppen[] = $l['g_id'];
 
@@ -66,7 +66,7 @@ echo '<h1>'._('edit entry').'</h1>';
 
 <?PHP
 	/* Beziehungen zu den Familienmitgliedern */
-	$erg = select_alle_fmg();
+	$erg = Abfragen::select_alle_fmg();
 echo '<div class="box_596">';
 	echo _('Who knows this person?').'<br /><br />';
 	while ($l = mysql_fetch_assoc($erg))
@@ -82,7 +82,7 @@ echo '</div>';
 echo '<div class="box_596">';
 	echo '<br /><br />';
 	/* Gruppen */
-	$erg = select_alle_gruppen();
+	$erg = Abfragen::select_alle_gruppen();
 	echo _('In which groups is this person?').'<br><br />';
 	while ($l = mysql_fetch_assoc($erg))
 		{

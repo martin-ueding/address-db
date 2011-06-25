@@ -9,7 +9,7 @@ include("../inc/varclean.inc.php");
 
 $id = $_GET['id'];
 
-$erg = select_person_alles($id);
+$erg = Abfragen::select_person_alles($id);
 
 $l = mysql_fetch_assoc($erg);
 
@@ -40,34 +40,34 @@ if (!empty($l['email_aux']))
 
 
 if (!empty($l['tel_privat']))
-	echo 'TEL;type=HOME;type=pref:'.select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat']."\n";
+	echo 'TEL;type=HOME;type=pref:'.Abfragen::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat']."\n";
 
 if (!empty($l['tel_arbeit']))
-	echo 'TEL;type=WORK:'.select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit']."\n";
+	echo 'TEL;type=WORK:'.Abfragen::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit']."\n";
 
 if (!empty($l['tel_mobil']))
-	echo 'TEL;type=CELL:'.select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil']."\n";
+	echo 'TEL;type=CELL:'.Abfragen::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil']."\n";
 
 if (!empty($l['tel_fax']))
-	echo 'TEL;type=HOME;type=FAX:'.select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax']."\n";
+	echo 'TEL;type=HOME;type=FAX:'.Abfragen::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax']."\n";
 
 if (!empty($l['tel_aux']))
-	echo 'TEL;type=HOME:'.select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux']."\n";
+	echo 'TEL;type=HOME:'.Abfragen::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux']."\n";
 
 if (!empty($l['ftel_privat']))
-	echo 'TEL;type=HOME:'.select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat']."\n";
+	echo 'TEL;type=HOME:'.Abfragen::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat']."\n";
 
 if (!empty($l['ftel_arbeit']))
-	echo 'TEL;type=WORK:'.select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit']."\n";
+	echo 'TEL;type=WORK:'.Abfragen::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit']."\n";
 
 if (!empty($l['ftel_mobil']))
-	echo 'TEL;type=CELL:'.select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil']."\n";
+	echo 'TEL;type=CELL:'.Abfragen::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil']."\n";
 
 if (!empty($l['ftel_fax']))
-	echo 'TEL;type=HOME;type=FAX:'.select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax']."\n";
+	echo 'TEL;type=HOME;type=FAX:'.Abfragen::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax']."\n";
 
 if (!empty($l['ftel_aux']))
-	echo 'TEL;type=HOME:'.select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux']."\n";
+	echo 'TEL;type=HOME:'.Abfragen::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux']."\n";
 
 if ($l['adresse_r'] != 1) {
 	echo 'item1.ADR;type=HOME;type=pref;CHARSET=iso-8859-1:;;'.$l['strasse'].';'.$l['ortsname'].';;'.$l['plz'].';'.$l['land']."\n";

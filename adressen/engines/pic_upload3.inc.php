@@ -12,7 +12,7 @@ $nummer = substr($_GET['bild'], 14, strlen($_GET['bild'])-18);
 
 $id = $nummer;
 // data has to be gained here, since no ID is given by the java applet
-$erg = select_person_alles($id);
+$erg = Abfragen::select_person_alles($id);
 $person_loop = mysql_fetch_assoc($erg);
 
 if (file_exists($bildpfad)) {
