@@ -101,7 +101,7 @@ echo '</div>';
 	<h2><?PHP echo sprintf(_('part %d of %d'), 2, 3).' &ndash; '._('address'); ?></h2>
 	
 	<?PHP
-	if (adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
+	if (Abfragen::adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
 		echo '&nbsp;<br /><b>'._('address change affects').':</b> <br /><br />';
 		echo '<input type="radio" name="werziehtum" value="einer"';
 		if ($werziehtum == 'einer' || $haushalt == 1)

@@ -268,7 +268,8 @@ class Abfragen {
 
 	/* INSERT-GRUPPE
 	 *
-	 * Diese Funktionen schreiben die Daten in die Datenbank und liefern die neue ID zur&uuml;ck.
+	 * Diese Funktionen schreiben die Daten in die Datenbank und liefern die 
+	 * neue ID zur&uuml;ck.
 	 */
 
 	public static function insert_vw ($vw) {

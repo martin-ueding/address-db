@@ -133,10 +133,10 @@ if ($adresswahl == 'manuell') {
 
 	/* PLZ */
 	if (!empty($plz)) {
-		$erg = select_plzid_plz($plz);
+		$erg = Abfragen::select_plzid_plz($plz);
 	
 		if (mysql_num_rows($erg) == 0)
-			$plz_id = insert_plz($plz);
+			$plz_id = Abfragen::insert_plz($plz);
 	
 		else if ($l = mysql_fetch_assoc($erg))
 			$plz_id = $l['plz_id'];
@@ -149,10 +149,10 @@ if ($adresswahl == 'manuell') {
 
 	/* Ort */
 	if (!empty($ort)) {
-		$erg = select_ortid_ort($ort);
+		$erg = Abfragen::select_ortid_ort($ort);
 	
 		if (mysql_num_rows($erg) == 0)
-			$ort_id = insert_ort($ort);
+			$ort_id = Abfragen::insert_ort($ort);
 	
 		else if ($l = mysql_fetch_assoc($erg))
 			$ort_id = $l['o_id'];
@@ -166,10 +166,10 @@ if ($adresswahl == 'manuell') {
 
 	/* Land */
 	if (!empty($land)) {
-		$erg = select_landid_land($land);
+		$erg = Abfragen::select_landid_land($land);
 	
 		if (mysql_num_rows($erg) == 0)
-			$land_id = insert_land($land);
+			$land_id = Abfragen::insert_land($land);
 	
 	
 		else if ($l = mysql_fetch_assoc($erg))
@@ -187,11 +187,11 @@ if ($adresswahl == 'manuell') {
 	$sql_ad .= ', ftel_fax="'.$ftel_fax.'"';
 	$sql_ad .= ', ftel_aux="'.$ftel_aux.'"';
 
-	$sql_ad .= ', fvw_privat_r='.get_vwid($fvw_privat_eingabe, $fvw_privat_id);
-	$sql_ad .= ', fvw_arbeit_r='.get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
-	$sql_ad .= ', fvw_mobil_r='.get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
-	$sql_ad .= ', fvw_fax_r='.get_vwid($fvw_fax_eingabe, $fvw_fax_id);
-	$sql_ad .= ', fvw_aux_r='.get_vwid($fvw_aux_eingabe, $fvw_aux_id);
+	$sql_ad .= ', fvw_privat_r='.Abfragen::get_vwid($fvw_privat_eingabe, $fvw_privat_id);
+	$sql_ad .= ', fvw_arbeit_r='.Abfragen::get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
+	$sql_ad .= ', fvw_mobil_r='.Abfragen::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
+	$sql_ad .= ', fvw_fax_r='.Abfragen::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
+	$sql_ad .= ', fvw_aux_r='.Abfragen::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
 	
 
 	mysql_query($sql_ad);
@@ -211,11 +211,11 @@ $sql .= ', tel_mobil="'.$tel_mobil.'"';
 $sql .= ', tel_fax="'.$tel_fax.'"';
 $sql .= ', tel_aux="'.$tel_aux.'"';
 
-$sql .= ', vw_privat_r='.get_vwid($vw_privat_eingabe, $vw_privat_id);
-$sql .= ', vw_arbeit_r='.get_vwid($vw_arbeit_eingabe, $vw_arbeit_id);
-$sql .= ', vw_mobil_r='.get_vwid($vw_mobil_eingabe, $vw_mobil_id);
-$sql .= ', vw_fax_r='.get_vwid($vw_fax_eingabe, $vw_fax_id);
-$sql .= ', vw_aux_r='.get_vwid($vw_aux_eingabe, $vw_aux_id);
+$sql .= ', vw_privat_r='.Abfragen::get_vwid($vw_privat_eingabe, $vw_privat_id);
+$sql .= ', vw_arbeit_r='.Abfragen::get_vwid($vw_arbeit_eingabe, $vw_arbeit_id);
+$sql .= ', vw_mobil_r='.Abfragen::get_vwid($vw_mobil_eingabe, $vw_mobil_id);
+$sql .= ', vw_fax_r='.Abfragen::get_vwid($vw_fax_eingabe, $vw_fax_id);
+$sql .= ', vw_aux_r='.Abfragen::get_vwid($vw_aux_eingabe, $vw_aux_id);
 
 
 if (!empty($email_privat)) $sql .= ', email_privat="'.$email_privat.'"';

@@ -69,7 +69,7 @@ if (!isset($aktuell_name))
 		<?PHP
 		$erg = Abfragen::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
-			if (gruppe_ist_nicht_leer($l['g_id'])) {
+			if (Abfragen::gruppe_ist_nicht_leer($l['g_id'])) {
 				echo '<li><a href="index.php?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'">'.$l['gruppe'].'</a></li>';
 			}
 		}
