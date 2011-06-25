@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-11 13:21+0200\n"
+"POT-Creation-Date: 2011-06-25 21:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,22 +31,6 @@ msgstr ""
 #: ../adressen/inc/anzeigen.inc.php:29
 #, php-format
 msgid "%d minutes ago"
-msgstr ""
-
-#: ../adressen/index.php:155
-#, php-format
-msgid "%s is not installed"
-msgstr ""
-
-#: ../adressen/inc/select.inc.php:7 ../adressen/inc/select.inc.php:29
-#: ../adressen/inc/select.inc.php:51 ../adressen/inc/select.inc.php:73
-#, php-format
-msgid "%s needs the %s"
-msgstr ""
-
-#: ../adressen/inc/abfragen.inc.php:10
-#, php-format
-msgid "%s needs the database."
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:75
@@ -73,11 +57,11 @@ msgstr ""
 msgid "April"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:33
+#: ../adressen/inc/abfragen.inc.php:49
 msgid "Aquarius"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:39
+#: ../adressen/inc/abfragen.inc.php:57
 msgid "Aries"
 msgstr ""
 
@@ -85,7 +69,7 @@ msgstr ""
 msgid "August"
 msgstr ""
 
-#: ../adressen/export/geb.ics.php:48
+#: ../adressen/export/geb.ics.php:49
 msgid "Birthday"
 msgstr ""
 
@@ -93,11 +77,11 @@ msgstr ""
 msgid "Birthdays"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:48
+#: ../adressen/inc/abfragen.inc.php:69
 msgid "Cancer"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:30 ../adressen/inc/abfragen.inc.php:66
+#: ../adressen/inc/abfragen.inc.php:45 ../adressen/inc/abfragen.inc.php:93
 msgid "Capricorn"
 msgstr ""
 
@@ -145,11 +129,6 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: ../adressen/inc/select.inc.php:7 ../adressen/inc/select.inc.php:29
-#: ../adressen/inc/select.inc.php:51 ../adressen/inc/select.inc.php:73
-msgid "Error"
-msgstr ""
-
 #: ../adressen/pages/integrity_check.inc.php:42
 #, php-format
 msgid "Error during deletion of image %s!"
@@ -166,7 +145,7 @@ msgid_plural "For %s, there are %d entries:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../adressen/inc/abfragen.inc.php:45
+#: ../adressen/inc/abfragen.inc.php:65
 msgid "Gemini"
 msgstr ""
 
@@ -207,11 +186,11 @@ msgstr ""
 msgid "Language to send the email in:"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:51
+#: ../adressen/inc/abfragen.inc.php:73
 msgid "Leo"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:57
+#: ../adressen/inc/abfragen.inc.php:81
 msgid "Libra"
 msgstr ""
 
@@ -219,7 +198,7 @@ msgstr ""
 msgid "March"
 msgstr ""
 
-#: ../adressen/engines/pic_upload1.inc.php:15
+#: ../adressen/engines/pic_upload1.inc.php:16
 msgid "Maximum file size is 2 MB!"
 msgstr ""
 
@@ -227,7 +206,7 @@ msgstr ""
 msgid "May"
 msgstr ""
 
-#: ../adressen/engines/person_delete2.inc.php:27
+#: ../adressen/engines/person_delete2.inc.php:29
 msgid "Missing an ID."
 msgstr ""
 
@@ -261,7 +240,7 @@ msgstr ""
 msgid "PHP Family Address DB"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:36
+#: ../adressen/inc/abfragen.inc.php:53
 msgid "Pisces"
 msgstr ""
 
@@ -273,11 +252,11 @@ msgstr ""
 msgid "Please click here, if all your data is up-to-date:"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:63
+#: ../adressen/inc/abfragen.inc.php:89
 msgid "Sagittarius"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:60
+#: ../adressen/inc/abfragen.inc.php:85
 msgid "Scorpio"
 msgstr ""
 
@@ -304,7 +283,7 @@ msgstr ""
 msgid "Sure, delete that!"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:42
+#: ../adressen/inc/abfragen.inc.php:61
 msgid "Taurus"
 msgstr ""
 
@@ -350,7 +329,7 @@ msgid ""
 "because this looks like an error."
 msgstr ""
 
-#: ../adressen/engines/pic_upload3.inc.php:48
+#: ../adressen/engines/pic_upload3.inc.php:50
 msgid "The picture was added."
 msgstr ""
 
@@ -380,7 +359,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../adressen/engines/pic_upload3.inc.php:51
+#: ../adressen/engines/pic_upload3.inc.php:53
 msgid ""
 "The temporary file could not be found. If you just have reloaded this page, "
 "this is normal."
@@ -437,12 +416,8 @@ msgstr ""
 msgid "Turkish"
 msgstr ""
 
-#: ../adressen/inc/abfragen.inc.php:54
+#: ../adressen/inc/abfragen.inc.php:77
 msgid "Virgo"
-msgstr ""
-
-#: ../adressen/inc/abfragen.inc.php:10
-msgid "Warning"
 msgstr ""
 
 #: ../adressen/pages/person_delete.inc.php:18
@@ -886,7 +861,7 @@ msgstr ""
 msgid "menu"
 msgstr ""
 
-#: ../adressen/index.php:225
+#: ../adressen/index.php:209
 #, php-format
 msgid "menu by %s"
 msgstr ""
@@ -1043,7 +1018,7 @@ msgstr ""
 msgid "relations"
 msgstr ""
 
-#: ../adressen/index.php:223
+#: ../adressen/index.php:207
 msgid "report a bug"
 msgstr ""
 
@@ -1172,7 +1147,7 @@ msgstr ""
 msgid "verification mail for %s"
 msgstr ""
 
-#: ../adressen/index.php:219
+#: ../adressen/index.php:203
 msgid "version"
 msgstr ""
 
