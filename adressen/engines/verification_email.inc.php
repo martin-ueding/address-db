@@ -109,7 +109,7 @@ if ($_GET['sicher'] == 'ja') {
 		}
 		if (!empty($person_loop['ftel_mobil'])) {	
 			echo '<tr>';
-			echo '<td class="links">'._('telephone mobile').': <i>'.handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+			echo '<td class="links">'._('telephone mobile').': <i>'.Abfragen::handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
 			echo '<td>'.select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].'</td>';
 			echo '</tr>';
 		}
@@ -145,7 +145,7 @@ if ($_GET['sicher'] == 'ja') {
 		}
 		if (!empty($person_loop['tel_mobil'])) {	
 			echo '<tr>';
-			echo '<td class="links">'._('mobile').': <i>'.handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+			echo '<td class="links">'._('mobile').': <i>'.Abfragen::handybetreiber(select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
 			echo '<td>'.select_vw_id($person_loop['vw_mobil_r']).'-'.$person_loop['tel_mobil'].'</td>';
 			echo '</tr>';
 		}
