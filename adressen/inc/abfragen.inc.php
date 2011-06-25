@@ -1,16 +1,11 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
-
-/* Das hier ist die Funktionsdatei mit allen Abfragen, die es in der 
- * Adressverwaltung gibt. */
-
-$debug = true;
-
-if (empty($dbh)) {
-	echo '<br /><b>'._('Warning').':</b> '.printf(_('%s needs the database.'), 'abfragen.inc.php');
-}
-
+/**
+ * Class with several database queries.
+ *
+ * @author Martin Ueding <dev@martin-ueding.de>
+ */
 class Abfragen {
 
 	/**
@@ -18,14 +13,17 @@ class Abfragen {
 	 *
 	 * @param string $vw area code
 	 * @return string carrier name
-	 * */
-	public static function handybetreiber ($vw) {
+	 */
+	public static function handybetreiber($vw) {
 		switch ($vw) {
-		case '+49-160': case '+49-170': case '+49-171': case '+49-175': case '+49-151':
+		case '+49-160': case '+49-170': case '+49-171': case '+49-175':
+		case '+49-151':
 			return '(T-Mobile)';
-		case '+49-162': case '+49-172': case '+49-173': case '+49-174': case '+49-152':
+		case '+49-162': case '+49-172': case '+49-173': case '+49-174':
+		case '+49-152':
 			return '(Vodafone)';
-		case '+49-163': case '+49-177': case '+49-178': case '+49-155': case '+49-157':
+		case '+49-163': case '+49-177': case '+49-178': case '+49-155':
+		case '+49-157':
 			return '(E-Plus)';
 		case '+49-176': case '+49-179': case '+49-159':
 			return '(O2)';
@@ -38,47 +36,60 @@ class Abfragen {
 	 * @param int $tag day
 	 * @param int $monat month
 	 * @return string zodiac sign
-	 * */
-	public static function sternzeichen ($tag, $monat) {
+	 */
+	public static function sternzeichen($tag, $monat) {
 		$tagimmonat = date('z', mktime(0, 0, 0, $monat, $tag, 2001));
 
-		if (0 <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 1, 21, 2001)))
+		if (0 <= $tagimmonat && $tagimmonat <
+			date('z', mktime(0, 0, 0, 1, 21, 2001)))
 			return _('Capricorn');
 
-		if (date('z', mktime(0, 0, 0, 1, 21, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 2, 20, 2001)))
+		if (date('z', mktime(0, 0, 0, 1, 21, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 2, 20, 2001)))
 			return _('Aquarius');
 
-		if (date('z', mktime(0, 0, 0, 2, 20, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 3, 20, 2001)))
+		if (date('z', mktime(0, 0, 0, 2, 20, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 3, 20, 2001)))
 			return _('Pisces');
 
-		if (date('z', mktime(0, 0, 0, 3, 20, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 4, 21, 2001)))
+		if (date('z', mktime(0, 0, 0, 3, 20, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 4, 21, 2001)))
 			return _('Aries');
 
-		if (date('z', mktime(0, 0, 0, 4, 21, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 5, 21, 2001)))
+		if (date('z', mktime(0, 0, 0, 4, 21, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 5, 21, 2001)))
 			return _('Taurus');
 
-		if (date('z', mktime(0, 0, 0, 5, 21, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 6, 22, 2001)))
+		if (date('z', mktime(0, 0, 0, 5, 21, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 6, 22, 2001)))
 			return _('Gemini');
 
-		if (date('z', mktime(0, 0, 0, 6, 22, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 7, 23, 2001)))
+		if (date('z', mktime(0, 0, 0, 6, 22, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 7, 23, 2001)))
 			return _('Cancer');
 
-		if (date('z', mktime(0, 0, 0, 7, 23, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 8, 24, 2001)))
+		if (date('z', mktime(0, 0, 0, 7, 23, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 8, 24, 2001)))
 			return _('Leo');
 
-		if (date('z', mktime(0, 0, 0, 8, 24, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 9, 24, 2001)))
+		if (date('z', mktime(0, 0, 0, 8, 24, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 9, 24, 2001)))
 			return _('Virgo');
 
-		if (date('z', mktime(0, 0, 0, 9, 24, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 10, 24, 2001)))
+		if (date('z', mktime(0, 0, 0, 9, 24, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 10, 24, 2001)))
 			return _('Libra');
 
-		if (date('z', mktime(0, 0, 0, 10, 24, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 11, 23, 2001)))
+		if (date('z', mktime(0, 0, 0, 10, 24, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 11, 23, 2001)))
 			return _('Scorpio');
 
-		if (date('z', mktime(0, 0, 0, 11, 23, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 12, 22, 2001)))
+		if (date('z', mktime(0, 0, 0, 11, 23, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 12, 22, 2001)))
 			return _('Sagittarius');
 
-		if (date('z', mktime(0, 0, 0, 12, 22, 2001)) <= $tagimmonat && $tagimmonat < date('z', mktime(0, 0, 0, 12, 31, 2001)))
+		if (date('z', mktime(0, 0, 0, 12, 22, 2001)) <= $tagimmonat && 
+			$tagimmonat < date('z', mktime(0, 0, 0, 12, 31, 2001)))
 			return _('Capricorn');
 	}
 
@@ -96,7 +107,13 @@ class Abfragen {
 	}
 
 	public static function select_person_alles ($id) {
-		$sql = 'SELECT * FROM ad_per, ad_adressen, ad_orte, ad_plz, ad_laender, ad_anreden, ad_prafixe, ad_suffixe WHERE p_id='.$id.' && adresse_r=ad_id && ort_r=o_id && plz_r=plz_id && land_r=l_id && anrede_r=a_id && prafix_r=prafix_id && suffix_r=s_id;';
+		// XXX use JOIN
+		$sql = 'SELECT * '.
+			'FROM ad_per, ad_adressen, ad_orte, ad_plz, ad_laender, '.
+				'ad_anreden, ad_prafixe, ad_suffixe '.
+			'WHERE p_id='.$id.' && adresse_r=ad_id && ort_r=o_id && '.
+				'plz_r=plz_id && land_r=l_id && anrede_r=a_id && '.
+				'prafix_r=prafix_id && suffix_r=s_id;';
 		$erg = mysql_query($sql);
 		return $erg;
 	}
@@ -202,8 +219,9 @@ class Abfragen {
 			return $l['suffix'];
 		}
 
-		else
+		else {
 			return '-';
+		}
 	}
 
 	/**
@@ -227,13 +245,17 @@ class Abfragen {
 	}
 
 	public static function select_gruppen_zu_person ($id) {
-		$sql = 'SELECT * FROM ad_gruppen, ad_glinks WHERE g_id=gruppe_lr && person_lr='.$id.'  ORDER BY gruppe;';
+		$sql = 'SELECT * FROM ad_gruppen, ad_glinks '.
+			'WHERE g_id=gruppe_lr && person_lr='.$id.'  '.
+			'ORDER BY gruppe;';
 		$erg = mysql_query($sql);
 		return $erg;
 	}
 
 	public static function select_fmg_zu_person ($id) {
-		$sql = 'SELECT * FROM ad_fmg, ad_flinks WHERE fmg_id=fmg_lr && person_lr='.$id.'  ORDER BY fmg;';
+		$sql = 'SELECT * FROM ad_fmg, ad_flinks '.
+			'WHERE fmg_id=fmg_lr && person_lr='.$id.'  '.
+			'ORDER BY fmg;';
 		$erg = mysql_query($sql);
 		return $erg;
 	}
@@ -266,12 +288,6 @@ class Abfragen {
 	}
 
 
-	/* INSERT-GRUPPE
-	 *
-	 * Diese Funktionen schreiben die Daten in die Datenbank und liefern die 
-	 * neue ID zur&uuml;ck.
-	 */
-
 	public static function insert_vw ($vw) {
 		$sql = 'INSERT INTO ad_vorwahlen SET vorwahl="'.$vw.'";';
 		mysql_query($sql);
@@ -297,14 +313,16 @@ class Abfragen {
 	}
 
 	public static function verbindung_besteht ($person, $gruppe) {
-		$sql = 'SELECT * FROM ad_glinks WHERE person_lr='.$person.' && gruppe_lr='.$gruppe.';';
+		$sql = 'SELECT * FROM ad_glinks '.
+			'WHERE person_lr='.$person.' && gruppe_lr='.$gruppe.';';
 		$erg = mysql_query($sql);
 
 		return mysql_num_rows($erg) != 0;
 	}
 
 	public static function verbindung_besteht_fmg ($person, $fmg) {
-		$sql = 'SELECT * FROM ad_flinks WHERE person_lr='.$person.' && fmg_lr='.$fmg.';';
+		$sql = 'SELECT * FROM ad_flinks '.
+			'WHERE person_lr='.$person.' && fmg_lr='.$fmg.';';
 		$erg = mysql_query($sql);
 
 		return mysql_num_rows($erg) != 0;
@@ -312,9 +330,14 @@ class Abfragen {
 
 	public static function gruppe_ist_nicht_leer ($id) {
 		if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-			$sql = 'SELECT * FROM ad_flinks LEFT JOIN ad_per ON p_id=ad_flinks.person_lr LEFT JOIN ad_glinks ON ad_glinks.person_lr=p_id LEFT JOIN ad_gruppen ON g_id=gruppe_lr WHERE fmg_lr='.$_SESSION['f'].' && g_id='.$id.';';
+			$sql = 'SELECT * FROM ad_flinks '.
+			'LEFT JOIN ad_per ON p_id=ad_flinks.person_lr '.
+			'LEFT JOIN ad_glinks ON ad_glinks.person_lr=p_id '.
+			'LEFT JOIN ad_gruppen ON g_id=gruppe_lr '.
+			'WHERE fmg_lr='.$_SESSION['f'].' && g_id='.$id.';';
 		else
-			$sql = 'SELECT * FROM ad_glinks WHERE gruppe_lr='.$id.';';
+			$sql = 'SELECT * FROM ad_glinks '.
+			'WHERE gruppe_lr='.$id.';';
 		$erg = mysql_query($sql);
 		if (mysql_error() != "") {
 			echo $sql;
@@ -332,10 +355,6 @@ class Abfragen {
 	}
 
 
-	/* UPDATE */
-
-	/* DELETE */
-
 	public static function delete_familie_id ($id) {
 		$sql = 'DELETE FROM ad_fam WHERE f_id='.$id.';';
 		mysql_query($sql);
@@ -349,7 +368,6 @@ class Abfragen {
 			unlink($mugshot_path);
 		}
 	}
-
 }
 
 ?>
