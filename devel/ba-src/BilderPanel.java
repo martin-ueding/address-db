@@ -4,12 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Panel;
 
+/**
+ * Displays the picture and the cropping marks.
+ * 
+ * @author Martin Ueding <dev@martin-ueding.de>
+ */
+@SuppressWarnings("serial")
 public class BilderPanel extends Panel {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7743063808910040729L;
 
 	Color farbe, farbe2;
 

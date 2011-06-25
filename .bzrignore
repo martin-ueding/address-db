@@ -5,3 +5,5 @@ phpfamilyaddressdb.mo
 *.jar
 phpfamilyaddressdb-*.tar.gz
 html
+devel/ba-src/.project
+devel/ba-src/.classpath

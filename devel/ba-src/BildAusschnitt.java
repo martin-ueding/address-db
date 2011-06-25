@@ -9,13 +9,13 @@ import java.awt.event.MouseMotionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
+/**
+ * Crops a picture. It displays the picture in original size and offers a set of cropping boundaries to set the new image size. The result is then send as a GET request.
+ * 
+ * @author Martin Ueding <dev@martin-ueding.de>
+ */
+@SuppressWarnings("serial")
 public class BildAusschnitt extends Applet {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 567111438846638761L;
 	static Image bild;
 	static Button b;
 	static BilderPanel bPanel;
@@ -90,7 +90,9 @@ public class BildAusschnitt extends Applet {
 		bPanel.removeMouseMotionListener(lauscher);
 	}
 	
-	
+	/**
+	 * Tells the applet to send its data with a GET request to the PHP script that does the cropping.
+	 */
 	void geheWeiter() {
 		try {
 			getAppletContext().showDocument(new URL(getParameter("zieladresse") + "&bild="+getParameter("bildurl")+"&x1="+(int)bPanel.links+"&y1="+(int)bPanel.oben+"&x2="+(int)bPanel.rechts+"&y2="+(int)bPanel.unten));
