@@ -73,7 +73,7 @@ if ($_GET['sicher'] == 'ja') {
 			if ($person_loop['geb_j'] > 1500) {
 				echo $person_loop['geb_j'].' &nbsp;&nbsp; ';
 				printf(_('(today %d years old)'),alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
-				echo ' &nbsp;&nbsp; ('.sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
+				echo ' &nbsp;&nbsp; ('.Abfragen::sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
 			}
 			echo '</td>';
 			echo '</tr>';
