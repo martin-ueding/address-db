@@ -2,7 +2,8 @@
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
 
-/* Das hier ist die Funktionsdatei mit allen Abfragen, die es in der Adressverwaltung gibt. */
+/* Das hier ist die Funktionsdatei mit allen Abfragen, die es in der 
+* Adressverwaltung gibt. */
 
 $debug = true;
 
@@ -10,6 +11,12 @@ if (empty($dbh)) {
 	echo '<br /><b>'._('Warning').':</b> '.printf(_('%s needs the database.'), 'abfragen.inc.php');
 }
 
+/**
+ * Finds the cell phone carrier to an area code.
+ *
+ * @param string $vw area code
+ * @return string carrier name
+ * */
 function handybetreiber ($vw) {
 	switch ($vw) {
 		case '+49-160': case '+49-170': case '+49-171': case '+49-175': case '+49-151':
@@ -23,6 +30,13 @@ function handybetreiber ($vw) {
 	}
 }
 
+/**
+ * Finds the zodiac sign to a given date.
+ *
+ * @param int $tag day
+ * @param int $monat month
+ * @return string zodiac sign
+ * */
 function sternzeichen ($tag, $monat) {
 	$tagimmonat = date('z', mktime(0, 0, 0, $monat, $tag, 2001));
 	
@@ -67,19 +81,12 @@ function sternzeichen ($tag, $monat) {
 }
 
 
-/* SELECT-GRUPPE
+/**
+ * Gives a relation to a person.
  *
- * Diese Funktionen liefern immer eine Relation mit den Daten zur&uuml;ck.
- */
-
-
-// &Uuml;berarbeiten!!
-function finde_personen_zu_familie ($id) {
-	$sql = 'SELECT * FROM ad_per WHERE familie_r='.$id.' ORDER BY geb_j, geb_m;';
-	$erg = mysql_query($sql);
-	return $erg;
-}
-
+ * @param int $id entry id
+ * @return mixed query result
+ * */
 function select_person_id ($id) {
 	$sql = 'SELECT * FROM ad_per WHERE p_id='.$id.';';
 	$erg = mysql_query($sql);
@@ -178,6 +185,12 @@ function select_string_prafix ($id) {
 		return '-';
 }
 
+/**
+ * Gives the suffix string to an id.
+ *
+ * @param int $id suffix id
+ * @return string suffix
+ * */
 function select_string_suffix ($id) {
 	$sql = 'SELECT suffix FROM ad_suffixe WHERE s_id='.$id.';';
 	$erg = mysql_query($sql);
@@ -191,15 +204,12 @@ function select_string_suffix ($id) {
 		return '-';
 }
 
-// &Uuml;berarbeiten!!
-function finde_familien_id_zu_person ($id) {
-	$sql = 'SELECT familie_r FROM ad_per WHERE p_id='.$id.';';
-	$erg = mysql_query($sql);
-
-	$l = mysql_fetch_assoc($erg);
-	return $l['familie_r'];
-}
-
+/**
+ * Finds an area code to a given id
+ *
+ * @param int $id area code id
+ * @return string area code
+ * */
 function select_vw_id ($id) {
 	$sql = 'SELECT vorwahl FROM ad_vorwahlen WHERE v_id='.$id.';';
 	$erg = mysql_query($sql);
