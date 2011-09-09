@@ -25,7 +25,6 @@ class AddTest extends WebTestCase {
 		$this->verifyPageLoad();
 		$this->assertTrue($this->click('create new entry'));
 		$this->verifyPageLoad();
-		echo $this->getUrl();
 		$this->assertPattern('$<h1>create a new entry</h1>$');
 
 		$vorname = uniqid();
