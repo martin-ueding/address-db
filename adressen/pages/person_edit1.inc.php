@@ -126,7 +126,7 @@ echo '</div>';
 	}
 
 
-	echo '<select size="5" name="adresse_r">';
+	echo '<select size="1" name="adresse_r">';
 	$sql = 'SELECT * FROM ad_adressen, ad_plz, ad_orte, ad_laender WHERE plz_r=plz_id && ort_r=o_id && land_r=l_id ORDER BY plz, ortsname, strasse;';
 	$erg = mysql_query($sql);
 
