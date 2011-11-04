@@ -276,9 +276,9 @@ class Abfragen {
 		if (empty($text))
 			return $id;
 		else {
-			$erg = select_vw_vw($text);
+			$erg = Abfragen::select_vw_vw($text);
 			if (mysql_num_rows($erg) == 0) {
-				return insert_vw($text);
+				return Abfragen::insert_vw($text);
 			}
 			else {
 				$l = mysql_fetch_assoc($erg);
