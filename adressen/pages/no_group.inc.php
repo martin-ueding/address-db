@@ -6,7 +6,7 @@ $from_with_get = 'mode=no_group';
 
 $titel = $_GET["titel"];
 
-$sql = 'SELECT * FROM ad_per LEFT JOIN ad_glinks ON person_lr=g_id WHERE person_lr IS NULL ORDER BY nachname, vorname;';
+$sql = 'SELECT * FROM ad_per LEFT JOIN ad_glinks ON person_lr=gl_id WHERE person_lr IS NULL ORDER BY nachname, vorname;';
 
 $erg = mysql_query($sql);
 $i = 0;

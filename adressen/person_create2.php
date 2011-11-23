@@ -30,6 +30,7 @@ $haushalt = 1;
 if (!empty($_POST['neue_gruppe'])) {
 	$sql = 'INSERT INTO ad_gruppen SET gruppe="'.$_POST['neue_gruppe'].'"';
 	mysql_query($sql);
+	echo mysql_error();
 	$gruppen[] = mysql_insert_id();
 }
 
@@ -195,6 +196,7 @@ if ($adresswahl == 'manuell') {
 	
 
 	mysql_query($sql_ad);
+	echo mysql_error();
 	$sql .= ', adresse_r='.mysql_insert_id();
 	
 }
