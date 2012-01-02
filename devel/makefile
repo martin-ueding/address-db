@@ -12,12 +12,15 @@ locale/phpfamilyaddressdb.pot: $(phpFiles)
 	xgettext --sort-output --language=PHP --from-code=UTF-8 -keywword=_ -o $@ $^
 
 ../locale/de_DE/LC_MESSAGES/phpfamilyaddressdb.mo: locale/de.po
+	mkdir -p $(basename $@)
 	msgfmt -o $@ $^
 
 ../locale/nl/LC_MESSAGES/phpfamilyaddressdb.mo: locale/nl.po
+	mkdir -p $(basename $@)
 	msgfmt -o $@ $^
 
 ../locale/tr/LC_MESSAGES/phpfamilyaddressdb.mo: locale/tr.po
+	mkdir -p $(basename $@)
 	msgfmt -o $@ $^
 
 tarball: $(projectName).tar.gz
