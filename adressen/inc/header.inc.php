@@ -129,10 +129,6 @@ foreach ($buchstaben as $b) {
 echo '</div>';
 ?>
 
-<!--
-<div>
+<div id="search">
 <form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
 </div>
-
-<div class="clearheinz"></div>
--->
