@@ -21,6 +21,7 @@ echo mysql_error();
 $i = 0;
 while ($l = mysql_fetch_assoc($erg)) 
 	{
+	# TODO Use CSS for zebra.
 	if($i % 2){ echo '<tr class="zeihell">';}
 	else { echo '<tr class="zeidunkel">'; }
 	echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">';
