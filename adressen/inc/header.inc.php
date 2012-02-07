@@ -2,7 +2,7 @@
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
 require_once('../helper/Filter.php');
-require_once('../helper/NavHelper.php');
+require_once('../helper/Navigation.php');
 require_once('../helper/Request.php');
 
 $sql = 'SELECT * FROM ad_fmg';
@@ -25,7 +25,7 @@ if (!isset($aktuell_name))
 		$request->set('f', 0);
 
 		echo '<li><a href="?'.$request->join().'" '.($_SESSION['f'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
-		echo NavHelper::spacer();
+		echo Navigation::spacer();
 
 		$sql = 'SELECT * FROM ad_fmg';
 		$erg = mysql_query($sql);
@@ -54,7 +54,7 @@ if (!isset($aktuell_name))
 		$request->set('g', 0);
 
 		echo '<li><a href="?'.$request->join().'" '.($_SESSION['g'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
-		echo NavHelper::spacer();
+		echo Navigation::spacer();
 
 		$erg = Queries::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
@@ -75,22 +75,22 @@ if (!isset($aktuell_name))
 <ul>
 <?php
 echo '<li><b>'._('views').'</b></li>';
-echo NavHelper::nav_action_link('list', $mode, _('show entries'));
-echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
-echo NavHelper::nav_action_link('all_birthdays', $mode, _('birthday list'));
-echo NavHelper::spacer();
+echo Navigation::nav_action_link('list', $mode, _('show entries'));
+echo Navigation::nav_action_link('main', $mode, _('birthday view'));
+echo Navigation::nav_action_link('all_birthdays', $mode, _('birthday list'));
+echo Navigation::spacer();
 echo '<li><b>'._('create').'</b></li>';
-echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
-echo NavHelper::spacer();
+echo Navigation::nav_action_link('person_create1', $mode, _('create new entry'));
+echo Navigation::spacer();
 echo '<li><b>'._('maintenance').'</b></li>';
 echo '<li><a href="export/kitchen.php">'._('export LaTeX sheets').'</a></li>';
-echo NavHelper::spacer();
-echo NavHelper::nav_action_link('no_title', $mode, _('no form of address'));
-echo NavHelper::nav_action_link('no_association', $mode, _('no association'));
-echo NavHelper::nav_action_link('no_group', $mode, _('no group'));
-echo NavHelper::nav_action_link('no_email', $mode, _('no email address'));
-echo NavHelper::nav_action_link('no_birthday', $mode, _('no birthday'));
-echo NavHelper::nav_action_link('integrity_check', $mode, _('database check'));
+echo Navigation::spacer();
+echo Navigation::nav_action_link('no_title', $mode, _('no form of address'));
+echo Navigation::nav_action_link('no_association', $mode, _('no association'));
+echo Navigation::nav_action_link('no_group', $mode, _('no group'));
+echo Navigation::nav_action_link('no_email', $mode, _('no email address'));
+echo Navigation::nav_action_link('no_birthday', $mode, _('no birthday'));
+echo Navigation::nav_action_link('integrity_check', $mode, _('database check'));
 ?>
 </ul>
 </div>
