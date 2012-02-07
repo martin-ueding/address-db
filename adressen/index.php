@@ -221,13 +221,6 @@ switch ($mode) {
 
 	echo '<div id="version"><nobr>';
 	echo '<span class="graytext">'._('version').'</span> '.$version_string;
-	echo '<span class="project_menu">';
-	echo ' &bull; ';
-	
-	echo '<a href="https://bugs.launchpad.net/phpfamilyaddressdb/+filebug" target="_blank">'._('report a bug').'</a>';
-	echo ' &bull; ';
-	echo '<a href="http://cssplay.co.uk/" target="_blank">'.sprintf(_('menu by %s'), 'CSSplay').'</a>';
-	echo '</span>';
 	echo '</nobr></div>';
 	?>
 
