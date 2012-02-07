@@ -2,4 +2,5 @@
 
 all:
 	make -C adressen
+	make -C crop_applet
 	make -C locale
