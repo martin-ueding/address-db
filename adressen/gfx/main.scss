@@ -1,18 +1,18 @@
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
-BODY, TEXTAREA {
+body, textarea {
 	font-family: verdana, geneva, sans-serif;
 	font-size: 13px;
 	line-height: 1.5;
 }
 
-BODY, A {
+body, a {
 	margin: 0px;
 	padding: 0px;
 	border: none;
 	color: rgb(0,0,0);
 }
-A IMG {
+a img {
 	border: 0px;
 }
 
@@ -94,7 +94,7 @@ A IMG {
 }
 
 body.maske {
-	background-color: #FFC;
+	background-color: #ffc;
 
 	table {
 		width: 596px;
@@ -113,11 +113,11 @@ body.maske {
 
 				input {
 					height: 20px;
-					border: 1px solid #999; /* TEST */
+					border: 1px solid #999; /* test */
 				}
 
 				textarea {
-					border: 1px solid #999; /* TEST */
+					border: 1px solid #999; /* test */
 				}
 			}
 
@@ -137,7 +137,7 @@ div.clearheinz {
 	margin-bottom: 20px;
 }
 
-H1 {
+h1 {
 	font-size: 19px;
 	margin: 0 0 15px 0;
 }
@@ -150,44 +150,44 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-H2 {
+h2 {
 	font-size: 17px;
 	margin-bottom: 5px;
 }
 
-H3 {
+h3 {
 	font-size: 15px;
 	margin-bottom: 5px;
 }
 
-B {
+b {
 	font-weight: bold;
 }
 
-I {
+i {
 	font-style: italic;
 	color: rgb(102,102,102);
 }
 
-EM {
+em {
 	font-style: normal;
 	font-weight: bold;
 	color: rgb(209,31,57);
 }
 
-A {
+a {
 	text-decoration: none;
 }
 
-A:VISITED, A:LINK {
-	color: #A70000;
+a:visited, a:link {
+	color: #a70000;
 }
 
-A:HOVER {
+a:hover {
 	color: rgb(209,31,57);
 }
 
-UL {
+ul {
 	margin-left: 10px;
 }
 
@@ -206,11 +206,11 @@ UL {
 		text-align: center;
 		line-height: 21px;
 		margin: 2px 0px 3px 4px;
-		background-color: #EEE;
+		background-color: #eee;
 		color: #666;
-		border-top: 1px solid #CCC; /* TEST */
-		border-left: 1px solid #CCC; /* TEST */
-		border-bottom: 1px solid #777; /* TEST */
+		border-top: 1px solid #ccc; /* test */
+		border-left: 1px solid #ccc; /* test */
+		border-bottom: 1px solid #777; /* test */
 		-moz-border-radius-bottomleft: 10px;
 		-webkit-border-bottom-left-radius: 10px;
 		-moz-border-radius-topleft: 10px;
@@ -220,7 +220,7 @@ UL {
 	a {
 		&:link, &:visited {
 			color: rgb(0,0,0);
-			background-color: #FFE699;
+			background-color: #ffe699;
 		}
 
 		&:hover {
@@ -239,10 +239,10 @@ UL {
 	padding: 0px;
 	margin: 5px 5px 0 0;
 	background-color: rgb(255, 250, 173);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
+	border-top: 1px solid #ccc; /* test */
+	border-left: 1px solid #ccc; /* test */
+	border-right: 1px solid #000; /* test */
+	border-bottom: 1px solid #000; /* test */
 
 }
 
@@ -255,22 +255,22 @@ UL {
 #messages {
 	padding: 10px;
 	width: 800px;
-	background-color: #B3E6FF;
+	background-color: #b3e6ff;
 	margin: 10px 20px 10px 0px;
-	border: 1px solid #66CCFF;
+	border: 1px solid #66ccff;
 }
 
-/*.GEBURTSTAGE.*/
+/*.geburtstage.*/
 
 #geburtstag {
 	margin: 20px 0 20px 7px;
 	width: 500px;
 	color: rgb(0,0,0);
 	background-color: rgb(230,230,230);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
+	border-top: 1px solid #ccc; /* test */
+	border-left: 1px solid #ccc; /* test */
+	border-right: 1px solid #000; /* test */
+	border-bottom: 1px solid #000; /* test */
 	float: left;
 
 	tr.zeihell {
@@ -282,21 +282,21 @@ UL {
 	}
 }
 
-/* .Deklarationen fuer die Personendarstellung. */
+/* .deklarationen fuer die personendarstellung. */
 
-TR {
+tr {
 	vertical-align: top;
 	background-color: rgb(230,230,230);
 }
 
-TD {
+td {
 	padding: 0 3px;
 }
 
 #pers_bild {
 	float: right;
 	margin: 0 50px 0 0;
-	border: 1px solid #CCC; /* TEST */
+	border: 1px solid #ccc; /* test */
 }
 
 .pers_titel {
@@ -304,21 +304,21 @@ TD {
 	color: rgb(255,255,255);
 	padding: 3px 0;
 	font-weight: bold;
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
+	border-top: 1px solid #ccc; /* test */
+	border-left: 1px solid #ccc; /* test */
+	border-right: 1px solid #000; /* test */
+	border-bottom: 1px solid #000; /* test */
 	background-color: rgb(102,102,102);
 }
 
-TABLE.display_person {
+table.display_person {
 	margin: 0 0 20px 0;
 	width: 550px;
 	color: rgb(0,0,0);
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-right: 1px solid #000; /* TEST */
-	border-bottom: 1px solid #000; /* TEST */
+	border-top: 1px solid #ccc; /* test */
+	border-left: 1px solid #ccc; /* test */
+	border-right: 1px solid #000; /* test */
+	border-bottom: 1px solid #000; /* test */
 
 	td.links {
 		width: 150px;
@@ -328,12 +328,12 @@ TABLE.display_person {
 	}
 }
 
-TD.icon {
+td.icon {
 	width: 12px;
 }
 
 
-/*.Eingabemasken.*/
+/*.eingabemasken.*/
 
 #schritte {
 	border-collapse: collapse;
@@ -344,7 +344,7 @@ TD.icon {
 #schritte .normal {
 	width: 149px;
 	height: 194px;
-	color: #FFF;
+	color: #fff;
 	line-height: 194px;
 	text-align: center;
 	background-image: url(../eicons/gelbpfeil.gif);
@@ -355,7 +355,7 @@ TD.icon {
 #schritte .aktiv {
 	width: 149px;
 	height: 194px;
-	color: #FFF;
+	color: #fff;
 	line-height: 194px;
 	text-align: center;
 	background-image: url(../eicons/rotpfeil.gif);
@@ -373,14 +373,14 @@ TD.icon {
 	width: 596px;
 }
 
-DIV.geb_monat_kasten {
+div.geb_monat_kasten {
 	float: left;
 	width: 200px;
 	height: 350px;
 	overflow: auto;
 	margin: 10px 0px 10px 20px;;
 	padding: 5px;
-	border: 1px solid #AAA;
+	border: 1px solid #aaa;
 	background-color: rgb(230,230,230);
 }
 
@@ -407,21 +407,21 @@ DIV.geb_monat_kasten {
 	position: fixed;
 	right: 0px;
 	bottom: 0px;
-	background-color: #CCF;
+	background-color: #ccf;
 	padding: 2px 5px 2px 9px;
 	-moz-border-radius-topleft: 8px;
 	-webkit-border-top-left-radius: 8px;
 }
 
-SPAN.graytext {
+span.graytext {
 	color: #555;
 }
 
-SPAN.project_menu {
+span.project_menu {
 	display: none;
 }
 
-DIV#searchhints {
+div#searchhints {
 	position: absolute;
 	top: 50px;
 	left: 650px;
@@ -437,7 +437,7 @@ DIV#searchhints {
 		li {
 			margin: 0px;
 			padding: 3px 5px;
-			background-color: #EEE;
+			background-color: #eee;
 
 			&:hover {
 				background-color: #ddd;
@@ -446,6 +446,6 @@ DIV#searchhints {
 	}
 }
 
-IMG.switch_fields {
+img.switch_fields {
 	margin-right: 4px;
 }
