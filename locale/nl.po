@@ -1117,21 +1117,3 @@ msgstr "werk"
 #: ../adressen/pages/person_display.inc.php:336
 msgid "yes"
 msgstr ""
-
-#~ msgid "%s is not installed"
-#~ msgstr "%s is niet geïnstalleerd"
-
-#~ msgid "%s needs the %s"
-#~ msgstr "%s hebt %s nodig"
-
-#~ msgid "Error"
-#~ msgstr "Fout"
-
-#~ msgid "Warning"
-#~ msgstr "Waarschuwing"
-
-#~ msgid "languages"
-#~ msgstr "talen"
-
-#~ msgid "menu"
-#~ msgstr "menu"
