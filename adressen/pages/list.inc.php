@@ -33,74 +33,39 @@ if (!empty($sql)) {
 	$erg = mysql_query($sql);
 
 	if (!empty($_GET['b'])) {
-		if ($_SESSION['f'] == 0) {
-			printf(
-				ngettext(
-					'The search for entries with last names starting with the letter %s yielded %d result:',
-					'The search for entries with last names starting with the letter %s yielded %d results:',
-					mysql_num_rows($erg)
-				),
-				'<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
-			);
-		}
-		else {
-			printf(
-				ngettext(
-					'The search for entries that %s knows with last names starting with the letter %s yielded %d result:',
-					'The search for entries that %s knows with last names starting with the letter %s yielded %d results:',
-					mysql_num_rows($erg)
-				),
-				'<em>'.$aktuell_name.'</em>', '<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
-			);
-		}
-		echo '<br /><br />';
+		printf(
+			_('Last names starting with %s:'),
+			'<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
+		);
 	}
 
 	else if ($_SESSION['g'] != 0) {
-		if ($_SESSION['f'] == 0) {
-			printf(
-				ngettext(
-					'The group %s contains %d entry:',
-					'The group %s contains %d entries:',
-					mysql_num_rows($erg)
-				),
-				'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
-			);
-		}
-		else {
-			printf(
-				ngettext(
-					'The group %s contains %d entry that %s knows:',
-					'The group %s contains %d entries that %s knows:',
-					mysql_num_rows($erg)
-				),
-				'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg), '<em>'.$aktuell_name.'</em>'
-			);
-		}
+		printf(
+			_('Group %s:'),
+			'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
+		);
 		echo '<br /><br />';
 	}
 
 	else if ($_SESSION['f'] != 0) {
 		printf(
-			ngettext(
-				'For %s, there is %d entry:',
-				'For %s, there are %d entries:',
-				mysql_num_rows($erg)
-			),
+			_('Member %s:'),
 			'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
 		);
 	}
 
+	echo '<br />';
 
-	else {
-		printf(
-			ngettext(
-				'There is %d entry:',
-				'There are %d entries:', mysql_num_rows($erg)
-			),
-			mysql_num_rows($erg)
-		);
-	}
+
+	printf(
+		ngettext(
+			'%d entry:',
+			'%d entries:', mysql_num_rows($erg)
+		),
+		mysql_num_rows($erg)
+	);
+
+	echo '<br /><br />';
 
 	$table = new Table($erg, $from_with_get);
 	echo $table->html();
@@ -125,7 +90,7 @@ if (empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f'])) {
 	echo '<a href="export/vcard_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a VCard').'</a>';
 	echo '<br />';
 	echo '<a href="export/export812_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a LaTeX for day planner sheets').'</a>';
-	
+
 }
 
 if (!empty($emailadressen)) { 
