@@ -1,7 +1,7 @@
 <?PHP 
 // Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
-if ($_GET['fertig'] == 'ja') {
+if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 	$id = (int)$_POST['id'];
 
 	$tempname = $_FILES['file']['tmp_name']; 
