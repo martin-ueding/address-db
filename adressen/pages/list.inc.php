@@ -37,6 +37,7 @@ if (!empty($sql)) {
 			_('Last names starting with %s:'),
 			'<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
 		);
+		echo '<br />';
 	}
 
 	else if ($_SESSION['g'] != 0) {
@@ -44,7 +45,7 @@ if (!empty($sql)) {
 			_('Group %s:'),
 			'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
 		);
-		echo '<br /><br />';
+		echo '<br />';
 	}
 
 	else if ($_SESSION['f'] != 0) {
@@ -52,10 +53,8 @@ if (!empty($sql)) {
 			_('Member %s:'),
 			'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
 		);
+		echo '<br />';
 	}
-
-	echo '<br />';
-
 
 	printf(
 		ngettext(
