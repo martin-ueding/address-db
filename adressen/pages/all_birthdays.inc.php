@@ -12,9 +12,6 @@ $filter->add_where('geb_t != 0');
 $filter->add_where('geb_m != 0');
 	
 $sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_m, geb_t, nachname;';
-
-echo $sql;
-
 $erg = mysql_query($sql);
 
 $aktuell = 1;
