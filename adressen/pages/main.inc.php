@@ -36,16 +36,16 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo '<td>&nbsp;</td>';
 	echo '</tr>';
 }
-/* .Ende Geburtstage laufender Monat. */
+
 echo '<tr>';
 echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>';
 echo '</tr>';
-/* .. */
-/* .Daten kommender Monat holen und Anzeigearray erstellen. */
-if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_m='.((date("n")%12)+1).' && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_t';
-else
-	$sql = 'SELECT * FROM ad_per WHERE geb_m='.((date("n")%12)+1).' ORDER BY geb_t';
+
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+$filter->add_where('geb_m='.((date("n")%12)+1));
+
+$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
+
 $erg = mysql_query($sql);
 echo mysql_error();
 	
