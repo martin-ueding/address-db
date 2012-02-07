@@ -19,20 +19,21 @@ if (!isset($aktuell_name))
 		echo '<li><b>'._('mode').'</b></li>';
 
 		// find all get parameters which are not the mode or the fmg and put them into a string
-		$get_for_fmg_change = '';
-		foreach ($_GET as $key => $wert) {
-			if ($key != 'mode' && $key != 'f') {
-				$get_for_fmg_change .= '&'.$key.'='.$wert;
-			}
-		}
+		$request = new Request();
+		$request->set('mode', $mode);
+		$request->set('f', 0);
 
-		echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'" '.($_SESSION['f'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
+		echo '<li><a href="?'.$request->join().'" '.($_SESSION['f'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
 		echo NavHelper::spacer();
 
 		$sql = 'SELECT * FROM ad_fmg';
 		$erg = mysql_query($sql);
 		while ($l = mysql_fetch_assoc($erg)) {
-			echo '<li><a href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'" '.($_SESSION['f'] == $l['fmg_id'] ? 'class="active"' : '').'>'.$l['fmg'].'</a></li>';
+			$request = new Request();
+			$request->set('mode', $mode);
+			$request->set('f', $l['fmg_id']);
+
+			echo '<li><a href="index.php?'.$request->join().'" '.($_SESSION['f'] == $l['fmg_id'] ? 'class="active"' : '').'>'.$l['fmg'].'</a></li>';
 			if (isset($_SESSION['f']) && $l['fmg_id'] == $_SESSION['f'])
 				$aktuell_name = $l['fmg'];
 		}
