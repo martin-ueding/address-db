@@ -277,12 +277,8 @@ echo '<br /><br />';
 			<td><?PHP echo '<textarea name="pnotizen" rows="4" cols="30">'.(isset($person_loop['pnotizen']) ? $person_loop['pnotizen'] : null).'</textarea>'; ?></td>
 		</tr>
 	</table>
-
-
 	
 	<br />
-
-<br /><br />
 	
-<input class="rand" type="submit" name="knopf" value="<?PHP echo _('save'); ?>" />
+	<input class="rand" type="submit" name="knopf" value="<?PHP echo _('save'); ?>" />
 </form>
