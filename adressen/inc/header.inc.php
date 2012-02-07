@@ -1,6 +1,7 @@
 <?PHP
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
+require_once('../helper/Filter.php');
 require_once('../helper/NavHelper.php');
 require_once('../helper/Request.php');
 
@@ -116,10 +117,11 @@ echo NavHelper::nav_action_link('integrity_check', $mode, _('database check'));
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';
 foreach ($buchstaben as $b) {
-	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-		$sql = 'SELECT p_id FROM ad_per, ad_flinks WHERE nachname like "'.$b.'%" && person_lr=p_id && fmg_lr='.$_SESSION['f'].';';
-	else
-		$sql = 'SELECT p_id FROM ad_per WHERE nachname like "'.$b.'%";';
+	$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+	$filter->add_where('nachname like "'.$b.'%"');
+
+	$sql = 'SELECT p_id FROM ad_per '.$filter->join().' WHERE '.$filter->where().';';
+
 	$erg = mysql_query($sql);
 	if (mysql_num_rows($erg) > 0) {
 		echo '<a href="index.php?mode=list&b='.$b.'">';
