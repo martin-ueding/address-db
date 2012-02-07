@@ -60,17 +60,20 @@ if (!isset($aktuell_name))
 
 <div id="nav_actions">
 <ul>
-<li><a href="index.php?mode=main"><?PHP echo _('menu'); ?></a><!--<![endif]-->
-<li><a href="index.php?mode=list<?PHP if (isset($_SESSION['f'])) echo '&f='.$_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
-<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
-<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
-<li><a href="export/kitchen.php"><?PHP echo _('export LaTeX sheets'); ?></a></li>
-<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
-<li><a href="index.php?mode=no_association"><?PHP echo _('no association'); ?></a></li>
-<li><a href="index.php?mode=no_group"><?PHP echo _('no group'); ?></a></li>
-<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
-<li><a href="index.php?mode=no_birthday"><?PHP echo _('no birthday'); ?></a></li>
-<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
+<?php
+require_once('../helpers/NavHelper.php');
+echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
+echo NavHelper::nav_action_link('list', $mode, _('show entries'));
+echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
+echo NavHelper::nav_action_link('all_birthdays', $mode, _('birthday list'));
+echo '<li><a href="export/kitchen.php">'._('export LaTeX sheets').'</a></li>';
+echo NavHelper::nav_action_link('no_title', $mode, _('no form of address'));
+echo NavHelper::nav_action_link('no_association', $mode, _('no association'));
+echo NavHelper::nav_action_link('no_group', $mode, _('no group'));
+echo NavHelper::nav_action_link('no_email', $mode, _('no email address'));
+echo NavHelper::nav_action_link('no_birthday', $mode, _('no birthday'));
+echo NavHelper::nav_action_link('integrity_check', $mode, _('database check'));
+?>
 </ul>
 </div>
 
