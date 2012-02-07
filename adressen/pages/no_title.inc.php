@@ -1,13 +1,16 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helpers/Filter.php');
+
 echo '<h1>'._('entries without a form of address').'</h1>';
 $from_with_get = 'mode=no_title';
 
-if ($_SESSION['f'] != 0)
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE anrede_r=1 && person_lr=p_id && fmg_lr='.$_SESSION['f'].'';
-else
-	$sql = 'SELECT * FROM ad_per WHERE anrede_r=1';
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+$filter->add_where('anrede_r = 1');
+
+$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
+
 $erg = mysql_query($sql);
 $i = 0;
 while ($l = mysql_fetch_assoc($erg)) {
@@ -16,7 +19,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 /* Daten anzeigen */
 
-if (count($daten) > 0) {	
+if (isset($daten) && count($daten) > 0) {
 	echo '<table id="liste">';
 
 	foreach($daten as $zeile)
