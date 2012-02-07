@@ -50,7 +50,7 @@ SelectHelper::show_select_zahlen('geb_j', 0, date("Y")-100, date("Y"), false);
 <?PHP
 /* Beziehungen zu den Familienmitgliedern */
 $erg = Queries::select_alle_fmg();
-echo '<div class="box_596">';
+echo '<div>';
 	echo  _('Who knows this person?').'<br /><br />';
 	while ($l = mysql_fetch_assoc($erg))
 		{
@@ -59,7 +59,7 @@ echo '<div class="box_596">';
 		echo '</div>';
 		}
 echo '</div>';
-echo '<div class="box_596">';
+echo '<div>';
 	echo '<br /><br />';
 	/* Gruppen */
 	$erg = Queries::select_alle_gruppen();
