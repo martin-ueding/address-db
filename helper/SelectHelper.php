@@ -160,7 +160,7 @@ class SelectHelper {
 		echo '<nobr>';
 
 		echo '<input type="text" class="manual_area_code" name="'.$p.'vw_'.$typ.'_eingabe" value="'.($loop != null && isset($loop[$p.'vw_'.$typ.'_eingabe']) ? $loop[$p.'vw_'.$typ.'_eingabe'] : "").'" size="5" maxlength="20" />'; 
-		show_select_vorwahlen($p.'vw_'.$typ.'_id', ($loop != null ? $loop[$p.'vw_'.$typ.'_r'] : ""));
+		SelectHelper::show_select_vorwahlen($p.'vw_'.$typ.'_id', ($loop != null ? $loop[$p.'vw_'.$typ.'_r'] : ""));
 		echo '<input type="text" name="'.$p.'tel_'.$typ.'" value="'.($loop != null && isset ($loop[$p.'tel_'.$typ]) ? $loop[$p.'tel_'.$typ] : "").'" size="25" maxlength="100" />';
 		echo '</nobr>';
 

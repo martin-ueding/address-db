@@ -123,23 +123,23 @@ echo '</div>';
 	<table>
 		<tr>
 			<td><?PHP echo _('private'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('privat', true) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('privat', true) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('work'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('arbeit', true) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('arbeit', true) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('mobile'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('mobil', true) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('mobil', true) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('fax'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('fax', true) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('fax', true) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('other'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('aux', true) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('aux', true) ?></td>
 		</tr>
 	</table>
 		
@@ -170,23 +170,23 @@ echo '</div>';
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td><?PHP echo _('private'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('privat', false) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('privat', false) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('work'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('arbeit', false) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('arbeit', false) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('mobile'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('mobil', false) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('mobil', false) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('fax'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('fax', false) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('fax', false) ?></td>
 		</tr>
 		<tr>
 			<td><?PHP echo _('other'); ?>:</td>
-			<td><?PHP show_telefon_eingabe('aux', false) ?></td>
+			<td><?PHP SelectHelper::show_telefon_eingabe('aux', false) ?></td>
 		</tr>
 		
 		<tr><td colspan="2">&nbsp;</td></tr>
