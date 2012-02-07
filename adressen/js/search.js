@@ -8,7 +8,7 @@ function handleSearchKeyUp() {
 		// add some division after the search box to display the results
 		// but only add, if not already there
 		if ($('#searchhints').size() == 0) {
-			$('#suche').parent().after('<div id="searchhints"><img src="gfx/spinner.gif" /></div>');
+			$('#suche').parent().after('<div id="searchhints"></div>');
 			var offset = $('#suche').offset();
 			offset.top += $('#suche').outerHeight(true);
 			$('#searchhints').offset(offset);
