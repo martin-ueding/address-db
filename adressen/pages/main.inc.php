@@ -3,7 +3,6 @@
 
 require_once('../helper/Filter.php');
 
-
 echo '<table id="geburtstag">';
 echo '<tr>';
 echo '<td colspan="4"><b>'._('birthdays').'</b></td>';
