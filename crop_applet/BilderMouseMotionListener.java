@@ -5,7 +5,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
 public class BilderMouseMotionListener implements MouseMotionListener {
-
 	Point pos;
 	int ecke = 0;
 
@@ -96,12 +95,7 @@ public class BilderMouseMotionListener implements MouseMotionListener {
 			else if (ecke == 8) {
 				BildAusschnitt.bPanel.rechts += d.getPoint().x - pos.x;
 			}
-
-
 		}
-
-
-
 
 		else {
 			BildAusschnitt.bPanel.oben += d.getPoint().y - pos.y;
@@ -110,9 +104,6 @@ public class BilderMouseMotionListener implements MouseMotionListener {
 			BildAusschnitt.bPanel.links += d.getPoint().x - pos.x;
 			BildAusschnitt.bPanel.rechts += d.getPoint().x - pos.x;
 		}
-
-
-
 
 		if (BildAusschnitt.bPanel.oben < 0) {
 			BildAusschnitt.bPanel.unten -= BildAusschnitt.bPanel.oben;
@@ -133,9 +124,6 @@ public class BilderMouseMotionListener implements MouseMotionListener {
 			BildAusschnitt.bPanel.rechts -= BildAusschnitt.bPanel.rechts - BildAusschnitt.bild.getWidth(BildAusschnitt.bPanel);
 		}
 
-
-
-
 		pos = d.getPoint();
 
 		BildAusschnitt.bPanel.repaint();
@@ -144,12 +132,7 @@ public class BilderMouseMotionListener implements MouseMotionListener {
 	}
 
 	public void mouseMoved(MouseEvent m) {
-		// TODO Auto-generated method stub
-
 		pos = m.getPoint();
-
 		ecke = 0;
-
 	}
-
 }
