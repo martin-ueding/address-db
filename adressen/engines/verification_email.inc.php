@@ -10,11 +10,11 @@ if ($_GET['sicher'] == 'ja') {
 		putenv('LC_MESSAGES='.$_GET['send_lang']);
 		setlocale(LC_MESSAGES, $_GET['send_lang']);
 
-		
+
 
 		$mailtext .= '<style type="text/css">';
 		$file = file('gfx/main.css');
-		foreach ($file as $zeile) 
+		foreach ($file as $zeile)
 			$mailtext .= $zeile;
 		$mailtext .= '</style>';
 
@@ -66,7 +66,7 @@ if ($_GET['sicher'] == 'ja') {
 		}
 		echo '</td>';
 		echo '</tr>';
-		if (!empty($person_loop['geb_t'])) {	
+		if (!empty($person_loop['geb_t'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('birthday').':</td>';
 			echo '<td>'.$person_loop['geb_t'].'.'.$person_loop['geb_m'].'.';
@@ -95,31 +95,31 @@ if ($_GET['sicher'] == 'ja') {
 			echo '</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['ftel_privat'])) {		
+		if (!empty($person_loop['ftel_privat'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('telephone private').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['fvw_privat_r']).'-'.$person_loop['ftel_privat'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['ftel_arbeit'])) {	
+		if (!empty($person_loop['ftel_arbeit'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('telephone work').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['fvw_arbeit_r']).'-'.$person_loop['ftel_arbeit'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['ftel_mobil'])) {	
+		if (!empty($person_loop['ftel_mobil'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('telephone mobile').': <i>'.Queries::handybetreiber(Queries::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['ftel_fax'])) {		
+		if (!empty($person_loop['ftel_fax'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('fax').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['fvw_fax_r']).'-'.$person_loop['ftel_fax'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['ftel_aux'])) {	
+		if (!empty($person_loop['ftel_aux'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('telephone other').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['fvw_aux_r']).'-'.$person_loop['ftel_aux'].'</td>';
@@ -131,44 +131,44 @@ if ($_GET['sicher'] == 'ja') {
 		echo '&nbsp;&nbsp;'._('telephone').':';
 		echo '</div>';
 		echo '<table class="display_person">';
-		if (!empty($person_loop['tel_privat'])) {		
+		if (!empty($person_loop['tel_privat'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('private').':</td>';
 			echo '<td class="rechts">'.Queries::select_vw_id($person_loop['vw_privat_r']).'-'.$person_loop['tel_privat'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['tel_arbeit'])) {	
+		if (!empty($person_loop['tel_arbeit'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('work').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['vw_arbeit_r']).'-'.$person_loop['tel_arbeit'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['tel_mobil'])) {	
+		if (!empty($person_loop['tel_mobil'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('mobile').': <i>'.Queries::handybetreiber(Queries::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['vw_mobil_r']).'-'.$person_loop['tel_mobil'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['tel_fax'])) {		
+		if (!empty($person_loop['tel_fax'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('fax').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['vw_fax_r']).'-'.$person_loop['tel_fax'].'</td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['tel_aux'])) {	
+		if (!empty($person_loop['tel_aux'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('other').':</td>';
 			echo '<td>'.Queries::select_vw_id($person_loop['vw_aux_r']).'-'.$person_loop['tel_aux'].'</td>';
 			echo '</tr>';
 		}
 		echo '</table>';
-				
+
 
 		echo '<div class="pers_titel">';
 		echo '&nbsp;&nbsp;'._('internet').':';
 		echo '</div>';
 		echo '<table class="display_person">';
-		if (!empty($person_loop['email_privat'])) {	
+		if (!empty($person_loop['email_privat'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('email private').':</td>';
 			echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
@@ -176,7 +176,7 @@ if ($_GET['sicher'] == 'ja') {
 			echo '</tr>';
 			$emailadresse_vorhanden = true;
 		}
-		if (!empty($person_loop['email_arbeit'])) {	
+		if (!empty($person_loop['email_arbeit'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('email work').':</td>';
 			echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
@@ -184,7 +184,7 @@ if ($_GET['sicher'] == 'ja') {
 			echo '</tr>';
 			$emailadresse_vorhanden = true;
 		}
-		if (!empty($person_loop['email_aux'])) {	
+		if (!empty($person_loop['email_aux'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('email other').':</td>';
 			echo '<td class="icon"><img src="gfx/10/email10.png" width="10" height="10" /></td>';
@@ -192,68 +192,68 @@ if ($_GET['sicher'] == 'ja') {
 			echo '</tr>';
 			$emailadresse_vorhanden = true;
 		}
-		if (!empty($person_loop['hp1'])) {	
+		if (!empty($person_loop['hp1'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('homepage 1').':</td>';
 			echo '<td class="icon"><img src="gfx/10/www10.png" width="10" height="10" /></td>';
 			echo '<td><a href="http://'.$person_loop['hp1'].'" target="_blank">'.$person_loop['hp1'].'</a></td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['hp2'])) {	
+		if (!empty($person_loop['hp2'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('homepage 2').':</td>';
 			echo '<td class="icon"><img src="gfx/10/www10.png" width="10" height="10" /></td>';
 			echo '<td><a href="http://'.$person_loop['hp2'].'" target="_blank">'.$person_loop['hp2'].'</a></td>';
 			echo '</tr>';
 		}
-				
 
-		if (!empty($person_loop['chat_aim'])) {	
+
+		if (!empty($person_loop['chat_aim'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('chat AIM').':</td>';
 			echo '<td class="icon"><img src="gfx/10/aim10.png" width="10" height="10" /></td>';
 			echo '<td><a href="AIM://'.$person_loop['chat_aim'].'">'.$person_loop['chat_aim'].'</a></td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['chat_msn'])) {	
+		if (!empty($person_loop['chat_msn'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('chat MSN').':</td>';
 			echo '<td class="icon"><img src="gfx/10/msn10.png" width="10" height="10" /></td>';
 			echo '<td><a href="MSN://'.$person_loop['chat_msn'].'">'.$person_loop['chat_msn'].'</a></td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['chat_icq'])) {	
+		if (!empty($person_loop['chat_icq'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('chat ICQ').':</td>';
 			echo '<td class="icon"><img src="gfx/10/icq10.png" width="10" height="10" /></td>';
 			echo '<td><a href="ICQ://'.$person_loop['chat_icq'].'">#'.$person_loop['chat_icq'].'</a> &nbsp; <a href="http://people.icq.com/'.$person_loop['chat_icq'].'" target="_blank">&raquo; '._('profile page').'</a></td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['chat_yim'])) {	
+		if (!empty($person_loop['chat_yim'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('chat Yahoo').':</td>';
 			echo '<td class="icon"><img src="gfx/10/yim10.png" width="10" height="10" /></td>';
 			echo '<td><a href="Yahoo://'.$person_loop['chat_yim'].'">'.$person_loop['chat_yim'].'</a></td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['chat_skype'])) {	
+		if (!empty($person_loop['chat_skype'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('chat Skype').':</td>';
 			echo '<td class="icon"><img src="gfx/10/skype10.png" width="10" height="10" /></td>';
 			echo '<td><a href="Callto://'.$person_loop['chat_skype'].'">'.$person_loop['chat_skype'].'</a></td>';
 			echo '</tr>';
 		}
-		if (!empty($person_loop['chat_aux'])) {	
+		if (!empty($person_loop['chat_aux'])) {
 			echo '<tr>';
 			echo '<td class="links">'._('chat Jabber/XMPP').':</td>';
 			echo '<td class="icon">&nbsp;</td>';
 			echo '<td>'.$person_loop['chat_aux'].'</td>';
 			echo '</tr>';
 		}
-				
-				
+
+
 		echo '</table>';
-		
+
 		$mailtext .= ob_get_contents();
 		ob_end_clean();
 
@@ -279,17 +279,17 @@ if ($_GET['sicher'] == 'ja') {
 		require($path_to_phpmailer);
 
 		$mail = new PHPMailer();
-		
+
 		$mail->From = $admin_email;
 		$mail->FromName = $admin_name;
 		$mail->AddAddress($email_an, $person_loop['vorname'].' '.$person_loop['nachname']);
-		
+
 		$mail->WordWrap = 70;
 		$mail->IsHTML(true);
-		
+
 		$mail->Subject = _('Please check your data');
 		$mail->Body    = $mailtext;
-		
+
 		if($mail->Send()) {
 			$msgs[] = _('The verification email was sent.');
 		}

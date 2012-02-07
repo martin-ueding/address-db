@@ -26,7 +26,7 @@ $haushalt = 1;
 /* Wenn eine neue Gruppe eingetragen wurde, wird diese jetzt schon in die
  * Datenbank aufgenommen und steht danach als Haken bereit.
  */
- 
+
 if (!empty($_POST['neue_gruppe'])) {
 	$sql = 'INSERT INTO ad_gruppen SET gruppe="'.$_POST['neue_gruppe'].'"';
 	mysql_query($sql);
@@ -135,13 +135,13 @@ if ($adresswahl == 'manuell') {
 	/* PLZ */
 	if (!empty($plz)) {
 		$erg = Queries::select_plzid_plz($plz);
-	
+
 		if (mysql_num_rows($erg) == 0)
 			$plz_id = Queries::insert_plz($plz);
-	
+
 		else if ($l = mysql_fetch_assoc($erg))
 			$plz_id = $l['plz_id'];
-	
+
 		$sql_ad .= ', plz_r='.$plz_id;
 	}
 	else
@@ -151,13 +151,13 @@ if ($adresswahl == 'manuell') {
 	/* Ort */
 	if (!empty($ort)) {
 		$erg = Queries::select_ortid_ort($ort);
-	
+
 		if (mysql_num_rows($erg) == 0)
 			$ort_id = Queries::insert_ort($ort);
-	
+
 		else if ($l = mysql_fetch_assoc($erg))
 			$ort_id = $l['o_id'];
-	
+
 		$sql_ad .= ', ort_r='.$ort_id;
 	}
 	else
@@ -168,14 +168,14 @@ if ($adresswahl == 'manuell') {
 	/* Land */
 	if (!empty($land)) {
 		$erg = Queries::select_landid_land($land);
-	
+
 		if (mysql_num_rows($erg) == 0)
 			$land_id = Queries::insert_land($land);
-	
-	
+
+
 		else if ($l = mysql_fetch_assoc($erg))
 			$land_id = $l['l_id'];
-		
+
 		$sql_ad .= ', land_r='.$land_id.'';
 	}
 	else
@@ -193,12 +193,12 @@ if ($adresswahl == 'manuell') {
 	$sql_ad .= ', fvw_mobil_r='.Queries::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
 	$sql_ad .= ', fvw_fax_r='.Queries::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
 	$sql_ad .= ', fvw_aux_r='.Queries::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
-	
+
 
 	mysql_query($sql_ad);
 	echo mysql_error();
 	$sql .= ', adresse_r='.mysql_insert_id();
-	
+
 }
 else if ($adresse_r != 0) {
 	$sql .= ', adresse_r='.$adresse_r;

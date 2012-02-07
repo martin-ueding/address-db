@@ -26,7 +26,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo '<span class="graytext">'.$l['vorname'].' '.$l['nachname'].'</span>';
 	else
 		echo $l['vorname'].' '.$l['nachname'];
-	
+
 	echo '</a> </td>';
 	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
 	if ($l['geb_j'] > 1500)
@@ -47,12 +47,12 @@ $sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDE
 
 $erg = mysql_query($sql);
 echo mysql_error();
-	
+
 while ($l = mysql_fetch_assoc($erg)) {
 	echo '<tr class="data">';
 	echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a> </td>';
 	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
-	
+
 	echo '<td>';
 	if ($l['geb_j'] > 1500) {
 		echo '(';
@@ -64,7 +64,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	}
 	else
 		echo '&nbsp;';
-	
+
 	echo '</td>';
 	echo '</tr>';
 }

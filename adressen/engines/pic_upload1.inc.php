@@ -1,22 +1,22 @@
-<?php 
+<?php
 // Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 	$id = (int)$_POST['id'];
 
-	$tempname = $_FILES['file']['tmp_name']; 
-	$name = $_FILES['file']['name'];	
+	$tempname = $_FILES['file']['tmp_name'];
+	$name = $_FILES['file']['name'];
 
-	$type = $_FILES['file']['type']; 
-	$size = $_FILES['file']['size']; 
+	$type = $_FILES['file']['type'];
+	$size = $_FILES['file']['size'];
 
 
-	if($size > "2000000") { 
+	if($size > "2000000") {
 		$err[] = _('The file that you want to upload is too big!').'<br />'.
 			_('Maximum file size is 2 MB!');
-	} 
+	}
 
-	if(empty($err)) { 
+	if(empty($err)) {
 		if ($_GET['fertig'] == 'ja') {
 			$bilddaten = getimagesize($tempname);
 
@@ -30,11 +30,11 @@ if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 			}
 		}
 	}
-		
-	else { 
+
+	else {
 		foreach($err as $error)
 		echo "$error<br>";
-	} 
+	}
 }
-		
+
 ?>

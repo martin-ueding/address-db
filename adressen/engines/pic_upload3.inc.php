@@ -38,7 +38,7 @@ if (file_exists($bildpfad)) {
 
 	// crop and resize the uploaded image the way the Java applet told
 	imagecopyresampled($bildneu, $bildalt, 0, 0, $x1, $y1, $tar_breite,
-			$tar_hoehe, $auswahl_breite, $auswahl_hoehe);	
+			$tar_hoehe, $auswahl_breite, $auswahl_hoehe);
 
 
 	// save the new, cropped picture and delete the old one

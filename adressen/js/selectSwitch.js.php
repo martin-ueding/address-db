@@ -13,12 +13,12 @@ echo 'function initSwitchFields() {';
 	echo '$("img.switch_fields").click(function () {';
 		echo 'if ($(this).parent().children("select").css("display") == "none") {';
 			echo '$(this).parent().children("input.manual_area_code").hide(100, function() {$(this).parent().children("select").show(100);}).val("");';
-			
-			
+
+
 		echo '}';
 		echo 'else {';
 			echo '$(this).parent().children("select").hide(100, function () {$(this).parent().children("input.manual_area_code").show(100);}).val("1");';
-			
+
 		echo '}';
 		echo '});';
 echo '}';

@@ -7,7 +7,7 @@ include('_config.inc.php');
 $tables = mysql_query("SHOW TABLES FROM ".$db);
 while ($cells = mysql_fetch_array($tables)) {
 	$table = $cells[0];
-	echo "DROP TABLE IF EXISTS `$table`;\n"; 
+	echo "DROP TABLE IF EXISTS `$table`;\n";
 	$res = mysql_query("SHOW CREATE TABLE `$table`");
 	if ($res) {
 		$create = mysql_fetch_array($res);

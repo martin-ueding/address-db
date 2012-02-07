@@ -1,4 +1,4 @@
-<?php	
+<?php
 // Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('../helper/Filter.php');
@@ -10,7 +10,7 @@ $monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _
 $filter = new Filter($_SESSION['f'], $_SESSION['g']);
 $filter->add_where('geb_t != 0');
 $filter->add_where('geb_m != 0');
-	
+
 $sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_m, geb_t, nachname;';
 $erg = mysql_query($sql);
 
@@ -54,12 +54,12 @@ foreach ($birthdays as $month => $list) {
 
 		echo '<br />';
 	}
-	
+
 	echo '</div>';
 }
 
 if (!$showed_anything) {
 	echo _("Sorry, nobody's birthday is known.");
 }
-	
+
 ?>

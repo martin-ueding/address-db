@@ -166,7 +166,7 @@ if (!isset($page_title)) {
 		<script src="js/selectSwitch.js.php"></script>
 		<script src="js/slidedown.js"></script>
 		<script src="js/switch.js"></script>
-		
+
 		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
 
 		<title><?php echo $page_title; ?></title>
@@ -189,7 +189,7 @@ if (!isset($page_title)) {
 		}
 		echo '</ul>';
 		echo '</div>';
-	}	
+	}
 
 
 	echo '<div id="content">';

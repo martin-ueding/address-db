@@ -3,7 +3,7 @@
 
 <?php echo _('only JPEG'); ?>
 
-<form enctype="multipart/form-data" action="index.php?mode=pic_upload1&fertig=ja" method="post"> 
+<form enctype="multipart/form-data" action="index.php?mode=pic_upload1&fertig=ja" method="post">
 <input type="file" name="file">
 <input type="submit" value="<?php echo _('upload'); ?>">
 <?php

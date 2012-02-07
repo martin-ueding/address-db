@@ -92,7 +92,7 @@ if (empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f'])) {
 
 }
 
-if (!empty($emailadressen)) { 
+if (!empty($emailadressen)) {
 	echo '<br /><br />';
 	echo '<a href="mailto:?bcc='.implode(',', $emailadressen).'">'._('send an email to everybody in this list').'</a>';
 }

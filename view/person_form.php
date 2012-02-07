@@ -84,10 +84,10 @@ echo '<div class="box_596">';
 echo '</div>';
 	echo '&nbsp;<br style="clear: left;" /><br /><input class="rand" type="text" name="neue_gruppe" size="30" maxlength="100" /> '._('create new group');
 	?>
-	
-	
+
+
 	<h2><?php echo sprintf(_('part %d of %d'), 2, 3).' &ndash; '._('address'); ?></h2>
-	
+
 	<?php
 	if (isset($person_loop['adresse_r'])) {
 		if (Queries::adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
@@ -126,9 +126,9 @@ echo '</div>';
 			echo ' selected';
 
 		echo '>'.$l['plz'].' '.$l['ortsname'].' - '.$l['strasse'].'</option>';
-	} 
+	}
 	echo '</select>';
-	
+
 echo '<br /><br />';
 
 	echo '<br /><input type="checkbox" id="adresswahl" name="adresswahl" value="manuell"';
@@ -143,12 +143,12 @@ echo '<br /><br />';
 	<div id="manuelle_eingabe" style="width: 600px; padding: 1px; border: 1px dotted gray; display: <?php if($adresswahl == 'manuell'){echo 'block';} else {echo 'none';}?>;">
 
 	<table>
-		
+
 	<tr>
 		<td><?php echo _('street'); ?>:</td>
 		<td><?php echo '<input type="text" name="strasse" value="'.(isset($person_loop['strasse']) ? $person_loop['strasse'] : null).'" size="30" maxlength="100" />'; ?></td>
 	</tr>
-	
+
 	<tr>
 		<td><?php echo _('postral code, city and country'); ?>:</td>
 		<td><?php
@@ -166,7 +166,7 @@ echo '<br /><br />';
 		echo '</div>';
 		?></td>
 	</tr>
-	
+
 	</table>
 
 	<br /><br />
@@ -195,11 +195,11 @@ echo '<br /><br />';
 			<td><?php SelectHelper::show_telefon_eingabe('aux', true, $person_loop) ?></td>
 		</tr>
 	</table>
-		
+
 	</div>
 
 
-	
+
 	<br /><br />
 		<h2><?php echo sprintf(_('part %d of %d'), 3, 3).' &ndash; '._('personal contact information'); ?></h2>
 
@@ -245,7 +245,7 @@ echo '<br /><br />';
 			<td><?php echo _('other'); ?>:</td>
 			<td><?php SelectHelper::show_telefon_eingabe('aux', false, $person_loop) ?></td>
 		</tr>
-		
+
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td><?php echo _('chat AIM'); ?>:</td>
@@ -277,8 +277,8 @@ echo '<br /><br />';
 			<td><?php echo '<textarea name="pnotizen" rows="4" cols="30">'.(isset($person_loop['pnotizen']) ? $person_loop['pnotizen'] : null).'</textarea>'; ?></td>
 		</tr>
 	</table>
-	
+
 	<br />
-	
+
 	<input class="rand" type="submit" name="knopf" value="<?php echo _('save'); ?>" />
 </form>

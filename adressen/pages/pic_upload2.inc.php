@@ -6,7 +6,7 @@ $dateiname = '_mugshots/temp'.$id.'.jpg';
 if (file_exists($dateiname)) {
 
 	$bilddaten = getimagesize($dateiname);
-	
+
 	echo '<applet code="BildAusschnitt" width="'.($bilddaten[0]).'" height="'.($bilddaten[1]+30).'">';
 	echo '<param name="bildurl" value="'.$dateiname.'"></param>';
 	echo '<param name="archive" value="ba.jar"></param>';

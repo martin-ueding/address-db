@@ -99,7 +99,7 @@ $pnotizen = $_POST['pnotizen'];
 /* Wenn eine neue Gruppe eingetragen wurde, wird diese jetzt schon in die
  * Datenbank aufgenommen und steht danach als Haken bereit.
  */
- 
+
 if (!empty($_POST['neue_gruppe'])) {
 	$sql = 'INSERT INTO ad_gruppen SET gruppe="'.$_POST['neue_gruppe'].'"';
 	mysql_query($sql);
@@ -129,80 +129,80 @@ $sql .= ', geb_j='.$geb_j;
 
 /* Wenn die Adresse nur f&uuml;r einen ge&auml;ndert wird */
 if ($werziehtum == 'einer') {
-	
+
 	/* Wenn die Adresse manuell eingegeben wurde */
 	if ($adresswahl == 'manuell') {
 		$sql_ad = 'INSERT INTO ad_adressen SET';
 		$sql_ad .= ' strasse="'.$strasse.'"';
-	
-	
+
+
 		/* PLZ */
 		if (!empty($plz)) {
 			$erg = Queries::select_plzid_plz($plz);
-		
+
 			if (mysql_num_rows($erg) == 0)
 				$plz_id = Queries::insert_plz($plz);
-		
+
 			else if ($l = mysql_fetch_assoc($erg))
 				$plz_id = $l['plz_id'];
-		
+
 			$sql_ad .= ', plz_r='.$plz_id;
 		}
 		else
 			$sql_ad .= ', plz_r='.$plz_r;
-	
-	
+
+
 		/* Ort */
 		if (!empty($ort)) {
 			$erg = Queries::select_ortid_ort($ort);
-		
+
 			if (mysql_num_rows($erg) == 0)
 				$ort_id = Queries::insert_ort($ort);
-		
+
 			else if ($l = mysql_fetch_assoc($erg))
 				$ort_id = $l['o_id'];
-		
+
 			$sql_ad .= ', ort_r='.$ort_id;
 		}
 		else
 			$sql_ad .=', ort_r='.$ort_r;
-	
-	
-	
+
+
+
 		/* Land */
 		if (!empty($land)) {
 			$erg = Queries::select_landid_land($land);
-		
+
 			if (mysql_num_rows($erg) == 0)
 				$land_id = Queries::insert_land($land);
-		
-		
+
+
 			else if ($l = mysql_fetch_assoc($erg))
 				$land_id = $l['l_id'];
-			
+
 			$sql_ad .= ', land_r='.$land_id.'';
 		}
 		else
 			$sql_ad .= ', land_r='.$land_r;
-	
-	
+
+
 		$sql_ad .= ', ftel_privat="'.$ftel_privat.'"';
 		$sql_ad .= ', ftel_arbeit="'.$ftel_arbeit.'"';
 		$sql_ad .= ', ftel_mobil="'.$ftel_mobil.'"';
 		$sql_ad .= ', ftel_fax="'.$ftel_fax.'"';
 		$sql_ad .= ', ftel_aux="'.$ftel_aux.'"';
-	
+
 		$sql_ad .= ', fvw_privat_r='.Queries::get_vwid($fvw_privat_eingabe, $fvw_privat_id);
 		$sql_ad .= ', fvw_arbeit_r='.Queries::get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
 		$sql_ad .= ', fvw_mobil_r='.Queries::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
 		$sql_ad .= ', fvw_fax_r='.Queries::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
 		$sql_ad .= ', fvw_aux_r='.Queries::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
-		
-	
+
+
 		mysql_query($sql_ad);
 		$sql .= ', adresse_r='.mysql_insert_id();
 	}
-	
+
 	/* Wenn eine Adresse aus dem Select ausgesucht wordern ist */
 	else if ($adresse_r != 0){
 		$sql .= ', adresse_r='.$adresse_r;
@@ -211,78 +211,78 @@ if ($werziehtum == 'einer') {
 
 /* Wenn die Adresse f&uuml;r alle ge&auml;ndert wird */
 else if ($werziehtum == 'alle') {
-	
+
 	/* Wenn die Adresse manuell eingegeben wurde */
 	if ($adresswahl == 'manuell') {
 		/* Wenn der zuvor ausgesuchte Haushalt 1 war, dann wir ein neuer anlegelgt. */
 		if ($haushalt == 1) {
 			$sql_ad = 'INSERT INTO ad_adressen SET';
 			$sql_ad .= ' strasse="'.$strasse.'"';
-		
-		
+
+
 			/* PLZ */
 			if (!empty($plz)) {
 				$erg = Queries::select_plzid_plz($plz);
-			
+
 				if (mysql_num_rows($erg) == 0)
 					$plz_id = Queries::insert_plz($plz);
-			
+
 				else if ($l = mysql_fetch_assoc($erg))
 					$plz_id = $l['plz_id'];
-			
+
 				$sql_ad .= ', plz_r='.$plz_id;
 			}
 			else
 				$sql_ad .= ', plz_r='.$plz_r;
-		
-		
+
+
 			/* Ort */
 			if (!empty($ort)) {
 				$erg = Queries::select_ortid_ort($ort);
-			
+
 				if (mysql_num_rows($erg) == 0)
 					$ort_id = Queries::insert_ort($ort);
-			
+
 				else if ($l = mysql_fetch_assoc($erg))
 					$ort_id = $l['o_id'];
-			
+
 				$sql_ad .= ', ort_r='.$ort_id;
 			}
 			else
 				$sql_ad .=', ort_r='.$ort_r;
-		
-		
-		
+
+
+
 			/* Land */
 			if (!empty($land)) {
 				$erg = Queries::select_landid_land($land);
-			
+
 				if (mysql_num_rows($erg) == 0)
 					$land_id = Queries::insert_land($land);
-			
-			
+
+
 				else if ($l = mysql_fetch_assoc($erg))
 					$land_id = $l['l_id'];
-				
+
 				$sql_ad .= ', land_r='.$land_id.'';
 			}
 			else
 				$sql_ad .= ', land_r='.$land_r;
-		
-		
+
+
 			$sql_ad .= ', ftel_privat="'.$ftel_privat.'"';
 			$sql_ad .= ', ftel_arbeit="'.$ftel_arbeit.'"';
 			$sql_ad .= ', ftel_mobil="'.$ftel_mobil.'"';
 			$sql_ad .= ', ftel_fax="'.$ftel_fax.'"';
 			$sql_ad .= ', ftel_aux="'.$ftel_aux.'"';
-		
+
 			$sql_ad .= ', fvw_privat_r='.Queries::get_vwid($fvw_privat_eingabe, $fvw_privat_id);
 			$sql_ad .= ', fvw_arbeit_r='.Queries::get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
 			$sql_ad .= ', fvw_mobil_r='.Queries::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
 			$sql_ad .= ', fvw_fax_r='.Queries::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
 			$sql_ad .= ', fvw_aux_r='.Queries::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
-			
-		
+
+
 			mysql_query($sql_ad);
 
 			$sql_ad = 'UPDATE ad_per SET adresse_r='.mysql_insert_id().' WHERE adresse_r='.$haushalt.';';
@@ -290,79 +290,79 @@ else if ($werziehtum == 'alle') {
 			echo mysql_error();
 		}
 
-		
+
 		else {
 			$sql_ad = 'UPDATE ad_adressen SET strasse="'.$strasse.'"';
-	
-		
+
+
 			/* PLZ */
 			if (!empty($plz)) {
 				$erg = Queries::select_plzid_plz($plz);
-			
+
 				if (mysql_num_rows($erg) == 0)
 					$plz_id = Queries::insert_plz($plz);
-			
+
 				else if ($l = mysql_fetch_assoc($erg))
 					$plz_id = $l['plz_id'];
-			
+
 				$sql_ad .= ', plz_r='.$plz_id;
 			}
 			else
 				$sql_ad .= ', plz_r='.$plz_r;
-		
-		
+
+
 			/* Ort */
 			if (!empty($ort)) {
 				$erg = Queries::select_ortid_ort($ort);
-			
+
 				if (mysql_num_rows($erg) == 0)
 					$ort_id = Queries::insert_ort($ort);
-			
+
 				else if ($l = mysql_fetch_assoc($erg))
 					$ort_id = $l['o_id'];
-			
+
 				$sql_ad .= ', ort_r='.$ort_id;
 			}
 			else
 				$sql_ad .=', ort_r='.$ort_r;
-		
-		
-		
+
+
+
 			/* Land */
 			if (!empty($land)) {
 				$erg = Queries::select_landid_land($land);
-			
+
 				if (mysql_num_rows($erg) == 0)
 					$land_id = Queries::insert_land($land);
-			
-			
+
+
 				else if ($l = mysql_fetch_assoc($erg))
 					$land_id = $l['l_id'];
-				
+
 				$sql_ad .= ', land_r='.$land_id.'';
 			}
 			else
 				$sql_ad .= ', land_r='.$land_r;
-		
-		
+
+
 			$sql_ad .= ', ftel_privat="'.$ftel_privat.'"';
 			$sql_ad .= ', ftel_arbeit="'.$ftel_arbeit.'"';
 			$sql_ad .= ', ftel_mobil="'.$ftel_mobil.'"';
 			$sql_ad .= ', ftel_fax="'.$ftel_fax.'"';
 			$sql_ad .= ', ftel_aux="'.$ftel_aux.'"';
-		
+
 			$sql_ad .= ', fvw_privat_r='.Queries::get_vwid($fvw_privat_eingabe, $fvw_privat_id);
 			$sql_ad .= ', fvw_arbeit_r='.Queries::get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
 			$sql_ad .= ', fvw_mobil_r='.Queries::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
 			$sql_ad .= ', fvw_fax_r='.Queries::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
 			$sql_ad .= ', fvw_aux_r='.Queries::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
-			
+
 			$sql_ad .= ' WHERE ad_id='.$adresse_r.';';
-		
+
 			mysql_query($sql_ad);
 		}
 	}
-	
+
 	/* Wenn eine Adresse aus dem Select ausgesucht wordern ist */
 	else if ($adresse_r > 0) {
 		if (Queries::adresse_mehrfach_benutzt($adresse_r)) {
