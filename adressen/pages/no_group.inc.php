@@ -1,12 +1,15 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
+
+require_once('../helpers/Filter.php');
 
 echo '<h1>'._('entries without a group').'</h1>';
 $from_with_get = 'mode=no_group';
 
-$titel = $_GET["titel"];
+$filter = new Filter($_SESSION['f'], 0);
+$filter->add_where('ad_glinks.person_lr IS NULL ORDER');
 
-$sql = 'SELECT * FROM ad_per LEFT JOIN ad_glinks ON person_lr=gl_id WHERE person_lr IS NULL ORDER BY nachname, vorname;';
+$sql = 'SELECT * FROM ad_per LEFT JOIN ad_glinks ON person_lr=gl_id '.$filter->join().' WHERE '.$filter->where().' BY nachname, vorname;';
 
 $erg = mysql_query($sql);
 $i = 0;
@@ -16,7 +19,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 /* Daten anzeigen */
 
-if (count($daten) > 0) {	
+if (isset($daten) && count($daten) > 0) {
 	echo '<table id="liste">';
 
 	foreach($daten as $zeile)
