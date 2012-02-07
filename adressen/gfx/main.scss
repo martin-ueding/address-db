@@ -251,7 +251,7 @@ ul {
 
 #messages {
 	background-color: #b3e6ff;
-	border: 1px solid #66ccff;
+	@include border_3d;
 	margin: 10px 20px 10px 0px;
 	padding: 10px;
 	width: 800px;
@@ -310,7 +310,7 @@ ul {
 
 div.geb_monat_kasten {
 	background-color: rgb(230,230,230);
-	border: 1px solid #aaa;
+	@include border_3d;
 	float: left;
 	height: 350px;
 	margin: 10px 0px 10px 20px;;
@@ -412,7 +412,7 @@ td {
 }
 
 #pers_bild {
-	border: 1px solid #ccc;
+	@include border_3d;
 	float: right;
 	margin: 0 50px 0 0;
 }
