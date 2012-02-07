@@ -5,15 +5,15 @@ if (session_id() == "")
 	session_start();
 
 if (!empty($_GET['lang'])) {
-	$_SESSION['lang_session'] = $_GET['lang'];
+	$_SESSION['lang'] = $_GET['lang'];
 	$lang = $_GET['lang'];
 }
-else if (empty($_SESSION['lang_session'])) {
-	$_SESSION['lang_session'] = 'de_DE';
+else if (empty($_SESSION['lang'])) {
+	$_SESSION['lang'] = 'de_DE';
 	$lang = 'de_DE';
 }
 else {
-	$lang = $_SESSION['lang_session'];
+	$lang = $_SESSION['lang'];
 }
 if (function_exists('bindtextdomain')) {
 	putenv('LC_MESSAGES='.$lang);
