@@ -192,7 +192,7 @@ switch ($mode) {
 
 
 	<?PHP
-	echo '<body>';
+	echo '<body class="'.(strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft').'">';
 
 	echo '<div id="wrapper">';
 
