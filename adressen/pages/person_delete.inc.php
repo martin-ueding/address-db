@@ -1,5 +1,5 @@
 <?php
-// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 echo '<h1>'._('delete an entry').'</h1>';
 if (!empty($id)) {

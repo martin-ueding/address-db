@@ -1,5 +1,5 @@
 <?php
-// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 //header('Content-Type: text/calendar; charset=iso-8859-1');
 

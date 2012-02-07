@@ -1,5 +1,5 @@
 <?php
-// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 if (!empty($id)) {
 	Queries::delete_person_id($id);

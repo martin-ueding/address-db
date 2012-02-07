@@ -1,5 +1,5 @@
 <?php
-// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 $MAX_PRO_SEITE = 3;
 $SCHRIFTGROESSE = 7;

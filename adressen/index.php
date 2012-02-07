@@ -1,5 +1,5 @@
 <?php
-// Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 session_start();
 if (isset($_GET['f'])) {
