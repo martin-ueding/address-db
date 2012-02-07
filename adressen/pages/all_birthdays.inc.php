@@ -23,10 +23,14 @@ while ($l = mysql_fetch_assoc($erg)) {
 	$birthdays[$l['geb_m']][] = $l;
 }
 
+$showed_anything = false;
+
 foreach ($birthdays as $month => $list) {
 	if (count($list) == 0) {
 		continue;
 	}
+
+	$showed_anything = true;
 
 	echo '<div class="geb_monat_kasten">';
 	echo '<b>'.$monate[$month-1].'</b>';
@@ -52,6 +56,10 @@ foreach ($birthdays as $month => $list) {
 	}
 	
 	echo '</div>';
+}
+
+if (!$showed_anything) {
+	echo _("Sorry, nobody's birthday is known.");
 }
 	
 ?>
