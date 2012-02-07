@@ -4,8 +4,6 @@
 echo '<h1>'._('entries without a form of address').'</h1>';
 $from_with_get = 'mode=no_title';
 
-$titel = $_GET["titel"];
-
 if ($_SESSION['f'] != 0)
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE anrede_r=1 && person_lr=p_id && fmg_lr='.$_SESSION['f'].'';
 else
