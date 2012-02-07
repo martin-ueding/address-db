@@ -2,13 +2,13 @@
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
 // Geburtstagstabelle
-echo '<table id="geburtstag">'."\n";
-echo '<tr>'."\n";
-echo '<td colspan="4"><b>'._('birthdays').'</b></td>'."\n";
-echo '</tr>'."\n";
-echo '<tr>'."\n";
-echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>'."\n";
-echo '</tr>'."\n";
+echo '<table id="geburtstag">';
+echo '<tr>';
+echo '<td colspan="4"><b>'._('birthdays').'</b></td>';
+echo '</tr>';
+echo '<tr>';
+echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>';
+echo '</tr>';
 // Daten laufender Monat holen und Anzeigearray erstellen
 if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
 	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_m='.date("n").' && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_t';
@@ -29,19 +29,19 @@ while ($l = mysql_fetch_assoc($erg))
 	else
 		echo $l['vorname'].' '.$l['nachname'];
 	
-	echo '</a> </td>'."\n";
-	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>'."\n";
+	echo '</a> </td>';
+	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
 	if ($l['geb_j'] > 1500)
-		echo '<td> ('.(date("Y")-$l['geb_j']).') </td>'."\n";
+		echo '<td> ('.(date("Y")-$l['geb_j']).') </td>';
 	else
 		echo '<td>&nbsp;</td>';
-	echo '</tr>'."\n";
+	echo '</tr>';
 	$i++;
 	}
 /* .Ende Geburtstage laufender Monat. */
-echo '<tr>'."\n";
-echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>'."\n";
-echo '</tr>'."\n";
+echo '<tr>';
+echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>';
+echo '</tr>';
 /* .. */
 /* .Daten kommender Monat holen und Anzeigearray erstellen. */
 if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
@@ -59,8 +59,8 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else {
 		echo '<tr class="zeidunkel">';
 	}
-	echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a> </td>'."\n";
-	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>'."\n";
+	echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a> </td>';
+	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
 	
 	echo '<td>';
 	if ($l['geb_j'] > 1500) {
@@ -74,10 +74,10 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else
 		echo '&nbsp;';
 	
-	echo '</td>'."\n";
-	echo '</tr>'."\n";
+	echo '</td>';
+	echo '</tr>';
 	$i++;
 }
-echo '</table>'."\n";
+echo '</table>';
 
 ?>
