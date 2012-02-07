@@ -74,13 +74,15 @@ if (!isset($aktuell_name))
 <div id="nav_actions">
 <ul>
 <?php
-echo '<li><b>'._('action').'</b></li>';
-
+echo '<li><b>'._('views').'</b></li>';
 echo NavHelper::nav_action_link('list', $mode, _('show entries'));
 echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
-echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
 echo NavHelper::nav_action_link('all_birthdays', $mode, _('birthday list'));
 echo NavHelper::spacer();
+echo '<li><b>'._('create').'</b></li>';
+echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
+echo NavHelper::spacer();
+echo '<li><b>'._('maintenance').'</b></li>';
 echo '<li><a href="export/kitchen.php">'._('export LaTeX sheets').'</a></li>';
 echo NavHelper::spacer();
 echo NavHelper::nav_action_link('no_title', $mode, _('no form of address'));
