@@ -2,10 +2,7 @@
 // Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 class SelectHelper {
-
 	public static function show_select_vorwahlen ($name, $aktiv) {
-
-
 		echo '<select size="1" name="'.$name.'">';
 
 		$erg = Queries::select_alle_vorwahlen();
@@ -22,7 +19,6 @@ class SelectHelper {
 	}
 
 	public static function show_select_anrede ($name, $aktiv) {
-
 		echo '<select size="1" name="'.$name.'">';
 
 		$erg = Queries::select_alle_anreden();
@@ -145,12 +141,8 @@ class SelectHelper {
 				echo $i.'</option>';
 			}
 		}
-
-
-
 		echo '</select>';
 	}
-
 
 	public static function show_telefon_eingabe ($typ, $familie, $loop=null) {
 		if ($familie)
@@ -163,7 +155,6 @@ class SelectHelper {
 		SelectHelper::show_select_vorwahlen($p.'vw_'.$typ.'_id', ($loop != null ? $loop[$p.'vw_'.$typ.'_r'] : ""));
 		echo '<input type="text" name="'.$p.'tel_'.$typ.'" value="'.($loop != null && isset ($loop[$p.'tel_'.$typ]) ? $loop[$p.'tel_'.$typ] : "").'" size="25" maxlength="100" />';
 		echo '</nobr>';
-
 	}
 }
 ?>
