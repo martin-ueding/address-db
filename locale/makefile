@@ -8,6 +8,9 @@ all: $(mofiles) address_db.pot
 
 address_db.pot: $(phpfiles)
 	xgettext --sort-output --language=PHP --from-code=UTF-8 -keywword=_ -o $@ $^
+	msgmerge -U de.po $@
+	msgmerge -U nl.po $@
+	msgmerge -U tr.po $@
 
 de_DE/LC_MESSAGES/address_db.mo: de.po
 	mkdir -p $(shell dirname $@)
