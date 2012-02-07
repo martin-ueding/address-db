@@ -1,31 +1,5 @@
 <?PHP /* Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de> */ ?>
-<div class="menu">
 
-<ul>
-<li><a href="index.php?mode=main"><?PHP echo _('menu'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
-<!--[if lte IE 6]><table><tr><td><![endif]-->
-	<ul>
-	<li><a href="index.php?mode=list<?PHP if (isset($_SESSION['f'])) echo '&f='.$_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
-	<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
-	<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
-	<li><a href="export/kitchen.php"><?PHP echo _('export LaTeX sheets'); ?></a></li>
-
-	<li><a class="drop" href=""><?PHP echo _('maintenance'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
-<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<ul>
-			<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
-			<li><a href="index.php?mode=no_association"><?PHP echo _('no association'); ?></a></li>
-			<li><a href="index.php?mode=no_group"><?PHP echo _('no group'); ?></a></li>
-			<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
-			<li><a href="index.php?mode=no_birthday"><?PHP echo _('no birthday'); ?></a></li>
-			<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
-		</ul>
-
-<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-	</li>
-	</ul>
-<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-</li>
 
 <?PHP
 $sql = 'SELECT * FROM ad_fmg';
@@ -37,8 +11,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 if (!isset($aktuell_name))
 	$aktuell_name = _('all');
 ?>
-<li><a href=""><?PHP echo _('mode'); ?>: <?PHP echo $aktuell_name; ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
-<!--[if lte IE 6]><table><tr><td><![endif]-->
+<div id="nav_mode">
 	<ul>
 		<?PHP
 		// find all get parameters which are not the mode or the fmg and put them into a string
@@ -60,13 +33,10 @@ if (!isset($aktuell_name))
 		?>
 
 	</ul>
-
-<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-</li>
+</div>
 
 
-<li><a href=""><?PHP echo _('groups'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
-<!--[if lte IE 6]><table><tr><td><![endif]-->
+<div id="nav_groups">
 	<ul>
 		<?PHP
 		$erg = Abfragen::select_alle_gruppen();
@@ -78,11 +48,26 @@ if (!isset($aktuell_name))
 		?>
 
 	</ul>
+</div>
 
-<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-</li>
-<li><a href=""><?PHP echo _('languages'); ?><!--[if gte IE 7]><!--></a><!--<![endif]-->
-<!--[if lte IE 6]><table><tr><td><![endif]-->
+<div id="nav_actions">
+<ul>
+<li><a href="index.php?mode=main"><?PHP echo _('menu'); ?></a><!--<![endif]-->
+<li><a href="index.php?mode=list<?PHP if (isset($_SESSION['f'])) echo '&f='.$_SESSION['f']; ?>"><?PHP echo _('show my entries'); ?></a></li>
+<li><a href="index.php?mode=person_create1"><?PHP echo _('create new entry'); ?></a></li>
+<li><a href="index.php?mode=all_birthdays"><?PHP echo _('birthday list'); ?></a></li>
+<li><a href="export/kitchen.php"><?PHP echo _('export LaTeX sheets'); ?></a></li>
+<li><a href="index.php?mode=no_title"><?PHP echo _('no form of address'); ?></a></li>
+<li><a href="index.php?mode=no_association"><?PHP echo _('no association'); ?></a></li>
+<li><a href="index.php?mode=no_group"><?PHP echo _('no group'); ?></a></li>
+<li><a href="index.php?mode=no_email"><?PHP echo _('no email address'); ?></a></li>
+<li><a href="index.php?mode=no_birthday"><?PHP echo _('no birthday'); ?></a></li>
+<li><a href="index.php?mode=integrity_check"><?PHP echo _('database check'); ?></a></li>
+</ul>
+</div>
+
+<!--
+<div id="nav_lang">
 	<ul>
 		<?PHP
 		$get_for_lang_change = '';
@@ -95,12 +80,9 @@ if (!isset($aktuell_name))
 			echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&lang='.$a_lang[0].$get_for_lang_change.'">'.$a_lang[1].'</a></li>';
 		}
 		?>
-	</ul>
-<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-</li>
 </ul>
-
 </div>
+-->
 
 
 
@@ -125,8 +107,10 @@ foreach ($buchstaben as $b) {
 echo '</div>';
 ?>
 
+<!--
 <div>
 <form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
 </div>
 
 <div class="clearheinz"></div>
+-->

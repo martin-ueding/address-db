@@ -1,4 +1,4 @@
-/* Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de> */
+/* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
 BODY, TEXTAREA {
 	font-family: verdana, geneva, sans-serif;
@@ -20,6 +20,48 @@ A IMG {
 	#kartei, #suche, .nav_item {
 		display: none;
 	}
+}
+
+#nav_mode, #nav_groups, #nav_actions, #content {
+	padding: 0 0 32767px 0;
+	margin: 0 0 -32767px 0;
+}
+
+#nav_mode, #nav_groups, #nav_actions {
+	float: left;
+	width: 150px;
+	border: 1px solid red;
+}
+
+#nav_mode ul, #nav_groups ul, #nav_actions ul {
+	margin: 0;
+	padding: 0;
+}
+
+#nav_mode ul li, #nav_groups ul li, #nav_actions ul li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#nav_mode {
+	background-color: hsl(0, 0%, 50%);
+}
+
+#nav_groups {
+	background-color: hsl(0, 0%, 70%);
+}
+
+#nav_actions {
+	background-color: hsl(0, 0%, 90%);
+}
+
+#content {
+	margin-left: 450px;
+}
+
+#wrapper {
+	overflow: hidden;
 }
 
 body.linksluft {

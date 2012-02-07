@@ -141,7 +141,7 @@ switch ($mode) {
 		<meta charset="ISO-8859-1"  />
 		<link rel="stylesheet" type="text/css" href="gfx/main.css">
 		<link rel="stylesheet" type="text/css" href="gfx/cssmenu.css">
-		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<script src="js/search.js"></script>
 		<script src="js/selectSwitch.js.php"></script>
 		<script type="text/javascript">
@@ -181,6 +181,8 @@ switch ($mode) {
 	<?PHP
 	echo '<body class="'.(strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft').'">';
 
+	echo '<div id="wrapper">';
+
 	// display header
 	include('inc/header.inc.php');
 
@@ -194,7 +196,12 @@ switch ($mode) {
 		echo '</div>';
 	}	
 
+
+	echo '<div id="content">';
 	include('pages/'.$mode.'.inc.php');
+	echo '</div>';
+
+	echo '</div>';
 
 	$version_array = file('../version.txt');
 	$version_string = $version_array[0];
