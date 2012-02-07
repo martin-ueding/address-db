@@ -1,5 +1,12 @@
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
+$page_background: hsl(0, 0%, 100%);
+$page_edit_background: #ffc;
+
+$nav1_background: hsl(0, 0%, 70%);
+$nav2_background: hsl(0, 0%, 80%);
+$nav3_background: hsl(0, 0%, 90%);
+
 body, textarea {
 	font-family: verdana, geneva, sans-serif;
 	font-size: 13px;
@@ -53,37 +60,37 @@ a img {
 }
 
 #nav_mode {
-	background-color: hsl(0, 0%, 70%);
+	background-color: $nav1_background;
 	width: 70px;
 
 	a {
 		color: hsl(0, 0%, 0%);
 		&:hover, &.active {
-			background-color: hsl(0, 0%, 80%);
+			background-color: $nav2_background;
 		}
 	}
 }
 
 #nav_groups {
-	background-color: hsl(0, 0%, 80%);
+	background-color: $nav2_background;
 	width: 150px;
 
 	a {
 		color: hsl(0, 0%, 0%);
 		&:hover, &.active {
-			background-color: hsl(0, 0%, 90%);
+			background-color: $nav3_background;
 		}
 	}
 }
 
 #nav_actions {
-	background-color: hsl(0, 0%, 90%);
+	background-color: $nav3_background;
 	width: 150px;
 
 	a {
 		color: hsl(0, 0%, 0%);
 		&:hover, &.active {
-			background-color: hsl(0, 0%, 100%);
+			background-color: $page_background;
 		}
 	}
 }
@@ -100,7 +107,7 @@ a img {
 }
 
 body.maske {
-	background-color: #ffc;
+	background-color: $page_edit_background;
 
 	table {
 		width: 596px;
@@ -135,9 +142,8 @@ body.maske {
 
 	#nav_actions {
 		a {
-			color: hsl(0, 0%, 0%);
 			&:hover, &.active {
-				background-color: #ffc;
+				background-color: $page_edit_background;
 			}
 		}
 	}
