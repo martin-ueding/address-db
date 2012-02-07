@@ -1,4 +1,4 @@
-<?PHP
+<?php
 // Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 include('../inc/setup_gettext.inc.php');
@@ -6,11 +6,11 @@ include('../inc/setup_gettext.inc.php');
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<title><?PHP echo _('data is up to date'); ?></title>
+		<title><?php echo _('data is up to date'); ?></title>
 	</head>
 	<body>
 	
-	<?PHP
+	<?php
 	
 	$id = $_GET['id'];
 	$code = $_GET['code'];

@@ -1,4 +1,4 @@
-<?PHP
+<?php
 // Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 session_start();
@@ -169,11 +169,11 @@ if (!isset($page_title)) {
 		
 		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
 
-		<title><?PHP echo $page_title; ?></title>
+		<title><?php echo $page_title; ?></title>
 	</head>
 
 
-	<?PHP
+	<?php
 	echo '<body class="'.(strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft').'">';
 
 	echo '<div id="wrapper">';

@@ -1,4 +1,4 @@
-<?PHP
+<?php
 // Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 // adds a switch button to all input fields that consist of a regular input field and a select field

@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /* Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
 require_once('../helper/Filter.php');
@@ -16,7 +16,7 @@ if (!isset($aktuell_name))
 ?>
 <div id="nav_mode">
 	<ul>
-		<?PHP
+		<?php
 		echo '<li><b>'._('mode').'</b></li>';
 
 		// find all get parameters which are not the mode or the fmg and put them into a string
@@ -46,7 +46,7 @@ if (!isset($aktuell_name))
 
 <div id="nav_groups">
 	<ul>
-		<?PHP
+		<?php
 		echo '<li><b>'._('groups').'</b></li>';
 
 		$request = new Request();
@@ -98,7 +98,7 @@ echo Navigation::nav_action_link('integrity_check', $mode, _('database check'));
 <!--
 <div id="nav_lang">
 	<ul>
-		<?PHP
+		<?php
 		$get_for_lang_change = '';
 		foreach ($_GET as $key => $wert) {
 			if ($key != 'mode' && $key != 'lang') {
@@ -115,7 +115,7 @@ echo Navigation::nav_action_link('integrity_check', $mode, _('database check'));
 
 
 
-<?PHP
+<?php
 $buchstaben = range('A', 'Z');
 echo '<div id="kartei">';
 foreach ($buchstaben as $b) {

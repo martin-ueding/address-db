@@ -1,4 +1,4 @@
-<?PHP
+<?php
 // Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 echo '<h1>'._('display entry').'</h1>';
