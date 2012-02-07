@@ -390,7 +390,7 @@ div.geb_monat_kasten {
 	background-color: rgb(230,230,230);
 }
 
-#liste {
+table.liste {
 	border-collapse: collapse;
 	margin: 0px;
 	padding: 0px;
@@ -400,11 +400,11 @@ div.geb_monat_kasten {
 	padding: 2px 5px;
 	}
 
-	tr.hell {
+	tr:nth-child(even) {
 	background-color: rgb(255, 255, 255);
 	}
 
-	tr.dunkel {
+	tr:nth-child(odd) {
 	background-color: rgb(240, 240, 240);
 	}
 }
