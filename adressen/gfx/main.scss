@@ -1,5 +1,9 @@
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
+/*****************************************************************************/
+/*                             SASS Declarations                             */
+/*****************************************************************************/
+
 $page_background: hsl(0, 0%, 100%);
 $page_edit_background: #ffc;
 
@@ -13,6 +17,10 @@ $nav3_background: hsl(0, 0%, 90%);
 	border-right: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
+
+/*****************************************************************************/
+/*                             General Elements                              */
+/*****************************************************************************/
 
 body, textarea {
 	font-family: verdana, geneva, sans-serif;
@@ -48,6 +56,67 @@ a {
 		border: 0px;
 	}
 }
+
+h1, h2, h3, h4, h5, h6 {
+	em {
+		font-size: 19px;
+		color: rgb(209,31,57);
+		font-style: normal;
+	}
+}
+
+h1 {
+	font-size: 19px;
+	margin: 0 0 15px 0;
+}
+
+h2 {
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+
+h3 {
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+	color: rgb(102,102,102);
+}
+
+em {
+	font-style: normal;
+	font-weight: bold;
+	color: rgb(209,31,57);
+}
+
+ul {
+	margin-left: 10px;
+}
+
+/*****************************************************************************/
+/*                                  Layout                                   */
+/*****************************************************************************/
+
+#content {
+	margin-left: 370px;
+	padding-top: 0px;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+#wrapper {
+	overflow: hidden;
+}
+
+/*****************************************************************************/
+/*                                Navigation                                 */
+/*****************************************************************************/
 
 #nav_mode, #nav_groups, #nav_actions, #content {
 	padding: 10px 0 32767px 0;
@@ -115,105 +184,9 @@ a {
 	}
 }
 
-#content {
-	margin-left: 370px;
-	padding-top: 0px;
-	padding-left: 20px;
-	padding-right: 40px;
-}
-
-#wrapper {
-	overflow: hidden;
-}
-
-body.maske {
-	background-color: $page_edit_background;
-
-	table {
-		width: 596px;
-
-		tr {
-			th {
-				padding: 3px 3px 3px 10px;
-				background-color: rgb(102,102,102);
-				color: rgb(255,255,255);
-				text-align: left;
-			}
-
-			td {
-				padding: 3px 3px 3px 10px;
-				background-color: rgb(255,219,93);
-
-				input {
-					height: 20px;
-					border: 1px solid #999;
-				}
-
-				textarea {
-					border: 1px solid #999;
-				}
-			}
-
-			.rand {
-				border: 1px solid #999;	
-			}
-		}
-	}
-
-	#nav_actions {
-		a {
-			&:hover, &.active {
-				background-color: $page_edit_background;
-			}
-		}
-	}
-}
-
-select {
-	margin-right: 7px;
-}
-
-h1 {
-	font-size: 19px;
-	margin: 0 0 15px 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	em {
-		font-size: 19px;
-		color: rgb(209,31,57);
-		font-style: normal;
-	}
-}
-
-h2 {
-	font-size: 17px;
-	margin-bottom: 5px;
-}
-
-h3 {
-	font-size: 15px;
-	margin-bottom: 5px;
-}
-
-b {
-	font-weight: bold;
-}
-
-i {
-	font-style: italic;
-	color: rgb(102,102,102);
-}
-
-em {
-	font-style: normal;
-	font-weight: bold;
-	color: rgb(209,31,57);
-}
-
-ul {
-	margin-left: 10px;
-}
+/*****************************************************************************/
+/*                              Unique Elements                              */
+/*****************************************************************************/
 
 #kartei {
 	margin: 0;
@@ -280,8 +253,6 @@ ul {
 	width: 800px;
 }
 
-/*.geburtstage.*/
-
 #geburtstag {
 	@include border_3d;
 	background-color: rgb(230,230,230);
@@ -299,7 +270,134 @@ ul {
 	}
 }
 
-/* .deklarationen fuer die personendarstellung. */
+#version {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-top-left-radius: 8px;
+	background-color: #ccf;
+	bottom: 0px;
+	padding: 2px 5px 2px 9px;
+	position: fixed;
+	right: 0px;
+}
+
+div#searchhints {
+	left: 650px;
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 50px;
+	z-index: 10;
+
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+
+		li {
+			background-color: #eee;
+			margin: 0px;
+			padding: 3px 5px;
+
+			&:hover {
+				background-color: #ddd;
+			}
+		}
+	}
+}
+
+div.geb_monat_kasten {
+	background-color: rgb(230,230,230);
+	border: 1px solid #aaa;
+	float: left;
+	height: 350px;
+	margin: 10px 0px 10px 20px;;
+	overflow: auto;
+	padding: 5px;
+	width: 200px;
+}
+
+table.liste {
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+
+	td {
+		margin: 0px;
+		padding: 2px 5px;
+	}
+
+	tr:nth-child(even) {
+		background-color: rgb(255, 255, 255);
+	}
+
+	tr:nth-child(odd) {
+		background-color: rgb(240, 240, 240);
+	}
+}
+
+/*****************************************************************************/
+/*                           Create and Edit Form                            */
+/*****************************************************************************/
+
+.input_block {
+	float: left;
+	width: 149px;
+}
+
+img.switch_fields {
+	margin-right: 4px;
+}
+
+body.maske {
+	background-color: $page_edit_background;
+
+	table {
+		width: 596px;
+
+		tr {
+			th {
+				padding: 3px 3px 3px 10px;
+				background-color: rgb(102,102,102);
+				color: rgb(255,255,255);
+				text-align: left;
+			}
+
+			td {
+				padding: 3px 3px 3px 10px;
+				background-color: rgb(255,219,93);
+
+				input {
+					height: 20px;
+					border: 1px solid #999;
+				}
+
+				textarea {
+					border: 1px solid #999;
+				}
+			}
+
+			.rand {
+				border: 1px solid #999;	
+			}
+		}
+	}
+
+	#nav_actions {
+		a {
+			&:hover, &.active {
+				background-color: $page_edit_background;
+			}
+		}
+	}
+}
+
+select {
+	margin-right: 7px;
+}
+
+/*****************************************************************************/
+/*                              Person Display                               */
+/*****************************************************************************/
 
 tr {
 	vertical-align: top;
@@ -343,84 +441,6 @@ td.icon {
 	width: 12px;
 }
 
-.input_block {
-	float: left;
-	width: 149px;
-}
-
-div.geb_monat_kasten {
-	background-color: rgb(230,230,230);
-	border: 1px solid #aaa;
-	float: left;
-	height: 350px;
-	margin: 10px 0px 10px 20px;;
-	overflow: auto;
-	padding: 5px;
-	width: 200px;
-}
-
-table.liste {
-	border-collapse: collapse;
-	margin: 0px;
-	padding: 0px;
-
-	td {
-		margin: 0px;
-		padding: 2px 5px;
-	}
-
-	tr:nth-child(even) {
-		background-color: rgb(255, 255, 255);
-	}
-
-	tr:nth-child(odd) {
-		background-color: rgb(240, 240, 240);
-	}
-}
-
-#version {
-	-moz-border-radius-topleft: 8px;
-	-webkit-border-top-left-radius: 8px;
-	background-color: #ccf;
-	bottom: 0px;
-	padding: 2px 5px 2px 9px;
-	position: fixed;
-	right: 0px;
-}
-
-span.graytext {
-	color: #555;
-}
-
-span.project_menu {
-	display: none;
-}
-
-div#searchhints {
-	left: 650px;
-	margin: 0px;
-	padding: 0px;
-	position: absolute;
-	top: 50px;
-	z-index: 10;
-
-	ul {
-		list-style: none;
-		margin: 0px;
-		padding: 0px;
-
-		li {
-			background-color: #eee;
-			margin: 0px;
-			padding: 3px 5px;
-
-			&:hover {
-				background-color: #ddd;
-			}
-		}
-	}
-}
-
-img.switch_fields {
-	margin-right: 4px;
-}
+/*****************************************************************************/
+/*                               Miscellaneous                               */
+/*****************************************************************************/
