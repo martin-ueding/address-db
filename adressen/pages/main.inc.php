@@ -19,8 +19,7 @@ $sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDE
 $erg = mysql_query($sql);
 echo mysql_error();
 $i = 0;
-while ($l = mysql_fetch_assoc($erg)) 
-	{
+while ($l = mysql_fetch_assoc($erg)) {
 	# TODO Use CSS for zebra.
 	if($i % 2){ echo '<tr class="zeihell">';}
 	else { echo '<tr class="zeidunkel">'; }
@@ -40,7 +39,7 @@ while ($l = mysql_fetch_assoc($erg))
 		echo '<td>&nbsp;</td>';
 	echo '</tr>';
 	$i++;
-	}
+}
 /* .Ende Geburtstage laufender Monat. */
 echo '<tr>';
 echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>';
