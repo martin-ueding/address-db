@@ -1,12 +1,23 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Pretty prints a person query result.
+ */
 class Table {
+	/**
+	 * Create a new table out of a database result.
+	 */
 	public function __construct($erg, $from_with_get) {
 		$this->erg = $erg;
 		$this->from_with_get = $from_with_get;
 	}
 
+	/**
+	 * Render HTML.
+	 *
+	 * @return Rendered html.
+	 */
 	public function html() {
 		ob_start();
 
