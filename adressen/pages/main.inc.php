@@ -1,6 +1,8 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helpers/Filter.php');
+
 // Geburtstagstabelle
 echo '<table id="geburtstag">';
 echo '<tr>';
@@ -10,10 +12,10 @@ echo '<tr>';
 echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>';
 echo '</tr>';
 // Daten laufender Monat holen und Anzeigearray erstellen
-if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_m='.date("n").' && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_t';
-else
-	$sql = 'SELECT * FROM ad_per WHERE geb_m='.date("n").' ORDER BY geb_t';
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+$filter->add_where('geb_m='.date("n"));
+
+$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
 $erg = mysql_query($sql);
 echo mysql_error();
 $i = 0;
