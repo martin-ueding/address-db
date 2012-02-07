@@ -155,36 +155,11 @@ switch ($mode) {
 		<link rel="stylesheet" type="text/css" href="gfx/main.css">
 		<link rel="stylesheet" type="text/css" href="gfx/cssmenu.css">
 		<script src="js/jquery.min.js"></script>
+		<script src="js/message.js"></script>
 		<script src="js/search.js"></script>
 		<script src="js/selectSwitch.js.php"></script>
-		<script type="text/javascript">
-			
-			$(document).ready(function(){
-				<?PHP
-				if (isset($msgs)) {
-					// fade out the messages box
-					echo '$("#messages").fadeOut(0).fadeIn(500).delay('.(5000*count($msgs)).').slideUp(1000);';
-				}
-				?>
-
-				// open up all the slidedown boxes
-				$(".slidedown").fadeOut(0).delay(300).slideDown(800);
-
-				// open the project menu
-				$("#version").click(function () {$(".project_menu").toggle(600);});
-
-			});
-
-			function _switch(object) {
-				if (document.getElementById(object).style.display != "block") {
-					document.getElementById(object).style.display = "block";
-				}
-				else {
-					document.getElementById(object).style.display = "none";
-				}
-			}
-
-		</script>
+		<script src="js/slidedown.js"></script>
+		<script src="js/switch.js"></script>
 		
 		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
 		<title><?PHP echo $page_title; ?></title>
