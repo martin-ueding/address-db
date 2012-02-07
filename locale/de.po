@@ -25,11 +25,10 @@ msgid "%d entries were deleted."
 msgstr "%d Einträge wurden gelöscht."
 
 #: ../adressen/pages/list.inc.php:61
-#, fuzzy, php-format
 msgid "%d entry:"
 msgid_plural "%d entries:"
-msgstr[0] "Eintrag bearbeiten"
-msgstr[1] "Eintrag bearbeiten"
+msgstr[0] "%d Eintrag:"
+msgstr[1] "%d Einträge:"
 
 #: ../adressen/inc/anzeigen.inc.php:31
 #, php-format
@@ -100,7 +99,7 @@ msgstr "Firma"
 
 #: ../adressen/_config.inc.php:31
 msgid "Could not select DB."
-msgstr ""
+msgstr "Konnte DB nicht auswählen."
 
 #: ../adressen/engines/verification_email.inc.php:22
 msgid "Dear"
@@ -160,9 +159,8 @@ msgid "German"
 msgstr "Deutsch"
 
 #: ../adressen/pages/list.inc.php:45
-#, fuzzy, php-format
 msgid "Group %s:"
-msgstr "Gruppen"
+msgstr "Gruppe %s"
 
 #: ../adressen_helper/aktuell.php:28
 #, php-format
@@ -202,7 +200,7 @@ msgstr "Sprache, in der die Email gesendet werden soll:"
 #: ../adressen/pages/list.inc.php:37
 #, php-format
 msgid "Last names starting with %s:"
-msgstr ""
+msgstr "Nachnamen beginnend mit %s:"
 
 #: ../adressen/inc/abfragen.inc.php:75
 msgid "Leo"
@@ -227,7 +225,7 @@ msgstr "Mai"
 #: ../adressen/pages/list.inc.php:53
 #, php-format
 msgid "Member %s:"
-msgstr ""
+msgstr "Mitglied %s:"
 
 #: ../adressen/engines/person_delete2.inc.php:29
 msgid "Missing an ID."
@@ -245,7 +243,7 @@ msgstr "Frau"
 
 #: ../adressen/pages/person_display.inc.php:374
 msgid "No ID given."
-msgstr ""
+msgstr "Keine ID angegeben."
 
 #: ../adressen/pages/search.inc.php:40
 msgid "No search query was entered"
@@ -400,14 +398,14 @@ msgstr ""
 #, php-format
 msgid ""
 "This entry is connected to %s. Are you sure that you can delete this entry?"
-msgstr ""
+msgstr "Dieser Eintrag ist mit %s verbunden. Wollen Sie ihn wirklich löschen?"
 
 #: ../adressen/pages/person_delete.inc.php:19
 #, php-format
 msgid ""
 "This entry is connected to %s. Consider just removing your association with "
 "it."
-msgstr ""
+msgstr "Dieser Eintrag ist mit %s verbunden. Vielleicht entfernen Sie nur den Bezug zu sich?"
 
 #: ../inc/setup_gettext.inc.php:32
 msgid "Turkish"
@@ -420,7 +418,7 @@ msgstr "Jungfrau"
 #: ../adressen/pages/person_delete.inc.php:19
 #: ../adressen/pages/person_delete.inc.php:24
 msgid "Warning:"
-msgstr ""
+msgstr "Warnung:"
 
 #: ../adressen/pages/person_display.inc.php:336
 msgid "Was the data checked and is it up-to-date?"
@@ -541,9 +539,8 @@ msgid "birthday list"
 msgstr "Geburtstagsliste"
 
 #: ../adressen/inc/header.inc.php:79
-#, fuzzy
 msgid "birthday view"
-msgstr "Geburtstagsliste"
+msgstr "Geburtstagsansicht"
 
 #: ../adressen/pages/main.inc.php:8
 msgid "birthdays"
@@ -608,9 +605,8 @@ msgid "chat Yahoo!"
 msgstr "Chat Yahoo!"
 
 #: ../adressen/inc/header.inc.php:82
-#, fuzzy
 msgid "create"
-msgstr "Eintrag erstellen"
+msgstr "erstellen"
 
 #: ../adressen/pages/person_create1.inc.php:11
 msgid "create a new entry"
@@ -720,14 +716,12 @@ msgid "entries without a form of address"
 msgstr "Einträge ohne Anrede"
 
 #: ../adressen/pages/no_group.inc.php:7
-#, fuzzy
 msgid "entries without a group"
-msgstr "Einträge ohne Anrede"
+msgstr "Einträge ohne Gruppe"
 
 #: ../adressen/pages/no_association.inc.php:7
-#, fuzzy
 msgid "entries without an association"
-msgstr "Einträge ohne Emailadresse"
+msgstr "Einträge ohne Zuordnung"
 
 #: ../adressen/pages/no_email.inc.php:7
 msgid "entries without an email address"
@@ -883,9 +877,8 @@ msgid "next month"
 msgstr "nächster Monat"
 
 #: ../adressen/inc/header.inc.php:89
-#, fuzzy
 msgid "no association"
-msgstr "verbunden mit"
+msgstr "keine Zuordnung"
 
 #: ../adressen/inc/header.inc.php:92
 msgid "no birthday"
@@ -900,9 +893,8 @@ msgid "no form of address"
 msgstr "keine Anrede"
 
 #: ../adressen/inc/header.inc.php:90
-#, fuzzy
 msgid "no group"
-msgstr "Gruppen"
+msgstr "keine Gruppe"
 
 #: ../adressen/pages/search.inc.php:124
 msgid "no results"
@@ -990,9 +982,8 @@ msgid "save"
 msgstr "speichern"
 
 #: ../adressen/pages/search.inc.php:7
-#, fuzzy
 msgid "search"
-msgstr "März"
+msgstr "Suche"
 
 #: ../adressen/index.php:137
 #, php-format
@@ -1012,9 +1003,8 @@ msgid "send verification email"
 msgstr "Überprüfungsemail senden"
 
 #: ../adressen/inc/header.inc.php:78
-#, fuzzy
 msgid "show entries"
-msgstr "zeige meine Einträge"
+msgstr "zeige Einträge"
 
 #: ../adressen/pages/person_display.inc.php:81
 msgid "show map"
@@ -1030,7 +1020,7 @@ msgstr "Suffix"
 
 #: ../adressen/js/selectSwitch.js.php:11
 msgid "switch between a select and a manual input"
-msgstr ""
+msgstr "wechsle zwischen Auswahl und manueller Eingabe"
 
 #: ../adressen/pages/person_display.inc.php:131
 #: ../adressen/engines/verification_email.inc.php:131
@@ -1119,7 +1109,7 @@ msgstr "Version"
 
 #: ../adressen/inc/header.inc.php:77
 msgid "views"
-msgstr ""
+msgstr "Ansichten"
 
 #: ../adressen/inc/anzeigen.inc.php:27
 msgid "within in the last minute"
