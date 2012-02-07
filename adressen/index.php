@@ -154,7 +154,6 @@ switch ($mode) {
 		<meta charset="ISO-8859-1"  />
 
 		<link rel="stylesheet" type="text/css" href="gfx/main.css">
-		<link rel="stylesheet" type="text/css" href="gfx/cssmenu.css">
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/message.js"></script>
