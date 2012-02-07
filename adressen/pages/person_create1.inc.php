@@ -1,6 +1,8 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helpers/SelectHelper.php');
+
 echo '<h1>'._('create a new entry').'</h1>';
 ?>
 <h2><?PHP echo sprintf(_('part %d of %d'), 1, 3).' &ndash; '._('names and relations'); ?></h2>
@@ -11,7 +13,7 @@ echo '<h1>'._('create a new entry').'</h1>';
 <tr><th colspan="2"><?PHP echo _('name'); ?>:</th></tr>
 <tr>
 <td><?PHP echo _('form of address'); ?>:</td>
-<td><?PHP show_select_anrede('anrede_r', ""); show_select_prafix('prafix_r', ""); ?></td>
+<td><?PHP SelectHelper::show_select_anrede('anrede_r', ""); SelectHelper::show_select_prafix('prafix_r', ""); ?></td>
 </tr>
 <tr>
 <td><?PHP echo _('first name'); ?>:</td>
@@ -27,7 +29,7 @@ echo '<h1>'._('create a new entry').'</h1>';
 </tr>
 <tr>
 <td><?PHP echo _('suffix'); ?>:</td>
-<td><?PHP show_select_suffix('suffix_r', ""); ?></td>
+<td><?PHP SelectHelper::show_select_suffix('suffix_r', ""); ?></td>
 </tr>
 <tr>
 <td><?PHP echo _('maiden name'); ?>:</td>
@@ -36,9 +38,9 @@ echo '<h1>'._('create a new entry').'</h1>';
 <tr>
 <td><?PHP echo _('birth date'); ?>:</td>
 <td><?PHP
-show_select_zahlen('geb_t', 0, 1, 31, true);
-show_select_zahlen('geb_m', 0, 1, 12, true);
-show_select_zahlen('geb_j', 0, date("Y")-100, date("Y"), false);
+SelectHelper::show_select_zahlen('geb_t', 0, 1, 31, true);
+SelectHelper::show_select_zahlen('geb_m', 0, 1, 12, true);
+SelectHelper::show_select_zahlen('geb_j', 0, date("Y")-100, date("Y"), false);
 ?></td>
 </tr>
 </table>
@@ -104,7 +106,7 @@ echo '</div>';
 	
 	<tr>
 		<td><?PHP echo _('postral code, city and country'); ?>:</td>
-		<td><?PHP show_select_plz('plz_r', 0); show_select_ort('ort_r', 0); show_select_land('land_r', 0); ?></td>
+		<td><?PHP SelectHelper::show_select_plz('plz_r', 0); SelectHelper::show_select_ort('ort_r', 0); SelectHelper::show_select_land('land_r', 0); ?></td>
 	</tr>
 	
 	<tr>
