@@ -55,7 +55,7 @@ echo '<div class="box_596">';
 	while ($l = mysql_fetch_assoc($erg))
 		{
 		echo '<div class="input_block">';
-		echo '<input type="checkbox" name="fmgs[]" value="'.$l['fmg_id'].'" id="fmg'.$l['fmg_id'].'" /> <label for="fmg'.$l['fmg_id'].'">'.$l['fmg']."</label>\n";
+		echo '<input type="checkbox" name="fmgs[]" value="'.$l['fmg_id'].'" id="fmg'.$l['fmg_id'].'"  '.($l['fmg_id'] == $_SESSION['f'] ? 'checked' : '').'/> <label for="fmg'.$l['fmg_id'].'">'.$l['fmg']."</label>\n";
 		echo '</div>';
 		}
 echo '</div>';
