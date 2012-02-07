@@ -2,7 +2,7 @@
 // Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('../helper/Filter.php');
-require_once('../report/Missing.php');
+require_once('../view/Missing.php');
 
 echo '<h1>'._('entries without a group').'</h1>';
 $from_with_get = 'mode=no_group';
