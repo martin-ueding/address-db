@@ -1,7 +1,16 @@
 <?php
 # Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Gathers JOIN and WHERE commands for a MySQL query.
+ */
 class Filter {
+	/**
+	 * Creates a new filter for the given family member and group.
+	 *
+	 * @param $fmg Family member ID.
+	 * @param $group Group ID.
+	 */
 	public function __construct($fmg = 0, $group = 0) {
 		$this->snippets = array(
 			"join" => array(),
@@ -19,17 +28,34 @@ class Filter {
 		}
 	}
 
+	/**
+	 * Adds a new JOIN clause.
+	 */
 	public function add_join($join) {
 		$this->snippets["join"][] = $join;
 	}
 
+	/**
+	 * Adds a new WHERE clause.
+	 */
 	public function add_where($where) {
 		$this->snippets["where"][] = $where;
 	}
 
+	/**
+	 * Returns all join commands.
+	 *
+	 * @return Joined JOIN commands.
+	 */
 	public function join() {
 		return implode(' ', $this->snippets["join"]);
 	}
+
+	/**
+	 * Returns all where commands.
+	 *
+	 * @return Joined WHERE commands.
+	 */
 	public function where() {
 		if (count($this->snippets["where"]) > 0) {
 			return implode(' && ', $this->snippets["where"]);
