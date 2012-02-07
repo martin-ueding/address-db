@@ -1,12 +1,16 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
+
+require_once('../helper/Table.php');
+
+echo '<h1>'._('search').'</h1>';
 
 $suche = mysql_real_escape_string($_GET['suche']);
 $from_with_get = 'mode=search&suche='.$suche;
 
 $treffer = false;
 
-function display_name_list ($sql, $title) {
+function display_name_list($sql, $title) {
 	global $from_with_get;
 	global $treffer;
 	$erg = mysql_query($sql);
@@ -18,14 +22,8 @@ function display_name_list ($sql, $title) {
 		$treffer = true;
 		echo $title;
 		echo '<div class="slidedown">';
-		echo '<table id="liste" cellpadding="0" cellspacing="0">';
-		$i = 0;
-		while ($l = mysql_fetch_assoc($erg)) {
-			echo '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'">';
-			echo '<td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td>';
-			echo '</tr>';
-		}
-		echo '</table>';
+		$table = new Table($erg, $from_with_get);
+		echo $table->html();
 		echo '</div><br />';
 	}
 }
