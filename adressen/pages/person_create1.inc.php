@@ -1,13 +1,13 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/SelectHelper.php');
+$p_id = (int)($_GET['id']);
 
-echo '<h1>'._('create a new entry').'</h1>';
+$template = new Template('person_form');
+$template->set('heading', _('create a new entry'));
+$template->set('form_target', 'person_create2.php');
 ?>
-<h2><?PHP echo sprintf(_('part %d of %d'), 1, 3).' &ndash; '._('names and relations'); ?></h2>
 
-<form action="person_create2.php" method="post">
 
 <table>
 <tr><th colspan="2"><?PHP echo _('name'); ?>:</th></tr>
