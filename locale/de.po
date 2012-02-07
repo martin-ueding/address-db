@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-07 17:55+0100\n"
+"POT-Creation-Date: 2012-02-07 18:45+0100\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -25,6 +25,7 @@ msgid "%d entries were deleted."
 msgstr "%d Einträge wurden gelöscht."
 
 #: ../adressen/pages/list.inc.php:61
+#, php-format
 msgid "%d entry:"
 msgid_plural "%d entries:"
 msgstr[0] "%d Eintrag:"
@@ -51,9 +52,9 @@ msgstr "(heute %d Jahre alt)"
 #: ../adressen/index.php:106 ../adressen/index.php:109
 #: ../adressen/index.php:113 ../adressen/index.php:117
 #: ../adressen/index.php:121 ../adressen/index.php:126
-#: ../adressen/index.php:129 ../adressen/index.php:134
-#: ../adressen/index.php:137 ../adressen/index.php:140
-#: ../adressen/index.php:143
+#: ../adressen/index.php:129 ../adressen/index.php:135
+#: ../adressen/index.php:139 ../adressen/index.php:143
+#: ../adressen/index.php:147
 msgid "Address DB"
 msgstr "Adressdatenbank"
 
@@ -159,6 +160,7 @@ msgid "German"
 msgstr "Deutsch"
 
 #: ../adressen/pages/list.inc.php:45
+#, php-format
 msgid "Group %s:"
 msgstr "Gruppe %s"
 
@@ -261,7 +263,7 @@ msgstr "November"
 msgid "October"
 msgstr "Oktober"
 
-#: ../adressen/index.php:146
+#: ../adressen/index.php:152
 msgid "PHP Family Address DB"
 msgstr "PHP Familien Adressdatenbank"
 
@@ -405,7 +407,9 @@ msgstr "Dieser Eintrag ist mit %s verbunden. Wollen Sie ihn wirklich löschen?"
 msgid ""
 "This entry is connected to %s. Consider just removing your association with "
 "it."
-msgstr "Dieser Eintrag ist mit %s verbunden. Vielleicht entfernen Sie nur den Bezug zu sich?"
+msgstr ""
+"Dieser Eintrag ist mit %s verbunden. Vielleicht entfernen Sie nur den Bezug "
+"zu sich?"
 
 #: ../inc/setup_gettext.inc.php:32
 msgid "Turkish"
@@ -632,7 +636,7 @@ msgstr "aktuelle Geburtstage"
 msgid "data is up to date"
 msgstr "Daten sind aktuell"
 
-#: ../adressen/inc/header.inc.php:93 ../adressen/index.php:143
+#: ../adressen/inc/header.inc.php:93 ../adressen/index.php:147
 msgid "database check"
 msgstr "Datenbankkontrolle"
 
@@ -985,7 +989,7 @@ msgstr "speichern"
 msgid "search"
 msgstr "Suche"
 
-#: ../adressen/index.php:137
+#: ../adressen/index.php:139
 #, php-format
 msgid "search for &bdquo;%s&ldquo;"
 msgstr "Suche nach &bdquo;%s&ldquo;"
@@ -1080,7 +1084,7 @@ msgstr "Aktualität"
 msgid "upload"
 msgstr "Upload"
 
-#: ../adressen/index.php:134
+#: ../adressen/index.php:135
 #, php-format
 msgid "upload %s's picture"
 msgstr "Bild für %s hochladen"
@@ -1098,12 +1102,12 @@ msgstr "Überprüfungsemail"
 msgid "verification mail %s sent, confirmation pending"
 msgstr "Überprüfungsmail %s gesendet, Bestätigung ausstehend"
 
-#: ../adressen/index.php:140
+#: ../adressen/index.php:143
 #, php-format
 msgid "verification mail for %s"
 msgstr "Überprüfungsmail für %s"
 
-#: ../adressen/index.php:200
+#: ../adressen/index.php:205
 msgid "version"
 msgstr "Version"
 

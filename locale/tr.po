@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-07 17:55+0100\n"
+"POT-Creation-Date: 2012-02-07 18:45+0100\n"
 "PO-Revision-Date: 2011-01-14 23:58+0000\n"
 "Last-Translator: zeugma <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -51,9 +51,9 @@ msgstr ""
 #: ../adressen/index.php:106 ../adressen/index.php:109
 #: ../adressen/index.php:113 ../adressen/index.php:117
 #: ../adressen/index.php:121 ../adressen/index.php:126
-#: ../adressen/index.php:129 ../adressen/index.php:134
-#: ../adressen/index.php:137 ../adressen/index.php:140
-#: ../adressen/index.php:143
+#: ../adressen/index.php:129 ../adressen/index.php:135
+#: ../adressen/index.php:139 ../adressen/index.php:143
+#: ../adressen/index.php:147
 msgid "Address DB"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "October"
 msgstr ""
 
-#: ../adressen/index.php:146
+#: ../adressen/index.php:152
 msgid "PHP Family Address DB"
 msgstr ""
 
@@ -620,7 +620,7 @@ msgstr ""
 msgid "data is up to date"
 msgstr ""
 
-#: ../adressen/inc/header.inc.php:93 ../adressen/index.php:143
+#: ../adressen/inc/header.inc.php:93 ../adressen/index.php:147
 msgid "database check"
 msgstr ""
 
@@ -970,7 +970,7 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: ../adressen/index.php:137
+#: ../adressen/index.php:139
 #, php-format
 msgid "search for &bdquo;%s&ldquo;"
 msgstr ""
@@ -1065,7 +1065,7 @@ msgstr ""
 msgid "upload"
 msgstr ""
 
-#: ../adressen/index.php:134
+#: ../adressen/index.php:135
 #, php-format
 msgid "upload %s's picture"
 msgstr ""
@@ -1083,12 +1083,12 @@ msgstr ""
 msgid "verification mail %s sent, confirmation pending"
 msgstr ""
 
-#: ../adressen/index.php:140
+#: ../adressen/index.php:143
 #, php-format
 msgid "verification mail for %s"
 msgstr ""
 
-#: ../adressen/index.php:200
+#: ../adressen/index.php:205
 msgid "version"
 msgstr "sürüm"
 
