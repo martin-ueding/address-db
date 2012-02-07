@@ -369,21 +369,6 @@ class Queries {
 		}
 	}
 
-	public static function get_group_name($id) {
-		$sql = 'SELECT gruppe FROM ad_gruppen WHERE g_id = '.$id.';';
-		$erg = mysql_query($sql);
-		if ($l = mysql_fetch_assoc($erg)) {
-			return $l['gruppe'];
-		}
-	}
-
-	public static function get_fmg_name($id) {
-		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_SESSION['f'].';';
-		$name_erg = mysql_query($name_sql);
-		if ($name = mysql_fetch_assoc($name_erg)) {
-			return $name['fmg'];
-		}
-	}
 }
 
 ?>

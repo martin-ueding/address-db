@@ -2,6 +2,8 @@
 // Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('../helpers/Filter.php');
+require_once('../model/FamilyMember.php');
+require_once('../model/Group.php');
 
 echo '<h1>'._('list').'</h1>';
 $from_with_get = 'mode=list';
@@ -61,7 +63,7 @@ if (!empty($sql)) {
 					'The group %s contains %d entries:',
 					mysql_num_rows($erg)
 				),
-				'<em>'.Queries::get_group_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
+				'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
 			);
 		}
 		else {
@@ -71,7 +73,7 @@ if (!empty($sql)) {
 					'The group %s contains %d entries that %s knows:',
 					mysql_num_rows($erg)
 				),
-				'<em>'.Queries::get_group_name($_SESSION['g']).'</em>', mysql_num_rows($erg), '<em>'.$aktuell_name.'</em>'
+				'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg), '<em>'.$aktuell_name.'</em>'
 			);
 		}
 		echo '<br /><br />';
@@ -84,7 +86,7 @@ if (!empty($sql)) {
 				'For %s, there are %d entries:',
 				mysql_num_rows($erg)
 			),
-			'<em>'.Queries::get_fmg_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
+			'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
 		);
 	}
 
