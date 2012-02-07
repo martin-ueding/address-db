@@ -7,6 +7,13 @@ $nav1_background: hsl(0, 0%, 70%);
 $nav2_background: hsl(0, 0%, 80%);
 $nav3_background: hsl(0, 0%, 90%);
 
+@mixin border_3d {
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
 body, textarea {
 	font-family: verdana, geneva, sans-serif;
 	font-size: 13px;
@@ -126,11 +133,11 @@ body.maske {
 
 				input {
 					height: 20px;
-					border: 1px solid #999; /* test */
+					border: 1px solid #999;
 				}
 
 				textarea {
-					border: 1px solid #999; /* test */
+					border: 1px solid #999;
 				}
 			}
 
@@ -229,9 +236,9 @@ ul {
 		margin: 2px 0px 3px 4px;
 		background-color: #eee;
 		color: #666;
-		border-top: 1px solid #ccc; /* test */
-		border-left: 1px solid #ccc; /* test */
-		border-bottom: 1px solid #777; /* test */
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		border-bottom: 1px solid #777;
 		-moz-border-radius-bottomleft: 10px;
 		-webkit-border-bottom-left-radius: 10px;
 		-moz-border-radius-topleft: 10px;
@@ -264,10 +271,7 @@ ul {
 		padding: 0px;
 		margin: 5px 5px 0 0;
 		background-color: rgb(255, 250, 173);
-		border-top: 1px solid #ccc; /* test */
-		border-left: 1px solid #ccc; /* test */
-		border-right: 1px solid #000; /* test */
-		border-bottom: 1px solid #000; /* test */
+		@include border_3d;
 	}
 }
 
@@ -286,10 +290,7 @@ ul {
 	width: 500px;
 	color: rgb(0,0,0);
 	background-color: rgb(230,230,230);
-	border-top: 1px solid #ccc; /* test */
-	border-left: 1px solid #ccc; /* test */
-	border-right: 1px solid #000; /* test */
-	border-bottom: 1px solid #000; /* test */
+	@include border_3d;
 	float: left;
 
 	tr.data:nth-child(odd) {
@@ -315,7 +316,7 @@ td {
 #pers_bild {
 	float: right;
 	margin: 0 50px 0 0;
-	border: 1px solid #ccc; /* test */
+	border: 1px solid #ccc;
 }
 
 .pers_titel {
@@ -323,10 +324,7 @@ td {
 	color: rgb(255,255,255);
 	padding: 3px 0;
 	font-weight: bold;
-	border-top: 1px solid #ccc; /* test */
-	border-left: 1px solid #ccc; /* test */
-	border-right: 1px solid #000; /* test */
-	border-bottom: 1px solid #000; /* test */
+	@include border_3d;
 	background-color: rgb(102,102,102);
 }
 
@@ -334,10 +332,7 @@ table.display_person {
 	margin: 0 0 20px 0;
 	width: 550px;
 	color: rgb(0,0,0);
-	border-top: 1px solid #ccc; /* test */
-	border-left: 1px solid #ccc; /* test */
-	border-right: 1px solid #000; /* test */
-	border-bottom: 1px solid #000; /* test */
+	@include border_3d;
 
 	td.links {
 		width: 150px;
