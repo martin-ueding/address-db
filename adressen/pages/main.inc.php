@@ -3,7 +3,7 @@
 
 require_once('../helper/Filter.php');
 
-// Geburtstagstabelle
+
 echo '<table id="geburtstag">';
 echo '<tr>';
 echo '<td colspan="4"><b>'._('birthdays').'</b></td>';
@@ -11,7 +11,7 @@ echo '</tr>';
 echo '<tr>';
 echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>';
 echo '</tr>';
-// Daten laufender Monat holen und Anzeigearray erstellen
+
 $filter = new Filter($_SESSION['f'], $_SESSION['g']);
 $filter->add_where('geb_m='.date("n"));
 
