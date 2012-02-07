@@ -51,9 +51,9 @@ if (!isset($aktuell_name))
 		echo '<li><a href="?mode='.$mode.'&g=0'.$get_for_group_change.'" '.($_SESSION['g'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
 		echo NavHelper::spacer();
 
-		$erg = Abfragen::select_alle_gruppen();
+		$erg = Queries::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
-			if (Abfragen::gruppe_ist_nicht_leer($l['g_id'])) {
+			if (Queries::gruppe_ist_nicht_leer($l['g_id'])) {
 				echo '<li><a href="index.php?mode=list&g='.$l['g_id'].'&titel='.urlencode($l['gruppe']).'" '.($_SESSION['g'] == $l['g_id'] ? 'class="active"' : '').'>'.$l['gruppe'].'</a></li>';
 			}
 		}

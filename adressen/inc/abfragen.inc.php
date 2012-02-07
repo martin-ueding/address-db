@@ -6,7 +6,7 @@
  *
  * @author Martin Ueding <dev@martin-ueding.de>
  */
-class Abfragen {
+class Queries {
 
 	/**
 	 * Finds the cell phone carrier to an area code.
@@ -276,9 +276,9 @@ class Abfragen {
 		if (empty($text))
 			return $id;
 		else {
-			$erg = Abfragen::select_vw_vw($text);
+			$erg = Queries::select_vw_vw($text);
 			if (mysql_num_rows($erg) == 0) {
-				return Abfragen::insert_vw($text);
+				return Queries::insert_vw($text);
 			}
 			else {
 				$l = mysql_fetch_assoc($erg);

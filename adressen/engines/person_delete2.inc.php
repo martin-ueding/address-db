@@ -2,7 +2,7 @@
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
 if (!empty($id)) {
-	Abfragen::delete_person_id($id);
+	Queries::delete_person_id($id);
 
 	if (!empty($person_loop['vorname']) || !empty($person_loop['nachname'])) {
 		$msgs[] = sprintf(_('The entry %s was deleted.'),

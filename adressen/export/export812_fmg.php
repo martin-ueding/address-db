@@ -85,34 +85,34 @@ while ($l = mysql_fetch_assoc($erg)) {
 	
 	
 	if (!empty($l['tel_privat']))
-		echo 'Tel P: '.Abfragen::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].bruch();
+		echo 'Tel P: '.Queries::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].bruch();
 	
 	if (!empty($l['tel_arbeit']))
-		echo 'Tel A: '.Abfragen::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].bruch();
+		echo 'Tel A: '.Queries::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].bruch();
 	
 	if (!empty($l['tel_mobil']))
-		echo 'Handy: '.Abfragen::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].bruch();
+		echo 'Handy: '.Queries::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].bruch();
 	
 	if (!empty($l['tel_fax']))
-		echo 'Fax: '.Abfragen::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].bruch();
+		echo 'Fax: '.Queries::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].bruch();
 	
 	if (!empty($l['tel_aux']))
-		echo 'Tel: '.Abfragen::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].bruch();
+		echo 'Tel: '.Queries::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].bruch();
 	
 	if (!empty($l['ftel_privat']))
-		echo 'Tel P: '.Abfragen::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].bruch();
+		echo 'Tel P: '.Queries::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].bruch();
 	
 	if (!empty($l['ftel_arbeit']))
-		echo 'Tel A: '.Abfragen::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].bruch();
+		echo 'Tel A: '.Queries::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].bruch();
 	
 	if (!empty($l['ftel_mobil']))
-		echo 'Handy: '.Abfragen::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].bruch();
+		echo 'Handy: '.Queries::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].bruch();
 	
 	if (!empty($l['ftel_fax']))
-		echo 'Fax: '.Abfragen::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].bruch();
+		echo 'Fax: '.Queries::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].bruch();
 	
 	if (!empty($l['ftel_aux']))
-		echo 'Tel: '.Abfragen::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].bruch();
+		echo 'Tel: '.Queries::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].bruch();
 	
 	
 	

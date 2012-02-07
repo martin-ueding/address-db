@@ -35,7 +35,7 @@ include('inc/select.inc.php');
 // import id and get everything there is to know about that person
 if (isset($_GET['id'])) {
 	$id = (int)$_GET['id'];
-	$erg = Abfragen::select_person_alles($id);
+	$erg = Queries::select_person_alles($id);
 	$person_loop = mysql_fetch_assoc($erg);
 }
 

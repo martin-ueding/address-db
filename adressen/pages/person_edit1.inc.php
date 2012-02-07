@@ -5,11 +5,11 @@ $p_id = (int)($_GET['id']);
 
 
 
-$erg = Abfragen::select_fmg_zu_person ($p_id);
+$erg = Queries::select_fmg_zu_person ($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$fmgs[] = $l['fmg_id'];
 
-$erg = Abfragen::select_gruppen_zu_person ($p_id);
+$erg = Queries::select_gruppen_zu_person ($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$gruppen[] = $l['g_id'];
 
@@ -66,7 +66,7 @@ echo '<h1>'._('edit entry').'</h1>';
 
 <?PHP
 	/* Beziehungen zu den Familienmitgliedern */
-	$erg = Abfragen::select_alle_fmg();
+	$erg = Queries::select_alle_fmg();
 echo '<div class="box_596">';
 	echo _('Who knows this person?').'<br /><br />';
 	while ($l = mysql_fetch_assoc($erg))
@@ -82,7 +82,7 @@ echo '</div>';
 echo '<div class="box_596">';
 	echo '<br /><br />';
 	/* Gruppen */
-	$erg = Abfragen::select_alle_gruppen();
+	$erg = Queries::select_alle_gruppen();
 	echo _('In which groups is this person?').'<br><br />';
 	while ($l = mysql_fetch_assoc($erg))
 		{
@@ -101,7 +101,7 @@ echo '</div>';
 	<h2><?PHP echo sprintf(_('part %d of %d'), 2, 3).' &ndash; '._('address'); ?></h2>
 	
 	<?PHP
-	if (Abfragen::adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
+	if (Queries::adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
 		echo '&nbsp;<br /><b>'._('address change affects').':</b> <br /><br />';
 		echo '<input type="radio" name="werziehtum" value="einer"';
 		if ($werziehtum == 'einer' || $haushalt == 1)
