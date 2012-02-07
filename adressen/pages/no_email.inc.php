@@ -1,15 +1,17 @@
 <?PHP
 // Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helpers/Filter.php');
+
 echo '<h1>'._('entries without an email address').'</h1>';
 $from_with_get = 'mode=no_email';
 
-$titel = $_GET["titel"];
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+$filter->add_where('email_privat IS NULL');
+$filter->add_where('email_arbeit IS NULL');
+$filter->add_where('email_aux IS NULL');
 
-if ($_SESSION['f'] != 0)
-	$sql = 'SELECT * FROM ad_per LEFT JOIN ad_flinks ON person_lr=p_id WHERE (email_privat is null && email_arbeit is null && email_aux is null) && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
-else
-	$sql = 'SELECT * FROM ad_per WHERE (email_privat is null && email_arbeit is null && email_aux is null) ORDER BY nachname, vorname;';
+$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
 $erg = mysql_query($sql);
 $i = 0;
 while ($l = mysql_fetch_assoc($erg)) {
@@ -18,7 +20,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 /* Daten anzeigen */
 
-if (count($daten) > 0) {	
+if (isset($daten) && count($daten) > 0) {
 	echo '<table id="liste">';
 
 	foreach($daten as $zeile)
