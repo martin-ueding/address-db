@@ -58,7 +58,7 @@ if (!isset($aktuell_name))
 		$erg = Queries::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if (Queries::gruppe_ist_nicht_leer($l['g_id'])) {
-				echo '<li><a href="index.php?mode='.$mode.'&g='.$l['g_id'].'" '.($_SESSION['g'] == $l['g_id'] ? 'class="active"' : '').'>'.$l['gruppe'].'</a></li>';
+				echo '<li><a href="index.php?mode='.$mode.'&g='.$l['g_id'].''.$get_for_group_change.'" '.($_SESSION['g'] == $l['g_id'] ? 'class="active"' : '').'>'.$l['gruppe'].'</a></li>';
 			}
 		}
 		?>
