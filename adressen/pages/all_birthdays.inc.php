@@ -1,5 +1,5 @@
 <?PHP	
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('../helpers/Filter.php');
 
@@ -16,25 +16,42 @@ $erg = mysql_query($sql);
 
 $aktuell = 1;
 
-echo '<div class="geb_monat_kasten">';
-echo '<b>'._('January').'</b><br /><br />';
+
+$birthdays = array();
 
 while ($l = mysql_fetch_assoc($erg)) {
-	if ($l['geb_m'] != $aktuell) {
-		$aktuell = $l['geb_m'];
-		echo '</div>';
-		echo '<div class="geb_monat_kasten">';
-		echo '<b>'.$monate[$aktuell-1].'</b><br /><br />';
+	$birthdays[$l['geb_m']][] = $l;
+}
+
+foreach ($birthdays as $month => $list) {
+	if (count($list) == 0) {
+		continue;
 	}
-	$tag = $l['geb_t'] < 10 ? '0'.$l['geb_t'] : $l['geb_t'];
-	echo '<a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$tag.'. ';
-	if ($l['geb_t'] == date("j") && $aktuell == date("n"))
-		echo '<em>'.$l['vorname'].' '.$l['nachname'].'</em>';
-	else
-	echo $l['vorname'].' '.$l['nachname'];
+
+	echo '<div class="geb_monat_kasten">';
+	echo '<b>'.$monate[$month-1].'</b>';
+	echo '<br /><br />';
+
+	foreach ($list as $person) {
+		$tag = $person['geb_t'] < 10 ? '0'.$person['geb_t'] : $person['geb_t'];
+
+		echo '<a href="?mode=person_display&id='.$person['p_id'].'&back='.urlencode($from_with_get).'">'.$tag.'. ';
+
+		$has_birthday = $person['geb_t'] == date("j") && $aktuell == date("n");
+		if ($has_birthday) {
+			echo '<em>';
+		}
+		echo $person['vorname'].' '.$person['nachname'];
+		if ($has_birthday) {
+			echo '</em>';
+		}
+
+		echo '</a>';
+
+		echo '<br />';
+	}
 	
-	echo '</a><br />';
+	echo '</div>';
 }
 	
-echo '</div>';
 ?>
