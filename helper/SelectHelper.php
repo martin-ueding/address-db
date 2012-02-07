@@ -67,7 +67,6 @@ class SelectHelper {
 	}
 
 	public static function show_select_plz ($name, $aktiv) {
-
 		echo '<select size="1" name="'.$name.'">';
 
 		$erg = Queries::select_alle_plz();
@@ -84,7 +83,6 @@ class SelectHelper {
 	}
 
 	public static function show_select_ort ($name, $aktiv) {
-
 		echo '<select size="1" name="'.$name.'">';
 
 		$erg = Queries::select_alle_orte();
@@ -101,7 +99,6 @@ class SelectHelper {
 	}
 
 	public static function show_select_land ($name, $aktiv) {
-
 		echo '<select size="1" name="'.$name.'">';
 
 		$erg = Queries::select_alle_laender();
