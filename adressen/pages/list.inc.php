@@ -3,14 +3,9 @@
 
 require_once('../helpers/Filter.php');
 
-if (isset($_GET['titel'])) {
-	$titel = urldecode($_GET['titel']);
-}
 echo '<h1>'._('list').'</h1>';
 $from_with_get = 'mode=list';
-if (isset($titel)) {
-	$from_with_get .= '&titel='.urlencode($titel);
-}
+
 /* Daten sammeln */
 $filter = new Filter($_SESSION['f'], $_SESSION['g']);
 
@@ -58,7 +53,7 @@ if (!empty($sql)) {
 		echo '<br /><br />';
 	}
 
-	else if (!empty($titel) && $_SESSION['g'] != 0) {
+	else if ($_SESSION['g'] != 0) {
 		if ($_SESSION['f'] == 0) {
 			printf(
 				ngettext(
@@ -66,7 +61,7 @@ if (!empty($sql)) {
 					'The group %s contains %d entries:',
 					mysql_num_rows($erg)
 				),
-				'<em>'.$titel.'</em>', mysql_num_rows($erg)
+				'<em>'.Queries::get_group_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
 			);
 		}
 		else {
@@ -76,7 +71,7 @@ if (!empty($sql)) {
 					'The group %s contains %d entries that %s knows:',
 					mysql_num_rows($erg)
 				),
-				'<em>'.$titel.'</em>', mysql_num_rows($erg), '<em>'.$aktuell_name.'</em>'
+				'<em>'.Queries::get_group_name($_SESSION['g']).'</em>', mysql_num_rows($erg), '<em>'.$aktuell_name.'</em>'
 			);
 		}
 		echo '<br /><br />';

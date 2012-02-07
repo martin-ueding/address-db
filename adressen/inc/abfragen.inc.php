@@ -368,6 +368,14 @@ class Queries {
 			unlink($mugshot_path);
 		}
 	}
+
+	public static function get_group_name($id) {
+		$sql = 'SELECT gruppe FROM ad_gruppen WHERE g_id = '.$id.';';
+		$erg = mysql_query($sql);
+		if ($l = mysql_fetch_assoc($erg)) {
+			return $l['gruppe'];
+		}
+	}
 }
 
 ?>
