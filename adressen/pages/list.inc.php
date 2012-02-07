@@ -2,6 +2,7 @@
 // Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('../helper/Filter.php');
+require_once('../helper/Table.php');
 require_once('../model/FamilyMember.php');
 require_once('../model/Group.php');
 
@@ -101,15 +102,12 @@ if (!empty($sql)) {
 		);
 	}
 
-	echo '<table id="liste" cellpadding="0" cellspacing="0">';
-	$i = 0;
+	$table = new Table($erg, $from_with_get);
+	echo $table->html();
+
+	// Collect email address from everybody to send off a mass email.
+	$erg = mysql_query($sql);
 	while ($l = mysql_fetch_assoc($erg)) {
-		echo '<tr class="'.($i++ % 2 == 0 ? 'hell' : 'dunkel').'">';
-		echo '<td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">&raquo;</a></td><td align="right"><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['vorname'].'</a></td><td><a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($from_with_get).'">'.$l['nachname'].'</a></td>';
-
-		echo '</tr>';
-
-		// collect email address from everybody to send off a mass email
 		if ($l['email_privat'] != "") {
 			$emailadressen[] = $l['email_privat'];
 		}
@@ -120,7 +118,6 @@ if (!empty($sql)) {
 			$emailadressen[] = $l['email_aux'];
 		}
 	}
-	echo '</table>';
 }
 
 if (empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f'])) {
