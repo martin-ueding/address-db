@@ -3,20 +3,20 @@
 
 echo '<h1>'._('integrity check').'</h1>';
 
-$remove_unneeded = $_GET['remove_unneeded'] == 'true';
+$remove_unneeded = isset($_GET['remove_unneeded']);
 $deleted_items = 0;
 $unneeded_items = 0;
 
 // check mugshots
 $dir = dir('_mugshots');
-$pattern = 'per([0-9]+).jpg'; 
+$pattern = '/per([0-9]+).jpg/';
 while ($file = $dir -> read()) {
-	if (ereg($pattern, $file, $capture)) {
+	if (preg_match($pattern, $file, $capture)) {
 		$mugshot_ids[] = $capture[1];
 	}
 }
 
-if (count($mugshot_ids) > 0) {
+if (isset($mugshot_ids)) {
 	// read all the IDs from the DB
 	$sql = 'SELECT p_id FROM ad_per';
 	$erg = mysql_query($sql);
