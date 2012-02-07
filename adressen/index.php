@@ -131,20 +131,25 @@ switch ($mode) {
 	case 'pic_upload1':
 	case 'pic_upload2':
 	case 'pic_upload3':
-		$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		if (isset($person_loop)) {
+			$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		}
 		break;
 	case 'search':
 		$page_title = _('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
 		break;
 	case 'verification_email':
-		$page_title = _('Address DB').': '.sprintf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		if (isset($person_loop)) {
+			$page_title = _('Address DB').': '.sprintf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+		}
 		break;
 	case 'integrity_check':
 		$page_title = _('Address DB').': '._('database check');
 		break;
-	default:
-		$page_title = _('PHP Family Address DB');
-		break;
+}
+
+if (!isset($page_title)) {
+	$page_title = _('PHP Family Address DB');
 }
 ?>
 <!DOCTYPE html>
