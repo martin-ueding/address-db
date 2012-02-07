@@ -12,15 +12,17 @@ if (!empty($id)) {
 		$association_ids[] = $ass_l['fmg_id'];
 		$association_names[] = $ass_l['fmg'];
 	}
-	if (count($association_ids) >= 2) {
-		echo '<br />';
-		echo '<br />';
-		echo _('Warning:').' '.sprintf(_('This entry is connected to %s. Consider just removing your association with it.'), implode(', ', $association_names));
-	}
-	else if (count($association_ids) == 1 && $association_ids[0] != $_SESSION['f']) {
-		echo '<br />';
-		echo '<br />';
-		echo _('Warning:').' '.sprintf(_('This entry is connected to %s. Are you sure that you can delete this entry?'), $association_names[0]);
+	if (isset($association_ids)) {
+		if (count($association_ids) >= 2) {
+			echo '<br />';
+			echo '<br />';
+			echo _('Warning:').' '.sprintf(_('This entry is connected to %s. Consider just removing your association with it.'), implode(', ', $association_names));
+		}
+		else if (count($association_ids) == 1 && $association_ids[0] != $_SESSION['f']) {
+			echo '<br />';
+			echo '<br />';
+			echo _('Warning:').' '.sprintf(_('This entry is connected to %s. Are you sure that you can delete this entry?'), $association_names[0]);
+		}
 	}
 
 	echo '<br />';
