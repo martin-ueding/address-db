@@ -156,7 +156,7 @@ switch ($mode) {
 		<link rel="stylesheet" type="text/css" href="gfx/main.css">
 
 		<script src="js/jquery.min.js"></script>
-		<script src="js/message.js"></script>
+		<script src="js/message_box.js"></script>
 		<script src="js/search.js"></script>
 		<script src="js/selectSwitch.js.php"></script>
 		<script src="js/slidedown.js"></script>
