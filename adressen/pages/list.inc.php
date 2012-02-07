@@ -1,6 +1,8 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helpers/Filter.php');
+
 if (isset($_GET['titel'])) {
 	$titel = urldecode($_GET['titel']);
 }
@@ -10,30 +12,23 @@ if (isset($titel)) {
 	$from_with_get .= '&titel='.urlencode($titel);
 }
 /* Daten sammeln */
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+
 /* Suche nach Buchstabe */
 if (!empty($_GET['b'])) {
-	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-		$sql = 'SELECT * FROM ad_per, ad_flinks WHERE nachname like "'.$_GET['b'].'%" && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
-	else
-		$sql = 'SELECT * FROM ad_per WHERE nachname like "'.$_GET['b'].'%" ORDER BY nachname, vorname;';
 	$from_with_get .= '&b='.$_GET['b'];
+	$filter->add_where('nachname like "'.$_GET['b'].'%"');
 }
 /* Suche nach Gruppe */
 else if (!empty($_GET['g'])) {
-	if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-		$sql = 'SELECT * FROM ad_per, ad_glinks, ad_flinks WHERE ad_glinks.person_lr=p_id && gruppe_lr='.$_GET['g'].' && ad_flinks.person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY nachname, vorname;';
-	else
-		$sql = 'SELECT * FROM ad_per, ad_glinks WHERE person_lr=p_id && gruppe_lr='.$_GET['g'].' ORDER BY nachname, vorname;';
 	$from_with_get .= '&g='.$_GET['g'];
 }
 /* Suche nach Bezug */
 else if (!empty($_GET['f'])) {
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE person_lr=p_id && fmg_lr='.$_GET['f'].' ORDER BY nachname, vorname;';
 	$from_with_get .= '&f='.$_GET['f'];
 }
-else {
-	$sql = 'SELECT * FROM ad_per ORDER BY nachname, vorname;';
-}
+
+$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
 
 /* Daten anzeigen */
 if (!empty($sql)) {
