@@ -18,11 +18,8 @@ $filter->add_where('geb_m='.date("n"));
 $sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
 $erg = mysql_query($sql);
 echo mysql_error();
-$i = 0;
 while ($l = mysql_fetch_assoc($erg)) {
-	# TODO Use CSS for zebra.
-	if($i % 2){ echo '<tr class="zeihell">';}
-	else { echo '<tr class="zeidunkel">'; }
+	echo '<tr class="data">';
 	echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">';
 	if ($l['geb_t'] == date("j"))
 		echo '<em>'.$l['vorname'].' '.$l['nachname'].'</em>';
@@ -38,7 +35,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else
 		echo '<td>&nbsp;</td>';
 	echo '</tr>';
-	$i++;
 }
 /* .Ende Geburtstage laufender Monat. */
 echo '<tr>';
@@ -53,14 +49,8 @@ else
 $erg = mysql_query($sql);
 echo mysql_error();
 	
-$i = 0;
 while ($l = mysql_fetch_assoc($erg)) {
-	if($i % 2) {
-		echo '<tr class="zeihell">';
-	}
-	else {
-		echo '<tr class="zeidunkel">';
-	}
+	echo '<tr class="data">';
 	echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a> </td>';
 	echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
 	
@@ -78,7 +68,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 	
 	echo '</td>';
 	echo '</tr>';
-	$i++;
 }
 echo '</table>';
 
