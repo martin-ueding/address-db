@@ -2,6 +2,9 @@
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
 echo '<h1>'._('display entry').'</h1>';
+
+if (isset($id)) {
+
 $mugshot_path = '_mugshots/per'.$id.'.jpg';
 if (file_exists($mugshot_path)) {
 	$bilddaten = getimagesize('_mugshots/per'.$id.'.jpg');
@@ -366,4 +369,8 @@ if (file_exists($mugshot_path))
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 echo '<a href="export/vcard.php?id='.$id.'" title="'._('download VCard').'"><img src="gfx/vcard.png" width="64" height="64" alt="'._('download VCard').'" border="0" /></a>';
 	
+}
+else {
+	echo _('No ID given.');
+}
 ?>

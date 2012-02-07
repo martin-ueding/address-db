@@ -117,7 +117,9 @@ switch ($mode) {
 		$page_title = _('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 		break;
 	case 'person_display':
-		$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
+		if (isset($person_loop)) {
+			$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
+		}
 		break;
 	case 'person_edit1':
 	case 'person_edit2':
