@@ -2,3 +2,4 @@
 
 all:
 	make -C adressen
+	make -C locale
