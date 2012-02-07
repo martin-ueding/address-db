@@ -1,5 +1,5 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 echo '<h1>'._('integrity check').'</h1>';
 

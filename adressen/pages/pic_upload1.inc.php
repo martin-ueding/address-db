@@ -1,4 +1,4 @@
-<?PHP /* Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de> */ ?>
+<?PHP /* Copyright © 2011 Martin Ueding <dev@martin-ueding.de> */ ?>
 <h1><?PHP echo _('picture upload'); ?></h1>
 
 <?PHP echo _('only JPEG'); ?>

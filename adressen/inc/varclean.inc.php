@@ -1,5 +1,5 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 foreach ($_GET as $key => $wert) {
 	$_GET[$key] = strip_tags($_GET[$key]);

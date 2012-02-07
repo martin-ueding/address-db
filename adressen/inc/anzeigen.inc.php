@@ -1,5 +1,5 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 function alter($tag, $monat, $jahr) { // j, n
 	$alter = date("Y") - $jahr;

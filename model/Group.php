@@ -1,5 +1,5 @@
 <?php
-# Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 class Group {
 	public static function get_name($id) {

@@ -1,5 +1,5 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 if ($_GET['sicher'] == 'ja') {
 	if ($person_loop['last_send'] > time()-24*3600) {

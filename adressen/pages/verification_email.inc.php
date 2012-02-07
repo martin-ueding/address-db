@@ -1,5 +1,5 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 if ($_GET['sicher'] != 'ja') {
 	printf(_('Do you really want to send a verification mail to %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');

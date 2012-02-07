@@ -1,5 +1,5 @@
 <?PHP
-# Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 class Navigation {
 	public static function nav_action_link($mode, $active_mode, $text) {

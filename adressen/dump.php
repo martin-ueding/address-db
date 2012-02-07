@@ -1,6 +1,6 @@
 <?PHP
 // original script from http://www.wer-weiss-was.de/theme163/article2952225.html
-// changes Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// changes Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 include('_config.inc.php');
 

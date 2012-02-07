@@ -1,5 +1,5 @@
 <?php
-# Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 /**
  * Gathers JOIN and WHERE commands for a MySQL query.
