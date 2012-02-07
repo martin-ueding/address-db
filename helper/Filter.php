@@ -31,8 +31,13 @@ class Filter {
 	/**
 	 * Adds a new JOIN clause.
 	 */
-	public function add_join($join) {
-		$this->snippets["join"][] = $join;
+	public function add_join($join, $in_front = false) {
+		if ($in_front) {
+			array_unshift($this->snippets["join"], $join);
+		}
+		else {
+			array_push($this->snippets["join"], $join);
+		}
 	}
 
 	/**
