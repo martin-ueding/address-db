@@ -1,7 +1,7 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helpers/SelectHelper.php');
+require_once('../helper/SelectHelper.php');
 
 echo '<h1>'._('create a new entry').'</h1>';
 ?>

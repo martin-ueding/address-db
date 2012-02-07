@@ -1,7 +1,7 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helpers/Filter.php');
+require_once('../helper/Filter.php');
 
 echo '<h1>'._('entries without a form of address').'</h1>';
 $from_with_get = 'mode=no_title';

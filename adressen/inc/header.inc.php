@@ -1,7 +1,7 @@
 <?PHP
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
-require_once('../helpers/NavHelper.php');
+require_once('../helper/NavHelper.php');
 
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);

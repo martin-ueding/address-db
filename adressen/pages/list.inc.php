@@ -1,7 +1,7 @@
 <?PHP
 // Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helpers/Filter.php');
+require_once('../helper/Filter.php');
 require_once('../model/FamilyMember.php');
 require_once('../model/Group.php');
 
