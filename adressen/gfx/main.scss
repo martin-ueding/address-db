@@ -35,7 +35,7 @@ A IMG {
 		li {
 			list-style: none;
 			padding: 0;
-			margin: 0;
+			margin: 0 0 5px 3px;
 			a {
 				-webkit-border-top-left-radius: 7px;
 				-webkit-border-bottom-left-radius: 7px;
@@ -45,7 +45,6 @@ A IMG {
 				border-bottom-left-radius: 7px;
 				display: block;
 				padding: 2px 5px;
-				margin: 0 0 5px 3px;
 				&:hover {
 				}
 			}

@@ -15,6 +15,8 @@ if (!isset($aktuell_name))
 <div id="nav_mode">
 	<ul>
 		<?PHP
+		echo '<li><b>'._('mode').'</b></li>';
+
 		// find all get parameters which are not the mode or the fmg and put them into a string
 		$get_for_fmg_change = '';
 		foreach ($_GET as $key => $wert) {
@@ -42,6 +44,8 @@ if (!isset($aktuell_name))
 <div id="nav_groups">
 	<ul>
 		<?PHP
+		echo '<li><b>'._('groups').'</b></li>';
+
 		$get_for_group_change = '';
 		foreach ($_GET as $key => $wert) {
 			if ($key != 'mode' && $key != 'g') {
@@ -65,6 +69,8 @@ if (!isset($aktuell_name))
 <div id="nav_actions">
 <ul>
 <?php
+echo '<li><b>'._('action').'</b></li>';
+
 echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
 echo NavHelper::nav_action_link('list', $mode, _('show entries'));
 echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
