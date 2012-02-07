@@ -1,11 +1,19 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../../helper/Filter.php');
+
+session_start();
+
 include('../_config.inc.php');
+
 $q = $_POST['query'];
 
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+$filter->add_where('nachname like "'.$q.'%"');
 
-$sql = 'SELECT nachname FROM ad_per WHERE nachname like "'.$q.'%" GROUP BY nachname ORDER BY nachname LIMIT 15;';
+$sql = 'SELECT nachname FROM ad_per '.$filter->join().' WHERE '.$filter->where().' GROUP BY nachname ORDER BY nachname LIMIT 15;';
+
 $erg = mysql_query($sql);
 if (mysql_num_rows($erg) > 0) {
 	echo '<ul>';
