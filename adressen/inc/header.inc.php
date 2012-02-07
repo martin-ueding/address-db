@@ -2,6 +2,7 @@
 /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
 require_once('../helper/NavHelper.php');
+require_once('../helper/Request.php');
 
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
@@ -46,19 +47,21 @@ if (!isset($aktuell_name))
 		<?PHP
 		echo '<li><b>'._('groups').'</b></li>';
 
-		$get_for_group_change = '';
-		foreach ($_GET as $key => $wert) {
-			if ($key != 'mode' && $key != 'g') {
-				$get_for_group_change .= '&'.$key.'='.$wert;
-			}
-		}
-		echo '<li><a href="?mode='.$mode.'&g=0'.$get_for_group_change.'" '.($_SESSION['g'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
+		$request = new Request();
+		$request->set('mode', $mode);
+		$request->set('g', 0);
+
+		echo '<li><a href="?'.$request->join().'" '.($_SESSION['g'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
 		echo NavHelper::spacer();
 
 		$erg = Queries::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if (Queries::gruppe_ist_nicht_leer($l['g_id'])) {
-				echo '<li><a href="index.php?mode='.$mode.'&g='.$l['g_id'].''.$get_for_group_change.'" '.($_SESSION['g'] == $l['g_id'] ? 'class="active"' : '').'>'.$l['gruppe'].'</a></li>';
+				$request = new Request();
+				$request->set('mode', $mode);
+				$request->set('g', $l['g_id']);
+
+				echo '<li><a href="index.php?'.$request->join().'" '.($_SESSION['g'] == $l['g_id'] ? 'class="active"' : '').'>'.$l['gruppe'].'</a></li>';
 			}
 		}
 		?>
