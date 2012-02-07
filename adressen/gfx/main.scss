@@ -132,6 +132,15 @@ body.maske {
 			}
 		}
 	}
+
+	#nav_actions {
+		a {
+			color: hsl(0, 0%, 0%);
+			&:hover, &.active {
+				background-color: #ffc;
+			}
+		}
+	}
 }
 
 select {
