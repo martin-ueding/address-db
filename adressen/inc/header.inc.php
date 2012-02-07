@@ -71,8 +71,8 @@ if (!isset($aktuell_name))
 <?php
 echo '<li><b>'._('action').'</b></li>';
 
-echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
 echo NavHelper::nav_action_link('list', $mode, _('show entries'));
+echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
 echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
 echo NavHelper::nav_action_link('all_birthdays', $mode, _('birthday list'));
 echo NavHelper::spacer();
