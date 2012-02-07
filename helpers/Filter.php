@@ -31,7 +31,12 @@ class Filter {
 		return implode(' ', $this->snippets["join"]);
 	}
 	public function where() {
-		return implode(' && ', $this->snippets["where"]);
+		if (count($this->snippets["where"]) > 0) {
+			return implode(' && ', $this->snippets["where"]);
+		}
+		else {
+			return "true";
+		}
 	}
 }
 ?>
