@@ -1,7 +1,8 @@
-<?PHP /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */ ?>
-
-
 <?PHP
+/* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */
+
+require_once('../helpers/NavHelper.php');
+
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
 while ($l = mysql_fetch_assoc($erg)) {
@@ -23,6 +24,8 @@ if (!isset($aktuell_name))
 		}
 
 		echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'" '.($_SESSION['f'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
+		echo NavHelper::spacer();
+
 		$sql = 'SELECT * FROM ad_fmg';
 		$erg = mysql_query($sql);
 		while ($l = mysql_fetch_assoc($erg)) {
@@ -46,6 +49,7 @@ if (!isset($aktuell_name))
 			}
 		}
 		echo '<li><a href="?mode='.$mode.'&g=0'.$get_for_group_change.'" '.($_SESSION['g'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
+		echo NavHelper::spacer();
 
 		$erg = Abfragen::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
@@ -61,12 +65,13 @@ if (!isset($aktuell_name))
 <div id="nav_actions">
 <ul>
 <?php
-require_once('../helpers/NavHelper.php');
 echo NavHelper::nav_action_link('main', $mode, _('birthday view'));
 echo NavHelper::nav_action_link('list', $mode, _('show entries'));
 echo NavHelper::nav_action_link('person_create1', $mode, _('create new entry'));
 echo NavHelper::nav_action_link('all_birthdays', $mode, _('birthday list'));
+echo NavHelper::spacer();
 echo '<li><a href="export/kitchen.php">'._('export LaTeX sheets').'</a></li>';
+echo NavHelper::spacer();
 echo NavHelper::nav_action_link('no_title', $mode, _('no form of address'));
 echo NavHelper::nav_action_link('no_association', $mode, _('no association'));
 echo NavHelper::nav_action_link('no_group', $mode, _('no group'));
