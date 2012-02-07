@@ -3,7 +3,10 @@
 
 class Filter {
 	public function __construct($fmg = 0, $group = 0) {
-		$this->snippets = array();
+		$this->snippets = array(
+			"join" => array(),
+			"where" => array(),
+		);
 
 		if ($fmg != 0) {
 			$this->snippets["join"][] = 'JOIN ad_flinks ON ad_flinks.person_lr = p_id';
