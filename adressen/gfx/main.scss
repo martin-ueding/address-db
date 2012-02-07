@@ -6,6 +6,12 @@ body, textarea {
 	line-height: 1.5;
 }
 
+body {
+	background-image: url("background.png");
+	background-repeat: repeat-y;
+	background-position: left;
+}
+
 body, a {
 	margin: 0px;
 	padding: 0px;
