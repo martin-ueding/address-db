@@ -7,6 +7,10 @@ class NavHelper {
 		$link = '<li><a href="index.php?mode='.$mode.'" '.$class.'>'.$text.'</a></li>';
 		return $link;
 	}
+
+	public static function spacer() {
+		return '<li>&nbsp;</li>';
+	}
 }
 
 ?>
