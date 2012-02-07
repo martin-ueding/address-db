@@ -1,14 +1,19 @@
 <?PHP	
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helpers/Filter.php');
+
 echo '<h1>'._('all birthdays').'</h1>';
 $from_with_get = 'mode=all_birthdays';
 $monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December'));
+
+$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+$filter->add_where('geb_t != 0');
+$filter->add_where('geb_m != 0');
 	
-if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-	$sql = 'SELECT * FROM ad_per, ad_flinks WHERE geb_t!=0 && geb_m!=0 && person_lr=p_id && fmg_lr='.$_SESSION['f'].' ORDER BY geb_m, geb_t, nachname;';
-else
-	$sql = 'SELECT * FROM ad_per WHERE geb_t!=0 && geb_m!=0 ORDER BY geb_m, geb_t, nachname;';
+$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_m, geb_t, nachname;';
+
+echo $sql;
 
 $erg = mysql_query($sql);
 
