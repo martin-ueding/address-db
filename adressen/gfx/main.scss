@@ -32,8 +32,21 @@ body, a {
 	border: none;
 	color: rgb(0,0,0);
 }
-a img {
-	border: 0px;
+
+a {
+	text-decoration: none;
+
+	&:visited, &:link {
+		color: #a70000;
+	}
+
+	&:hover {
+		color: rgb(209,31,57);
+	}
+
+	img {
+		border: 0px;
+	}
 }
 
 #nav_mode, #nav_groups, #nav_actions, #content {
@@ -198,18 +211,6 @@ em {
 	color: rgb(209,31,57);
 }
 
-a {
-	text-decoration: none;
-}
-
-a:visited, a:link {
-	color: #a70000;
-}
-
-a:hover {
-	color: rgb(209,31,57);
-}
-
 ul {
 	margin-left: 10px;
 }
@@ -223,21 +224,21 @@ ul {
 	width: 31px;
 
 	a, span {
+		-moz-border-radius-bottomleft: 10px;
+		-moz-border-radius-topleft: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-webkit-border-top-left-radius: 10px;
+		background-color: #eee;
+		border-bottom: 1px solid #777;
+		border-left: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+		color: #666;
 		display: block;
-		width: 32px;
-		text-decoration: none;
-		text-align: center;
 		line-height: 21px;
 		margin: 2px 0px 3px 4px;
-		background-color: #eee;
-		color: #666;
-		border-top: 1px solid #ccc;
-		border-left: 1px solid #ccc;
-		border-bottom: 1px solid #777;
-		-moz-border-radius-bottomleft: 10px;
-		-webkit-border-bottom-left-radius: 10px;
-		-moz-border-radius-topleft: 10px;
-		-webkit-border-top-left-radius: 10px;
+		text-align: center;
+		text-decoration: none;
+		width: 32px;
 	}
 
 	a {
@@ -257,36 +258,37 @@ ul {
 
 #search {
 	position: absolute;
-	top: 0px;
 	right: 6px;
+	top: 0px;
+
 	#suche {
-		width: 150px;
+		@include border_3d;
+		background-color: rgb(255, 250, 173);
 		font-size: 11px;
 		height: 20px;
-		padding: 0px;
 		margin: 5px 5px 0 0;
-		background-color: rgb(255, 250, 173);
-		@include border_3d;
+		padding: 0px;
+		width: 150px;
 	}
 }
 
 #messages {
+	background-color: #b3e6ff;
+	border: 1px solid #66ccff;
+	margin: 10px 20px 10px 0px;
 	padding: 10px;
 	width: 800px;
-	background-color: #b3e6ff;
-	margin: 10px 20px 10px 0px;
-	border: 1px solid #66ccff;
 }
 
 /*.geburtstage.*/
 
 #geburtstag {
+	@include border_3d;
+	background-color: rgb(230,230,230);
+	color: rgb(0,0,0);
+	float: left;
 	margin: 20px 0 20px 7px;
 	width: 500px;
-	color: rgb(0,0,0);
-	background-color: rgb(230,230,230);
-	@include border_3d;
-	float: left;
 
 	tr.data:nth-child(odd) {
 		background-color: rgb(250,250,250);
@@ -309,18 +311,18 @@ td {
 }
 
 #pers_bild {
+	border: 1px solid #ccc;
 	float: right;
 	margin: 0 50px 0 0;
-	border: 1px solid #ccc;
 }
 
 .pers_titel {
-	width: 548px;
-	color: rgb(255,255,255);
-	padding: 3px 0;
-	font-weight: bold;
 	@include border_3d;
 	background-color: rgb(102,102,102);
+	color: rgb(255,255,255);
+	font-weight: bold;
+	padding: 3px 0;
+	width: 548px;
 }
 
 table.display_person {
@@ -341,51 +343,20 @@ td.icon {
 	width: 12px;
 }
 
-
-/*.eingabemasken.*/
-
-#schritte {
-	border-collapse: collapse;
-	width: 596px;
-	height: 194px;
-}
-
-#schritte .normal {
-	width: 149px;
-	height: 194px;
-	color: #fff;
-	line-height: 194px;
-	text-align: center;
-	background-image: url(../eicons/gelbpfeil.gif);
-	background-position: left;
-	background-repeat: no-repeat;
-}
-
-#schritte .aktiv {
-	width: 149px;
-	height: 194px;
-	color: #fff;
-	line-height: 194px;
-	text-align: center;
-	background-image: url(../eicons/rotpfeil.gif);
-	background-position: left;
-	background-repeat: no-repeat;
-}
-
 .input_block {
 	float: left;
 	width: 149px;
 }
 
 div.geb_monat_kasten {
-	float: left;
-	width: 200px;
-	height: 350px;
-	overflow: auto;
-	margin: 10px 0px 10px 20px;;
-	padding: 5px;
-	border: 1px solid #aaa;
 	background-color: rgb(230,230,230);
+	border: 1px solid #aaa;
+	float: left;
+	height: 350px;
+	margin: 10px 0px 10px 20px;;
+	overflow: auto;
+	padding: 5px;
+	width: 200px;
 }
 
 table.liste {
@@ -394,27 +365,27 @@ table.liste {
 	padding: 0px;
 
 	td {
-	margin: 0px;
-	padding: 2px 5px;
+		margin: 0px;
+		padding: 2px 5px;
 	}
 
 	tr:nth-child(even) {
-	background-color: rgb(255, 255, 255);
+		background-color: rgb(255, 255, 255);
 	}
 
 	tr:nth-child(odd) {
-	background-color: rgb(240, 240, 240);
+		background-color: rgb(240, 240, 240);
 	}
 }
 
 #version {
-	position: fixed;
-	right: 0px;
-	bottom: 0px;
-	background-color: #ccf;
-	padding: 2px 5px 2px 9px;
 	-moz-border-radius-topleft: 8px;
 	-webkit-border-top-left-radius: 8px;
+	background-color: #ccf;
+	bottom: 0px;
+	padding: 2px 5px 2px 9px;
+	position: fixed;
+	right: 0px;
 }
 
 span.graytext {
@@ -426,22 +397,22 @@ span.project_menu {
 }
 
 div#searchhints {
+	left: 650px;
+	margin: 0px;
+	padding: 0px;
 	position: absolute;
 	top: 50px;
-	left: 650px;
 	z-index: 10;
-	padding: 0px;
-	margin: 0px;
 
 	ul {
+		list-style: none;
 		margin: 0px;
 		padding: 0px;
-		list-style: none;
 
 		li {
+			background-color: #eee;
 			margin: 0px;
 			padding: 3px 5px;
-			background-color: #eee;
 
 			&:hover {
 				background-color: #ddd;
