@@ -1,6 +1,8 @@
 <?PHP
 // Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('../helper/Filter.php');
+
 /**
  * Class with several database queries.
  *
@@ -107,13 +109,17 @@ class Queries {
 	}
 
 	public static function select_person_alles ($id) {
-		// XXX use JOIN
-		$sql = 'SELECT * '.
-			'FROM ad_per, ad_adressen, ad_orte, ad_plz, ad_laender, '.
-				'ad_anreden, ad_prafixe, ad_suffixe '.
-			'WHERE p_id='.$id.' && adresse_r=ad_id && ort_r=o_id && '.
-				'plz_r=plz_id && land_r=l_id && anrede_r=a_id && '.
-				'prafix_r=prafix_id && suffix_r=s_id;';
+		$filter = new Filter();
+		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
+		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
+		$filter->add_join('LEFT JOIN ad_laender ON land_r = l_id');
+		$filter->add_join('LEFT JOIN ad_orte ON ort_r = o_id');
+		$filter->add_join('LEFT JOIN ad_plz ON plz_r = plz_id');
+		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
+		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
+		$filter->add_where('p_id = '.$id);
+
+		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().';';
 		$erg = mysql_query($sql);
 		return $erg;
 	}
