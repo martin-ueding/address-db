@@ -16,12 +16,6 @@ A IMG {
 	border: 0px;
 }
 
-@media print {
-	#kartei, #suche, .nav_item {
-		display: none;
-	}
-}
-
 #nav_mode, #nav_groups, #nav_actions, #content {
 	padding: 10px 0 32767px 0;
 	margin: 0 0 -32767px 0;
@@ -102,38 +96,37 @@ A IMG {
 body.maske {
 	padding-left: 20px;
 	background-color: #FFC;
-}
 
-body.maske TABLE {
-	width: 596px;
-}
+	table {
+		width: 596px;
 
-body.maske TABLE TR {
-}
+		tr {
+			th {
+				padding: 3px 3px 3px 10px;
+				background-color: rgb(102,102,102);
+				color: rgb(255,255,255);
+				text-align: left;
+			}
 
-body.maske TABLE TH {
-	padding: 3px 3px 3px 10px;
-	background-color: rgb(102,102,102);
-	color: rgb(255,255,255);
-	text-align: left;
-}
+			td {
+				padding: 3px 3px 3px 10px;
+				background-color: rgb(255,219,93);
 
-body.maske TABLE TR TD {
-	padding: 3px 3px 3px 10px;
-	background-color: rgb(255,219,93);
-}
+				input {
+					height: 20px;
+					border: 1px solid #999; /* TEST */
+				}
 
-body.maske TABLE TR TD INPUT {
-	height: 20px;
-	border: 1px solid #999; /* TEST */
-}
+				textarea {
+					border: 1px solid #999; /* TEST */
+				}
+			}
 
-body.maske TABLE TR TD TEXTAREA {
-	border: 1px solid #999; /* TEST */
-}
-
-body.maske .rand {
-	border: 1px solid #999;	
+			.rand {
+				border: 1px solid #999;	
+			}
+		}
+	}
 }
 
 select {
@@ -150,10 +143,12 @@ H1 {
 	margin: 0 0 15px 0;
 }
 
-H1 EM {
-	font-size: 19px;
-	color: rgb(209,31,57);
-	font-style: normal;
+h1, h2, h3, h4, h5, h6 {
+	em {
+		font-size: 19px;
+		color: rgb(209,31,57);
+		font-style: normal;
+	}
 }
 
 H2 {
@@ -161,23 +156,10 @@ H2 {
 	margin-bottom: 5px;
 }
 
-H2 EM {
-	font-size: 17px;
-	color: rgb(209,31,57);
-	font-style: normal;
-}
-
 H3 {
 	font-size: 15px;
 	margin-bottom: 5px;
 }
-
-H3 EM {
-	font-size: 15px;
-	color: rgb(209,31,57);
-	font-style: normal;
-}
-
 
 B {
 	font-weight: bold;
@@ -217,36 +199,38 @@ UL {
 	top: 0px;
 	right: 6px;
 	width: 31px;
-}
 
-#kartei A, #kartei SPAN {
-	display: block;
-	width: 32px;
-	text-decoration: none;
-	text-align: center;
-	line-height: 21px;
-	margin: 2px 0px 3px 4px;
-	background-color: #EEE;
-	color: #666;
-	border-top: 1px solid #CCC; /* TEST */
-	border-left: 1px solid #CCC; /* TEST */
-	border-bottom: 1px solid #777; /* TEST */
-    -moz-border-radius-bottomleft: 10px;
-    -webkit-border-bottom-left-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    -webkit-border-top-left-radius: 10px;
-}
+	a, span {
+		display: block;
+		width: 32px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 21px;
+		margin: 2px 0px 3px 4px;
+		background-color: #EEE;
+		color: #666;
+		border-top: 1px solid #CCC; /* TEST */
+		border-left: 1px solid #CCC; /* TEST */
+		border-bottom: 1px solid #777; /* TEST */
+		-moz-border-radius-bottomleft: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-topleft: 10px;
+		-webkit-border-top-left-radius: 10px;
+	}
 
-#kartei A:VISITED, #kartei A:LINK {
-	color: rgb(0,0,0);
-	background-color: #FFE699;
-}
+	a {
+		&:link, &:visited {
+			color: rgb(0,0,0);
+			background-color: #FFE699;
+		}
 
-#kartei A:HOVER {
-	width: 31px;
-	color: rgb(255,255,255);
-	background-color: rgb(204,0,0);
-	font-weight: bold;
+		&:hover {
+			width: 31px;
+			color: rgb(255,255,255);
+			background-color: rgb(204,0,0);
+			font-weight: bold;
+		}
+	}
 }
 
 #suche {
@@ -289,16 +273,15 @@ UL {
 	border-right: 1px solid #000; /* TEST */
 	border-bottom: 1px solid #000; /* TEST */
 	float: left;
-}
 
-#geburtstag tr.zeihell {
-	background-color: rgb(250,250,250);
-}
+	tr.zeihell {
+		background-color: rgb(250,250,250);
+	}
 
-#geburtstag tr.zeidunkel {
-	background-color: rgb(240,240,240);
+	tr.zeidunkel {
+		background-color: rgb(240,240,240);
+	}
 }
-
 
 /* .Deklarationen fuer die Personendarstellung. */
 
@@ -337,11 +320,13 @@ TABLE.display_person {
 	border-left: 1px solid #CCC; /* TEST */
 	border-right: 1px solid #000; /* TEST */
 	border-bottom: 1px solid #000; /* TEST */
-}
-TABLE.display_person TD.links {
-	width: 150px;
-}
-TABLE.display_person TD.rechts {
+
+	td.links {
+		width: 150px;
+	}
+
+	td.rechts {
+	}
 }
 
 TD.icon {
@@ -404,35 +389,39 @@ DIV.geb_monat_kasten {
 	border-collapse: collapse;
 	margin: 0px;
 	padding: 0px;
-}
 
-#liste TD {
+	td {
 	margin: 0px;
 	padding: 2px 5px;
-}
+	}
 
-#liste TR.hell {
+	tr.hell {
 	background-color: rgb(255, 255, 255);
+	}
+
+	tr.dunkel {
+	background-color: rgb(240, 240, 240);
+	}
 }
 
-#liste TR.dunkel {
-	background-color: rgb(240, 240, 240);
-}
 #version {
 	position: fixed;
 	right: 0px;
 	bottom: 0px;
 	background-color: #CCF;
 	padding: 2px 5px 2px 9px;
-    -moz-border-radius-topleft: 8px;
-    -webkit-border-top-left-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-top-left-radius: 8px;
 }
+
 SPAN.graytext {
 	color: #555;
 }
+
 SPAN.project_menu {
 	display: none;
 }
+
 DIV#searchhints {
 	position: absolute;
 	top: 50px;
@@ -440,20 +429,24 @@ DIV#searchhints {
 	z-index: 10;
 	padding: 0px;
 	margin: 0px;
+
+	ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+
+		li {
+			margin: 0px;
+			padding: 3px 5px;
+			background-color: #EEE;
+
+			&:hover {
+				background-color: #ddd;
+			}
+		}
+	}
 }
-DIV#searchhints UL {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-DIV#searchhints UL LI {
-	margin: 0px;
-	padding: 3px 5px;
-	background-color: #EEE;
-}
-DIV#searchhints UL LI:hover {
-	background-color: #ddd;
-}
+
 IMG.switch_fields {
 	margin-right: 4px;
 }
