@@ -1,8 +1,12 @@
 # Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
 
-phpFiles = $(shell find .. -type f -name "*.php")
+phpfiles:=$(shell find .. -type f -name "*.php")
 
-phpfamilyaddressdb.pot: $(phpFiles)
+mofiles:=de_DE/LC_MESSAGES/phpfamilyaddressdb.mo nl/LC_MESSAGES/phpfamilyaddressdb.mo tr/LC_MESSAGES/phpfamilyaddressdb.mo
+
+all: $(mofiles)
+
+phpfamilyaddressdb.pot: $(phpfiles)
 	xgettext --sort-output --language=PHP --from-code=UTF-8 -keywword=_ -o $@ $^
 
 de_DE/LC_MESSAGES/phpfamilyaddressdb.mo: de.po

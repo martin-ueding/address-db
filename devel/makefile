@@ -4,7 +4,6 @@ version = 2.3.1
 projectName = phpfamilyaddressdb-$(version)
 
 phpFiles = $(shell find .. -type f -name "*.php")
-moFiles = ../locale/de_DE/LC_MESSAGES/phpfamilyaddressdb.mo ../locale/nl/LC_MESSAGES/phpfamilyaddressdb.mo ../locale/tr/LC_MESSAGES/phpfamilyaddressdb.mo
 
 all: locale/phpfamilyaddressdb.pot $(moFiles) bild-ausschnitt
 
