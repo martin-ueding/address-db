@@ -1,4 +1,4 @@
-<?PHP /* Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de> */ ?>
+<?PHP /* Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de> */ ?>
 
 
 <?PHP
@@ -21,12 +21,12 @@ if (!isset($aktuell_name))
 				$get_for_fmg_change .= '&'.$key.'='.$wert;
 			}
 		}
-		if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-			echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'">:: '._('all').'</a></li>';
+
+		echo '<li><a href="?mode='.$mode.'&f=0'.$get_for_fmg_change.'" '.($_SESSION['f'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
 		$sql = 'SELECT * FROM ad_fmg';
 		$erg = mysql_query($sql);
 		while ($l = mysql_fetch_assoc($erg)) {
-			echo '<li><a class="fmg_key" href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'">'.$l['fmg'].'</a></li>';
+			echo '<li><a href="index.php?mode='.$mode.'&f='.$l['fmg_id'].$get_for_fmg_change.'" '.($_SESSION['f'] == $l['fmg_id'] ? 'class="active"' : '').'>'.$l['fmg'].'</a></li>';
 			if (isset($_SESSION['f']) && $l['fmg_id'] == $_SESSION['f'])
 				$aktuell_name = $l['fmg'];
 		}

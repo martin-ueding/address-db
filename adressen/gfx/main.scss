@@ -23,7 +23,7 @@ A IMG {
 }
 
 #nav_mode, #nav_groups, #nav_actions, #content {
-	padding: 0 0 32767px 0;
+	padding: 10px 0 32767px 0;
 	margin: 0 0 -32767px 0;
 }
 
@@ -31,7 +31,7 @@ A IMG {
 	float: left;
 	ul {
 		margin: 0;
-		padding: 0;
+		padding: 0 0 0 0;
 		li {
 			list-style: none;
 			padding: 0;
@@ -45,7 +45,7 @@ A IMG {
 				border-bottom-left-radius: 7px;
 				display: block;
 				padding: 2px 5px;
-				margin: 0 0 0 3px;
+				margin: 0 0 5px 3px;
 				&:hover {
 				}
 			}
@@ -54,22 +54,24 @@ A IMG {
 }
 
 #nav_mode {
-	background-color: hsl(0, 0%, 50%);
+	background-color: hsl(0, 0%, 70%);
 	width: 70px;
 
 	a {
-		&:hover {
-			background-color: hsl(0, 0%, 70%);
+		color: hsl(0, 0%, 0%);
+		&:hover, &.active {
+			background-color: hsl(0, 0%, 80%);
 		}
 	}
 }
 
 #nav_groups {
-	background-color: hsl(0, 0%, 70%);
+	background-color: hsl(0, 0%, 80%);
 	width: 150px;
 
 	a {
-		&:hover {
+		color: hsl(0, 0%, 0%);
+		&:hover, &.active {
 			background-color: hsl(0, 0%, 90%);
 		}
 	}
@@ -80,7 +82,8 @@ A IMG {
 	width: 150px;
 
 	a {
-		&:hover {
+		color: hsl(0, 0%, 0%);
+		&:hover, &.active {
 			background-color: hsl(0, 0%, 100%);
 		}
 	}

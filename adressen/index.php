@@ -6,6 +6,10 @@ if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
 
+if (!isset($_SESSION['f'])) {
+	$_SESSION['f'] = 0;
+}
+
 // set up gettext support
 include('../inc/setup_gettext.inc.php');
 
