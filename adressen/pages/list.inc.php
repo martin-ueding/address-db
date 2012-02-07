@@ -78,19 +78,13 @@ if (!empty($sql)) {
 	}
 
 	else if ($_SESSION['f'] != 0) {
-		// get name for person
-		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
-		$name_erg = mysql_query($name_sql);
-		if ($name = mysql_fetch_assoc($name_erg)) {
-			$f_name = $name['fmg'];
-		}
 		printf(
 			ngettext(
 				'For %s, there is %d entry:',
 				'For %s, there are %d entries:',
 				mysql_num_rows($erg)
 			),
-			'<em>'.$f_name.'</em>', mysql_num_rows($erg)
+			'<em>'.Queries::get_fmg_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
 		);
 	}
 
