@@ -13,7 +13,10 @@ class Template {
 
 	public function html() {
 		extract($this->data);
+
+		ob_start();
 		include($this->templatefile());
+		return ob_get_clean();
 	}
 
 	private function templatefile() {
