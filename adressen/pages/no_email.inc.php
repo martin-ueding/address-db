@@ -1,5 +1,5 @@
 <?PHP
-// Copyright (c) 2011 Martin Ueding <dev@martin-ueding.de>
+// Copyright (c) 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 echo '<h1>'._('entries without an email address').'</h1>';
 $from_with_get = 'mode=no_email';
