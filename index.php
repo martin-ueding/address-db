@@ -98,7 +98,7 @@ if (!isset($page_title)) {
 
 
 $index_template = new Template('index');
-$index_template->set('body_class', (strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft'));
+$index_template->set('body_class', $mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
 
 # TODO
 $header_controller = new HeaderController();
