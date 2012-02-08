@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-08 20:48+0100\n"
+"POT-Creation-Date: 2012-02-08 21:02+0100\n"
 "PO-Revision-Date: 2011-01-14 23:58+0000\n"
 "Last-Translator: zeugma <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -49,8 +49,8 @@ msgstr ""
 #: ../controller/BirthdayController.php:40
 #: ../controller/PersonController.php:21
 #: ../controller/PersonController.php:770
-#: ../controller/PersonController.php:831
-#: ../controller/PersonController.php:857
+#: ../controller/PersonController.php:837
+#: ../controller/PersonController.php:863
 #: ../controller/MaintenanceController.php:12
 #: ../controller/MaintenanceController.php:20
 #: ../controller/MaintenanceController.php:35
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Ms."
 msgstr ""
 
-#: ../controller/PersonController.php:847
+#: ../controller/PersonController.php:853
 msgid "No ID given."
 msgstr ""
 
@@ -272,12 +272,12 @@ msgstr ""
 msgid "Taurus"
 msgstr ""
 
-#: ../controller/PersonController.php:801
+#: ../controller/PersonController.php:807
 #, php-format
 msgid "The entry %s was deleted."
 msgstr ""
 
-#: ../controller/PersonController.php:780
+#: ../controller/PersonController.php:786
 msgid "The entry was updated."
 msgstr ""
 
@@ -293,7 +293,8 @@ msgstr ""
 msgid "There are no invalid or unneeded entries."
 msgstr ""
 
-#: ../controller/PersonController.php:790
+#: ../controller/PersonController.php:779
+#: ../controller/PersonController.php:796
 msgid "There is no ID specified."
 msgstr ""
 
@@ -529,7 +530,7 @@ msgstr ""
 msgid "delete %d unneeded entries"
 msgstr ""
 
-#: ../controller/PersonController.php:831
+#: ../controller/PersonController.php:837
 #, php-format
 msgid "delete %s"
 msgstr "%s sil"
@@ -924,7 +925,7 @@ msgstr ""
 msgid "upload picture"
 msgstr ""
 
-#: ../template/index.php:31
+#: ../template/index.php:30
 msgid "version"
 msgstr "sürüm"
 
