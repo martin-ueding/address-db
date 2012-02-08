@@ -3,6 +3,7 @@
 
 require_once('model/Person.php');
 require_once('component/Template.php');
+require_once('controller/HeaderController.php');
 
 session_start();
 if (isset($_GET['f'])) {
@@ -163,10 +164,12 @@ $index_template = new Template('index');
 $index_template->set('body_class', (strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft'));
 
 # TODO
-include('inc/header.inc.php');
-$index_template->set('header', );
+$header_controller = new HeaderController();
+$header_controller->set_current_mode($mode);
+$index_template->set('header', $header_controller->view());
 
 
+/*
 # TODO
 if (isset($msgs) && count($msgs) > 0) {
 	echo '<div id="messages">';
@@ -177,7 +180,7 @@ if (isset($msgs) && count($msgs) > 0) {
 	echo '</ul>';
 	echo '</div>';
 }
-$index_template->set('messages', );
+$index_template->set('messages', null);
 
 # TODO
 switch ($mode) {
@@ -190,12 +193,14 @@ case 'main':
 	BirthdayController::upcoming_birthdays();
 	break;
 default:
-	include('pages/'.$mode.'.inc.php');
 	break;
 }
-$index_template->set('content', );
+$index_template->set('content', null);
+ */
 
 
 $version_array = file('version.txt');
 $index_template->set('version_string', $version_array[0]);
+
+echo $index_template->html();
 ?>
