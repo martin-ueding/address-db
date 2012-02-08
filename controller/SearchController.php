@@ -8,6 +8,7 @@ require_once('helper/Table.php');
 class SearchController extends Controller {
 	public function index() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']));
 
 		echo '<h1>'._('search').'</h1>';
 

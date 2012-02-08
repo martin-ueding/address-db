@@ -54,53 +54,6 @@ if (empty($mode)) {
 	$mode = 'main';
 }
 
-// generate page title
-switch ($mode) {
-case 'list':
-	break;
-case 'no_title':
-	$page_title = _('Address DB').': '._('no form of address');
-	break;
-case 'person_create1':
-case 'person_create2':
-	$page_title = _('Address DB').': '._('create entry');
-	break;
-case 'person_delete':
-case 'person_delete2':
-	$page_title = _('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
-	break;
-case 'person_display':
-	break;
-case 'person_edit1':
-case 'person_edit2':
-	$page_title = _('Address DB').': '.sprintf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
-	break;
-case 'pic_remove':
-	$page_title = _('Address DB').': '.sprintf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
-	break;
-case 'pic_upload1':
-case 'pic_upload2':
-case 'pic_upload3':
-	if (isset($person_loop)) {
-		$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
-	}
-	break;
-case 'search':
-	$page_title = _('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
-	break;
-case 'verification_email':
-	if (isset($person_loop)) {
-		$page_title = _('Address DB').': '.sprintf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
-	}
-	break;
-case 'integrity_check':
-	$page_title = _('Address DB').': '._('database check');
-	break;
-}
-
-if (!isset($page_title)) {
-	$page_title = _('PHP Family Address DB');
-}
 
 
 $index_template = new Template('index');

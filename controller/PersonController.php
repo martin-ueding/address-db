@@ -18,6 +18,8 @@ include('_config.inc.php');
 
 class PersonController extends Controller {
 	public function create() {
+		$this->set_page_title(_('Address DB').': '._('create entry'));
+
 		if (isset($_POST['form_sent'])) {
 			// Speichern Gruppe 1
 			$anrede_r = $_POST['anrede_r'];
@@ -765,6 +767,8 @@ class PersonController extends Controller {
 			$template->set('person_loop', $person_loop);
 			$template->set('werziehtum', 'alle');
 
+			$this->set_page_title(_('Address DB').': '.sprintf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']));
+
 			return $template->html();
 		}
 
@@ -823,6 +827,8 @@ class PersonController extends Controller {
 			$erg = Person::select_person_alles($id);
 			$person_loop = mysql_fetch_assoc($erg);
 			$template->set('person_loop', $person_loop);
+
+			$this->set_page_title(_('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']));
 
 			return $template->html();
 		}

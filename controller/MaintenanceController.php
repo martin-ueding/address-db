@@ -8,6 +8,7 @@ require_once('controller/Controller.php');
 class MaintenanceController extends Controller {
 	public function integrity_check() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '._('database check'));
 
 		echo '<h1>'._('integrity check').'</h1>';
 
@@ -398,6 +399,7 @@ class MaintenanceController extends Controller {
 
 	public function no_association() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '._('no association'));
 
 		echo '<h1>'._('entries without an association').'</h1>';
 
@@ -411,6 +413,7 @@ class MaintenanceController extends Controller {
 
 	public function no_birthday() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '._('no birthday'));
 
 		echo '<h1>'._('without a birthday').'</h1>';
 
@@ -425,6 +428,7 @@ class MaintenanceController extends Controller {
 
 	public function no_email() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '._('no email'));
 
 		echo '<h1>'._('entries without an email address').'</h1>';
 
@@ -439,6 +443,7 @@ class MaintenanceController extends Controller {
 
 	public function no_group() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '._('no group'));
 
 		echo '<h1>'._('entries without a group').'</h1>';
 
@@ -452,6 +457,7 @@ class MaintenanceController extends Controller {
 
 	public function no_title() {
 		$this->history_save();
+		$this->set_page_title(_('Address DB').': '._('no from of address'));
 
 		echo '<h1>'._('entries without a form of address').'</h1>';
 

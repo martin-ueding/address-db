@@ -25,6 +25,7 @@ class PictureController extends Controller {
 
 			$erg = Person::select_person_alles($id);
 			$person_loop = mysql_fetch_assoc($erg);
+			$this->set_page_title(_('Address DB').': '.sprintf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']));
 			$template->set('person_loop', $person_loop);
 			return $template->html();
 		}
@@ -57,6 +58,11 @@ class PictureController extends Controller {
 		else {
 			$template = new Template('picture_edit');
 			$template->set('id', $id);
+
+			$erg = Person::select_person_alles($id);
+			$person_loop = mysql_fetch_assoc($erg);
+			$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+
 			return $template->html();
 		}
 	}
