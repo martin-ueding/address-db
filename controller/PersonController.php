@@ -789,13 +789,17 @@ class PersonController extends Controller {
 		$id = $_GET['id'];
 
 		if (isset($_GET['sure'])) {
-			Person::delete_person_id($id);
+			$erg = Person::select_person_alles($id);
+			$person_loop = mysql_fetch_assoc($erg);
 
 			if (!empty($person_loop['vorname']) || !empty($person_loop['nachname'])) {
-				$_SESSION['messages'][] = sprintf(_('The entry %s was deleted.'),
-					'<em>'.$person_loop['vorname'].' '.
-					$person_loop['nachname'].'</em>');
+				$_SESSION['messages'][] = sprintf(
+					_('The entry %s was deleted.'),
+					'<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>'
+				);
 			}
+
+			Person::delete_person_id($id);
 
 			$_SESSION['history']->go_back($id);
 		}
