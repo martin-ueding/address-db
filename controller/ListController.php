@@ -7,6 +7,7 @@ require_once('model/FamilyMember.php');
 require_once('model/Group.php');
 
 class ListController {
+	public function index() {
 	echo '<h1>'._('list').'</h1>';
 	$from_with_get = 'mode=list';
 
@@ -96,6 +97,7 @@ class ListController {
 	if (!empty($emailadressen)) {
 		echo '<br /><br />';
 		echo '<a href="mailto:?bcc='.implode(',', $emailadressen).'">'._('send an email to everybody in this list').'</a>';
+	}
 	}
 }
 ?>
