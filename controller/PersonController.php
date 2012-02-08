@@ -271,8 +271,6 @@ class PersonController extends Controller {
 
 		$p_id = mysql_insert_id();
 
-
-
 		/* FMG-Bez&uuml;ge */
 		$sql = 'DELETE FROM ad_flinks WHERE person_lr='.$p_id.';';
 		mysql_query($sql);
@@ -284,7 +282,6 @@ class PersonController extends Controller {
 				echo mysql_error();
 			}
 		}
-
 
 		/* Gruppen */
 		$sql = 'DELETE FROM ad_glinks WHERE person_lr='.$p_id.';';
@@ -444,9 +441,6 @@ class PersonController extends Controller {
 		$sql .= ', geb_t='.$geb_t;
 		$sql .= ', geb_m='.$geb_m;
 		$sql .= ', geb_j='.$geb_j;
-
-
-
 
 		/* Adresse */
 
@@ -700,9 +694,7 @@ class PersonController extends Controller {
 			}
 		}
 
-
 		/* Schritt 3 */
-
 		$sql .= ', tel_privat="'.$tel_privat.'"';
 		$sql .= ', tel_arbeit="'.$tel_arbeit.'"';
 		$sql .= ', tel_mobil="'.$tel_mobil.'"';
@@ -714,7 +706,6 @@ class PersonController extends Controller {
 		$sql .= ', vw_mobil_r='.AreaCode::get_vwid($vw_mobil_eingabe, $vw_mobil_id);
 		$sql .= ', vw_fax_r='.AreaCode::get_vwid($vw_fax_eingabe, $vw_fax_id);
 		$sql .= ', vw_aux_r='.AreaCode::get_vwid($vw_aux_eingabe, $vw_aux_id);
-
 
 		$sql .= ', email_privat="'.$email_privat.'"';
 		$sql .= ', email_arbeit="'.$email_arbeit.'"';
@@ -856,7 +847,6 @@ class PersonController extends Controller {
 		if (isset($person_loop)) {
 			$this->set_page_title(_('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname']);
 		}
-
 
 		return $template->html();
 	}
