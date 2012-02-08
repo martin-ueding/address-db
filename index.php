@@ -40,10 +40,6 @@ if (isset($_GET['id'])) {
 if (isset($_POST['id'])) {
 	$id = (int)$_POST['id'];
 }
-if (isset($id)) {
-	$erg = Person::select_person_alles($id);
-	$person_loop = mysql_fetch_assoc($erg);
-}
 
 // get current mode
 $mode = isset($_GET['mode']) ? $_GET['mode'] : '';
@@ -95,9 +91,6 @@ case 'person_delete2':
 	$page_title = _('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
 	break;
 case 'person_display':
-	if (isset($person_loop)) {
-		$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
-	}
 	break;
 case 'person_edit1':
 case 'person_edit2':

@@ -845,7 +845,7 @@ class PersonController extends Controller {
 		}
 	}
 
-	public static function view() {
+	public function view() {
 		$template = new Template('person_view');
 
 		if (isset($_GET['id'])) {
@@ -858,6 +858,10 @@ class PersonController extends Controller {
 
 		$erg = Person::select_person_alles($id);
 		$person_loop = mysql_fetch_assoc($erg);
+
+		if (isset($person_loop)) {
+			$this->set_page_title(_('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname']);
+		}
 
 		$template->set('id', $id);
 		$template->set('person_loop', $person_loop);
