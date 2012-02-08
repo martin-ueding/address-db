@@ -30,7 +30,7 @@ class ListController extends Controller {
 
 		$this->set_page_title($page_title);
 
-		$template = new Template('list');
+		$template = new Template('list_index');
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 
