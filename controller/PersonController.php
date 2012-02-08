@@ -778,45 +778,14 @@ class PersonController extends Controller {
 		$mode= 'person_display';
 	}
 
-	public static function delete1() {
-		echo '<h1>'._('delete an entry').'</h1>';
-		if (!empty($id)) {
-			printf(_('Do you really want to delete the entry %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');
-
-			// check for multiple associations
-			$ass_sql = 'SELECT * FROM ad_flinks LEFT JOIN ad_fmg ON fmg_id=fmg_lr WHERE person_lr='.(int)$id.' ORDER BY fmg;';
-			$ass_erg = mysql_query($ass_sql);
-			while ($ass_l = mysql_fetch_assoc($ass_erg)) {
-				$association_ids[] = $ass_l['fmg_id'];
-				$association_names[] = $ass_l['fmg'];
-			}
-			if (isset($association_ids)) {
-				if (count($association_ids) >= 2) {
-					echo '<br />';
-					echo '<br />';
-					echo _('Warning:').' '.sprintf(_('This entry is connected to %s. Consider just removing your association with it.'), implode(', ', $association_names));
-				}
-				else if (count($association_ids) == 1 && $association_ids[0] != $_SESSION['f']) {
-					echo '<br />';
-					echo '<br />';
-					echo _('Warning:').' '.sprintf(_('This entry is connected to %s. Are you sure that you can delete this entry?'), $association_names[0]);
-				}
-			}
-
-			echo '<br />';
-			echo '<br />';
-			echo '<a href="index.php?mode=person_delete2&id='.$id.'&back='.urlencode($_GET['back']).'">'._('Sure, delete that!').'</a>';
-			echo '<br />';
-			echo '<br />';
-			echo '<a href="index.php?mode=person_display&id='.$id.'">'._('No, cancel!').'</a>';
+	public static function delete() {
+		if (!isset($_GET['id'])) {
+			return _('There is no ID specified.');
 		}
-		else {
-			echo _('There is no ID specified.');
-		}
-	}
 
-	public static function delete2() {
-		if (!empty($id)) {
+		$id = $_GET['id'];
+
+		if (isset($_GET['sure'])) {
 			Person::delete_person_id($id);
 
 			if (!empty($person_loop['vorname']) || !empty($person_loop['nachname'])) {
@@ -839,9 +808,31 @@ class PersonController extends Controller {
 			}
 
 			unset($items);
+
+			return Controller::call($back);
 		}
 		else {
-			$msgs[] = _('Missing an ID.');
+			$template = new Template('person_delete');
+
+			$template->set('id', $id);
+
+			// check for multiple associations
+			$ass_sql = 'SELECT * FROM ad_flinks LEFT JOIN ad_fmg ON fmg_id=fmg_lr WHERE person_lr='.(int)$id.' ORDER BY fmg;';
+			$ass_erg = mysql_query($ass_sql);
+			while ($ass_l = mysql_fetch_assoc($ass_erg)) {
+				$association_ids[] = $ass_l['fmg_id'];
+				$association_names[] = $ass_l['fmg'];
+			}
+			if (isset($association_ids)) {
+				$template->set('association_ids', $association_ids);
+				$template->set('association_names', $association_names);
+			}
+
+			$erg = Person::select_person_alles($id);
+			$person_loop = mysql_fetch_assoc($erg);
+			$template->set('person_loop', $person_loop);
+
+			return $template->html();
 		}
 	}
 
@@ -856,15 +847,16 @@ class PersonController extends Controller {
 			return _('No ID given.');
 		}
 
+		$template->set('id', $id);
+
 		$erg = Person::select_person_alles($id);
 		$person_loop = mysql_fetch_assoc($erg);
+		$template->set('person_loop', $person_loop);
 
 		if (isset($person_loop)) {
 			$this->set_page_title(_('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname']);
 		}
 
-		$template->set('id', $id);
-		$template->set('person_loop', $person_loop);
 
 		return $template->html();
 	}
