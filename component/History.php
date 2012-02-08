@@ -18,16 +18,24 @@ class History {
 		return array_pop($this->snapshots);
 	}
 
-	public function load_get() {
+	public function go_back($filter_id = null) {
+		$snapshot = $this->load();
+
+		if ($filter_id != null) {
+			while ($snapshot['id'] == $filter_id) {
+				$snapshot = $this->load();
+			}
+		}
+
 		$pairs = array();
 
-		foreach ($this->load() as $key => $value) {
+		foreach ($snapshot as $key => $value) {
 			$pairs[] = $key.'='.$value;
 		}
 
 		sort($pairs);
 
-		return implode('&', $pairs);
+		header('location:?'.implode('&', $pairs));
 	}
 
 	private function compress() {
