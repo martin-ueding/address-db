@@ -10,7 +10,6 @@
 		<script src="js/message_box.js"></script>
 		<script src="js/search.js"></script>
 		<script src="js/selectSwitch.js.php"></script>
-		<script src="js/slidedown.js"></script>
 		<script src="js/switch.js"></script>
 
 		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
