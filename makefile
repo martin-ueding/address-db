@@ -2,4 +2,5 @@
 
 all:
 	make -C adressen
+	make -C gfx
 	make -C locale
