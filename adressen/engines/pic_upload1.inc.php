@@ -10,12 +10,6 @@ if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 	$type = $_FILES['file']['type'];
 	$size = $_FILES['file']['size'];
 
-
-	if($size > "2000000") {
-		$err[] = _('The file that you want to upload is too big!').'<br />'.
-			_('Maximum file size is 2 MB!');
-	}
-
 	if(empty($err)) {
 		if ($_GET['fertig'] == 'ja') {
 			$bilddaten = getimagesize($tempname);
