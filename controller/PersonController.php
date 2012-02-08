@@ -770,7 +770,7 @@ class PersonController extends Controller {
 	public static function checked() {
 		$sql = 'UPDATE ad_per SET last_check='.time().' WHERE p_id='.($id).';';
 		mysql_query($sql);
-		$msgs[] = _('The entry was updated.');
+		$_SESSION['messages'][] = _('The entry was updated.');
 
 		// update the data for the person
 		$person_loop['last_check'] = time();
@@ -789,7 +789,7 @@ class PersonController extends Controller {
 			Person::delete_person_id($id);
 
 			if (!empty($person_loop['vorname']) || !empty($person_loop['nachname'])) {
-				$msgs[] = sprintf(_('The entry %s was deleted.'),
+				$_SESSION['messages'][] = sprintf(_('The entry %s was deleted.'),
 					'<em>'.$person_loop['vorname'].' '.
 					$person_loop['nachname'].'</em>');
 			}

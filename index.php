@@ -106,18 +106,6 @@ $header_controller->set_current_mode($mode);
 $index_template->set('header', $header_controller->view());
 
 
-# TODO
-if (isset($msgs) && count($msgs) > 0) {
-	echo '<div id="messages">';
-	echo '<ul>';
-	foreach ($msgs as $msg) {
-		echo '<li>'.$msg.'</li>';
-	}
-	echo '</ul>';
-	echo '</div>';
-}
-$index_template->set('messages', null);
-
 
 if (isset($mode)) {
 	$content_controller = Controller::get_controller($mode);
@@ -134,6 +122,9 @@ if (!isset($content)) {
 }
 
 $index_template->set('content', $content);
+
+$messages_template = new Template('messages');
+$index_template->set('messages', $messages_template->html());
 
 
 $version_array = file('version.txt');

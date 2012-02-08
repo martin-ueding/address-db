@@ -21,7 +21,7 @@ class PictureController extends Controller {
 		if (!empty($_GET['id'])) {
 			unlink('_mugshots/per'.$_GET['id'].'.jpg');
 
-			$msgs[] = _('The picture was removed.');
+			$_SESSION['messages'][] = _('The picture was removed.');
 			$mode = 'person_display';
 		}
 	}
@@ -42,10 +42,10 @@ class PictureController extends Controller {
 			$pic = new PictureResize($tempname);
 			try {
 				$pic->resize('_mugshots/per'.$id.'.jpg');
-				$msgs[] = _('The picture was added.');
+				$_SESSION['messages'][] = _('The picture was added.');
 			}
 			catch (NoGDException $e) {
-				$msgs[] = $e->getMessage();
+				$_SESSION['messages'][] = $e->getMessage();
 			}
 
 			return Controller::call('Person::view');
