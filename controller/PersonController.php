@@ -839,6 +839,8 @@ class PersonController extends Controller {
 	}
 
 	public function view() {
+		$this->history_save();
+
 		$template = new Template('person_view');
 
 		if (isset($_GET['id'])) {
