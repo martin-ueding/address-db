@@ -229,6 +229,8 @@ class ExportController extends Controller {
 
 			echo "\n\n\n";
 		}
+
+		die();
 	}
 }
 ?>
