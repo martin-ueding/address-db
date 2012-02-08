@@ -23,7 +23,12 @@ class PictureResize {
 
 		if (!function_exists('imagecreatefromjpeg')) {
 			throw new NoGDException(
-				_('No function imagecreatefromjpeg. You need to have GD support to resize images.')
+				_(
+					sprintf(
+						'No function imagecreatefromjpeg. You need to have GD support to resize images. Try uploading a picture with at most %d pixels width.',
+						$this->max_width
+					)
+				)
 			);
 		}
 		$orignal = imagecreatefromjpeg($this->filename);
