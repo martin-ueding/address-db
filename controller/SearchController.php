@@ -5,11 +5,11 @@ require_once('helper/Table.php');
 require_once('component/Filter.php');
 
 class SearchController {
-	public static function search() {
+	public static function index() {
 		echo '<h1>'._('search').'</h1>';
 
 		$suche = mysql_real_escape_string($_GET['suche']);
-		$from_with_get = 'mode=search&suche='.$suche;
+		$from_with_get = $this->from_with_get(__CLASS__, __FUNCTION__).'&suche='.$suche;
 
 		$treffer = false;
 
@@ -131,3 +131,4 @@ class SearchController {
 			}
 		}
 	}
+?>

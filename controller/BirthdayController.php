@@ -6,12 +6,12 @@ require_once('component/Template.php');
 require_once('controller/Controller.php');
 
 class BirthdayController extends Controller {
-	public function all_birthdays() {
+	public function index() {
 		$this->set_page_title(_('Address DB').': '._('all birthdays'));
 
 		$template = new Template('all_birthdays');
 
-		$template->set('from_with_get', 'mode=all_birthdays');
+		$template->set('from_with_get', $this->from_with_get(__CLASS__, __FUNCTION__));
 
 		$monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December'));
 		$template->set('months', $monate);
