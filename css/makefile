@@ -4,3 +4,6 @@ all: main.css
 
 %.css: %.scss
 	sass $< $@
+
+clean:
+	$(RM) main.css

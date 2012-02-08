@@ -23,3 +23,9 @@ nl/LC_MESSAGES/address_db.mo: nl.po
 tr/LC_MESSAGES/address_db.mo: tr.po
 	mkdir -p $(shell dirname $@)
 	msgfmt -o $@ $^
+
+clean:
+	$(RM) -r de_DE
+	$(RM) -r nl
+	$(RM) -r tr
+	$(RM) address_db.pot

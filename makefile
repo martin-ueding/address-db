@@ -3,3 +3,8 @@
 all:
 	make -C css
 	make -C locale
+
+clean:
+	$(RM) -r html
+	make clean -C css
+	make clean -C locale
