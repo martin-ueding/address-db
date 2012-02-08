@@ -287,8 +287,7 @@ class PersonController extends Controller {
 				}
 			}
 
-			$_GET['id'] = $p_id;
-			return Controller::call('Person::view');
+			header('location:index.php?mode=Person::view&id='.$p_id);
 		}
 		else {
 			$template = new Template('person_form');
