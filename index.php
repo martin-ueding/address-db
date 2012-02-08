@@ -29,7 +29,6 @@ else {
 	header('location:../install/install.php');
 }
 include('inc/abfragen.inc.php');
-include('inc/anzeigen.inc.php');
 
 // import id and get everything there is to know about that person
 if (isset($_GET['id'])) {

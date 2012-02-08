@@ -2,6 +2,7 @@
 # Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 require_once('helper/Callto.php');
+require_once('helper/DateFormat.php');
 
 echo '<h1>'._('display entry').'</h1>';
 
@@ -59,7 +60,7 @@ if (!empty($person_loop['geb_t'])) {
 	echo '<td>'.$person_loop['geb_t'].'.'.$person_loop['geb_m'].'.';
 	if ($person_loop['geb_j'] > 1500) {
 		echo $person_loop['geb_j'].' &nbsp;&nbsp; ';
-		printf(_('(today %d years old)'),alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
+		printf(_('(today %d years old)'), DateFormat::alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
 		echo ' &nbsp;&nbsp; ('.Queries::sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
 	}
 	echo '</td>';
@@ -329,7 +330,7 @@ else {
 
 for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
 	echo '<img src="gfx/balken_'.($i < $aktuell_level ? 'aktiv' : 'inaktiv').'.png" title="';
-	printf(_('last check %s (%d days ago)'), intelligent_date($person_loop['last_check']), $letzter_check_vor);
+	printf(_('last check %s (%d days ago)'), DateFormat::intelligent_date($person_loop['last_check']), $letzter_check_vor);
 	echo '" />';
 }
 
@@ -350,14 +351,14 @@ if ($emailadresse_vorhanden) {
 	}
 	if ($person_loop['last_check'] < $person_loop['last_send']) {
 
-		echo '<br />'.sprintf(_('verification mail %s sent, confirmation pending'), intelligent_date($person_loop['last_send']));
+		echo '<br />'.sprintf(_('verification mail %s sent, confirmation pending'), DateFormat::intelligent_date($person_loop['last_send']));
 	}
 	echo '</td>';
 	echo '</tr>';
 }
 echo '<tr>';
 echo '<td class="links">'._('last edited').':</td>';
-echo '<td>'.intelligent_date($person_loop['last_edit']).'</td>';
+echo '<td>'.DateFormat::intelligent_date($person_loop['last_edit']).'</td>';
 echo '</td>';
 
 echo '</table>';
