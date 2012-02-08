@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-07 18:45+0100\n"
+"POT-Creation-Date: 2012-02-08 12:17+0100\n"
 "PO-Revision-Date: 2011-04-08 21:36+0000\n"
 "Last-Translator: Christopher <cstandaert@srs.be>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -212,10 +212,6 @@ msgstr "Weegschaal"
 msgid "March"
 msgstr "Maart"
 
-#: ../adressen/engines/pic_upload1.inc.php:16
-msgid "Maximum file size is 2 MB!"
-msgstr ""
-
 #: ../adressen/pages/all_birthdays.inc.php:8
 msgid "May"
 msgstr "Mei"
@@ -241,6 +237,12 @@ msgstr ""
 
 #: ../adressen/pages/person_display.inc.php:374
 msgid "No ID given."
+msgstr ""
+
+#: ../helper/Picture.php:26
+msgid ""
+"No function imagecreatefromjpeg. You need to have GD support to resize "
+"images."
 msgstr ""
 
 #: ../adressen/pages/search.inc.php:40
@@ -332,28 +334,18 @@ msgstr ""
 msgid "The entry was updated."
 msgstr ""
 
-#: ../adressen/engines/pic_upload1.inc.php:15
-msgid "The file that you want to upload is too big!"
-msgstr ""
-
 #: ../adressen/engines/verification_email.inc.php:6
 msgid ""
 "The last email was sent within the last 24 hours. No email was sent now "
 "because this looks like an error."
 msgstr ""
 
-#: ../adressen/engines/pic_upload3.inc.php:50
+#: ../adressen/engines/pic_upload1.inc.php:18
 msgid "The picture was added."
 msgstr ""
 
 #: ../adressen/engines/pic_remove2.inc.php:7
 msgid "The picture was removed."
-msgstr ""
-
-#: ../adressen/engines/pic_upload3.inc.php:53
-msgid ""
-"The temporary file could not be found. If you just have reloaded this page, "
-"this is normal."
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:294
@@ -366,11 +358,6 @@ msgstr ""
 
 #: ../adressen/pages/person_delete.inc.php:36
 msgid "There is no ID specified."
-msgstr ""
-
-#: ../adressen/pages/pic_upload2.inc.php:26
-#, php-format
-msgid "There is no file %s."
 msgstr ""
 
 #: ../adressen/engines/verification_email.inc.php:297
