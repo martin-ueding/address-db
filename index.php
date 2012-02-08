@@ -48,33 +48,6 @@ if (empty($mode)) {
 	$mode = 'main';
 }
 
-if ($mode == 'person_checked') {
-	include('engines/person_checked.inc.php');
-}
-
-// If an email has to be sent, do it now. That script will change the mode back to person_display.
-if ($mode == 'verification_email') {
-	include('engines/verification_email.inc.php');
-}
-
-// If a pic was uploaded, save it now before giving out anything to the browser
-if ($mode == 'pic_upload1') {
-	include('engines/pic_upload1.inc.php');
-}
-
-// If this page is opened by the Java applet, handle the image stuff
-if ($mode == 'pic_upload3') {
-	include('engines/pic_upload3.inc.php');
-}
-
-if ($mode == 'person_delete2') {
-	include('engines/person_delete2.inc.php');
-}
-
-if ($mode == 'pic_remove2') {
-	include('engines/pic_remove2.inc.php');
-}
-
 // generate page title
 switch ($mode) {
 case 'list':
