@@ -16,7 +16,7 @@ require_once('helper/Navigation.php');
 <?php echo Navigation::spacer(); ?>
 <?php foreach ($mode_links as $mode_link): ?>
 <li>
-<a href="index.php?<?php echo $mode_link['request']; ?>" class="<?php echo $mode_link['class']; ?>">
+<a href="?<?php echo $mode_link['request']; ?>" class="<?php echo $mode_link['class']; ?>">
 <?php echo $mode_link['title']; ?>
 </a>
 </li>
@@ -39,12 +39,11 @@ require_once('helper/Navigation.php');
 
 <?php foreach ($group_links as $group_link): ?>
 <li>
-	<a href="index.php?<?php echo $group_link['request']; ?>" class="<?php echo $group_link['class']; ?>">
+	<a href="?<?php echo $group_link['request']; ?>" class="<?php echo $group_link['class']; ?>">
 	<?php echo $group_link['title']; ?>
 	</a>
 </li>
 <?php endforeach; ?>
-
 
 </ul>
 </div>
@@ -53,9 +52,9 @@ require_once('helper/Navigation.php');
 <ul>
 <?php
 echo '<li><b>'._('views').'</b></li>';
-echo Navigation::nav_action_link('list', $current_mode, _('show entries'));
+echo Navigation::nav_action_link('List::index', $current_mode, _('show entries'));
 echo Navigation::nav_action_link('Birthday::upcoming_birthdays', $current_mode, _('birthday view'));
-echo Navigation::nav_action_link('Birthday::all_birthdays', $current_mode, _('birthday list'));
+echo Navigation::nav_action_link('Birthday::index', $current_mode, _('birthday list'));
 echo Navigation::spacer();
 echo '<li><b>'._('create').'</b></li>';
 echo Navigation::nav_action_link('person_create1', $current_mode, _('create new entry'));
@@ -78,7 +77,7 @@ echo Navigation::nav_action_link('integrity_check', $current_mode, _('database c
 $buchstaben = range('A', 'Z');
 foreach ($buchstaben as $b) {
 	if (in_array($b, $show_letters)) {
-		echo '<a href="index.php?mode=list&b='.$b.'">';
+		echo '<a href="?mode=List::index&b='.$b.'">';
 		echo $b;
 		echo '</a>';
 	}
@@ -91,5 +90,5 @@ foreach ($buchstaben as $b) {
 
 
 <div id="search">
-<form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="search" /></form>
+<form action="index.php" method="get"><input type="text" id="suche" name="suche" maxlength="100" /><input type="hidden" name="mode" value="Search::index" /></form>
 </div>
