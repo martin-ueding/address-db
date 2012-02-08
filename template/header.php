@@ -63,6 +63,7 @@ echo '<li><b>'._('export').'</b></li>';
 echo '<li><a href="?mode=Export::kitchen">'._('kitchen list').'</a></li>';
 echo '<li><a href="?mode=Export::vcard_multiple">'._('VCard').'</a></li>';
 echo '<li><a href="?mode=Export::csv">'._('CSV').'</a></li>';
+echo '<li><a href="?mode=Export::dayplanner">'._('dayplanner').'</a></li>';
 echo Navigation::spacer();
 echo '<li><b>'._('maintenance').'</b></li>';
 echo Navigation::nav_action_link('no_title', $current_mode, _('no form of address'));
