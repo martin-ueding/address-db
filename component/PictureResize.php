@@ -3,7 +3,7 @@
 
 require_once('NoGDException.php');
 
-class Picture {
+class PictureResize {
 	public $max_width = 300;
 
 	public function __construct($filename) {

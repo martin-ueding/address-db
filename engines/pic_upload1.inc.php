@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
-require_once('component/Picture.php');
+require_once('component/PictureResize.php');
 
 if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 	$tempname = $_FILES['file']['tmp_name'];
@@ -10,7 +10,7 @@ if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 	$type = $_FILES['file']['type'];
 	$size = $_FILES['file']['size'];
 
-	$pic = new Picture($tempname);
+	$pic = new PictureResize($tempname);
 	try {
 		$pic->resize('_mugshots/per'.$id.'.jpg');
 		$msgs[] = _('The picture was added.');
