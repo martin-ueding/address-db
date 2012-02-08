@@ -2,6 +2,7 @@
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('component/Template.php');
+require_once('controller/Controller.php');
 require_once('helper/Callto.php');
 require_once('helper/Cellphone.php');
 require_once('helper/DateFormat.php');
@@ -12,7 +13,6 @@ require_once('model/City.php');
 require_once('model/Country.php');
 require_once('model/Person.php');
 require_once('model/PostralCode.php');
-require_once('controller/Controller.php');
 
 include('_config.inc.php');
 
