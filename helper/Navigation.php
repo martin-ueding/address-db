@@ -12,5 +12,4 @@ class Navigation {
 		return '<li>&nbsp;</li>';
 	}
 }
-
 ?>
