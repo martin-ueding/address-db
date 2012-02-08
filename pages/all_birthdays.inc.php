@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/Filter.php');
+require_once('component/Filter.php');
 
 echo '<h1>'._('all birthdays').'</h1>';
 $from_with_get = 'mode=all_birthdays';

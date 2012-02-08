@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/Template.php');
+require_once('component/Template.php');
 
 $p_id = (int)($_GET['id']);
 
