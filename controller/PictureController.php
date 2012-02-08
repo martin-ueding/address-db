@@ -2,6 +2,7 @@
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('component/PictureResize.php');
+require_once('component/Template.php');
 require_once('controller/Controller.php');
 
 class PictureController extends Controller {
