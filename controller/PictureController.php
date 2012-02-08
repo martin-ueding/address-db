@@ -5,24 +5,27 @@ require_once('component/PictureResize.php');
 require_once('controller/Controller.php');
 
 class PictureController extends Controller {
-	public static function pic_remove() {
-		if (!empty($id)) {
-			printf(_('Do you really want to remove the picture for %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');
-			echo '<br />';
-			echo '<br />';
-			echo '<a href="index.php?mode=pic_remove2&id='.$id.'">'._('Yes, delete picture!').'</a>';
-			echo '<br />';
-			echo '<br />';
-			echo '<a href="?mode=Person::view&id='.$_GET['id'].'">'._('cancel').'</a>';
+	public static function delete() {
+		if (!isset($_GET['id'])) {
 		}
-	}
 
-	public static function pic_remove2() {
-		if (!empty($_GET['id'])) {
+		$id = $_GET['id'];
+
+		if (isset($_GET['sure'])) {
 			unlink('_mugshots/per'.$_GET['id'].'.jpg');
 
 			$_SESSION['messages'][] = _('The picture was removed.');
-			$mode = 'person_display';
+
+			return Controller::call('Person::view');
+		}
+		else {
+			$template = new Template('picture_delete');
+			$template->set('id', $id);
+
+			$erg = Person::select_person_alles($id);
+			$person_loop = mysql_fetch_assoc($erg);
+			$template->set('person_loop', $person_loop);
+			return $template->html();
 		}
 	}
 
