@@ -8,6 +8,7 @@ require_once('model/Group.php');
 ?>
 
 <form action="<?php echo $form_target; ?>" method="post">
+<input type="hidden" name="form_sent" value="true" />
 
 <?php if (isset($p_id)): ?>
 <input type="hidden" name="p_id" value="<?php echo $p_id; ?>" />
