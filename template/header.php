@@ -9,7 +9,7 @@ require_once('helper/Navigation.php');
 <li><b><?php echo _('mode'); ?></b></li>
 
 <li>
-<a href="?<?php echo $mode_all_request; ?>" class="<?php echo $all_mode_class; ?>">
+<a href="?<?php echo $mode_all_request; ?>" class="<?php echo $mode_all_class; ?>">
 <?php echo _('all'); ?>
 </a>
 </li>
@@ -30,7 +30,7 @@ require_once('helper/Navigation.php');
 <li><b><?php echo _('groups'); ?></b></li>
 
 <li>
-<a href="?<?php echo $group_all_request; ?>" class="<?php echo $all_group_class; ?>">
+<a href="?<?php echo $group_all_request; ?>" class="<?php echo $group_all_class; ?>">
 <?php echo _('all'); ?>
 </a>
 </li>

@@ -25,6 +25,7 @@ class HeaderController extends Controller {
 		$request->set('f', 0);
 
 		$template->set('mode_all_request', $request->join());
+		$template->set('mode_all_class', $_SESSION['f'] == 0 ? 'active' : '');
 
 		$sql = 'SELECT * FROM ad_fmg';
 		$erg = mysql_query($sql);
@@ -47,6 +48,7 @@ class HeaderController extends Controller {
 		$request->set('g', 0);
 
 		$template->set('group_all_request', $request->join());
+		$template->set('group_all_class', $_SESSION['g'] == 0 ? 'active' : '');
 
 		$erg = Group::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
