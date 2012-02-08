@@ -9,93 +9,6 @@ require_once('component/Filter.php');
  * @author Martin Ueding <dev@martin-ueding.de>
  */
 class Queries {
-
-	/**
-	 * Finds the cell phone carrier to an area code.
-	 *
-	 * @param string $vw area code
-	 * @return string carrier name
-	 */
-	public static function handybetreiber($vw) {
-		switch ($vw) {
-		case '+49-160': case '+49-170': case '+49-171': case '+49-175':
-		case '+49-151':
-			return '(T-Mobile)';
-		case '+49-162': case '+49-172': case '+49-173': case '+49-174':
-		case '+49-152':
-			return '(Vodafone)';
-		case '+49-163': case '+49-177': case '+49-178': case '+49-155':
-		case '+49-157':
-			return '(E-Plus)';
-		case '+49-176': case '+49-179': case '+49-159':
-			return '(O2)';
-		}
-	}
-
-	/**
-	 * Finds the zodiac sign to a given date.
-	 *
-	 * @param int $tag day
-	 * @param int $monat month
-	 * @return string zodiac sign
-	 */
-	public static function sternzeichen($tag, $monat) {
-		$tagimmonat = date('z', mktime(0, 0, 0, $monat, $tag, 2001));
-
-		if (0 <= $tagimmonat && $tagimmonat <
-			date('z', mktime(0, 0, 0, 1, 21, 2001)))
-			return _('Capricorn');
-
-		if (date('z', mktime(0, 0, 0, 1, 21, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 2, 20, 2001)))
-			return _('Aquarius');
-
-		if (date('z', mktime(0, 0, 0, 2, 20, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 3, 20, 2001)))
-			return _('Pisces');
-
-		if (date('z', mktime(0, 0, 0, 3, 20, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 4, 21, 2001)))
-			return _('Aries');
-
-		if (date('z', mktime(0, 0, 0, 4, 21, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 5, 21, 2001)))
-			return _('Taurus');
-
-		if (date('z', mktime(0, 0, 0, 5, 21, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 6, 22, 2001)))
-			return _('Gemini');
-
-		if (date('z', mktime(0, 0, 0, 6, 22, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 7, 23, 2001)))
-			return _('Cancer');
-
-		if (date('z', mktime(0, 0, 0, 7, 23, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 8, 24, 2001)))
-			return _('Leo');
-
-		if (date('z', mktime(0, 0, 0, 8, 24, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 9, 24, 2001)))
-			return _('Virgo');
-
-		if (date('z', mktime(0, 0, 0, 9, 24, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 10, 24, 2001)))
-			return _('Libra');
-
-		if (date('z', mktime(0, 0, 0, 10, 24, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 11, 23, 2001)))
-			return _('Scorpio');
-
-		if (date('z', mktime(0, 0, 0, 11, 23, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 12, 22, 2001)))
-			return _('Sagittarius');
-
-		if (date('z', mktime(0, 0, 0, 12, 22, 2001)) <= $tagimmonat &&
-			$tagimmonat < date('z', mktime(0, 0, 0, 12, 31, 2001)))
-			return _('Capricorn');
-	}
-
-
 	/**
 	 * Gives a relation to a person.
 	 *
@@ -266,12 +179,6 @@ class Queries {
 		return $erg;
 	}
 
-	public static function select_alle_gruppen () {
-		$sql = 'SELECT * FROM ad_gruppen ORDER BY gruppe;';
-		$erg = mysql_query($sql);
-		return $erg;
-	}
-
 	public static function select_alle_fmg () {
 		$sql = 'SELECT * FROM ad_fmg ORDER BY fmg;';
 		$erg = mysql_query($sql);
@@ -334,26 +241,6 @@ class Queries {
 		return mysql_num_rows($erg) != 0;
 	}
 
-	public static function gruppe_ist_nicht_leer ($id) {
-		if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-			$sql = 'SELECT * FROM ad_flinks '.
-			'LEFT JOIN ad_per ON p_id=ad_flinks.person_lr '.
-			'LEFT JOIN ad_glinks ON ad_glinks.person_lr=p_id '.
-			'LEFT JOIN ad_gruppen ON g_id=gruppe_lr '.
-			'WHERE fmg_lr='.$_SESSION['f'].' && g_id='.$id.';';
-		else
-			$sql = 'SELECT * FROM ad_glinks '.
-			'WHERE gruppe_lr='.$id.';';
-		$erg = mysql_query($sql);
-		if (mysql_error() != "") {
-			echo $sql;
-			echo '<br />';
-			echo mysql_error();
-		}
-		return mysql_num_rows($erg) > 0;
-
-	}
-
 	public static function adresse_mehrfach_benutzt ($id) {
 		$sql = 'SELECT * FROM ad_per WHERE adresse_r='.$id.';';
 		$erg = mysql_query($sql);
@@ -364,15 +251,6 @@ class Queries {
 	public static function delete_familie_id ($id) {
 		$sql = 'DELETE FROM ad_fam WHERE f_id='.$id.';';
 		mysql_query($sql);
-	}
-
-	public static function delete_person_id ($id) {
-		$sql = 'DELETE FROM ad_per WHERE p_id='.$id.';';
-		mysql_query($sql);
-		$mugshot_path = '_mugshots/per'.$id.'.jpg';
-		if (file_exists($mugshot_path)) {
-			unlink($mugshot_path);
-		}
 	}
 
 }
