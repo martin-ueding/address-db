@@ -24,4 +24,9 @@ class Controller {
 	public function set_current_mode($mode) {
 		$this->current_mode = $mode;
 	}
+
+	public static function from_with_get($class, $function) {
+		$class = str_replace('Controller', '', $class);
+		return 'mode='.$class.'::'.$function;
+	}
 }
