@@ -327,26 +327,10 @@ for ($i = $anzahl_level-1; $i >= 0 ; $i--) {
 
 echo '<div>';
 
-echo _('Was the data checked and is it up-to-date?').' <a href="index.php?mode=person_checked&id='.$id.'">'._('yes').'</a>';
+echo _('Was the data checked and is it up-to-date?').' <a href="index.php?mode=Person::checked&id='.$id.'">'._('yes').'</a>';
 echo '</td>';
 echo '</tr>';
 
-if ($emailadresse_vorhanden) {
-	echo '<tr>';
-	echo '<td class="links">'._('verification email').':</td>';
-	echo '<td>';
-
-	echo '<a href="index.php?mode=verification_email&id='.$id.'">&raquo; '._('send verification email').'</a>';
-	if ($person_loop['last_send'] != 0) {
-		echo ' (letzte vom '.date($date_format, $person_loop['last_send']).')';
-	}
-	if ($person_loop['last_check'] < $person_loop['last_send']) {
-
-		echo '<br />'.sprintf(_('verification mail %s sent, confirmation pending'), DateFormat::intelligent_date($person_loop['last_send']));
-	}
-	echo '</td>';
-	echo '</tr>';
-}
 echo '<tr>';
 echo '<td class="links">'._('last edited').':</td>';
 echo '<td>'.DateFormat::intelligent_date($person_loop['last_edit']).'</td>';
@@ -354,12 +338,12 @@ echo '</td>';
 
 echo '</table>';
 
-echo '<a href="?mode=person_edit1&id='.$id.'" title="'._('edit this entry').'"><img src="gfx/person_bearbeiten.png" width="64" height="64" alt="'._('edit this entry').'" border="0" /></a>';
-echo '<a href="?mode=person_delete&id='.$id.(isset($_GET['back']) ? '&back='.urlencode($_GET['back']): '').'" title="'._('delete this entry').'"><img src="gfx/person_loeschen.png" width="64" height="64" alt="'._('delete this entry').'" border="0" /></a>';
+echo '<a href="?mode=Person::edit&id='.$id.'" title="'._('edit this entry').'"><img src="gfx/person_bearbeiten.png" width="64" height="64" alt="'._('edit this entry').'" border="0" /></a>';
+echo '<a href="?mode=Person::delete&id='.$id.(isset($_GET['back']) ? '&back='.urlencode($_GET['back']): '').'" title="'._('delete this entry').'"><img src="gfx/person_loeschen.png" width="64" height="64" alt="'._('delete this entry').'" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-echo '<a href="?mode=pic_upload1&id='.$id.'" title="'._('upload picture').'"><img src="gfx/foto_upload.png" width="64" height="64" alt="'._('upload picture').'" border="0" /></a>';
+echo '<a href="?mode=Picture::edit&id='.$id.'" title="'._('upload picture').'"><img src="gfx/foto_upload.png" width="64" height="64" alt="'._('upload picture').'" border="0" /></a>';
 if (file_exists($mugshot_path))
-	echo '<a href="index.php?mode=pic_remove&id='.$id.'" title="'._('delete picture').'"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="'._('delete picture').'" border="0" /></a>';
+	echo '<a href="index.php?mode=Picture::delete&id='.$id.'" title="'._('delete picture').'"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="'._('delete picture').'" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
 echo '<a href="export/vcard.php?id='.$id.'" title="'._('download VCard').'"><img src="gfx/vcard.png" width="64" height="64" alt="'._('download VCard').'" border="0" /></a>';
 ?>
