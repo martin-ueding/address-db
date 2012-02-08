@@ -1,11 +1,17 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
+require_once('component/History.php');
 require_once('component/Template.php');
 require_once('controller/HeaderController.php');
 require_once('model/Person.php');
 
 session_start();
+
+if (!isset($_SESSION['history'])) {
+	$_SESSION['history'] = new History();
+}
+
 if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
 }
