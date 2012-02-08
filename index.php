@@ -86,9 +86,6 @@ if ($mode == 'pic_remove2') {
 
 // generate page title
 switch ($mode) {
-case 'all_birthdays':
-	$page_title = _('Address DB').': '._('all birthdays');
-	break;
 case 'list':
 	if (!empty($_GET['b'])) {
 		$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
@@ -108,9 +105,6 @@ case 'list':
 	else {
 		$page_title = _('Address DB').': '._('list');
 	}
-	break;
-case 'main':
-	$page_title = _('Address DB').': '._('current birthdays');
 	break;
 case 'no_title':
 	$page_title = _('Address DB').': '._('no form of address');

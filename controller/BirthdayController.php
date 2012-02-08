@@ -35,7 +35,10 @@ class BirthdayController extends Controller {
 	}
 
 	public static function upcoming_birthdays() {
+		$this->set_page_title(_('Address DB').': '._('current birthdays'));
+
 		$template = new Template('upcoming_birthdays');
+
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_m='.date("n"));
 
