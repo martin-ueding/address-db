@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/SelectHelper.php');
+require_once('../helper/Select.php');
 ?>
 
 <form action="<?php echo $form_target; ?>" method="post">
@@ -18,7 +18,7 @@ require_once('../helper/SelectHelper.php');
 	<tr><th colspan="2"><?php echo _('name'); ?>:</th></tr>
 	<tr>
 		<td><?php echo _('form of address'); ?>:</td>
-		<td><?php SelectHelper::show_select_anrede('anrede_r', (isset($person_loop['anrede_r']) ? $person_loop['anrede_r'] : null)); SelectHelper::show_select_prafix('prafix_r', (isset($person_loop['prafix_r']) ? $person_loop['prafix_r'] : null)); ?></td>
+		<td><?php Select::show_select_anrede('anrede_r', (isset($person_loop['anrede_r']) ? $person_loop['anrede_r'] : null)); Select::show_select_prafix('prafix_r', (isset($person_loop['prafix_r']) ? $person_loop['prafix_r'] : null)); ?></td>
 	</tr>
 	<tr>
 		<td><?php echo _('first name'); ?>:</td>
@@ -34,7 +34,7 @@ require_once('../helper/SelectHelper.php');
 	</tr>
 	<tr>
 		<td><?php echo _('suffix'); ?>:</td>
-		<td><?php SelectHelper::show_select_suffix('suffix_r', (isset($person_loop['suffix_r']) ? $person_loop['suffix_r'] : null)); ?></td>
+		<td><?php Select::show_select_suffix('suffix_r', (isset($person_loop['suffix_r']) ? $person_loop['suffix_r'] : null)); ?></td>
 	</tr>
 	<tr>
 		<td><?php echo _('maiden name'); ?>:</td>
@@ -43,9 +43,9 @@ require_once('../helper/SelectHelper.php');
 	<tr>
 		<td><?php echo _('birth date'); ?>:</td>
 		<td><?php
-		SelectHelper::show_select_zahlen('geb_t', (isset($person_loop['geb_t']) ? $person_loop['geb_t'] : null), 1, 31, true);
-SelectHelper::show_select_zahlen('geb_m', (isset($person_loop['geb_m']) ? $person_loop['geb_m'] : null), 1, 12, true);
-SelectHelper::show_select_zahlen('geb_j', (isset($person_loop['geb_j']) ? $person_loop['geb_j'] : null), date("Y")-100, date("Y"), false);
+		Select::show_select_zahlen('geb_t', (isset($person_loop['geb_t']) ? $person_loop['geb_t'] : null), 1, 31, true);
+Select::show_select_zahlen('geb_m', (isset($person_loop['geb_m']) ? $person_loop['geb_m'] : null), 1, 12, true);
+Select::show_select_zahlen('geb_j', (isset($person_loop['geb_j']) ? $person_loop['geb_j'] : null), date("Y")-100, date("Y"), false);
 		?></td>
 	</tr>
 </table>
@@ -154,15 +154,15 @@ echo '<br /><br />';
 		<td><?php
 		echo '<div>';
 		echo '<input type="text" name="plz" value="" size="5" maxlength="5" class="manual_area_code" />';
-		SelectHelper::show_select_plz('plz_r', (isset($person_loop['plz_r']) ? $person_loop['plz_r'] : null));
+		Select::show_select_plz('plz_r', (isset($person_loop['plz_r']) ? $person_loop['plz_r'] : null));
 		echo '</div>';
 		echo '<div>';
 		echo '<input type="text" name="ort" value="" size="25" maxlength="100" class="manual_area_code" />';
-		SelectHelper::show_select_ort('ort_r', (isset($person_loop['ort_r']) ? $person_loop['ort_r'] : null));
+		Select::show_select_ort('ort_r', (isset($person_loop['ort_r']) ? $person_loop['ort_r'] : null));
 		echo '</div>';
 		echo '<div>';
 		echo '<input type="text" name="land" value="" size="30" maxlength="100" class="manual_area_code" />';
-		SelectHelper::show_select_land('land_r', (isset($person_loop['land_r']) ? $person_loop['land_r'] : null));
+		Select::show_select_land('land_r', (isset($person_loop['land_r']) ? $person_loop['land_r'] : null));
 		echo '</div>';
 		?></td>
 	</tr>
@@ -176,23 +176,23 @@ echo '<br /><br />';
 	<table>
 		<tr>
 			<td><?php echo _('private'); ?>:</td>
-			<td class="switchInput"><?php SelectHelper::show_telefon_eingabe('privat', true, $person_loop) ?></td>
+			<td class="switchInput"><?php Select::show_telefon_eingabe('privat', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('work'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('arbeit', true, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('arbeit', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('mobile'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('mobil', true, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('mobil', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('fax'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('fax', true, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('fax', true, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('other'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('aux', true, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('aux', true, $person_loop) ?></td>
 		</tr>
 	</table>
 
@@ -227,23 +227,23 @@ echo '<br /><br />';
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td><?php echo _('private'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('privat', false, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('privat', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('work'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('arbeit', false, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('arbeit', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('mobile'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('mobil', false, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('mobil', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('fax'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('fax', false, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('fax', false, $person_loop) ?></td>
 		</tr>
 		<tr>
 			<td><?php echo _('other'); ?>:</td>
-			<td><?php SelectHelper::show_telefon_eingabe('aux', false, $person_loop) ?></td>
+			<td><?php Select::show_telefon_eingabe('aux', false, $person_loop) ?></td>
 		</tr>
 
 		<tr><td colspan="2">&nbsp;</td></tr>

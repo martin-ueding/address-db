@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
-class SelectHelper {
+class Select {
 	public static function show_select_vorwahlen ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
@@ -149,7 +149,7 @@ class SelectHelper {
 		echo '<nobr>';
 
 		echo '<input type="text" class="manual_area_code" name="'.$p.'vw_'.$typ.'_eingabe" value="'.($loop != null && isset($loop[$p.'vw_'.$typ.'_eingabe']) ? $loop[$p.'vw_'.$typ.'_eingabe'] : "").'" size="5" maxlength="20" />';
-		SelectHelper::show_select_vorwahlen($p.'vw_'.$typ.'_id', ($loop != null ? $loop[$p.'vw_'.$typ.'_r'] : ""));
+		Select::show_select_vorwahlen($p.'vw_'.$typ.'_id', ($loop != null ? $loop[$p.'vw_'.$typ.'_r'] : ""));
 		echo '<input type="text" name="'.$p.'tel_'.$typ.'" value="'.($loop != null && isset ($loop[$p.'tel_'.$typ]) ? $loop[$p.'tel_'.$typ] : "").'" size="25" maxlength="100" />';
 		echo '</nobr>';
 	}
