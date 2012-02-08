@@ -54,8 +54,8 @@ require_once('helper/Navigation.php');
 <?php
 echo '<li><b>'._('views').'</b></li>';
 echo Navigation::nav_action_link('list', $current_mode, _('show entries'));
-echo Navigation::nav_action_link('main', $current_mode, _('birthday view'));
-echo Navigation::nav_action_link('all_birthdays', $current_mode, _('birthday list'));
+echo Navigation::nav_action_link('Birthday::upcoming_birthdays', $current_mode, _('birthday view'));
+echo Navigation::nav_action_link('Birthday::all_birthdays', $current_mode, _('birthday list'));
 echo Navigation::spacer();
 echo '<li><b>'._('create').'</b></li>';
 echo Navigation::nav_action_link('person_create1', $current_mode, _('create new entry'));

@@ -844,7 +844,7 @@ else {
 }
 	}
 
-	public static function display() {
+	public static function view() {
 echo '<h1>'._('display entry').'</h1>';
 
 if (isset($id)) {

@@ -34,7 +34,7 @@ class BirthdayController extends Controller {
 		return $template->html();
 	}
 
-	public static function upcoming_birthdays() {
+	public function upcoming_birthdays() {
 		$this->set_page_title(_('Address DB').': '._('current birthdays'));
 
 		$template = new Template('upcoming_birthdays');
@@ -53,7 +53,7 @@ class BirthdayController extends Controller {
 				'had_birthday' => $l['geb_t'] < date("j"),
 				'has_birthday' => $l['geb_t'] == date("j"),
 				'last_name' => $l['nachname'],
-				'link' => 'mode=person_display&id='.$l['p_id'],
+				'link' => 'mode=Person::view&id='.$l['p_id'],
 				'month' => $l['geb_m'],
 				'year' => $l['geb_j'],
 			);
@@ -75,7 +75,7 @@ class BirthdayController extends Controller {
 				'had_birthday' => $l['geb_t'] < date("j"),
 				'has_birthday' => $l['geb_t'] == date("j"),
 				'last_name' => $l['nachname'],
-				'link' => 'mode=person_display&id='.$l['p_id'],
+				'link' => 'mode=Person::view&id='.$l['p_id'],
 				'month' => $l['geb_m'],
 				'year' => $l['geb_j'],
 			);
