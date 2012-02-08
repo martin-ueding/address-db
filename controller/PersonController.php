@@ -775,6 +775,12 @@ class PersonController extends Controller {
 	}
 
 	public function checked() {
+		if (!isset($_GET['id'])) {
+			return _('There is no ID specified.');
+		}
+
+		$id = $_GET['id'];
+
 		$sql = 'UPDATE ad_per SET last_check='.time().' WHERE p_id='.($id).';';
 		mysql_query($sql);
 		$_SESSION['messages'][] = _('The entry was updated.');
@@ -782,7 +788,7 @@ class PersonController extends Controller {
 		// update the data for the person
 		$person_loop['last_check'] = time();
 
-		$_SESSSION['history']->go_back();
+		$_SESSION['history']->go_back();
 	}
 
 	public function delete() {
