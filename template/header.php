@@ -57,7 +57,7 @@ echo Navigation::nav_action_link('Birthday::upcoming_birthdays', $current_mode, 
 echo Navigation::nav_action_link('Birthday::index', $current_mode, _('birthday list'));
 echo Navigation::spacer();
 echo '<li><b>'._('create').'</b></li>';
-echo Navigation::nav_action_link('person_create1', $current_mode, _('create new entry'));
+echo Navigation::nav_action_link('Person::create', $current_mode, _('create new entry'));
 echo Navigation::spacer();
 echo '<li><b>'._('export').'</b></li>';
 echo '<li><a href="export/kitchen.php">'._('export LaTeX sheets').'</a></li>';
