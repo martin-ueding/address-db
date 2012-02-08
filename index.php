@@ -82,24 +82,6 @@ if ($mode == 'pic_remove2') {
 // generate page title
 switch ($mode) {
 case 'list':
-	if (!empty($_GET['b'])) {
-		$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
-	}
-	else if (!empty($_GET['titel'])) {
-		$page_title = _('Address DB').': '.sprintf(_('group &bdquo;%s&ldquo;'), $_GET['titel']);
-	}
-	else if (!empty($_GET['f'])) {
-		// get name for person
-		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
-		$name_erg = mysql_query($name_sql);
-		if ($name = mysql_fetch_assoc($name_erg)) {
-			$f_name = $name['fmg'];
-		}
-		$page_title = _('Address DB').': '.sprintf(_('entries for %s'), $f_name);
-	}
-	else {
-		$page_title = _('Address DB').': '._('list');
-	}
 	break;
 case 'no_title':
 	$page_title = _('Address DB').': '._('no form of address');

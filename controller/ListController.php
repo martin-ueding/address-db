@@ -9,9 +9,32 @@ require_once('model/Group.php');
 
 class ListController extends Controller {
 	public function index() {
-		$from_with_get = 'mode=list';
+		if (!empty($_GET['b'])) {
+			$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
+		}
+		else if (!empty($_GET['titel'])) {
+			$page_title = _('Address DB').': '.sprintf(_('group &bdquo;%s&ldquo;'), $_GET['titel']);
+		}
+		else if (!empty($_GET['f'])) {
+			# XXX Use model.
+			// get name for person
+			$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
+			$name_erg = mysql_query($name_sql);
+			if ($name = mysql_fetch_assoc($name_erg)) {
+				$f_name = $name['fmg'];
+			}
+			$page_title = _('Address DB').': '.sprintf(_('entries for %s'), $f_name);
+		}
+		else {
+			$page_title = _('Address DB').': '._('list');
+		}
 
-		/* Daten sammeln */
+		$this->set_page_title($page_title);
+
+		$from_with_get = $this->from_with_get(__CLASS__, __FUNCTION__);
+
+		$template = new Template('list');
+
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 
 		/* Suche nach Buchstabe */
@@ -35,30 +58,29 @@ class ListController extends Controller {
 			$erg = mysql_query($sql);
 
 			if (!empty($_GET['b'])) {
-				printf(
+				$title = sprintf(
 					_('Last names starting with %s:'),
 					'<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
 				);
-				echo '<br />';
 			}
 
 			else if ($_SESSION['g'] != 0) {
-				printf(
+				$title = sprintf(
 					_('Group %s:'),
 					'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
 				);
-				echo '<br />';
 			}
 
 			else if ($_SESSION['f'] != 0) {
-				printf(
+				$title = sprintf(
 					_('Member %s:'),
 					'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
 				);
-				echo '<br />';
 			}
 
-			printf(
+			$template->set('title', $title);
+
+			$counts = sprintf(
 				ngettext(
 					'%d entry:',
 					'%d entries:', mysql_num_rows($erg)
@@ -66,10 +88,11 @@ class ListController extends Controller {
 				mysql_num_rows($erg)
 			);
 
-			echo '<br /><br />';
+			$template->set('counts', $counts);
+
 
 			$table = new Table($erg, $from_with_get);
-			echo $table->html();
+			$template->set('table', $table->html());
 
 			// Collect email address from everybody to send off a mass email.
 			$erg = mysql_query($sql);
@@ -86,18 +109,13 @@ class ListController extends Controller {
 			}
 		}
 
-		if (empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f'])) {
-			echo '<br /><br />';
-			echo '<a href="export/vcard_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a VCard').'</a>';
-			echo '<br />';
-			echo '<a href="export/export812_fmg.php?f='.$_SESSION['f'].'">'._('export this list as a LaTeX for day planner sheets').'</a>';
-
-		}
+		$template->set('allow_export', empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f']));
 
 		if (!empty($emailadressen)) {
-			echo '<br /><br />';
-			echo '<a href="mailto:?bcc='.implode(',', $emailadressen).'">'._('send an email to everybody in this list').'</a>';
+			$template->set('email_addresses', implode(',', $emailadressen));
 		}
+
+		return $template->html();
 	}
 }
 ?>
