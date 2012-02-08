@@ -345,5 +345,5 @@ echo '<a href="?mode=Picture::edit&id='.$id.'" title="'._('upload picture').'"><
 if (file_exists($mugshot_path))
 	echo '<a href="index.php?mode=Picture::delete&id='.$id.'" title="'._('delete picture').'"><img src="gfx/foto_loeschen.png" width="64" height="64" alt="'._('delete picture').'" border="0" /></a>';
 echo ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ';
-echo '<a href="export/vcard.php?id='.$id.'" title="'._('download VCard').'"><img src="gfx/vcard.png" width="64" height="64" alt="'._('download VCard').'" border="0" /></a>';
+echo '<a href="?mode=Export::vcard&id='.$id.'" title="'._('download VCard').'"><img src="gfx/vcard.png" width="64" height="64" alt="'._('download VCard').'" border="0" /></a>';
 ?>
