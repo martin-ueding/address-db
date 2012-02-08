@@ -2,7 +2,7 @@
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 class History {
-	private $max_length = 5;
+	private $max_length = 10;
 
 	public function __construct() {
 		$this->snapshots = array();
