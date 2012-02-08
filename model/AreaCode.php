@@ -32,9 +32,9 @@ class AreaCode {
 		if (empty($text))
 			return $id;
 		else {
-			$erg = Queries::select_vw_vw($text);
+			$erg = AreaCode::select_vw_vw($text);
 			if (mysql_num_rows($erg) == 0) {
-				return Queries::insert_vw($text);
+				return AreaCode::insert_vw($text);
 			}
 			else {
 				$l = mysql_fetch_assoc($erg);

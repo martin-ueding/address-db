@@ -1,7 +1,10 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/Select.php');
+require_once('helper/Select.php');
+require_once('model/FamilyMember.php');
+require_once('model/Address.php');
+require_once('model/Group.php');
 ?>
 
 <form action="<?php echo $form_target; ?>" method="post">
@@ -54,7 +57,7 @@ Select::show_select_zahlen('geb_j', (isset($person_loop['geb_j']) ? $person_loop
 
 <?php
 	/* Beziehungen zu den Familienmitgliedern */
-	$erg = Queries::select_alle_fmg();
+	$erg = FamilyMember::select_alle_fmg();
 echo '<div class="box_596">';
 	echo _('Who knows this person?').'<br /><br />';
 	while ($l = mysql_fetch_assoc($erg))
@@ -70,7 +73,7 @@ echo '</div>';
 echo '<div class="box_596">';
 	echo '<br /><br />';
 	/* Gruppen */
-	$erg = Queries::select_alle_gruppen();
+	$erg = Group::select_alle_gruppen();
 	echo _('In which groups is this person?').'<br><br />';
 	while ($l = mysql_fetch_assoc($erg))
 		{
@@ -90,7 +93,7 @@ echo '</div>';
 
 	<?php
 	if (isset($person_loop['adresse_r'])) {
-		if (Queries::adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
+		if (Address::adresse_mehrfach_benutzt($person_loop['adresse_r'])) {
 			echo '&nbsp;<br /><b>'._('address change affects').':</b> <br /><br />';
 			echo '<input type="radio" name="werziehtum" value="einer"';
 			if ($werziehtum == 'einer' || $haushalt == 1)

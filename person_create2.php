@@ -1,8 +1,12 @@
 <?php
 # Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
+require_once('model/PostralCode.php');
+require_once('model/City.php');
+require_once('model/Country.php');
+require_once('model/AreaCode.php');
+
 include('_config.inc.php');
-include('inc/abfragen.inc.php');
 
 // Speichern Gruppe 1
 $anrede_r = $_POST['anrede_r'];
@@ -134,10 +138,10 @@ if ($adresswahl == 'manuell') {
 
 	/* PLZ */
 	if (!empty($plz)) {
-		$erg = Queries::select_plzid_plz($plz);
+		$erg = PostralCode::select_plzid_plz($plz);
 
 		if (mysql_num_rows($erg) == 0)
-			$plz_id = Queries::insert_plz($plz);
+			$plz_id = PostralCode::insert_plz($plz);
 
 		else if ($l = mysql_fetch_assoc($erg))
 			$plz_id = $l['plz_id'];
@@ -150,10 +154,10 @@ if ($adresswahl == 'manuell') {
 
 	/* Ort */
 	if (!empty($ort)) {
-		$erg = Queries::select_ortid_ort($ort);
+		$erg = City::select_ortid_ort($ort);
 
 		if (mysql_num_rows($erg) == 0)
-			$ort_id = Queries::insert_ort($ort);
+			$ort_id = City::insert_ort($ort);
 
 		else if ($l = mysql_fetch_assoc($erg))
 			$ort_id = $l['o_id'];
@@ -167,10 +171,10 @@ if ($adresswahl == 'manuell') {
 
 	/* Land */
 	if (!empty($land)) {
-		$erg = Queries::select_landid_land($land);
+		$erg = Country::select_landid_land($land);
 
 		if (mysql_num_rows($erg) == 0)
-			$land_id = Queries::insert_land($land);
+			$land_id = Country::insert_land($land);
 
 
 		else if ($l = mysql_fetch_assoc($erg))
@@ -188,11 +192,11 @@ if ($adresswahl == 'manuell') {
 	$sql_ad .= ', ftel_fax="'.$ftel_fax.'"';
 	$sql_ad .= ', ftel_aux="'.$ftel_aux.'"';
 
-	$sql_ad .= ', fvw_privat_r='.Queries::get_vwid($fvw_privat_eingabe, $fvw_privat_id);
-	$sql_ad .= ', fvw_arbeit_r='.Queries::get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
-	$sql_ad .= ', fvw_mobil_r='.Queries::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
-	$sql_ad .= ', fvw_fax_r='.Queries::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
-	$sql_ad .= ', fvw_aux_r='.Queries::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
+	$sql_ad .= ', fvw_privat_r='.AreaCode::get_vwid($fvw_privat_eingabe, $fvw_privat_id);
+	$sql_ad .= ', fvw_arbeit_r='.AreaCode::get_vwid($fvw_arbeit_eingabe, $fvw_arbeit_id);
+	$sql_ad .= ', fvw_mobil_r='.AreaCode::get_vwid($fvw_mobil_eingabe, $fvw_mobil_id);
+	$sql_ad .= ', fvw_fax_r='.AreaCode::get_vwid($fvw_fax_eingabe, $fvw_fax_id);
+	$sql_ad .= ', fvw_aux_r='.AreaCode::get_vwid($fvw_aux_eingabe, $fvw_aux_id);
 
 
 	mysql_query($sql_ad);
@@ -213,11 +217,11 @@ $sql .= ', tel_mobil="'.$tel_mobil.'"';
 $sql .= ', tel_fax="'.$tel_fax.'"';
 $sql .= ', tel_aux="'.$tel_aux.'"';
 
-$sql .= ', vw_privat_r='.Queries::get_vwid($vw_privat_eingabe, $vw_privat_id);
-$sql .= ', vw_arbeit_r='.Queries::get_vwid($vw_arbeit_eingabe, $vw_arbeit_id);
-$sql .= ', vw_mobil_r='.Queries::get_vwid($vw_mobil_eingabe, $vw_mobil_id);
-$sql .= ', vw_fax_r='.Queries::get_vwid($vw_fax_eingabe, $vw_fax_id);
-$sql .= ', vw_aux_r='.Queries::get_vwid($vw_aux_eingabe, $vw_aux_id);
+$sql .= ', vw_privat_r='.AreaCode::get_vwid($vw_privat_eingabe, $vw_privat_id);
+$sql .= ', vw_arbeit_r='.AreaCode::get_vwid($vw_arbeit_eingabe, $vw_arbeit_id);
+$sql .= ', vw_mobil_r='.AreaCode::get_vwid($vw_mobil_eingabe, $vw_mobil_id);
+$sql .= ', vw_fax_r='.AreaCode::get_vwid($vw_fax_eingabe, $vw_fax_id);
+$sql .= ', vw_aux_r='.AreaCode::get_vwid($vw_aux_eingabe, $vw_aux_id);
 
 
 if (!empty($email_privat)) $sql .= ', email_privat="'.$email_privat.'"';

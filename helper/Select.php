@@ -1,11 +1,19 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
+require_once('model/AreaCode.php');
+require_once('model/City.php');
+require_once('model/Country.php');
+require_once('model/FormOfAddress.php');
+require_once('model/PostralCode.php');
+require_once('model/Prefix.php');
+require_once('model/Suffix.php');
+
 class Select {
 	public static function show_select_vorwahlen ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_vorwahlen();
+		$erg = AreaCode::select_alle_vorwahlen();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ((empty($aktiv) && $l['v_id'] == 1) || $aktiv == $l['v_id'])
 				echo '<option value="'.$l['v_id'].'" selected>';
@@ -21,7 +29,7 @@ class Select {
 	public static function show_select_anrede ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_anreden();
+		$erg = FormOfAddress::select_alle_anreden();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ($aktiv == $l['a_id'])
 				echo '<option value="'.$l['a_id'].'" selected>';
@@ -37,7 +45,7 @@ class Select {
 	public static function show_select_prafix ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_prafixe();
+		$erg = Prefix::select_alle_prafixe();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ($aktiv == $l['prafix_id'])
 				echo '<option value="'.$l['prafix_id'].'" selected>';
@@ -53,7 +61,7 @@ class Select {
 	public static function show_select_suffix ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_suffixe();
+		$erg = Suffix::select_alle_suffixe();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ($aktiv == $l['s_id'])
 				echo '<option value="'.$l['s_id'].'" selected>';
@@ -69,7 +77,7 @@ class Select {
 	public static function show_select_plz ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_plz();
+		$erg = PostralCode::select_alle_plz();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ($aktiv == $l['plz_id'])
 				echo '<option value="'.$l['plz_id'].'" selected>';
@@ -85,7 +93,7 @@ class Select {
 	public static function show_select_ort ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_orte();
+		$erg = City::select_alle_orte();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ($aktiv == $l['o_id'])
 				echo '<option value="'.$l['o_id'].'" selected>';
@@ -101,7 +109,7 @@ class Select {
 	public static function show_select_land ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';
 
-		$erg = Queries::select_alle_laender();
+		$erg = Country::select_alle_laender();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if ($aktiv == $l['l_id'])
 				echo '<option value="'.$l['l_id'].'" selected>';

@@ -4,6 +4,7 @@
 require_once('component/Filter.php');
 require_once('component/Request.php');
 require_once('helper/Navigation.php');
+require_once('model/Group.php');
 
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);
@@ -56,9 +57,9 @@ if (!isset($aktuell_name))
 		echo '<li><a href="?'.$request->join().'" '.($_SESSION['g'] == 0 ? 'class="active"' : '').'>'._('all').'</a></li>';
 		echo Navigation::spacer();
 
-		$erg = Queries::select_alle_gruppen();
+		$erg = Group::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
-			if (Queries::gruppe_ist_nicht_leer($l['g_id'])) {
+			if (Group::gruppe_ist_nicht_leer($l['g_id'])) {
 				$request = new Request();
 				$request->set('mode', $mode);
 				$request->set('g', $l['g_id']);

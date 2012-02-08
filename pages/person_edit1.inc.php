@@ -2,17 +2,18 @@
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('component/Template.php');
+require_once('model/Person.php');
 
 $p_id = (int)($_GET['id']);
 
 $template = new Template('person_form');
 $template->set('heading', _('edit entry'));
 
-$erg = Queries::select_fmg_zu_person($p_id);
+$erg = Person::select_fmg_zu_person($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$checked_fmgs[] = $l['fmg_id'];
 
-$erg = Queries::select_gruppen_zu_person($p_id);
+$erg = Person::select_gruppen_zu_person($p_id);
 while ($l = mysql_fetch_assoc($erg))
 	$checked_groups[] = $l['g_id'];
 

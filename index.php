@@ -1,6 +1,8 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
+require_once('model/Person.php');
+
 session_start();
 if (isset($_GET['f'])) {
 	$_SESSION['f'] = (int)$_GET['f'];
@@ -37,7 +39,7 @@ if (isset($_POST['id'])) {
 	$id = (int)$_POST['id'];
 }
 if (isset($id)) {
-	$erg = Queries::select_person_alles($id);
+	$erg = Person::select_person_alles($id);
 	$person_loop = mysql_fetch_assoc($erg);
 }
 

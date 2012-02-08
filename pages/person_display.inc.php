@@ -2,7 +2,11 @@
 # Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
 require_once('helper/Callto.php');
+require_once('helper/Cellphone.php');
 require_once('helper/DateFormat.php');
+require_once('helper/ZodiacSign.php');
+require_once('model/AreaCode.php');
+require_once('model/Person.php');
 
 echo '<h1>'._('display entry').'</h1>';
 
@@ -61,7 +65,7 @@ if (!empty($person_loop['geb_t'])) {
 	if ($person_loop['geb_j'] > 1500) {
 		echo $person_loop['geb_j'].' &nbsp;&nbsp; ';
 		printf(_('(today %d years old)'), DateFormat::alter($person_loop['geb_t'],$person_loop['geb_m'],$person_loop['geb_j']));
-		echo ' &nbsp;&nbsp; ('.Queries::sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
+		echo ' &nbsp;&nbsp; ('.ZodiacSign::sternzeichen ($person_loop['geb_t'], $person_loop['geb_m']).')';
 	}
 	echo '</td>';
 	echo '</tr>';
@@ -97,35 +101,35 @@ if ($person_loop['adresse_r'] != 1) {
 if (!empty($person_loop['ftel_privat'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('telephone private').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['fvw_privat_r']).'-'.$person_loop['ftel_privat'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['fvw_privat_r']).$person_loop['ftel_privat']).'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['fvw_privat_r']).'-'.$person_loop['ftel_privat'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['fvw_privat_r']).$person_loop['ftel_privat']).'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['ftel_arbeit'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('telephone work').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['fvw_arbeit_r']).'-'.$person_loop['ftel_arbeit'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['fvw_arbeit_r']).$person_loop['ftel_arbeit']).'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['fvw_arbeit_r']).'-'.$person_loop['ftel_arbeit'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['fvw_arbeit_r']).$person_loop['ftel_arbeit']).'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['ftel_mobil'])) {
 	echo '<tr>';
-	echo '<td class="links">'._('telephone mobile').': <i>'.Queries::handybetreiber(Queries::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['fvw_mobil_r']).$person_loop['ftel_mobil']).'</td>';
+	echo '<td class="links">'._('telephone mobile').': <i>'.Cellphone::handybetreiber(AreaCode::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['fvw_mobil_r']).$person_loop['ftel_mobil']).'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['ftel_fax'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('fax').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['fvw_fax_r']).'-'.$person_loop['ftel_fax'].'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['fvw_fax_r']).'-'.$person_loop['ftel_fax'].'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['ftel_aux'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('telephone other').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['fvw_aux_r']).'-'.$person_loop['ftel_aux'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['fvw_aux_r']).$person_loop['ftel_aux']).'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['fvw_aux_r']).'-'.$person_loop['ftel_aux'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['fvw_aux_r']).$person_loop['ftel_aux']).'</td>';
 	echo '</tr>';
 }
 echo '</table>';
@@ -137,35 +141,35 @@ echo '<table class="display_person">';
 if (!empty($person_loop['tel_privat'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('private').':</td>';
-	echo '<td class="rechts">'.Queries::select_vw_id($person_loop['vw_privat_r']).'-'.$person_loop['tel_privat'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['vw_privat_r']).$person_loop['tel_privat']).'</td>';
+	echo '<td class="rechts">'.AreaCode::select_vw_id($person_loop['vw_privat_r']).'-'.$person_loop['tel_privat'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['vw_privat_r']).$person_loop['tel_privat']).'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['tel_arbeit'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('work').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['vw_arbeit_r']).'-'.$person_loop['tel_arbeit'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['vw_arbeit_r']).$person_loop['tel_arbeit']).'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['vw_arbeit_r']).'-'.$person_loop['tel_arbeit'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['vw_arbeit_r']).$person_loop['tel_arbeit']).'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['tel_mobil'])) {
 	echo '<tr>';
-	echo '<td class="links">'._('mobile').': <i>'.Queries::handybetreiber(Queries::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['vw_mobil_r']).'-'.$person_loop['tel_mobil'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['vw_mobil_r']).$person_loop['tel_mobil']).'</td>';
+	echo '<td class="links">'._('mobile').': <i>'.Cellphone::handybetreiber(AreaCode::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['vw_mobil_r']).'-'.$person_loop['tel_mobil'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['vw_mobil_r']).$person_loop['tel_mobil']).'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['tel_fax'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('fax').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['vw_fax_r']).'-'.$person_loop['tel_fax'].'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['vw_fax_r']).'-'.$person_loop['tel_fax'].'</td>';
 	echo '</tr>';
 }
 
 if (!empty($person_loop['tel_aux'])) {
 	echo '<tr>';
 	echo '<td class="links">'._('other').':</td>';
-	echo '<td>'.Queries::select_vw_id($person_loop['vw_aux_r']).'-'.$person_loop['tel_aux'].' '.Callto::skplnk(Queries::select_vw_id($person_loop['vw_aux_r']).$person_loop['tel_aux']).'</td>';
+	echo '<td>'.AreaCode::select_vw_id($person_loop['vw_aux_r']).'-'.$person_loop['tel_aux'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['vw_aux_r']).$person_loop['tel_aux']).'</td>';
 	echo '</tr>';
 }
 echo '</table>';
@@ -277,7 +281,7 @@ echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('relations').':';
 echo '</div>';
 echo '<table class="display_person">';
-$erg = Queries::select_gruppen_zu_person($id);
+$erg = Person::select_gruppen_zu_person($id);
 if (mysql_num_rows($erg) > 0) {
 	echo '<tr>';
 	echo '<td class="links">'._('groups').':</td>';
@@ -289,7 +293,7 @@ if (mysql_num_rows($erg) > 0) {
 	echo '</td>';
 	echo '</tr>';
 }
-$erg = Queries::select_fmg_zu_person($id);
+$erg = Person::select_fmg_zu_person($id);
 if (mysql_num_rows($erg) > 0) {
 	echo '<tr>';
 	echo '<td class="links">'._('associated with').':</td>';
