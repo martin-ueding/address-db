@@ -771,7 +771,7 @@ class PersonController extends Controller {
 
 	}
 
-	public static function checked() {
+	public function checked() {
 		$sql = 'UPDATE ad_per SET last_check='.time().' WHERE p_id='.($id).';';
 		mysql_query($sql);
 		$_SESSION['messages'][] = _('The entry was updated.');
@@ -782,7 +782,7 @@ class PersonController extends Controller {
 		$mode= 'person_display';
 	}
 
-	public static function delete() {
+	public function delete() {
 		if (!isset($_GET['id'])) {
 			return _('There is no ID specified.');
 		}

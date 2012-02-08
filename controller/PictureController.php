@@ -6,7 +6,7 @@ require_once('component/Template.php');
 require_once('controller/Controller.php');
 
 class PictureController extends Controller {
-	public static function delete() {
+	public function delete() {
 		if (!isset($_GET['id'])) {
 		}
 
@@ -30,7 +30,7 @@ class PictureController extends Controller {
 		}
 	}
 
-	public static function edit() {
+	public function edit() {
 		if (!isset($_GET['id'])) {
 		}
 

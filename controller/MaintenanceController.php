@@ -6,7 +6,7 @@ require_once('component/Missing.php');
 require_once('controller/Controller.php');
 
 class MaintenanceController extends Controller {
-	public static function integrity_check() {
+	public function integrity_check() {
 		echo '<h1>'._('integrity check').'</h1>';
 
 		$remove_unneeded = isset($_GET['remove_unneeded']);
@@ -394,7 +394,7 @@ class MaintenanceController extends Controller {
 		}
 	}
 
-	public static function no_association() {
+	public function no_association() {
 		echo '<h1>'._('entries without an association').'</h1>';
 		$from_with_get = 'mode=no_association';
 
@@ -406,7 +406,7 @@ class MaintenanceController extends Controller {
 		echo $missing->html();
 	}
 
-	public static function no_birthday() {
+	public function no_birthday() {
 		echo '<h1>'._('without a birthday').'</h1>';
 		$from_with_get = 'mode=no_birthday';
 
@@ -419,7 +419,7 @@ class MaintenanceController extends Controller {
 		echo $missing->html();
 	}
 
-	public static function no_email() {
+	public function no_email() {
 		echo '<h1>'._('entries without an email address').'</h1>';
 		$from_with_get = 'mode=no_email';
 
@@ -432,7 +432,7 @@ class MaintenanceController extends Controller {
 		echo $missing->html();
 	}
 
-	public static function no_group() {
+	public function no_group() {
 		echo '<h1>'._('entries without a group').'</h1>';
 		$from_with_get = 'mode=no_group';
 
@@ -444,7 +444,7 @@ class MaintenanceController extends Controller {
 		echo $missing->html();
 	}
 
-	public static function no_title() {
+	public function no_title() {
 		echo '<h1>'._('entries without a form of address').'</h1>';
 		$from_with_get = 'mode=no_title';
 
