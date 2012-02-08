@@ -155,7 +155,7 @@ msgstr "Gruppe %s"
 
 #: ../template/header.php:67
 msgid "ICS birthday calendar"
-msgstr ""
+msgstr "ICS Geburtstagskalender"
 
 #: ../template/person_form.php:78
 msgid "In which groups is this person?"
@@ -213,7 +213,7 @@ msgstr "Keine ID angegeben."
 
 #: ../index.php:121
 msgid "No content here."
-msgstr ""
+msgstr "Keine Inhalte verfügbar."
 
 #: ../controller/SearchController.php:43
 msgid "No search query was entered"
@@ -258,7 +258,7 @@ msgstr "September"
 
 #: ../template/all_birthdays.php:39
 msgid "Sorry, nobody's birthday is known."
-msgstr ""
+msgstr "Sorry, keine Geburtstage bekannt."
 
 #: ../template/person_delete.php:25
 msgid "Sure, delete that!"
@@ -520,7 +520,7 @@ msgstr "Datenbankkontrolle"
 
 #: ../template/header.php:66
 msgid "dayplanner"
-msgstr ""
+msgstr "Tagesplaner"
 
 #: ../controller/MaintenanceController.php:388
 #, php-format
@@ -613,7 +613,7 @@ msgstr "alle, die hier wohnen"
 
 #: ../template/header.php:62
 msgid "export"
-msgstr ""
+msgstr "Export"
 
 #: ../template/person_view.php:111 ../template/person_view.php:151
 #: ../template/person_form.php:194 ../template/person_form.php:245
@@ -669,9 +669,8 @@ msgid "just now"
 msgstr "gerade eben"
 
 #: ../template/header.php:63
-#, fuzzy
 msgid "kitchen list"
-msgstr "Geburtstagsliste"
+msgstr "Küchenliste"
 
 #: ../template/person_view.php:324
 #, php-format
@@ -948,126 +947,3 @@ msgstr "geschäftlich"
 #: ../template/person_view.php:330
 msgid "yes"
 msgstr "ja"
-
-#~ msgid "Missing an ID."
-#~ msgstr "ID fehlt."
-
-#~ msgid "Sorry, I could not find a site like that."
-#~ msgstr "Entschuldigung, ich konnte keine deartige Seite finden."
-
-#~ msgid "export LaTeX sheets"
-#~ msgstr "LaTeX Blätter exportieren"
-
-#~ msgid "export this list as a LaTeX for day planner sheets"
-#~ msgstr "diese Liste als LaTeX für Kalenderblätter exportieren"
-
-#~ msgid "export this list as a VCard"
-#~ msgstr "diese Liste als VCard exportieren"
-
-#~ msgid "group &bdquo;%s&ldquo;"
-#~ msgstr "Gruppe &bdquo;%s&ldquo;"
-
-#~ msgid "send verification email"
-#~ msgstr "Überprüfungsemail senden"
-
-#~ msgid "verification email"
-#~ msgstr "Überprüfungsemail"
-
-#~ msgid "verification mail %s sent, confirmation pending"
-#~ msgstr "Überprüfungsmail %s gesendet, Bestätigung ausstehend"
-
-#~ msgid "Dear"
-#~ msgstr "Sehr geehrte(r)"
-
-#~ msgid "Do not send!"
-#~ msgstr "Nicht senden!"
-
-#~ msgid "Do you really want to send a verification mail to %s?"
-#~ msgstr "Möchten Sie wirklich eine Überprüfungsemail an %s senden?"
-
-#~ msgid "Hello %s"
-#~ msgstr "Guten Tag %s"
-
-#~ msgid ""
-#~ "If you want to correct something, please feel free to reply to this mail "
-#~ "and tell us the changes. Amendments are welcomed as well."
-#~ msgstr ""
-#~ "Wenn Sie etwas korrigieren m&ouml;chten, antworten Sie bitte einfach auf "
-#~ "diese Email und schildern Sie Ihre &Auml;nderungen. Erg&auml;nzungen "
-#~ "(Emailadresse, Geburtsdatum, weitere Telefonnummern oder Chat-Pseudonyme) "
-#~ "sind ebenfalls willkommen."
-
-#~ msgid "Language to send the email in:"
-#~ msgstr "Sprache, in der die Email gesendet werden soll:"
-
-#~ msgid "Please check your data"
-#~ msgstr "Bitte überprüfen Sie Ihre Daten"
-
-#~ msgid "Please click here, if all your data is up-to-date:"
-#~ msgstr "Bitte klicken Sie hier, falls Ihre Daten aktuell sind:"
-
-#~ msgid ""
-#~ "Sorry, but that code seems to be wrong. Have you clicked on that link "
-#~ "before maybe?"
-#~ msgstr ""
-#~ "Entschuldigung, allerdings scheint dieser Code falsch zu sein. Haben Sie "
-#~ "den Link eventuell schon angeklickt?"
-
-#~ msgid "Thank you for taking the time to review and confirm your data."
-#~ msgstr ""
-#~ "Vielen Dank, dass Sie sich die Zeit genommen haben Ihre Daten zu "
-#~ "überprüfen."
-
-#~ msgid "Thank you!"
-#~ msgstr "Vielen Dank!"
-
-#~ msgid ""
-#~ "The last email was sent within the last 24 hours. No email was sent now "
-#~ "because this looks like an error."
-#~ msgstr ""
-#~ "Die letzte Email wurde in den letzten 24 Stunden versendet, daher wurde "
-#~ "keine neue Email gesendet."
-
-#~ msgid "The verification email was sent."
-#~ msgstr "Die Überprüfungsmail wurde verschickt."
-
-#~ msgid "There was an error while sending the verification email:"
-#~ msgstr "Es gab einen Fehler beim Senden der Überprüfungsmail:"
-
-#~ msgid ""
-#~ "This entry does not have an email address. This should be an impossible "
-#~ "error since you should not even be able to get here then."
-#~ msgstr ""
-#~ "Dieser Eintrag hat keine Emailadresse. Es sollte unmöglich sein, diesen "
-#~ "Fehler zu bekommen."
-
-#~ msgid "data is up to date"
-#~ msgstr "Daten sind aktuell"
-
-#~ msgid ""
-#~ "please take a minute and control your data that we have saved in our "
-#~ "address book. If everything is correct, please click on the link at the "
-#~ "bottom of this email."
-#~ msgstr ""
-#~ "bitte nehmen Sie sich einen Augenblick und kontrollieren die Daten, die "
-#~ "wir in unserem Adressbuch gespeichert haben. Wenn alles korrekt ist, "
-#~ "klicken Sie bitte auf den Link unten in der Email."
-
-#~ msgid "send"
-#~ msgstr "senden"
-
-#~ msgid "Maximum file size is 2 MB!"
-#~ msgstr "Die maximale Dateigröße ist 2 MB!"
-
-#~ msgid "The file that you want to upload is too big!"
-#~ msgstr "Die Datei, die Sie hochladen möchten, ist zu groß."
-
-#~ msgid ""
-#~ "The temporary file could not be found. If you just have reloaded this "
-#~ "page, this is normal."
-#~ msgstr ""
-#~ "Die temporäre Datei konnte nicht gefunden werden. Falls Sie diese Seite "
-#~ "gerade aktualisiert haben, ist dies normal."
-
-#~ msgid "There is no file %s."
-#~ msgstr "Die Datei %s gibt es nicht."
