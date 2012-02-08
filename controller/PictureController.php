@@ -17,7 +17,7 @@ class PictureController extends Controller {
 
 			$_SESSION['messages'][] = _('The picture was removed.');
 
-			return Controller::call('Person::view');
+			$_SESSION['history']->go_back();
 		}
 		else {
 			$template = new Template('picture_delete');
@@ -52,7 +52,7 @@ class PictureController extends Controller {
 				$_SESSION['messages'][] = $e->getMessage();
 			}
 
-			return Controller::call('Person::view');
+			$_SESSION['history']->go_back();
 		}
 		else {
 			$template = new Template('picture_edit');

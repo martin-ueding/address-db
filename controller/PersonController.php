@@ -778,7 +778,7 @@ class PersonController extends Controller {
 		// update the data for the person
 		$person_loop['last_check'] = time();
 
-		$mode= 'person_display';
+		$_SESSSION['history']->go_back();
 	}
 
 	public function delete() {
@@ -797,21 +797,7 @@ class PersonController extends Controller {
 					$person_loop['nachname'].'</em>');
 			}
 
-			if (isset($_GET['back'])) {
-				$back = $_GET['back'];
-				$items = explode('&', $back);
-				foreach ($items as $item) {
-					$keyvalue = explode('=', $item);
-					if (isset($keyvalue[1])) {
-					$_GET[$keyvalue[0]] = $keyvalue[1];
-					}
-				}
-
-				return Controller::call($back);
-			}
-			else {
-				return Controller::call('List::index');
-			}
+			$_SESSION['history']->go_back($id);
 		}
 		else {
 			$template = new Template('person_delete');
