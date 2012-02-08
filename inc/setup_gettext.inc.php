@@ -26,7 +26,7 @@ function gtxt_set_locale($lang) {
 
 		putenv('LC_MESSAGES='.$lang);
 		setlocale(LC_MESSAGES, $lang);
-		bindtextdomain($domain, "../locale/");
+		bindtextdomain($domain, "locale/");
 		bind_textdomain_codeset($domain, "iso-8859-1");
 		textdomain($domain);
 
