@@ -67,12 +67,12 @@ echo '<li><a href="?mode=Export::dayplanner">'._('dayplanner').'</a></li>';
 echo '<li><a href="?mode=Export::birthday_calendar">'._('ICS birthday calendar').'</a></li>';
 echo Navigation::spacer();
 echo '<li><b>'._('maintenance').'</b></li>';
-echo Navigation::nav_action_link('no_title', $current_mode, _('no form of address'));
-echo Navigation::nav_action_link('no_association', $current_mode, _('no association'));
-echo Navigation::nav_action_link('no_group', $current_mode, _('no group'));
-echo Navigation::nav_action_link('no_email', $current_mode, _('no email address'));
-echo Navigation::nav_action_link('no_birthday', $current_mode, _('no birthday'));
-echo Navigation::nav_action_link('integrity_check', $current_mode, _('database check'));
+echo Navigation::nav_action_link('Maintenance::no_title', $current_mode, _('no form of address'));
+echo Navigation::nav_action_link('Maintenance::no_association', $current_mode, _('no association'));
+echo Navigation::nav_action_link('Maintenance::no_group', $current_mode, _('no group'));
+echo Navigation::nav_action_link('Maintenance::no_email', $current_mode, _('no email address'));
+echo Navigation::nav_action_link('Maintenance::no_birthday', $current_mode, _('no birthday'));
+echo Navigation::nav_action_link('Maintenance::integrity_check', $current_mode, _('database check'));
 ?>
 </ul>
 </div>
