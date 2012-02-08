@@ -48,12 +48,7 @@ if (isset($_POST['id'])) {
 }
 
 // get current mode
-$mode = isset($_GET['mode']) ? $_GET['mode'] : '';
-
-if (empty($mode)) {
-	$mode = 'main';
-}
-
+$mode = isset($_GET['mode']) ? $_GET['mode'] : 'Birthday::upcoming_birthdays';
 
 
 $index_template = new Template('index');
