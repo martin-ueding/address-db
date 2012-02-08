@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-08 20:20+0100\n"
+"POT-Creation-Date: 2012-02-08 20:48+0100\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-05-31 05:49+0000\n"
 "X-Generator: Launchpad (build 12959)\n"
 
-#: ../controller/MaintenanceController.php:385
+#: ../template/maintenance_integrity_check.php:375
 #, php-format
 msgid "%d entries were deleted."
 msgstr "%d Einträge wurden gelöscht."
@@ -48,11 +48,20 @@ msgstr "(heute %d Jahre alt)"
 
 #: ../controller/BirthdayController.php:12
 #: ../controller/BirthdayController.php:40
-#: ../controller/PersonController.php:851 ../controller/Controller.php:9
-#: ../controller/ListController.php:15 ../controller/ListController.php:25
-#: ../controller/ListController.php:28 ../index.php:62 ../index.php:66
-#: ../index.php:70 ../index.php:76 ../index.php:79 ../index.php:85
-#: ../index.php:89 ../index.php:93 ../index.php:97
+#: ../controller/PersonController.php:21
+#: ../controller/PersonController.php:770
+#: ../controller/PersonController.php:831
+#: ../controller/PersonController.php:857
+#: ../controller/MaintenanceController.php:12
+#: ../controller/MaintenanceController.php:20
+#: ../controller/MaintenanceController.php:35
+#: ../controller/MaintenanceController.php:50
+#: ../controller/MaintenanceController.php:66
+#: ../controller/MaintenanceController.php:81
+#: ../controller/PictureController.php:28
+#: ../controller/PictureController.php:64 ../controller/Controller.php:9
+#: ../controller/SearchController.php:12 ../controller/ListController.php:15
+#: ../controller/ListController.php:25 ../controller/ListController.php:28
 msgid "Address DB"
 msgstr "Adressdatenbank"
 
@@ -108,7 +117,7 @@ msgstr "Konnte DB nicht auswählen."
 msgid "December"
 msgstr "Dezember"
 
-#: ../controller/SearchController.php:131
+#: ../template/search_index.php:116
 #, php-format
 msgid "Did you mean %s instead of %s?"
 msgstr "Meinten Sie %s anstelle von %s?"
@@ -131,7 +140,7 @@ msgstr "Niederländisch"
 msgid "English"
 msgstr "Englisch"
 
-#: ../controller/MaintenanceController.php:50
+#: ../template/maintenance_integrity_check.php:40
 #, php-format
 msgid "Error during deletion of image %s!"
 msgstr "Fehler beim Löschen des Bildes %s!"
@@ -207,15 +216,15 @@ msgstr "Herr"
 msgid "Ms."
 msgstr "Frau"
 
-#: ../controller/PersonController.php:841
+#: ../controller/PersonController.php:847
 msgid "No ID given."
 msgstr "Keine ID angegeben."
 
-#: ../index.php:127
+#: ../index.php:75
 msgid "No content here."
 msgstr "Keine Inhalte verfügbar."
 
-#: ../controller/SearchController.php:43
+#: ../template/search_index.php:32
 msgid "No search query was entered"
 msgstr "Es wurde kein Suchbegriff eingegeben"
 
@@ -231,10 +240,6 @@ msgstr "November"
 msgid "October"
 msgstr "Oktober"
 
-#: ../index.php:102
-msgid "PHP Family Address DB"
-msgstr "PHP Familien Adressdatenbank"
-
 #: ../helper/ZodiacSign.php:25
 msgid "Pisces"
 msgstr "Fische"
@@ -247,7 +252,7 @@ msgstr "Schütze"
 msgid "Scorpio"
 msgstr "Skorpion"
 
-#: ../controller/SearchController.php:46
+#: ../template/search_index.php:35
 #, php-format
 msgid "Searching for the term %s"
 msgstr "Suche nach %s"
@@ -256,7 +261,7 @@ msgstr "Suche nach %s"
 msgid "September"
 msgstr "September"
 
-#: ../template/all_birthdays.php:39
+#: ../template/birthday_index.php:39
 msgid "Sorry, nobody's birthday is known."
 msgstr "Sorry, keine Geburtstage bekannt."
 
@@ -268,16 +273,16 @@ msgstr "Sicher, löschen!"
 msgid "Taurus"
 msgstr "Stier"
 
-#: ../controller/PersonController.php:797
+#: ../controller/PersonController.php:801
 #, php-format
 msgid "The entry %s was deleted."
 msgstr "Der Eintrag %s wurde gelöscht."
 
-#: ../controller/PersonController.php:776
+#: ../controller/PersonController.php:780
 msgid "The entry was updated."
 msgstr "Der Eintrag wurde aktualisiert."
 
-#: ../controller/PictureController.php:49
+#: ../controller/PictureController.php:50
 msgid "The picture was added."
 msgstr "Das Bild wurde hinzugefügt."
 
@@ -285,11 +290,11 @@ msgstr "Das Bild wurde hinzugefügt."
 msgid "The picture was removed."
 msgstr "Das Bild wurde entfernt."
 
-#: ../controller/MaintenanceController.php:394
+#: ../template/maintenance_integrity_check.php:384
 msgid "There are no invalid or unneeded entries."
 msgstr "Es gibt keine ungültigen oder unbenutzen Einträge."
 
-#: ../controller/PersonController.php:786
+#: ../controller/PersonController.php:790
 msgid "There is no ID specified."
 msgstr "Es wurde keine ID angegeben."
 
@@ -354,71 +359,71 @@ msgstr "Adressänderung betrifft"
 msgid "all"
 msgstr "alle"
 
-#: ../controller/BirthdayController.php:12 ../template/all_birthdays.php:2
+#: ../controller/BirthdayController.php:12 ../template/birthday_index.php:2
 msgid "all birthdays"
 msgstr "alle Geburtstage"
 
-#: ../controller/SearchController.php:116
+#: ../template/search_index.php:105
 msgid "as part of a URL"
 msgstr "als Teil einer URL"
 
-#: ../controller/SearchController.php:120
+#: ../template/search_index.php:109
 msgid "as part of a chat nickname"
 msgstr "als Teil eines Chatpseudonyms"
 
-#: ../controller/SearchController.php:76
+#: ../template/search_index.php:65
 msgid "as part of a house fax number"
 msgstr "als Teil einer Hausfaxnummer"
 
-#: ../controller/SearchController.php:81
+#: ../template/search_index.php:70
 msgid "as part of a house phone number (aux)"
 msgstr "als Teil einer Haustelefonnummer (sonstiges)"
 
-#: ../controller/SearchController.php:71
+#: ../template/search_index.php:60
 msgid "as part of a house phone number (mobile)"
 msgstr "als Teil einer Haustelefonnummer (mobil)"
 
-#: ../controller/SearchController.php:61
+#: ../template/search_index.php:50
 msgid "as part of a house phone number (private)"
 msgstr "als Teil einer Haustelefonnummer (privat)"
 
-#: ../controller/SearchController.php:66
+#: ../template/search_index.php:55
 msgid "as part of a house phone number (work)"
 msgstr "als Teil einer Haustelefonnummer (geschäftlich)"
 
-#: ../controller/SearchController.php:51
+#: ../template/search_index.php:40
 msgid "as part of a name"
 msgstr "als Teil eines Namens"
 
-#: ../controller/SearchController.php:124
+#: ../template/search_index.php:113
 msgid "as part of a note"
 msgstr "als Teil einer Notiz"
 
-#: ../controller/SearchController.php:102
+#: ../template/search_index.php:91
 msgid "as part of a personal fax number"
 msgstr "als Teil einer persönlichen Faxnummer"
 
-#: ../controller/SearchController.php:107
+#: ../template/search_index.php:96
 msgid "as part of a personal phone number (aux)"
 msgstr "als Teil einer persönlichen Telefonnummer (sonstiges)"
 
-#: ../controller/SearchController.php:97
+#: ../template/search_index.php:86
 msgid "as part of a personal phone number (mobile)"
 msgstr "als Teil einer persönlichen Telefonnummer (mobil)"
 
-#: ../controller/SearchController.php:87
+#: ../template/search_index.php:76
 msgid "as part of a personal phone number (private)"
 msgstr "als Teil einer persönlichen Telefonnummer (privat)"
 
-#: ../controller/SearchController.php:92
+#: ../template/search_index.php:81
 msgid "as part of a personal phone number (work)"
 msgstr "als Teil einer persönlichen Telefonnummer (geschäftlich)"
 
-#: ../controller/SearchController.php:55
+#: ../template/search_index.php:44
 msgid "as part of an address"
 msgstr "als Teil einer Adresse"
 
-#: ../controller/SearchController.php:112
+#: ../template/search_index.php:101
 msgid "as part of an email address"
 msgstr "als Teil einer Emailadresse"
 
@@ -442,7 +447,7 @@ msgstr "Geburtstagsliste"
 msgid "birthday view"
 msgstr "Geburtstagsansicht"
 
-#: ../template/upcoming_birthdays.php:3
+#: ../template/birthday_upcoming_birthdays.php:3
 msgid "birthdays"
 msgstr "Geburtstage"
 
@@ -494,11 +499,11 @@ msgstr "Chat Yahoo!"
 msgid "create"
 msgstr "erstellen"
 
-#: ../controller/PersonController.php:298
+#: ../controller/PersonController.php:300
 msgid "create a new entry"
 msgstr "neuen Eintrag erstellen"
 
-#: ../index.php:66
+#: ../controller/PersonController.php:21
 msgid "create entry"
 msgstr "Eintrag erstellen"
 
@@ -514,7 +519,7 @@ msgstr "neue Gruppe anlegen"
 msgid "current birthdays"
 msgstr "aktuelle Geburtstage"
 
-#: ../template/header.php:75 ../index.php:97
+#: ../controller/MaintenanceController.php:12 ../template/header.php:75
 msgid "database check"
 msgstr "Datenbankkontrolle"
 
@@ -522,17 +527,17 @@ msgstr "Datenbankkontrolle"
 msgid "dayplanner"
 msgstr "Tagesplaner"
 
-#: ../controller/MaintenanceController.php:390
+#: ../template/maintenance_integrity_check.php:380
 #, php-format
 msgid "delete %d unneeded entries"
 msgstr "lösche %d unbenutze Einträge"
 
-#: ../index.php:70
+#: ../controller/PersonController.php:831
 #, php-format
 msgid "delete %s"
 msgstr "%s löschen"
 
-#: ../index.php:79
+#: ../controller/PictureController.php:28
 #, php-format
 msgid "delete %s's picture"
 msgstr "Bild für %s löschen"
@@ -557,12 +562,12 @@ msgstr "Eintrag anzeigen"
 msgid "download VCard"
 msgstr "VCard herunterladen"
 
-#: ../index.php:76
+#: ../controller/PersonController.php:770
 #, php-format
 msgid "edit %s"
 msgstr "%s bearbeiten"
 
-#: ../controller/PersonController.php:744
+#: ../controller/PersonController.php:746
 msgid "edit entry"
 msgstr "Eintrag bearbeiten"
 
@@ -582,7 +587,7 @@ msgstr "Email privat"
 msgid "email work"
 msgstr "Email geschäftlich"
 
-#: ../controller/MaintenanceController.php:322
+#: ../template/maintenance_integrity_check.php:312
 msgid "empty groups"
 msgstr "leere Gruppen"
 
@@ -591,19 +596,19 @@ msgstr "leere Gruppen"
 msgid "entries for %s"
 msgstr "Einträge für %s"
 
-#: ../controller/MaintenanceController.php:456
+#: ../template/maintenance_no_title.php:2
 msgid "entries without a form of address"
 msgstr "Einträge ohne Anrede"
 
-#: ../controller/MaintenanceController.php:443
+#: ../template/maintenance_no_group.php:2
 msgid "entries without a group"
 msgstr "Einträge ohne Gruppe"
 
-#: ../controller/MaintenanceController.php:402
+#: ../template/maintenance_no_association.php:2
 msgid "entries without an association"
 msgstr "Einträge ohne Zuordnung"
 
-#: ../controller/MaintenanceController.php:429
+#: ../template/maintenance_no_email.php:2
 msgid "entries without an email address"
 msgstr "Einträge ohne Emailadresse"
 
@@ -648,7 +653,7 @@ msgstr "Homepage 2"
 msgid "in the future ..."
 msgstr "in der Zukunft ..."
 
-#: ../controller/MaintenanceController.php:12
+#: ../template/maintenance_integrity_check.php:2
 msgid "integrity check"
 msgstr "Integritätsüberprüfung"
 
@@ -656,11 +661,11 @@ msgstr "Integritätsüberprüfung"
 msgid "internet"
 msgstr "Internet"
 
-#: ../controller/MaintenanceController.php:363
+#: ../template/maintenance_integrity_check.php:353
 msgid "invalid family member links"
 msgstr "ungültige Famlienmitgliedsbeziehungen"
 
-#: ../controller/MaintenanceController.php:283
+#: ../template/maintenance_integrity_check.php:273
 msgid "invalid group links"
 msgstr "ungültige Gruppenbeziehungen"
 
@@ -690,7 +695,7 @@ msgstr "Nachname"
 msgid "letter &bdquo;%s&ldquo;"
 msgstr "Buchstabe &bdquo;%s&ldquo;"
 
-#: ../controller/ListController.php:28 ../template/list.php:1
+#: ../controller/ListController.php:28 ../template/list_index.php:1
 msgid "list"
 msgstr "Liste"
 
@@ -728,33 +733,39 @@ msgstr "Name und Bezüge"
 msgid "never"
 msgstr "noch nicht"
 
-#: ../template/upcoming_birthdays.php:36
+#: ../template/birthday_upcoming_birthdays.php:36
 msgid "next month"
 msgstr "nächster Monat"
 
-#: ../template/header.php:71
+#: ../controller/MaintenanceController.php:20 ../template/header.php:71
 msgid "no association"
 msgstr "keine Zuordnung"
 
-#: ../template/header.php:74
+#: ../controller/MaintenanceController.php:35 ../template/header.php:74
 msgid "no birthday"
 msgstr "kein Geburtsdatum"
+
+#: ../controller/MaintenanceController.php:50
+#, fuzzy
+msgid "no email"
+msgstr "keine Emailadresse"
 
 #: ../template/header.php:73
 msgid "no email address"
 msgstr "keine Emailadresse"
 
-#: ../template/header.php:70 ../index.php:62
+#: ../template/header.php:70
 msgid "no form of address"
 msgstr "keine Anrede"
 
-#: ../template/header.php:72
+#: ../controller/MaintenanceController.php:81
+#, fuzzy
+msgid "no from of address"
+msgstr "keine Anrede"
+
+#: ../controller/MaintenanceController.php:66 ../template/header.php:72
 msgid "no group"
 msgstr "keine Gruppe"
-
-#: ../controller/SearchController.php:127
-msgid "no results"
-msgstr "keine Ergebnisse"
 
 #: ../js/searchhints.php:26
 msgid "no suggestions available"
@@ -799,7 +810,7 @@ msgstr "persönliche Kontaktinformationen"
 msgid "picture upload"
 msgstr "Bild hochladen"
 
-#: ../controller/MaintenanceController.php:40
+#: ../template/maintenance_integrity_check.php:30
 msgid "pictures with no associated entry"
 msgstr "Bilder ohne verbunden Eintrag"
 
@@ -824,16 +835,16 @@ msgstr "Bezüge"
 msgid "save"
 msgstr "speichern"
 
-#: ../controller/SearchController.php:12
+#: ../template/search_index.php:2
 msgid "search"
 msgstr "Suche"
 
-#: ../index.php:89
+#: ../controller/SearchController.php:12
 #, php-format
 msgid "search for &bdquo;%s&ldquo;"
 msgstr "Suche nach &bdquo;%s&ldquo;"
 
-#: ../template/list.php:14
+#: ../template/list_index.php:14
 msgid "send an email to everybody in this list"
 msgstr "eine Email an alle in dieser Liste senden"
 
@@ -877,27 +888,27 @@ msgstr "Telefon privat"
 msgid "telephone work"
 msgstr "Telefon geschäftlich"
 
-#: ../template/upcoming_birthdays.php:6
+#: ../template/birthday_upcoming_birthdays.php:6
 msgid "this month"
 msgstr "dieser Monat"
 
-#: ../controller/MaintenanceController.php:76
+#: ../template/maintenance_integrity_check.php:66
 msgid "unused addresses"
 msgstr "unbenutze Adressen"
 
-#: ../controller/MaintenanceController.php:242
+#: ../template/maintenance_integrity_check.php:232
 msgid "unused area codes"
 msgstr "unbenutze Vorwahlen"
 
-#: ../controller/MaintenanceController.php:155
+#: ../template/maintenance_integrity_check.php:145
 msgid "unused cities"
 msgstr "unbenutze Städte"
 
-#: ../controller/MaintenanceController.php:194
+#: ../template/maintenance_integrity_check.php:184
 msgid "unused countries"
 msgstr "unbenutzte Länder"
 
-#: ../controller/MaintenanceController.php:116
+#: ../template/maintenance_integrity_check.php:106
 msgid "unused postral codes"
 msgstr "unbenutze Postleitzahlen"
 
@@ -909,7 +920,7 @@ msgstr "Aktualität"
 msgid "upload"
 msgstr "Upload"
 
-#: ../index.php:85
+#: ../controller/PictureController.php:64
 #, php-format
 msgid "upload %s's picture"
 msgstr "Bild für %s hochladen"
@@ -917,11 +928,6 @@ msgstr "Bild für %s hochladen"
 #: ../template/person_view.php:344
 msgid "upload picture"
 msgstr "Bild hochladen"
-
-#: ../index.php:93
-#, php-format
-msgid "verification mail for %s"
-msgstr "Überprüfungsmail für %s"
 
 #: ../template/index.php:31
 msgid "version"
@@ -935,7 +941,7 @@ msgstr "Ansichten"
 msgid "within in the last minute"
 msgstr "innerhalb der letzten Minute"
 
-#: ../controller/MaintenanceController.php:415
+#: ../template/maintenance_no_birthday.php:2
 msgid "without a birthday"
 msgstr "ohne Geburtstag"
 
@@ -947,3 +953,12 @@ msgstr "geschäftlich"
 #: ../template/person_view.php:330
 msgid "yes"
 msgstr "ja"
+
+#~ msgid "PHP Family Address DB"
+#~ msgstr "PHP Familien Adressdatenbank"
+
+#~ msgid "no results"
+#~ msgstr "keine Ergebnisse"
+
+#~ msgid "verification mail for %s"
+#~ msgstr "Überprüfungsmail für %s"
