@@ -3,8 +3,9 @@
 
 require_once('component/Filter.php');
 require_once('component/Missing.php');
+require_once('controller/Controller.php');
 
-class MaintenanceController {
+class MaintenanceController extends Controller {
 	public static function integrity_check() {
 		echo '<h1>'._('integrity check').'</h1>';
 

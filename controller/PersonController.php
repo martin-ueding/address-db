@@ -12,10 +12,11 @@ require_once('model/City.php');
 require_once('model/Country.php');
 require_once('model/Person.php');
 require_once('model/PostralCode.php');
+require_once('controller/Controller.php');
 
 include('_config.inc.php');
 
-class PersonController {
+class PersonController extends Controller {
 	public static function create1() {
 		$template = new Template('person_form');
 

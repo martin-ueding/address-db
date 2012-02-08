@@ -1,10 +1,11 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('helper/Table.php');
 require_once('component/Filter.php');
+require_once('controller/Controller.php');
+require_once('helper/Table.php');
 
-class SearchController {
+class SearchController extends Controller {
 	public static function index() {
 		echo '<h1>'._('search').'</h1>';
 

@@ -5,8 +5,9 @@ require_once('component/Filter.php');
 require_once('helper/Table.php');
 require_once('model/FamilyMember.php');
 require_once('model/Group.php');
+require_once('controller/Controller.php');
 
-class ListController {
+class ListController extends Controller {
 	public function index() {
 	echo '<h1>'._('list').'</h1>';
 	$from_with_get = 'mode=list';

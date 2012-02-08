@@ -2,8 +2,9 @@
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('component/PictureResize.php');
+require_once('controller/Controller.php');
 
-class PictureController {
+class PictureController extends Controller {
 	public static function pic_remove() {
 		if (!empty($id)) {
 			printf(_('Do you really want to remove the picture for %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');
