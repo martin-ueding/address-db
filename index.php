@@ -147,23 +147,14 @@ $index_template->set('messages', null);
 
 
 if (isset($mode)) {
-	preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
+	$content_controller = Controller::get_controller($mode);
 
-	if (count($matches) > 2) {
-
-		$mode_controller = $matches[1].'Controller';
-		$mode_function = $matches[2];
-
-		$controllerfile = 'controller/'.$mode_controller.'.php';
-		if (file_exists($controllerfile)) {
-			require_once($controllerfile);
-			$content_controller = new $mode_controller();
-
-			$content = $content_controller->$mode_function();
-			$index_template->set('page_title', $content_controller->get_page_title());
-		}
+	if ($content_controller != null) {
+		$content = Controller::call($mode);
+		$index_template->set('page_title', $content_controller->get_page_title());
 	}
 }
+
 
 if (!isset($content)) {
 	$content = _('No content here.');

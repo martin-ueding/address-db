@@ -29,4 +29,35 @@ class Controller {
 		$class = str_replace('Controller', '', $class);
 		return 'mode='.$class.'::'.$function;
 	}
+
+	public static function get_controller($mode) {
+		preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
+
+		if (count($matches) > 2) {
+
+			$mode_controller = $matches[1].'Controller';
+			$mode_function = $matches[2];
+
+			$controllerfile = 'controller/'.$mode_controller.'.php';
+			if (file_exists($controllerfile)) {
+				require_once($controllerfile);
+				return new $mode_controller();
+			}
+		}
+	}
+
+	public static function call($mode) {
+		preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
+		if (count($matches) > 2) {
+			$mode_controller = $matches[1].'Controller';
+			$mode_function = $matches[2];
+
+			$controllerfile = 'controller/'.$mode_controller.'.php';
+			if (file_exists($controllerfile)) {
+				require_once($controllerfile);
+				$content_controller = new $mode_controller();
+			}
+			return $content_controller->$mode_function();
+		}
+	}
 }
