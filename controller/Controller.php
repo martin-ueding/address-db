@@ -9,7 +9,7 @@ class Controller {
 		$this->set_page_title(_('Address DB'));
 	}
 
-	private function set_page_title($title) {
+	protected function set_page_title($title) {
 		$this->page_title = $title;
 	}
 
