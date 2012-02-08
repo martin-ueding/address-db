@@ -198,7 +198,20 @@ if (!isset($page_title)) {
 		echo '</div>';
 	}
 
-	include('pages/'.$mode.'.inc.php');
+	switch ($mode) {
+	case 'all_birthdays':
+		require_once('controller/BirthdayController.php');
+		BirthdayController::all_birthdays();
+		break;
+	case 'main':
+		require_once('controller/BirthdayController.php');
+		BirthdayController::upcoming_birthdays();
+		break;
+	default:
+		include('pages/'.$mode.'.inc.php');
+		break;
+	}
+
 	echo '</div>';
 
 	echo '</div>';
