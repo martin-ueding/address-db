@@ -2,6 +2,7 @@
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('model/Person.php');
+require_once('component/Template.php');
 
 session_start();
 if (isset($_GET['f'])) {
@@ -84,146 +85,117 @@ if ($mode == 'pic_remove2') {
 
 // generate page title
 switch ($mode) {
-	case 'all_birthdays':
-		$page_title = _('Address DB').': '._('all birthdays');
-		break;
-	case 'list':
-		if (!empty($_GET['b'])) {
-			$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
+case 'all_birthdays':
+	$page_title = _('Address DB').': '._('all birthdays');
+	break;
+case 'list':
+	if (!empty($_GET['b'])) {
+		$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
+	}
+	else if (!empty($_GET['titel'])) {
+		$page_title = _('Address DB').': '.sprintf(_('group &bdquo;%s&ldquo;'), $_GET['titel']);
+	}
+	else if (!empty($_GET['f'])) {
+		// get name for person
+		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
+		$name_erg = mysql_query($name_sql);
+		if ($name = mysql_fetch_assoc($name_erg)) {
+			$f_name = $name['fmg'];
 		}
-		else if (!empty($_GET['titel'])) {
-			$page_title = _('Address DB').': '.sprintf(_('group &bdquo;%s&ldquo;'), $_GET['titel']);
-		}
-		else if (!empty($_GET['f'])) {
-			// get name for person
-			$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
-			$name_erg = mysql_query($name_sql);
-			if ($name = mysql_fetch_assoc($name_erg)) {
-				$f_name = $name['fmg'];
-			}
-			$page_title = _('Address DB').': '.sprintf(_('entries for %s'), $f_name);
-		}
-		else {
-			$page_title = _('Address DB').': '._('list');
-		}
-		break;
-	case 'main':
-		$page_title = _('Address DB').': '._('current birthdays');
-		break;
-	case 'no_title':
-		$page_title = _('Address DB').': '._('no form of address');
-		break;
-	case 'person_create1':
-	case 'person_create2':
-		$page_title = _('Address DB').': '._('create entry');
-		break;
-	case 'person_delete':
-	case 'person_delete2':
-		$page_title = _('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
-		break;
-	case 'person_display':
-		if (isset($person_loop)) {
-			$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
-		}
-		break;
-	case 'person_edit1':
-	case 'person_edit2':
-		$page_title = _('Address DB').': '.sprintf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
-		break;
-	case 'pic_remove':
-		$page_title = _('Address DB').': '.sprintf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
-		break;
-	case 'pic_upload1':
-	case 'pic_upload2':
-	case 'pic_upload3':
-		if (isset($person_loop)) {
-			$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
-		}
-		break;
-	case 'search':
-		$page_title = _('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
-		break;
-	case 'verification_email':
-		if (isset($person_loop)) {
-			$page_title = _('Address DB').': '.sprintf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
-		}
-		break;
-	case 'integrity_check':
-		$page_title = _('Address DB').': '._('database check');
-		break;
+		$page_title = _('Address DB').': '.sprintf(_('entries for %s'), $f_name);
+	}
+	else {
+		$page_title = _('Address DB').': '._('list');
+	}
+	break;
+case 'main':
+	$page_title = _('Address DB').': '._('current birthdays');
+	break;
+case 'no_title':
+	$page_title = _('Address DB').': '._('no form of address');
+	break;
+case 'person_create1':
+case 'person_create2':
+	$page_title = _('Address DB').': '._('create entry');
+	break;
+case 'person_delete':
+case 'person_delete2':
+	$page_title = _('Address DB').': '.sprintf(_('delete %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+	break;
+case 'person_display':
+	if (isset($person_loop)) {
+		$page_title = _('Address DB').': '.$person_loop['vorname'].' '.$person_loop['nachname'];
+	}
+	break;
+case 'person_edit1':
+case 'person_edit2':
+	$page_title = _('Address DB').': '.sprintf(_('edit %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+	break;
+case 'pic_remove':
+	$page_title = _('Address DB').': '.sprintf(_('delete %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+	break;
+case 'pic_upload1':
+case 'pic_upload2':
+case 'pic_upload3':
+	if (isset($person_loop)) {
+		$page_title = _('Address DB').': '.sprintf(_('upload %s\'s picture'), $person_loop['vorname'].' '.$person_loop['nachname']);
+	}
+	break;
+case 'search':
+	$page_title = _('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']);
+	break;
+case 'verification_email':
+	if (isset($person_loop)) {
+		$page_title = _('Address DB').': '.sprintf(_('verification mail for %s'), $person_loop['vorname'].' '.$person_loop['nachname']);
+	}
+	break;
+case 'integrity_check':
+	$page_title = _('Address DB').': '._('database check');
+	break;
 }
 
 if (!isset($page_title)) {
 	$page_title = _('PHP Family Address DB');
 }
+
+
+$index_template = new Template('index');
+$index_template->set('body_class', (strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft'));
+
+# TODO
+include('inc/header.inc.php');
+$index_template->set('header', );
+
+
+# TODO
+if (isset($msgs) && count($msgs) > 0) {
+	echo '<div id="messages">';
+	echo '<ul>';
+	foreach ($msgs as $msg) {
+		echo '<li>'.$msg.'</li>';
+	}
+	echo '</ul>';
+	echo '</div>';
+}
+$index_template->set('messages', );
+
+# TODO
+switch ($mode) {
+case 'all_birthdays':
+	require_once('controller/BirthdayController.php');
+	BirthdayController::all_birthdays();
+	break;
+case 'main':
+	require_once('controller/BirthdayController.php');
+	BirthdayController::upcoming_birthdays();
+	break;
+default:
+	include('pages/'.$mode.'.inc.php');
+	break;
+}
+$index_template->set('content', );
+
+
+$version_array = file('version.txt');
+$index_template->set('version_string', $version_array[0]);
 ?>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-		<meta charset="ISO-8859-1"  />
-
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-
-		<script src="js/jquery.min.js"></script>
-		<script src="js/message_box.js"></script>
-		<script src="js/search.js"></script>
-		<script src="js/selectSwitch.js.php"></script>
-		<script src="js/slidedown.js"></script>
-		<script src="js/switch.js"></script>
-
-		<link rel="shortcut icon" type="image/x-icon" href="gfx/favicon.ico" />
-
-		<title><?php echo $page_title; ?></title>
-	</head>
-
-
-	<?php
-	echo '<body class="'.(strpos($mode, '_edit') || strpos($mode, '_create') ? 'maske' : 'linksluft').'">';
-
-	echo '<div id="wrapper">';
-
-	// display header
-	include('inc/header.inc.php');
-
-	echo '<div id="content">';
-
-	if (isset($msgs) && count($msgs) > 0) {
-		echo '<div id="messages">';
-		echo '<ul>';
-		foreach ($msgs as $msg) {
-			echo '<li>'.$msg.'</li>';
-		}
-		echo '</ul>';
-		echo '</div>';
-	}
-
-	switch ($mode) {
-	case 'all_birthdays':
-		require_once('controller/BirthdayController.php');
-		BirthdayController::all_birthdays();
-		break;
-	case 'main':
-		require_once('controller/BirthdayController.php');
-		BirthdayController::upcoming_birthdays();
-		break;
-	default:
-		include('pages/'.$mode.'.inc.php');
-		break;
-	}
-
-	echo '</div>';
-
-	echo '</div>';
-
-	$version_array = file('version.txt');
-	$version_string = $version_array[0];
-
-	echo '<div id="version"><nobr>';
-	echo '<span class="graytext">'._('version').'</span> '.$version_string;
-	echo '</nobr></div>';
-	?>
-
-	</body>
-</html>
-
