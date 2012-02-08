@@ -76,9 +76,6 @@ class ExportController extends Controller {
 
 
 
-
-
-
 		if (!empty($l['hp1'])) {
 			echo 'item2.URL;type=pref:http://'.$l['hp1']."\n";
 			echo 'item2.X-ABLabel:_$!<HomePage>!$_'."\n";
