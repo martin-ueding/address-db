@@ -48,12 +48,7 @@ if (isset($id)) {
 // get current mode
 $mode = isset($_GET['mode']) ? $_GET['mode'] : '';
 
-$allowed_modes = array('', 'all_birthdays', 'list', 'main', 'no_association', 'no_birthday', 'no_group', 'no_email', 'no_title', 'person_checked', 'person_create1', 'person_create2', 'person_delete', 'person_delete2', 'person_display', 'person_edit1', 'person_edit2', 'pic_remove', 'pic_remove2', 'pic_upload1', 'pic_upload2', 'pic_upload3', 'verification_email', 'integrity_check', 'search');
-
-if (!in_array($mode, $allowed_modes)) {
-	die(_('Sorry, I could not find a site like that.'));
-}
-else if (empty($mode)) {
+if (empty($mode)) {
 	$mode = 'main';
 }
 
@@ -175,24 +170,31 @@ if (isset($msgs) && count($msgs) > 0) {
 }
 $index_template->set('messages', null);
 
-# TODO
-switch ($mode) {
-case 'all_birthdays':
-	require_once('controller/BirthdayController.php');
-	$content_controller = new BirthdayController();
-	$content = $content_controller->all_birthdays();
-	break;
-case 'main':
-	require_once('controller/BirthdayController.php');
-	$content_controller = new BirthdayController();
-	$content = $content_controller->upcoming_birthdays();
-	break;
-default:
-	$content = _('No Content.');
-	break;
+
+if (isset($mode)) {
+	preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
+
+	if (count($matches) > 2) {
+
+		$mode_controller = $matches[1].'Controller';
+		$mode_function = $matches[2];
+
+		$controllerfile = 'controller/'.$mode_controller.'.php';
+		if (file_exists($controllerfile)) {
+			require_once($controllerfile);
+			$content_controller = new $mode_controller();
+
+			$content = $content_controller->$mode_function();
+			$index_template->set('page_title', $content_controller->get_page_title());
+		}
+	}
 }
+
+if (!isset($content)) {
+	$content = _('No content here.');
+}
+
 $index_template->set('content', $content);
-$index_template->set('page_title', $content_controller->get_page_title());
 
 
 $version_array = file('version.txt');
