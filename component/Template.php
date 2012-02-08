@@ -35,6 +35,6 @@ class Template {
 	 * Path to the template file.
 	 */
 	private function templatefile() {
-		return '../view/'.$this->templatename.'.php';
+		return 'template/'.$this->templatename.'.php';
 	}
 }
