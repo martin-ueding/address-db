@@ -198,6 +198,7 @@ default:
 	break;
 }
 $index_template->set('content', $content);
+$index_template->set('page_title', $content_controller->get_page_title());
 
 
 $version_array = file('version.txt');
