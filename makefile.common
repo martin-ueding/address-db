@@ -1,7 +1,0 @@
-# Copyright (c) 2012 Martin Ueding <dev@martin-ueding.de>
-
-%.css: %.scss
-	sass $< $@
-
-%.class: %.java
-	javac $<

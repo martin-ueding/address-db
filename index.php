@@ -163,7 +163,7 @@ if (!isset($page_title)) {
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<meta charset="ISO-8859-1"  />
 
-		<link rel="stylesheet" type="text/css" href="gfx/main.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/message_box.js"></script>

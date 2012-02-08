@@ -29,7 +29,7 @@ body, textarea {
 }
 
 body {
-	background-image: url("background.png");
+	background-image: url("../gfx/background.png");
 	background-repeat: repeat-y;
 	background-position: left;
 }
@@ -258,9 +258,7 @@ ul {
 }
 
 #search {
-	position: absolute;
-	right: 6px;
-	top: 0px;
+	float: right;
 
 	#suche {
 		@include border_3d;
