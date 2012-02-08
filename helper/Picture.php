@@ -48,7 +48,7 @@ class Picture {
 	}
 
 	private function new_width() {
-		if ($this->resize()) {
+		if ($this->needs_resize()) {
 			return $this->max_width;
 		}
 		else {
