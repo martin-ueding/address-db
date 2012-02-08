@@ -23,6 +23,12 @@
 			<div id="content">
 				<?php echo $messages; ?>
 				<?php echo $content; ?>
+
+<?php
+echo '<br /><br />Snapshots:<br />';
+print_r($_SESSION['history']->snapshots)
+?>
+
 			</div>
 		</div>
 		<div id="version">
