@@ -12,9 +12,6 @@ class ListController extends Controller {
 		if (!empty($_GET['b'])) {
 			$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
 		}
-		else if (!empty($_GET['titel'])) {
-			$page_title = _('Address DB').': '.sprintf(_('group &bdquo;%s&ldquo;'), $_GET['titel']);
-		}
 		else if (!empty($_GET['f'])) {
 			# XXX Use model.
 			// get name for person
@@ -56,6 +53,8 @@ class ListController extends Controller {
 		/* Daten anzeigen */
 		if (!empty($sql)) {
 			$erg = mysql_query($sql);
+
+			$title = '';
 
 			if (!empty($_GET['b'])) {
 				$title = sprintf(
