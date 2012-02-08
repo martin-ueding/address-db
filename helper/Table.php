@@ -27,15 +27,15 @@ class Table {
 			echo '<tr>';
 
 			echo '<td>';
-			echo '<a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">&raquo;</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">&raquo;</a>';
 			echo '</td>';
 
 			echo '<td align="right">';
-			echo '<a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">'.$l['vorname'].'</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">'.$l['vorname'].'</a>';
 			echo '</td>';
 
 			echo '<td>';
-			echo '<a href="?mode=person_display&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">'.$l['nachname'].'</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">'.$l['nachname'].'</a>';
 			echo '</td>';
 
 			echo '</tr>';
