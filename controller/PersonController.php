@@ -797,22 +797,21 @@ class PersonController extends Controller {
 					$person_loop['nachname'].'</em>');
 			}
 
-			$_GET['mode'] = 'main';
-			$back = $_GET['back'];
-			$items = explode('&', $back);
-			foreach ($items as $item) {
-				$keyvalue = explode('=', $item);
-				$_GET[$keyvalue[0]] = $keyvalue[1];
+			if (isset($_GET['back'])) {
+				$back = $_GET['back'];
+				$items = explode('&', $back);
+				foreach ($items as $item) {
+					$keyvalue = explode('=', $item);
+					if (isset($keyvalue[1])) {
+					$_GET[$keyvalue[0]] = $keyvalue[1];
+					}
+				}
+
+				return Controller::call($back);
 			}
-
-			$mode = $_GET['mode'];
-			if (empty($mode)) {
-				$mode = 'main';
+			else {
+				return Controller::call('List::index');
 			}
-
-			unset($items);
-
-			return Controller::call($back);
 		}
 		else {
 			$template = new Template('person_delete');

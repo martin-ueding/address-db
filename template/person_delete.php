@@ -22,7 +22,7 @@ if (isset($association_ids)) {
 
 echo '<br />';
 echo '<br />';
-echo '<a href="index.php?mode=Person::delete&id='.$id.'&sure=true&back='.urlencode($_GET['back']).'">'._('Sure, delete that!').'</a>';
+echo '<a href="index.php?mode=Person::delete&id='.$id.'&sure=true&back='.(isset($_GET['back']) ? urlencode($_GET['back']) : '').'">'._('Sure, delete that!').'</a>';
 echo '<br />';
 echo '<br />';
 echo '<a href="index.php?mode=Person::view&id='.$id.'">'._('No, cancel!').'</a>';
