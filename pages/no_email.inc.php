@@ -2,7 +2,7 @@
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('component/Filter.php');
-require_once('view/Missing.php');
+require_once('component/Missing.php');
 
 echo '<h1>'._('entries without an email address').'</h1>';
 $from_with_get = 'mode=no_email';
