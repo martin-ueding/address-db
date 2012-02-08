@@ -1,9 +1,9 @@
 <?php
 /* Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de> */
 
-require_once('../helper/Filter.php');
-require_once('../helper/Navigation.php');
-require_once('../helper/Request.php');
+require_once('component/Filter.php');
+require_once('component/Request.php');
+require_once('helper/Navigation.php');
 
 $sql = 'SELECT * FROM ad_fmg';
 $erg = mysql_query($sql);

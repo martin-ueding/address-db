@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/Table.php');
+require_once('helper/Table.php');
 
 class Missing {
 	public function __construct($filter, $from_with_get) {

@@ -19,7 +19,7 @@ if (!isset($_SESSION['g'])) {
 }
 
 // set up gettext support
-include('../inc/setup_gettext.inc.php');
+include('inc/setup_gettext.inc.php');
 
 // include libs
 if (file_exists('_config.inc.php')) {
@@ -203,7 +203,7 @@ if (!isset($page_title)) {
 
 	echo '</div>';
 
-	$version_array = file('../version.txt');
+	$version_array = file('version.txt');
 	$version_string = $version_array[0];
 
 	echo '<div id="version"><nobr>';

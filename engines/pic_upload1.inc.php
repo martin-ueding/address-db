@@ -1,7 +1,7 @@
 <?php
 # Copyright © 2011 Martin Ueding <dev@martin-ueding.de>
 
-require_once('../helper/Picture.php');
+require_once('component/Picture.php');
 
 if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
 	$tempname = $_FILES['file']['tmp_name'];
