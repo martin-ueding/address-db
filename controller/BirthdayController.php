@@ -7,6 +7,8 @@ require_once('controller/Controller.php');
 
 class BirthdayController extends Controller {
 	public function index() {
+		$this->history_save();
+
 		$this->set_page_title(_('Address DB').': '._('all birthdays'));
 
 		$template = new Template('all_birthdays');
@@ -35,6 +37,8 @@ class BirthdayController extends Controller {
 	}
 
 	public function upcoming_birthdays() {
+		$this->history_save();
+
 		$this->set_page_title(_('Address DB').': '._('current birthdays'));
 
 		$template = new Template('upcoming_birthdays');

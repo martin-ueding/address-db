@@ -7,6 +7,8 @@ require_once('helper/Table.php');
 
 class SearchController extends Controller {
 	public function index() {
+		$this->history_save();
+
 		echo '<h1>'._('search').'</h1>';
 
 		$suche = mysql_real_escape_string($_GET['suche']);

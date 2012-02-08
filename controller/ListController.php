@@ -9,6 +9,8 @@ require_once('model/Group.php');
 
 class ListController extends Controller {
 	public function index() {
+		$this->history_save();
+
 		if (!empty($_GET['b'])) {
 			$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
 		}

@@ -7,6 +7,8 @@ require_once('controller/Controller.php');
 
 class MaintenanceController extends Controller {
 	public function integrity_check() {
+		$this->history_save();
+
 		echo '<h1>'._('integrity check').'</h1>';
 
 		$remove_unneeded = isset($_GET['remove_unneeded']);
@@ -395,6 +397,8 @@ class MaintenanceController extends Controller {
 	}
 
 	public function no_association() {
+		$this->history_save();
+
 		echo '<h1>'._('entries without an association').'</h1>';
 		$from_with_get = 'mode=no_association';
 
@@ -407,6 +411,8 @@ class MaintenanceController extends Controller {
 	}
 
 	public function no_birthday() {
+		$this->history_save();
+
 		echo '<h1>'._('without a birthday').'</h1>';
 		$from_with_get = 'mode=no_birthday';
 
@@ -420,6 +426,8 @@ class MaintenanceController extends Controller {
 	}
 
 	public function no_email() {
+		$this->history_save();
+
 		echo '<h1>'._('entries without an email address').'</h1>';
 		$from_with_get = 'mode=no_email';
 
@@ -433,6 +441,8 @@ class MaintenanceController extends Controller {
 	}
 
 	public function no_group() {
+		$this->history_save();
+
 		echo '<h1>'._('entries without a group').'</h1>';
 		$from_with_get = 'mode=no_group';
 
@@ -445,6 +455,8 @@ class MaintenanceController extends Controller {
 	}
 
 	public function no_title() {
+		$this->history_save();
+
 		echo '<h1>'._('entries without a form of address').'</h1>';
 		$from_with_get = 'mode=no_title';
 
