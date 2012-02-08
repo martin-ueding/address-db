@@ -432,8 +432,8 @@ class ExportController extends Controller {
 	}
 
 	public function dayplanner() {
-$MAX_PRO_SEITE = 3;
-$SCHRIFTGROESSE = 7;
+		$MAX_PRO_SEITE = 3;
+		$SCHRIFTGROESSE = 7;
 
 		header("Content-Type: text/plain; charset=iso-8859-1");
 		header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
