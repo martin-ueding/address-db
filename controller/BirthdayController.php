@@ -35,42 +35,27 @@ class BirthdayController extends Controller {
 	}
 
 	public static function upcoming_birthdays() {
-		echo '<table id="geburtstag">';
-		echo '<tr>';
-		echo '<td colspan="4"><b>'._('birthdays').'</b></td>';
-		echo '</tr>';
-		echo '<tr>';
-		echo '<td colspan="3">&nbsp;<br />'._('this month').':</td>';
-		echo '</tr>';
-
+		$template = new Template('upcoming_birthdays');
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_m='.date("n"));
 
 		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
 		$erg = mysql_query($sql);
-		echo mysql_error();
+		$this_persons = array();
 		while ($l = mysql_fetch_assoc($erg)) {
-			echo '<tr class="data">';
-			echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">';
-			if ($l['geb_t'] == date("j"))
-				echo '<em>'.$l['vorname'].' '.$l['nachname'].'</em>';
-			else if ($l['geb_t'] < date("j"))
-				echo '<span class="graytext">'.$l['vorname'].' '.$l['nachname'].'</span>';
-			else
-				echo $l['vorname'].' '.$l['nachname'];
-
-			echo '</a> </td>';
-			echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
-			if ($l['geb_j'] > 1500)
-				echo '<td> ('.(date("Y")-$l['geb_j']).') </td>';
-			else
-				echo '<td>&nbsp;</td>';
-			echo '</tr>';
+			$this_persons[] = array(
+				'age' => $l['geb_j'] > 1500 ? '('.(date("Y")-$l['geb_j']).')' : '&nbsp',
+				'day' => $l['geb_t'],
+				'first_name' => $l['vorname'],
+				'had_birthday' => $l['geb_t'] < date("j"),
+				'has_birthday' => $l['geb_t'] == date("j"),
+				'last_name' => $l['nachname'],
+				'link' => 'mode=person_display&id='.$l['p_id'],
+				'month' => $l['geb_m'],
+				'year' => $l['geb_j'],
+			);
 		}
-
-		echo '<tr>';
-		echo '<td colspan="3">&nbsp;<br />'._('next month').':</td>';
-		echo '</tr>';
+		$template->set('this_persons', $this_persons);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_m='.((date("n")%12)+1));
@@ -78,28 +63,36 @@ class BirthdayController extends Controller {
 		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
 
 		$erg = mysql_query($sql);
-		echo mysql_error();
+		$next_persons = array();
 
 		while ($l = mysql_fetch_assoc($erg)) {
-			echo '<tr class="data">';
-			echo '<td><a href="?mode=person_display&id='.$l['p_id'].'">'.$l['vorname'].' '.$l['nachname'].'</a> </td>';
-			echo '<td>'.$l['geb_t'].'.'.$l['geb_m'].'.</td>';
+			$p = array(
+				'day' => $l['geb_t'],
+				'first_name' => $l['vorname'],
+				'had_birthday' => $l['geb_t'] < date("j"),
+				'has_birthday' => $l['geb_t'] == date("j"),
+				'last_name' => $l['nachname'],
+				'link' => 'mode=person_display&id='.$l['p_id'],
+				'month' => $l['geb_m'],
+				'year' => $l['geb_j'],
+			);
 
-			echo '<td>';
 			if ($l['geb_j'] > 1500) {
-				echo '(';
 				if (date("n") == 12)
-					echo (date("Y")-$l['geb_j']) +1;
+					$p['age'] = (date("Y")-$l['geb_j']) +1;
 				else
-					echo (date("Y")-$l['geb_j']);
-				echo ')';
+					$p['age'] = (date("Y")-$l['geb_j']);
+
+				$p['age'] = '('.$p['age'].')';
 			}
 			else
-				echo '&nbsp;';
+				$p['age'] = '&nbsp;';
 
-			echo '</td>';
-			echo '</tr>';
+			$next_persons[] = $p;
 		}
-		echo '</table>';
+
+		$template->set('next_persons', $next_persons);
+
+		return $template->html();
 	}
 }
