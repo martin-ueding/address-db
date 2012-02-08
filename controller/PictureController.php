@@ -13,7 +13,7 @@ class PictureController extends Controller {
 			echo '<a href="index.php?mode=pic_remove2&id='.$id.'">'._('Yes, delete picture!').'</a>';
 			echo '<br />';
 			echo '<br />';
-			echo '<a href="index.php?mode=person_display&id='.$_GET['id'].'">'._('cancel').'</a>';
+			echo '<a href="?mode=Person::view&id='.$_GET['id'].'">'._('cancel').'</a>';
 		}
 	}
 
