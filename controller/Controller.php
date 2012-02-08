@@ -60,4 +60,8 @@ class Controller {
 			return $content_controller->$mode_function();
 		}
 	}
+
+	protected function history_save() {
+		$_SESSION['history']->save($_GET);
+	}
 }
