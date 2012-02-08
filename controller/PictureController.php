@@ -26,24 +26,13 @@ class PictureController extends Controller {
 		}
 	}
 
-	public static function pic_upload() {
-?>
-<h1><?php echo _('picture upload'); ?></h1>
+	public static function edit() {
+		if (!isset($_GET['id'])) {
+		}
 
-<?php echo _('only JPEG'); ?>
+		$id = $_GET['id'];
 
-<form enctype="multipart/form-data" action="index.php?mode=pic_upload1&fertig=ja" method="post">
-<input type="file" name="file">
-<input type="submit" value="<?php echo _('upload'); ?>">
-<?php
-		echo '<input type="hidden" name="id" value="'.$_GET['id'].'" />';
-?>
-</form>
-<?php
-	}
-
-	public static function pic_upload1() {
-		if (isset($_GET['fertig']) && $_GET['fertig'] == 'ja') {
+		if (isset($_FILES['file'])) {
 			$tempname = $_FILES['file']['tmp_name'];
 			$name = $_FILES['file']['name'];
 
@@ -59,7 +48,12 @@ class PictureController extends Controller {
 				$msgs[] = $e->getMessage();
 			}
 
-			$mode = 'person_display';
+			return Controller::call('Person::view');
+		}
+		else {
+			$template = new Template('picture_edit');
+			$template->set('id', $id);
+			return $template->html();
 		}
 	}
 }
