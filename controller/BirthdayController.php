@@ -23,8 +23,6 @@ class BirthdayController extends Controller {
 		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_m, geb_t, nachname;';
 		$erg = mysql_query($sql);
 
-		$aktuell = 1;
-
 		$birthdays = array();
 
 		while ($l = mysql_fetch_assoc($erg)) {
