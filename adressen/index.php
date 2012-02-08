@@ -186,6 +186,8 @@ if (!isset($page_title)) {
 	// display header
 	include('inc/header.inc.php');
 
+	echo '<div id="content">';
+
 	if (isset($msgs) && count($msgs) > 0) {
 		echo '<div id="messages">';
 		echo '<ul>';
@@ -196,8 +198,6 @@ if (!isset($page_title)) {
 		echo '</div>';
 	}
 
-
-	echo '<div id="content">';
 	include('pages/'.$mode.'.inc.php');
 	echo '</div>';
 
