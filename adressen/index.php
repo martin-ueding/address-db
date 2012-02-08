@@ -34,6 +34,11 @@ include('inc/anzeigen.inc.php');
 // import id and get everything there is to know about that person
 if (isset($_GET['id'])) {
 	$id = (int)$_GET['id'];
+}
+if (isset($_POST['id'])) {
+	$id = (int)$_POST['id'];
+}
+if (isset($id)) {
 	$erg = Queries::select_person_alles($id);
 	$person_loop = mysql_fetch_assoc($erg);
 }
