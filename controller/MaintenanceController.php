@@ -400,13 +400,12 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 
 		echo '<h1>'._('entries without an association').'</h1>';
-		$from_with_get = 'mode=no_association';
 
 		$filter = new Filter(0, $_SESSION['g']);
 		$filter->add_where('ad_flinks.person_lr IS NULL');
 		$filter->add_join('LEFT JOIN ad_flinks ON person_lr = p_id');
 
-		$missing = new Missing($filter, $from_with_get);
+		$missing = new Missing($filter);
 		echo $missing->html();
 	}
 
@@ -414,14 +413,13 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 
 		echo '<h1>'._('without a birthday').'</h1>';
-		$from_with_get = 'mode=no_birthday';
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('(geb_t = 0 || geb_m = 0)');
 		$filter->add_where('anrede_r != 4');
 
 
-		$missing = new Missing($filter, $from_with_get);
+		$missing = new Missing($filter);
 		echo $missing->html();
 	}
 
@@ -429,14 +427,13 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 
 		echo '<h1>'._('entries without an email address').'</h1>';
-		$from_with_get = 'mode=no_email';
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('email_privat IS NULL');
 		$filter->add_where('email_arbeit IS NULL');
 		$filter->add_where('email_aux IS NULL');
 
-		$missing = new Missing($filter, $from_with_get);
+		$missing = new Missing($filter);
 		echo $missing->html();
 	}
 
@@ -444,13 +441,12 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 
 		echo '<h1>'._('entries without a group').'</h1>';
-		$from_with_get = 'mode=no_group';
 
 		$filter = new Filter($_SESSION['f'], 0);
 		$filter->add_where('ad_glinks.person_lr IS NULL');
 		$filter->add_join('LEFT JOIN ad_glinks ON ad_glinks.person_lr = gl_id');
 
-		$missing = new Missing($filter, $from_with_get);
+		$missing = new Missing($filter);
 		echo $missing->html();
 	}
 
@@ -458,12 +454,11 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 
 		echo '<h1>'._('entries without a form of address').'</h1>';
-		$from_with_get = 'mode=no_title';
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('anrede_r = 1');
 
-		$missing = new Missing($filter, $from_with_get);
+		$missing = new Missing($filter);
 		echo $missing->html();
 	}
 }

@@ -16,7 +16,7 @@ foreach ($birthdays as $month => $list) {
 	foreach ($list as $person) {
 		$tag = $person['geb_t'] < 10 ? '0'.$person['geb_t'] : $person['geb_t'];
 
-		echo '<a href="?mode=Person::view&id='.$person['p_id'].'&back='.urlencode($from_with_get).'">'.$tag.'. ';
+		echo '<a href="?mode=Person::view&id='.$person['p_id'].'">'.$tag.'. ';
 
 		$has_birthday = $person['geb_t'] == date("j") && $month == date("n");
 		if ($has_birthday) {

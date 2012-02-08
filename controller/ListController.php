@@ -30,24 +30,13 @@ class ListController extends Controller {
 
 		$this->set_page_title($page_title);
 
-		$from_with_get = $this->from_with_get(__CLASS__, __FUNCTION__);
-
 		$template = new Template('list');
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 
 		/* Suche nach Buchstabe */
 		if (!empty($_GET['b'])) {
-			$from_with_get .= '&b='.$_GET['b'];
 			$filter->add_where('nachname like "'.$_GET['b'].'%"');
-		}
-		/* Suche nach Gruppe */
-		else if (!empty($_GET['g'])) {
-			$from_with_get .= '&g='.$_GET['g'];
-		}
-		/* Suche nach Bezug */
-		else if (!empty($_GET['f'])) {
-			$from_with_get .= '&f='.$_GET['f'];
 		}
 
 		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
@@ -92,7 +81,7 @@ class ListController extends Controller {
 			$template->set('counts', $counts);
 
 
-			$table = new Table($erg, $from_with_get);
+			$table = new Table($erg);
 			$template->set('table', $table->html());
 
 			// Collect email address from everybody to send off a mass email.

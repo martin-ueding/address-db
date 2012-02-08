@@ -12,7 +12,6 @@ class SearchController extends Controller {
 		echo '<h1>'._('search').'</h1>';
 
 		$suche = mysql_real_escape_string($_GET['suche']);
-		$from_with_get = $this->from_with_get(__CLASS__, __FUNCTION__).'&suche='.$suche;
 
 		$treffer = false;
 
@@ -23,7 +22,6 @@ class SearchController extends Controller {
 			$filter->add_join('LEFT JOIN ad_laender ON land_r=l_id');
 
 			$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-			global $from_with_get;
 			global $treffer;
 
 			$erg = mysql_query($sql);
@@ -35,7 +33,7 @@ class SearchController extends Controller {
 				$treffer = true;
 				echo $title;
 				echo '<div class="slidedown">';
-				$table = new Table($erg, $from_with_get);
+				$table = new Table($erg);
 				echo $table->html();
 				echo '</div><br />';
 			}

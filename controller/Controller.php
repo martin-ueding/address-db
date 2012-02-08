@@ -25,11 +25,6 @@ class Controller {
 		$this->current_mode = $mode;
 	}
 
-	public static function from_with_get($class, $function) {
-		$class = str_replace('Controller', '', $class);
-		return 'mode='.$class.'::'.$function;
-	}
-
 	public static function get_controller($mode) {
 		preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
 

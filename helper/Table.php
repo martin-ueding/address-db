@@ -8,9 +8,8 @@ class Table {
 	/**
 	 * Create a new table out of a database result.
 	 */
-	public function __construct($erg, $from_with_get) {
+	public function __construct($erg) {
 		$this->erg = $erg;
-		$this->from_with_get = $from_with_get;
 	}
 
 	/**
@@ -27,15 +26,15 @@ class Table {
 			echo '<tr>';
 
 			echo '<td>';
-			echo '<a href="?mode=Person::view&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">&raquo;</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">&raquo;</a>';
 			echo '</td>';
 
 			echo '<td align="right">';
-			echo '<a href="?mode=Person::view&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">'.$l['vorname'].'</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">'.$l['vorname'].'</a>';
 			echo '</td>';
 
 			echo '<td>';
-			echo '<a href="?mode=Person::view&id='.$l['p_id'].'&back='.urlencode($this->from_with_get).'">'.$l['nachname'].'</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">'.$l['nachname'].'</a>';
 			echo '</td>';
 
 			echo '</tr>';
