@@ -9,4 +9,10 @@ class FamilyMember {
 			return $name['fmg'];
 		}
 	}
+
+	public static function select_alle_fmg () {
+		$sql = 'SELECT * FROM ad_fmg ORDER BY fmg;';
+		$erg = mysql_query($sql);
+		return $erg;
+	}
 }
