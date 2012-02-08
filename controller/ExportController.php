@@ -353,7 +353,7 @@ class ExportController extends Controller {
 	}
 
 	public function csv() {
-				$csv = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
+		$csv = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
