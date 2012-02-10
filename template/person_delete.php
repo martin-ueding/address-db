@@ -2,7 +2,7 @@
 <?php
 printf(_('Do you really want to delete the entry %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');
 
-function hightlight($string) {return '<em>'.$string.'</em>';}
+$highlighter = function($string) {return '<em>'.$string.'</em>';};
 
 if (isset($association_ids)) {
 	if (count($association_ids) >= 2) {
@@ -10,7 +10,7 @@ if (isset($association_ids)) {
 		echo '<br />';
 		echo _('Warning:').' '.sprintf(
 			_('This entry is connected to %s. Consider just removing your association with it.'),
-			implode(', ', array_map("highlight", $association_names))
+			implode(', ', array_map($highlighter, $association_names))
 		);
 	}
 	else if (count($association_ids) == 1 && $association_ids[0] != $_SESSION['f']) {
