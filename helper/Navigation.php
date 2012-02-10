@@ -3,6 +3,8 @@
 
 /**
  * Helper for navigation links.
+ *
+ * @package helper
  */
 class Navigation {
 	/**

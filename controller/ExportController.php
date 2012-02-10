@@ -5,7 +5,19 @@ require_once('controller/Controller.php');
 require_once('model/Person.php');
 require_once('model/AreaCode.php');
 
+/**
+ * Various exports.
+ *
+ * @package controller
+ */
 class ExportController extends Controller {
+	/**
+	 * Exports the currently selected person as a single VCard.
+	 *
+	 * The result is sent as a download file.
+	 *
+	 * @global integer $_GET['id']
+	 */
 	public function vcard() {
 		$id = $_GET['id'];
 
@@ -113,10 +125,17 @@ class ExportController extends Controller {
 		die();
 	}
 
+	/**
+	 * Exports the currently selected group as a combined VCard.
+	 *
+	 * The result is sent as a download file.
+	 *
+	 * @global integer $_SESSION['f']
+	 * @global integer $_SESSION['g']
+	 */
 	public function vcard_multiple() {
 		header("Content-Type: text/x-vcard; charset=iso-8859-1");
 		header('Content-Disposition: attachment; filename="adressen-'.time().'.vcf"');
-
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
@@ -233,6 +252,14 @@ class ExportController extends Controller {
 		die();
 	}
 
+	/**
+	 * Exports the currently selected group as kitchen hangout.
+	 *
+	 * The result is sent as a download file.
+	 *
+	 * @global integer $_SESSION['f']
+	 * @global integer $_SESSION['g']
+	 */
 	public function kitchen() {
 		$SCHRIFTGROESSE = 9;
 		header("Content-Type: text/plain; charset=iso-8859-1");
@@ -352,6 +379,14 @@ class ExportController extends Controller {
 		die();
 	}
 
+	/**
+	 * Exports the currently selected group as a CSV file.
+	 *
+	 * The result is sent as a download file.
+	 *
+	 * @global integer $_SESSION['f']
+	 * @global integer $_SESSION['g']
+	 */
 	public function csv() {
 		$csv = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
 
@@ -431,6 +466,14 @@ class ExportController extends Controller {
 		die();
 	}
 
+	/**
+	 * Exports the currently selected group as dayolanner sheets
+	 *
+	 * The result is sent as a download file.
+	 *
+	 * @global integer $_SESSION['f']
+	 * @global integer $_SESSION['g']
+	 */
 	public function dayplanner() {
 		$MAX_PRO_SEITE = 3;
 		$SCHRIFTGROESSE = 7;
@@ -574,6 +617,12 @@ class ExportController extends Controller {
 		die();
 	}
 
+	/**
+	 * Exports the currently selected group as an ICS birthday calender
+	 *
+	 * @global integer $_SESSION['f']
+	 * @global integer $_SESSION['g']
+	 */
 	public function birthday_calendar() {
 		echo 'BEGIN:VCALENDAR'."\n";
 		echo 'VERSION:2.0'."\n";

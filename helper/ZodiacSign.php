@@ -3,6 +3,8 @@
 
 /**
  * Helper for zodiac signs.
+ *
+ * @package helper
  */
 class ZodiacSign {
 	/**
