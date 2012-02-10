@@ -6,6 +6,8 @@
  *
  * It saves the complete GET array, so that it can send the user back to the
  * exact site.
+ *
+ * @package component
  */
 class History {
 	/**

@@ -3,6 +3,8 @@
 
 /**
  * Gathers JOIN and WHERE commands for a MySQL query.
+ *
+ * @package component
  */
 class Filter {
 	/**

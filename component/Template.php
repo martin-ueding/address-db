@@ -3,6 +3,8 @@
 
 /**
  * Renders a template.
+ *
+ * @package component
  */
 class Template {
 	/**

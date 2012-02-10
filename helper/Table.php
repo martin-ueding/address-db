@@ -7,6 +7,8 @@
 class Table {
 	/**
 	 * Create a new table out of a database result.
+	 *
+	 * @param mixed $erg MySQL database result.
 	 */
 	public function __construct($erg) {
 		$this->erg = $erg;
@@ -15,7 +17,7 @@ class Table {
 	/**
 	 * Render HTML.
 	 *
-	 * @return Rendered html.
+	 * @return HTML.
 	 */
 	public function html() {
 		ob_start();

@@ -1,13 +1,16 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Helper for zodiac signs.
+ */
 class ZodiacSign {
 	/**
 	 * Finds the zodiac sign to a given date.
 	 *
-	 * @param int $tag day
-	 * @param int $monat month
-	 * @return string zodiac sign
+	 * @param integer $tag Day.
+	 * @param integer $monat Month.
+	 * @return string Zodiac sign.
 	 */
 	public static function sternzeichen($tag, $monat) {
 		$tagimmonat = date('z', mktime(0, 0, 0, $monat, $tag, 2001));

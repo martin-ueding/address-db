@@ -9,6 +9,11 @@ require_once('model/PostralCode.php');
 require_once('model/Prefix.php');
 require_once('model/Suffix.php');
 
+/**
+ * Prints various select fields.
+ *
+ * Currently, all the methods direcly echo their output.
+ */
 class Select {
 	public static function show_select_vorwahlen ($name, $aktiv) {
 		echo '<select size="1" name="'.$name.'">';

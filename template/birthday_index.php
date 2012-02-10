@@ -1,4 +1,8 @@
 <?php
+/**
+ * @package template
+ */
+
 echo '<h1>'._('all birthdays').'</h1>';
 $showed_anything = false;
 

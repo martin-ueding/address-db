@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * @package controller
+ */
 class Controller {
 	private $page_title;
 	private $current_mode;

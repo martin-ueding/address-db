@@ -5,6 +5,11 @@ require_once('component/Filter.php');
 require_once('component/Template.php');
 require_once('controller/Controller.php');
 
+/**
+ * Controller for birthdays.
+ *
+ * @package controller
+ */
 class BirthdayController extends Controller {
 	public function index() {
 		$this->history_save();

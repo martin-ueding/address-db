@@ -5,6 +5,8 @@ require_once('helper/Table.php');
 
 /**
  * Shows a report of Person that match the given Filter.
+ *
+ * @package component
  */
 class Missing {
 	public function __construct($filter) {
