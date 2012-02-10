@@ -3,6 +3,8 @@
 
 /**
  * Access to suffixes.
+ *
+ * @package model
  */
 class Suffix {
 	/**

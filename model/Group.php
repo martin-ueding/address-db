@@ -3,6 +3,8 @@
 
 /**
  * Access to groups.
+ *
+ * @package model
  */
 class Group {
 	public static function get_name($id) {

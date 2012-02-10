@@ -3,6 +3,8 @@
 
 /**
  * Access to telephone area codes.
+ *
+ * @package model
  */
 class AreaCode {
 	public static function select_alle_vorwahlen () {
