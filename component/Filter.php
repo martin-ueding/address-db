@@ -8,8 +8,8 @@ class Filter {
 	/**
 	 * Creates a new filter for the given family member and group.
 	 *
-	 * @param $fmg Family member ID.
-	 * @param $group Group ID.
+	 * @param int $fmg Family member ID.
+	 * @param int $group Group ID.
 	 */
 	public function __construct($fmg = 0, $group = 0) {
 		$this->snippets = array(
@@ -30,6 +30,9 @@ class Filter {
 
 	/**
 	 * Adds a new JOIN clause.
+	 *
+	 * @param string $join MySQL JOIN clause.
+	 * @param bool $in_front Whether to add clause in front.
 	 */
 	public function add_join($join, $in_front = false) {
 		if ($in_front) {
@@ -42,6 +45,10 @@ class Filter {
 
 	/**
 	 * Adds a new WHERE clause.
+	 *
+	 * The new clause is used with an AND with the other clauses.
+	 *
+	 * @param string $where MySQL WHERE clause.
 	 */
 	public function add_where($where) {
 		$this->snippets["where"][] = $where;
@@ -50,7 +57,7 @@ class Filter {
 	/**
 	 * Returns all join commands.
 	 *
-	 * @return Joined JOIN commands.
+	 * @return string Combined JOIN commands.
 	 */
 	public function join() {
 		return implode(' ', $this->snippets["join"]);
@@ -59,7 +66,7 @@ class Filter {
 	/**
 	 * Returns all where commands.
 	 *
-	 * @return Joined WHERE commands.
+	 * @return string Combined WHERE commands.
 	 */
 	public function where() {
 		if (count($this->snippets["where"]) > 0) {

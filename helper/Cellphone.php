@@ -1,12 +1,17 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Helper for cell phone numbers
+ */
 class Cellphone {
 	/**
 	 * Finds the cell phone carrier to an area code.
 	 *
-	 * @param string $vw area code
-	 * @return string carrier name
+	 * The area code has to be given in the international form, as in +49-171.
+	 *
+	 * @param string $vw Area code.
+	 * @return string Carrier name.
 	 */
 	public static function handybetreiber($vw) {
 		switch ($vw) {

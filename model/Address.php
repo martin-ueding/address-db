@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to addresses.
+ */
 class Address {
 	public static function adresse_mehrfach_benutzt ($id) {
 		$sql = 'SELECT * FROM ad_per WHERE adresse_r='.$id.';';

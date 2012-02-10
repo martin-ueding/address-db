@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to prefixes.
+ */
 class Prefix {
 	public static function select_string_prafix ($id) {
 		$sql = 'SELECT prafix FROM ad_prafixe WHERE prafix_id='.$id.';';

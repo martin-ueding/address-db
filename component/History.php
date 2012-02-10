@@ -1,23 +1,55 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Keeps a stack of interesting pages the user visited.
+ *
+ * It saves the complete GET array, so that it can send the user back to the
+ * exact site.
+ */
 class History {
+	/**
+	 * Items on the stack.
+	 *
+	 * @var integer
+	 */
 	private $max_length = 10;
 
+	/**
+	 * Creates a new, empty History.
+	 */
 	public function __construct() {
 		$this->snapshots = array();
 	}
 
+	/**
+	 * Saves the given GET parameters.
+	 *
+	 * @param mixed $get GET array.
+	 */
 	public function save($get) {
 		$this->compress();
 
 		array_push($this->snapshots, $get);
 	}
 
+	/**
+	 * Retrieves the latest snapshot.
+	 *
+	 * @return mixed GET array.
+	 */
 	public function load() {
 		return array_pop($this->snapshots);
 	}
 
+	/**
+	 * Sends the user back one step using the header() function.
+	 *
+	 * To send the user back, but not back to a Person that does no longer
+	 * exist (like after deletion), use the parameter to exclude an id.
+	 *
+	 * @param integer $filter_id A Person id not to use.
+	 */
 	public function go_back($filter_id = null) {
 		$snapshot = $this->load();
 
@@ -38,6 +70,9 @@ class History {
 		header('location:?'.implode('&', $pairs));
 	}
 
+	/**
+	 * Deletes items until the stack has the size it should.
+	 */
 	private function compress() {
 		while (count($this->snapshots) > $this->max_length) {
 			array_shift($this->snapshots);

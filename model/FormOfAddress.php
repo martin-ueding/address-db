@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to forms of address.
+ */
 class FormOfAddress {
 	public static function select_string_anrede ($id) {
 		$sql = 'SELECT anrede FROM ad_anreden WHERE a_id='.$id.';';

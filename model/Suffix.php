@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to suffixes.
+ */
 class Suffix {
 	/**
 	 * Gives the suffix string to an id.

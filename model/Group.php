@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to groups.
+ */
 class Group {
 	public static function get_name($id) {
 		$sql = 'SELECT gruppe FROM ad_gruppen WHERE g_id = '.$id.';';

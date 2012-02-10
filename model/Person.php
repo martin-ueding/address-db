@@ -3,6 +3,9 @@
 
 require_once('component/Filter.php');
 
+/**
+ * Access to persons.
+ */
 class Person {
 	/**
 	 * Gives a relation to a person.

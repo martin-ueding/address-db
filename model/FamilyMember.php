@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to family members.
+ */
 class FamilyMember {
 	public static function get_name($id) {
 		$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$id.';';

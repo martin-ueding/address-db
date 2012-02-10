@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to postral codes.
+ */
 class PostralCode {
 	public static function select_plzid_plz ($plz) {
 		$sql = 'SELECT plz_id FROM ad_plz WHERE plz='. $plz.';';

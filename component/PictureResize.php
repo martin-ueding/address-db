@@ -3,9 +3,24 @@
 
 require_once('NoGDException.php');
 
+/**
+ * A picture resize and copy job.
+ */
 class PictureResize {
+	/**
+	 * Maximum width of the new image.
+	 *
+	 * @var integer
+	 */
 	public $max_width = 300;
 
+	/**
+	 * Starts with the given files.
+	 *
+	 * Its properties are checked and stored internally.
+	 *
+	 * @param string $filename Image file to use.
+	 */
 	public function __construct($filename) {
 		$this->filename = $filename;
 
@@ -52,6 +67,11 @@ class PictureResize {
 		unlink($this->filename);
 	}
 
+	/**
+	 * Calculate the new width of the image.
+	 *
+	 * @return integer New width.
+	 */
 	private function new_width() {
 		if ($this->needs_resize()) {
 			return $this->max_width;
@@ -61,6 +81,11 @@ class PictureResize {
 		}
 	}
 
+	/**
+	 * Calculate the new height of the image.
+	 *
+	 * @return integer New height.
+	 */
 	private function new_height() {
 		if ($this->needs_resize()) {
 			return $this->height * $this->max_width / $this->width;
@@ -70,6 +95,11 @@ class PictureResize {
 		}
 	}
 
+	/**
+	 * Checks whether the image needs to be resized.
+	 *
+	 * @return boolean Whether needs resize.
+	 */
 	private function needs_resize() {
 		return $this->width > $this->max_width;
 	}

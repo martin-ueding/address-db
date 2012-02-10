@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to cities.
+ */
 class City {
 	public static function select_ortid_ort ($ort) {
 		$sql = 'SELECT o_id FROM ad_orte WHERE ortsname="'.$ort.'";';

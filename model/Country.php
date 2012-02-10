@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to countries.
+ */
 class Country {
 	public static function select_landid_land ($land) {
 		$sql = 'SELECT l_id FROM ad_laender WHERE land="'.$land.'";';

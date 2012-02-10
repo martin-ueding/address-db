@@ -1,6 +1,9 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Access to telephone area codes.
+ */
 class AreaCode {
 	public static function select_alle_vorwahlen () {
 		$sql = 'SELECT * FROM ad_vorwahlen ORDER BY vorwahl;';
