@@ -10,10 +10,30 @@ class Template {
 	/**
 	 * Constructs a new template with from the given name.
 	 *
-	 * @param string $templatename Name of the template.
+	 * If the second parameter is given, constructs a new template for the
+	 * given controller action.
+	 *
+	 * @param string $templatename Name of the template (or controller).
+	 * @param string $action Name of the function.
 	 */
-	public function __construct($templatename) {
-		$this->templatename = $templatename;
+	public function __construct($templatename, $action = null) {
+		if ($action == null) {
+			$this->templatename = $templatename;
+		}
+		else {
+			preg_match('/(.*)Controller/', $templatename, $matches);
+
+			if (count($matches) == 0) {
+				die(sprintf(
+					_('Cannot find template for %s %s.'),
+					$templatename,
+					$action
+				));
+			}
+			else {
+				$this->templatename = strtolower($matches[1].'_'.$action);
+			}
+		}
 		$this->data = array();
 	}
 
