@@ -1,6 +1,10 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Navigation.
+ */
+
 require_once('helper/Navigation.php');
 ?>
 

@@ -1,4 +1,8 @@
 <?php
+/**
+ * Session flash messages.
+ */
+
 if (isset($_SESSION['messages']) && count($_SESSION['messages']) > 0) {
 	echo '<div id="messages">';
 	echo '<ul>';

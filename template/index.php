@@ -1,3 +1,10 @@
+<?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Main layout.
+ */
+?>
 <!DOCTYPE html>
 <html>
 	<head>
