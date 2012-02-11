@@ -38,10 +38,18 @@ class History {
 	/**
 	 * Retrieves the latest snapshot.
 	 *
-	 * @return mixed GET array.
+	 * If no snapshot is saved, an empty array is returned.
+	 *
+	 * @return array GET array.
 	 */
 	public function load() {
-		return array_pop($this->snapshots);
+		$latest = array();
+
+		if (count($this->snapshot) > 0) {
+			$latest = array_pop($this->snapshots);
+		}
+
+		return $latest;
 	}
 
 	/**
