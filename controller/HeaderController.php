@@ -21,7 +21,12 @@ class HeaderController extends Controller {
 			$aktuell_name = _('all');
 
 		$request = new Request();
-		$request->set('mode', $this->get_current_mode());
+		if (preg_match('/^Person::/', $this->get_current_mode())) {
+			$request->set('mode', 'List::index');
+		}
+		else {
+			$request->set('mode', $this->get_current_mode());
+		}
 		$request->set('f', 0);
 
 		$template->set('mode_all_request', $request->join());
@@ -44,7 +49,12 @@ class HeaderController extends Controller {
 		$template->set('mode_links', $mode_links);
 
 		$request = new Request();
-		$request->set('mode', $this->get_current_mode());
+		if (preg_match('/^Person::/', $this->get_current_mode())) {
+			$request->set('mode', 'List::index');
+		}
+		else {
+			$request->set('mode', $this->get_current_mode());
+		}
 		$request->set('g', 0);
 
 		$template->set('group_all_request', $request->join());
