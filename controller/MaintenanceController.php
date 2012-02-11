@@ -11,7 +11,7 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '._('database check'));
 
-		$template = new Template('maintenance_integrity_check');
+		$template = new Template(__CLASS__, __FUNCTION__);
 		return $template->html();
 	}
 
@@ -19,7 +19,7 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '._('no association'));
 
-		$template = new Template('maintenance_no_association');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter(0, $_SESSION['g']);
 		$filter->add_where('ad_flinks.person_lr IS NULL');
@@ -34,7 +34,7 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '._('no birthday'));
 
-		$template = new Template('maintenance_no_birthday');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('(geb_t = 0 || geb_m = 0)');
@@ -49,7 +49,7 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '._('no email'));
 
-		$template = new Template('maintenance_no_email');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('email_privat IS NULL');
@@ -65,7 +65,7 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '._('no group'));
 
-		$template = new Template('maintenance_no_group');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter($_SESSION['f'], 0);
 		$filter->add_where('ad_glinks.person_lr IS NULL');
@@ -80,7 +80,7 @@ class MaintenanceController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '._('no from of address'));
 
-		$template = new Template('maintenance_no_title');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('anrede_r = 1');

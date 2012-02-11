@@ -20,7 +20,7 @@ class PictureController extends Controller {
 			$_SESSION['history']->go_back();
 		}
 		else {
-			$template = new Template('picture_delete');
+			$template = new Template(__CLASS__, __FUNCTION__);
 			$template->set('id', $id);
 
 			$erg = Person::select_person_alles($id);
@@ -56,7 +56,7 @@ class PictureController extends Controller {
 			$_SESSION['history']->go_back();
 		}
 		else {
-			$template = new Template('picture_edit');
+			$template = new Template(__CLASS__, __FUNCTION__);
 			$template->set('id', $id);
 
 			$erg = Person::select_person_alles($id);

@@ -814,7 +814,7 @@ class PersonController extends Controller {
 			$_SESSION['history']->go_back($id);
 		}
 		else {
-			$template = new Template('person_delete');
+			$template = new Template(__CLASS__, __FUNCTION__);
 
 			$template->set('id', $id);
 
@@ -843,7 +843,7 @@ class PersonController extends Controller {
 	public function view() {
 		$this->history_save();
 
-		$template = new Template('person_view');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		if (isset($_GET['id'])) {
 			$id = $_GET['id'];

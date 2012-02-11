@@ -16,7 +16,7 @@ class BirthdayController extends Controller {
 
 		$this->set_page_title(_('Address DB').': '._('all birthdays'));
 
-		$template = new Template('birthday_index');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December'));
 		$template->set('months', $monate);
@@ -44,7 +44,7 @@ class BirthdayController extends Controller {
 
 		$this->set_page_title(_('Address DB').': '._('current birthdays'));
 
-		$template = new Template('birthday_upcoming_birthdays');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_m='.date("n"));

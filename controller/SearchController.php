@@ -11,7 +11,7 @@ class SearchController extends Controller {
 		$this->history_save();
 		$this->set_page_title(_('Address DB').': '.sprintf(_('search for &bdquo;%s&ldquo;'), $_GET['suche']));
 
-		$template = new Template('search_index');
+		$template = new Template(__CLASS__, __FUNCTION__);
 		return $template->html();
 	}
 }

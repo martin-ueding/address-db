@@ -20,7 +20,7 @@ class ExportController extends Controller {
 	 * @global integer $_GET['id']
 	 */
 	public function vcard() {
-		$template = new Template('export_vcard');
+		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$id = $_GET['id'];
 
@@ -57,7 +57,7 @@ class ExportController extends Controller {
 
 		$erg = mysql_query($sql);
 
-		$template = new Template('export_vcard_multiple');
+		$template = new Template(__CLASS__, __FUNCTION__);
 		$template->set('erg', $erg);
 		echo $template->html();
 
@@ -92,7 +92,7 @@ class ExportController extends Controller {
 		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
 		$erg = mysql_query($sql);
 
-		$template = new Template('export_'.__FUNCTION__);
+		$template = new Template(__CLASS__, __FUNCTION__);
 		$template->set('erg', $erg);
 		echo $template->html();
 
