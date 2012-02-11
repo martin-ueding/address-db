@@ -74,6 +74,7 @@ class HeaderController extends Controller {
 			);
 			}
 		}
+		# FIXME Isset here and in template.
 		$template->set('group_links', $group_links);
 
 		$buchstaben = range('A', 'Z');
