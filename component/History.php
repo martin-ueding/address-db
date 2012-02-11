@@ -45,7 +45,7 @@ class History {
 	public function load() {
 		$latest = array();
 
-		if (count($this->snapshot) > 0) {
+		if (count($this->snapshots) > 0) {
 			$latest = array_pop($this->snapshots);
 		}
 
