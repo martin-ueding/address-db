@@ -297,9 +297,8 @@ echo '</table>';
 echo '<div class="pers_titel">';
 echo '&nbsp;&nbsp;'._('up-to-dateness').':';
 echo '</div>';
+
 echo '<table class="display_person">';
-
-
 echo '<tr>';
 echo '<td class="links">'._('up-to-dateness').':</td>';
 echo '<td>';
