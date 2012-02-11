@@ -36,7 +36,12 @@ class HeaderController extends Controller {
 		$erg = mysql_query($sql);
 		while ($l = mysql_fetch_assoc($erg)) {
 			$request = new Request();
-			$request->set('mode', $this->get_current_mode());
+			if (preg_match('/^Person::/', $this->get_current_mode())) {
+				$request->set('mode', 'List::index');
+			}
+			else {
+				$request->set('mode', $this->get_current_mode());
+			}
 			$request->set('f', $l['fmg_id']);
 
 			$mode_links[] = array(
@@ -64,7 +69,12 @@ class HeaderController extends Controller {
 		while ($l = mysql_fetch_assoc($erg)) {
 			if (Group::gruppe_ist_nicht_leer($l['g_id'])) {
 				$request = new Request();
-				$request->set('mode', $this->get_current_mode());
+				if (preg_match('/^Person::/', $this->get_current_mode())) {
+					$request->set('mode', 'List::index');
+				}
+				else {
+					$request->set('mode', $this->get_current_mode());
+				}
 				$request->set('g', $l['g_id']);
 
 				$group_links[] = array(
