@@ -23,6 +23,7 @@ class DateFormat {
 	/**
 	 * Gives a casual, human readable form of the date.
 	 *
+	 * @global string $date_format
 	 * @param integer $stamp Timestamp.
 	 * @return string Date string.
 	 */
@@ -37,9 +38,9 @@ class DateFormat {
 			else if ($diff < 60)
 				return _('within in the last minute');
 			else if ($diff < 7200)
-				return printf(_('%d minutes ago'), round($diff/60));
+				return sprintf(_('%d minutes ago'), round($diff/60));
 			else if ($diff < 86400)
-				return printf(_('%d hours ago'), round($diff/3600));
+				return sprintf(_('%d hours ago'), round($diff/3600));
 			else if ($stamp == 0)
 				return _('never');
 			else
