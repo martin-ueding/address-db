@@ -69,7 +69,7 @@ class MaintenanceController extends Controller {
 
 		$filter = new Filter($_SESSION['f'], 0);
 		$filter->add_where('ad_glinks.person_lr IS NULL');
-		$filter->add_join('LEFT JOIN ad_glinks ON ad_glinks.person_lr = gl_id');
+		$filter->add_join('LEFT JOIN ad_glinks ON ad_glinks.person_lr = p_id');
 
 		$missing = new Missing($filter);
 		$template->set('missing', $missing);
