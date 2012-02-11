@@ -67,11 +67,11 @@ class HeaderController extends Controller {
 				$request->set('mode', $this->get_current_mode());
 				$request->set('g', $l['g_id']);
 
-			$group_links[] = array(
-				'request' => $request->join(),
-				'class' => $_SESSION['g'] == $l['g_id'] ? 'active' : '',
-				'title' => $l['gruppe'],
-			);
+				$group_links[] = array(
+					'request' => $request->join(),
+					'class' => $_SESSION['g'] == $l['g_id'] ? 'active' : '',
+					'title' => $l['gruppe'],
+				);
 			}
 		}
 		# FIXME Isset here and in template.
