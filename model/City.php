@@ -3,8 +3,6 @@
 
 /**
  * Access to cities.
- *
- * @package model
  */
 class City {
 	public static function select_ortid_ort ($ort) {

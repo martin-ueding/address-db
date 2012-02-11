@@ -3,8 +3,6 @@
 
 /**
  * Access to forms of address.
- *
- * @package model
  */
 class FormOfAddress {
 	public static function select_string_anrede ($id) {

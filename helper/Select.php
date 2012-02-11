@@ -13,8 +13,6 @@ require_once('model/Suffix.php');
  * Prints various select fields.
  *
  * Currently, all the methods direcly echo their output.
- *
- * @package helper
  */
 class Select {
 	public static function show_select_vorwahlen ($name, $aktiv) {

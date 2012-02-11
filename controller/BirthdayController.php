@@ -7,8 +7,6 @@ require_once('controller/Controller.php');
 
 /**
  * Controller for birthdays.
- *
- * @package controller
  */
 class BirthdayController extends Controller {
 	public function index() {

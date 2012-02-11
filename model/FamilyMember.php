@@ -3,8 +3,6 @@
 
 /**
  * Access to family members.
- *
- * @package model
  */
 class FamilyMember {
 	public static function get_name($id) {

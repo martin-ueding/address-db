@@ -3,8 +3,6 @@
 
 /**
  * Helper for date.
- *
- * @package helper
  */
 class DateFormat {
 	/**

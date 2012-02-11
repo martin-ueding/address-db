@@ -8,8 +8,6 @@ require_once('model/AreaCode.php');
 
 /**
  * Various exports.
- *
- * @package controller
  */
 class ExportController extends Controller {
 	/**

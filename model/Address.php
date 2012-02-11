@@ -3,8 +3,6 @@
 
 /**
  * Access to addresses.
- *
- * @package model
  */
 class Address {
 	public static function adresse_mehrfach_benutzt ($id) {

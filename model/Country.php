@@ -3,8 +3,6 @@
 
 /**
  * Access to countries.
- *
- * @package model
  */
 class Country {
 	public static function select_landid_land ($land) {

@@ -3,8 +3,6 @@
 
 /**
  * Access to prefixes.
- *
- * @package model
  */
 class Prefix {
 	public static function select_string_prafix ($id) {

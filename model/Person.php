@@ -5,8 +5,6 @@ require_once('component/Filter.php');
 
 /**
  * Access to persons.
- *
- * @package model
  */
 class Person {
 	/**

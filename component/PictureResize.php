@@ -5,8 +5,6 @@ require_once('NoGDException.php');
 
 /**
  * A picture resize and copy job.
- *
- * @package component
  */
 class PictureResize {
 	/**

@@ -3,8 +3,6 @@
 
 /**
  * Pretty prints a person query result.
- *
- * @package helper
  */
 class Table {
 	/**

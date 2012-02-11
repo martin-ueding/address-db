@@ -3,8 +3,6 @@
 
 /**
  * Helper for cell phone numbers
- *
- * @package helper
  */
 class Cellphone {
 	/**

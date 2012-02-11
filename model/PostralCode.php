@@ -3,8 +3,6 @@
 
 /**
  * Access to postral codes.
- *
- * @package model
  */
 class PostralCode {
 	public static function select_plzid_plz ($plz) {

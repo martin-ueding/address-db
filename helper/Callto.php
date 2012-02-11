@@ -3,8 +3,6 @@
 
 /**
  * Builds callto:// links.
- *
- * @package helper
  */
 class Callto {
 	/**

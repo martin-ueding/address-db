@@ -3,8 +3,6 @@
 
 /**
  * Models the GET attributes for a future request.
- *
- * @package component
  */
 class Request {
 	/**

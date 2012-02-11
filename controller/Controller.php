@@ -6,8 +6,6 @@
  *
  * This provides a couple convinience function for the child Controller. A
  * child controller should have public actions that return HTML code.
- *
- * @package controller
  */
 class Controller {
 	/**
