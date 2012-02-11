@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-08 21:02+0100\n"
+"POT-Creation-Date: 2012-02-11 17:58+0100\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -31,12 +31,12 @@ msgid_plural "%d entries:"
 msgstr[0] "%d Eintrag:"
 msgstr[1] "%d Einträge:"
 
-#: ../helper/DateFormat.php:25
+#: ../helper/DateFormat.php:43
 #, php-format
 msgid "%d hours ago"
 msgstr "vor %d Stunden"
 
-#: ../helper/DateFormat.php:23
+#: ../helper/DateFormat.php:41
 #, php-format
 msgid "%d minutes ago"
 msgstr "vor %d minuten"
@@ -46,62 +46,67 @@ msgstr "vor %d minuten"
 msgid "(today %d years old)"
 msgstr "(heute %d Jahre alt)"
 
-#: ../controller/BirthdayController.php:12
-#: ../controller/BirthdayController.php:40
-#: ../controller/PersonController.php:21
-#: ../controller/PersonController.php:770
-#: ../controller/PersonController.php:837
-#: ../controller/PersonController.php:863
+#: ../controller/SearchController.php:12
+#: ../controller/BirthdayController.php:15
+#: ../controller/BirthdayController.php:43
+#: ../controller/PictureController.php:28
+#: ../controller/PictureController.php:64 ../controller/Controller.php:27
 #: ../controller/MaintenanceController.php:12
 #: ../controller/MaintenanceController.php:20
 #: ../controller/MaintenanceController.php:35
 #: ../controller/MaintenanceController.php:50
 #: ../controller/MaintenanceController.php:66
 #: ../controller/MaintenanceController.php:81
-#: ../controller/PictureController.php:28
-#: ../controller/PictureController.php:64 ../controller/Controller.php:9
-#: ../controller/SearchController.php:12 ../controller/ListController.php:15
-#: ../controller/ListController.php:25 ../controller/ListController.php:28
+#: ../controller/ListController.php:15 ../controller/ListController.php:25
+#: ../controller/ListController.php:28 ../controller/PersonController.php:21
+#: ../controller/PersonController.php:770
+#: ../controller/PersonController.php:837
+#: ../controller/PersonController.php:863
 msgid "Address DB"
 msgstr "Adressdatenbank"
 
-#: ../controller/ExportController.php:581
+#: ../template/export_birthday_calendar.php:7
 msgid "Address Database"
 msgstr "Adressdatebank"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "April"
 msgstr "April"
 
-#: ../helper/ZodiacSign.php:21
+#: ../helper/ZodiacSign.php:24
 msgid "Aquarius"
 msgstr "Wassermann"
 
-#: ../helper/ZodiacSign.php:29
+#: ../helper/ZodiacSign.php:32
 msgid "Aries"
 msgstr "Widder"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "August"
 msgstr "August"
 
-#: ../controller/ExportController.php:613
+#: ../template/export_birthday_calendar.php:34
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: ../controller/ExportController.php:580
+#: ../template/export_birthday_calendar.php:6
 msgid "Birthdays"
 msgstr "Geburtstage"
 
-#: ../template/header.php:65
+#: ../template/header.php:69
 msgid "CSV"
 msgstr ""
 
-#: ../helper/ZodiacSign.php:41
+#: ../helper/ZodiacSign.php:44
 msgid "Cancer"
 msgstr "Krebs"
 
-#: ../helper/ZodiacSign.php:17 ../helper/ZodiacSign.php:65
+#: ../component/Template.php:26
+#, php-format
+msgid "Cannot find template for %s %s."
+msgstr "Kann Template für %s %s nicht finden."
+
+#: ../helper/ZodiacSign.php:20 ../helper/ZodiacSign.php:68
 msgid "Capricorn"
 msgstr "Steinbock"
 
@@ -113,7 +118,7 @@ msgstr "Firma"
 msgid "Could not select DB."
 msgstr "Konnte DB nicht auswählen."
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "December"
 msgstr "Dezember"
 
@@ -145,11 +150,11 @@ msgstr "Englisch"
 msgid "Error during deletion of image %s!"
 msgstr "Fehler beim Löschen des Bildes %s!"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "February"
 msgstr "Februar"
 
-#: ../helper/ZodiacSign.php:37
+#: ../helper/ZodiacSign.php:40
 msgid "Gemini"
 msgstr "Zwillinge"
 
@@ -162,7 +167,7 @@ msgstr "Deutsch"
 msgid "Group %s:"
 msgstr "Gruppe %s"
 
-#: ../template/header.php:67
+#: ../template/header.php:71
 msgid "ICS birthday calendar"
 msgstr "ICS Geburtstagskalender"
 
@@ -170,15 +175,15 @@ msgstr "ICS Geburtstagskalender"
 msgid "In which groups is this person?"
 msgstr "In welchen Gruppen ist diese Person?"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "January"
 msgstr "Januar"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "July"
 msgstr "Juli"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "June"
 msgstr "Juni"
 
@@ -187,19 +192,19 @@ msgstr "Juni"
 msgid "Last names starting with %s:"
 msgstr "Nachnamen beginnend mit %s:"
 
-#: ../helper/ZodiacSign.php:45
+#: ../helper/ZodiacSign.php:48
 msgid "Leo"
 msgstr "Löwe"
 
-#: ../helper/ZodiacSign.php:53
+#: ../helper/ZodiacSign.php:56
 msgid "Libra"
 msgstr "Waage"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "March"
 msgstr "März"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "May"
 msgstr "Mai"
 
@@ -232,23 +237,23 @@ msgstr "Es wurde kein Suchbegriff eingegeben"
 msgid "No, cancel!"
 msgstr "Nein, abbrechen!"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "November"
 msgstr "November"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "October"
 msgstr "Oktober"
 
-#: ../helper/ZodiacSign.php:25
+#: ../helper/ZodiacSign.php:28
 msgid "Pisces"
 msgstr "Fische"
 
-#: ../helper/ZodiacSign.php:61
+#: ../helper/ZodiacSign.php:64
 msgid "Sagittarius"
 msgstr "Schütze"
 
-#: ../helper/ZodiacSign.php:57
+#: ../helper/ZodiacSign.php:60
 msgid "Scorpio"
 msgstr "Skorpion"
 
@@ -257,7 +262,7 @@ msgstr "Skorpion"
 msgid "Searching for the term %s"
 msgstr "Suche nach %s"
 
-#: ../controller/BirthdayController.php:16
+#: ../controller/BirthdayController.php:19
 msgid "September"
 msgstr "September"
 
@@ -269,7 +274,7 @@ msgstr "Sorry, keine Geburtstage bekannt."
 msgid "Sure, delete that!"
 msgstr "Sicher, löschen!"
 
-#: ../helper/ZodiacSign.php:33
+#: ../helper/ZodiacSign.php:36
 msgid "Taurus"
 msgstr "Stier"
 
@@ -318,11 +323,11 @@ msgstr ""
 msgid "Turkish"
 msgstr "Türkisch"
 
-#: ../template/header.php:64
+#: ../template/header.php:68
 msgid "VCard"
 msgstr ""
 
-#: ../helper/ZodiacSign.php:49
+#: ../helper/ZodiacSign.php:52
 msgid "Virgo"
 msgstr "Jungfrau"
 
@@ -330,7 +335,7 @@ msgstr "Jungfrau"
 msgid "Warning:"
 msgstr "Warnung:"
 
-#: ../template/person_view.php:330
+#: ../template/person_view.php:329
 msgid "Was the data checked and is it up-to-date?"
 msgstr "Wurden die Daten überprüft und sind jetzt aktuell?"
 
@@ -355,12 +360,12 @@ msgstr "Adresse"
 msgid "address change affects"
 msgstr "Adressänderung betrifft"
 
-#: ../controller/HeaderController.php:21 ../template/header.php:13
-#: ../template/header.php:34
+#: ../controller/HeaderController.php:21 ../template/header.php:17
+#: ../template/header.php:38
 msgid "all"
 msgstr "alle"
 
-#: ../controller/BirthdayController.php:12 ../template/birthday_index.php:2
+#: ../controller/BirthdayController.php:15 ../template/birthday_index.php:2
 msgid "all birthdays"
 msgstr "alle Geburtstage"
 
@@ -440,11 +445,11 @@ msgstr "Geburtsdatum"
 msgid "birthday"
 msgstr "Geburtstag"
 
-#: ../template/header.php:57
+#: ../template/header.php:61
 msgid "birthday list"
 msgstr "Geburtstagsliste"
 
-#: ../template/header.php:56
+#: ../template/header.php:60
 msgid "birthday view"
 msgstr "Geburtstagsansicht"
 
@@ -496,7 +501,7 @@ msgstr "Chat Yahoo"
 msgid "chat Yahoo!"
 msgstr "Chat Yahoo!"
 
-#: ../template/header.php:59
+#: ../template/header.php:63
 msgid "create"
 msgstr "erstellen"
 
@@ -508,7 +513,7 @@ msgstr "neuen Eintrag erstellen"
 msgid "create entry"
 msgstr "Eintrag erstellen"
 
-#: ../template/header.php:60
+#: ../template/header.php:64
 msgid "create new entry"
 msgstr "neuen Eintrag erstellen"
 
@@ -516,15 +521,15 @@ msgstr "neuen Eintrag erstellen"
 msgid "create new group"
 msgstr "neue Gruppe anlegen"
 
-#: ../controller/BirthdayController.php:40
+#: ../controller/BirthdayController.php:43
 msgid "current birthdays"
 msgstr "aktuelle Geburtstage"
 
-#: ../controller/MaintenanceController.php:12 ../template/header.php:75
+#: ../controller/MaintenanceController.php:12 ../template/header.php:79
 msgid "database check"
 msgstr "Datenbankkontrolle"
 
-#: ../template/header.php:66
+#: ../template/header.php:70
 msgid "dayplanner"
 msgstr "Tagesplaner"
 
@@ -547,11 +552,11 @@ msgstr "Bild für %s löschen"
 msgid "delete an entry"
 msgstr "Eintrag löschen"
 
-#: ../template/person_view.php:346
+#: ../template/person_view.php:345
 msgid "delete picture"
 msgstr "Bild löschen"
 
-#: ../template/person_view.php:342
+#: ../template/person_view.php:341
 msgid "delete this entry"
 msgstr "diesen Eintrag löschen"
 
@@ -559,7 +564,7 @@ msgstr "diesen Eintrag löschen"
 msgid "display entry"
 msgstr "Eintrag anzeigen"
 
-#: ../template/person_view.php:348
+#: ../template/person_view.php:347
 msgid "download VCard"
 msgstr "VCard herunterladen"
 
@@ -572,7 +577,7 @@ msgstr "%s bearbeiten"
 msgid "edit entry"
 msgstr "Eintrag bearbeiten"
 
-#: ../template/person_view.php:341
+#: ../template/person_view.php:340
 msgid "edit this entry"
 msgstr "diesen Eintrag bearbeiten"
 
@@ -617,7 +622,7 @@ msgstr "Einträge ohne Emailadresse"
 msgid "everybody that lives here"
 msgstr "alle, die hier wohnen"
 
-#: ../template/header.php:62
+#: ../template/header.php:66
 msgid "export"
 msgstr "Export"
 
@@ -638,7 +643,7 @@ msgstr "Anrede"
 msgid "general telephones"
 msgstr "allgemeine Telefone"
 
-#: ../template/header.php:30 ../template/person_view.php:274
+#: ../template/person_view.php:274 ../template/header.php:34
 msgid "groups"
 msgstr "Gruppen"
 
@@ -650,7 +655,7 @@ msgstr "Homepage 1"
 msgid "homepage 2"
 msgstr "Homepage 2"
 
-#: ../helper/DateFormat.php:32
+#: ../helper/DateFormat.php:50
 msgid "in the future ..."
 msgstr "in der Zukunft ..."
 
@@ -670,20 +675,20 @@ msgstr "ungültige Famlienmitgliedsbeziehungen"
 msgid "invalid group links"
 msgstr "ungültige Gruppenbeziehungen"
 
-#: ../helper/DateFormat.php:19
+#: ../helper/DateFormat.php:37
 msgid "just now"
 msgstr "gerade eben"
 
-#: ../template/header.php:63
+#: ../template/header.php:67
 msgid "kitchen list"
 msgstr "Küchenliste"
 
-#: ../template/person_view.php:324
+#: ../template/person_view.php:323
 #, php-format
 msgid "last check %s (%d days ago)"
 msgstr "letzte Überprüfung %s (vor %d Tagen)"
 
-#: ../template/person_view.php:335
+#: ../template/person_view.php:334
 msgid "last edited"
 msgstr "zuletzt bearbeitet"
 
@@ -704,7 +709,7 @@ msgstr "Liste"
 msgid "maiden name"
 msgstr "Geburtsname"
 
-#: ../template/header.php:69
+#: ../template/header.php:73
 msgid "maintenance"
 msgstr "Wartung"
 
@@ -717,7 +722,7 @@ msgstr "zweiter Vorname"
 msgid "mobile"
 msgstr "mobil"
 
-#: ../template/header.php:9
+#: ../template/header.php:13
 msgid "mode"
 msgstr "Modus"
 
@@ -730,7 +735,7 @@ msgstr "Name"
 msgid "names and relations"
 msgstr "Name und Bezüge"
 
-#: ../helper/DateFormat.php:27
+#: ../helper/DateFormat.php:45
 msgid "never"
 msgstr "noch nicht"
 
@@ -738,33 +743,31 @@ msgstr "noch nicht"
 msgid "next month"
 msgstr "nächster Monat"
 
-#: ../controller/MaintenanceController.php:20 ../template/header.php:71
+#: ../controller/MaintenanceController.php:20 ../template/header.php:75
 msgid "no association"
 msgstr "keine Zuordnung"
 
-#: ../controller/MaintenanceController.php:35 ../template/header.php:74
+#: ../controller/MaintenanceController.php:35 ../template/header.php:78
 msgid "no birthday"
 msgstr "kein Geburtsdatum"
 
 #: ../controller/MaintenanceController.php:50
-#, fuzzy
 msgid "no email"
 msgstr "keine Emailadresse"
 
-#: ../template/header.php:73
+#: ../template/header.php:77
 msgid "no email address"
 msgstr "keine Emailadresse"
 
-#: ../template/header.php:70
+#: ../template/header.php:74
 msgid "no form of address"
 msgstr "keine Anrede"
 
 #: ../controller/MaintenanceController.php:81
-#, fuzzy
 msgid "no from of address"
 msgstr "keine Anrede"
 
-#: ../controller/MaintenanceController.php:66 ../template/header.php:72
+#: ../controller/MaintenanceController.php:66 ../template/header.php:76
 msgid "no group"
 msgstr "keine Gruppe"
 
@@ -776,7 +779,7 @@ msgstr "keine Vorschläge verfügbar"
 msgid "notes"
 msgstr "Notizen"
 
-#: ../helper/DateFormat.php:29
+#: ../helper/DateFormat.php:47
 msgid "on the"
 msgstr "am"
 
@@ -849,7 +852,7 @@ msgstr "Suche nach &bdquo;%s&ldquo;"
 msgid "send an email to everybody in this list"
 msgstr "eine Email an alle in dieser Liste senden"
 
-#: ../template/header.php:55
+#: ../template/header.php:59
 msgid "show entries"
 msgstr "zeige Einträge"
 
@@ -913,7 +916,7 @@ msgstr "unbenutzte Länder"
 msgid "unused postral codes"
 msgstr "unbenutze Postleitzahlen"
 
-#: ../template/person_view.php:298 ../template/person_view.php:304
+#: ../template/person_view.php:298 ../template/person_view.php:303
 msgid "up-to-dateness"
 msgstr "Aktualität"
 
@@ -926,19 +929,19 @@ msgstr "Upload"
 msgid "upload %s's picture"
 msgstr "Bild für %s hochladen"
 
-#: ../template/person_view.php:344
+#: ../template/person_view.php:343
 msgid "upload picture"
 msgstr "Bild hochladen"
 
-#: ../template/index.php:30
+#: ../template/index.php:37
 msgid "version"
 msgstr "Version"
 
-#: ../template/header.php:54
+#: ../template/header.php:58
 msgid "views"
 msgstr "Ansichten"
 
-#: ../helper/DateFormat.php:21
+#: ../helper/DateFormat.php:39
 msgid "within in the last minute"
 msgstr "innerhalb der letzten Minute"
 
@@ -951,15 +954,6 @@ msgstr "ohne Geburtstag"
 msgid "work"
 msgstr "geschäftlich"
 
-#: ../template/person_view.php:330
+#: ../template/person_view.php:329
 msgid "yes"
 msgstr "ja"
-
-#~ msgid "PHP Family Address DB"
-#~ msgstr "PHP Familien Adressdatenbank"
-
-#~ msgid "no results"
-#~ msgstr "keine Ergebnisse"
-
-#~ msgid "verification mail for %s"
-#~ msgstr "Überprüfungsmail für %s"
