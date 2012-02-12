@@ -1,4 +1,12 @@
 <?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Checks the database.
+ *
+ * @global boolean $_GET['remove_unneeded']
+ */
+
 echo '<h1>'._('integrity check').'</h1>';
 
 $remove_unneeded = isset($_GET['remove_unneeded']);

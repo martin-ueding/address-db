@@ -1,3 +1,10 @@
+<?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Editing a picture.
+ */
+?>
 <h1><?php echo _('picture upload'); ?></h1>
 
 <?php echo _('only JPEG'); ?>

@@ -1,6 +1,10 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Exports a single VCard.
+ */
+
 header("Content-Type: text/x-vcard; charset=iso-8859-1");
 header('Content-Disposition: attachment; filename="'.$l['vorname'].$l['nachname'].'.vcf"');
 

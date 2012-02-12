@@ -1,6 +1,10 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Exports a list as a big VCard.
+ */
+
 header("Content-Type: text/x-vcard; charset=iso-8859-1");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.vcf"');
 

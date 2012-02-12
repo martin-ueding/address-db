@@ -1,6 +1,10 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Export into a CSV file.
+ */
+
 $csv = fopen('php://temp/maxmemory:'. (5*1024*1024), 'r+');
 while ($l = mysql_fetch_assoc($erg)) {
 

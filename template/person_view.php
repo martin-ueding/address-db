@@ -1,3 +1,10 @@
+<?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Viewing a Person.
+ */
+?>
 <h1><?php echo _('display entry'); ?></h1>
 <?php
 $mugshot_path = '_mugshots/per'.$id.'.jpg';

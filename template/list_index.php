@@ -1,3 +1,10 @@
+<?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * List with email option.
+ */
+?>
 <h1><?php echo _('list'); ?></h1>
 
 <?php echo $title; ?>

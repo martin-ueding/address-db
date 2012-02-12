@@ -1,6 +1,12 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Export for kitchen sheets.
+ *
+ * Produces a LaTeX output.
+ */
+
 $SCHRIFTGROESSE = 9;
 header("Content-Type: text/plain; charset=iso-8859-1");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');

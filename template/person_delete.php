@@ -1,3 +1,10 @@
+<?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Deletion of a Person.
+ */
+?>
 <h1><?php echo _('delete an entry'); ?></h1>
 <?php
 printf(_('Do you really want to delete the entry %s?'), '<em>'.$person_loop['vorname'].' '.$person_loop['nachname'].'</em>');

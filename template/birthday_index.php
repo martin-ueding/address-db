@@ -1,4 +1,10 @@
 <?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Overview of all birthdays.
+ */
+
 echo '<h1>'._('all birthdays').'</h1>';
 $showed_anything = false;
 

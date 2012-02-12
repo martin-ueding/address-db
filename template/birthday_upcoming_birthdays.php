@@ -1,3 +1,10 @@
+<?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Birthdays in the current and next month.
+ */
+?>
 <table id="geburtstag">
 <tr>
 <td colspan="4"><b><?php echo _('birthdays'); ?></b></td>

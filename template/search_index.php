@@ -1,4 +1,10 @@
 <?php
+# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Search.
+ */
+
 echo '<h1>'._('search').'</h1>';
 
 $suche = mysql_real_escape_string($_GET['suche']);

@@ -1,6 +1,10 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Export into a ICS calendar with birthdays.
+ */
+
 echo 'BEGIN:VCALENDAR'."\n";
 echo 'VERSION:2.0'."\n";
 echo 'X-WR-CALNAME:'._('Birthdays')."\n";

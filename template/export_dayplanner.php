@@ -1,6 +1,12 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Export for dayplanner sheets.
+ *
+ * Produces a LaTeX output.
+ */
+
 $MAX_PRO_SEITE = 3;
 $SCHRIFTGROESSE = 7;
 
