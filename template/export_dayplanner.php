@@ -7,6 +7,8 @@
  * Produces a LaTeX output.
  */
 
+require_once('helper/Latex.php');
+
 $MAX_PRO_SEITE = 3;
 $SCHRIFTGROESSE = 7;
 
@@ -50,71 +52,71 @@ while ($l = mysql_fetch_assoc($erg)) {
 	echo '\section*{'.$prafix.' '.$l['vorname'].' '.$l['nachname'].'}'."\n";
 
 	if ($l['adresse_r'] != 1) {
-		echo $l['strasse'].bruch().$l['ortsname'].' '.$l['plz'].bruch();
+		echo $l['strasse'].Latex::bruch().$l['ortsname'].' '.$l['plz'].Latex::bruch();
 	}
 
 	if (!empty($l['email_privat']))
-		echo 'Email P: '.convertToLaTeX($l['email_privat']).bruch();
+		echo 'Email P: '.Latex::convertToLaTeX($l['email_privat']).Latex::bruch();
 
 	if (!empty($l['email_arbeit']))
-		echo 'Email A: '.convertToLaTeX($l['email_arbeit']).bruch();
+		echo 'Email A: '.Latex::convertToLaTeX($l['email_arbeit']).Latex::bruch();
 
 	if (!empty($l['email_aux']))
-		echo 'Email: '.convertToLaTeX($l['email_aux']).bruch();
+		echo 'Email: '.Latex::convertToLaTeX($l['email_aux']).Latex::bruch();
 
 
 	if (!empty($l['tel_privat']))
-		echo 'Tel P: '.AreaCode::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].bruch();
+		echo 'Tel P: '.AreaCode::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].Latex::bruch();
 
 	if (!empty($l['tel_arbeit']))
-		echo 'Tel A: '.AreaCode::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].bruch();
+		echo 'Tel A: '.AreaCode::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].Latex::bruch();
 
 	if (!empty($l['tel_mobil']))
-		echo 'Handy: '.AreaCode::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].bruch();
+		echo 'Handy: '.AreaCode::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].Latex::bruch();
 
 	if (!empty($l['tel_fax']))
-		echo 'Fax: '.AreaCode::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].bruch();
+		echo 'Fax: '.AreaCode::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].Latex::bruch();
 
 	if (!empty($l['tel_aux']))
-		echo 'Tel: '.AreaCode::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].bruch();
+		echo 'Tel: '.AreaCode::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].Latex::bruch();
 
 	if (!empty($l['ftel_privat']))
-		echo 'Tel P: '.AreaCode::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].bruch();
+		echo 'Tel P: '.AreaCode::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].Latex::bruch();
 
 	if (!empty($l['ftel_arbeit']))
-		echo 'Tel A: '.AreaCode::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].bruch();
+		echo 'Tel A: '.AreaCode::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].Latex::bruch();
 
 	if (!empty($l['ftel_mobil']))
-		echo 'Handy: '.AreaCode::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].bruch();
+		echo 'Handy: '.AreaCode::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].Latex::bruch();
 
 	if (!empty($l['ftel_fax']))
-		echo 'Fax: '.AreaCode::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].bruch();
+		echo 'Fax: '.AreaCode::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].Latex::bruch();
 
 	if (!empty($l['ftel_aux']))
-		echo 'Tel: '.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].bruch();
+		echo 'Tel: '.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].Latex::bruch();
 
 
 	if (!empty($l['hp1'])) {
-		echo 'http://'.$l['hp1'].bruch();
+		echo 'http://'.$l['hp1'].Latex::bruch();
 	}
 
 	if (!empty($l['hp2'])) {
-		echo 'http://'.$l['hp2'].bruch();
+		echo 'http://'.$l['hp2'].Latex::bruch();
 	}
 
 	if ($l['geb_j'] == 0)
 		$l['geb_j'] = '';
 
 	if (!empty($l['geb_t']))
-		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].bruch();
+		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].Latex::bruch();
 
 	if (!empty($l['pnotizen']))
-		echo '\\begin{verbatim}'.$l['pnotizen'].'\\end{verbatim}'.bruch();
+		echo '\\begin{verbatim}'.$l['pnotizen'].'\\end{verbatim}'.Latex::bruch();
 
 
 	//	$zaehler++;
 	//	if ($zaehler % $MAX_PRO_SEITE == 0)
-	//		echo '\newpage'.bruch();
+	//		echo '\newpage'.Latex::bruch();
 	//	else
 	//		echo '\vspace{1cm}';
 

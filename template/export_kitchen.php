@@ -7,6 +7,8 @@
  * Produces a LaTeX output.
  */
 
+require_once('helper/Latex.php');
+
 $SCHRIFTGROESSE = 9;
 header("Content-Type: text/plain; charset=iso-8859-1");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
@@ -47,41 +49,41 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 	if (isset($last) && $last['adresse_r'] != $l['adresse_r']) {
 		if ($l['adresse_r'] != 1) {
-			$content .= $l['strasse'].bruch().$l['ortsname'].' '.$l['plz'].bruch();
+			$content .= $l['strasse'].Latex::bruch().$l['ortsname'].' '.$l['plz'].Latex::bruch();
 		}
 	}
 
 	// TODO i18n
 	if (!empty($l['tel_privat']))
-		$content .= 'Tel Privat: '.AreaCode::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].bruch();
+		$content .= 'Tel Privat: '.AreaCode::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].Latex::bruch();
 
 	if (!empty($l['tel_arbeit']))
-		$content .= 'Tel Arbeit: '.AreaCode::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].bruch();
+		$content .= 'Tel Arbeit: '.AreaCode::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].Latex::bruch();
 
 	if (!empty($l['tel_mobil']))
-		$content .= 'Handy: '.AreaCode::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].bruch();
+		$content .= 'Handy: '.AreaCode::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].Latex::bruch();
 
 	if (!empty($l['tel_fax']))
-		$content .= 'Fax: '.AreaCode::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].bruch();
+		$content .= 'Fax: '.AreaCode::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].Latex::bruch();
 
 	if (!empty($l['tel_aux']))
-		$content .= 'Tel: '.AreaCode::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].bruch();
+		$content .= 'Tel: '.AreaCode::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].Latex::bruch();
 
 	if (isset($last) && $last['adresse_r'] != $l['adresse_r']) {
 		if (!empty($l['ftel_privat']))
-			$content .= 'Tel Privat: '.AreaCode::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].bruch();
+			$content .= 'Tel Privat: '.AreaCode::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].Latex::bruch();
 
 		if (!empty($l['ftel_arbeit']))
-			$content .= 'Tel Arbeit: '.AreaCode::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].bruch();
+			$content .= 'Tel Arbeit: '.AreaCode::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].Latex::bruch();
 
 		if (!empty($l['ftel_mobil']))
-			$content .= 'Handy: '.AreaCode::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].bruch();
+			$content .= 'Handy: '.AreaCode::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].Latex::bruch();
 
 		if (!empty($l['ftel_fax']))
-			$content .= 'Fax: '.AreaCode::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].bruch();
+			$content .= 'Fax: '.AreaCode::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].Latex::bruch();
 
 		if (!empty($l['ftel_aux']))
-			$content .= 'Tel: '.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].bruch();
+			$content .= 'Tel: '.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].Latex::bruch();
 	}
 
 
@@ -90,7 +92,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo $content;
 
 		if (!empty($l['pnotizen'])) {
-			echo '\\begin{verbatim}'.wordwrap($l['pnotizen'], 33, "\n", true).'\\end{verbatim}'.bruch();
+			echo '\\begin{verbatim}'.wordwrap($l['pnotizen'], 33, "\n", true).'\\end{verbatim}'.Latex::bruch();
 		}
 
 	}

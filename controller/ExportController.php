@@ -71,13 +71,6 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function kitchen() {
-		function convertToLaTeX ($s) {
-			$s = str_replace('@', '(at)', $s);
-			$s = str_replace('_', '\\_', $s);
-			return $s;
-		}
-
-
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		# TODO Put all this into the filter class.
 		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
@@ -137,16 +130,6 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function dayplanner() {
-		function convertToLaTeX ($s) {
-			$s = str_replace('@', '(at)', $s);
-			$s = str_replace('_', '\\_', $s);
-			return $s;
-		}
-
-		function bruch () {
-			return "\n\n\\nopagebreak[4]";
-		}
-
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
 		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
