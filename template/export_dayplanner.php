@@ -15,7 +15,6 @@ header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
 
 echo '\documentclass[10pt]{book}'."\n";
 echo '\usepackage[paperwidth=8cm, paperheight=12cm, outer=3mm, inner=12mm, top=3mm, bottom=3mm, scale=1, twoside]{geometry}'."\n";
-//echo '\usepackage[iso-8859-1]{inputenc}'.bruch();
 echo '\setlength{\parindent}{0cm}';
 echo '\usepackage[latin1]{inputenc}';
 
