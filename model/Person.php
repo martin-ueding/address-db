@@ -21,17 +21,10 @@ class Person {
 
 	public static function select_person_alles ($id) {
 		$filter = new Filter();
-		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
-		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
-		$filter->add_join('LEFT JOIN ad_laender ON land_r = l_id');
-		$filter->add_join('LEFT JOIN ad_orte ON ort_r = o_id');
-		$filter->add_join('LEFT JOIN ad_plz ON plz_r = plz_id');
-		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
-		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
+		$filter->add_address();
 		$filter->add_where('p_id = '.$id);
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().';';
-		$erg = mysql_query($sql);
+		$erg = $filter->get_erg();
 		return $erg;
 	}
 

@@ -72,21 +72,10 @@ class ExportController extends Controller {
 	 */
 	public function kitchen() {
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
-		# TODO Put all this into the filter class.
-		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
-		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
-		$filter->add_join('LEFT JOIN ad_laender ON land_r = l_id');
-		$filter->add_join('LEFT JOIN ad_orte ON ort_r = o_id');
-		$filter->add_join('LEFT JOIN ad_plz ON plz_r = plz_id');
-		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
-		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
-
-		# TODO Get query (or result even) out of the filter class.
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-		$erg = mysql_query($sql);
+		$filter->add_address();
 
 		$template = new Template(__CLASS__, __FUNCTION__);
-		$template->set('erg', $erg);
+		$template->set('erg', $filter->get_erg());
 		echo $template->html();
 
 		die();
@@ -103,19 +92,10 @@ class ExportController extends Controller {
 	public function csv() {
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
-		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
-		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
-		$filter->add_join('LEFT JOIN ad_laender ON land_r = l_id');
-		$filter->add_join('LEFT JOIN ad_orte ON ort_r = o_id');
-		$filter->add_join('LEFT JOIN ad_plz ON plz_r = plz_id');
-		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
-		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
-
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-		$erg = mysql_query($sql);
+		$filter->add_address();
 
 		$template = new Template(__CLASS__, __FUNCTION__);
-		$template->set('erg', $erg);
+		$template->set('erg', $filter->get_erg());
 		echo $template->html();
 
 		die();
@@ -131,19 +111,10 @@ class ExportController extends Controller {
 	 */
 	public function dayplanner() {
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
-		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
-		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
-		$filter->add_join('LEFT JOIN ad_laender ON land_r = l_id');
-		$filter->add_join('LEFT JOIN ad_orte ON ort_r = o_id');
-		$filter->add_join('LEFT JOIN ad_plz ON plz_r = plz_id');
-		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
-		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
-
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-		$erg = mysql_query($sql);
+		$filter->add_address();
 
 		$template = new Template(__CLASS__, __FUNCTION__);
-		$template->set('erg', $erg);
+		$template->set('erg', $filter->get_erg());
 		echo $template->html();
 
 		die();
@@ -158,12 +129,8 @@ class ExportController extends Controller {
 	public function birthday_calendar() {
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-
-		$erg = mysql_query($sql);
-
 		$template = new Template(__CLASS__, __FUNCTION__);
-		$template->set('erg', $erg);
+		$template->set('erg', $filter->get_erg());
 		echo $template->html();
 
 

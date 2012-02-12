@@ -39,63 +39,59 @@ class ListController extends Controller {
 			$filter->add_where('nachname like "'.$_GET['b'].'%"');
 		}
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-
 		/* Daten anzeigen */
-		if (!empty($sql)) {
-			$erg = mysql_query($sql);
+		$erg = $filter->get_erg();
 
-			$title = '';
+		$title = '';
 
-			if (!empty($_GET['b'])) {
-				$title = sprintf(
-					_('Last names starting with %s:'),
-					'<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
-				);
-			}
-
-			else if ($_SESSION['g'] != 0) {
-				$title = sprintf(
-					_('Group %s:'),
-					'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
-				);
-			}
-
-			else if ($_SESSION['f'] != 0) {
-				$title = sprintf(
-					_('Member %s:'),
-					'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
-				);
-			}
-
-			$template->set('title', $title);
-
-			$counts = sprintf(
-				ngettext(
-					'%d entry:',
-					'%d entries:', mysql_num_rows($erg)
-				),
-				mysql_num_rows($erg)
+		if (!empty($_GET['b'])) {
+			$title = sprintf(
+				_('Last names starting with %s:'),
+				'<em>'.$_GET['b'].'</em>', mysql_num_rows($erg)
 			);
+		}
 
-			$template->set('counts', $counts);
+		else if ($_SESSION['g'] != 0) {
+			$title = sprintf(
+				_('Group %s:'),
+				'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
+			);
+		}
+
+		else if ($_SESSION['f'] != 0) {
+			$title = sprintf(
+				_('Member %s:'),
+				'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
+			);
+		}
+
+		$template->set('title', $title);
+
+		$counts = sprintf(
+			ngettext(
+				'%d entry:',
+				'%d entries:', mysql_num_rows($erg)
+			),
+			mysql_num_rows($erg)
+		);
+
+		$template->set('counts', $counts);
 
 
-			$table = new Table($erg);
-			$template->set('table', $table->html());
+		$table = new Table($erg);
+		$template->set('table', $table->html());
 
-			// Collect email address from everybody to send off a mass email.
-			$erg = mysql_query($sql);
-			while ($l = mysql_fetch_assoc($erg)) {
-				if ($l['email_privat'] != "") {
-					$emailadressen[] = $l['email_privat'];
-				}
-				else if ($l['email_arbeit'] != "") {
-					$emailadressen[] = $l['email_arbeit'];
-				}
-				else if ($l['email_aux'] != "") {
-					$emailadressen[] = $l['email_aux'];
-				}
+		// Collect email address from everybody to send off a mass email.
+		$erg = $filter->get_erg();
+		while ($l = mysql_fetch_assoc($erg)) {
+			if ($l['email_privat'] != "") {
+				$emailadressen[] = $l['email_privat'];
+			}
+			else if ($l['email_arbeit'] != "") {
+				$emailadressen[] = $l['email_arbeit'];
+			}
+			else if ($l['email_aux'] != "") {
+				$emailadressen[] = $l['email_aux'];
 			}
 		}
 

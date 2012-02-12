@@ -23,10 +23,9 @@ class BirthdayController extends Controller {
 		$filter->add_where('geb_t != 0');
 		$filter->add_where('geb_m != 0');
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_m, geb_t, nachname;';
-		$erg = mysql_query($sql);
-
 		$birthdays = array();
+
+		$erg = $filter->get_erg();
 
 		while ($l = mysql_fetch_assoc($erg)) {
 			$birthdays[$l['geb_m']][] = $l;
@@ -45,10 +44,9 @@ class BirthdayController extends Controller {
 		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
-		$filter->add_where('geb_m='.date("n"));
+		$filter->add_where('geb_m = '.date("n"));
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
-		$erg = mysql_query($sql);
+		$erg = $filter->get_erg();
 		$this_persons = array();
 		while ($l = mysql_fetch_assoc($erg)) {
 			$this_persons[] = array(
@@ -66,11 +64,9 @@ class BirthdayController extends Controller {
 		$template->set('this_persons', $this_persons);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
-		$filter->add_where('geb_m='.((date("n")%12)+1));
+		$filter->add_where('geb_m = '.((date("n")%12)+1));
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY geb_t';
-
-		$erg = mysql_query($sql);
+		$erg = $filter->get_erg();
 		$next_persons = array();
 
 		while ($l = mysql_fetch_assoc($erg)) {
