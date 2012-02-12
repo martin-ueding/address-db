@@ -79,6 +79,7 @@ class ExportController extends Controller {
 
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+		# TODO Put all this into the filter class.
 		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
 		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
 		$filter->add_join('LEFT JOIN ad_laender ON land_r = l_id');
@@ -87,6 +88,7 @@ class ExportController extends Controller {
 		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
 		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
 
+		# TODO Get query (or result even) out of the filter class.
 		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
 		$erg = mysql_query($sql);
 
