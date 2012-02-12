@@ -99,3 +99,7 @@ ALTER TABLE `addresses`.`ad_persons` CHANGE COLUMN `geb_t` `birth_day` SMALLINT(
  CHANGE COLUMN `geb_m` `birth_month` SMALLINT(2) UNSIGNED DEFAULT NULL,
  CHANGE COLUMN `geb_j` `birth_year` INT(4) UNSIGNED DEFAULT NULL,
  DROP COLUMN `last_send`;
+
+ALTER TABLE `addresses`.`ad_members` CHANGE COLUMN `member` `name` VARCHAR(50)  CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL;
+
+ALTER TABLE `addresses`.`ad_groups` CHANGE COLUMN `group` `name` VARCHAR(50)  CHARACTER SET latin1 COLLATE latin1_german1_ci NOT NULL;

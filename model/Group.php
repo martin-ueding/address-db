@@ -1,34 +1,31 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+require_once('components/Filter.php');
+require_once('model/Model.php');
+
 /**
  * Access to groups.
  */
-class Group {
+class Group extends Model {
 	public static function get_name($id) {
-		$sql = 'SELECT gruppe FROM ad_gruppen WHERE g_id = '.$id.';';
+		$sql = 'SELECT name FROM ad_groups WHERE id = '.$id.';';
 		$erg = mysql_query($sql);
+		echo mysql_error();
 		if ($l = mysql_fetch_assoc($erg)) {
-			return $l['gruppe'];
+			return $l['name'];
 		}
 	}
 
-	public static function select_alle_gruppen () {
-		$sql = 'SELECT * FROM ad_gruppen ORDER BY gruppe;';
-		$erg = mysql_query($sql);
-		return $erg;
+	public static function get_all() {
+		$sql = 'SELECT id, name FROM ad_groups ORDER BY name;';
+		return Model::sql_to_array($sql);
 	}
 
 	public static function gruppe_ist_nicht_leer ($id) {
-		if (isset($_SESSION['f']) && $_SESSION['f'] != 0)
-			$sql = 'SELECT * FROM ad_flinks '.
-			'LEFT JOIN ad_per ON p_id=ad_flinks.person_lr '.
-			'LEFT JOIN ad_glinks ON ad_glinks.person_lr=p_id '.
-			'LEFT JOIN ad_gruppen ON g_id=gruppe_lr '.
-			'WHERE fmg_lr='.$_SESSION['f'].' && g_id='.$id.';';
-		else
-			$sql = 'SELECT * FROM ad_glinks '.
-			'WHERE gruppe_lr='.$id.';';
+		$filter = new Filter($_SESSION['f'], 0);
+		$filter->add_where('group_id = '.$id);
+		$sql = 'SELECT * FROM ad_groups_persons '.$filter->join().' WHERE '.$filter->where().';';
 		$erg = mysql_query($sql);
 		if (mysql_error() != "") {
 			echo $sql;
