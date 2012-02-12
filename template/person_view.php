@@ -108,7 +108,7 @@ if (!empty($person_loop['ftel_arbeit'])) {
 
 if (!empty($person_loop['ftel_mobil'])) {
 	echo '<tr>';
-	echo '<td class="links">'._('telephone mobile').': <i>'.Cellphone::handybetreiber(AreaCode::select_vw_id($person_loop['vw_mobil_r'])).'</i></td>';
+	echo '<td class="links">'._('telephone mobile').': <i>'.Cellphone::handybetreiber(AreaCode::select_vw_id($person_loop['fvw_mobil_r'])).'</i></td>';
 	echo '<td>'.AreaCode::select_vw_id($person_loop['fvw_mobil_r']).'-'.$person_loop['ftel_mobil'].' '.Callto::skplnk(AreaCode::select_vw_id($person_loop['fvw_mobil_r']).$person_loop['ftel_mobil']).'</td>';
 	echo '</tr>';
 }
