@@ -4,6 +4,8 @@
 /**
  * Viewing a Person.
  */
+
+require_once('helper/PersonDisplay.php');
 ?>
 <h1><?php echo _('display entry'); ?></h1>
 <?php
