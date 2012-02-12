@@ -141,6 +141,7 @@ class ExportController extends Controller {
 	 * Exports the data into a CakePHP named, JSON encoded array.
 	 */
 	public function json() {
+		echo '<code><pre>';
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_address();
 		$erg = $filter->get_erg();
@@ -148,94 +149,146 @@ class ExportController extends Controller {
 		$data = array();
 
 		while ($l = mysql_fetch_assoc($erg)) {
-			$data[] = array(
+			$current = array(
 				"Person" => array(
-					"id" => $l['p_id'],
+					//"id" => $l['p_id'],
 					"first_name" => $l['vorname'],
 					"middle_name" => $l['mittelname'],
 					"last_name" => $l['nachname'],
-					"form_of_address" => $l['anrede'],
-					"prefix" => $l['prafix'],
-					"suffix" => $l['suffix'],
 					"birth_name" => $l['geburtsname'],
 					"notes" => $l['pnotizen'],
 					"birthday" => sprintf("%04d-%02d-%02d", $l['geb_j'], $l['geb_t'], $l['geb_m']),
 					"modified" => date("r", $l['last_edit']),
 					"last_check" => date("r", $l['last_check']),
 				),
+				"Salutation" => array(
+					"name" => $l['anrede'],
+				),
+				"Suffix" => array(
+					"name" => $l['suffix'],
+				),
+				"Prefix" => array(
+					"name" => $l['prafix'],
+				),
 				"Address" => array(
-					"id" => $l['adresse_r'],
+					//"id" => $l['adresse_r'],
 					"street" => $l["strasse"],
 					"city" => $l["ortsname"],
 					"postral_code" => $l["plz"],
 					"country" => $l["land"],
 					"Phone" => array(
 						array(
-							"area_code" => AreaCode::select_vw_id($l['fvw_privat_r']),
-							"type" => "private",
+							"AreaCode" => array(
+								"code" => AreaCode::select_vw_id($l['fvw_privat_r']),
+							),
+							"Type" => array(
+								"name" => "private",
+							),
 							"number" => $l['ftel_privat'],
 						),
 						array(
-							"area_code" => AreaCode::select_vw_id($l['fvw_arbeit_r']),
-							"type" => "work",
+							"AreaCode" => array(
+								"code" => AreaCode::select_vw_id($l['fvw_arbeit_r']),
+							),
+							"Type" => array(
+								"name" => "work",
+							),
 							"number" => $l['ftel_arbeit'],
 						),
 						array(
-							"area_code" => AreaCode::select_vw_id($l['fvw_mobil_r']),
-							"type" => "mobile",
+							"AreaCode" => array(
+								"code" => AreaCode::select_vw_id($l['fvw_mobil_r']),
+							),
+							"Type" => array(
+								"name" => "mobile",
+							),
 							"number" => $l['ftel_mobil'],
 						),
 						array(
-							"area_code" => AreaCode::select_vw_id($l['fvw_fax_r']),
-							"type" => "fax",
+							"AreaCode" => array(
+								"code" => AreaCode::select_vw_id($l['fvw_fax_r']),
+							),
+							"Type" => array(
+								"name" => "fax",
+							),
 							"number" => $l['ftel_fax'],
 						),
 						array(
-							"area_code" => AreaCode::select_vw_id($l['fvw_aux_r']),
-							"type" => "aux",
+							"AreaCode" => array(
+								"code" => AreaCode::select_vw_id($l['fvw_aux_r']),
+							),
+							"Type" => array(
+								"name" => "aux",
+							),
 							"number" => $l['ftel_aux'],
 						),
 					),
 				),
 				"Phone" => array(
 					array(
-						"area_code" => AreaCode::select_vw_id($l['vw_privat_r']),
-						"type" => "private",
+						"AreaCode" => array(
+							"code" => AreaCode::select_vw_id($l['vw_privat_r']),
+						),
+						"Type" => array(
+							"name" => "private",
+						),
 						"number" => $l['tel_privat'],
 					),
 					array(
-						"area_code" => AreaCode::select_vw_id($l['vw_arbeit_r']),
-						"type" => "work",
+						"AreaCode" => array(
+							"code" => AreaCode::select_vw_id($l['vw_arbeit_r']),
+						),
+						"Type" => array(
+							"name" => "work",
+						),
 						"number" => $l['tel_arbeit'],
 					),
 					array(
-						"area_code" => AreaCode::select_vw_id($l['vw_mobil_r']),
-						"type" => "mobile",
+						"AreaCode" => array(
+							"code" => AreaCode::select_vw_id($l['vw_mobil_r']),
+						),
+						"Type" => array(
+							"name" => "mobile",
+						),
 						"number" => $l['tel_mobil'],
 					),
 					array(
-						"area_code" => AreaCode::select_vw_id($l['vw_fax_r']),
-						"type" => "fax",
+						"AreaCode" => array(
+							"code" => AreaCode::select_vw_id($l['vw_fax_r']),
+						),
+						"Type" => array(
+							"name" => "fax",
+						),
 						"number" => $l['tel_fax'],
 					),
 					array(
-						"area_code" => AreaCode::select_vw_id($l['vw_aux_r']),
-						"type" => "aux",
+						"AreaCode" => array(
+							"code" => AreaCode::select_vw_id($l['vw_aux_r']),
+						),
+						"Type" => array(
+							"name" => "aux",
+						),
 						"number" => $l['tel_aux'],
 					),
 				),
 				"Email" => array(
 					array(
 						"email" => $l['email_privat'],
-						"type" => "private",
+						"Type" => array(
+							"name" => "private",
+						),
 					),
 					array(
 						"email" => $l['email_arbeit'],
-						"type" => "work",
+						"Type" => array(
+							"name" => "work",
+						),
 					),
 					array(
 						"email" => $l['email_aux'],
-						"type" => "aux",
+						"Type" => array(
+							"name" => "aux",
+						),
 					)
 				),
 				"Homepage" => array(
@@ -249,35 +302,66 @@ class ExportController extends Controller {
 				"Messenger" => array(
 					array(
 						"alias" => $l['chat_aim'],
-						"service" => "AIM",
+						"MessengerService" => array(
+							"name" => "AIM",
+						),
 					),
 					array(
 						"alias" => $l['chat_msn'],
-						"service" => "MSN",
+						"MessengerService" => array(
+							"name" => "MSN",
+						),
 					),
 					array(
 						"alias" => $l['chat_icq'],
-						"service" => "ICQ",
+						"MessengerService" => array(
+							"name" => "ICQ",
+						),
 					),
 					array(
 						"alias" => $l['chat_yim'],
-						"service" => "Yahoo!",
+						"MessengerService" => array(
+							"name" => "Yahoo!",
+						),
 					),
 					array(
 						"alias" => $l['chat_skype'],
-						"service" => "Skype",
+						"MessengerService" => array(
+							"name" => "Skype",
+						),
 					),
 					array(
 						"alias" => $l['chat_aux'],
-						"service" => "Jabber",
+						"MessengerService" => array(
+							"name" => "Jabber",
+						),
 					),
 				),
 			);
 
+
+			$erg2 = Person::select_gruppen_zu_person($l['p_id']);
+			if (mysql_num_rows($erg2) > 0) {
+				while ($l2 = mysql_fetch_assoc($erg2)) {
+					$current["Group"][] = array(
+						"name" => $l2['gruppe'],
+					);
+
+				}
+			}
+			$erg2 = Person::select_fmg_zu_person($l['p_id']);
+			if (mysql_num_rows($erg2) > 0) {
+				while ($l2 = mysql_fetch_assoc($erg2)) {
+					$current["Member"][] = array(
+						"name" => $l2['fmg'],
+					);
+				}
+			}
+
+			$data[] = $current;
 		}
 
 		//echo json_encode($data);
-		echo '<code><pre>';
 		print_r($data);
 		echo '</code></pre>';
 		die();
