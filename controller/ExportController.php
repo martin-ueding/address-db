@@ -136,5 +136,151 @@ class ExportController extends Controller {
 
 		die();
 	}
+
+	/**
+	 * Exports the data into a CakePHP named, JSON encoded array.
+	 */
+	public function json() {
+		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
+		$filter->add_address();
+		$erg = $filter->get_erg();
+
+		$data = array();
+
+		while ($l = mysql_fetch_assoc($erg)) {
+			$data[] = array(
+				"Person" => array(
+					"id" => $l['p_id'],
+					"first_name" => $l['vorname'],
+					"middle_name" => $l['mittelname'],
+					"last_name" => $l['nachname'],
+					"form_of_address" => $l['anrede'],
+					"prefix" => $l['prafix'],
+					"suffix" => $l['suffix'],
+					"birth_name" => $l['geburtsname'],
+					"notes" => $l['pnotizen'],
+					"birthday" => sprintf("%04d-%02d-%02d", $l['geb_j'], $l['geb_t'], $l['geb_m']),
+					"modified" => date("r", $l['last_edit']),
+					"last_check" => date("r", $l['last_check']),
+				),
+				"Address" => array(
+					"id" => $l['adresse_r'],
+					"street" => $l["strasse"],
+					"city" => $l["ortsname"],
+					"postral_code" => $l["plz"],
+					"country" => $l["land"],
+					"Phone" => array(
+						array(
+							"area_code" => AreaCode::select_vw_id($l['fvw_privat_r']),
+							"type" => "private",
+							"number" => $l['ftel_privat'],
+						),
+						array(
+							"area_code" => AreaCode::select_vw_id($l['fvw_arbeit_r']),
+							"type" => "work",
+							"number" => $l['ftel_arbeit'],
+						),
+						array(
+							"area_code" => AreaCode::select_vw_id($l['fvw_mobil_r']),
+							"type" => "mobile",
+							"number" => $l['ftel_mobil'],
+						),
+						array(
+							"area_code" => AreaCode::select_vw_id($l['fvw_fax_r']),
+							"type" => "fax",
+							"number" => $l['ftel_fax'],
+						),
+						array(
+							"area_code" => AreaCode::select_vw_id($l['fvw_aux_r']),
+							"type" => "aux",
+							"number" => $l['ftel_aux'],
+						),
+					),
+				),
+				"Phone" => array(
+					array(
+						"area_code" => AreaCode::select_vw_id($l['vw_privat_r']),
+						"type" => "private",
+						"number" => $l['tel_privat'],
+					),
+					array(
+						"area_code" => AreaCode::select_vw_id($l['vw_arbeit_r']),
+						"type" => "work",
+						"number" => $l['tel_arbeit'],
+					),
+					array(
+						"area_code" => AreaCode::select_vw_id($l['vw_mobil_r']),
+						"type" => "mobile",
+						"number" => $l['tel_mobil'],
+					),
+					array(
+						"area_code" => AreaCode::select_vw_id($l['vw_fax_r']),
+						"type" => "fax",
+						"number" => $l['tel_fax'],
+					),
+					array(
+						"area_code" => AreaCode::select_vw_id($l['vw_aux_r']),
+						"type" => "aux",
+						"number" => $l['tel_aux'],
+					),
+				),
+				"Email" => array(
+					array(
+						"email" => $l['email_privat'],
+						"type" => "private",
+					),
+					array(
+						"email" => $l['email_arbeit'],
+						"type" => "work",
+					),
+					array(
+						"email" => $l['email_aux'],
+						"type" => "aux",
+					)
+				),
+				"Homepage" => array(
+					array(
+						"url" => $l['hp1'],
+					),
+					array(
+						"url" => $l['hp2'],
+					),
+				),
+				"Messenger" => array(
+					array(
+						"alias" => $l['chat_aim'],
+						"service" => "AIM",
+					),
+					array(
+						"alias" => $l['chat_msn'],
+						"service" => "MSN",
+					),
+					array(
+						"alias" => $l['chat_icq'],
+						"service" => "ICQ",
+					),
+					array(
+						"alias" => $l['chat_yim'],
+						"service" => "Yahoo!",
+					),
+					array(
+						"alias" => $l['chat_skype'],
+						"service" => "Skype",
+					),
+					array(
+						"alias" => $l['chat_aux'],
+						"service" => "Jabber",
+					),
+				),
+			);
+
+		}
+
+		//echo json_encode($data);
+		echo '<code><pre>';
+		print_r($data);
+		echo '</code></pre>';
+		die();
+	}
 }
 ?>

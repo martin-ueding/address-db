@@ -69,6 +69,7 @@ echo '<li><a href="?mode=Export::vcard_multiple">'._('VCard').'</a></li>';
 echo '<li><a href="?mode=Export::csv">'._('CSV').'</a></li>';
 echo '<li><a href="?mode=Export::dayplanner">'._('dayplanner').'</a></li>';
 echo '<li><a href="?mode=Export::birthday_calendar">'._('ICS birthday calendar').'</a></li>';
+echo '<li><a href="?mode=Export::json">'._('JSON').'</a></li>';
 echo Navigation::spacer();
 echo '<li><b>'._('maintenance').'</b></li>';
 echo Navigation::nav_action_link('Maintenance::no_title', $current_mode, _('no form of address'));
