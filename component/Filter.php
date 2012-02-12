@@ -76,5 +76,28 @@ class Filter {
 			return "true";
 		}
 	}
+
+	/**
+	 * Adds the needed JOIN commands for the Address.
+	 */
+	public function add_address() {
+		$this->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
+		$this->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
+		$this->add_join('LEFT JOIN ad_laender ON land_r = l_id');
+		$this->add_join('LEFT JOIN ad_orte ON ort_r = o_id');
+		$this->add_join('LEFT JOIN ad_plz ON plz_r = plz_id');
+		$this->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
+		$this->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
+	}
+
+	/**
+	 * Performs the query.
+	 *
+	 * @return mixed MySQL query result.
+	 */
+	public function get_erg() {
+		$sql = 'SELECT * FROM ad_per '.$this->join().' WHERE '.$this->where().' ORDER BY nachname, vorname;';
+		return mysql_query($sql);
+	}
 }
 ?>
