@@ -5,6 +5,8 @@
  * Export into a ICS calendar with birthdays.
  */
 
+header("Content-Type: text/calendar; charset=iso-8859-1");
+
 echo 'BEGIN:VCALENDAR'."\n";
 echo 'VERSION:2.0'."\n";
 echo 'X-WR-CALNAME:'._('Birthdays')."\n";
