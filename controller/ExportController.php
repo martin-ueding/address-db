@@ -133,7 +133,6 @@ class ExportController extends Controller {
 		$template->set('erg', $filter->get_erg());
 		echo $template->html();
 
-
 		die();
 	}
 
