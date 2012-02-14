@@ -22,6 +22,8 @@ class BirthdayController extends Controller {
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_t != 0');
 		$filter->add_where('geb_m != 0');
+		$filter->add_order('geb_m');
+		$filter->add_order('geb_t');
 
 		$birthdays = array();
 
@@ -45,6 +47,8 @@ class BirthdayController extends Controller {
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_m = '.date("n"));
+		$filter->add_order('geb_m');
+		$filter->add_order('geb_t');
 
 		$erg = $filter->get_erg();
 		$this_persons = array();
@@ -65,6 +69,8 @@ class BirthdayController extends Controller {
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_where('geb_m = '.((date("n")%12)+1));
+		$filter->add_order('geb_m');
+		$filter->add_order('geb_t');
 
 		$erg = $filter->get_erg();
 		$next_persons = array();

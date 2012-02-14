@@ -15,6 +15,7 @@ class Filter {
 		$this->snippets = array(
 			"join" => array(),
 			"where" => array(),
+			"order" => array(),
 		);
 
 		if ($fmg != 0) {
@@ -96,8 +97,25 @@ class Filter {
 	 * @return mixed MySQL query result.
 	 */
 	public function get_erg() {
-		$sql = 'SELECT * FROM ad_per '.$this->join().' WHERE '.$this->where().' ORDER BY nachname, vorname;';
+		$sql = 'SELECT * FROM ad_per '.$this->join().' WHERE '.$this->where().' ORDER BY '.$this->order().';';
 		return mysql_query($sql);
+	}
+
+	public function add_order($key) {
+		$this->snippets['order'][] = $key;
+	}
+
+	public function order() {
+		$orders = array();
+
+		if (count($this->snippets['order']) == 0) {
+			$orders = array('nachname, vorname');
+		}
+		else {
+			$orders = $this->snippets['order'];
+		}
+
+		return implode(', ', $orders);
 	}
 }
 ?>
