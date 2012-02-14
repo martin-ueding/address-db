@@ -6,6 +6,7 @@
  */
 
 header("Content-Type: text/calendar; charset=iso-8859-1");
+header('Content-Disposition: attachment; filename="adressen-'.time().'.ics"');
 
 echo 'BEGIN:VCALENDAR'."\n";
 echo 'VERSION:2.0'."\n";
