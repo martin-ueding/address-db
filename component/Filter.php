@@ -2,7 +2,7 @@
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
 /**
- * Gathers JOIN and WHERE commands for a MySQL query.
+ * Gathers JOIN, WHERE and ORDER commands for a MySQL query.
  */
 class Filter {
 	/**
@@ -101,10 +101,22 @@ class Filter {
 		return mysql_query($sql);
 	}
 
+	/**
+	 * Add a key for ordering.
+	 *
+	 * The first key is the primary key used for sorting.
+	 *
+	 * @param string $key Key to sort with.
+	 */
 	public function add_order($key) {
 		$this->snippets['order'][] = $key;
 	}
 
+	/**
+	 * Returns the combined ORDER statements.
+	 *
+	 * @return string Combimed ORDER statements.
+	 */
 	public function order() {
 		$orders = array();
 
