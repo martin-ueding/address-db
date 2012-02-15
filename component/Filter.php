@@ -19,12 +19,15 @@ class Filter {
 		);
 
 		if ($fmg != 0) {
-			$this->snippets["join"][] = 'JOIN ad_flinks ON ad_flinks.person_lr = p_id';
-			$this->snippets["where"][] = 'fmg_lr = '.$fmg;
+			$this->snippets["join"][] =
+				'JOIN ad_flinks ON ad_flinks.person_lr = p_id';
+			$this->snippets["where"][] =
+				'fmg_lr = '.$fmg;
 		}
 
 		if ($group != 0) {
-			$this->snippets["join"][] = 'JOIN ad_glinks ON ad_glinks.person_lr = p_id';
+			$this->snippets["join"][] =
+				'JOIN ad_glinks ON ad_glinks.person_lr = p_id';
 			$this->snippets["where"][] = 'gruppe_lr = '.$group;
 		}
 	}
@@ -97,7 +100,10 @@ class Filter {
 	 * @return mixed MySQL query result.
 	 */
 	public function get_erg() {
-		$sql = 'SELECT * FROM ad_per '.$this->join().' WHERE '.$this->where().' ORDER BY '.$this->order().';';
+		$sql = 'SELECT * '
+			.'FROM ad_per '.$this->join().' '
+			.'WHERE '.$this->where().' '
+			.'ORDER BY '.$this->order().';';
 		return mysql_query($sql);
 	}
 

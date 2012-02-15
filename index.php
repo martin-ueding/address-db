@@ -52,7 +52,8 @@ $mode = isset($_GET['mode']) ? $_GET['mode'] : 'Birthday::upcoming_birthdays';
 
 
 $index_template = new Template('index');
-$index_template->set('body_class', $mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
+$index_template->set('body_class',
+	$mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
 
 # TODO
 $header_controller = new HeaderController();
@@ -66,7 +67,8 @@ if (isset($mode)) {
 
 	if ($content_controller != null) {
 		$content = Controller::call($mode);
-		$index_template->set('page_title', $content_controller->get_page_title());
+		$index_template->set('page_title',
+			$content_controller->get_page_title());
 	}
 }
 
