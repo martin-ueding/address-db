@@ -47,7 +47,8 @@ class PictureResize {
 			);
 		}
 		$orignal = imagecreatefromjpeg($this->filename);
-		$resized = imagecreatetruecolor($this->new_width(), $this->new_height());
+		$resized = imagecreatetruecolor($this->new_width(),
+			$this->new_height());
 
 		# Resize the image.
 		imagecopyresampled($resized, $orignal, 0, 0, 0, 0, $this->new_width(),

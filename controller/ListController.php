@@ -12,7 +12,8 @@ class ListController extends Controller {
 		$this->history_save();
 
 		if (!empty($_GET['b'])) {
-			$page_title = _('Address DB').': '.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
+			$page_title = _('Address DB').': '
+				.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
 		}
 		else if (!empty($_GET['f'])) {
 			# XXX Use model.
@@ -22,7 +23,8 @@ class ListController extends Controller {
 			if ($name = mysql_fetch_assoc($name_erg)) {
 				$f_name = $name['fmg'];
 			}
-			$page_title = _('Address DB').': '.sprintf(_('entries for %s'), $f_name);
+			$page_title = _('Address DB').': '
+				.sprintf(_('entries for %s'), $f_name);
 		}
 		else {
 			$page_title = _('Address DB').': '._('list');
@@ -54,14 +56,16 @@ class ListController extends Controller {
 		else if ($_SESSION['g'] != 0) {
 			$title = sprintf(
 				_('Group %s:'),
-				'<em>'.Group::get_name($_SESSION['g']).'</em>', mysql_num_rows($erg)
+				'<em>'.Group::get_name($_SESSION['g']).'</em>',
+				mysql_num_rows($erg)
 			);
 		}
 
 		else if ($_SESSION['f'] != 0) {
 			$title = sprintf(
 				_('Member %s:'),
-				'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>', mysql_num_rows($erg)
+				'<em>'.FamilyMember::get_name($_SESSION['f']).'</em>',
+				mysql_num_rows($erg)
 			);
 		}
 
@@ -95,7 +99,8 @@ class ListController extends Controller {
 			}
 		}
 
-		$template->set('allow_export', empty($_GET['b']) && empty($_GET['g']) && !empty($_GET['f']));
+		$template->set('allow_export', empty($_GET['b']) && empty($_GET['g'])
+			&& !empty($_GET['f']));
 
 		if (!empty($emailadressen)) {
 			$template->set('email_addresses', implode(',', $emailadressen));

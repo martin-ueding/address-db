@@ -51,9 +51,7 @@ class ExportController extends Controller {
 		$filter->add_join('LEFT JOIN ad_prafixe ON prafix_r = prafix_id');
 		$filter->add_join('LEFT JOIN ad_suffixe ON suffix_r = s_id');
 
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-
-		$erg = mysql_query($sql);
+		$erg = $filter->get_erg();
 
 		$template = new Template(__CLASS__, __FUNCTION__);
 		$template->set('erg', $erg);

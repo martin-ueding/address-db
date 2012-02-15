@@ -8,9 +8,7 @@ require_once('helper/Table.php');
  */
 class Missing {
 	public function __construct($filter) {
-		$sql = 'SELECT * FROM ad_per '.$filter->join().' WHERE '.$filter->where().' ORDER BY nachname, vorname;';
-		$erg = mysql_query($sql);
-
+		$erg = $filter->get_erg();
 		$this->table = new Table($erg);
 	}
 

@@ -93,7 +93,8 @@ class HeaderController extends Controller {
 			$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 			$filter->add_where('nachname like "'.$b.'%"');
 
-			$sql = 'SELECT p_id FROM ad_per '.$filter->join().' WHERE '.$filter->where().';';
+			$sql = 'SELECT p_id FROM ad_per '.$filter->join().' WHERE '
+				.$filter->where().';';
 
 			$erg = mysql_query($sql);
 			if (mysql_num_rows($erg) > 0) {

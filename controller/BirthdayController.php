@@ -16,7 +16,9 @@ class BirthdayController extends Controller {
 
 		$template = new Template(__CLASS__, __FUNCTION__);
 
-		$monate = array(_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December'));
+		$monate = array(_('January'), _('February'), _('March'), _('April'),
+			_('May'), _('June'), _('July'), _('August'), _('September'),
+			_('October'), _('November'), _('December'));
 		$template->set('months', $monate);
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
@@ -54,7 +56,8 @@ class BirthdayController extends Controller {
 		$this_persons = array();
 		while ($l = mysql_fetch_assoc($erg)) {
 			$this_persons[] = array(
-				'age' => $l['geb_j'] > 1500 ? '('.(date("Y")-$l['geb_j']).')' : '&nbsp',
+				'age' => $l['geb_j'] > 1500 ? '('.(date("Y")-$l['geb_j']).')'
+				: '&nbsp',
 				'day' => $l['geb_t'],
 				'first_name' => $l['vorname'],
 				'had_birthday' => $l['geb_t'] < date("j"),

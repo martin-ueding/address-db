@@ -32,11 +32,13 @@ class Table {
 			echo '</td>';
 
 			echo '<td align="right">';
-			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">'.$l['vorname'].'</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">'.
+				$l['vorname'].'</a>';
 			echo '</td>';
 
 			echo '<td>';
-			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">'.$l['nachname'].'</a>';
+			echo '<a href="?mode=Person::view&id='.$l['p_id'].'">'.
+				$l['nachname'].'</a>';
 			echo '</td>';
 
 			echo '</tr>';
