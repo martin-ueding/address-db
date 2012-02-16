@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-16 23:07+0100\n"
+"POT-Creation-Date: 2012-02-16 23:14+0100\n"
 "PO-Revision-Date: 2011-04-08 21:36+0000\n"
 "Last-Translator: Christopher <cstandaert@srs.be>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -146,11 +146,6 @@ msgstr ""
 msgid "Error during deletion of image %s!"
 msgstr ""
 
-#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
-#, fuzzy
-msgid "Fax"
-msgstr "fax"
-
 #: ../controller/BirthdayController.php:19
 msgid "February"
 msgstr "Februari"
@@ -167,10 +162,6 @@ msgstr ""
 #, fuzzy, php-format
 msgid "Group %s:"
 msgstr "groepen"
-
-#: ../template/export_kitchen.php:63 ../template/export_kitchen.php:79
-msgid "Handy"
-msgstr ""
 
 #: ../template/header.php:71
 msgid "ICS birthday calendar"
@@ -285,18 +276,6 @@ msgstr ""
 
 #: ../helper/ZodiacSign.php:36
 msgid "Taurus"
-msgstr ""
-
-#: ../template/export_kitchen.php:69 ../template/export_kitchen.php:85
-msgid "Tel"
-msgstr ""
-
-#: ../template/export_kitchen.php:60 ../template/export_kitchen.php:76
-msgid "Tel Arbeit"
-msgstr ""
-
-#: ../template/export_kitchen.php:57 ../template/export_kitchen.php:73
-msgid "Tel Privat"
 msgstr ""
 
 #: ../controller/PersonController.php:805
@@ -643,6 +622,7 @@ msgid "export"
 msgstr ""
 
 #: ../template/person_view.php:120 ../template/person_view.php:160
+#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
 #: ../template/person_form.php:197 ../template/person_form.php:248
 msgid "fax"
 msgstr "fax"
@@ -828,6 +808,23 @@ msgstr ""
 msgid "personal contact information"
 msgstr ""
 
+#: ../template/export_kitchen.php:63 ../template/export_kitchen.php:79
+#, fuzzy
+msgid "phone mobile"
+msgstr "mobiel"
+
+#: ../template/export_kitchen.php:69 ../template/export_kitchen.php:85
+msgid "phone other"
+msgstr ""
+
+#: ../template/export_kitchen.php:57 ../template/export_kitchen.php:73
+msgid "phone private"
+msgstr ""
+
+#: ../template/export_kitchen.php:60 ../template/export_kitchen.php:76
+msgid "phone work"
+msgstr ""
+
 #: ../template/picture_edit.php:8
 msgid "picture upload"
 msgstr ""
@@ -972,6 +969,10 @@ msgstr "werk"
 #: ../template/person_view.php:338
 msgid "yes"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Fax"
+#~ msgstr "fax"
 
 #~ msgid "PHP Family Address DB"
 #~ msgstr "PHP familie adres informatiebank"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-16 23:07+0100\n"
+"POT-Creation-Date: 2012-02-16 23:14+0100\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -95,7 +95,7 @@ msgstr "Geburtstage"
 
 #: ../template/header.php:69
 msgid "CSV"
-msgstr ""
+msgstr "CSV"
 
 #: ../helper/ZodiacSign.php:44
 msgid "Cancer"
@@ -146,10 +146,6 @@ msgstr "Englisch"
 msgid "Error during deletion of image %s!"
 msgstr "Fehler beim Löschen des Bildes %s!"
 
-#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
-msgid "Fax"
-msgstr "Fax"
-
 #: ../controller/BirthdayController.php:19
 msgid "February"
 msgstr "Februar"
@@ -167,10 +163,6 @@ msgstr "Deutsch"
 msgid "Group %s:"
 msgstr "Gruppe %s"
 
-#: ../template/export_kitchen.php:63 ../template/export_kitchen.php:79
-msgid "Handy"
-msgstr ""
-
 #: ../template/header.php:71
 msgid "ICS birthday calendar"
 msgstr "ICS Geburtstagskalender"
@@ -181,7 +173,7 @@ msgstr "In welchen Gruppen ist diese Person?"
 
 #: ../template/header.php:72
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #: ../controller/BirthdayController.php:19
 msgid "January"
@@ -286,18 +278,6 @@ msgstr "Sicher, löschen!"
 msgid "Taurus"
 msgstr "Stier"
 
-#: ../template/export_kitchen.php:69 ../template/export_kitchen.php:85
-msgid "Tel"
-msgstr ""
-
-#: ../template/export_kitchen.php:60 ../template/export_kitchen.php:76
-msgid "Tel Arbeit"
-msgstr ""
-
-#: ../template/export_kitchen.php:57 ../template/export_kitchen.php:73
-msgid "Tel Privat"
-msgstr "Tel Privat"
-
 #: ../controller/PersonController.php:805
 #, php-format
 msgid "The entry %s was deleted."
@@ -345,7 +325,7 @@ msgstr "Türkisch"
 
 #: ../template/header.php:68
 msgid "VCard"
-msgstr ""
+msgstr "VCard"
 
 #: ../helper/ZodiacSign.php:52
 msgid "Virgo"
@@ -643,6 +623,7 @@ msgid "export"
 msgstr "Export"
 
 #: ../template/person_view.php:120 ../template/person_view.php:160
+#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
 #: ../template/person_form.php:197 ../template/person_form.php:248
 msgid "fax"
 msgstr "Fax"
@@ -826,6 +807,22 @@ msgstr "Teil %d von %d"
 msgid "personal contact information"
 msgstr "persönliche Kontaktinformationen"
 
+#: ../template/export_kitchen.php:63 ../template/export_kitchen.php:79
+msgid "phone mobile"
+msgstr "Telefon mobil"
+
+#: ../template/export_kitchen.php:69 ../template/export_kitchen.php:85
+msgid "phone other"
+msgstr "Telefon sonstiges"
+
+#: ../template/export_kitchen.php:57 ../template/export_kitchen.php:73
+msgid "phone private"
+msgstr "Telefon privat"
+
+#: ../template/export_kitchen.php:60 ../template/export_kitchen.php:76
+msgid "phone work"
+msgstr "Telefon geschäftlich"
+
 #: ../template/picture_edit.php:8
 msgid "picture upload"
 msgstr "Bild hochladen"
@@ -969,6 +966,12 @@ msgstr "geschäftlich"
 #: ../template/person_view.php:338
 msgid "yes"
 msgstr "ja"
+
+#~ msgid "Fax"
+#~ msgstr "Fax"
+
+#~ msgid "Tel Privat"
+#~ msgstr "Tel Privat"
 
 #~ msgid "Could not select DB."
 #~ msgstr "Konnte DB nicht auswählen."
