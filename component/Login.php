@@ -39,3 +39,5 @@ class Login {
 		return $this->errors;
 	}
 }
+
+new Login('database.ini');

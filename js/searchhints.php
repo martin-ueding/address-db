@@ -5,7 +5,7 @@ require_once('component/Filter.php');
 
 session_start();
 
-include('../_config.inc.php');
+require_once('component/Login.php');
 
 $q = $_POST['query'];
 

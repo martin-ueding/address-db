@@ -14,8 +14,6 @@ require_once('model/Country.php');
 require_once('model/Person.php');
 require_once('model/PostralCode.php');
 
-include('_config.inc.php');
-
 class PersonController extends Controller {
 	public function create() {
 		$this->set_page_title(_('Address DB').': '._('create entry'));

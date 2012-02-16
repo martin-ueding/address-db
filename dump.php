@@ -3,7 +3,7 @@
 // http://www.wer-weiss-was.de/theme163/article2952225.html
 // changes Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
-include('_config.inc.php');
+require_once('component/Login.php');
 
 $tables = mysql_query("SHOW TABLES FROM ".$db);
 while ($cells = mysql_fetch_array($tables)) {

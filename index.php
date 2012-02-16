@@ -32,8 +32,6 @@ if (!isset($_SESSION['g'])) {
 // set up gettext support
 include('inc/setup_gettext.inc.php');
 
-$login = new Login('database.ini');
-
 // import id and get everything there is to know about that person
 if (isset($_GET['id'])) {
 	$id = (int)$_GET['id'];
