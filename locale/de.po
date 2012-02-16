@@ -966,18 +966,3 @@ msgstr "geschäftlich"
 #: ../template/person_view.php:338
 msgid "yes"
 msgstr "ja"
-
-#~ msgid "Fax"
-#~ msgstr "Fax"
-
-#~ msgid "Tel Privat"
-#~ msgstr "Tel Privat"
-
-#~ msgid "Could not select DB."
-#~ msgstr "Konnte DB nicht auswählen."
-
-#~ msgid "You need to create a config file"
-#~ msgstr "Sie müssen eine Konfigurationsdatei anlegen."
-
-#~ msgid "switch between a select and a manual input"
-#~ msgstr "wechsle zwischen Auswahl und manueller Eingabe"
