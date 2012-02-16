@@ -65,6 +65,7 @@ class HeaderController extends Controller {
 		$template->set('group_all_request', $request->join());
 		$template->set('group_all_class', $_SESSION['g'] == 0 ? 'active' : '');
 
+		$group_links = array();
 		$erg = Group::select_alle_gruppen();
 		while ($l = mysql_fetch_assoc($erg)) {
 			if (Group::gruppe_ist_nicht_leer($l['g_id'])) {
@@ -84,7 +85,6 @@ class HeaderController extends Controller {
 				);
 			}
 		}
-		# FIXME Isset here and in template.
 		$template->set('group_links', $group_links);
 
 		$buchstaben = range('A', 'Z');
