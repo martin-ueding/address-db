@@ -34,14 +34,6 @@ include('inc/setup_gettext.inc.php');
 
 $login = new Login('database.ini');
 
-// include libs
-if (file_exists('_config.inc.php')) {
-	include('_config.inc.php');
-}
-else {
-	header('location:../install/install.php');
-}
-
 // import id and get everything there is to know about that person
 if (isset($_GET['id'])) {
 	$id = (int)$_GET['id'];

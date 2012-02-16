@@ -44,7 +44,7 @@ class DateFormat {
 			else if ($stamp == 0)
 				return _('never');
 			else
-				return _('on the').' '.date($date_format, $stamp);
+				return _('on the').' '.date('Y-m-d', $stamp);
 		}
 		else {
 			return _('in the future ...');
