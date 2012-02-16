@@ -2,6 +2,7 @@
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
 require_once('component/History.php');
+require_once('component/Login.php');
 require_once('component/Template.php');
 require_once('controller/HeaderController.php');
 require_once('model/Person.php');
@@ -30,6 +31,8 @@ if (!isset($_SESSION['g'])) {
 
 // set up gettext support
 include('inc/setup_gettext.inc.php');
+
+$login = new Login('database.ini');
 
 // include libs
 if (file_exists('_config.inc.php')) {
