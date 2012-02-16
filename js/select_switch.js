@@ -6,7 +6,7 @@
 $(initSwitchFields);
 
 function initSwitchFields() {
-	$("input.manual_area_code").hide(0).parent().children("input.manual_area_code").before("<img src=\'gfx/agt_reload.png\' class=\'switch_fields\' title=\''._('switch between a select and a manual input').'\' />");
+	$("input.manual_area_code").hide(0).parent().children("input.manual_area_code").before("<img src=\'gfx/agt_reload.png\' class=\'switch_fields\' />");
 
 	$("img.switch_fields").click(function () {
 		if ($(this).parent().children("select").css("display") == "none") {
