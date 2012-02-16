@@ -54,35 +54,35 @@ while ($l = mysql_fetch_assoc($erg)) {
 	}
 
 	if (!empty($l['tel_privat']))
-		$content .= _('Tel Privat').': '.AreaCode::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].Latex::bruch();
+		$content .= _('phone private').': '.AreaCode::select_vw_id($l['vw_privat_r']).'-'.$l['tel_privat'].Latex::bruch();
 
 	if (!empty($l['tel_arbeit']))
-		$content .= _('Tel Arbeit').': '.AreaCode::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].Latex::bruch();
+		$content .= _('phone work').': '.AreaCode::select_vw_id($l['vw_arbeit_r']).'-'.$l['tel_arbeit'].Latex::bruch();
 
 	if (!empty($l['tel_mobil']))
-		$content .= _('Handy').': '.AreaCode::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].Latex::bruch();
+		$content .= _('phone mobile').': '.AreaCode::select_vw_id($l['vw_mobil_r']).'-'.$l['tel_mobil'].Latex::bruch();
 
 	if (!empty($l['tel_fax']))
-		$content .= _('Fax').': '.AreaCode::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].Latex::bruch();
+		$content .= _('fax').': '.AreaCode::select_vw_id($l['vw_fax_r']).'-'.$l['tel_fax'].Latex::bruch();
 
 	if (!empty($l['tel_aux']))
-		$content .= _('Tel').': '.AreaCode::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].Latex::bruch();
+		$content .= _('phone other').': '.AreaCode::select_vw_id($l['vw_aux_r']).'-'.$l['tel_aux'].Latex::bruch();
 
 	if (isset($last) && $last['adresse_r'] != $l['adresse_r']) {
 		if (!empty($l['ftel_privat']))
-			$content .= _('Tel Privat').': '.AreaCode::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].Latex::bruch();
+			$content .= _('phone private').': '.AreaCode::select_vw_id($l['fvw_privat_r']).'-'.$l['ftel_privat'].Latex::bruch();
 
 		if (!empty($l['ftel_arbeit']))
-			$content .= _('Tel Arbeit').': '.AreaCode::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].Latex::bruch();
+			$content .= _('phone work').': '.AreaCode::select_vw_id($l['fvw_arbeit_r']).'-'.$l['ftel_arbeit'].Latex::bruch();
 
 		if (!empty($l['ftel_mobil']))
-			$content .= _('Handy').': '.AreaCode::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].Latex::bruch();
+			$content .= _('phone mobile').': '.AreaCode::select_vw_id($l['fvw_mobil_r']).'-'.$l['ftel_mobil'].Latex::bruch();
 
 		if (!empty($l['ftel_fax']))
-			$content .= _('Fax').': '.AreaCode::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].Latex::bruch();
+			$content .= _('fax').': '.AreaCode::select_vw_id($l['fvw_fax_r']).'-'.$l['ftel_fax'].Latex::bruch();
 
 		if (!empty($l['ftel_aux']))
-			$content .= _('Tel').': '.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].Latex::bruch();
+			$content .= _('phone other').': '.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux'].Latex::bruch();
 	}
 
 
