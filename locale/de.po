@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-14 12:05+0100\n"
+"POT-Creation-Date: 2012-02-16 23:07+0100\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "%d entries were deleted."
 msgstr "%d Einträge wurden gelöscht."
 
-#: ../controller/ListController.php:72
+#: ../controller/ListController.php:70
 #, php-format
 msgid "%d entry:"
 msgid_plural "%d entries:"
@@ -47,11 +47,11 @@ msgid "(today %d years old)"
 msgstr "(heute %d Jahre alt)"
 
 #: ../controller/BirthdayController.php:15
-#: ../controller/BirthdayController.php:44
-#: ../controller/PersonController.php:21
-#: ../controller/PersonController.php:770
-#: ../controller/PersonController.php:837
-#: ../controller/PersonController.php:863
+#: ../controller/BirthdayController.php:46
+#: ../controller/PersonController.php:19
+#: ../controller/PersonController.php:768
+#: ../controller/PersonController.php:835
+#: ../controller/PersonController.php:861
 #: ../controller/MaintenanceController.php:12
 #: ../controller/MaintenanceController.php:20
 #: ../controller/MaintenanceController.php:35
@@ -61,11 +61,11 @@ msgstr "(heute %d Jahre alt)"
 #: ../controller/PictureController.php:28
 #: ../controller/PictureController.php:64 ../controller/Controller.php:27
 #: ../controller/SearchController.php:12 ../controller/ListController.php:15
-#: ../controller/ListController.php:25 ../controller/ListController.php:28
+#: ../controller/ListController.php:20 ../controller/ListController.php:24
 msgid "Address DB"
 msgstr "Adressdatenbank"
 
-#: ../template/export_birthday_calendar.php:11
+#: ../template/export_birthday_calendar.php:14
 msgid "Address Database"
 msgstr "Adressdatebank"
 
@@ -81,15 +81,15 @@ msgstr "Wassermann"
 msgid "Aries"
 msgstr "Widder"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:20
 msgid "August"
 msgstr "August"
 
-#: ../template/export_birthday_calendar.php:38
+#: ../template/export_birthday_calendar.php:41
 msgid "Birthday"
 msgstr "Geburtstag"
 
-#: ../template/export_birthday_calendar.php:10
+#: ../template/export_birthday_calendar.php:13
 msgid "Birthdays"
 msgstr "Geburtstage"
 
@@ -114,11 +114,7 @@ msgstr "Steinbock"
 msgid "Company"
 msgstr "Firma"
 
-#: ../_config.inc.php:29
-msgid "Could not select DB."
-msgstr "Konnte DB nicht auswählen."
-
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:21
 msgid "December"
 msgstr "Dezember"
 
@@ -150,6 +146,11 @@ msgstr "Englisch"
 msgid "Error during deletion of image %s!"
 msgstr "Fehler beim Löschen des Bildes %s!"
 
+#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
+#, fuzzy
+msgid "Fax"
+msgstr "Fax"
+
 #: ../controller/BirthdayController.php:19
 msgid "February"
 msgstr "Februar"
@@ -162,10 +163,14 @@ msgstr "Zwillinge"
 msgid "German"
 msgstr "Deutsch"
 
-#: ../controller/ListController.php:56
+#: ../controller/ListController.php:52
 #, php-format
 msgid "Group %s:"
 msgstr "Gruppe %s"
+
+#: ../template/export_kitchen.php:63 ../template/export_kitchen.php:79
+msgid "Handy"
+msgstr ""
 
 #: ../template/header.php:71
 msgid "ICS birthday calendar"
@@ -183,15 +188,15 @@ msgstr ""
 msgid "January"
 msgstr "Januar"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:20
 msgid "July"
 msgstr "Juli"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:20
 msgid "June"
 msgstr "Juni"
 
-#: ../controller/ListController.php:49
+#: ../controller/ListController.php:45
 #, php-format
 msgid "Last names starting with %s:"
 msgstr "Nachnamen beginnend mit %s:"
@@ -208,11 +213,11 @@ msgstr "Waage"
 msgid "March"
 msgstr "März"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:20
 msgid "May"
 msgstr "Mai"
 
-#: ../controller/ListController.php:63
+#: ../controller/ListController.php:60
 #, php-format
 msgid "Member %s:"
 msgstr "Mitglied %s:"
@@ -225,11 +230,11 @@ msgstr "Herr"
 msgid "Ms."
 msgstr "Frau"
 
-#: ../controller/PersonController.php:853
+#: ../controller/PersonController.php:851
 msgid "No ID given."
 msgstr "Keine ID angegeben."
 
-#: ../index.php:75
+#: ../index.php:66
 msgid "No content here."
 msgstr "Keine Inhalte verfügbar."
 
@@ -241,11 +246,11 @@ msgstr "Es wurde kein Suchbegriff eingegeben"
 msgid "No, cancel!"
 msgstr "Nein, abbrechen!"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:21
 msgid "November"
 msgstr "November"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:21
 msgid "October"
 msgstr "Oktober"
 
@@ -266,7 +271,7 @@ msgstr "Skorpion"
 msgid "Searching for the term %s"
 msgstr "Suche nach %s"
 
-#: ../controller/BirthdayController.php:19
+#: ../controller/BirthdayController.php:20
 msgid "September"
 msgstr "September"
 
@@ -282,12 +287,25 @@ msgstr "Sicher, löschen!"
 msgid "Taurus"
 msgstr "Stier"
 
-#: ../controller/PersonController.php:807
+#: ../template/export_kitchen.php:69 ../template/export_kitchen.php:85
+msgid "Tel"
+msgstr ""
+
+#: ../template/export_kitchen.php:60 ../template/export_kitchen.php:76
+msgid "Tel Arbeit"
+msgstr ""
+
+#: ../template/export_kitchen.php:57 ../template/export_kitchen.php:73
+#, fuzzy
+msgid "Tel Privat"
+msgstr "Email privat"
+
+#: ../controller/PersonController.php:805
 #, php-format
 msgid "The entry %s was deleted."
 msgstr "Der Eintrag %s wurde gelöscht."
 
-#: ../controller/PersonController.php:786
+#: ../controller/PersonController.php:784
 msgid "The entry was updated."
 msgstr "Der Eintrag wurde aktualisiert."
 
@@ -303,8 +321,8 @@ msgstr "Das Bild wurde entfernt."
 msgid "There are no invalid or unneeded entries."
 msgstr "Es gibt keine ungültigen oder unbenutzen Einträge."
 
-#: ../controller/PersonController.php:779
-#: ../controller/PersonController.php:796
+#: ../controller/PersonController.php:777
+#: ../controller/PersonController.php:794
 msgid "There is no ID specified."
 msgstr "Es wurde keine ID angegeben."
 
@@ -350,10 +368,6 @@ msgstr "Wer kennt diese Person?"
 #: ../template/picture_delete.php:11
 msgid "Yes, delete picture!"
 msgstr "Ja, Bild löschen!"
-
-#: ../install/install.php:7
-msgid "You need to create a config file"
-msgstr "Sie müssen eine Konfigurationsdatei anlegen."
 
 #: ../template/person_view.php:72 ../template/person_view.php:77
 #: ../template/person_form.php:97
@@ -477,23 +491,23 @@ msgstr "geborener"
 msgid "cancel"
 msgstr "abbrechen"
 
-#: ../template/person_view.php:220 ../template/person_form.php:259
+#: ../template/person_view.php:220 ../template/person_form.php:258
 msgid "chat AIM"
 msgstr "Chat AIM"
 
-#: ../template/person_view.php:234 ../template/person_form.php:267
+#: ../template/person_view.php:234 ../template/person_form.php:266
 msgid "chat ICQ"
 msgstr "Chat ICQ"
 
-#: ../template/person_view.php:255 ../template/person_form.php:279
+#: ../template/person_view.php:255 ../template/person_form.php:278
 msgid "chat Jabber/XMPP"
 msgstr "Chat Jabber/XMPP"
 
-#: ../template/person_view.php:227 ../template/person_form.php:263
+#: ../template/person_view.php:227 ../template/person_form.php:262
 msgid "chat MSN"
 msgstr "Chat MSN"
 
-#: ../template/person_view.php:248 ../template/person_form.php:275
+#: ../template/person_view.php:248 ../template/person_form.php:274
 msgid "chat Skype"
 msgstr "Chat Skype"
 
@@ -501,7 +515,7 @@ msgstr "Chat Skype"
 msgid "chat Yahoo"
 msgstr "Chat Yahoo"
 
-#: ../template/person_form.php:271
+#: ../template/person_form.php:270
 msgid "chat Yahoo!"
 msgstr "Chat Yahoo!"
 
@@ -509,11 +523,11 @@ msgstr "Chat Yahoo!"
 msgid "create"
 msgstr "erstellen"
 
-#: ../controller/PersonController.php:300
+#: ../controller/PersonController.php:298
 msgid "create a new entry"
 msgstr "neuen Eintrag erstellen"
 
-#: ../controller/PersonController.php:21
+#: ../controller/PersonController.php:19
 msgid "create entry"
 msgstr "Eintrag erstellen"
 
@@ -525,7 +539,7 @@ msgstr "neuen Eintrag erstellen"
 msgid "create new group"
 msgstr "neue Gruppe anlegen"
 
-#: ../controller/BirthdayController.php:44
+#: ../controller/BirthdayController.php:46
 msgid "current birthdays"
 msgstr "aktuelle Geburtstage"
 
@@ -542,7 +556,7 @@ msgstr "Tagesplaner"
 msgid "delete %d unneeded entries"
 msgstr "lösche %d unbenutze Einträge"
 
-#: ../controller/PersonController.php:837
+#: ../controller/PersonController.php:835
 #, php-format
 msgid "delete %s"
 msgstr "%s löschen"
@@ -572,12 +586,12 @@ msgstr "Eintrag anzeigen"
 msgid "download VCard"
 msgstr "VCard herunterladen"
 
-#: ../controller/PersonController.php:770
+#: ../controller/PersonController.php:768
 #, php-format
 msgid "edit %s"
 msgstr "%s bearbeiten"
 
-#: ../controller/PersonController.php:746
+#: ../controller/PersonController.php:744
 msgid "edit entry"
 msgstr "Eintrag bearbeiten"
 
@@ -585,15 +599,15 @@ msgstr "Eintrag bearbeiten"
 msgid "edit this entry"
 msgstr "diesen Eintrag bearbeiten"
 
-#: ../template/person_view.php:196 ../template/person_form.php:224
+#: ../template/person_view.php:196 ../template/person_form.php:223
 msgid "email other"
 msgstr "Email sonstiges"
 
-#: ../template/person_view.php:180 ../template/person_form.php:216
+#: ../template/person_view.php:180 ../template/person_form.php:215
 msgid "email private"
 msgstr "Email privat"
 
-#: ../template/person_view.php:188 ../template/person_form.php:220
+#: ../template/person_view.php:188 ../template/person_form.php:219
 msgid "email work"
 msgstr "Email geschäftlich"
 
@@ -601,7 +615,7 @@ msgstr "Email geschäftlich"
 msgid "empty groups"
 msgstr "leere Gruppen"
 
-#: ../controller/ListController.php:25
+#: ../controller/ListController.php:21
 #, php-format
 msgid "entries for %s"
 msgstr "Einträge für %s"
@@ -631,7 +645,7 @@ msgid "export"
 msgstr "Export"
 
 #: ../template/person_view.php:120 ../template/person_view.php:160
-#: ../template/person_form.php:198 ../template/person_form.php:249
+#: ../template/person_form.php:197 ../template/person_form.php:248
 msgid "fax"
 msgstr "Fax"
 
@@ -643,7 +657,7 @@ msgstr "Vorname"
 msgid "form of address"
 msgstr "Anrede"
 
-#: ../template/person_form.php:182
+#: ../template/person_form.php:181
 msgid "general telephones"
 msgstr "allgemeine Telefone"
 
@@ -651,11 +665,11 @@ msgstr "allgemeine Telefone"
 msgid "groups"
 msgstr "Gruppen"
 
-#: ../template/person_view.php:204 ../template/person_form.php:228
+#: ../template/person_view.php:204 ../template/person_form.php:227
 msgid "homepage 1"
 msgstr "Homepage 1"
 
-#: ../template/person_view.php:211 ../template/person_form.php:232
+#: ../template/person_view.php:211 ../template/person_form.php:231
 msgid "homepage 2"
 msgstr "Homepage 2"
 
@@ -700,12 +714,12 @@ msgstr "zuletzt bearbeitet"
 msgid "last name"
 msgstr "Nachname"
 
-#: ../controller/ListController.php:15
+#: ../controller/ListController.php:16
 #, php-format
 msgid "letter &bdquo;%s&ldquo;"
 msgstr "Buchstabe &bdquo;%s&ldquo;"
 
-#: ../controller/ListController.php:28 ../template/list_index.php:8
+#: ../controller/ListController.php:24 ../template/list_index.php:8
 msgid "list"
 msgstr "Liste"
 
@@ -721,8 +735,8 @@ msgstr "Wartung"
 msgid "middle name"
 msgstr "zweiter Vorname"
 
-#: ../template/person_view.php:153 ../template/person_form.php:194
-#: ../template/person_form.php:245
+#: ../template/person_view.php:153 ../template/person_form.php:193
+#: ../template/person_form.php:244
 msgid "mobile"
 msgstr "mobil"
 
@@ -779,7 +793,7 @@ msgstr "keine Gruppe"
 msgid "no suggestions available"
 msgstr "keine Vorschläge verfügbar"
 
-#: ../template/person_view.php:266 ../template/person_form.php:284
+#: ../template/person_view.php:266 ../template/person_form.php:283
 msgid "notes"
 msgstr "Notizen"
 
@@ -795,22 +809,22 @@ msgstr "nur JPEG"
 msgid "only this person"
 msgstr "nur diese Person"
 
-#: ../template/person_form.php:147
+#: ../template/person_form.php:146
 msgid "or enter a new address"
 msgstr "oder eine neue Adresse eingeben"
 
-#: ../template/person_view.php:167 ../template/person_form.php:202
-#: ../template/person_form.php:253
+#: ../template/person_view.php:167 ../template/person_form.php:201
+#: ../template/person_form.php:252
 msgid "other"
 msgstr "sonstige"
 
 #: ../template/person_form.php:23 ../template/person_form.php:97
-#: ../template/person_form.php:212
+#: ../template/person_form.php:211
 #, php-format
 msgid "part %d of %d"
 msgstr "Teil %d von %d"
 
-#: ../template/person_form.php:212
+#: ../template/person_form.php:211
 msgid "personal contact information"
 msgstr "persönliche Kontaktinformationen"
 
@@ -822,12 +836,12 @@ msgstr "Bild hochladen"
 msgid "pictures with no associated entry"
 msgstr "Bilder ohne verbunden Eintrag"
 
-#: ../template/person_form.php:161
+#: ../template/person_form.php:160
 msgid "postral code, city and country"
 msgstr "PLZ, Stadt und Land"
 
-#: ../template/person_view.php:139 ../template/person_form.php:186
-#: ../template/person_form.php:237
+#: ../template/person_view.php:139 ../template/person_form.php:185
+#: ../template/person_form.php:236
 msgid "private"
 msgstr "privat"
 
@@ -839,7 +853,7 @@ msgstr "Profilseite"
 msgid "relations"
 msgstr "Bezüge"
 
-#: ../template/person_form.php:291
+#: ../template/person_form.php:290
 msgid "save"
 msgstr "speichern"
 
@@ -847,7 +861,7 @@ msgstr "speichern"
 msgid "search"
 msgstr "Suche"
 
-#: ../controller/SearchController.php:12
+#: ../controller/SearchController.php:13
 #, php-format
 msgid "search for &bdquo;%s&ldquo;"
 msgstr "Suche nach &bdquo;%s&ldquo;"
@@ -864,17 +878,13 @@ msgstr "zeige Einträge"
 msgid "show map"
 msgstr "zeige Karte"
 
-#: ../template/person_form.php:156
+#: ../template/person_form.php:155
 msgid "street"
 msgstr "Straße"
 
 #: ../template/person_form.php:44
 msgid "suffix"
 msgstr "Suffix"
-
-#: ../js/selectSwitch.js.php:11
-msgid "switch between a select and a manual input"
-msgstr "wechsle zwischen Auswahl und manueller Eingabe"
 
 #: ../template/person_view.php:134
 msgid "telephone"
@@ -953,11 +963,20 @@ msgstr "innerhalb der letzten Minute"
 msgid "without a birthday"
 msgstr "ohne Geburtstag"
 
-#: ../template/person_view.php:146 ../template/person_form.php:190
-#: ../template/person_form.php:241
+#: ../template/person_view.php:146 ../template/person_form.php:189
+#: ../template/person_form.php:240
 msgid "work"
 msgstr "geschäftlich"
 
 #: ../template/person_view.php:338
 msgid "yes"
 msgstr "ja"
+
+#~ msgid "Could not select DB."
+#~ msgstr "Konnte DB nicht auswählen."
+
+#~ msgid "You need to create a config file"
+#~ msgstr "Sie müssen eine Konfigurationsdatei anlegen."
+
+#~ msgid "switch between a select and a manual input"
+#~ msgstr "wechsle zwischen Auswahl und manueller Eingabe"
