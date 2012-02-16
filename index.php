@@ -50,17 +50,13 @@ if (isset($_POST['id'])) {
 // get current mode
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'Birthday::upcoming_birthdays';
 
-
 $index_template = new Template('index');
 $index_template->set('body_class',
 	$mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
 
-# TODO
 $header_controller = new HeaderController();
 $header_controller->set_current_mode($mode);
 $index_template->set('header', $header_controller->view());
-
-
 
 if (isset($mode)) {
 	$content_controller = Controller::get_controller($mode);
