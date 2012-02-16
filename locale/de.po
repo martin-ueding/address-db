@@ -147,7 +147,6 @@ msgid "Error during deletion of image %s!"
 msgstr "Fehler beim Löschen des Bildes %s!"
 
 #: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
-#, fuzzy
 msgid "Fax"
 msgstr "Fax"
 
@@ -296,9 +295,8 @@ msgid "Tel Arbeit"
 msgstr ""
 
 #: ../template/export_kitchen.php:57 ../template/export_kitchen.php:73
-#, fuzzy
 msgid "Tel Privat"
-msgstr "Email privat"
+msgstr "Tel Privat"
 
 #: ../controller/PersonController.php:805
 #, php-format
