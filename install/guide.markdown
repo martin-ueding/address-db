@@ -2,15 +2,15 @@
 
 1.  database access data
 	First you have to set up the database, please fill in the appropriate data
-in adressen/inc/login.inc.php
+in `database.ini`.
 
 2.  create the files in the MySQL database
-	There is an sql file with the tables in install/mysql_tables.sql. Please
+	There is an sql file with the tables in `install/mysql_tables.sql`. Please
 run it with your favorite sql tool, like phpMyAdmin.
 
 3.  set up some users for htaccess
 	In order to protect the database you will need to enter some user names in
-the addressen/.htpasswd file. The easiest way to do this is with the htpasswd
+the `.htpasswd` file. The easiest way to do this is with the htpasswd
 tool.
 
 4.  set up family members
