@@ -16,13 +16,7 @@ class ListController extends Controller {
 				.sprintf(_('letter &bdquo;%s&ldquo;'), $_GET['b']);
 		}
 		else if (!empty($_GET['f'])) {
-			# XXX Use model.
-			// get name for person
-			$name_sql = 'SELECT fmg FROM ad_fmg WHERE fmg_id='.$_GET['f'].';';
-			$name_erg = mysql_query($name_sql);
-			if ($name = mysql_fetch_assoc($name_erg)) {
-				$f_name = $name['fmg'];
-			}
+			$f_name = FamilyMember::get_name($_GET['f']);
 			$page_title = _('Address DB').': '
 				.sprintf(_('entries for %s'), $f_name);
 		}
