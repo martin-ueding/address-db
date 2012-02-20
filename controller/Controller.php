@@ -67,7 +67,7 @@ class Controller {
 	/**
 	 * @param string $layout Selected layout.
 	 */
-	public function set_layout($layout) {
+	protected function set_layout($layout) {
 		$this->layout = $layout;
 	}
 
