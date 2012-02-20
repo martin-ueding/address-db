@@ -17,7 +17,7 @@ echo '\documentclass[10pt]{article}
 \usepackage[left=7mm, right=7mm, top=7mm, bottom=7mm, scale=1, landscape]{geometry}
 \geometry{a4paper}
 \setlength{\parindent}{0cm}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{multicol}
 \renewcommand\sfdefault{phv}
 \renewcommand\familydefault{\sfdefault}
