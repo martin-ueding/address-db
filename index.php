@@ -46,8 +46,8 @@ $mode = isset($_GET['mode']) ? $_GET['mode'] : 'Birthday::upcoming_birthdays';
 $content_controller = Controller::get_controller($mode);
 $content = Controller::call($mode);
 
-if ($content_controller->get_layout() === 'default') {
-
+switch ($content_controller->get_layout()) {
+case 'default':
 	$index_template = new Template('index');
 	$index_template->set('body_class',
 		$mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
@@ -71,8 +71,11 @@ if ($content_controller->get_layout() === 'default') {
 	$index_template->set('version_string', $version_array[0]);
 
 	echo $index_template->html();
-}
-else if ($content_controller->layout === 'ajax') {
+	break;
+
+case 'ajax':
+case 'media':
 	echo $content;
+	break;
 }
 ?>
