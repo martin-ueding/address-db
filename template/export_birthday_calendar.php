@@ -5,7 +5,7 @@
  * Export into a ICS calendar with birthdays.
  */
 
-header("Content-Type: text/calendar; charset=iso-8859-1");
+header("Content-Type: text/calendar; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.ics"');
 
 echo 'BEGIN:VCALENDAR'."\n";

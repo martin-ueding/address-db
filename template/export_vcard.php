@@ -5,7 +5,7 @@
  * Exports a single VCard.
  */
 
-header("Content-Type: text/x-vcard; charset=iso-8859-1");
+header("Content-Type: text/x-vcard; charset=utf-8");
 header('Content-Disposition: attachment; filename="'.$l['vorname'].$l['nachname'].'.vcf"');
 
 if ($l['prafix'] != "-")
@@ -15,11 +15,11 @@ else
 
 echo 'BEGIN:VCARD'."\n";
 echo 'VERSION:3.0'."\n";
-echo 'N;CHARSET=iso-8859-1:'.$l['nachname'].';'.$l['vorname'].';'.$l['mittelname'].';'.$prafix.';'."\n";
-echo 'FN;CHARSET=iso-8859-1:'.$prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname']."\n";
+echo 'N;CHARSET=utf-8:'.$l['nachname'].';'.$l['vorname'].';'.$l['mittelname'].';'.$prafix.';'."\n";
+echo 'FN;CHARSET=utf-8:'.$prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname']."\n";
 
 if (!empty($l['geburtsname']))
-	echo 'X-MAIDENNAME;CHARSET=iso-8859-1:'.$l['geburtsname']."\n";
+	echo 'X-MAIDENNAME;CHARSET=utf-8:'.$l['geburtsname']."\n";
 
 if (!empty($l['email_privat']))
 	echo 'EMAIL;type=INTERNET;type=HOME;type=pref:'.$l['email_privat']."\n";
@@ -62,7 +62,7 @@ if (!empty($l['ftel_aux']))
 	echo 'TEL;type=HOME:'.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux']."\n";
 
 if ($l['adresse_r'] != 1) {
-	echo 'item1.ADR;type=HOME;type=pref;CHARSET=iso-8859-1:;;'.$l['strasse'].';'.$l['ortsname'].';;'.$l['plz'].';'.$l['land']."\n";
+	echo 'item1.ADR;type=HOME;type=pref;CHARSET=utf-8:;;'.$l['strasse'].';'.$l['ortsname'].';;'.$l['plz'].';'.$l['land']."\n";
 	echo 'item1.X-ABADR:de'."\n";
 }
 

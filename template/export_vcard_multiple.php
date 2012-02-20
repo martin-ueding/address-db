@@ -5,7 +5,7 @@
  * Exports a list as a big VCard.
  */
 
-header("Content-Type: text/x-vcard; charset=iso-8859-1");
+header("Content-Type: text/x-vcard; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.vcf"');
 
 while ($l = mysql_fetch_assoc($erg)) {
@@ -16,11 +16,11 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 	echo 'BEGIN:VCARD'."\n";
 	echo 'VERSION:3.0'."\n";
-	echo 'N;CHARSET=iso-8859-1:'.$l['nachname'].';'.$l['vorname'].';'.$l['mittelname'].';'.$prafix.';'."\n";
-	echo 'FN;CHARSET=iso-8859-1:'.trim($prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname'])."\n";
+	echo 'N;CHARSET=utf-8:'.$l['nachname'].';'.$l['vorname'].';'.$l['mittelname'].';'.$prafix.';'."\n";
+	echo 'FN;CHARSET=utf-8:'.trim($prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname'])."\n";
 
 	if (!empty($l['geburtsname']))
-		echo 'X-MAIDENNAME;CHARSET=iso-8859-1:'.$l['geburtsname']."\n";
+		echo 'X-MAIDENNAME;CHARSET=utf-8:'.$l['geburtsname']."\n";
 
 	if (!empty($l['email_privat']))
 		echo 'EMAIL;type=INTERNET;type=HOME;type=pref:'.$l['email_privat']."\n";
@@ -63,14 +63,14 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo 'TEL;type=HOME:'.AreaCode::select_vw_id($l['fvw_aux_r']).'-'.$l['ftel_aux']."\n";
 
 	if ($l['adresse_r'] != 1) {
-		echo 'ADR;type=HOME;type=pref;CHARSET=iso-8859-1:;;'.$l['strasse'].';'.$l['ortsname'].';;'.$l['plz'].';'.$l['land']."\n";
+		echo 'ADR;type=HOME;type=pref;CHARSET=utf-8:;;'.$l['strasse'].';'.$l['ortsname'].';;'.$l['plz'].';'.$l['land']."\n";
 	}
 
 
 
 
 	//	if (!empty($l['pnotizen']))
-	//		echo 'NOTE;CHARSET=iso-8859-1: '.$l['pnotizen']."\n";
+	//		echo 'NOTE;CHARSET=utf-8: '.$l['pnotizen']."\n";
 
 
 	if (!empty($l['hp1'])) {

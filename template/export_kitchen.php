@@ -10,7 +10,7 @@
 require_once('helper/Latex.php');
 
 $SCHRIFTGROESSE = 9;
-header("Content-Type: text/plain; charset=iso-8859-1");
+header("Content-Type: text/plain; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
 
 echo '\documentclass[10pt]{article}
