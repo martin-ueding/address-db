@@ -3,6 +3,7 @@
 
 require_once('component/History.php');
 require_once('component/Login.php');
+require_once('component/NoSuchLayoutException.php');
 require_once('component/Template.php');
 require_once('controller/HeaderController.php');
 require_once('model/Person.php');
@@ -77,5 +78,10 @@ case 'ajax':
 case 'media':
 	echo $content;
 	break;
+
+default:
+	throw new NoSuchLayoutException(sprintf(
+		_('No Layout %s found.'), $content_controller->get_layout()
+	));
 }
 ?>
