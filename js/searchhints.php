@@ -6,7 +6,6 @@ require_once('../component/Login.php');
 
 session_start();
 
-
 $q = $_POST['query'];
 
 $filter = new Filter($_SESSION['f'], $_SESSION['g']);
@@ -18,11 +17,10 @@ $erg = mysql_query($sql);
 if (mysql_num_rows($erg) > 0) {
 	echo '<ul>';
 	while ($l = mysql_fetch_assoc($erg)) {
-		echo '<a href="index.php?mode=search&suche='.$l['nachname'].'"><li>'.$l['nachname'].'</li></a>';
+		echo '<a href="index.php?mode=Search::index&suche='.$l['nachname'].'"><li>'.$l['nachname'].'</li></a>';
 	}
 	echo '</ul>';
 }
 else
 	echo _('no suggestions available');
-
 ?>
