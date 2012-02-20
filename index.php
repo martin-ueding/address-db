@@ -43,37 +43,36 @@ if (isset($_POST['id'])) {
 // get current mode
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'Birthday::upcoming_birthdays';
 
-$index_template = new Template('index');
-$index_template->set('body_class',
-	$mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
+$content_controller = Controller::get_controller($mode);
+$content = Controller::call($mode);
 
-$header_controller = new HeaderController();
-$header_controller->set_current_mode($mode);
-$index_template->set('header', $header_controller->view());
+if ($content_controller->get_layout() === 'default') {
 
-if (isset($mode)) {
-	$content_controller = Controller::get_controller($mode);
+	$index_template = new Template('index');
+	$index_template->set('body_class',
+		$mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
+	$index_template->set('page_title', $content_controller->get_page_title());
 
-	if ($content_controller != null) {
-		$content = Controller::call($mode);
-		$index_template->set('page_title',
-			$content_controller->get_page_title());
+	$header_controller = new HeaderController();
+	$header_controller->set_current_mode($mode);
+	$index_template->set('header', $header_controller->view());
+
+	if (!isset($content)) {
+		$content = _('No content here.');
 	}
+
+	$index_template->set('content', $content);
+
+	$messages_template = new Template('messages');
+	$index_template->set('messages', $messages_template->html());
+
+
+	$version_array = file('version.txt');
+	$index_template->set('version_string', $version_array[0]);
+
+	echo $index_template->html();
 }
-
-
-if (!isset($content)) {
-	$content = _('No content here.');
+else if ($content_controller->layout === 'ajax') {
+	echo $content;
 }
-
-$index_template->set('content', $content);
-
-$messages_template = new Template('messages');
-$index_template->set('messages', $messages_template->html());
-
-
-$version_array = file('version.txt');
-$index_template->set('version_string', $version_array[0]);
-
-echo $index_template->html();
 ?>
