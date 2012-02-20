@@ -18,6 +18,7 @@ class ExportController extends Controller {
 	 * @global integer $_GET['id']
 	 */
 	public function vcard() {
+		$this->set_layout('media');
 		$template = new Template(__CLASS__, __FUNCTION__);
 
 		$id = $_GET['id'];
@@ -28,9 +29,7 @@ class ExportController extends Controller {
 
 		$template->set('l', $l);
 
-		echo $template->html();
-
-		die();
+		return $template->html();
 	}
 
 	/**
@@ -42,6 +41,7 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function vcard_multiple() {
+		$this->set_layout('media');
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_join('LEFT JOIN ad_adressen ON adresse_r = ad_id');
 		$filter->add_join('LEFT JOIN ad_anreden ON anrede_r = a_id');
@@ -55,9 +55,7 @@ class ExportController extends Controller {
 
 		$template = new Template(__CLASS__, __FUNCTION__);
 		$template->set('erg', $erg);
-		echo $template->html();
-
-		die();
+		return $template->html();
 	}
 
 	/**
@@ -69,14 +67,13 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function kitchen() {
+		$this->set_layout('media');
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_address();
 
 		$template = new Template(__CLASS__, __FUNCTION__);
 		$template->set('erg', $filter->get_erg());
-		echo $template->html();
-
-		die();
+		return $template->html();
 	}
 
 	/**
@@ -88,15 +85,14 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function csv() {
+		$this->set_layout('media');
 
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_address();
 
 		$template = new Template(__CLASS__, __FUNCTION__);
 		$template->set('erg', $filter->get_erg());
-		echo $template->html();
-
-		die();
+		return $template->html();
 	}
 
 	/**
@@ -108,6 +104,7 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function dayplanner() {
+		$this->set_layout('media');
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_address();
 
@@ -125,6 +122,7 @@ class ExportController extends Controller {
 	 * @global integer $_SESSION['g']
 	 */
 	public function birthday_calendar() {
+		$this->set_layout('media');
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 
 		$template = new Template(__CLASS__, __FUNCTION__);
@@ -138,6 +136,7 @@ class ExportController extends Controller {
 	 * Exports the data into a CakePHP named, JSON encoded array.
 	 */
 	public function json() {
+		$this->set_layout('media');
 		echo '<code><pre>';
 		$filter = new Filter($_SESSION['f'], $_SESSION['g']);
 		$filter->add_address();
@@ -361,7 +360,6 @@ class ExportController extends Controller {
 		//echo json_encode($data);
 		print_r($data);
 		echo '</code></pre>';
-		die();
 	}
 }
 ?>
