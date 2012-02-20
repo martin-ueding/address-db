@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-16 23:14+0100\n"
+"POT-Creation-Date: 2012-02-20 14:17+0100\n"
 "PO-Revision-Date: 2011-04-08 21:36+0000\n"
 "Last-Translator: Christopher <cstandaert@srs.be>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -104,6 +104,10 @@ msgstr "Kreeft"
 #: ../component/Template.php:26
 #, php-format
 msgid "Cannot find template for %s %s."
+msgstr ""
+
+#: ../component/Login.php:31
+msgid "Cannot open database.ini."
 msgstr ""
 
 #: ../helper/ZodiacSign.php:20 ../helper/ZodiacSign.php:68
@@ -769,7 +773,7 @@ msgstr "geen aanspreekvorm"
 msgid "no group"
 msgstr "groepen"
 
-#: ../js/searchhints.php:26
+#: ../js/searchhints.php:25
 msgid "no suggestions available"
 msgstr ""
 
