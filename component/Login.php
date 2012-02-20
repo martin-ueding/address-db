@@ -52,6 +52,9 @@ class Login {
 
 		if ($dbh) {
 			mysql_select_db($connection['database'], $dbh);
+			if (isset($connection['encoding'])) {
+				mysql_query('SET CHARACTER SET '.$connection['encoding'].';');
+			}
 			$this->errors[] = mysql_error();
 		}
 		else {

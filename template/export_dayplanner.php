@@ -12,13 +12,13 @@ require_once('helper/Latex.php');
 $MAX_PRO_SEITE = 3;
 $SCHRIFTGROESSE = 7;
 
-header("Content-Type: text/plain; charset=iso-8859-1");
+header("Content-Type: text/plain; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
 
 echo '\documentclass[10pt]{book}'."\n";
 echo '\usepackage[paperwidth=8cm, paperheight=12cm, outer=3mm, inner=12mm, top=3mm, bottom=3mm, scale=1, twoside]{geometry}'."\n";
 echo '\setlength{\parindent}{0cm}';
-echo '\usepackage[latin1]{inputenc}';
+echo '\usepackage[utf8]{inputenc}';
 
 
 echo '\begin{document}'."\n";

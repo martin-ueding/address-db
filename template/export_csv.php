@@ -60,7 +60,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 rewind($csv);
 
-header("Content-Type: text/plain; charset=iso-8859-1");
+header("Content-Type: text/plain; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.csv"');
 
 echo stream_get_contents($csv);
