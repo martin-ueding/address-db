@@ -20,13 +20,14 @@ class Controller {
 	 */
 	private $current_mode;
 
-	private $layout = 'default';
+	private $layout;
 
 	/**
 	 * New controller.
 	 */
 	public function __construct() {
 		$this->set_page_title(_('Address DB'));
+		$this->layout = 'default';
 	}
 
 	/**
