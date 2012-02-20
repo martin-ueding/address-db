@@ -20,6 +20,8 @@ class Controller {
 	 */
 	private $current_mode;
 
+	private $layout = 'default';
+
 	/**
 	 * New controller.
 	 */
@@ -53,6 +55,20 @@ class Controller {
 	 */
 	public function set_current_mode($mode) {
 		$this->current_mode = $mode;
+	}
+
+	/**
+	 * @return string Selected layout.
+	 */
+	public function get_layout() {
+		return $this->layout;
+	}
+
+	/**
+	 * @param string $mode Selected layout.
+	 */
+	public function set_layout($layout) {
+		$this->layout = $layout;
 	}
 
 	/**
