@@ -76,43 +76,23 @@ class Controller {
 	 * Finds a controller to a given mode.
 	 *
 	 * @param string $mode Mode to check.
-	 * @return Controller Controller instance.
+	 * @return array Information about the controller action.
 	 */
 	public static function get_controller($mode) {
 		preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
 
-		if (count($matches) > 2) {
+		$result = array();
 
-			$mode_controller = $matches[1].'Controller';
-			$mode_function = $matches[2];
-
-			$controllerfile = 'controller/'.$mode_controller.'.php';
-			if (file_exists($controllerfile)) {
-				require_once($controllerfile);
-				return new $mode_controller();
-			}
-		}
-	}
-
-	/**
-	 * Finds and calls a controller to a given mode.
-	 *
-	 * @param string $mode Mode to use.
-	 * @return mixed Return of the controller, usually HTML.
-	 */
-	public static function call($mode) {
-		preg_match('/([A-Za-z]+)::([A-Za-z0-9-_]+)/', $mode, $matches);
 		if (count($matches) > 2) {
 			$mode_controller = $matches[1].'Controller';
-			$mode_function = $matches[2];
-
-			$controllerfile = 'controller/'.$mode_controller.'.php';
-			if (file_exists($controllerfile)) {
-				require_once($controllerfile);
-				$content_controller = new $mode_controller();
-			}
-			return $content_controller->$mode_function();
+			$result = array(
+				'file' => 'controller/'.$mode_controller.'.php',
+				'controller' => $mode_controller,
+				'function' => $matches[2],
+			);
 		}
+
+		return $result;
 	}
 
 	/**

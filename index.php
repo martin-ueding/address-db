@@ -44,8 +44,13 @@ if (isset($_POST['id'])) {
 // get current mode
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'Birthday::upcoming_birthdays';
 
-$content_controller = Controller::get_controller($mode);
-$content = Controller::call($mode);
+$controller_info = Controller::get_controller($mode);
+
+require_once($controller_info['file']);
+
+$content_controller = new $controller_info['controller']();
+$content = $content_controller->$controller_info['function']();
+
 
 switch ($content_controller->get_layout()) {
 case 'default':
