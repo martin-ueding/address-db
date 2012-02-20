@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-20 14:17+0100\n"
+"POT-Creation-Date: 2012-02-20 14:52+0100\n"
 "PO-Revision-Date: 2011-02-21 17:57+0000\n"
 "Last-Translator: Martin Ueding <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "(heute %d Jahre alt)"
 #: ../controller/MaintenanceController.php:66
 #: ../controller/MaintenanceController.php:81
 #: ../controller/PictureController.php:28
-#: ../controller/PictureController.php:64 ../controller/Controller.php:27
+#: ../controller/PictureController.php:64 ../controller/Controller.php:29
 #: ../controller/SearchController.php:12 ../controller/ListController.php:15
 #: ../controller/ListController.php:20 ../controller/ListController.php:24
 msgid "Address DB"
@@ -108,7 +108,7 @@ msgstr "Kann Template für %s %s nicht finden."
 
 #: ../component/Login.php:31
 msgid "Cannot open database.ini."
-msgstr ""
+msgstr "Konnte database.ini nicht öffnen."
 
 #: ../helper/ZodiacSign.php:20 ../helper/ZodiacSign.php:68
 msgid "Capricorn"
@@ -229,7 +229,12 @@ msgstr "Frau"
 msgid "No ID given."
 msgstr "Keine ID angegeben."
 
-#: ../index.php:66
+#: ../index.php:89
+#, php-format
+msgid "No Layout %s found."
+msgstr "Kein Layout %s gefunden."
+
+#: ../index.php:67
 msgid "No content here."
 msgstr "Keine Inhalte verfügbar."
 

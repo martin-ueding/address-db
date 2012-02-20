@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-20 14:17+0100\n"
+"POT-Creation-Date: 2012-02-20 14:52+0100\n"
 "PO-Revision-Date: 2011-01-14 23:58+0000\n"
 "Last-Translator: zeugma <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -58,7 +58,7 @@ msgstr ""
 #: ../controller/MaintenanceController.php:66
 #: ../controller/MaintenanceController.php:81
 #: ../controller/PictureController.php:28
-#: ../controller/PictureController.php:64 ../controller/Controller.php:27
+#: ../controller/PictureController.php:64 ../controller/Controller.php:29
 #: ../controller/SearchController.php:12 ../controller/ListController.php:15
 #: ../controller/ListController.php:20 ../controller/ListController.php:24
 msgid "Address DB"
@@ -228,7 +228,12 @@ msgstr ""
 msgid "No ID given."
 msgstr ""
 
-#: ../index.php:66
+#: ../index.php:89
+#, php-format
+msgid "No Layout %s found."
+msgstr ""
+
+#: ../index.php:67
 msgid "No content here."
 msgstr ""
 
