@@ -1,6 +1,21 @@
 <?php
 # Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
 
+/**
+ * Handles a MySQL Database login.
+ *
+ * It requires a database.ini to be present in the current directory.
+ *
+ * That file has to contain at least one section describing a database access.
+ *
+ * <code><pre>
+ * [development]
+ * server = 127.0.0.1
+ * user = testing
+ * password = testing
+ * database = addresses
+ * </pre></code>
+ */
 class Login {
 	private $connections;
 	private $errors = array();
