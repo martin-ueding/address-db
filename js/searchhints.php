@@ -1,11 +1,11 @@
 <?php
 # Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
 
-require_once('component/Filter.php');
+require_once('../component/Filter.php');
+require_once('../component/Login.php');
 
 session_start();
 
-require_once('component/Login.php');
 
 $q = $_POST['query'];
 

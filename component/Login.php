@@ -21,6 +21,15 @@ class Login {
 	private $errors = array();
 
 	public function __construct($configfile) {
+		if (!file_exists($configfile)) {
+			$configfile = '../'.$configfile;
+		}
+		if (!file_exists($configfile)) {
+			$configfile = '../'.$configfile;
+		}
+		if (!file_exists($configfile)) {
+			die(_('Cannot open database.ini.'));
+		}
 		$this->connections = parse_ini_file($configfile, true);
 
 		foreach ($this->connections as $connection) {
