@@ -6,7 +6,7 @@
 require_once('component/Login.php');
 
 $tables_query = "SHOW TABLES FROM ".$db_login->connection['database'];
-echo $tables_query;
+#echo $tables_query;
 $tables = mysql_query($tables_query);
 echo mysql_error();
 while ($cells = mysql_fetch_array($tables)) {
