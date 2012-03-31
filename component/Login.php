@@ -37,6 +37,7 @@ class Login {
 
 			# Quit here if a connection could be established.
 			if ($success === true) {
+				$this->connection = $connection;
 				break;
 			}
 		}
@@ -67,4 +68,4 @@ class Login {
 	}
 }
 
-new Login('database.ini');
+$db_login = new Login('database.ini');

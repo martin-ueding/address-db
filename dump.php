@@ -5,7 +5,7 @@
 
 require_once('component/Login.php');
 
-$tables = mysql_query("SHOW TABLES FROM ".$db);
+$tables = mysql_query("SHOW TABLES FROM ".$db_login->connection['database']);
 while ($cells = mysql_fetch_array($tables)) {
 	$table = $cells[0];
 	echo "DROP TABLE IF EXISTS `$table`;\n";
