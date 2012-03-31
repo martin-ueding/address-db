@@ -41,6 +41,10 @@ class Login {
 				break;
 			}
 		}
+
+		if (!isset($this->connection)) {
+			throw new Exception("Cannot connect to MySQL Database.");
+		}
 	}
 
 	private function try_connection($connection) {
