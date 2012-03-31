@@ -61,6 +61,7 @@ class Login {
 				mysql_query('SET CHARACTER SET '.$connection['encoding'].';');
 			}
 			$this->errors[] = mysql_error();
+			return true;
 		}
 		else {
 			return false;
