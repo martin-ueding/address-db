@@ -404,28 +404,25 @@ select {
 /*                              Person Display                               */
 /*****************************************************************************/
 
-tr {
-	vertical-align: top;
-	background-color: rgb(230,230,230);
-}
-
-td {
-	padding: 0 3px;
-}
-
 #pers_bild {
 	@include border_3d;
-	float: right;
-	margin: 0 50px 0 0;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	z-index: 10;
 }
+
+$alpha: .8;
 
 .pers_titel {
 	@include border_3d;
-	background-color: rgb(102,102,102);
+	background-color: hsla(0, 0, 30%, $alpha);
 	color: rgb(255,255,255);
 	font-weight: bold;
 	padding: 3px 0;
 	width: 548px;
+	position: relative;
+	z-index: 100;
 }
 
 table.display_person {
@@ -433,12 +430,25 @@ table.display_person {
 	width: 550px;
 	color: rgb(0,0,0);
 	@include border_3d;
+	background-color: hsla(0, 0, 97%, $alpha);
+	position: relative;
+	z-index: 100;
 
-	td.links {
-		width: 150px;
+	tr {
+		background-color: none;
+	vertical-align: top;
 	}
 
-	td.rechts {
+	td {
+		background-color: hsla(0, 0, 93%, $alpha);
+		padding: 0 3px;
+
+		&.links {
+			width: 150px;
+		}
+
+		&.rechts {
+		}
 	}
 }
 

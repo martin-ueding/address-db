@@ -6,9 +6,11 @@
  */
 
 require_once('helper/PersonDisplay.php');
-?>
-<h1><?php echo _('display entry'); ?></h1>
-<?php
+
+echo '<script src="js/picture.js"></script>';
+
+echo '<h1>'._('display entry').'</h1>';
+
 $mugshot_path = '_mugshots/per'.$id.'.jpg';
 if (file_exists($mugshot_path)) {
 	$bilddaten = getimagesize('_mugshots/per'.$id.'.jpg');
