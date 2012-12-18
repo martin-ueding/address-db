@@ -109,15 +109,17 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].Latex::bruch();
 
 	if (!empty($l['pnotizen'])) {
-		$text = trim($l['pnotizen']);
+		$text = $l['pnotizen'];
 		$text = str_replace("\r\n", "\n", $text);
 		$text = str_replace("\r", "\n", $text);
 		$lines = explode("\n", $text);
 		for ($i = 0; $i < count($lines); $i++) {
 			$lines[$i] = trim($lines[$i]);
-			$lines[$i] = preg_replace("/^(.+)$/", "\$1 \\\\\\\\", $lines[$i]);
-
+			if ($i < count($lines) - 1) {
+				$lines[$i] = preg_replace("/^(.+)$/", "\$1 \\\\\\\\", $lines[$i]);
+			}
 		}
+		$text = implode("\n", $lines);
 		echo '\\begin{quote}'.$text.'\\end{quote}'.Latex::bruch();
 	}
 
