@@ -108,8 +108,14 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if (!empty($l['geb_t']))
 		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].Latex::bruch();
 
-	if (!empty($l['pnotizen']))
-		echo '\\begin{quote}'.str_replace("\n", "\\\\\n", $l['pnotizen']).'\\end{quote}'.Latex::bruch();
+	if (!empty($l['pnotizen'])) {
+		$text = $l['pnotizen'];
+		$text = str_replace("\r", "\n", $text);
+		$text = str_replace("\n", "\\\\\n", $text);
+		$text = str_replace("\n", "\\\\\n", $text);
+		$text = str_replace("\\\\\n\\\\", "\n", $text);
+		echo '\\begin{quote}'.$text.'\\end{quote}'.Latex::bruch();
+	}
 
 
 	//	$zaehler++;
