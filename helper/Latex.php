@@ -8,6 +8,7 @@ class Latex {
 	public static function convertToLaTeX($s) {
 		$s = str_replace('@', '$@$', $s);
 		$s = str_replace('_', '\\_', $s);
+		$s = str_replace('&', '\\&', $s);
 		return $s;
 	}
 

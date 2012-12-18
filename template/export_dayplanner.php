@@ -119,7 +119,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 				}
 			}
 		}
-		$text = implode("\n", $lines);
+		$text = Latex::convertToLaTeX(implode("\n", $lines));
 		echo $text;
 	}
 
