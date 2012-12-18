@@ -122,7 +122,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 			}
 		}
 		$text = implode("\n", $lines);
-		echo '\\begin{quote}'.$text.'\\end{quote}'.Latex::bruch();
+		echo $text;
 	}
 
 
