@@ -111,6 +111,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if (!empty($l['pnotizen'])) {
 		$text = $l['pnotizen'];
 		var_dump($text);
+		$text = str_replace("\r\n", "\n", $text);
 		$text = str_replace("\r", "\n", $text);
 		$lines = explode("\n", $text);
 		for ($i = 0; $i < count($lines); $i++) {
