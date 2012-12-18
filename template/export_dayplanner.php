@@ -116,7 +116,9 @@ while ($l = mysql_fetch_assoc($erg)) {
 		for ($i = 0; $i < count($lines); $i++) {
 			$lines[$i] = trim($lines[$i]);
 			if ($i < count($lines) - 1) {
-				$lines[$i] = preg_replace("/^(.+)$/", "\$1 \\\\\\\\", $lines[$i]);
+				if (strlen($lines[$i]) > 0) {
+					$lines[$i] .= Latex::bruch();
+				}
 			}
 		}
 		$text = implode("\n", $lines);
