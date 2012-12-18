@@ -113,6 +113,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 		$text = str_replace("\r", "\n", $text);
 		$lines = explode("\n", $text);
 		for ($i = 0; $i < count($lines); $i++) {
+			$lines[$i] = trim($lines[$i]);
 			$lines[$i] = preg_replace("/^(.+)$/", "\$1 \\\\\\\\", $lines[$i]);
 		}
 		$text = implode("\n", $lines);
