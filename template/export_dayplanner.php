@@ -109,8 +109,8 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].Latex::bruch();
 
 	if (!empty($l['pnotizen'])) {
-		var_dump($text);
 		$text = $l['pnotizen'];
+		var_dump($text);
 		$text = str_replace("\r", "\n", $text);
 		$lines = explode("\n", $text);
 		for ($i = 0; $i < count($lines); $i++) {
