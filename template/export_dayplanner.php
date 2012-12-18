@@ -29,19 +29,6 @@ $zaehler = 0;
 $nachname_buchstabe = '';
 
 while ($l = mysql_fetch_assoc($erg)) {
-
-	$umbruchbeiarray = array('C', 'E', 'G', 'I', 'K', 'M', 'O', 'Q', 'S', 'U', 'X');
-
-	if (isset($l['nachname'][0]) && $l['nachname'][0] != $nachname_buchstabe) {
-		$nachname_buchstabe = $l['nachname'][0];
-
-		if (array_search($nachname_buchstabe, $umbruchbeiarray) == $nachname_buchstabe) {
-			//		echo '\chapter*{'.$nachname_buchstabe.'}'."\n";
-			echo '\cleardoublepage'."\n";
-		}
-	}
-
-
 	if ($l['prafix'] != "-")
 		$prafix = $l['prafix'];
 	else
