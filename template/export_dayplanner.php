@@ -111,9 +111,11 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if (!empty($l['pnotizen'])) {
 		$text = $l['pnotizen'];
 		$text = str_replace("\r", "\n", $text);
-		$text = str_replace("\n", "\\\\\n", $text);
-		$text = str_replace("\n", "\\\\\n", $text);
-		$text = str_replace("\\\\\n\\\\", "\n", $text);
+		$lines = explode("\n", $text);
+		for ($i = 0; $i < count($lines); $i++) {
+			$lines[$i] = preg_replace("^(.+)\n$", "\$1 \\\\\n", $lines[$i]);
+		}
+		$text = implode("\n", $lines);
 		echo '\\begin{quote}'.$text.'\\end{quote}'.Latex::bruch();
 	}
 
