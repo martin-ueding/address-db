@@ -110,7 +110,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 	if (!empty($l['pnotizen'])) {
 		$text = $l['pnotizen'];
-		var_dump($text);
 		$text = str_replace("\r\n", "\n", $text);
 		$text = str_replace("\r", "\n", $text);
 		$lines = explode("\n", $text);
@@ -119,7 +118,6 @@ while ($l = mysql_fetch_assoc($erg)) {
 			$lines[$i] = preg_replace("/^(.+)$/", "\$1 \\\\\\\\", $lines[$i]);
 		}
 		$text = implode("\n", $lines);
-		var_dump($text);
 		echo '\\begin{quote}'.$text.'\\end{quote}'.Latex::bruch();
 	}
 
