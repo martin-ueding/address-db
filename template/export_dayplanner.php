@@ -22,6 +22,17 @@ echo '\usepackage[utf8]{inputenc}'."\n";
 echo '\usepackage{helvet}'."\n";
 echo '\renewcommand*\familydefault{\sfdefault}'."\n";
 
+echo '
+	\usepackage{scrpage2}
+	\pagestyle{scrheadings}
+	\ohead{\headmark}
+	\ohead{\rightmark}
+	\chead{}
+	\setheadsepline{.4pt}
+	\automark{chapter}
+	';
+
+
 echo '\begin{document}'."\n";
 
 $zaehler = 0;
