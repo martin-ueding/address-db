@@ -16,15 +16,13 @@ header("Content-Type: text/plain; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
 
 echo '\documentclass[10pt]{book}'."\n";
-echo '\usepackage[paperwidth=8cm, paperheight=12cm, outer=3mm, inner=12mm, top=3mm, bottom=3mm, scale=1, twoside]{geometry}'."\n";
-echo '\setlength{\parindent}{0cm}';
-echo '\usepackage[utf8]{inputenc}';
-
+echo '\usepackage[a5paper, outer=3mm, inner=12mm, top=3mm, bottom=3mm, scale=1, twoside]{geometry}'."\n";
+echo '\setlength{\parindent}{0cm}'."\n";
+echo '\usepackage[utf8]{inputenc}'."\n";
+echo '\usepackage{helvet}'."\n";
+echo '\renewcommand*\familydefault{\sfdefault}'."\n";
 
 echo '\begin{document}'."\n";
-
-echo '\fontsize{'.$SCHRIFTGROESSE.'}{'.round($SCHRIFTGROESSE*1.4).'}'."\n";
-echo '\selectfont'."\n";
 
 $zaehler = 0;
 
@@ -49,7 +47,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else
 		$prafix = '';
 
-	echo '\section*{'.$prafix.' '.implode(', ', array($l['nachname'], $l['vorname']).'}'."\n";
+	echo '\section*{'.$prafix.' '.implode(', ', array($l['nachname'], $l['vorname'])).'}'."\n";
 
 	if ($l['adresse_r'] != 1) {
 		echo $l['strasse'].Latex::bruch().$l['ortsname'].' '.$l['plz'].Latex::bruch();
