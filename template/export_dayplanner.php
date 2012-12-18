@@ -49,7 +49,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 	else
 		$prafix = '';
 
-	echo '\section*{'.$prafix.' '.$l['vorname'].' '.$l['nachname'].'}'."\n";
+	echo '\section*{'.$prafix.' '.implode(', ', array($l['nachname'], $l['vorname']).'}'."\n";
 
 	if ($l['adresse_r'] != 1) {
 		echo $l['strasse'].Latex::bruch().$l['ortsname'].' '.$l['plz'].Latex::bruch();
@@ -111,7 +111,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].Latex::bruch();
 
 	if (!empty($l['pnotizen']))
-		echo '\\begin{verbatim}'.$l['pnotizen'].'\\end{verbatim}'.Latex::bruch();
+		echo '\\begin{quote}'.str_replace("\n", "\\\n", $l['pnotizen'].'\\end{quote}'.Latex::bruch();
 
 
 	//	$zaehler++;
