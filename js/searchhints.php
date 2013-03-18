@@ -1,5 +1,9 @@
 <?php
-# Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011-2013 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * Show hints for the AJAX search.
+ */
 
 require_once('../component/Filter.php');
 require_once('../component/Login.php');
