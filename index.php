@@ -1,5 +1,13 @@
 <?php
-# Copyright © 2011-2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011-2013 Martin Ueding <dev@martin-ueding.de>
+
+/**
+ * @mainpage Address Database
+ * 
+ * This is a PHP powered address database for a single family. It supports
+ * multiple family members, but does not provide access control on them. All
+ * data is acessible by every member of the family.
+ */
 
 require_once('component/History.php');
 require_once('component/Login.php');
@@ -89,4 +97,6 @@ default:
 		_('No Layout %s found.'), $content_controller->get_layout()
 	));
 }
+
+# vim: spell
 ?>
