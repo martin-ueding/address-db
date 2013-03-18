@@ -16,40 +16,36 @@ header("Content-Type: text/plain; charset=utf-8");
 header('Content-Disposition: attachment; filename="adressen-'.time().'.tex"');
 
 echo '\documentclass[10pt]{book}'."\n";
-echo '\usepackage[paperwidth=8cm, paperheight=12cm, outer=3mm, inner=12mm, top=3mm, bottom=3mm, scale=1, twoside]{geometry}'."\n";
-echo '\setlength{\parindent}{0cm}';
-echo '\usepackage[utf8]{inputenc}';
+echo '\usepackage[a5paper, outer=3mm, inner=12mm, top=3mm, bottom=3mm, scale=1, twoside]{geometry}'."\n";
+echo '\setlength{\parindent}{0cm}'."\n";
+echo '\usepackage[utf8]{inputenc}'."\n";
+echo '\usepackage{helvet}'."\n";
+echo '\renewcommand*\familydefault{\sfdefault}'."\n";
+
+echo '
+	\usepackage{scrpage2}
+	\pagestyle{scrheadings}
+	\ohead{\headmark}
+	\ohead{\rightmark}
+	\chead{}
+	\setheadsepline{.4pt}
+	\automark{chapter}
+	';
 
 
 echo '\begin{document}'."\n";
-
-echo '\fontsize{'.$SCHRIFTGROESSE.'}{'.round($SCHRIFTGROESSE*1.4).'}'."\n";
-echo '\selectfont'."\n";
 
 $zaehler = 0;
 
 $nachname_buchstabe = '';
 
 while ($l = mysql_fetch_assoc($erg)) {
-
-	$umbruchbeiarray = array('C', 'E', 'G', 'I', 'K', 'M', 'O', 'Q', 'S', 'U', 'X');
-
-	if (isset($l['nachname'][0]) && $l['nachname'][0] != $nachname_buchstabe) {
-		$nachname_buchstabe = $l['nachname'][0];
-
-		if (array_search($nachname_buchstabe, $umbruchbeiarray) == $nachname_buchstabe) {
-			//		echo '\chapter*{'.$nachname_buchstabe.'}'."\n";
-			echo '\cleardoublepage'."\n";
-		}
-	}
-
-
 	if ($l['prafix'] != "-")
 		$prafix = $l['prafix'];
 	else
 		$prafix = '';
 
-	echo '\section*{'.$prafix.' '.$l['vorname'].' '.$l['nachname'].'}'."\n";
+	echo '\section*{'.$prafix.' '.implode(', ', array($l['nachname'], $l['vorname'])).'}'."\n";
 
 	if ($l['adresse_r'] != 1) {
 		echo $l['strasse'].Latex::bruch().$l['ortsname'].' '.$l['plz'].Latex::bruch();
@@ -110,8 +106,22 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if (!empty($l['geb_t']))
 		echo $l['geb_t'].'.'.$l['geb_m'].'.'.$l['geb_j'].Latex::bruch();
 
-	if (!empty($l['pnotizen']))
-		echo '\\begin{verbatim}'.$l['pnotizen'].'\\end{verbatim}'.Latex::bruch();
+	if (!empty($l['pnotizen'])) {
+		$text = $l['pnotizen'];
+		$text = str_replace("\r\n", "\n", $text);
+		$text = str_replace("\r", "\n", $text);
+		$lines = explode("\n", $text);
+		for ($i = 0; $i < count($lines); $i++) {
+			$lines[$i] = trim($lines[$i]);
+			if ($i < count($lines) - 1) {
+				if (strlen($lines[$i]) > 0) {
+					$lines[$i] .= Latex::bruch();
+				}
+			}
+		}
+		$text = Latex::convertToLaTeX(implode("\n", $lines));
+		echo $text;
+	}
 
 
 	//	$zaehler++;
