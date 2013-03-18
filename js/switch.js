@@ -1,4 +1,4 @@
-// Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+// Copyright © 2012-2013 Martin Ueding <dev@martin-ueding.de>
 
 $(document).ready(function () {
 	// Fold the `manuelle_eingabe` if the checkbox is not set.
@@ -8,6 +8,7 @@ $(document).ready(function () {
 
 	$('#adresswahl').click(function () {
 		$('#manuelle_eingabe').slideToggle(500);
+		initSwitchFields();
 	});
 
 });
