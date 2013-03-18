@@ -21,6 +21,3 @@ function _switch(object) {
 		document.getElementById(object).style.display = "none";
 	}
 }
-
-// #adresswahl
-// #manuelle_eingabe
