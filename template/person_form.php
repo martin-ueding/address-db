@@ -1,9 +1,9 @@
 <?php
-# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2012-2013 Martin Ueding <dev@martin-ueding.de>
 
 /**
  * Editing or creating a Person.
- **/
+ */
 
 require_once('helper/Select.php');
 require_once('model/FamilyMember.php');
