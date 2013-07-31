@@ -4,6 +4,11 @@
 Changelog
 #########
 
+v3.2.1
+    - **Added**: Dayplanner export
+    - **Added**: README file
+    - **Fixed**: Toggle fields
+
 v3.2
     * Database access in database.ini file.
     * Dynamic page title works now.
