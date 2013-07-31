@@ -10,7 +10,7 @@ v3.2.1
     - **Fixed**: Toggle fields
 
 v3.2
-    * Database access in database.ini file.
+    * Database access in ``database.ini`` file.
     * Dynamic page title works now.
     * Fix searchhints.
     * Order birthdays by their date.
