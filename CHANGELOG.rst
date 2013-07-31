@@ -14,7 +14,7 @@ v3.2
     * Use ISO date format.
     * Use jQuery to toggle manual address entry.
 
-    - Add Controller::layout selector.
+    - Add ``Controller::layout`` selector.
     - Convert to UTF-8.
 
 v3.1.1
