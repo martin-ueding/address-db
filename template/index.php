@@ -1,5 +1,5 @@
 <?php
-# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2012-2013 Martin Ueding <dev@martin-ueding.de>
 
 /**
  * Main layout.
@@ -30,14 +30,6 @@
 				<?php echo $messages; ?>
 				<?php echo $content; ?>
 			</div>
-		</div>
-		<div id="version">
-			<nobr>
-				<span class="graytext">
-					<?php echo _('version'); ?>
-				</span>
-				<?php echo $version_string; ?>
-			</nobr>
 		</div>
 	</body>
 </html>
