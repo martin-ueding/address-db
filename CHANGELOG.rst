@@ -4,6 +4,10 @@
 Changelog
 #########
 
+v3.2.2
+    - Add GPL license
+    - **Removed**: Version overlay
+
 v3.2.1
     - **Added**: Dayplanner export
     - **Added**: README file
