@@ -70,8 +70,8 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 
         if (!empty($l['pnotizen'])) {
-            $cleaned = str_replace("\n", ' ', $l['pnotizen']);
-            $cleaned = str_replace("\r", ' ', $cleaned);
+            $cleaned = str_replace("\n", '\n', $l['pnotizen']);
+            $cleaned = str_replace("\r", '', $cleaned);
 		echo 'NOTE;CHARSET=utf-8:'.$cleaned."\n";
         }
 
