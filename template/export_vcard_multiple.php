@@ -104,7 +104,7 @@ while ($l = mysql_fetch_assoc($erg)) {
 
         $erg2 = Person::select_gruppen_zu_person($l['p_id']);
         $groups = array();
-        for ($l2 = mysql_fetch_assoc($erg2) {
+        for ($l2 = mysql_fetch_assoc($erg2)) {
             $groups[] = $l2['gruppe'];
         }
 
