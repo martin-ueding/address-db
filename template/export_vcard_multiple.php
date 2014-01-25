@@ -1,5 +1,5 @@
 <?php
-# Copyright © 2012 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2012, 2014 Martin Ueding <dev@martin-ueding.de>
 
 /**
  * Exports a list as a big VCard.
@@ -96,12 +96,19 @@ while ($l = mysql_fetch_assoc($erg)) {
 	if (!empty($l['chat_yim']))
 		echo 'X-YAHOO;type=HOME;type=pref:'.$l['chat_yim']."\n";
 
-	//	if (!empty($l['chat_skype']))
-	//		echo 'X-JABBER;type=HOME;type=pref:'.$l['chat_skype']."\n";
+		if (!empty($l['chat_skype']))
+			echo 'X-SKYPE;type=HOME;type=pref:'.$l['chat_skype']."\n";
 
 	if (!empty($l['chat_aux']))
 		echo 'X-JABBER;type=HOME;type=pref:'.$l['chat_aux']."\n";
 
+        $erg2 = Person::select_gruppen_zu_person($l['p_id']);
+        $groups = array();
+        $groups[] = $l2['gruppe'];
+
+        if (count($groups) > 0) {
+            echo 'CATEGORIES:'.implode(',', $groups);
+        }
 
 	echo 'END:VCARD'."\n";
 
