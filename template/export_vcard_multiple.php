@@ -69,8 +69,11 @@ while ($l = mysql_fetch_assoc($erg)) {
 
 
 
-	if (!empty($l['pnotizen']))
-		echo 'NOTE;CHARSET=utf-8:'.str_replace("\n", ' ', $l['pnotizen'])."\n";
+        if (!empty($l['pnotizen'])) {
+            $cleaned = str_replace("\n", ' ', $l['pnotizen']);
+            $cleaned = str_replace("\r", ' ', $cleaned);
+		echo 'NOTE;CHARSET=utf-8:'.$cleaned."\n";
+        }
 
 
 	if (!empty($l['hp1'])) {
