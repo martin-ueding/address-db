@@ -109,7 +109,7 @@ while ($l = mysql_fetch_assoc($erg)) {
         }
 
         if (count($groups) > 0) {
-            echo 'CATEGORIES:'.implode(',', $groups);
+            echo 'CATEGORIES:'.implode(',', $groups)."\n";
         }
 
 	echo 'END:VCARD'."\n";
