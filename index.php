@@ -16,6 +16,8 @@ require_once('component/Template.php');
 require_once('controller/HeaderController.php');
 require_once('model/Person.php');
 
+date_default_timezone_set('UTC');
+
 session_start();
 
 if (!isset($_SESSION['history'])) {
