@@ -17,7 +17,20 @@ while ($l = mysql_fetch_assoc($erg)) {
 	echo 'BEGIN:VCARD'."\n";
 	echo 'VERSION:3.0'."\n";
 	echo 'N;CHARSET=utf-8:'.$l['nachname'].';'.$l['vorname'].';'.$l['mittelname'].';'.$prafix.';'."\n";
-	echo 'FN;CHARSET=utf-8:'.trim($prafix.' '.$l['vorname'].' '.$l['mittelname'].' '.$l['nachname'])."\n";
+
+        $fn_array = array();
+        if (strlen($prafix) > 0)
+            $fn_array[] = $prafix;
+        if (strlen($l['vorname']) > 0)
+            $fn_array[] = $l['vorname'];
+        if (strlen($l['mittelname']) > 0)
+            $fn_array[] = $l['mittelname'];
+        if (strlen($l['nachname']) > 0)
+            $fn_array[] = $l['nachname'];
+
+        $fn = implode(' ', $fn_array);
+
+	echo 'FN;CHARSET=utf-8:'.$fn."\n";
 
 	if (!empty($l['geburtsname']))
 		echo 'X-MAIDENNAME;CHARSET=utf-8:'.$l['geburtsname']."\n";
