@@ -27,9 +27,7 @@ while ($l = mysql_fetch_assoc($erg)) {
             $fn_array[] = $l['mittelname'];
         if (strlen($l['nachname']) > 0)
             $fn_array[] = $l['nachname'];
-
         $fn = implode(' ', $fn_array);
-
 	echo 'FN;CHARSET=utf-8:'.$fn."\n";
 
 	if (!empty($l['geburtsname']))
