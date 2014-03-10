@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phpfamilyaddressdb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-20 14:52+0100\n"
+"POT-Creation-Date: 2014-03-10 23:30+0100\n"
 "PO-Revision-Date: 2011-04-08 21:36+0000\n"
 "Last-Translator: Christopher <cstandaert@srs.be>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -41,14 +41,13 @@ msgstr "%d uren geleden"
 msgid "%d minutes ago"
 msgstr "%d minuten geleden"
 
-#: ../template/person_view.php:63
+#: ../template/person_view.php:65
 #, php-format
 msgid "(today %d years old)"
 msgstr "(%d jaar oud vandaag)"
 
-#: ../controller/BirthdayController.php:15
-#: ../controller/BirthdayController.php:46
-#: ../controller/PersonController.php:19
+#: ../controller/ListController.php:15 ../controller/ListController.php:20
+#: ../controller/ListController.php:24 ../controller/PersonController.php:19
 #: ../controller/PersonController.php:768
 #: ../controller/PersonController.php:835
 #: ../controller/PersonController.php:861
@@ -57,11 +56,12 @@ msgstr "(%d jaar oud vandaag)"
 #: ../controller/MaintenanceController.php:35
 #: ../controller/MaintenanceController.php:50
 #: ../controller/MaintenanceController.php:66
-#: ../controller/MaintenanceController.php:81
+#: ../controller/MaintenanceController.php:81 ../controller/Controller.php:29
+#: ../controller/SearchController.php:12
 #: ../controller/PictureController.php:28
-#: ../controller/PictureController.php:64 ../controller/Controller.php:29
-#: ../controller/SearchController.php:12 ../controller/ListController.php:15
-#: ../controller/ListController.php:20 ../controller/ListController.php:24
+#: ../controller/PictureController.php:64
+#: ../controller/BirthdayController.php:15
+#: ../controller/BirthdayController.php:46
 msgid "Address DB"
 msgstr "adres informatiebank"
 
@@ -217,7 +217,7 @@ msgstr "Mei"
 msgid "Member %s:"
 msgstr ""
 
-#: ../template/person_view.php:48 ../locale/strings_dummy.php:4
+#: ../locale/strings_dummy.php:4 ../template/person_view.php:50
 msgid "Mr."
 msgstr "Men."
 
@@ -229,12 +229,12 @@ msgstr ""
 msgid "No ID given."
 msgstr ""
 
-#: ../index.php:89
+#: ../index.php:99
 #, php-format
 msgid "No Layout %s found."
 msgstr ""
 
-#: ../index.php:67
+#: ../index.php:77
 msgid "No content here."
 msgstr ""
 
@@ -342,7 +342,7 @@ msgstr ""
 msgid "Warning:"
 msgstr ""
 
-#: ../template/person_view.php:338
+#: ../template/person_view.php:340
 msgid "Was the data checked and is it up-to-date?"
 msgstr ""
 
@@ -354,7 +354,7 @@ msgstr ""
 msgid "Yes, delete picture!"
 msgstr ""
 
-#: ../template/person_view.php:72 ../template/person_view.php:77
+#: ../template/person_view.php:74 ../template/person_view.php:79
 #: ../template/person_form.php:97
 msgid "address"
 msgstr "adres"
@@ -436,7 +436,7 @@ msgstr ""
 msgid "as part of an email address"
 msgstr ""
 
-#: ../template/person_view.php:295
+#: ../template/person_view.php:297
 msgid "associated with"
 msgstr ""
 
@@ -444,7 +444,7 @@ msgstr ""
 msgid "birth date"
 msgstr ""
 
-#: ../template/person_view.php:59
+#: ../template/person_view.php:61
 msgid "birthday"
 msgstr "geboortedag"
 
@@ -461,15 +461,15 @@ msgstr "geboortedag"
 msgid "birthdays"
 msgstr ""
 
-#: ../template/person_view.php:46
+#: ../template/person_view.php:48
 msgid "born<!-- both gender form-->"
 msgstr ""
 
-#: ../template/person_view.php:51
+#: ../template/person_view.php:53
 msgid "born<!-- female form -->"
 msgstr ""
 
-#: ../template/person_view.php:49
+#: ../template/person_view.php:51
 msgid "born<!-- male form -->"
 msgstr ""
 
@@ -477,27 +477,27 @@ msgstr ""
 msgid "cancel"
 msgstr ""
 
-#: ../template/person_view.php:220 ../template/person_form.php:258
+#: ../template/person_view.php:222 ../template/person_form.php:258
 msgid "chat AIM"
 msgstr ""
 
-#: ../template/person_view.php:234 ../template/person_form.php:266
+#: ../template/person_view.php:236 ../template/person_form.php:266
 msgid "chat ICQ"
 msgstr ""
 
-#: ../template/person_view.php:255 ../template/person_form.php:278
+#: ../template/person_view.php:257 ../template/person_form.php:278
 msgid "chat Jabber/XMPP"
 msgstr ""
 
-#: ../template/person_view.php:227 ../template/person_form.php:262
+#: ../template/person_view.php:229 ../template/person_form.php:262
 msgid "chat MSN"
 msgstr ""
 
-#: ../template/person_view.php:248 ../template/person_form.php:274
+#: ../template/person_view.php:250 ../template/person_form.php:274
 msgid "chat Skype"
 msgstr ""
 
-#: ../template/person_view.php:241
+#: ../template/person_view.php:243
 msgid "chat Yahoo"
 msgstr ""
 
@@ -556,19 +556,19 @@ msgstr ""
 msgid "delete an entry"
 msgstr ""
 
-#: ../template/person_view.php:354
+#: ../template/person_view.php:356
 msgid "delete picture"
 msgstr ""
 
-#: ../template/person_view.php:350
+#: ../template/person_view.php:352
 msgid "delete this entry"
 msgstr ""
 
-#: ../template/person_view.php:10
+#: ../template/person_view.php:12
 msgid "display entry"
 msgstr ""
 
-#: ../template/person_view.php:356
+#: ../template/person_view.php:358
 msgid "download VCard"
 msgstr ""
 
@@ -581,19 +581,19 @@ msgstr "%s behandelen"
 msgid "edit entry"
 msgstr ""
 
-#: ../template/person_view.php:349
+#: ../template/person_view.php:351
 msgid "edit this entry"
 msgstr ""
 
-#: ../template/person_view.php:196 ../template/person_form.php:223
+#: ../template/person_view.php:198 ../template/person_form.php:223
 msgid "email other"
 msgstr ""
 
-#: ../template/person_view.php:180 ../template/person_form.php:215
+#: ../template/person_view.php:182 ../template/person_form.php:215
 msgid "email private"
 msgstr ""
 
-#: ../template/person_view.php:188 ../template/person_form.php:219
+#: ../template/person_view.php:190 ../template/person_form.php:219
 msgid "email work"
 msgstr ""
 
@@ -630,9 +630,9 @@ msgstr ""
 msgid "export"
 msgstr ""
 
-#: ../template/person_view.php:120 ../template/person_view.php:160
-#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
+#: ../template/person_view.php:122 ../template/person_view.php:162
 #: ../template/person_form.php:197 ../template/person_form.php:248
+#: ../template/export_kitchen.php:66 ../template/export_kitchen.php:82
 msgid "fax"
 msgstr "fax"
 
@@ -640,7 +640,7 @@ msgstr "fax"
 msgid "first name"
 msgstr ""
 
-#: ../template/person_view.php:25 ../template/person_form.php:28
+#: ../template/person_view.php:27 ../template/person_form.php:28
 msgid "form of address"
 msgstr "aanspreekvorm"
 
@@ -648,15 +648,15 @@ msgstr "aanspreekvorm"
 msgid "general telephones"
 msgstr ""
 
-#: ../template/header.php:34 ../template/person_view.php:283
+#: ../template/header.php:34 ../template/person_view.php:285
 msgid "groups"
 msgstr "groepen"
 
-#: ../template/person_view.php:204 ../template/person_form.php:227
+#: ../template/person_view.php:206 ../template/person_form.php:227
 msgid "homepage 1"
 msgstr ""
 
-#: ../template/person_view.php:211 ../template/person_form.php:231
+#: ../template/person_view.php:213 ../template/person_form.php:231
 msgid "homepage 2"
 msgstr ""
 
@@ -668,7 +668,7 @@ msgstr ""
 msgid "integrity check"
 msgstr ""
 
-#: ../template/person_view.php:175
+#: ../template/person_view.php:177
 msgid "internet"
 msgstr ""
 
@@ -688,12 +688,12 @@ msgstr ""
 msgid "kitchen list"
 msgstr ""
 
-#: ../template/person_view.php:332
+#: ../template/person_view.php:334
 #, php-format
 msgid "last check %s (%d days ago)"
 msgstr ""
 
-#: ../template/person_view.php:343
+#: ../template/person_view.php:345
 msgid "last edited"
 msgstr ""
 
@@ -722,7 +722,7 @@ msgstr ""
 msgid "middle name"
 msgstr ""
 
-#: ../template/person_view.php:153 ../template/person_form.php:193
+#: ../template/person_view.php:155 ../template/person_form.php:193
 #: ../template/person_form.php:244
 msgid "mobile"
 msgstr "mobiel"
@@ -731,7 +731,7 @@ msgstr "mobiel"
 msgid "mode"
 msgstr "modus"
 
-#: ../template/person_view.php:20 ../template/person_view.php:35
+#: ../template/person_view.php:22 ../template/person_view.php:37
 #: ../template/person_form.php:26
 msgid "name"
 msgstr "naam"
@@ -778,11 +778,11 @@ msgstr "geen aanspreekvorm"
 msgid "no group"
 msgstr "groepen"
 
-#: ../js/searchhints.php:25
+#: ../js/searchhints.php:29
 msgid "no suggestions available"
 msgstr ""
 
-#: ../template/person_view.php:266 ../template/person_form.php:283
+#: ../template/person_view.php:268 ../template/person_form.php:283
 msgid "notes"
 msgstr ""
 
@@ -802,7 +802,7 @@ msgstr ""
 msgid "or enter a new address"
 msgstr ""
 
-#: ../template/person_view.php:167 ../template/person_form.php:201
+#: ../template/person_view.php:169 ../template/person_form.php:201
 #: ../template/person_form.php:252
 msgid "other"
 msgstr ""
@@ -846,16 +846,16 @@ msgstr ""
 msgid "postral code, city and country"
 msgstr ""
 
-#: ../template/person_view.php:139 ../template/person_form.php:185
+#: ../template/person_view.php:141 ../template/person_form.php:185
 #: ../template/person_form.php:236
 msgid "private"
 msgstr ""
 
-#: ../template/person_view.php:236
+#: ../template/person_view.php:238
 msgid "profile page"
 msgstr ""
 
-#: ../template/person_view.php:277 ../template/person_form.php:61
+#: ../template/person_view.php:279 ../template/person_form.php:61
 msgid "relations"
 msgstr ""
 
@@ -881,7 +881,7 @@ msgstr ""
 msgid "show entries"
 msgstr ""
 
-#: ../template/person_view.php:84
+#: ../template/person_view.php:86
 msgid "show map"
 msgstr ""
 
@@ -893,23 +893,23 @@ msgstr ""
 msgid "suffix"
 msgstr ""
 
-#: ../template/person_view.php:134
+#: ../template/person_view.php:136
 msgid "telephone"
 msgstr ""
 
-#: ../template/person_view.php:113
+#: ../template/person_view.php:115
 msgid "telephone mobile"
 msgstr ""
 
-#: ../template/person_view.php:127
+#: ../template/person_view.php:129
 msgid "telephone other"
 msgstr ""
 
-#: ../template/person_view.php:99
+#: ../template/person_view.php:101
 msgid "telephone private"
 msgstr ""
 
-#: ../template/person_view.php:106
+#: ../template/person_view.php:108
 msgid "telephone work"
 msgstr ""
 
@@ -937,7 +937,7 @@ msgstr ""
 msgid "unused postral codes"
 msgstr ""
 
-#: ../template/person_view.php:307 ../template/person_view.php:312
+#: ../template/person_view.php:309 ../template/person_view.php:314
 msgid "up-to-dateness"
 msgstr ""
 
@@ -950,13 +950,9 @@ msgstr ""
 msgid "upload %s's picture"
 msgstr ""
 
-#: ../template/person_view.php:352
+#: ../template/person_view.php:354
 msgid "upload picture"
 msgstr ""
-
-#: ../template/index.php:37
-msgid "version"
-msgstr "versie"
 
 #: ../template/header.php:58
 msgid "views"
@@ -970,14 +966,17 @@ msgstr ""
 msgid "without a birthday"
 msgstr ""
 
-#: ../template/person_view.php:146 ../template/person_form.php:189
+#: ../template/person_view.php:148 ../template/person_form.php:189
 #: ../template/person_form.php:240
 msgid "work"
 msgstr "werk"
 
-#: ../template/person_view.php:338
+#: ../template/person_view.php:340
 msgid "yes"
 msgstr ""
+
+#~ msgid "version"
+#~ msgstr "versie"
 
 #, fuzzy
 #~ msgid "Fax"
