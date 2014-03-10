@@ -1,5 +1,5 @@
 <?php
-# Copyright © 2011-2013 Martin Ueding <dev@martin-ueding.de>
+# Copyright © 2011-2014 Martin Ueding <dev@martin-ueding.de>
 
 /**
  * @mainpage Address Database
@@ -19,23 +19,23 @@ require_once('model/Person.php');
 session_start();
 
 if (!isset($_SESSION['history'])) {
-	$_SESSION['history'] = new History();
+    $_SESSION['history'] = new History();
 }
 
 if (isset($_GET['f'])) {
-	$_SESSION['f'] = (int)$_GET['f'];
+    $_SESSION['f'] = (int)$_GET['f'];
 }
 
 if (!isset($_SESSION['f'])) {
-	$_SESSION['f'] = 0;
+    $_SESSION['f'] = 0;
 }
 
 if (isset($_GET['g'])) {
-	$_SESSION['g'] = (int)$_GET['g'];
+    $_SESSION['g'] = (int)$_GET['g'];
 }
 
 if (!isset($_SESSION['g'])) {
-	$_SESSION['g'] = 0;
+    $_SESSION['g'] = 0;
 }
 
 // set up gettext support
@@ -43,10 +43,10 @@ include('inc/setup_gettext.inc.php');
 
 // import id and get everything there is to know about that person
 if (isset($_GET['id'])) {
-	$id = (int)$_GET['id'];
+    $id = (int)$_GET['id'];
 }
 if (isset($_POST['id'])) {
-	$id = (int)$_POST['id'];
+    $id = (int)$_POST['id'];
 }
 
 // get current mode
@@ -62,40 +62,40 @@ $content = $content_controller->$controller_info['function']();
 
 switch ($content_controller->get_layout()) {
 case 'default':
-	$index_template = new Template('index');
-	$index_template->set('body_class',
-		$mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
-	$index_template->set('page_title', $content_controller->get_page_title());
+    $index_template = new Template('index');
+    $index_template->set('body_class',
+        $mode == 'Person::edit' || $mode == 'Person::create' ? 'maske' : '');
+    $index_template->set('page_title', $content_controller->get_page_title());
 
-	$header_controller = new HeaderController();
-	$header_controller->set_current_mode($mode);
-	$index_template->set('header', $header_controller->view());
+    $header_controller = new HeaderController();
+    $header_controller->set_current_mode($mode);
+    $index_template->set('header', $header_controller->view());
 
-	if (!isset($content)) {
-		$content = _('No content here.');
-	}
+    if (!isset($content)) {
+        $content = _('No content here.');
+    }
 
-	$index_template->set('content', $content);
+    $index_template->set('content', $content);
 
-	$messages_template = new Template('messages');
-	$index_template->set('messages', $messages_template->html());
+    $messages_template = new Template('messages');
+    $index_template->set('messages', $messages_template->html());
 
 
-	$version_array = file('version.txt');
-	$index_template->set('version_string', $version_array[0]);
+    $version_array = file('version.txt');
+    $index_template->set('version_string', $version_array[0]);
 
-	echo $index_template->html();
-	break;
+    echo $index_template->html();
+    break;
 
 case 'ajax':
 case 'media':
-	echo $content;
-	break;
+    echo $content;
+    break;
 
 default:
-	throw new NoSuchLayoutException(sprintf(
-		_('No Layout %s found.'), $content_controller->get_layout()
-	));
+    throw new NoSuchLayoutException(sprintf(
+        _('No Layout %s found.'), $content_controller->get_layout()
+    ));
 }
 
 # vim: spell
